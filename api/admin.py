@@ -20,6 +20,12 @@ class UserDriverAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
     )
+    
+    def get_readonly_fields(self, request, obj=None):
+        readonly_fields = list(self.readonly_fields)
+        if obj:  # Si on modifie un objet existant
+            readonly_fields.append('password')
+        return readonly_fields
 
 @admin.register(UserCustomer)
 class UserCustomerAdmin(admin.ModelAdmin):
@@ -40,6 +46,12 @@ class UserCustomerAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
     )
+    
+    def get_readonly_fields(self, request, obj=None):
+        readonly_fields = list(self.readonly_fields)
+        if obj:  # Si on modifie un objet existant
+            readonly_fields.append('password')
+        return readonly_fields
 
 @admin.register(Token)
 class TokenAdmin(admin.ModelAdmin):

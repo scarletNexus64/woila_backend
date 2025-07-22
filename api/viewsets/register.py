@@ -47,7 +47,6 @@ class RegisterDriverView(APIView):
                 value={
                     'success': True,
                     'message': 'Inscription chauffeur réussie',
-                    'token': '550e8400-e29b-41d4-a716-446655440000',
                     'user_type': 'driver',
                     'user_id': 1,
                     'user_info': {
@@ -74,12 +73,6 @@ class RegisterDriverView(APIView):
             # Créer le chauffeur
             driver = serializer.save()
             
-            # Créer un token d'authentification
-            token = Token.objects.create(
-                user_type='driver',
-                user_id=driver.id
-            )
-            
             # Préparer les informations du chauffeur
             user_info = {
                 'id': driver.id,
@@ -93,8 +86,7 @@ class RegisterDriverView(APIView):
             
             return Response({
                 'success': True,
-                'message': 'Inscription chauffeur réussie',
-                'token': str(token.token),
+                'message': 'Inscription chauffeur réussie. Vous pouvez maintenant vous connecter.',
                 'user_type': 'driver',
                 'user_id': driver.id,
                 'user_info': user_info
@@ -142,7 +134,6 @@ class RegisterCustomerView(APIView):
                 value={
                     'success': True,
                     'message': 'Inscription client réussie',
-                    'token': '550e8400-e29b-41d4-a716-446655440001',
                     'user_type': 'customer',
                     'user_id': 1,
                     'user_info': {
@@ -166,12 +157,6 @@ class RegisterCustomerView(APIView):
             # Créer le client
             customer = serializer.save()
             
-            # Créer un token d'authentification
-            token = Token.objects.create(
-                user_type='customer',
-                user_id=customer.id
-            )
-            
             # Préparer les informations du client
             user_info = {
                 'id': customer.id,
@@ -182,8 +167,7 @@ class RegisterCustomerView(APIView):
             
             return Response({
                 'success': True,
-                'message': 'Inscription client réussie',
-                'token': str(token.token),
+                'message': 'Inscription client réussie. Vous pouvez maintenant vous connecter.',
                 'user_type': 'customer',
                 'user_id': customer.id,
                 'user_info': user_info
