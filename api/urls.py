@@ -5,7 +5,9 @@ from .views import (
     RegisterCustomerView, 
     LogoutView,
     TokenVerifyView,
-    TokenRefreshView
+    TokenRefreshView,
+    DocumentImportView,
+    DocumentListView
 )
 
 urlpatterns = [
@@ -20,4 +22,8 @@ urlpatterns = [
     # Token management endpoints
     path('auth/token/verify/', TokenVerifyView.as_view(), name='token-verify'),
     path('auth/token/refresh/', TokenRefreshView.as_view(), name='token-refresh'),
+    
+    # Document management endpoints
+    path('documents/import/', DocumentImportView.as_view(), name='document-import'),
+    path('documents/list/', DocumentListView.as_view(), name='document-list'),
 ]

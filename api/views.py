@@ -5,6 +5,7 @@ from .viewsets.login import LoginView
 from .viewsets.register import RegisterDriverView, RegisterCustomerView
 from .viewsets.logout import LogoutView
 from .viewsets.token import TokenVerifyView, TokenRefreshView
+from .viewsets.documents import DocumentImportView, DocumentListView
 
 # Export views for URL configuration
 __all__ = [
@@ -13,5 +14,7 @@ __all__ = [
     'RegisterCustomerView',
     'LogoutView',
     'TokenVerifyView',
-    'TokenRefreshView'
+    'TokenRefreshView',
+    'DocumentImportView',
+    'DocumentListView'
 ]
