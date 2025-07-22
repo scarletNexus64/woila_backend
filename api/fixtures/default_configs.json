@@ -1,0 +1,98 @@
+[
+  {
+    "model": "api.generalconfig",
+    "pk": 1,
+    "fields": {
+      "nom": "⏰ Temps d'attente maximum (minutes)",
+      "search_key": "MAX_WAITING_TIME",
+      "valeur": "30",
+      "active": true,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "api.generalconfig",
+    "pk": 2,
+    "fields": {
+      "nom": "🎁 Bonus de bienvenue",
+      "search_key": "WELCOME_BONUS_AMOUNT",
+      "valeur": "5000",
+      "active": true,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "api.generalconfig",
+    "pk": 3,
+    "fields": {
+      "nom": "💳 Montant minimum de recharge",
+      "search_key": "MIN_RECHARGE_AMOUNT",
+      "valeur": "1000",
+      "active": true,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "api.generalconfig",
+    "pk": 4,
+    "fields": {
+      "nom": "💸 Commission de la plateforme (%)",
+      "search_key": "PLATFORM_COMMISSION_RATE",
+      "valeur": "15",
+      "active": true,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "api.generalconfig",
+    "pk": 5,
+    "fields": {
+      "nom": "📧 Email de support",
+      "search_key": "SUPPORT_EMAIL",
+      "valeur": "support@woila.app",
+      "active": true,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "api.generalconfig",
+    "pk": 6,
+    "fields": {
+      "nom": "📱 Mode maintenance",
+      "search_key": "MAINTENANCE_MODE",
+      "valeur": "false",
+      "active": false,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "api.generalconfig",
+    "pk": 7,
+    "fields": {
+      "nom": "🔐 Activation de la vérification OTP",
+      "search_key": "ENABLE_OTP_VERIFICATION",
+      "valeur": "true",
+      "active": true,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "api.generalconfig",
+    "pk": 8,
+    "fields": {
+      "nom": "🚗 État minimum requis pour les véhicules",
+      "search_key": "MIN_VEHICLE_STATE",
+      "valeur": "6",
+      "active": true,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  }
+]

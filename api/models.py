@@ -243,3 +243,124 @@ class Vehicle(models.Model):
         verbose_name = 'Véhicule'
         verbose_name_plural = 'Véhicules'
         ordering = ['-created_at']
+
+
+# Models for referral system
+from django.contrib.contenttypes.fields import GenericForeignKey
+from django.contrib.contenttypes.models import ContentType
+from django.core.exceptions import ValidationError
+import secrets
+
+class GeneralConfig(models.Model):
+    """
+    Model pour les configurations générales de l'application.
+    Chaque configuration a un nom, une clé de recherche, une valeur et un statut actif.
+    """
+    nom = models.CharField(
+        max_length=100,
+        verbose_name="Nom de la configuration"
+    )
+    search_key = models.CharField(
+        max_length=100,
+        unique=True,
+        verbose_name="Clé de recherche"
+    )
+    valeur = models.TextField(
+        verbose_name="Valeur",
+        help_text="Valeur de la configuration (peut être castée en nombre si nécessaire)"
+    )
+    active = models.BooleanField(
+        default=True,
+        verbose_name="Actif"
+    )
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Dernière modification")
+
+    def get_numeric_value(self):
+        """
+        Tente de convertir la valeur en nombre (float).
+        Retourne None si la conversion échoue.
+        """
+        try:
+            return float(self.valeur)
+        except (ValueError, TypeError):
+            return None
+
+    def get_boolean_value(self):
+        """
+        Tente de convertir la valeur en booléen.
+        """
+        if self.valeur.lower() in ['true', '1', 'oui', 'yes', 'on']:
+            return True
+        elif self.valeur.lower() in ['false', '0', 'non', 'no', 'off']:
+            return False
+        return None
+
+    def __str__(self):
+        return f"{self.nom} ({self.search_key})"
+
+    class Meta:
+        db_table = 'general_configs'
+        verbose_name = "Configuration Générale"
+        verbose_name_plural = "Configurations"
+        ordering = ['nom']
+
+
+class Wallet(models.Model):
+    """
+    E-wallet for users (Drivers and Customers).
+    """
+    limit = models.Q(app_label='api', model='userdriver') | models.Q(app_label='api', model='usercustomer')
+    user_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, limit_choices_to=limit)
+    user_id = models.PositiveIntegerField()
+    user = GenericForeignKey('user_type', 'user_id')
+
+    balance = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=0.00,
+        verbose_name="Solde"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return f"Portefeuille de {self.user} - Solde: {self.balance}"
+
+    class Meta:
+        db_table = 'wallets'
+        verbose_name = 'Portefeuille'
+        verbose_name_plural = 'Portefeuilles'
+        unique_together = ('user_type', 'user_id')
+
+
+def generate_referral_code():
+    """Generates a unique referral code."""
+    return secrets.token_hex(4).upper()
+
+class ReferralCode(models.Model):
+    """
+    Unique referral code for each user.
+    """
+    limit = models.Q(app_label='api', model='userdriver') | models.Q(app_label='api', model='usercustomer')
+    user_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, limit_choices_to=limit)
+    user_id = models.PositiveIntegerField()
+    user = GenericForeignKey('user_type', 'user_id')
+
+    code = models.CharField(
+        max_length=8,
+        unique=True,
+        default=generate_referral_code,
+        verbose_name="Code de parrainage"
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f"Code {self.code} pour {self.user}"
+
+    class Meta:
+        db_table = 'referral_codes'
+        verbose_name = 'Code de parrainage'
+        verbose_name_plural = 'Codes de parrainage'
+        unique_together = ('user_type', 'user_id')

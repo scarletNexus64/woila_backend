@@ -5,7 +5,10 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from drf_spectacular.utils import extend_schema, OpenApiExample
 from ..serializers import RegisterDriverSerializer, RegisterCustomerSerializer
-from ..models import Token
+from ..models import Token, ReferralCode, Wallet, GeneralConfig
+from django.db import transaction
+from django.contrib.contenttypes.models import ContentType
+
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -36,7 +39,8 @@ class RegisterDriverView(APIView):
                     'surname': 'Dupont',
                     'gender': 'M',
                     'age': 35,
-                    'birthday': '1988-05-15'
+                    'birthday': '1988-05-15',
+                    'referral_code': 'REF12345'
                 },
                 request_only=True,
             ),
@@ -70,27 +74,65 @@ class RegisterDriverView(APIView):
         serializer = RegisterDriverSerializer(data=request.data)
         
         if serializer.is_valid():
-            # Créer le chauffeur
-            driver = serializer.save()
+            try:
+                with transaction.atomic():
+                    # Créer le chauffeur
+                    driver = serializer.save()
+
+                    # Créer le portefeuille et le code de parrainage
+                    driver_content_type = ContentType.objects.get_for_model(driver)
+                    Wallet.objects.get_or_create(
+                        user_type=driver_content_type,
+                        user_id=driver.id,
+                        defaults={'balance': 0}
+                    )
+                    ReferralCode.objects.get_or_create(
+                        user_type=driver_content_type,
+                        user_id=driver.id
+                    )
+
+                    # Gérer le code de parrainage si fourni
+                    referral_code_str = serializer.validated_data.get('referral_code')
+                    if referral_code_str:
+                        try:
+                            referral_code = ReferralCode.objects.get(code=referral_code_str, is_active=True)
+                            bonus_config = GeneralConfig.objects.filter(search_key='referral_bonus_amount', active=True).first()
+                            
+                            if referral_code and bonus_config:
+                                bonus_amount = bonus_config.get_numeric_value()
+                                if bonus_amount:
+                                    referrer_wallet = Wallet.objects.get(user=referral_code.user)
+                                    referrer_wallet.balance += bonus_amount
+                                    referrer_wallet.save()
+
+                        except (ReferralCode.DoesNotExist, Wallet.DoesNotExist):
+                            # Gérer le cas où le code ou le portefeuille est invalide
+                            pass
             
-            # Préparer les informations du chauffeur
-            user_info = {
-                'id': driver.id,
-                'name': driver.name,
-                'surname': driver.surname,
-                'phone_number': driver.phone_number,
-                'gender': driver.gender,
-                'age': driver.age,
-                'birthday': driver.birthday.isoformat() if driver.birthday else None
-            }
-            
-            return Response({
-                'success': True,
-                'message': 'Inscription chauffeur réussie. Vous pouvez maintenant vous connecter.',
-                'user_type': 'driver',
-                'user_id': driver.id,
-                'user_info': user_info
-            }, status=status.HTTP_201_CREATED)
+                    # Préparer les informations du chauffeur
+                    user_info = {
+                        'id': driver.id,
+                        'name': driver.name,
+                        'surname': driver.surname,
+                        'phone_number': driver.phone_number,
+                        'gender': driver.gender,
+                        'age': driver.age,
+                        'birthday': driver.birthday.isoformat() if driver.birthday else None
+                    }
+                    
+                    return Response({
+                        'success': True,
+                        'message': 'Inscription chauffeur réussie. Vous pouvez maintenant vous connecter.',
+                        'user_type': 'driver',
+                        'user_id': driver.id,
+                        'user_info': user_info
+                    }, status=status.HTTP_201_CREATED)
+
+            except Exception as e:
+                return Response({
+                    'success': False,
+                    'errors': str(e)
+                }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
         return Response({
             'success': False,
@@ -123,7 +165,8 @@ class RegisterCustomerView(APIView):
                     'password': 'motdepasse456',
                     'confirm_password': 'motdepasse456',
                     'name': 'Marie',
-                    'surname': 'Martin'
+                    'surname': 'Martin',
+                    'referral_code': 'REF54321'
                 },
                 request_only=True,
             ),
@@ -154,24 +197,62 @@ class RegisterCustomerView(APIView):
         serializer = RegisterCustomerSerializer(data=request.data)
         
         if serializer.is_valid():
-            # Créer le client
-            customer = serializer.save()
-            
-            # Préparer les informations du client
-            user_info = {
-                'id': customer.id,
-                'name': customer.name,
-                'surname': customer.surname,
-                'phone_number': customer.phone_number
-            }
-            
-            return Response({
-                'success': True,
-                'message': 'Inscription client réussie. Vous pouvez maintenant vous connecter.',
-                'user_type': 'customer',
-                'user_id': customer.id,
-                'user_info': user_info
-            }, status=status.HTTP_201_CREATED)
+            try:
+                with transaction.atomic():
+                    # Créer le client
+                    customer = serializer.save()
+
+                    # Créer le portefeuille et le code de parrainage
+                    customer_content_type = ContentType.objects.get_for_model(customer)
+                    Wallet.objects.get_or_create(
+                        user_type=customer_content_type,
+                        user_id=customer.id,
+                        defaults={'balance': 0}
+                    )
+                    ReferralCode.objects.get_or_create(
+                        user_type=customer_content_type,
+                        user_id=customer.id
+                    )
+
+                    # Gérer le code de parrainage si fourni
+                    referral_code_str = serializer.validated_data.get('referral_code')
+                    if referral_code_str:
+                        try:
+                            referral_code = ReferralCode.objects.get(code=referral_code_str, is_active=True)
+                            bonus_config = GeneralConfig.objects.filter(search_key='referral_bonus_amount', active=True).first()
+                            
+                            if referral_code and bonus_config:
+                                bonus_amount = bonus_config.get_numeric_value()
+                                if bonus_amount:
+                                    referrer_wallet = Wallet.objects.get(user=referral_code.user)
+                                    referrer_wallet.balance += bonus_amount
+                                    referrer_wallet.save()
+
+                        except (ReferralCode.DoesNotExist, Wallet.DoesNotExist):
+                            # Gérer le cas où le code ou le portefeuille est invalide
+                            pass
+
+                    # Préparer les informations du client
+                    user_info = {
+                        'id': customer.id,
+                        'name': customer.name,
+                        'surname': customer.surname,
+                        'phone_number': customer.phone_number
+                    }
+                    
+                    return Response({
+                        'success': True,
+                        'message': 'Inscription client réussie. Vous pouvez maintenant vous connecter.',
+                        'user_type': 'customer',
+                        'user_id': customer.id,
+                        'user_info': user_info
+                    }, status=status.HTTP_201_CREATED)
+
+            except Exception as e:
+                return Response({
+                    'success': False,
+                    'errors': str(e)
+                }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
         
         return Response({
             'success': False,

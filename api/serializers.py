@@ -1,7 +1,102 @@
 from rest_framework import serializers
-from .models import UserDriver, UserCustomer, Token, Document, Vehicle
+from .models import (
+    UserDriver, UserCustomer, Token, Document, Vehicle, 
+    GeneralConfig, Wallet, ReferralCode
+)
 from django.contrib.auth.hashers import check_password
 import uuid
+
+# --- Referral System Serializers ---
+
+class GeneralConfigSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour les configurations générales
+    """
+    numeric_value = serializers.SerializerMethodField()
+    boolean_value = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = GeneralConfig
+        fields = [
+            'id', 'nom', 'search_key', 'valeur', 'numeric_value', 
+            'boolean_value', 'active', 'created_at', 'updated_at'
+        ]
+        read_only_fields = ['id', 'created_at', 'updated_at', 'numeric_value', 'boolean_value']
+    
+    def get_numeric_value(self, obj):
+        """Retourne la valeur numérique si possible"""
+        return obj.get_numeric_value()
+    
+    def get_boolean_value(self, obj):
+        """Retourne la valeur booléenne si possible"""
+        return obj.get_boolean_value()
+    
+    def validate_search_key(self, value):
+        """Valide l'unicité de la clé de recherche"""
+        if hasattr(self, 'instance') and self.instance:
+            if GeneralConfig.objects.filter(
+                search_key=value
+            ).exclude(id=self.instance.id).exists():
+                raise serializers.ValidationError(
+                    "Cette clé de recherche existe déjà."
+                )
+        else:
+            if GeneralConfig.objects.filter(search_key=value).exists():
+                raise serializers.ValidationError(
+                    "Cette clé de recherche existe déjà."
+                )
+        return value
+
+
+class GeneralConfigCreateSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour la création de configurations générales avec exemples
+    """
+    class Meta:
+        model = GeneralConfig
+        fields = ['nom', 'search_key', 'valeur', 'active']
+        extra_kwargs = {
+            'nom': {
+                'help_text': 'Nom descriptif (ex: "Réduction pendant les congés")'
+            },
+            'search_key': {
+                'help_text': 'Clé unique (ex: "DISCOUNT_ORDER_FOR_HOLIDAYS")'
+            },
+            'valeur': {
+                'help_text': 'Valeur de la configuration (ex: "20" pour 20%, "true/false" pour booléen)'
+            },
+            'active': {
+                'help_text': 'Indique si cette configuration est active'
+            }
+        }
+    
+    def validate_search_key(self, value):
+        """Valide l'unicité et le format de la clé de recherche"""
+        import re
+        
+        # Vérifier le format (lettres majuscules et underscores)
+        if not re.match(r'^[A-Z0-9_]+$', value):
+            raise serializers.ValidationError(
+                "La clé doit contenir uniquement des lettres majuscules, chiffres et underscores."
+            )
+        
+        # Vérifier l'unicité
+        if GeneralConfig.objects.filter(search_key=value).exists():
+            raise serializers.ValidationError(
+                "Cette clé de recherche existe déjà."
+            )
+        return value
+
+class WalletSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Wallet
+        fields = '__all__'
+
+class ReferralCodeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ReferralCode
+        fields = '__all__'
+
 
 class UserDriverSerializer(serializers.ModelSerializer):
     """
@@ -113,10 +208,19 @@ class RegisterDriverSerializer(serializers.Serializer):
     gender = serializers.ChoiceField(choices=UserDriver.GENDER_CHOICES)
     age = serializers.IntegerField(min_value=18, max_value=80)
     birthday = serializers.DateField()
+    referral_code = serializers.CharField(max_length=8, required=False, allow_blank=True, help_text="Code de parrainage (optionnel)")
     
     def validate_phone_number(self, value):
         if UserDriver.objects.filter(phone_number=value).exists():
             raise serializers.ValidationError("Ce numéro de téléphone est déjà utilisé par un chauffeur.")
+        return value
+    
+    def validate_referral_code(self, value):
+        """Valide le code de parrainage s'il est fourni"""
+        if value:
+            from .models import ReferralCode
+            if not ReferralCode.objects.filter(code=value, is_active=True).exists():
+                raise serializers.ValidationError("Ce code de parrainage n'existe pas ou n'est plus valide. Vérifiez le code ou contactez la personne qui vous l'a donné.")
         return value
     
     def validate(self, data):
@@ -125,8 +229,58 @@ class RegisterDriverSerializer(serializers.Serializer):
         return data
     
     def create(self, validated_data):
+        from django.contrib.contenttypes.models import ContentType
+        from .models import ReferralCode, Wallet, GeneralConfig
+        
+        # Extraire le code de parrainage avant la création
+        referral_code = validated_data.pop('referral_code', None)
         validated_data.pop('confirm_password')
-        return UserDriver.objects.create(**validated_data)
+        
+        # Créer le chauffeur
+        user = UserDriver.objects.create(**validated_data)
+        
+        # Créer le wallet du chauffeur
+        user_ct = ContentType.objects.get_for_model(UserDriver)
+        wallet, created = Wallet.objects.get_or_create(
+            user_type=user_ct,
+            user_id=user.id,
+            defaults={'balance': 0.00}
+        )
+        
+        # Créer le code de parrainage pour ce chauffeur
+        ReferralCode.objects.get_or_create(
+            user_type=user_ct,
+            user_id=user.id
+        )
+        
+        # Traiter le bonus de parrainage si un code a été fourni
+        if referral_code:
+            try:
+                # Trouver le parrain
+                sponsor_referral = ReferralCode.objects.get(code=referral_code, is_active=True)
+                
+                # Récupérer le montant du bonus depuis les configurations
+                try:
+                    bonus_config = GeneralConfig.objects.get(search_key='WELCOME_BONUS_AMOUNT', active=True)
+                    bonus_amount = bonus_config.get_numeric_value()
+                    
+                    if bonus_amount and bonus_amount > 0:
+                        # Créditer le wallet du nouveau chauffeur
+                        wallet.balance += bonus_amount
+                        wallet.save()
+                        
+                        # Optionnel: créditer aussi le parrain (bonus parrainage)
+                        # Vous pouvez ajouter cette logique si nécessaire
+                        
+                except GeneralConfig.DoesNotExist:
+                    # Si la config n'existe pas, pas de bonus mais pas d'erreur non plus
+                    pass
+                    
+            except ReferralCode.DoesNotExist:
+                # Ne devrait pas arriver car on a validé avant, mais par sécurité
+                pass
+        
+        return user
 
 
 class RegisterCustomerSerializer(serializers.Serializer):
@@ -138,10 +292,19 @@ class RegisterCustomerSerializer(serializers.Serializer):
     confirm_password = serializers.CharField(write_only=True)
     name = serializers.CharField(max_length=100)
     surname = serializers.CharField(max_length=100)
+    referral_code = serializers.CharField(max_length=8, required=False, allow_blank=True, help_text="Code de parrainage (optionnel)")
     
     def validate_phone_number(self, value):
         if UserCustomer.objects.filter(phone_number=value).exists():
             raise serializers.ValidationError("Ce numéro de téléphone est déjà utilisé par un client.")
+        return value
+    
+    def validate_referral_code(self, value):
+        """Valide le code de parrainage s'il est fourni"""
+        if value:
+            from .models import ReferralCode
+            if not ReferralCode.objects.filter(code=value, is_active=True).exists():
+                raise serializers.ValidationError("Ce code de parrainage n'existe pas ou n'est plus valide. Vérifiez le code ou contactez la personne qui vous l'a donné.")
         return value
     
     def validate(self, data):
@@ -150,8 +313,58 @@ class RegisterCustomerSerializer(serializers.Serializer):
         return data
     
     def create(self, validated_data):
+        from django.contrib.contenttypes.models import ContentType
+        from .models import ReferralCode, Wallet, GeneralConfig
+        
+        # Extraire le code de parrainage avant la création
+        referral_code = validated_data.pop('referral_code', None)
         validated_data.pop('confirm_password')
-        return UserCustomer.objects.create(**validated_data)
+        
+        # Créer le client
+        user = UserCustomer.objects.create(**validated_data)
+        
+        # Créer le wallet du client
+        user_ct = ContentType.objects.get_for_model(UserCustomer)
+        wallet, created = Wallet.objects.get_or_create(
+            user_type=user_ct,
+            user_id=user.id,
+            defaults={'balance': 0.00}
+        )
+        
+        # Créer le code de parrainage pour ce client
+        ReferralCode.objects.get_or_create(
+            user_type=user_ct,
+            user_id=user.id
+        )
+        
+        # Traiter le bonus de parrainage si un code a été fourni
+        if referral_code:
+            try:
+                # Trouver le parrain
+                sponsor_referral = ReferralCode.objects.get(code=referral_code, is_active=True)
+                
+                # Récupérer le montant du bonus depuis les configurations
+                try:
+                    bonus_config = GeneralConfig.objects.get(search_key='WELCOME_BONUS_AMOUNT', active=True)
+                    bonus_amount = bonus_config.get_numeric_value()
+                    
+                    if bonus_amount and bonus_amount > 0:
+                        # Créditer le wallet du nouveau client
+                        wallet.balance += bonus_amount
+                        wallet.save()
+                        
+                        # Optionnel: créditer aussi le parrain (bonus parrainage)
+                        # Vous pouvez ajouter cette logique si nécessaire
+                        
+                except GeneralConfig.DoesNotExist:
+                    # Si la config n'existe pas, pas de bonus mais pas d'erreur non plus
+                    pass
+                    
+            except ReferralCode.DoesNotExist:
+                # Ne devrait pas arriver car on a validé avant, mais par sécurité
+                pass
+        
+        return user
 
 
 class LogoutSerializer(serializers.Serializer):
@@ -427,3 +640,202 @@ class VehicleCreateUpdateSerializer(serializers.Serializer):
         
         instance.save()
         return instance
+
+
+class UserDriverUpdateSerializer(serializers.Serializer):
+    """
+    Serializer pour la mise à jour du profil chauffeur
+    """
+    name = serializers.CharField(max_length=100, help_text="Prénom du chauffeur")
+    surname = serializers.CharField(max_length=100, help_text="Nom de famille du chauffeur")
+    gender = serializers.ChoiceField(
+        choices=UserDriver.GENDER_CHOICES,
+        help_text="Genre (M, F, O)"
+    )
+    age = serializers.IntegerField(min_value=18, max_value=80, help_text="Âge du chauffeur")
+    birthday = serializers.DateField(help_text="Date de naissance")
+    phone_number = serializers.CharField(max_length=15, help_text="Numéro de téléphone")
+    
+    def validate_phone_number(self, value):
+        """Valide l'unicité du numéro de téléphone"""
+        # Pour la modification, exclure le chauffeur actuel
+        if hasattr(self, 'instance') and self.instance:
+            if UserDriver.objects.filter(
+                phone_number=value
+            ).exclude(id=self.instance.id).exists():
+                raise serializers.ValidationError(
+                    "Ce numéro de téléphone est déjà utilisé par un autre chauffeur."
+                )
+        return value
+    
+    def update(self, instance, validated_data):
+        """Mettre à jour le profil chauffeur"""
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        return instance
+
+
+class UserCustomerUpdateSerializer(serializers.Serializer):
+    """
+    Serializer pour la mise à jour du profil client
+    """
+    name = serializers.CharField(max_length=100, help_text="Prénom du client")
+    surname = serializers.CharField(max_length=100, help_text="Nom de famille du client")
+    phone_number = serializers.CharField(max_length=15, help_text="Numéro de téléphone")
+    
+    def validate_phone_number(self, value):
+        """Valide l'unicité du numéro de téléphone"""
+        # Pour la modification, exclure le client actuel
+        if hasattr(self, 'instance') and self.instance:
+            if UserCustomer.objects.filter(
+                phone_number=value
+            ).exclude(id=self.instance.id).exists():
+                raise serializers.ValidationError(
+                    "Ce numéro de téléphone est déjà utilisé par un autre client."
+                )
+        return value
+    
+    def update(self, instance, validated_data):
+        """Mettre à jour le profil client"""
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        instance.save()
+        return instance
+
+
+class UserDriverDetailSerializer(serializers.ModelSerializer):
+    """
+    Serializer détaillé pour l'affichage du profil chauffeur
+    """
+    vehicles_count = serializers.SerializerMethodField()
+    documents_count = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = UserDriver
+        fields = [
+            'id', 'phone_number', 'name', 'surname', 'gender', 'age', 'birthday',
+            'vehicles_count', 'documents_count', 'created_at', 'updated_at', 'is_active'
+        ]
+        read_only_fields = ['id', 'created_at', 'updated_at', 'vehicles_count', 'documents_count']
+    
+    def get_vehicles_count(self, obj):
+        """Nombre de véhicules actifs"""
+        return obj.vehicles.filter(is_active=True).count()
+    
+    def get_documents_count(self, obj):
+        """Nombre de documents actifs"""
+        from .models import Document
+        return Document.objects.filter(
+            user_type='driver',
+            user_id=obj.id,
+            is_active=True
+        ).count()
+
+
+class UserCustomerDetailSerializer(serializers.ModelSerializer):
+    """
+    Serializer détaillé pour l'affichage du profil client
+    """
+    documents_count = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = UserCustomer
+        fields = [
+            'id', 'phone_number', 'name', 'surname', 'documents_count',
+            'created_at', 'updated_at', 'is_active'
+        ]
+        read_only_fields = ['id', 'created_at', 'updated_at', 'documents_count']
+    
+    def get_documents_count(self, obj):
+        """Nombre de documents actifs"""
+        from .models import Document
+        return Document.objects.filter(
+            user_type='customer',
+            user_id=obj.id,
+            is_active=True
+        ).count()
+
+
+# --- Serializers spécifiques au système de parrainage ---
+
+class ReferralInfoSerializer(serializers.Serializer):
+    """
+    Serializer pour afficher les informations de parrainage d'un utilisateur
+    """
+    referral_code = serializers.CharField(read_only=True)
+    wallet_balance = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
+    welcome_bonus_amount = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
+    referral_system_active = serializers.BooleanField(read_only=True)
+    user_info = serializers.CharField(read_only=True)
+
+
+class ValidateReferralCodeSerializer(serializers.Serializer):
+    """
+    Serializer pour valider un code de parrainage
+    """
+    referral_code = serializers.CharField(max_length=8)
+    
+    def validate_referral_code(self, value):
+        """Valide le code de parrainage"""
+        if not ReferralCode.objects.filter(code=value, is_active=True).exists():
+            raise serializers.ValidationError(
+                "Ce code de parrainage n'existe pas ou n'est plus valide. "
+                "Vérifiez le code ou contactez la personne qui vous l'a donné."
+            )
+        return value
+    
+    def to_representation(self, instance):
+        """Retourne les informations du parrain"""
+        referral_code = self.validated_data['referral_code']
+        
+        try:
+            referral = ReferralCode.objects.get(code=referral_code, is_active=True)
+            
+            # Récupérer le bonus de bienvenue
+            try:
+                bonus_config = GeneralConfig.objects.get(search_key='WELCOME_BONUS_AMOUNT', active=True)
+                bonus_amount = bonus_config.get_numeric_value() or 0
+            except GeneralConfig.DoesNotExist:
+                bonus_amount = 0
+            
+            return {
+                'valid': True,
+                'referral_code': referral_code,
+                'sponsor_info': str(referral.user),
+                'welcome_bonus_amount': bonus_amount,
+                'message': f"✅ Code valide! Vous recevrez {bonus_amount} FCFA en bonus de bienvenue."
+            }
+            
+        except ReferralCode.DoesNotExist:
+            return {
+                'valid': False,
+                'message': "Ce code de parrainage n'existe pas."
+            }
+
+
+class WalletBalanceSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour afficher le solde du wallet
+    """
+    user_info = serializers.CharField(source='user', read_only=True)
+    balance_formatted = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Wallet
+        fields = ['balance', 'balance_formatted', 'user_info', 'created_at', 'updated_at']
+        read_only_fields = ['balance', 'created_at', 'updated_at']
+    
+    def get_balance_formatted(self, obj):
+        """Retourne le solde formaté"""
+        return f"{obj.balance:,.0f} FCFA".replace(',', ' ')
+
+
+class ReferralStatsSerializer(serializers.Serializer):
+    """
+    Serializer pour les statistiques de parrainage
+    """
+    total_referrals = serializers.IntegerField(read_only=True)
+    active_referrals = serializers.IntegerField(read_only=True)
+    total_bonus_distributed = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
+    welcome_bonus_amount = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
