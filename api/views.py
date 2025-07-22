@@ -1,0 +1,17 @@
+from django.shortcuts import render
+
+# Import all viewsets
+from .viewsets.login import LoginView
+from .viewsets.register import RegisterDriverView, RegisterCustomerView
+from .viewsets.logout import LogoutView
+from .viewsets.token import TokenVerifyView, TokenRefreshView
+
+# Export views for URL configuration
+__all__ = [
+    'LoginView',
+    'RegisterDriverView', 
+    'RegisterCustomerView',
+    'LogoutView',
+    'TokenVerifyView',
+    'TokenRefreshView'
+]
