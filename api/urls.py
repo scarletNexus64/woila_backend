@@ -7,7 +7,11 @@ from .views import (
     TokenVerifyView,
     TokenRefreshView,
     DocumentImportView,
-    DocumentListView
+    DocumentListView,
+    VehicleCreateView,
+    VehicleListView,
+    VehicleDetailView,
+    VehiclesByDriverView
 )
 
 urlpatterns = [
@@ -26,4 +30,10 @@ urlpatterns = [
     # Document management endpoints
     path('documents/import/', DocumentImportView.as_view(), name='document-import'),
     path('documents/list/', DocumentListView.as_view(), name='document-list'),
+    
+    # Vehicle management endpoints
+    path('vehicles/', VehicleListView.as_view(), name='vehicle-list'),
+    path('vehicles/create/', VehicleCreateView.as_view(), name='vehicle-create'),
+    path('vehicles/<int:vehicle_id>/', VehicleDetailView.as_view(), name='vehicle-detail'),
+    path('vehicles/driver/<int:driver_id>/', VehiclesByDriverView.as_view(), name='vehicles-by-driver'),
 ]
