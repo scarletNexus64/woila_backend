@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
 import uuid
 from datetime import datetime
+import os
 
 class UserDriver(models.Model):
     GENDER_CHOICES = [
@@ -83,3 +84,59 @@ class Token(models.Model):
         db_table = 'auth_tokens'
         verbose_name = 'Token'
         verbose_name_plural = 'Tokens'
+
+
+def document_upload_path(instance, filename):
+    """
+    Génère le chemin de stockage des documents
+    Format: documents/user_type/user_id/document_name/filename
+    """
+    return f'documents/{instance.user_type}/{instance.user_id}/{instance.document_name}/{filename}'
+
+
+class Document(models.Model):
+    USER_TYPE_CHOICES = [
+        ('driver', 'Chauffeur'),
+        ('customer', 'Client'),
+    ]
+    
+    user_id = models.IntegerField(verbose_name="ID Utilisateur")
+    user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES, verbose_name="Type d'utilisateur")
+    document_name = models.CharField(max_length=100, verbose_name="Nom du document")
+    file = models.FileField(upload_to=document_upload_path, verbose_name="Fichier")
+    original_filename = models.CharField(max_length=255, verbose_name="Nom du fichier original")
+    file_size = models.IntegerField(verbose_name="Taille du fichier (bytes)")
+    content_type = models.CharField(max_length=100, verbose_name="Type de contenu")
+    uploaded_at = models.DateTimeField(auto_now_add=True, verbose_name="Date d'import")
+    is_active = models.BooleanField(default=True, verbose_name="Actif")
+    
+    def save(self, *args, **kwargs):
+        if self.file:
+            self.original_filename = self.file.name
+            self.file_size = self.file.size
+            self.content_type = getattr(self.file, 'content_type', 'application/octet-stream')
+        super().save(*args, **kwargs)
+    
+    def get_user_info(self):
+        """Récupère les informations de l'utilisateur associé"""
+        if self.user_type == 'driver':
+            try:
+                user = UserDriver.objects.get(id=self.user_id)
+                return f"{user.name} {user.surname} ({user.phone_number})"
+            except UserDriver.DoesNotExist:
+                return f"Chauffeur ID {self.user_id} (supprimé)"
+        else:
+            try:
+                user = UserCustomer.objects.get(id=self.user_id)
+                return f"{user.name} {user.surname} ({user.phone_number})"
+            except UserCustomer.DoesNotExist:
+                return f"Client ID {self.user_id} (supprimé)"
+    
+    def __str__(self):
+        return f"{self.document_name} - {self.get_user_info()}"
+    
+    class Meta:
+        db_table = 'documents'
+        verbose_name = 'Document'
+        verbose_name_plural = 'Documents'
+        ordering = ['-uploaded_at']

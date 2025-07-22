@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import UserDriver, UserCustomer, Token
+from .models import UserDriver, UserCustomer, Token, Document
 from django.contrib.auth.hashers import check_password
 import uuid
 
@@ -166,3 +166,131 @@ class LogoutSerializer(serializers.Serializer):
         except Token.DoesNotExist:
             raise serializers.ValidationError("Token invalide ou expiré.")
         return value
+
+
+class DocumentImportSerializer(serializers.Serializer):
+    """
+    Serializer pour l'importation de documents (flexible : 1 ou plusieurs fichiers)
+    """
+    user_id = serializers.IntegerField(min_value=1, help_text="ID de l'utilisateur")
+    user_type = serializers.ChoiceField(
+        choices=[('driver', 'Chauffeur'), ('customer', 'Client')],
+        help_text="Type d'utilisateur (driver ou customer)"
+    )
+    document_name = serializers.CharField(
+        max_length=100, 
+        help_text="Nom/type du document (ex: 'Permis de conduire', 'CNI', 'Justificatif domicile')"
+    )
+    # Champ simple pour un seul fichier (compatible Swagger)
+    file = serializers.FileField(
+        allow_empty_file=False,
+        help_text="Fichier image ou document",
+        required=False
+    )
+    # Champ pour fichiers multiples (utilisation avancée)
+    files = serializers.ListField(
+        child=serializers.FileField(allow_empty_file=False),
+        allow_empty=False,
+        help_text="Plusieurs fichiers à importer",
+        required=False
+    )
+    
+    def validate_user_id(self, value):
+        """Valide que l'utilisateur existe selon son type"""
+        request = self.context.get('request')
+        if request and hasattr(request, 'data'):
+            user_type = request.data.get('user_type')
+            if user_type == 'driver':
+                if not UserDriver.objects.filter(id=value, is_active=True).exists():
+                    raise serializers.ValidationError("Chauffeur introuvable ou inactif.")
+            elif user_type == 'customer':
+                if not UserCustomer.objects.filter(id=value, is_active=True).exists():
+                    raise serializers.ValidationError("Client introuvable ou inactif.")
+        return value
+    
+    def validate(self, data):
+        """Valide les données et unifie les fichiers"""
+        # Au moins un fichier doit être fourni
+        file = data.get('file')
+        files = data.get('files', [])
+        
+        if not file and not files:
+            raise serializers.ValidationError({
+                'files': 'Au moins un fichier doit être fourni (file ou files).'
+            })
+        
+        # Unifier les fichiers dans une seule liste
+        all_files = []
+        if file:
+            all_files.append(file)
+        if files:
+            all_files.extend(files)
+        
+        # Valider les fichiers
+        self._validate_files(all_files)
+        
+        # Stocker tous les fichiers dans 'files' pour le traitement
+        data['files'] = all_files
+        
+        return data
+    
+    def _validate_files(self, files):
+        """Valide les fichiers (taille, type, etc.)"""
+        max_file_size = 10 * 1024 * 1024  # 10 MB
+        allowed_types = [
+            'image/jpeg', 'image/jpg', 'image/png', 'image/gif', 'image/webp',
+            'application/pdf', 'application/msword', 
+            'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+        ]
+        
+        for file in files:
+            if file.size > max_file_size:
+                raise serializers.ValidationError(
+                    f"Le fichier '{file.name}' est trop volumineux (max 10MB)."
+                )
+            
+            if hasattr(file, 'content_type') and file.content_type not in allowed_types:
+                raise serializers.ValidationError(
+                    f"Type de fichier non autorisé pour '{file.name}'. "
+                    f"Types acceptés : images (JPG, PNG, GIF, WebP), PDF, DOC, DOCX."
+                )
+    
+    def create(self, validated_data):
+        """Crée les documents en base"""
+        files = validated_data.pop('files')
+        documents = []
+        
+        for file in files:
+            document = Document.objects.create(
+                user_id=validated_data['user_id'],
+                user_type=validated_data['user_type'],
+                document_name=validated_data['document_name'],
+                file=file
+            )
+            documents.append(document)
+        
+        return documents
+
+
+class DocumentSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour l'affichage des documents
+    """
+    user_info = serializers.CharField(source='get_user_info', read_only=True)
+    file_url = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Document
+        fields = [
+            'id', 'user_id', 'user_type', 'user_info', 'document_name', 
+            'file_url', 'original_filename', 'file_size', 'content_type',
+            'uploaded_at', 'is_active'
+        ]
+        read_only_fields = ['id', 'uploaded_at', 'user_info']
+    
+    def get_file_url(self, obj):
+        """Retourne l'URL du fichier"""
+        request = self.context.get('request')
+        if obj.file and request:
+            return request.build_absolute_uri(obj.file.url)
+        return None
