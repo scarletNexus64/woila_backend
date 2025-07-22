@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import UserDriver, UserCustomer, Token, Document
+from .models import UserDriver, UserCustomer, Token, Document, Vehicle
 from django.contrib.auth.hashers import check_password
 import uuid
 
@@ -294,3 +294,136 @@ class DocumentSerializer(serializers.ModelSerializer):
         if obj.file and request:
             return request.build_absolute_uri(obj.file.url)
         return None
+
+
+class VehicleSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour l'affichage des véhicules
+    """
+    driver_info = serializers.CharField(source='get_driver_info', read_only=True)
+    etat_display = serializers.CharField(source='get_etat_display_short', read_only=True)
+    images_urls = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Vehicle
+        fields = [
+            'id', 'driver', 'driver_info', 'marque', 'nom', 'modele', 'couleur',
+            'plaque_immatriculation', 'etat_vehicule', 'etat_display',
+            'images_urls', 'created_at', 'updated_at', 'is_active'
+        ]
+        read_only_fields = ['id', 'created_at', 'updated_at', 'driver_info', 'etat_display']
+    
+    def get_images_urls(self, obj):
+        """Retourne les URLs des images"""
+        request = self.context.get('request')
+        return obj.get_images_urls(request)
+
+
+class VehicleCreateUpdateSerializer(serializers.Serializer):
+    """
+    Serializer pour la création/modification de véhicules avec upload d'images
+    """
+    driver_id = serializers.IntegerField(min_value=1, help_text="ID du chauffeur")
+    marque = serializers.CharField(max_length=50, help_text="Marque du véhicule (ex: Toyota, BMW)")
+    nom = serializers.CharField(max_length=100, help_text="Nom du véhicule (ex: Camry, Série 3)")
+    modele = serializers.CharField(max_length=50, help_text="Modèle (ex: 2020, Sport)")
+    couleur = serializers.CharField(max_length=30, help_text="Couleur du véhicule")
+    plaque_immatriculation = serializers.CharField(
+        max_length=20, 
+        help_text="Plaque d'immatriculation (unique)"
+    )
+    etat_vehicule = serializers.IntegerField(
+        min_value=1, 
+        max_value=10,
+        help_text="État du véhicule sur une échelle de 1 à 10"
+    )
+    
+    # Images du véhicule
+    photo_exterieur_1 = serializers.ImageField(
+        required=False,
+        help_text="Photo extérieure 1"
+    )
+    photo_exterieur_2 = serializers.ImageField(
+        required=False,
+        help_text="Photo extérieure 2"
+    )
+    photo_interieur_1 = serializers.ImageField(
+        required=False,
+        help_text="Photo intérieure 1"
+    )
+    photo_interieur_2 = serializers.ImageField(
+        required=False,
+        help_text="Photo intérieure 2"
+    )
+    
+    def validate_driver_id(self, value):
+        """Valide que le chauffeur existe et est actif"""
+        if not UserDriver.objects.filter(id=value, is_active=True).exists():
+            raise serializers.ValidationError("Chauffeur introuvable ou inactif.")
+        return value
+    
+    def validate_plaque_immatriculation(self, value):
+        """Valide l'unicité de la plaque d'immatriculation"""
+        # Pour la modification, exclure le véhicule actuel
+        if hasattr(self, 'instance') and self.instance:
+            if Vehicle.objects.filter(
+                plaque_immatriculation=value
+            ).exclude(id=self.instance.id).exists():
+                raise serializers.ValidationError(
+                    "Cette plaque d'immatriculation est déjà utilisée."
+                )
+        else:
+            # Pour la création
+            if Vehicle.objects.filter(plaque_immatriculation=value).exists():
+                raise serializers.ValidationError(
+                    "Cette plaque d'immatriculation est déjà utilisée."
+                )
+        return value
+    
+    def validate(self, data):
+        """Validations supplémentaires"""
+        # Valider les images si fournies
+        image_fields = ['photo_exterieur_1', 'photo_exterieur_2', 'photo_interieur_1', 'photo_interieur_2']
+        max_size = 5 * 1024 * 1024  # 5 MB
+        
+        for field_name in image_fields:
+            image = data.get(field_name)
+            if image:
+                if image.size > max_size:
+                    raise serializers.ValidationError({
+                        field_name: f"L'image est trop volumineuse (max 5MB). Taille: {image.size/1024/1024:.1f}MB"
+                    })
+                
+                # Vérifier le type de fichier
+                if not image.content_type.startswith('image/'):
+                    raise serializers.ValidationError({
+                        field_name: "Seules les images sont autorisées."
+                    })
+        
+        return data
+    
+    def create(self, validated_data):
+        """Créer un nouveau véhicule"""
+        driver_id = validated_data.pop('driver_id')
+        driver = UserDriver.objects.get(id=driver_id)
+        
+        vehicle = Vehicle.objects.create(
+            driver=driver,
+            **validated_data
+        )
+        return vehicle
+    
+    def update(self, instance, validated_data):
+        """Mettre à jour un véhicule existant"""
+        # Gérer le changement de chauffeur si nécessaire
+        driver_id = validated_data.pop('driver_id', None)
+        if driver_id:
+            driver = UserDriver.objects.get(id=driver_id)
+            instance.driver = driver
+        
+        # Mettre à jour les autres champs
+        for attr, value in validated_data.items():
+            setattr(instance, attr, value)
+        
+        instance.save()
+        return instance
