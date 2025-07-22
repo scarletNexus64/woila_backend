@@ -1,4 +1,5 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework.routers import DefaultRouter
 from .views import (
     LoginView,
     RegisterDriverView,
@@ -11,10 +12,22 @@ from .views import (
     VehicleCreateView,
     VehicleListView,
     VehicleDetailView,
-    VehiclesByDriverView
+    VehiclesByDriverView,
+    DriverProfileView,
+    CustomerProfileView,
+    AllDriversView,
+    AllCustomersView
 )
+from .viewsets.referral import ReferralViewSet
+
+# Router pour les ViewSets
+router = DefaultRouter()
+router.register(r'referral', ReferralViewSet, basename='referral')
 
 urlpatterns = [
+    # Router endpoints (ViewSets)
+    path('', include(router.urls)),
+    
     # Authentication endpoints
     path('auth/login/', LoginView.as_view(), name='login'),
     path('auth/logout/', LogoutView.as_view(), name='logout'),
@@ -36,4 +49,10 @@ urlpatterns = [
     path('vehicles/create/', VehicleCreateView.as_view(), name='vehicle-create'),
     path('vehicles/<int:vehicle_id>/', VehicleDetailView.as_view(), name='vehicle-detail'),
     path('vehicles/driver/<int:driver_id>/', VehiclesByDriverView.as_view(), name='vehicles-by-driver'),
+    
+    # Profile management endpoints
+    path('profiles/driver/<int:driver_id>/', DriverProfileView.as_view(), name='driver-profile'),
+    path('profiles/customer/<int:customer_id>/', CustomerProfileView.as_view(), name='customer-profile'),
+    path('profiles/drivers/', AllDriversView.as_view(), name='all-drivers'),
+    path('profiles/customers/', AllCustomersView.as_view(), name='all-customers'),
 ]

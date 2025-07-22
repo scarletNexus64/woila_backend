@@ -153,44 +153,115 @@ SPECTACULAR_SETTINGS = {
 
 # Jazzmin settings
 JAZZMIN_SETTINGS = {
-    "site_title": "Woilà Backend Admin",
-    "site_header": "Woilà Backend",
-    "site_brand": "Woilà",
+    "site_title": "🚗 Woilà Backend Admin",
+    "site_header": "🚗 Woilà Backend Administration",
+    "site_brand": "🚗 Woilà",
     "login_logo": None,
     "login_logo_dark": None,
     "site_logo_classes": "img-circle",
-    "site_icon": None,
-    "welcome_sign": "Bienvenue dans l'administration Woilà",
-    "copyright": "Woilà Backend",
-    "search_model": ["auth.User", "auth.Group"],
+    "site_icon": "fas fa-car",
+    "welcome_sign": "🎉 Bienvenue dans l'administration Woilà - Gérez votre plateforme VTC",
+    "copyright": "© 2025 Woilà Backend - Plateforme VTC",
+    "search_model": ["auth.User", "auth.Group", "api.UserDriver", "api.UserCustomer", "api.Vehicle"],
     "user_avatar": None,
     "topmenu_links": [
-        {"name": "Home",  "url": "admin:index", "permissions": ["auth.view_user"]},
-        {"name": "Support", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
+        {"name": "🏠",  "url": "admin:index", "permissions": ["auth.view_user"]},
+        {"name": "📊", "url": "/admin/", "permissions": ["auth.view_user"]},
+        {"name": "🆘", "url": "https://github.com/farridav/django-jazzmin/issues", "new_window": True},
     ],
     "usermenu_links": [
-        {"model": "auth.user"}
+        {"name": "👤 Mon profil", "model": "auth.user"},
+        {"name": "🔧 Configurations", "url": "admin:api_generalconfig_changelist", "icon": "fas fa-cog"},
     ],
     "show_sidebar": True,
     "navigation_expanded": True,
     "hide_apps": [],
     "hide_models": [],
-    "order_with_respect_to": ["auth", "api"],
+    "order_with_respect_to": ["api", "auth"],
     "custom_links": {
+        "api": [{
+            "name": "📈 Tableau de bord",
+            "url": "admin:index",
+            "icon": "fas fa-chart-line",
+            "permissions": ["api.view_generalconfig"]
+        }]
     },
     "icons": {
-        "auth": "fas fa-users-cog",
-        "auth.user": "fas fa-user",
-        "auth.Group": "fas fa-users",
-        "api": "fas fa-code",
+        # Auth icons
+        "auth": "fas fa-shield-alt",
+        "auth.user": "fas fa-user-shield",
+        "auth.Group": "fas fa-users-cog",
+        
+        # API App
+        "api": "fas fa-mobile-alt",
+        
+        # Modèles avec emojis
+        "api.UserDriver": "fas fa-user-tie",
+        "api.UserCustomer": "fas fa-user-friends",
+        "api.Token": "fas fa-key",
+        "api.Document": "fas fa-file-alt",
+        "api.Vehicle": "fas fa-car",
+        "api.GeneralConfig": "fas fa-cogs",
+        "api.Wallet": "fas fa-wallet",
+        "api.ReferralCode": "fas fa-gift",
     },
-    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_parents": "fas fa-folder",
     "default_icon_children": "fas fa-circle",
-    "related_modal_active": False,
+    "related_modal_active": True,
     "custom_css": None,
     "custom_js": None,
     "use_google_fonts_cdn": True,
     "show_ui_builder": False,
     "changeform_format": "horizontal_tabs",
-    "changeform_format_overrides": {"auth.user": "collapsible", "auth.group": "vertical_tabs"},
+    "changeform_format_overrides": {
+        "auth.user": "collapsible", 
+        "auth.group": "vertical_tabs",
+        "api.generalconfig": "horizontal_tabs",
+        "api.vehicle": "horizontal_tabs",
+    },
+    # Thème et couleurs - Mode sombre par défaut
+    "theme": "darkly",
+    "dark_mode_theme": "darkly",
+    "button_classes": {
+        "primary": "btn-primary",
+        "secondary": "btn-secondary", 
+        "info": "btn-info",
+        "warning": "btn-warning",
+        "danger": "btn-danger",
+        "success": "btn-success"
+    },
+}
+
+# Personnalisation supplémentaire de l'interface Jazzmin - Thème sombre orange/rouge
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": "navbar-warning",  # Orange pour la marque
+    "accent": "accent-warning",        # Accent orange
+    "navbar": "navbar-warning navbar-dark",  # Navbar orange sombre
+    "no_navbar_border": False,
+    "navbar_fixed": True,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-warning",  # Sidebar sombre avec accent orange
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "darkly",               # Thème sombre
+    "dark_mode_theme": "darkly",
+    "button_classes": {
+        "primary": "btn-warning",    # Boutons principaux en orange
+        "secondary": "btn-outline-secondary",
+        "info": "btn-outline-info",
+        "warning": "btn-warning",    # Orange vif
+        "danger": "btn-danger",      # Rouge pour danger
+        "success": "btn-success"
+    },
+    "actions_sticky_top": False
 }
