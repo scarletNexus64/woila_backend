@@ -91,23 +91,8 @@ class RegisterDriverView(APIView):
                         user_id=driver.id
                     )
 
-                    # Gérer le code de parrainage si fourni
-                    referral_code_str = serializer.validated_data.get('referral_code')
-                    if referral_code_str:
-                        try:
-                            referral_code = ReferralCode.objects.get(code=referral_code_str, is_active=True)
-                            bonus_config = GeneralConfig.objects.filter(search_key='referral_bonus_amount', active=True).first()
-                            
-                            if referral_code and bonus_config:
-                                bonus_amount = bonus_config.get_numeric_value()
-                                if bonus_amount:
-                                    referrer_wallet = Wallet.objects.get(user=referral_code.user)
-                                    referrer_wallet.balance += bonus_amount
-                                    referrer_wallet.save()
-
-                        except (ReferralCode.DoesNotExist, Wallet.DoesNotExist):
-                            # Gérer le cas où le code ou le portefeuille est invalide
-                            pass
+                    # Le bonus de parrainage est géré automatiquement dans le serializer
+                    # Pas besoin de logique supplémentaire ici
             
                     # Préparer les informations du chauffeur
                     user_info = {
@@ -214,23 +199,8 @@ class RegisterCustomerView(APIView):
                         user_id=customer.id
                     )
 
-                    # Gérer le code de parrainage si fourni
-                    referral_code_str = serializer.validated_data.get('referral_code')
-                    if referral_code_str:
-                        try:
-                            referral_code = ReferralCode.objects.get(code=referral_code_str, is_active=True)
-                            bonus_config = GeneralConfig.objects.filter(search_key='referral_bonus_amount', active=True).first()
-                            
-                            if referral_code and bonus_config:
-                                bonus_amount = bonus_config.get_numeric_value()
-                                if bonus_amount:
-                                    referrer_wallet = Wallet.objects.get(user=referral_code.user)
-                                    referrer_wallet.balance += bonus_amount
-                                    referrer_wallet.save()
-
-                        except (ReferralCode.DoesNotExist, Wallet.DoesNotExist):
-                            # Gérer le cas où le code ou le portefeuille est invalide
-                            pass
+                    # Le bonus de parrainage est géré automatiquement dans le serializer
+                    # Pas besoin de logique supplémentaire ici
 
                     # Préparer les informations du client
                     user_info = {

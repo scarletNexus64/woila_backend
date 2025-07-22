@@ -259,18 +259,20 @@ class RegisterDriverSerializer(serializers.Serializer):
                 # Trouver le parrain
                 sponsor_referral = ReferralCode.objects.get(code=referral_code, is_active=True)
                 
-                # Récupérer le montant du bonus depuis les configurations
+                # Récupérer le montant du bonus de parrainage depuis les configurations
                 try:
-                    bonus_config = GeneralConfig.objects.get(search_key='WELCOME_BONUS_AMOUNT', active=True)
+                    bonus_config = GeneralConfig.objects.get(search_key='referral_bonus_amount', active=True)
                     bonus_amount = bonus_config.get_numeric_value()
                     
                     if bonus_amount and bonus_amount > 0:
-                        # Créditer le wallet du nouveau chauffeur
-                        wallet.balance += bonus_amount
-                        wallet.save()
-                        
-                        # Optionnel: créditer aussi le parrain (bonus parrainage)
-                        # Vous pouvez ajouter cette logique si nécessaire
+                        # Créditer le wallet du PARRAIN (celui qui a le code de parrainage)
+                        sponsor_wallet = Wallet.objects.get(
+                            user_type=sponsor_referral.user_type,
+                            user_id=sponsor_referral.user_id
+                        )
+                        from decimal import Decimal
+                        sponsor_wallet.balance += Decimal(str(bonus_amount))
+                        sponsor_wallet.save()
                         
                 except GeneralConfig.DoesNotExist:
                     # Si la config n'existe pas, pas de bonus mais pas d'erreur non plus
@@ -343,18 +345,20 @@ class RegisterCustomerSerializer(serializers.Serializer):
                 # Trouver le parrain
                 sponsor_referral = ReferralCode.objects.get(code=referral_code, is_active=True)
                 
-                # Récupérer le montant du bonus depuis les configurations
+                # Récupérer le montant du bonus de parrainage depuis les configurations
                 try:
-                    bonus_config = GeneralConfig.objects.get(search_key='WELCOME_BONUS_AMOUNT', active=True)
+                    bonus_config = GeneralConfig.objects.get(search_key='referral_bonus_amount', active=True)
                     bonus_amount = bonus_config.get_numeric_value()
                     
                     if bonus_amount and bonus_amount > 0:
-                        # Créditer le wallet du nouveau client
-                        wallet.balance += bonus_amount
-                        wallet.save()
-                        
-                        # Optionnel: créditer aussi le parrain (bonus parrainage)
-                        # Vous pouvez ajouter cette logique si nécessaire
+                        # Créditer le wallet du PARRAIN (celui qui a le code de parrainage)
+                        sponsor_wallet = Wallet.objects.get(
+                            user_type=sponsor_referral.user_type,
+                            user_id=sponsor_referral.user_id
+                        )
+                        from decimal import Decimal
+                        sponsor_wallet.balance += Decimal(str(bonus_amount))
+                        sponsor_wallet.save()
                         
                 except GeneralConfig.DoesNotExist:
                     # Si la config n'existe pas, pas de bonus mais pas d'erreur non plus
