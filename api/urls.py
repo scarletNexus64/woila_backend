@@ -9,14 +9,22 @@ from .views import (
     TokenRefreshView,
     DocumentImportView,
     DocumentListView,
+    AllDriversView,
+    AllCustomersView
+)
+from .viewsets.vehicles import (
     VehicleCreateView,
     VehicleListView,
     VehicleDetailView,
     VehiclesByDriverView,
+    VehicleTypeListView,
+    VehicleBrandListView,
+    VehicleModelListView,
+    VehicleColorListView
+)
+from .viewsets.profiles import (
     DriverProfileView,
-    CustomerProfileView,
-    AllDriversView,
-    AllCustomersView
+    CustomerProfileView
 )
 from .viewsets.referral import ReferralViewSet
 
@@ -49,6 +57,12 @@ urlpatterns = [
     path('vehicles/create/', VehicleCreateView.as_view(), name='vehicle-create'),
     path('vehicles/<int:vehicle_id>/', VehicleDetailView.as_view(), name='vehicle-detail'),
     path('vehicles/driver/<int:driver_id>/', VehiclesByDriverView.as_view(), name='vehicles-by-driver'),
+
+    # Vehicle Config endpoints
+    path('vehicles/configs/types/', VehicleTypeListView.as_view(), name='vehicle-types-list'),
+    path('vehicles/configs/brands/', VehicleBrandListView.as_view(), name='vehicle-brands-list'),
+    path('vehicles/configs/models/', VehicleModelListView.as_view(), name='vehicle-models-list'),
+    path('vehicles/configs/colors/', VehicleColorListView.as_view(), name='vehicle-colors-list'),
     
     # Profile management endpoints
     path('profiles/driver/<int:driver_id>/', DriverProfileView.as_view(), name='driver-profile'),

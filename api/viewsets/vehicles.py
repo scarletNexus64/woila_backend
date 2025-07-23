@@ -7,8 +7,13 @@ from django.utils.decorators import method_decorator
 from django.shortcuts import get_object_or_404
 from drf_spectacular.utils import extend_schema, OpenApiExample, OpenApiParameter
 from drf_spectacular.openapi import OpenApiTypes
-from ..serializers import VehicleCreateUpdateSerializer, VehicleSerializer
-from ..models import Vehicle, UserDriver
+from ..serializers import (
+    VehicleCreateUpdateSerializer, VehicleSerializer,
+    VehicleTypeSerializer, VehicleBrandSerializer, VehicleModelSerializer, VehicleColorSerializer
+)
+from ..models import (
+    Vehicle, UserDriver, VehicleType, VehicleBrand, VehicleModel, VehicleColor
+)
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -23,114 +28,17 @@ class VehicleCreateView(APIView):
         summary='Créer un véhicule',
         description='Permet à un chauffeur de créer un véhicule avec ses informations et photos. '
                    'Supporte l\'upload de 4 images : 2 extérieures et 2 intérieures.',
-        request={
-            'multipart/form-data': {
-                'type': 'object',
-                'properties': {
-                    'driver_id': {
-                        'type': 'integer',
-                        'description': 'ID du chauffeur',
-                        'example': 1
-                    },
-                    'marque': {
-                        'type': 'string',
-                        'description': 'Marque du véhicule',
-                        'example': 'Toyota'
-                    },
-                    'nom': {
-                        'type': 'string',
-                        'description': 'Nom du véhicule',
-                        'example': 'Camry'
-                    },
-                    'modele': {
-                        'type': 'string',
-                        'description': 'Modèle',
-                        'example': '2020'
-                    },
-                    'couleur': {
-                        'type': 'string',
-                        'description': 'Couleur',
-                        'example': 'Noir'
-                    },
-                    'plaque_immatriculation': {
-                        'type': 'string',
-                        'description': 'Plaque d\'immatriculation',
-                        'example': 'AB-123-CD'
-                    },
-                    'etat_vehicule': {
-                        'type': 'integer',
-                        'minimum': 1,
-                        'maximum': 10,
-                        'description': 'État du véhicule (1-10)',
-                        'example': 8
-                    },
-                    'photo_exterieur_1': {
-                        'type': 'string',
-                        'format': 'binary',
-                        'description': 'Photo extérieure 1'
-                    },
-                    'photo_exterieur_2': {
-                        'type': 'string',
-                        'format': 'binary',
-                        'description': 'Photo extérieure 2'
-                    },
-                    'photo_interieur_1': {
-                        'type': 'string',
-                        'format': 'binary',
-                        'description': 'Photo intérieure 1'
-                    },
-                    'photo_interieur_2': {
-                        'type': 'string',
-                        'format': 'binary',
-                        'description': 'Photo intérieure 2'
-                    }
-                },
-                'required': ['driver_id', 'marque', 'nom', 'modele', 'couleur', 'plaque_immatriculation', 'etat_vehicule']
-            }
-        },
+        request=VehicleCreateUpdateSerializer,
         responses={
             201: VehicleSerializer,
             400: {'description': 'Données invalides'},
-            404: {'description': 'Chauffeur introuvable'},
-        },
-        examples=[
-            OpenApiExample(
-                'Successful Creation',
-                summary='Véhicule créé avec succès',
-                description='Réponse après création réussie d\'un véhicule',
-                value={
-                    'success': True,
-                    'message': 'Véhicule créé avec succès',
-                    'vehicle': {
-                        'id': 1,
-                        'driver': 1,
-                        'driver_info': 'Jean Dupont (+33123456789)',
-                        'marque': 'Toyota',
-                        'nom': 'Camry',
-                        'modele': '2020',
-                        'couleur': 'Noir',
-                        'plaque_immatriculation': 'AB-123-CD',
-                        'etat_vehicule': 8,
-                        'etat_display': '8/10',
-                        'images_urls': {
-                            'photo_exterieur_1': 'http://localhost:8000/media/vehicles/1/1/ext1.jpg',
-                            'photo_exterieur_2': 'http://localhost:8000/media/vehicles/1/1/ext2.jpg',
-                            'photo_interieur_1': None,
-                            'photo_interieur_2': None
-                        },
-                        'created_at': '2023-12-01T10:30:00Z',
-                        'is_active': True
-                    }
-                },
-                response_only=True,
-            )
-        ]
+            404: {'description': 'Chauffeur, type, marque, modèle ou couleur introuvable'},
+        }
     )
     def post(self, request):
         """
         Créer un nouveau véhicule
         """
-        # Préparer les données avec les fichiers
         data = request.data.copy()
         for key, file in request.FILES.items():
             data[key] = file
@@ -140,8 +48,6 @@ class VehicleCreateView(APIView):
         if serializer.is_valid():
             try:
                 vehicle = serializer.save()
-                
-                # Sérialiser la réponse
                 vehicle_serializer = VehicleSerializer(vehicle, context={'request': request})
                 
                 return Response({
@@ -199,14 +105,11 @@ class VehicleListView(APIView):
         driver_id = request.query_params.get('driver_id')
         is_active = request.query_params.get('is_active')
         
-        # Base queryset
-        vehicles = Vehicle.objects.select_related('driver')
+        vehicles = Vehicle.objects.select_related('driver', 'vehicle_type', 'brand', 'model', 'color')
         
-        # Filtrer par chauffeur si spécifié
         if driver_id:
             vehicles = vehicles.filter(driver_id=driver_id, driver__is_active=True)
         
-        # Filtrer par statut actif si spécifié
         if is_active is not None:
             is_active_bool = is_active.lower() in ('true', '1', 'yes')
             vehicles = vehicles.filter(is_active=is_active_bool)
@@ -227,6 +130,12 @@ class VehicleDetailView(APIView):
     """
     parser_classes = [MultiPartParser, FormParser]
     
+    def get_object(self, vehicle_id):
+        return get_object_or_404(
+            Vehicle.objects.select_related('driver', 'vehicle_type', 'brand', 'model', 'color'), 
+            id=vehicle_id
+        )
+
     @extend_schema(
         tags=['Véhicules'],
         summary='Récupérer un véhicule',
@@ -240,7 +149,7 @@ class VehicleDetailView(APIView):
         """
         Récupérer un véhicule par son ID
         """
-        vehicle = get_object_or_404(Vehicle, id=vehicle_id)
+        vehicle = self.get_object(vehicle_id)
         serializer = VehicleSerializer(vehicle, context={'request': request})
         
         return Response({
@@ -252,24 +161,7 @@ class VehicleDetailView(APIView):
         tags=['Véhicules'],
         summary='Modifier un véhicule',
         description='Modifie les informations et/ou les photos d\'un véhicule existant',
-        request={
-            'multipart/form-data': {
-                'type': 'object',
-                'properties': {
-                    'driver_id': {'type': 'integer'},
-                    'marque': {'type': 'string'},
-                    'nom': {'type': 'string'},
-                    'modele': {'type': 'string'},
-                    'couleur': {'type': 'string'},
-                    'plaque_immatriculation': {'type': 'string'},
-                    'etat_vehicule': {'type': 'integer', 'minimum': 1, 'maximum': 10},
-                    'photo_exterieur_1': {'type': 'string', 'format': 'binary'},
-                    'photo_exterieur_2': {'type': 'string', 'format': 'binary'},
-                    'photo_interieur_1': {'type': 'string', 'format': 'binary'},
-                    'photo_interieur_2': {'type': 'string', 'format': 'binary'}
-                }
-            }
-        },
+        request=VehicleCreateUpdateSerializer,
         responses={
             200: VehicleSerializer,
             400: {'description': 'Données invalides'},
@@ -280,9 +172,8 @@ class VehicleDetailView(APIView):
         """
         Modifier un véhicule
         """
-        vehicle = get_object_or_404(Vehicle, id=vehicle_id)
+        vehicle = self.get_object(vehicle_id)
         
-        # Préparer les données avec les fichiers
         data = request.data.copy()
         for key, file in request.FILES.items():
             data[key] = file
@@ -297,8 +188,6 @@ class VehicleDetailView(APIView):
         if serializer.is_valid():
             try:
                 updated_vehicle = serializer.save()
-                
-                # Sérialiser la réponse
                 vehicle_serializer = VehicleSerializer(updated_vehicle, context={'request': request})
                 
                 return Response({
@@ -331,15 +220,14 @@ class VehicleDetailView(APIView):
         """
         Supprimer un véhicule (soft delete - désactiver)
         """
-        vehicle = get_object_or_404(Vehicle, id=vehicle_id)
+        vehicle = self.get_object(vehicle_id)
         
-        # Soft delete - désactiver plutôt que supprimer
         vehicle.is_active = False
         vehicle.save()
         
         return Response({
             'success': True,
-            'message': f'Véhicule {vehicle.marque} {vehicle.nom} ({vehicle.plaque_immatriculation}) désactivé avec succès'
+            'message': f'Véhicule {vehicle.brand} {vehicle.model} ({vehicle.plaque_immatriculation}) désactivé avec succès'
         }, status=status.HTTP_200_OK)
 
 
@@ -362,11 +250,11 @@ class VehiclesByDriverView(APIView):
         """
         Récupérer tous les véhicules d'un chauffeur
         """
-        # Vérifier que le chauffeur existe
         driver = get_object_or_404(UserDriver, id=driver_id, is_active=True)
         
-        # Récupérer ses véhicules
-        vehicles = Vehicle.objects.filter(driver=driver, is_active=True)
+        vehicles = Vehicle.objects.filter(driver=driver, is_active=True).select_related(
+            'vehicle_type', 'brand', 'model', 'color'
+        )
         
         serializer = VehicleSerializer(vehicles, many=True, context={'request': request})
         
@@ -376,3 +264,37 @@ class VehiclesByDriverView(APIView):
             'count': len(serializer.data),
             'vehicles': serializer.data
         }, status=status.HTTP_200_OK)
+
+
+# --- Vues pour les nouvelles entités --- #
+
+class VehicleTypeListView(APIView):
+    @extend_schema(tags=['Véhicules Config'], summary='Lister les types de véhicule')
+    def get(self, request):
+        types = VehicleType.objects.filter(is_active=True)
+        serializer = VehicleTypeSerializer(types, many=True)
+        return Response({'success': True, 'types': serializer.data}, status=status.HTTP_200_OK)
+
+
+class VehicleBrandListView(APIView):
+    @extend_schema(tags=['Véhicules Config'], summary='Lister les marques de véhicule')
+    def get(self, request):
+        brands = VehicleBrand.objects.filter(is_active=True)
+        serializer = VehicleBrandSerializer(brands, many=True)
+        return Response({'success': True, 'brands': serializer.data}, status=status.HTTP_200_OK)
+
+
+class VehicleModelListView(APIView):
+    @extend_schema(tags=['Véhicules Config'], summary='Lister les modèles de véhicule')
+    def get(self, request):
+        models = VehicleModel.objects.filter(is_active=True).select_related('brand')
+        serializer = VehicleModelSerializer(models, many=True)
+        return Response({'success': True, 'models': serializer.data}, status=status.HTTP_200_OK)
+
+
+class VehicleColorListView(APIView):
+    @extend_schema(tags=['Véhicules Config'], summary='Lister les couleurs de véhicule')
+    def get(self, request):
+        colors = VehicleColor.objects.filter(is_active=True)
+        serializer = VehicleColorSerializer(colors, many=True)
+        return Response({'success': True, 'colors': serializer.data}, status=status.HTTP_200_OK)
