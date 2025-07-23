@@ -150,6 +150,71 @@ def vehicle_image_upload_path(instance, filename):
     return f'vehicles/{instance.driver_id}/{instance.id or "temp"}/{filename}'
 
 
+class VehicleType(models.Model):
+    name = models.CharField(max_length=100, unique=True, verbose_name="Nom du type")
+    additional_amount = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        default=0.00,
+        verbose_name="Montant additionnel"
+    )
+    is_active = models.BooleanField(default=True, verbose_name="Actif")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'vehicle_types'
+        verbose_name = 'Type de véhicule'
+        verbose_name_plural = 'Types de véhicule'
+
+
+class VehicleBrand(models.Model):
+    name = models.CharField(max_length=100, unique=True, verbose_name="Nom de la marque")
+    is_active = models.BooleanField(default=True, verbose_name="Actif")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'vehicle_brands'
+        verbose_name = 'Marque de véhicule'
+        verbose_name_plural = 'Marques de véhicule'
+
+
+class VehicleModel(models.Model):
+    name = models.CharField(max_length=100, verbose_name="Nom du modèle")
+    brand = models.ForeignKey(
+        VehicleBrand,
+        on_delete=models.CASCADE,
+        related_name='models',
+        verbose_name="Marque"
+    )
+    is_active = models.BooleanField(default=True, verbose_name="Actif")
+
+    def __str__(self):
+        return f"{self.brand.name} {self.name}"
+
+    class Meta:
+        db_table = 'vehicle_models'
+        verbose_name = 'Modèle de véhicule'
+        verbose_name_plural = 'Modèles de véhicule'
+        unique_together = ('brand', 'name')
+
+
+class VehicleColor(models.Model):
+    name = models.CharField(max_length=50, unique=True, verbose_name="Nom de la couleur")
+    is_active = models.BooleanField(default=True, verbose_name="Actif")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'vehicle_colors'
+        verbose_name = 'Couleur de véhicule'
+        verbose_name_plural = 'Couleurs de véhicule'
+
+
 class Vehicle(models.Model):
     ETAT_CHOICES = [
         (1, '1 - Très mauvais état'),
@@ -163,27 +228,48 @@ class Vehicle(models.Model):
         (9, '9 - État quasi neuf'),
         (10, '10 - État neuf'),
     ]
-    
+
     driver = models.ForeignKey(
-        UserDriver, 
-        on_delete=models.CASCADE, 
+        UserDriver,
+        on_delete=models.CASCADE,
         related_name='vehicles',
         verbose_name="Chauffeur"
     )
-    marque = models.CharField(max_length=50, verbose_name="Marque")
+    vehicle_type = models.ForeignKey(
+        VehicleType,
+        on_delete=models.SET_NULL,
+        null=True,
+        verbose_name="Type de véhicule"
+    )
+    brand = models.ForeignKey(
+        VehicleBrand,
+        on_delete=models.SET_NULL,
+        null=True,
+        verbose_name="Marque"
+    )
+    model = models.ForeignKey(
+        VehicleModel,
+        on_delete=models.SET_NULL,
+        null=True,
+        verbose_name="Modèle"
+    )
+    color = models.ForeignKey(
+        VehicleColor,
+        on_delete=models.SET_NULL,
+        null=True,
+        verbose_name="Couleur"
+    )
     nom = models.CharField(max_length=100, verbose_name="Nom du véhicule")
-    modele = models.CharField(max_length=50, verbose_name="Modèle")
-    couleur = models.CharField(max_length=30, verbose_name="Couleur")
     plaque_immatriculation = models.CharField(
-        max_length=20, 
-        unique=True, 
+        max_length=20,
+        unique=True,
         verbose_name="Plaque d'immatriculation"
     )
     etat_vehicule = models.IntegerField(
         choices=ETAT_CHOICES,
         verbose_name="État du véhicule (1-10)"
     )
-    
+
     # Images du véhicule
     photo_exterieur_1 = models.ImageField(
         upload_to=vehicle_image_upload_path,
@@ -209,19 +295,19 @@ class Vehicle(models.Model):
         blank=True,
         null=True
     )
-    
+
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Dernière modification")
     is_active = models.BooleanField(default=True, verbose_name="Actif")
-    
+
     def get_etat_display_short(self):
         """Retourne l'état sous forme courte"""
         return f"{self.etat_vehicule}/10"
-    
+
     def get_driver_info(self):
         """Retourne les infos du chauffeur"""
         return f"{self.driver.name} {self.driver.surname} ({self.driver.phone_number})"
-    
+
     def get_images_urls(self, request=None):
         """Retourne les URLs des images"""
         images = {}
@@ -234,9 +320,9 @@ class Vehicle(models.Model):
             else:
                 images[field] = None
         return images
-    
+
     def __str__(self):
-        return f"{self.marque} {self.nom} - {self.plaque_immatriculation} ({self.get_driver_info()})"
+        return f"{self.brand} {self.model} - {self.plaque_immatriculation} ({self.get_driver_info()})"
     
     class Meta:
         db_table = 'vehicles'

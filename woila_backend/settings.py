@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_spectacular',
     'api',
+    'order',
 ]
 
 MIDDLEWARE = [
@@ -204,6 +205,12 @@ JAZZMIN_SETTINGS = {
         "api.GeneralConfig": "fas fa-cogs",
         "api.Wallet": "fas fa-wallet",
         "api.ReferralCode": "fas fa-gift",
+        
+        # Vehicle related models
+        "api.VehicleType": "fas fa-car-side",
+        "api.VehicleBrand": "fas fa-industry",
+        "api.VehicleModel": "fas fa-car-alt",
+        "api.VehicleColor": "fas fa-palette",
     },
     "default_icon_parents": "fas fa-folder",
     "default_icon_children": "fas fa-circle",

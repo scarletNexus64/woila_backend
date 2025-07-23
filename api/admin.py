@@ -2,7 +2,8 @@ from django.contrib import admin
 from django.utils.html import format_html
 from .models import (
     UserDriver, UserCustomer, Token, Document, Vehicle, 
-    GeneralConfig, Wallet, ReferralCode
+    GeneralConfig, Wallet, ReferralCode,
+    VehicleType, VehicleBrand, VehicleModel, VehicleColor
 )
 
 
@@ -59,7 +60,7 @@ class GeneralConfigAdmin(admin.ModelAdmin):
                 valeur, numeric_val
             )
         elif boolean_val is not None:
-            color = '#4CAF50' if boolean_val else '#f44336'  # Vert/Rouge plus visibles
+            color = '#4CAF50' if boolean_val else '#f4436'  # Vert/Rouge plus visibles
             return format_html(
                 '<code style="color: {}; background: #444; padding: 2px 4px; border-radius: 3px;">{}</code> <small style="color: #ccc;">(booléen: {})</small>',
                 color, valeur, boolean_val
@@ -221,8 +222,10 @@ class ReferralCodeAdmin(admin.ModelAdmin):
 class VehicleInline(admin.TabularInline):
     model = Vehicle
     extra = 0
-    fields = ['marque', 'nom', 'plaque_immatriculation', 'etat_vehicule', 'is_active']
+    fields = ['brand', 'model', 'nom', 'plaque_immatriculation', 'etat_vehicule', 'is_active']
     readonly_fields = ['created_at']
+    autocomplete_fields = ['brand', 'model']
+
 
 @admin.register(UserDriver)
 class UserDriverAdmin(admin.ModelAdmin):
@@ -469,27 +472,156 @@ class DocumentAdmin(admin.ModelAdmin):
     mark_as_active.short_description = "Activer les documents sélectionnés"
 
 
+@admin.register(VehicleType)
+class VehicleTypeAdmin(admin.ModelAdmin):
+    list_display = ('get_name_display', 'get_amount_display', 'get_status_display')
+    list_filter = ('is_active',)
+    search_fields = ('name',)
+    actions = ['activate', 'deactivate']
+
+    def get_name_display(self, obj):
+        return format_html('🚙 {}', obj.name)
+    get_name_display.short_description = 'Type de véhicule'
+    get_name_display.admin_order_field = 'name'
+
+    def get_amount_display(self, obj):
+        return format_html('💰 {} FCFA', obj.additional_amount)
+    get_amount_display.short_description = 'Montant additionnel'
+    get_amount_display.admin_order_field = 'additional_amount'
+
+    def get_status_display(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+        else:
+            return format_html('<span style="color: red;">❌ Inactif</span>')
+    get_status_display.short_description = 'Statut'
+    get_status_display.admin_order_field = 'is_active'
+
+    def activate(self, request, queryset):
+        queryset.update(is_active=True)
+    activate.short_description = "✅ Activer les types sélectionnés"
+
+    def deactivate(self, request, queryset):
+        queryset.update(is_active=False)
+    deactivate.short_description = "❌ Désactiver les types sélectionnés"
+
+
+@admin.register(VehicleBrand)
+class VehicleBrandAdmin(admin.ModelAdmin):
+    list_display = ('get_name_display', 'get_status_display')
+    list_filter = ('is_active',)
+    search_fields = ('name',)
+    actions = ['activate', 'deactivate']
+
+    def get_name_display(self, obj):
+        return format_html('🏭 {}', obj.name)
+    get_name_display.short_description = 'Marque de véhicule'
+    get_name_display.admin_order_field = 'name'
+
+    def get_status_display(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+        else:
+            return format_html('<span style="color: red;">❌ Inactif</span>')
+    get_status_display.short_description = 'Statut'
+    get_status_display.admin_order_field = 'is_active'
+
+    def activate(self, request, queryset):
+        queryset.update(is_active=True)
+    activate.short_description = "✅ Activer les marques sélectionnées"
+
+    def deactivate(self, request, queryset):
+        queryset.update(is_active=False)
+    deactivate.short_description = "❌ Désactiver les marques sélectionnées"
+
+
+@admin.register(VehicleModel)
+class VehicleModelAdmin(admin.ModelAdmin):
+    list_display = ('get_name_display', 'get_brand_display', 'get_status_display')
+    list_filter = ('is_active', 'brand')
+    search_fields = ('name', 'brand__name')
+    autocomplete_fields = ['brand']
+    actions = ['activate', 'deactivate']
+
+    def get_name_display(self, obj):
+        return format_html('🚗 {}', obj.name)
+    get_name_display.short_description = 'Modèle de véhicule'
+    get_name_display.admin_order_field = 'name'
+
+    def get_brand_display(self, obj):
+        return format_html('🏭 {}', obj.brand.name if obj.brand else 'N/A')
+    get_brand_display.short_description = 'Marque'
+    get_brand_display.admin_order_field = 'brand__name'
+
+    def get_status_display(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+        else:
+            return format_html('<span style="color: red;">❌ Inactif</span>')
+    get_status_display.short_description = 'Statut'
+    get_status_display.admin_order_field = 'is_active'
+
+    def activate(self, request, queryset):
+        queryset.update(is_active=True)
+    activate.short_description = "✅ Activer les modèles sélectionnés"
+
+    def deactivate(self, request, queryset):
+        queryset.update(is_active=False)
+    deactivate.short_description = "❌ Désactiver les modèles sélectionnés"
+
+
+@admin.register(VehicleColor)
+class VehicleColorAdmin(admin.ModelAdmin):
+    list_display = ('get_name_display', 'get_status_display')
+    list_filter = ('is_active',)
+    search_fields = ('name',)
+    actions = ['activate', 'deactivate']
+
+    def get_name_display(self, obj):
+        return format_html('🎨 {}', obj.name)
+    get_name_display.short_description = 'Couleur de véhicule'
+    get_name_display.admin_order_field = 'name'
+
+    def get_status_display(self, obj):
+        if obj.is_active:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+        else:
+            return format_html('<span style="color: red;">❌ Inactif</span>')
+    get_status_display.short_description = 'Statut'
+    get_status_display.admin_order_field = 'is_active'
+
+    def activate(self, request, queryset):
+        queryset.update(is_active=True)
+    activate.short_description = "✅ Activer les couleurs sélectionnées"
+
+    def deactivate(self, request, queryset):
+        queryset.update(is_active=False)
+    deactivate.short_description = "❌ Désactiver les couleurs sélectionnées"
+
+
 @admin.register(Vehicle)
 class VehicleAdmin(admin.ModelAdmin):
     list_display = [
         'plaque_immatriculation', 'get_vehicle_info', 'get_driver_display', 
-        'etat_display', 'couleur', 'has_images', 'created_at', 'is_active'
+        'etat_display', 'color', 'has_images', 'created_at', 'is_active'
     ]
     list_filter = [
-        'marque', 'etat_vehicule', 'couleur', 'is_active', 'created_at',
+        'brand', 'model', 'vehicle_type', 'etat_vehicule', 'color', 'is_active', 'created_at',
         'driver__gender'  # Filtre par genre du chauffeur
     ]
     search_fields = [
-        'plaque_immatriculation', 'marque', 'nom', 'modele', 
+        'plaque_immatriculation', 'nom', 
+        'brand__name', 'model__name', 'color__name', 'vehicle_type__name',
         'driver__name', 'driver__surname', 'driver__phone_number'
     ]
     readonly_fields = ['created_at', 'updated_at']
     list_per_page = 20
+    autocomplete_fields = ['driver', 'vehicle_type', 'brand', 'model', 'color']
     
     fieldsets = (
         ('Informations véhicule', {
             'fields': (
-                'driver', 'marque', 'nom', 'modele', 'couleur', 
+                'driver', 'vehicle_type', 'brand', 'model', 'color', 'nom',
                 'plaque_immatriculation', 'etat_vehicule'
             )
         }),
@@ -509,9 +641,9 @@ class VehicleAdmin(admin.ModelAdmin):
     
     def get_vehicle_info(self, obj):
         """Affiche les infos du véhicule"""
-        return f"{obj.marque} {obj.nom} ({obj.modele})"
+        return f"{obj.brand} {obj.model} ({obj.nom})"
     get_vehicle_info.short_description = 'Véhicule'
-    get_vehicle_info.admin_order_field = 'marque'
+    get_vehicle_info.admin_order_field = 'brand'
     
     def get_driver_display(self, obj):
         """Affiche les infos du chauffeur"""
@@ -563,7 +695,7 @@ class VehicleAdmin(admin.ModelAdmin):
     
     def get_queryset(self, request):
         """Optimise les requêtes"""
-        return super().get_queryset(request).select_related('driver')
+        return super().get_queryset(request).select_related('driver', 'vehicle_type', 'brand', 'model', 'color')
     
     # Actions personnalisées
     actions = ['mark_as_inactive', 'mark_as_active', 'reset_vehicle_state']

@@ -1,7 +1,8 @@
 from rest_framework import serializers
 from .models import (
     UserDriver, UserCustomer, Token, Document, Vehicle, 
-    GeneralConfig, Wallet, ReferralCode
+    GeneralConfig, Wallet, ReferralCode,
+    VehicleType, VehicleBrand, VehicleModel, VehicleColor
 )
 from django.contrib.auth.hashers import check_password
 import uuid
@@ -261,7 +262,7 @@ class RegisterDriverSerializer(serializers.Serializer):
                 
                 # Récupérer le montant du bonus de parrainage depuis les configurations
                 try:
-                    bonus_config = GeneralConfig.objects.get(search_key='referral_bonus_amount', active=True)
+                    bonus_config = GeneralConfig.objects.get(search_key='WELCOME_BONUS_AMOUNT', active=True)
                     bonus_amount = bonus_config.get_numeric_value()
                     
                     if bonus_amount and bonus_amount > 0:
@@ -347,7 +348,7 @@ class RegisterCustomerSerializer(serializers.Serializer):
                 
                 # Récupérer le montant du bonus de parrainage depuis les configurations
                 try:
-                    bonus_config = GeneralConfig.objects.get(search_key='referral_bonus_amount', active=True)
+                    bonus_config = GeneralConfig.objects.get(search_key='WELCOME_BONUS_AMOUNT', active=True)
                     bonus_amount = bonus_config.get_numeric_value()
                     
                     if bonus_amount and bonus_amount > 0:
@@ -513,6 +514,32 @@ class DocumentSerializer(serializers.ModelSerializer):
         return None
 
 
+class VehicleTypeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VehicleType
+        fields = '__all__'
+
+
+class VehicleBrandSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VehicleBrand
+        fields = '__all__'
+
+
+class VehicleModelSerializer(serializers.ModelSerializer):
+    brand = VehicleBrandSerializer()
+
+    class Meta:
+        model = VehicleModel
+        fields = '__all__'
+
+
+class VehicleColorSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = VehicleColor
+        fields = '__all__'
+
+
 class VehicleSerializer(serializers.ModelSerializer):
     """
     Serializer pour l'affichage des véhicules
@@ -520,11 +547,15 @@ class VehicleSerializer(serializers.ModelSerializer):
     driver_info = serializers.CharField(source='get_driver_info', read_only=True)
     etat_display = serializers.CharField(source='get_etat_display_short', read_only=True)
     images_urls = serializers.SerializerMethodField()
-    
+    vehicle_type = VehicleTypeSerializer()
+    brand = VehicleBrandSerializer()
+    model = VehicleModelSerializer()
+    color = VehicleColorSerializer()
+
     class Meta:
         model = Vehicle
         fields = [
-            'id', 'driver', 'driver_info', 'marque', 'nom', 'modele', 'couleur',
+            'id', 'driver', 'driver_info', 'vehicle_type', 'brand', 'model', 'color', 'nom',
             'plaque_immatriculation', 'etat_vehicule', 'etat_display',
             'images_urls', 'created_at', 'updated_at', 'is_active'
         ]
@@ -541,10 +572,11 @@ class VehicleCreateUpdateSerializer(serializers.Serializer):
     Serializer pour la création/modification de véhicules avec upload d'images
     """
     driver_id = serializers.IntegerField(min_value=1, help_text="ID du chauffeur")
-    marque = serializers.CharField(max_length=50, help_text="Marque du véhicule (ex: Toyota, BMW)")
+    vehicle_type_id = serializers.IntegerField(min_value=1, help_text="ID du type de véhicule")
+    brand_id = serializers.IntegerField(min_value=1, help_text="ID de la marque du véhicule")
+    model_id = serializers.IntegerField(min_value=1, help_text="ID du modèle du véhicule")
+    color_id = serializers.IntegerField(min_value=1, help_text="ID de la couleur du véhicule")
     nom = serializers.CharField(max_length=100, help_text="Nom du véhicule (ex: Camry, Série 3)")
-    modele = serializers.CharField(max_length=50, help_text="Modèle (ex: 2020, Sport)")
-    couleur = serializers.CharField(max_length=30, help_text="Couleur du véhicule")
     plaque_immatriculation = serializers.CharField(
         max_length=20, 
         help_text="Plaque d'immatriculation (unique)"
@@ -577,6 +609,26 @@ class VehicleCreateUpdateSerializer(serializers.Serializer):
         """Valide que le chauffeur existe et est actif"""
         if not UserDriver.objects.filter(id=value, is_active=True).exists():
             raise serializers.ValidationError("Chauffeur introuvable ou inactif.")
+        return value
+
+    def validate_vehicle_type_id(self, value):
+        if not VehicleType.objects.filter(id=value, is_active=True).exists():
+            raise serializers.ValidationError("Type de véhicule introuvable ou inactif.")
+        return value
+
+    def validate_brand_id(self, value):
+        if not VehicleBrand.objects.filter(id=value, is_active=True).exists():
+            raise serializers.ValidationError("Marque de véhicule introuvable ou inactive.")
+        return value
+
+    def validate_model_id(self, value):
+        if not VehicleModel.objects.filter(id=value, is_active=True).exists():
+            raise serializers.ValidationError("Modèle de véhicule introuvable ou inactif.")
+        return value
+
+    def validate_color_id(self, value):
+        if not VehicleColor.objects.filter(id=value, is_active=True).exists():
+            raise serializers.ValidationError("Couleur de véhicule introuvable ou inactive.")
         return value
     
     def validate_plaque_immatriculation(self, value):

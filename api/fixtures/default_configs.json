@@ -3,9 +3,9 @@
     "model": "api.generalconfig",
     "pk": 1,
     "fields": {
-      "nom": "⏰ Temps d'attente maximum (minutes)",
+      "nom": "⏰ Temps d'attente max d'une commande (secondes)",
       "search_key": "MAX_WAITING_TIME",
-      "valeur": "30",
+      "valeur": "60",
       "active": true,
       "created_at": "2025-01-01T00:00:00Z",
       "updated_at": "2025-01-01T00:00:00Z"
@@ -90,6 +90,30 @@
       "nom": "🚗 État minimum requis pour les véhicules",
       "search_key": "MIN_VEHICLE_STATE",
       "valeur": "6",
+      "active": true,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+    {
+    "model": "api.generalconfig",
+    "pk": 9,
+    "fields": {
+      "nom": "🔢 Prix par kilometre (XAF)",
+      "search_key": "PRICE_PER_KM",
+      "valeur": "250",
+      "active": true,
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+    {
+    "model": "api.generalconfig",
+    "pk": 10,
+    "fields": {
+      "nom": "🔢 Prix de la course (XAF)",
+      "search_key": "STD_PRICELIST_ORDER",
+      "valeur": "500",
       "active": true,
       "created_at": "2025-01-01T00:00:00Z",
       "updated_at": "2025-01-01T00:00:00Z"
