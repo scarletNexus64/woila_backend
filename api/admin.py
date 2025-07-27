@@ -3,7 +3,8 @@ from django.utils.html import format_html
 from .models import (
     UserDriver, UserCustomer, Token, Document, Vehicle, 
     GeneralConfig, Wallet, ReferralCode,
-    VehicleType, VehicleBrand, VehicleModel, VehicleColor
+    VehicleType, VehicleBrand, VehicleModel, VehicleColor,
+    Country, City, VipZone, VipZoneKilometerRule
 )
 
 
@@ -231,9 +232,9 @@ class VehicleInline(admin.TabularInline):
 class UserDriverAdmin(admin.ModelAdmin):
     list_display = [
         'get_phone_display', 'get_name_display', 'get_gender_display', 
-        'age', 'get_status_display', 'vehicle_count', 'created_at'
+        'age', 'get_partenaire_display', 'get_status_display', 'vehicle_count', 'created_at'
     ]
-    list_filter = ['gender', 'is_active', 'created_at']
+    list_filter = ['gender', 'is_active', 'is_partenaire_interne', 'is_partenaire_externe', 'created_at']
     search_fields = ['phone_number', 'name', 'surname']
     readonly_fields = ['created_at', 'updated_at']
     list_per_page = 25
@@ -243,6 +244,10 @@ class UserDriverAdmin(admin.ModelAdmin):
         ('👤 Informations personnelles', {
             'fields': ('phone_number', 'name', 'surname', 'gender', 'age', 'birthday'),
             'description': 'Informations de base du chauffeur'
+        }),
+        ('🤝 Type de partenariat', {
+            'fields': ('is_partenaire_interne', 'is_partenaire_externe'),
+            'description': 'Définir si le chauffeur est un partenaire interne ou externe'
         }),
         ('🔐 Sécurité', {
             'fields': ('password', 'is_active'),
@@ -279,6 +284,19 @@ class UserDriverAdmin(admin.ModelAdmin):
         )
     get_gender_display.short_description = 'Genre'
     get_gender_display.admin_order_field = 'gender'
+    
+    def get_partenaire_display(self, obj):
+        partenaire_types = []
+        if obj.is_partenaire_interne:
+            partenaire_types.append('<span style="color: blue;">🏢 Interne</span>')
+        if obj.is_partenaire_externe:
+            partenaire_types.append('<span style="color: green;">🌐 Externe</span>')
+        
+        if partenaire_types:
+            return format_html(' | '.join(partenaire_types))
+        else:
+            return format_html('<span style="color: gray;">👤 Standard</span>')
+    get_partenaire_display.short_description = 'Type partenaire'
     
     def get_status_display(self, obj):
         if obj.is_active:
@@ -717,4 +735,268 @@ class VehicleAdmin(admin.ModelAdmin):
         updated = queryset.update(etat_vehicule=7)
         self.message_user(request, f'{updated} véhicule(s) remis à l\'état 7/10.')
     reset_vehicle_state.short_description = "Remettre l'état à 7/10"
+
+
+@admin.register(Country)
+class CountryAdmin(admin.ModelAdmin):
+    list_display = ('get_name_display', 'get_status_display', 'get_cities_count', 'created_at')
+    list_filter = ('active', 'created_at')
+    search_fields = ('name',)
+    readonly_fields = ('created_at', 'updated_at')
+    list_per_page = 25
+    actions = ['activate_countries', 'deactivate_countries']
+    
+    fieldsets = (
+        ('🌍 Informations du pays', {
+            'fields': ('name', 'active'),
+            'description': 'Informations de base du pays'
+        }),
+        ('📅 Horodatage', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
+
+    def get_name_display(self, obj):
+        return format_html('🌍 {}', obj.name)
+    get_name_display.short_description = 'Pays'
+    get_name_display.admin_order_field = 'name'
+
+    def get_status_display(self, obj):
+        if obj.active:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+        else:
+            return format_html('<span style="color: red;">❌ Inactif</span>')
+    get_status_display.short_description = 'Statut'
+    get_status_display.admin_order_field = 'active'
+
+    def get_cities_count(self, obj):
+        count = obj.cities.filter(active=True).count()
+        if count > 0:
+            return format_html(
+                '<span style="color: green;">🏙️ {} ville(s)</span>',
+                count
+            )
+        return format_html('<span style="color: gray;">🚫 Aucune ville</span>')
+    get_cities_count.short_description = 'Villes actives'
+
+    def activate_countries(self, request, queryset):
+        updated = queryset.update(active=True)
+        self.message_user(request, f'✅ {updated} pays activé(s).')
+    activate_countries.short_description = "✅ Activer les pays sélectionnés"
+
+    def deactivate_countries(self, request, queryset):
+        updated = queryset.update(active=False)
+        self.message_user(request, f'❌ {updated} pays désactivé(s).')
+    deactivate_countries.short_description = "❌ Désactiver les pays sélectionnés"
+
+
+@admin.register(City)
+class CityAdmin(admin.ModelAdmin):
+    list_display = (
+        'get_name_display', 'get_country_display', 'get_prix_jour_display', 
+        'get_prix_nuit_display', 'get_status_display', 'created_at'
+    )
+    list_filter = ('active', 'country', 'created_at')
+    search_fields = ('name', 'country__name')
+    readonly_fields = ('created_at', 'updated_at')
+    list_per_page = 25
+    autocomplete_fields = ['country']
+    actions = ['activate_cities', 'deactivate_cities']
+    
+    fieldsets = (
+        ('🏙️ Informations de la ville', {
+            'fields': ('country', 'name', 'active'),
+            'description': 'Informations de base de la ville'
+        }),
+        ('💰 Tarification VTC', {
+            'fields': ('prix_jour', 'prix_nuit'),
+            'description': 'Prix de course jour et nuit en FCFA'
+        }),
+        ('📅 Horodatage', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
+
+    def get_name_display(self, obj):
+        return format_html('🏙️ {}', obj.name)
+    get_name_display.short_description = 'Ville'
+    get_name_display.admin_order_field = 'name'
+
+    def get_country_display(self, obj):
+        return format_html('🌍 {}', obj.country.name if obj.country else 'N/A')
+    get_country_display.short_description = 'Pays'
+    get_country_display.admin_order_field = 'country__name'
+
+    def get_prix_jour_display(self, obj):
+        return format_html(
+            '☀️ <strong>{} FCFA</strong>',
+            obj.prix_jour
+        )
+    get_prix_jour_display.short_description = 'Prix jour'
+    get_prix_jour_display.admin_order_field = 'prix_jour'
+
+    def get_prix_nuit_display(self, obj):
+        return format_html(
+            '🌙 <strong>{} FCFA</strong>',
+            obj.prix_nuit
+        )
+    get_prix_nuit_display.short_description = 'Prix nuit'
+    get_prix_nuit_display.admin_order_field = 'prix_nuit'
+
+    def get_status_display(self, obj):
+        if obj.active:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+        else:
+            return format_html('<span style="color: red;">❌ Inactif</span>')
+    get_status_display.short_description = 'Statut'
+    get_status_display.admin_order_field = 'active'
+
+    def activate_cities(self, request, queryset):
+        updated = queryset.update(active=True)
+        self.message_user(request, f'✅ {updated} ville(s) activée(s).')
+    activate_cities.short_description = "✅ Activer les villes sélectionnées"
+
+    def deactivate_cities(self, request, queryset):
+        updated = queryset.update(active=False)
+        self.message_user(request, f'❌ {updated} ville(s) désactivée(s).')
+    deactivate_cities.short_description = "❌ Désactiver les villes sélectionnées"
+
+
+class VipZoneKilometerRuleInline(admin.TabularInline):
+    model = VipZoneKilometerRule
+    extra = 1
+    fields = ['min_kilometers', 'prix_jour_per_km', 'prix_nuit_per_km', 'active']
+    readonly_fields = ['created_at']
+
+
+@admin.register(VipZone)
+class VipZoneAdmin(admin.ModelAdmin):
+    list_display = (
+        'get_name_display', 'get_prix_jour_display', 'get_prix_nuit_display', 
+        'get_rules_count', 'get_status_display', 'created_at'
+    )
+    list_filter = ('active', 'created_at')
+    search_fields = ('name',)
+    readonly_fields = ('created_at', 'updated_at')
+    list_per_page = 25
+    actions = ['activate_zones', 'deactivate_zones']
+    inlines = [VipZoneKilometerRuleInline]
+    
+    fieldsets = (
+        ('👑 Informations de la zone VIP', {
+            'fields': ('name', 'active'),
+            'description': 'Informations de base de la zone VIP'
+        }),
+        ('💰 Tarification de base', {
+            'fields': ('prix_jour', 'prix_nuit'),
+            'description': 'Prix de base jour et nuit en FCFA'
+        }),
+        ('📅 Horodatage', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
+
+    def get_name_display(self, obj):
+        return format_html('👑 {}', obj.name)
+    get_name_display.short_description = 'Zone VIP'
+    get_name_display.admin_order_field = 'name'
+
+    def get_prix_jour_display(self, obj):
+        return format_html(
+            '☀️ <strong>{} FCFA</strong>',
+            obj.prix_jour
+        )
+    get_prix_jour_display.short_description = 'Prix base jour'
+    get_prix_jour_display.admin_order_field = 'prix_jour'
+
+    def get_prix_nuit_display(self, obj):
+        return format_html(
+            '🌙 <strong>{} FCFA</strong>',
+            obj.prix_nuit
+        )
+    get_prix_nuit_display.short_description = 'Prix base nuit'
+    get_prix_nuit_display.admin_order_field = 'prix_nuit'
+
+    def get_rules_count(self, obj):
+        count = obj.kilometer_rules.filter(active=True).count()
+        if count > 0:
+            return format_html(
+                '<span style="color: green;">📏 {} règle(s)</span>',
+                count
+            )
+        return format_html('<span style="color: gray;">📏 Aucune règle</span>')
+    get_rules_count.short_description = 'Règles kilométriques'
+
+    def get_status_display(self, obj):
+        if obj.active:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+        else:
+            return format_html('<span style="color: red;">❌ Inactif</span>')
+    get_status_display.short_description = 'Statut'
+    get_status_display.admin_order_field = 'active'
+
+    def activate_zones(self, request, queryset):
+        updated = queryset.update(active=True)
+        self.message_user(request, f'✅ {updated} zone(s) VIP activée(s).')
+    activate_zones.short_description = "✅ Activer les zones VIP sélectionnées"
+
+    def deactivate_zones(self, request, queryset):
+        updated = queryset.update(active=False)
+        self.message_user(request, f'❌ {updated} zone(s) VIP désactivée(s).')
+    deactivate_zones.short_description = "❌ Désactiver les zones VIP sélectionnées"
+
+
+@admin.register(VipZoneKilometerRule)
+class VipZoneKilometerRuleAdmin(admin.ModelAdmin):
+    list_display = (
+        'get_zone_display', 'get_min_km_display', 'get_prix_jour_km_display',
+        'get_prix_nuit_km_display', 'get_status_display', 'created_at'
+    )
+    list_filter = ('active', 'vip_zone', 'created_at')
+    search_fields = ('vip_zone__name',)
+    readonly_fields = ('created_at',)
+    list_per_page = 25
+    autocomplete_fields = ['vip_zone']
+    actions = ['activate_rules', 'deactivate_rules']
+
+    def get_zone_display(self, obj):
+        return format_html('👑 {}', obj.vip_zone.name)
+    get_zone_display.short_description = 'Zone VIP'
+    get_zone_display.admin_order_field = 'vip_zone__name'
+
+    def get_min_km_display(self, obj):
+        return format_html('📏 À partir de <strong>{} km</strong>', obj.min_kilometers)
+    get_min_km_display.short_description = 'Kilométrage minimum'
+    get_min_km_display.admin_order_field = 'min_kilometers'
+
+    def get_prix_jour_km_display(self, obj):
+        return format_html('☀️ <strong>{} FCFA/km</strong>', obj.prix_jour_per_km)
+    get_prix_jour_km_display.short_description = 'Prix/km jour'
+    get_prix_jour_km_display.admin_order_field = 'prix_jour_per_km'
+
+    def get_prix_nuit_km_display(self, obj):
+        return format_html('🌙 <strong>{} FCFA/km</strong>', obj.prix_nuit_per_km)
+    get_prix_nuit_km_display.short_description = 'Prix/km nuit'
+    get_prix_nuit_km_display.admin_order_field = 'prix_nuit_per_km'
+
+    def get_status_display(self, obj):
+        if obj.active:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+        else:
+            return format_html('<span style="color: red;">❌ Inactif</span>')
+    get_status_display.short_description = 'Statut'
+    get_status_display.admin_order_field = 'active'
+
+    def activate_rules(self, request, queryset):
+        updated = queryset.update(active=True)
+        self.message_user(request, f'✅ {updated} règle(s) activée(s).')
+    activate_rules.short_description = "✅ Activer les règles sélectionnées"
+
+    def deactivate_rules(self, request, queryset):
+        updated = queryset.update(active=False)
+        self.message_user(request, f'❌ {updated} règle(s) désactivée(s).')
+    deactivate_rules.short_description = "❌ Désactiver les règles sélectionnées"
     

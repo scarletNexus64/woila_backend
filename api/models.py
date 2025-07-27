@@ -18,6 +18,11 @@ class UserDriver(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     age = models.IntegerField()
     birthday = models.DateField()
+    
+    # Champs partenaires
+    is_partenaire_interne = models.BooleanField(default=False, verbose_name="Partenaire Interne")
+    is_partenaire_externe = models.BooleanField(default=False, verbose_name="Partenaire Externe")
+    
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
@@ -450,3 +455,117 @@ class ReferralCode(models.Model):
         verbose_name = 'Code de parrainage'
         verbose_name_plural = 'Codes de parrainage'
         unique_together = ('user_type', 'user_id')
+
+
+class Country(models.Model):
+    name = models.CharField(max_length=100, unique=True, verbose_name="Nom du pays")
+    active = models.BooleanField(default=True, verbose_name="Actif")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Dernière modification")
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'countries'
+        verbose_name = '🌍 Pays'
+        verbose_name_plural = '🌍 Pays'
+        ordering = ['name']
+
+
+class City(models.Model):
+    country = models.ForeignKey(
+        Country,
+        on_delete=models.CASCADE,
+        related_name='cities',
+        verbose_name="Pays"
+    )
+    name = models.CharField(max_length=100, verbose_name="Nom de la ville")
+    prix_jour = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name="Prix jour (FCFA)"
+    )
+    prix_nuit = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name="Prix nuit (FCFA)"
+    )
+    active = models.BooleanField(default=True, verbose_name="Actif")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Dernière modification")
+
+    def __str__(self):
+        return f"{self.name} ({self.country.name})"
+
+    class Meta:
+        db_table = 'cities'
+        verbose_name = '🏙️ Ville'
+        verbose_name_plural = '🏙️ Villes'
+        ordering = ['country__name', 'name']
+        unique_together = ('country', 'name')
+
+
+class VipZone(models.Model):
+    name = models.CharField(max_length=100, unique=True, verbose_name="Nom de la zone VIP")
+    prix_jour = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name="Prix de base jour (FCFA)"
+    )
+    prix_nuit = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name="Prix de base nuit (FCFA)"
+    )
+    active = models.BooleanField(default=True, verbose_name="Actif")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Dernière modification")
+
+    def __str__(self):
+        return f"Zone VIP: {self.name}"
+
+    class Meta:
+        db_table = 'vip_zones'
+        verbose_name = '👑 Zone VIP'
+        verbose_name_plural = '👑 Zones VIP'
+        ordering = ['name']
+
+
+class VipZoneKilometerRule(models.Model):
+    vip_zone = models.ForeignKey(
+        VipZone,
+        on_delete=models.CASCADE,
+        related_name='kilometer_rules',
+        verbose_name="Zone VIP"
+    )
+    min_kilometers = models.DecimalField(
+        max_digits=5,
+        decimal_places=2,
+        verbose_name="Kilométrage minimum",
+        help_text="À partir de combien de km cette règle s'applique"
+    )
+    prix_jour_per_km = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name="Prix par km (jour)",
+        help_text="Prix par kilomètre supplémentaire en journée"
+    )
+    prix_nuit_per_km = models.DecimalField(
+        max_digits=10,
+        decimal_places=2,
+        verbose_name="Prix par km (nuit)",
+        help_text="Prix par kilomètre supplémentaire la nuit"
+    )
+    active = models.BooleanField(default=True, verbose_name="Actif")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+
+    def __str__(self):
+        return f"{self.vip_zone.name} - À partir de {self.min_kilometers}km"
+
+    class Meta:
+        db_table = 'vip_zone_kilometer_rules'
+        verbose_name = '📏 Règle KM'
+        verbose_name_plural = '📏 Règles KM'
+        ordering = ['vip_zone', 'min_kilometers']
+        unique_together = ('vip_zone', 'min_kilometers')
