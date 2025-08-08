@@ -1,8 +1,18 @@
 from django.db import models
 from django.contrib.auth.hashers import make_password, check_password
 import uuid
-from datetime import datetime
+from datetime import datetime, timedelta
+from django.utils import timezone
 import os
+
+
+def profile_picture_upload_path(instance, filename):
+    """
+    Génère le chemin de stockage des photos de profil
+    Format: profile_pictures/user_type/user_id/filename
+    """
+    user_type = 'driver' if isinstance(instance, UserDriver) else 'customer'
+    return f'profile_pictures/{user_type}/{instance.id}/{filename}'
 
 class UserDriver(models.Model):
     GENDER_CHOICES = [
@@ -18,6 +28,12 @@ class UserDriver(models.Model):
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     age = models.IntegerField()
     birthday = models.DateField()
+    profile_picture = models.ImageField(
+        upload_to=profile_picture_upload_path, 
+        null=True, 
+        blank=True,
+        verbose_name="Photo de profil"
+    )
     
     # Champs partenaires
     is_partenaire_interne = models.BooleanField(default=False, verbose_name="Partenaire Interne")
@@ -35,6 +51,14 @@ class UserDriver(models.Model):
     def check_password(self, raw_password):
         return check_password(raw_password, self.password)
     
+    def get_profile_picture_url(self, request=None):
+        """Retourne l'URL de la photo de profil"""
+        if self.profile_picture:
+            if request:
+                return request.build_absolute_uri(self.profile_picture.url)
+            return self.profile_picture.url
+        return None
+    
     def __str__(self):
         return f"{self.name} {self.surname} - {self.phone_number}"
     
@@ -49,6 +73,12 @@ class UserCustomer(models.Model):
     password = models.CharField(max_length=128)
     name = models.CharField(max_length=100)
     surname = models.CharField(max_length=100)
+    profile_picture = models.ImageField(
+        upload_to=profile_picture_upload_path, 
+        null=True, 
+        blank=True,
+        verbose_name="Photo de profil"
+    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
@@ -60,6 +90,14 @@ class UserCustomer(models.Model):
     
     def check_password(self, raw_password):
         return check_password(raw_password, self.password)
+    
+    def get_profile_picture_url(self, request=None):
+        """Retourne l'URL de la photo de profil"""
+        if self.profile_picture:
+            if request:
+                return request.build_absolute_uri(self.profile_picture.url)
+            return self.profile_picture.url
+        return None
     
     def __str__(self):
         return f"{self.name} {self.surname} - {self.phone_number}"
@@ -303,7 +341,7 @@ class Vehicle(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Dernière modification")
-    is_active = models.BooleanField(default=True, verbose_name="Actif")
+    is_active = models.BooleanField(default=False, verbose_name="Actif")
 
     def get_etat_display_short(self):
         """Retourne l'état sous forme courte"""
@@ -569,3 +607,117 @@ class VipZoneKilometerRule(models.Model):
         verbose_name_plural = '📏 Règles KM'
         ordering = ['vip_zone', 'min_kilometers']
         unique_together = ('vip_zone', 'min_kilometers')
+
+
+class OTPVerification(models.Model):
+    identifier = models.CharField(max_length=100, verbose_name="Identifiant (téléphone/email)")
+    otp = models.CharField(max_length=4, verbose_name="Code OTP")
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+    is_verified = models.BooleanField(default=False, verbose_name="Vérifié")
+
+    def is_valid(self):
+        """Vérifie si l'OTP est encore valide (5 minutes)"""
+        return not self.is_verified and (timezone.now() - self.created_at).seconds < 300
+
+    def __str__(self):
+        return f"OTP {self.otp} pour {self.identifier}"
+
+    class Meta:
+        db_table = 'otps'
+        verbose_name = 'Vérification OTP'
+        verbose_name_plural = 'Vérifications OTP'
+        ordering = ['-created_at']
+
+
+class NotificationConfig(models.Model):
+    """Configuration pour les notifications d'OTP"""
+    CHANNEL_CHOICES = [
+        ('sms', 'SMS (Nexah)'),
+        ('whatsapp', 'WhatsApp (Meta)')
+    ]
+    
+    default_channel = models.CharField(
+        max_length=20, 
+        choices=CHANNEL_CHOICES,
+        default='sms',
+        verbose_name="Canal de notification par défaut"
+    )
+    
+    # SMS Nexah settings
+    nexah_base_url = models.CharField(
+        max_length=255,
+        default='https://api.nexah.net/',
+        verbose_name="URL de base Nexah"
+    )
+    nexah_send_endpoint = models.CharField(
+        max_length=100,
+        default='api/bulk/send',
+        verbose_name="Endpoint d'envoi Nexah"
+    )
+    nexah_credits_endpoint = models.CharField(
+        max_length=100,
+        default='api/credits',
+        verbose_name="Endpoint de crédits Nexah"
+    )
+    nexah_user = models.CharField(
+        max_length=100, 
+        blank=True,
+        verbose_name="Utilisateur Nexah"
+    )
+    nexah_password = models.CharField(
+        max_length=100, 
+        blank=True,
+        verbose_name="Mot de passe Nexah"
+    )
+    nexah_sender_id = models.CharField(
+        max_length=20, 
+        default='WOILA',
+        verbose_name="ID expéditeur Nexah"
+    )
+    
+    # WhatsApp settings
+    whatsapp_api_token = models.TextField(
+        blank=True,
+        verbose_name="Token API WhatsApp",
+        help_text="Token permanent pour l'API WhatsApp",
+    )
+    whatsapp_api_version = models.CharField(
+        max_length=20,
+        default='v18.0',
+        verbose_name="Version de l'API WhatsApp",
+        help_text="Version de l'API Meta (ex: v18.0)",
+    )
+    whatsapp_phone_number_id = models.CharField(
+        max_length=100,
+        blank=True,
+        verbose_name="ID du numéro WhatsApp",
+        help_text="ID du numéro de téléphone WhatsApp (ex: xxxxxxxxxxxxxx)",
+    )
+    whatsapp_template_name = models.CharField(
+        max_length=100, 
+        default='woila_otp',
+        verbose_name="Nom du template WhatsApp"
+    )
+    whatsapp_language = models.CharField(
+        max_length=10, 
+        default='fr',
+        verbose_name="Code langue du template WhatsApp"
+    )
+    
+    # Metadata
+    updated_at = models.DateTimeField(auto_now=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    
+    class Meta:
+        db_table = 'notification_configs'
+        verbose_name = "Config Notifications"
+        verbose_name_plural = "Config Notifications"
+    
+    def __str__(self):
+        return f"Config Notifications (Canal actuel: {self.get_default_channel_display()})"
+    
+    @classmethod
+    def get_config(cls):
+        """Get or create the notification configuration"""
+        config, created = cls.objects.get_or_create(pk=1)
+        return config

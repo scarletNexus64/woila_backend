@@ -10,13 +10,21 @@ from .views import (
     DocumentImportView,
     DocumentListView,
     AllDriversView,
-    AllCustomersView
+    AllCustomersView,
+    ForgotPasswordView
+)
+from .viewsets.otp import (
+    GenerateOTPView,
+    VerifyOTPView
 )
 from .viewsets.vehicles import (
     VehicleCreateView,
     VehicleListView,
     VehicleDetailView,
     VehiclesByDriverView,
+    VehicleUpdateView,
+    VehicleDeleteView,
+    VehicleDeactivateView,
     VehicleTypeListView,
     VehicleBrandListView,
     VehicleModelListView,
@@ -56,6 +64,9 @@ urlpatterns = [
     path('vehicles/', VehicleListView.as_view(), name='vehicle-list'),
     path('vehicles/create/', VehicleCreateView.as_view(), name='vehicle-create'),
     path('vehicles/<int:vehicle_id>/', VehicleDetailView.as_view(), name='vehicle-detail'),
+    path('vehicles/<int:vehicle_id>/update/', VehicleUpdateView.as_view(), name='vehicle-update'),
+    path('vehicles/<int:vehicle_id>/delete/', VehicleDeleteView.as_view(), name='vehicle-delete'),
+    path('vehicles/<int:vehicle_id>/deactivate/', VehicleDeactivateView.as_view(), name='vehicle-deactivate'),
     path('vehicles/driver/<int:driver_id>/', VehiclesByDriverView.as_view(), name='vehicles-by-driver'),
 
     # Vehicle Config endpoints
@@ -69,4 +80,11 @@ urlpatterns = [
     path('profiles/customer/<int:customer_id>/', CustomerProfileView.as_view(), name='customer-profile'),
     path('profiles/drivers/', AllDriversView.as_view(), name='all-drivers'),
     path('profiles/customers/', AllCustomersView.as_view(), name='all-customers'),
+    
+    # OTP endpoints
+    path('auth/generate-otp/', GenerateOTPView.as_view(), name='generate-otp'),
+    path('auth/verify-otp/', VerifyOTPView.as_view(), name='verify-otp'),
+    
+    # Forgot password endpoint
+    path('auth/forgot-password/', ForgotPasswordView.as_view(), name='forgot-password'),
 ]

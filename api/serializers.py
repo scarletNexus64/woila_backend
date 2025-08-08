@@ -2,7 +2,8 @@ from rest_framework import serializers
 from .models import (
     UserDriver, UserCustomer, Token, Document, Vehicle, 
     GeneralConfig, Wallet, ReferralCode,
-    VehicleType, VehicleBrand, VehicleModel, VehicleColor
+    VehicleType, VehicleBrand, VehicleModel, VehicleColor,
+    OTPVerification, NotificationConfig
 )
 from django.contrib.auth.hashers import check_password
 import uuid
@@ -895,3 +896,152 @@ class ReferralStatsSerializer(serializers.Serializer):
     active_referrals = serializers.IntegerField(read_only=True)
     total_bonus_distributed = serializers.DecimalField(max_digits=12, decimal_places=2, read_only=True)
     welcome_bonus_amount = serializers.DecimalField(max_digits=10, decimal_places=2, read_only=True)
+
+
+# --- OTP System Serializers ---
+
+class OTPGenerateSerializer(serializers.Serializer):
+    """
+    Serializer pour la génération d'OTP
+    """
+    identifier = serializers.CharField(
+        max_length=100,
+        help_text="Numéro de téléphone ou email pour recevoir l'OTP"
+    )
+    
+    def validate_identifier(self, value):
+        """Valide l'identifiant (numéro de téléphone ou email)"""
+        # Vérifier si c'est un numéro de téléphone ou un email
+        import re
+        
+        # Pattern pour numéro de téléphone international
+        phone_pattern = r'^\+?[1-9]\d{1,14}$'
+        # Pattern pour email basique
+        email_pattern = r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$'
+        
+        if not (re.match(phone_pattern, value) or re.match(email_pattern, value)):
+            raise serializers.ValidationError(
+                "L'identifiant doit être un numéro de téléphone valide (+237xxxxxxxx) ou un email valide."
+            )
+        
+        return value
+
+
+class OTPVerifySerializer(serializers.Serializer):
+    """
+    Serializer pour la vérification d'OTP
+    """
+    identifier = serializers.CharField(
+        max_length=100,
+        help_text="Numéro de téléphone ou email utilisé pour recevoir l'OTP"
+    )
+    otp = serializers.CharField(
+        max_length=4,
+        min_length=4,
+        help_text="Code OTP à 4 chiffres"
+    )
+    
+    def validate_otp(self, value):
+        """Valide que l'OTP contient uniquement des chiffres"""
+        if not value.isdigit():
+            raise serializers.ValidationError("L'OTP doit contenir uniquement des chiffres.")
+        return value
+
+
+class OTPVerificationSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour l'affichage des vérifications OTP
+    """
+    is_valid_status = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = OTPVerification
+        fields = ['id', 'identifier', 'otp', 'created_at', 'is_verified', 'is_valid_status']
+        read_only_fields = ['id', 'otp', 'created_at', 'is_verified', 'is_valid_status']
+    
+    def get_is_valid_status(self, obj):
+        """Retourne si l'OTP est encore valide"""
+        return obj.is_valid()
+
+
+class NotificationConfigSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour la configuration des notifications
+    """
+    class Meta:
+        model = NotificationConfig
+        fields = [
+            'id', 'default_channel',
+            'nexah_base_url', 'nexah_send_endpoint', 'nexah_credits_endpoint',
+            'nexah_user', 'nexah_password', 'nexah_sender_id',
+            'whatsapp_api_token', 'whatsapp_api_version', 'whatsapp_phone_number_id',
+            'whatsapp_template_name', 'whatsapp_language',
+            'created_at', 'updated_at'
+        ]
+        read_only_fields = ['id', 'created_at', 'updated_at']
+        extra_kwargs = {
+            'nexah_password': {'write_only': True},
+            'whatsapp_api_token': {'write_only': True},
+        }
+
+
+class NotificationConfigPublicSerializer(serializers.ModelSerializer):
+    """
+    Serializer public pour la configuration des notifications (sans les secrets)
+    """
+    class Meta:
+        model = NotificationConfig
+        fields = [
+            'default_channel', 'nexah_sender_id', 'whatsapp_template_name', 
+            'whatsapp_language', 'updated_at'
+        ]
+        read_only_fields = ['default_channel', 'nexah_sender_id', 'whatsapp_template_name', 
+                          'whatsapp_language', 'updated_at']
+
+
+# --- Forgot Password Serializer ---
+
+class ForgotPasswordSerializer(serializers.Serializer):
+    """
+    Serializer pour la réinitialisation du mot de passe
+    """
+    phone_number = serializers.CharField(max_length=15, help_text="Numéro de téléphone de l'utilisateur")
+    user_type = serializers.ChoiceField(
+        choices=[('driver', 'Driver'), ('customer', 'Customer')],
+        help_text="Type d'utilisateur (driver ou customer)"
+    )
+    new_password = serializers.CharField(
+        write_only=True,
+        min_length=6,
+        help_text="Nouveau mot de passe (minimum 6 caractères)"
+    )
+    confirm_password = serializers.CharField(
+        write_only=True,
+        help_text="Confirmation du nouveau mot de passe"
+    )
+    
+    def validate(self, data):
+        """Valide les données et trouve l'utilisateur"""
+        phone_number = data.get('phone_number')
+        user_type = data.get('user_type')
+        new_password = data.get('new_password')
+        confirm_password = data.get('confirm_password')
+        
+        # Vérifier que les mots de passe correspondent
+        if new_password != confirm_password:
+            raise serializers.ValidationError("Les mots de passe ne correspondent pas.")
+        
+        # Trouver l'utilisateur
+        if user_type == 'driver':
+            try:
+                user = UserDriver.objects.get(phone_number=phone_number)
+            except UserDriver.DoesNotExist:
+                raise serializers.ValidationError("Aucun chauffeur trouvé avec ce numéro de téléphone.")
+        else:
+            try:
+                user = UserCustomer.objects.get(phone_number=phone_number)
+            except UserCustomer.DoesNotExist:
+                raise serializers.ValidationError("Aucun client trouvé avec ce numéro de téléphone.")
+        
+        data['user'] = user
+        return data
