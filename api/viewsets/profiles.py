@@ -6,6 +6,7 @@ from django.utils.decorators import method_decorator
 from django.shortcuts import get_object_or_404
 from drf_spectacular.utils import extend_schema, OpenApiExample, OpenApiParameter
 from drf_spectacular.openapi import OpenApiTypes
+from rest_framework.parsers import MultiPartParser, FormParser
 from ..serializers import (
     UserDriverUpdateSerializer, UserCustomerUpdateSerializer,
     UserDriverDetailSerializer, UserCustomerDetailSerializer
@@ -18,6 +19,7 @@ class DriverProfileView(APIView):
     """
     Vue pour gérer le profil d'un chauffeur (récupérer et modifier)
     """
+    parser_classes = [MultiPartParser, FormParser]
     
     @extend_schema(
         tags=['Profils'],
@@ -68,51 +70,48 @@ class DriverProfileView(APIView):
     @extend_schema(
         tags=['Profils'],
         summary='Modifier le profil chauffeur',
-        description='Modifie les informations personnelles d\'un chauffeur',
-        request=UserDriverUpdateSerializer,
+        description='Modifie les informations personnelles d\'un chauffeur. Utilisez un formulaire multipart pour uploader une nouvelle photo de profil.',
+        request={
+            'multipart/form-data': {
+                'type': 'object',
+                'properties': {
+                    'name': {'type': 'string', 'example': 'Jean-Michel'},
+                    'surname': {'type': 'string', 'example': 'Dupont'},
+                    'gender': {'type': 'string', 'enum': ['M', 'F', 'O'], 'example': 'M'},
+                    'age': {'type': 'integer', 'example': 36},
+                    'birthday': {'type': 'string', 'format': 'date', 'example': '1988-05-15'},
+                    'phone_number': {'type': 'string', 'example': '+237123456789'},
+                    'profile_picture': {'type': 'string', 'format': 'binary', 'description': 'Nouvelle photo de profil (optionnel)'}
+                },
+                'required': ['name', 'surname', 'gender', 'age', 'birthday', 'phone_number']
+            }
+        },
         responses={
-            200: UserDriverDetailSerializer,
+            200: {
+                'description': 'Profil modifié avec succès',
+                'examples': {
+                    'application/json': {
+                        'success': True,
+                        'message': 'Profil chauffeur modifié avec succès',
+                        'driver': {
+                            'id': 1,
+                            'name': 'Jean-Michel',
+                            'surname': 'Dupont',
+                            'phone_number': '+237123456789',
+                            'gender': 'M',
+                            'age': 36,
+                            'birthday': '1988-05-15',
+                            'profile_picture_url': 'http://localhost:8000/media/profile_pictures/driver/1/new_photo.jpg',
+                            'vehicles_count': 2,
+                            'documents_count': 3,
+                            'updated_at': '2023-12-05T16:00:00Z'
+                        }
+                    }
+                }
+            },
             400: {'description': 'Données invalides'},
             404: {'description': 'Chauffeur introuvable'},
-        },
-        examples=[
-            OpenApiExample(
-                'Update Driver Profile',
-                summary='Modification profil chauffeur',
-                description='Exemple de modification du profil chauffeur',
-                value={
-                    'name': 'Jean-Michel',
-                    'surname': 'Dupont',
-                    'gender': 'M',
-                    'age': 36,
-                    'birthday': '1988-05-15',
-                    'phone_number': '+33123456789'
-                },
-                request_only=True,
-            ),
-            OpenApiExample(
-                'Updated Profile',
-                summary='Profil modifié',
-                description='Réponse après modification réussie',
-                value={
-                    'success': True,
-                    'message': 'Profil chauffeur modifié avec succès',
-                    'driver': {
-                        'id': 1,
-                        'name': 'Jean-Michel',
-                        'surname': 'Dupont',
-                        'phone_number': '+33123456789',
-                        'gender': 'M',
-                        'age': 36,
-                        'birthday': '1988-05-15',
-                        'vehicles_count': 2,
-                        'documents_count': 3,
-                        'updated_at': '2023-12-05T16:00:00Z'
-                    }
-                },
-                response_only=True,
-            )
-        ]
+        }
     )
     def put(self, request, driver_id):
         """
@@ -156,6 +155,7 @@ class CustomerProfileView(APIView):
     """
     Vue pour gérer le profil d'un client (récupérer et modifier)
     """
+    parser_classes = [MultiPartParser, FormParser]
     
     @extend_schema(
         tags=['Profils'],
@@ -181,10 +181,38 @@ class CustomerProfileView(APIView):
     @extend_schema(
         tags=['Profils'],
         summary='Modifier le profil client',
-        description='Modifie les informations personnelles d\'un client',
-        request=UserCustomerUpdateSerializer,
+        description='Modifie les informations personnelles d\'un client. Utilisez un formulaire multipart pour uploader une nouvelle photo de profil.',
+        request={
+            'multipart/form-data': {
+                'type': 'object',
+                'properties': {
+                    'name': {'type': 'string', 'example': 'Marie'},
+                    'surname': {'type': 'string', 'example': 'Martin'},
+                    'phone_number': {'type': 'string', 'example': '+237987654321'},
+                    'profile_picture': {'type': 'string', 'format': 'binary', 'description': 'Nouvelle photo de profil (optionnel)'}
+                },
+                'required': ['name', 'surname', 'phone_number']
+            }
+        },
         responses={
-            200: UserCustomerDetailSerializer,
+            200: {
+                'description': 'Profil modifié avec succès',
+                'examples': {
+                    'application/json': {
+                        'success': True,
+                        'message': 'Profil client modifié avec succès',
+                        'customer': {
+                            'id': 1,
+                            'name': 'Marie',
+                            'surname': 'Martin',
+                            'phone_number': '+237987654321',
+                            'profile_picture_url': 'http://localhost:8000/media/profile_pictures/customer/1/new_photo.jpg',
+                            'documents_count': 2,
+                            'updated_at': '2023-12-05T16:00:00Z'
+                        }
+                    }
+                }
+            },
             400: {'description': 'Données invalides'},
             404: {'description': 'Client introuvable'},
         }

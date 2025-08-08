@@ -4,7 +4,8 @@ from .models import (
     UserDriver, UserCustomer, Token, Document, Vehicle, 
     GeneralConfig, Wallet, ReferralCode,
     VehicleType, VehicleBrand, VehicleModel, VehicleColor,
-    Country, City, VipZone, VipZoneKilometerRule
+    Country, City, VipZone, VipZoneKilometerRule,
+    OTPVerification, NotificationConfig
 )
 
 
@@ -999,4 +1000,175 @@ class VipZoneKilometerRuleAdmin(admin.ModelAdmin):
         updated = queryset.update(active=False)
         self.message_user(request, f'❌ {updated} règle(s) désactivée(s).')
     deactivate_rules.short_description = "❌ Désactiver les règles sélectionnées"
+
+
+@admin.register(OTPVerification)
+class OTPVerificationAdmin(admin.ModelAdmin):
+    """
+    Admin pour la gestion des vérifications OTP
+    """
+    list_display = (
+        'get_identifier_display', 'get_otp_display', 'get_status_display', 
+        'get_validity_display', 'created_at'
+    )
+    list_filter = ('is_verified', 'created_at')
+    search_fields = ('identifier',)
+    readonly_fields = ('otp', 'created_at')
+    list_per_page = 25
+    ordering = ['-created_at']
+    actions = ['mark_as_verified', 'mark_as_unverified']
+    
+    fieldsets = (
+        ('📱 Informations OTP', {
+            'fields': ('identifier', 'otp', 'is_verified'),
+            'description': 'Détails de la vérification OTP'
+        }),
+        ('📅 Horodatage', {
+            'fields': ('created_at',),
+            'classes': ('collapse',)
+        }),
+    )
+    
+    def get_identifier_display(self, obj):
+        """Affiche l'identifiant avec masquage partiel"""
+        identifier = obj.identifier
+        if '@' in identifier:  # Email
+            parts = identifier.split('@')
+            masked = parts[0][:2] + '*' * (len(parts[0]) - 2) + '@' + parts[1]
+            return format_html('📧 <code>{}</code>', masked)
+        else:  # Numéro de téléphone
+            if len(identifier) > 6:
+                masked = identifier[:3] + '*' * (len(identifier) - 6) + identifier[-3:]
+            else:
+                masked = identifier
+            return format_html('📱 <code>{}</code>', masked)
+    get_identifier_display.short_description = 'Identifiant'
+    get_identifier_display.admin_order_field = 'identifier'
+    
+    def get_otp_display(self, obj):
+        """Affiche l'OTP avec style"""
+        return format_html(
+            '<code style="background: #f8f9fa; color: #007bff; padding: 4px 8px; '
+            'border-radius: 4px; font-weight: bold;">{}</code>',
+            obj.otp
+        )
+    get_otp_display.short_description = 'Code OTP'
+    get_otp_display.admin_order_field = 'otp'
+    
+    def get_status_display(self, obj):
+        """Affiche le statut de vérification"""
+        if obj.is_verified:
+            return format_html('<span style="color: green;">✅ Vérifié</span>')
+        else:
+            return format_html('<span style="color: orange;">⏳ En attente</span>')
+    get_status_display.short_description = 'Statut'
+    get_status_display.admin_order_field = 'is_verified'
+    
+    def get_validity_display(self, obj):
+        """Affiche si l'OTP est encore valide"""
+        if obj.is_verified:
+            return format_html('<span style="color: gray;">— Utilisé</span>')
+        elif obj.is_valid():
+            return format_html('<span style="color: green;">🟢 Valide</span>')
+        else:
+            return format_html('<span style="color: red;">🔴 Expiré</span>')
+    get_validity_display.short_description = 'Validité'
+    
+    def mark_as_verified(self, request, queryset):
+        """Marquer les OTP comme vérifiés"""
+        updated = queryset.update(is_verified=True)
+        self.message_user(request, f'✅ {updated} OTP marqué(s) comme vérifié(s).')
+    mark_as_verified.short_description = "✅ Marquer comme vérifiés"
+    
+    def mark_as_unverified(self, request, queryset):
+        """Marquer les OTP comme non vérifiés"""
+        updated = queryset.update(is_verified=False)
+        self.message_user(request, f'⏳ {updated} OTP marqué(s) comme non vérifiés.')
+    mark_as_unverified.short_description = "⏳ Marquer comme non vérifiés"
+
+
+@admin.register(NotificationConfig)
+class NotificationConfigAdmin(admin.ModelAdmin):
+    """
+    Admin pour la configuration des notifications OTP
+    """
+    list_display = (
+        'get_channel_display', 'get_nexah_status', 'get_whatsapp_status', 
+        'updated_at'
+    )
+    readonly_fields = ('created_at', 'updated_at')
+    
+    fieldsets = (
+        ('📢 Configuration générale', {
+            'fields': ('default_channel',),
+            'description': 'Choisissez le canal par défaut pour l\'envoi des codes OTP'
+        }),
+        ('📱 Configuration SMS (Nexah)', {
+            'fields': (
+                'nexah_base_url', 'nexah_send_endpoint', 'nexah_credits_endpoint',
+                'nexah_user', 'nexah_password', 'nexah_sender_id'
+            ),
+            'description': 'Paramètres pour l\'envoi de SMS via l\'API Nexah',
+            'classes': ('collapse',)
+        }),
+        ('💬 Configuration WhatsApp (Meta)', {
+            'fields': (
+                'whatsapp_api_token', 'whatsapp_api_version', 'whatsapp_phone_number_id',
+                'whatsapp_template_name', 'whatsapp_language'
+            ),
+            'description': 'Paramètres pour l\'envoi de messages via l\'API WhatsApp de Meta',
+            'classes': ('collapse',)
+        }),
+        ('📅 Horodatage', {
+            'fields': ('created_at', 'updated_at'),
+            'classes': ('collapse',)
+        }),
+    )
+    
+    def get_channel_display(self, obj):
+        """Affiche le canal actuel avec icône"""
+        if obj.default_channel == 'sms':
+            return format_html('📱 <strong>SMS (Nexah)</strong>')
+        elif obj.default_channel == 'whatsapp':
+            return format_html('💬 <strong>WhatsApp (Meta)</strong>')
+        else:
+            return format_html('❓ <strong>{}</strong>', obj.get_default_channel_display())
+    get_channel_display.short_description = 'Canal par défaut'
+    get_channel_display.admin_order_field = 'default_channel'
+    
+    def get_nexah_status(self, obj):
+        """Affiche le statut de configuration Nexah"""
+        if obj.nexah_user and obj.nexah_password:
+            return format_html('<span style="color: green;">✅ Configuré</span>')
+        else:
+            return format_html('<span style="color: red;">❌ Non configuré</span>')
+    get_nexah_status.short_description = 'SMS Nexah'
+    
+    def get_whatsapp_status(self, obj):
+        """Affiche le statut de configuration WhatsApp"""
+        if obj.whatsapp_api_token and obj.whatsapp_phone_number_id:
+            return format_html('<span style="color: green;">✅ Configuré</span>')
+        else:
+            return format_html('<span style="color: red;">❌ Non configuré</span>')
+    get_whatsapp_status.short_description = 'WhatsApp Meta'
+    
+    def has_add_permission(self, request):
+        """Limite à une seule configuration"""
+        return not NotificationConfig.objects.exists()
+    
+    def has_delete_permission(self, request, obj=None):
+        """Empêche la suppression de la configuration"""
+        return False
+    
+    def save_model(self, request, obj, form, change):
+        """Sauvegarde avec message personnalisé"""
+        super().save_model(request, obj, form, change)
+        
+        # Message informatif
+        canal = "SMS (Nexah)" if obj.default_channel == 'sms' else "WhatsApp (Meta)"
+        self.message_user(
+            request, 
+            f'🔔 Configuration mise à jour ! Canal par défaut : {canal}',
+            level='SUCCESS'
+        )
     

@@ -27,10 +27,28 @@ class VehicleCreateView(APIView):
         tags=['Véhicules'],
         summary='Créer un véhicule',
         description='Permet à un chauffeur de créer un véhicule avec ses informations et photos. '
-                   'Supporte l\'upload de 4 images : 2 extérieures et 2 intérieures.',
+                   'Supporte l\'upload de 4 images : 2 extérieures et 2 intérieures. '
+                   '⚠️ IMPORTANT: Le véhicule est créé avec is_active=False par défaut. '
+                   'L\'administrateur doit l\'activer manuellement dans le panel admin.',
         request=VehicleCreateUpdateSerializer,
         responses={
-            201: VehicleSerializer,
+            201: {
+                'description': 'Véhicule créé avec succès (inactif par défaut)',
+                'examples': {
+                    'application/json': {
+                        'success': True,
+                        'message': 'Véhicule créé avec succès. En attente d\'activation par l\'administrateur.',
+                        'vehicle': {
+                            'id': 1,
+                            'nom': 'Ma voiture',
+                            'plaque_immatriculation': 'ABC-123',
+                            'is_active': False,
+                            'driver_info': 'Jean Dupont (+237123456789)',
+                            'etat_display': '8/10'
+                        }
+                    }
+                }
+            },
             400: {'description': 'Données invalides'},
             404: {'description': 'Chauffeur, type, marque, modèle ou couleur introuvable'},
         }
@@ -52,7 +70,7 @@ class VehicleCreateView(APIView):
                 
                 return Response({
                     'success': True,
-                    'message': 'Véhicule créé avec succès',
+                    'message': 'Véhicule créé avec succès. En attente d\'activation par l\'administrateur.',
                     'vehicle': vehicle_serializer.data
                 }, status=status.HTTP_201_CREATED)
                 
@@ -77,7 +95,8 @@ class VehicleListView(APIView):
     @extend_schema(
         tags=['Véhicules'],
         summary='Lister les véhicules',
-        description='Récupère la liste de tous les véhicules ou ceux d\'un chauffeur spécifique',
+        description='Récupère la liste de tous les véhicules ou ceux d\'un chauffeur spécifique. '
+                   'ℹ️ Les véhicules sont créés inactifs par défaut et doivent être activés par l\'administrateur.',
         parameters=[
             OpenApiParameter(
                 name='driver_id',
@@ -90,7 +109,7 @@ class VehicleListView(APIView):
                 name='is_active',
                 type=OpenApiTypes.BOOL,
                 location=OpenApiParameter.QUERY,
-                description='Filtrer par véhicules actifs/inactifs',
+                description='Filtrer par véhicules actifs/inactifs (défaut: tous les véhicules)',
                 required=False
             )
         ],
@@ -126,9 +145,8 @@ class VehicleListView(APIView):
 @method_decorator(csrf_exempt, name='dispatch')
 class VehicleDetailView(APIView):
     """
-    Vue pour récupérer, modifier ou supprimer un véhicule spécifique
+    Vue pour récupérer les détails d'un véhicule spécifique
     """
-    parser_classes = [MultiPartParser, FormParser]
     
     def get_object(self, vehicle_id):
         return get_object_or_404(
@@ -155,79 +173,6 @@ class VehicleDetailView(APIView):
         return Response({
             'success': True,
             'vehicle': serializer.data
-        }, status=status.HTTP_200_OK)
-    
-    @extend_schema(
-        tags=['Véhicules'],
-        summary='Modifier un véhicule',
-        description='Modifie les informations et/ou les photos d\'un véhicule existant',
-        request=VehicleCreateUpdateSerializer,
-        responses={
-            200: VehicleSerializer,
-            400: {'description': 'Données invalides'},
-            404: {'description': 'Véhicule introuvable'},
-        }
-    )
-    def put(self, request, vehicle_id):
-        """
-        Modifier un véhicule
-        """
-        vehicle = self.get_object(vehicle_id)
-        
-        data = request.data.copy()
-        for key, file in request.FILES.items():
-            data[key] = file
-        
-        serializer = VehicleCreateUpdateSerializer(
-            instance=vehicle,
-            data=data,
-            context={'request': request},
-            partial=True
-        )
-        
-        if serializer.is_valid():
-            try:
-                updated_vehicle = serializer.save()
-                vehicle_serializer = VehicleSerializer(updated_vehicle, context={'request': request})
-                
-                return Response({
-                    'success': True,
-                    'message': 'Véhicule modifié avec succès',
-                    'vehicle': vehicle_serializer.data
-                }, status=status.HTTP_200_OK)
-                
-            except Exception as e:
-                return Response({
-                    'success': False,
-                    'message': f'Erreur lors de la modification : {str(e)}'
-                }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
-        return Response({
-            'success': False,
-            'errors': serializer.errors
-        }, status=status.HTTP_400_BAD_REQUEST)
-    
-    @extend_schema(
-        tags=['Véhicules'],
-        summary='Supprimer un véhicule',
-        description='Supprime définitivement un véhicule (ou le désactive selon la logique métier)',
-        responses={
-            200: {'description': 'Véhicule supprimé avec succès'},
-            404: {'description': 'Véhicule introuvable'},
-        }
-    )
-    def delete(self, request, vehicle_id):
-        """
-        Supprimer un véhicule (soft delete - désactiver)
-        """
-        vehicle = self.get_object(vehicle_id)
-        
-        vehicle.is_active = False
-        vehicle.save()
-        
-        return Response({
-            'success': True,
-            'message': f'Véhicule {vehicle.brand} {vehicle.model} ({vehicle.plaque_immatriculation}) désactivé avec succès'
         }, status=status.HTTP_200_OK)
 
 
@@ -298,3 +243,152 @@ class VehicleColorListView(APIView):
         colors = VehicleColor.objects.filter(is_active=True)
         serializer = VehicleColorSerializer(colors, many=True)
         return Response({'success': True, 'colors': serializer.data}, status=status.HTTP_200_OK)
+
+
+# --- Dedicated CRUD Views for Vehicles --- #
+
+@method_decorator(csrf_exempt, name='dispatch')
+class VehicleUpdateView(APIView):
+    """
+    Vue dédiée pour modifier un véhicule
+    """
+    parser_classes = [MultiPartParser, FormParser]
+    
+    def get_object(self, vehicle_id):
+        return get_object_or_404(
+            Vehicle.objects.select_related('driver', 'vehicle_type', 'brand', 'model', 'color'), 
+            id=vehicle_id
+        )
+
+    @extend_schema(
+        tags=['Véhicules'],
+        summary='Modifier un véhicule',
+        description='Modifie les informations et/ou les photos d\'un véhicule existant',
+        request=VehicleCreateUpdateSerializer,
+        responses={
+            200: VehicleSerializer,
+            400: {'description': 'Données invalides'},
+            404: {'description': 'Véhicule introuvable'},
+        }
+    )
+    def put(self, request, vehicle_id):
+        """
+        Modifier un véhicule
+        """
+        vehicle = self.get_object(vehicle_id)
+        
+        data = request.data.copy()
+        for key, file in request.FILES.items():
+            data[key] = file
+        
+        serializer = VehicleCreateUpdateSerializer(
+            instance=vehicle,
+            data=data,
+            context={'request': request},
+            partial=True
+        )
+        
+        if serializer.is_valid():
+            try:
+                updated_vehicle = serializer.save()
+                vehicle_serializer = VehicleSerializer(updated_vehicle, context={'request': request})
+                
+                return Response({
+                    'success': True,
+                    'message': 'Véhicule modifié avec succès',
+                    'vehicle': vehicle_serializer.data
+                }, status=status.HTTP_200_OK)
+                
+            except Exception as e:
+                return Response({
+                    'success': False,
+                    'message': f'Erreur lors de la modification : {str(e)}'
+                }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        
+        return Response({
+            'success': False,
+            'errors': serializer.errors
+        }, status=status.HTTP_400_BAD_REQUEST)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class VehicleDeleteView(APIView):
+    """
+    Vue dédiée pour supprimer définitivement un véhicule
+    """
+    
+    def get_object(self, vehicle_id):
+        return get_object_or_404(Vehicle, id=vehicle_id)
+
+    @extend_schema(
+        tags=['Véhicules'],
+        summary='Supprimer un véhicule',
+        description='Supprime définitivement un véhicule de la base de données',
+        responses={
+            200: {'description': 'Véhicule supprimé avec succès'},
+            404: {'description': 'Véhicule introuvable'},
+        }
+    )
+    def delete(self, request, vehicle_id):
+        """
+        Supprimer définitivement un véhicule
+        """
+        vehicle = self.get_object(vehicle_id)
+        vehicle_info = f"{vehicle.brand} {vehicle.model} ({vehicle.plaque_immatriculation})"
+        
+        # Supprimer les images associées si elles existent
+        import os
+        for field in ['photo_exterieur_1', 'photo_exterieur_2', 'photo_interieur_1', 'photo_interieur_2']:
+            image = getattr(vehicle, field)
+            if image:
+                try:
+                    if os.path.isfile(image.path):
+                        os.remove(image.path)
+                except:
+                    pass  # Continue même si la suppression du fichier échoue
+        
+        vehicle.delete()
+        
+        return Response({
+            'success': True,
+            'message': f'Véhicule {vehicle_info} supprimé définitivement avec succès'
+        }, status=status.HTTP_200_OK)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class VehicleDeactivateView(APIView):
+    """
+    Vue dédiée pour désactiver un véhicule
+    """
+    
+    def get_object(self, vehicle_id):
+        return get_object_or_404(Vehicle, id=vehicle_id)
+
+    @extend_schema(
+        tags=['Véhicules'],
+        summary='Désactiver un véhicule',
+        description='Désactive un véhicule (soft delete) en gardant ses données',
+        responses={
+            200: {'description': 'Véhicule désactivé avec succès'},
+            404: {'description': 'Véhicule introuvable'},
+        }
+    )
+    def patch(self, request, vehicle_id):
+        """
+        Désactiver un véhicule (soft delete)
+        """
+        vehicle = self.get_object(vehicle_id)
+        
+        if not vehicle.is_active:
+            return Response({
+                'success': False,
+                'message': 'Ce véhicule est déjà désactivé'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        vehicle.is_active = False
+        vehicle.save()
+        
+        return Response({
+            'success': True,
+            'message': f'Véhicule {vehicle.brand} {vehicle.model} ({vehicle.plaque_immatriculation}) désactivé avec succès'
+        }, status=status.HTTP_200_OK)
