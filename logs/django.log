@@ -1,0 +1,178 @@
+INFO 2025-08-08 18:56:15,356 autoreload 53982 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-08 18:57:30,493 autoreload 54642 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 13:43:03,858 autoreload 19613 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 13:58:09,659 basehttp 19613 123145602457600 "GET /admin/ HTTP/1.1" 200 60982
+INFO 2025-08-09 13:58:09,746 basehttp 19613 123145686405120 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2025-08-09 13:58:09,754 basehttp 19613 123145669615616 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+INFO 2025-08-09 13:58:09,756 basehttp 19613 123145686405120 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 62440
+INFO 2025-08-09 13:58:09,763 basehttp 19613 123145686405120 "GET /static/jazzmin/js/main.js HTTP/1.1" 200 2391
+INFO 2025-08-09 13:58:09,767 basehttp 19613 123145669615616 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+INFO 2025-08-09 13:58:09,769 basehttp 19613 123145652826112 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 200 164202
+INFO 2025-08-09 13:58:09,769 basehttp 19613 123145636036608 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-08-09 13:58:09,774 basehttp 19613 123145602457600 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+INFO 2025-08-09 13:58:09,777 basehttp 19613 123145619247104 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+INFO 2025-08-09 13:58:10,048 basehttp 19613 123145619247104 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+INFO 2025-08-09 13:58:10,049 basehttp 19613 123145602457600 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+WARNING 2025-08-09 13:58:10,289 basehttp 19613 123145619247104 "GET /static/fas%20fa-car HTTP/1.1" 404 1844
+INFO 2025-08-09 13:58:13,773 basehttp 19613 123145602457600 "GET /admin/api/vipzonekilometerrule/ HTTP/1.1" 200 38582
+INFO 2025-08-09 13:58:13,819 basehttp 19613 123145686405120 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-08-09 13:58:13,820 basehttp 19613 123145636036608 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-08-09 13:58:13,820 basehttp 19613 123145669615616 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 16264
+INFO 2025-08-09 13:58:13,825 basehttp 19613 123145619247104 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-08-09 13:58:13,834 basehttp 19613 123145669615616 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-08-09 13:58:13,834 basehttp 19613 123145686405120 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-08-09 13:58:13,837 basehttp 19613 123145636036608 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-08-09 13:58:13,840 basehttp 19613 123145652826112 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 13:58:13,842 basehttp 19613 123145669615616 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 2252
+INFO 2025-08-09 13:58:13,845 basehttp 19613 123145619247104 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 73170
+INFO 2025-08-09 13:58:13,852 basehttp 19613 123145602457600 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-08-09 13:58:20,333 basehttp 19613 123145602457600 "GET /admin/api/vehicle/ HTTP/1.1" 200 42361
+INFO 2025-08-09 13:58:20,387 basehttp 19613 123145619247104 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-08-09 13:58:20,387 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 13:58:23,255 basehttp 19613 123145619247104 "GET /admin/api/userdriver/ HTTP/1.1" 200 49652
+INFO 2025-08-09 13:58:23,294 basehttp 19613 123145619247104 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 13:58:30,829 basehttp 19613 123145619247104 "GET /admin/api/otpverification/ HTTP/1.1" 200 29251
+INFO 2025-08-09 13:58:30,870 basehttp 19613 123145619247104 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 13:58:32,847 basehttp 19613 123145619247104 "GET /admin/api/country/ HTTP/1.1" 200 33580
+INFO 2025-08-09 13:58:32,874 basehttp 19613 123145619247104 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 13:58:35,669 basehttp 19613 123145619247104 "GET /admin/api/city/ HTTP/1.1" 200 35693
+INFO 2025-08-09 13:58:35,696 basehttp 19613 123145619247104 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 13:58:48,021 basehttp 19613 123145619247104 "GET /admin/api/wallet/ HTTP/1.1" 200 47106
+INFO 2025-08-09 13:58:48,042 basehttp 19613 123145619247104 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 13:58:54,521 basehttp 19613 123145619247104 "GET /admin/api/userdriver/ HTTP/1.1" 200 49652
+INFO 2025-08-09 13:58:54,546 basehttp 19613 123145619247104 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 14:15:16,382 basehttp 19613 123145602457600 "GET /admin/api/userdriver/ HTTP/1.1" 200 49652
+INFO 2025-08-09 14:15:16,423 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 14:15:22,816 basehttp 19613 123145602457600 "POST /admin/api/userdriver/ HTTP/1.1" 200 30472
+INFO 2025-08-09 14:15:22,843 basehttp 19613 123145602457600 "GET /static/admin/js/cancel.js HTTP/1.1" 200 564
+INFO 2025-08-09 14:15:24,378 basehttp 19613 123145602457600 "POST /admin/api/userdriver/ HTTP/1.1" 302 0
+INFO 2025-08-09 14:15:24,403 basehttp 19613 123145602457600 "GET /admin/api/userdriver/ HTTP/1.1" 200 31693
+INFO 2025-08-09 14:15:24,425 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 14:19:12,129 basehttp 19613 123145602457600 "GET /admin/api/notificationconfig/ HTTP/1.1" 200 27177
+INFO 2025-08-09 14:19:15,504 basehttp 19613 123145602457600 "GET /admin/api/notificationconfig/ HTTP/1.1" 200 27177
+INFO 2025-08-09 14:19:16,431 basehttp 19613 123145602457600 "GET /admin/api/notificationconfig/ HTTP/1.1" 200 27177
+INFO 2025-08-09 14:19:18,336 basehttp 19613 123145602457600 "GET /admin/api/referralcode/ HTTP/1.1" 200 48673
+INFO 2025-08-09 14:19:18,353 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 14:19:19,186 basehttp 19613 123145602457600 "GET /admin/api/notificationconfig/ HTTP/1.1" 200 27177
+INFO 2025-08-09 14:19:20,020 basehttp 19613 123145602457600 "GET /admin/api/generalconfig/ HTTP/1.1" 200 44488
+WARNING 2025-08-09 14:19:20,046 basehttp 19613 123145619247104 "GET /static/admin/css/custom_admin.css HTTP/1.1" 404 1890
+INFO 2025-08-09 14:19:20,047 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 14:19:57,743 basehttp 19613 123145602457600 "GET /admin/api/notificationconfig/ HTTP/1.1" 200 27177
+INFO 2025-08-09 14:19:59,052 basehttp 19613 123145602457600 "GET /admin/api/notificationconfig/ HTTP/1.1" 200 27177
+INFO 2025-08-09 15:06:14,696 basehttp 19613 123145602457600 "GET /admin/api/notificationconfig/add/ HTTP/1.1" 200 44434
+INFO 2025-08-09 15:06:14,732 basehttp 19613 123145619247104 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-08-09 15:06:14,732 basehttp 19613 123145636036608 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-08-09 15:06:14,733 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:06:14,740 basehttp 19613 123145636036608 "GET /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js HTTP/1.1" 200 2756
+INFO 2025-08-09 15:06:14,741 basehttp 19613 123145602457600 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 200 6052
+INFO 2025-08-09 15:06:14,770 basehttp 19613 123145602457600 "GET /static/jazzmin/js/related-modal.js HTTP/1.1" 200 6258
+INFO 2025-08-09 15:09:30,169 basehttp 19613 123145602457600 "POST /admin/api/notificationconfig/add/ HTTP/1.1" 302 0
+INFO 2025-08-09 15:09:30,205 basehttp 19613 123145602457600 "GET /admin/api/notificationconfig/ HTTP/1.1" 200 30535
+INFO 2025-08-09 15:09:33,080 basehttp 19613 123145602457600 "GET /admin/api/notificationconfig/1/change/ HTTP/1.1" 200 45139
+INFO 2025-08-09 15:09:33,106 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:14:11,673 nexah_service 19613 123145602457600 Sending SMS to +237658895572
+INFO 2025-08-09 15:14:13,014 nexah_service 19613 123145602457600 Nexah API response: 200
+INFO 2025-08-09 15:14:13,014 otp 19613 123145602457600 OTP send result for +237658895572: {'success': True, 'message': 'SMS sent successfully!', 'data': {'responsecode': 1, 'responsedescription': 'success', 'responsemessage': 'success', 'sms': [{'status': 'success', 'smsclientid': 'smpp.ocm.689765c4d6ce2e072991e881', 'messageid': 'smpp.ocm.145c18a6-f617-4f28-bf89-e614ba7d5a05', 'mobileno': '237658895572', 'errorcode': None, 'errordescription': None, 'total_sms_unit': 1, 'balance': 792}]}}
+INFO 2025-08-09 15:14:13,017 basehttp 19613 123145602457600 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-09 15:14:36,630 basehttp 19613 123145602457600 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-09 15:14:38,060 basehttp 19613 123145602457600 "POST /api/v1/auth/register/driver/ HTTP/1.1" 201 266
+INFO 2025-08-09 15:14:39,551 basehttp 19613 123145619783680 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-09 15:15:00,842 basehttp 19613 123145602457600 "POST /api/v1/documents/import/ HTTP/1.1" 201 524
+INFO 2025-08-09 15:15:01,366 basehttp 19613 123145602457600 "GET /api/v1/vehicles/configs/types/ HTTP/1.1" 200 318
+INFO 2025-08-09 15:15:01,377 basehttp 19613 123145619783680 "GET /api/v1/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-08-09 15:15:01,383 basehttp 19613 123145636573184 "GET /api/v1/vehicles/configs/models/ HTTP/1.1" 200 210
+INFO 2025-08-09 15:15:01,389 basehttp 19613 123145653362688 "GET /api/v1/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-08-09 15:15:14,552 basehttp 19613 123145602457600 "GET /admin/api/vehiclebrand/ HTTP/1.1" 200 32243
+INFO 2025-08-09 15:15:14,581 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:15:15,866 basehttp 19613 123145602457600 "GET /admin/api/document/ HTTP/1.1" 200 37532
+INFO 2025-08-09 15:15:15,892 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:15:16,811 basehttp 19613 123145602457600 "GET /admin/api/vehiclemodel/ HTTP/1.1" 200 33019
+INFO 2025-08-09 15:15:16,831 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:15:17,615 basehttp 19613 123145602457600 "GET /admin/api/vehicletype/ HTTP/1.1" 200 33326
+INFO 2025-08-09 15:15:17,639 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:15:27,773 basehttp 19613 123145602457600 "GET /admin/api/vehiclebrand/ HTTP/1.1" 200 32243
+INFO 2025-08-09 15:15:27,797 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:15:30,427 basehttp 19613 123145602457600 "GET /admin/api/vehiclemodel/ HTTP/1.1" 200 33019
+INFO 2025-08-09 15:15:30,459 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:15:35,884 basehttp 19613 123145602457600 "GET /admin/api/vehicle/ HTTP/1.1" 200 36039
+INFO 2025-08-09 15:15:35,906 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:15:37,302 basehttp 19613 123145602457600 "GET /admin/api/vehiclecolor/ HTTP/1.1" 200 33635
+INFO 2025-08-09 15:15:37,324 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:18:42,476 basehttp 19613 123145636573184 "POST /api/v1/vehicles/create/ HTTP/1.1" 201 1046
+INFO 2025-08-09 15:18:59,195 basehttp 19613 123145619783680 "POST /api/v1/documents/import/ HTTP/1.1" 201 528
+INFO 2025-08-09 15:18:59,310 basehttp 19613 123145619783680 "POST /api/v1/documents/import/ HTTP/1.1" 201 512
+INFO 2025-08-09 15:26:42,553 basehttp 19613 123145602457600 "GET /admin/api/vehicle/ HTTP/1.1" 200 42360
+INFO 2025-08-09 15:26:42,585 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:26:42,588 basehttp 19613 123145619783680 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-08-09 15:26:53,714 basehttp 19613 123145619783680 "GET /admin/api/document/ HTTP/1.1" 200 39296
+INFO 2025-08-09 15:26:53,736 basehttp 19613 123145619783680 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:27:03,064 basehttp 19613 123145619783680 "POST /admin/api/document/ HTTP/1.1" 200 27145
+INFO 2025-08-09 15:27:04,779 basehttp 19613 123145619783680 "POST /admin/api/document/ HTTP/1.1" 302 0
+INFO 2025-08-09 15:27:04,829 basehttp 19613 123145619783680 "GET /admin/api/document/ HTTP/1.1" 200 38987
+INFO 2025-08-09 15:27:04,855 basehttp 19613 123145619783680 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:27:34,691 basehttp 19613 123145636573184 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-09 15:28:02,730 basehttp 19613 123145636573184 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+WARNING 2025-08-09 15:34:53,670 log 19613 123145602457600 Not Found: /swagger/
+WARNING 2025-08-09 15:34:53,673 basehttp 19613 123145602457600 "GET /swagger/ HTTP/1.1" 404 3199
+WARNING 2025-08-09 15:34:53,790 log 19613 123145602457600 Not Found: /favicon.ico
+WARNING 2025-08-09 15:34:53,790 basehttp 19613 123145602457600 "GET /favicon.ico HTTP/1.1" 404 3208
+WARNING 2025-08-09 15:34:57,592 log 19613 123145602457600 Not Found: /
+WARNING 2025-08-09 15:34:57,593 basehttp 19613 123145602457600 "GET / HTTP/1.1" 404 3157
+INFO 2025-08-09 15:35:05,665 basehttp 19613 123145602457600 "GET /admin/ HTTP/1.1" 200 58065
+INFO 2025-08-09 15:35:08,156 basehttp 19613 123145602457600 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-08-09 15:35:25,758 basehttp 19613 123145602457600 "GET /api/schema/ HTTP/1.1" 200 112854
+INFO 2025-08-09 15:36:01,032 basehttp 19613 123145602457600 "GET /admin/api/userdriver/ HTTP/1.1" 200 36946
+INFO 2025-08-09 15:36:01,068 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-08-09 15:36:16,334 forgot_password 19613 123145602457600 Erreur lors de la réinitialisation du mot de passe: 'UserDriver' object has no attribute 'set_password'
+ERROR 2025-08-09 15:36:16,336 log 19613 123145602457600 Internal Server Error: /api/v1/auth/forgot-password/
+ERROR 2025-08-09 15:36:16,336 basehttp 19613 123145602457600 "POST /api/v1/auth/forgot-password/ HTTP/1.1" 500 93
+ERROR 2025-08-09 15:36:35,189 forgot_password 19613 123145602457600 Erreur lors de la réinitialisation du mot de passe: 'UserDriver' object has no attribute 'set_password'
+ERROR 2025-08-09 15:36:35,189 log 19613 123145602457600 Internal Server Error: /api/v1/auth/forgot-password/
+ERROR 2025-08-09 15:36:35,190 basehttp 19613 123145602457600 "POST /api/v1/auth/forgot-password/ HTTP/1.1" 500 93
+INFO 2025-08-09 15:44:25,192 basehttp 19613 123145602457600 "GET /admin/api/userdriver/ HTTP/1.1" 200 36946
+INFO 2025-08-09 15:44:25,220 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:44:32,606 basehttp 19613 123145602457600 "POST /admin/api/userdriver/ HTTP/1.1" 200 27364
+INFO 2025-08-09 15:44:34,423 basehttp 19613 123145602457600 "POST /admin/api/userdriver/ HTTP/1.1" 302 0
+INFO 2025-08-09 15:44:34,455 basehttp 19613 123145602457600 "GET /admin/api/userdriver/ HTTP/1.1" 200 31691
+INFO 2025-08-09 15:44:34,489 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:44:36,741 basehttp 19613 123145602457600 "GET /admin/api/document/ HTTP/1.1" 200 38481
+INFO 2025-08-09 15:44:36,771 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 15:44:40,251 basehttp 19613 123145602457600 "POST /admin/api/document/ HTTP/1.1" 200 27610
+INFO 2025-08-09 15:44:41,411 basehttp 19613 123145602457600 "POST /admin/api/document/ HTTP/1.1" 302 0
+INFO 2025-08-09 15:44:41,440 basehttp 19613 123145602457600 "GET /admin/api/document/ HTTP/1.1" 200 30916
+INFO 2025-08-09 15:44:41,476 basehttp 19613 123145602457600 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-08-09 15:45:03,282 log 19613 123145636573184 Bad Request: /api/v1/auth/login/
+WARNING 2025-08-09 15:45:03,282 basehttp 19613 123145636573184 "POST /api/v1/auth/login/ HTTP/1.1" 400 85
+INFO 2025-08-09 15:46:02,785 nexah_service 19613 123145602457600 Sending SMS to +237658895572
+INFO 2025-08-09 15:46:04,408 nexah_service 19613 123145602457600 Nexah API response: 200
+INFO 2025-08-09 15:46:04,409 otp 19613 123145602457600 OTP send result for +237658895572: {'success': True, 'message': 'SMS sent successfully!', 'data': {'responsecode': 1, 'responsedescription': 'success', 'responsemessage': 'success', 'sms': [{'status': 'success', 'smsclientid': 'smpp.ocm.68976d3cd6ce2e072991ec27', 'messageid': 'smpp.ocm.faa93d5f-c571-4154-8750-a18fc3794ec3', 'mobileno': '237658895572', 'errorcode': None, 'errordescription': None, 'total_sms_unit': 1, 'balance': 791}]}}
+INFO 2025-08-09 15:46:04,410 basehttp 19613 123145602457600 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-09 15:46:22,776 basehttp 19613 123145602457600 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-09 15:46:24,433 basehttp 19613 123145602457600 "POST /api/v1/auth/register/driver/ HTTP/1.1" 201 266
+INFO 2025-08-09 15:46:25,947 basehttp 19613 123145619783680 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-09 15:46:37,800 basehttp 19613 123145602457600 "POST /api/v1/documents/import/ HTTP/1.1" 201 524
+INFO 2025-08-09 15:46:38,187 basehttp 19613 123145602457600 "GET /api/v1/vehicles/configs/types/ HTTP/1.1" 200 318
+INFO 2025-08-09 15:46:38,193 basehttp 19613 123145619783680 "GET /api/v1/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-08-09 15:46:38,193 basehttp 19613 123145636573184 "GET /api/v1/vehicles/configs/models/ HTTP/1.1" 200 210
+INFO 2025-08-09 15:46:38,194 basehttp 19613 123145653362688 "GET /api/v1/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-08-09 15:47:29,065 basehttp 19613 123145602457600 "POST /api/v1/vehicles/create/ HTTP/1.1" 201 1042
+INFO 2025-08-09 15:47:54,891 basehttp 19613 123145602457600 "POST /api/v1/documents/import/ HTTP/1.1" 201 528
+INFO 2025-08-09 15:47:55,025 basehttp 19613 123145602457600 "POST /api/v1/documents/import/ HTTP/1.1" 201 512
+INFO 2025-08-09 15:48:10,543 basehttp 19613 123145602457600 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 15:48:52,698 basehttp 19613 123145602457600 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-09 15:48:54,563 basehttp 19613 123145602457600 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-09 15:48:56,806 basehttp 19613 123145602457600 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 15:50:47,152 autoreload 19613 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-09 15:50:48,507 autoreload 79761 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 15:51:03,705 autoreload 79761 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/viewsets/forgot_password.py changed, reloading.
+INFO 2025-08-09 15:51:04,306 autoreload 79969 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 15:51:10,217 forgot_password 79969 123145394831360 Mot de passe réinitialisé pour +237658895572 (driver)
+INFO 2025-08-09 15:51:10,218 basehttp 79969 123145394831360 "POST /api/v1/auth/forgot-password/ HTTP/1.1" 200 66
+INFO 2025-08-09 15:51:19,610 basehttp 79969 123145411620864 "POST /api/v1/auth/logout/ HTTP/1.1" 200 50
+WARNING 2025-08-09 15:51:32,412 log 79969 123145411620864 Bad Request: /api/v1/auth/login/
+WARNING 2025-08-09 15:51:32,412 basehttp 79969 123145411620864 "POST /api/v1/auth/login/ HTTP/1.1" 400 75
+INFO 2025-08-09 15:51:40,719 basehttp 79969 123145411620864 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-09 15:51:45,310 basehttp 79969 123145411620864 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 15:51:58,092 basehttp 79969 123145411620864 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-09 15:51:59,953 basehttp 79969 123145411620864 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-09 15:52:01,521 basehttp 79969 123145411620864 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
