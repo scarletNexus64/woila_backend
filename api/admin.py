@@ -232,7 +232,7 @@ class VehicleInline(admin.TabularInline):
 @admin.register(UserDriver)
 class UserDriverAdmin(admin.ModelAdmin):
     list_display = [
-        'get_phone_display', 'get_name_display', 'get_gender_display', 
+        'get_phone_display', 'get_name_display', 'get_profile_picture_display', 'get_gender_display', 
         'age', 'get_partenaire_display', 'get_status_display', 'vehicle_count', 'created_at'
     ]
     list_filter = ['gender', 'is_active', 'is_partenaire_interne', 'is_partenaire_externe', 'created_at']
@@ -243,7 +243,7 @@ class UserDriverAdmin(admin.ModelAdmin):
     
     fieldsets = (
         ('👤 Informations personnelles', {
-            'fields': ('phone_number', 'name', 'surname', 'gender', 'age', 'birthday'),
+            'fields': ('phone_number', 'name', 'surname', 'gender', 'age', 'birthday', 'profile_picture'),
             'description': 'Informations de base du chauffeur'
         }),
         ('🤝 Type de partenariat', {
@@ -307,6 +307,15 @@ class UserDriverAdmin(admin.ModelAdmin):
     get_status_display.short_description = 'Statut'
     get_status_display.admin_order_field = 'is_active'
     
+    def get_profile_picture_display(self, obj):
+        if obj.profile_picture:
+            return format_html(
+                '<img src="{}" width="30" height="30" style="border-radius: 50%; object-fit: cover;" />',
+                obj.profile_picture.url
+            )
+        return format_html('<span style="color: gray;">📷 Aucune photo</span>')
+    get_profile_picture_display.short_description = 'Photo'
+    
     def vehicle_count(self, obj):
         count = obj.vehicles.filter(is_active=True).count()
         if count > 0:
@@ -338,7 +347,7 @@ class UserDriverAdmin(admin.ModelAdmin):
 @admin.register(UserCustomer)
 class UserCustomerAdmin(admin.ModelAdmin):
     list_display = [
-        'get_phone_display', 'get_name_display', 'get_status_display', 
+        'get_phone_display', 'get_name_display', 'get_profile_picture_display', 'get_status_display', 
         'get_documents_count', 'created_at'
     ]
     list_filter = ['is_active', 'created_at']
@@ -348,7 +357,7 @@ class UserCustomerAdmin(admin.ModelAdmin):
     
     fieldsets = (
         ('👥 Informations personnelles', {
-            'fields': ('phone_number', 'name', 'surname'),
+            'fields': ('phone_number', 'name', 'surname', 'profile_picture'),
             'description': 'Informations de base du client'
         }),
         ('🔐 Sécurité', {
@@ -385,6 +394,15 @@ class UserCustomerAdmin(admin.ModelAdmin):
             return format_html('<span style="color: red;">❌ Inactif</span>')
     get_status_display.short_description = 'Statut'
     get_status_display.admin_order_field = 'is_active'
+    
+    def get_profile_picture_display(self, obj):
+        if obj.profile_picture:
+            return format_html(
+                '<img src="{}" width="30" height="30" style="border-radius: 50%; object-fit: cover;" />',
+                obj.profile_picture.url
+            )
+        return format_html('<span style="color: gray;">📷 Aucune photo</span>')
+    get_profile_picture_display.short_description = 'Photo'
     
     def get_documents_count(self, obj):
         from .models import Document

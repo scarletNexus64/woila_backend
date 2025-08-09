@@ -1,6 +1,7 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
+from rest_framework.parsers import MultiPartParser, FormParser
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from drf_spectacular.utils import extend_schema, OpenApiExample
@@ -16,6 +17,7 @@ class RegisterDriverView(APIView):
     """
     Vue pour l'inscription des chauffeurs
     """
+    parser_classes = [MultiPartParser, FormParser]
     
     @extend_schema(
         tags=['Authentication'],
@@ -93,7 +95,6 @@ class RegisterDriverView(APIView):
 
                     # Le bonus de parrainage est géré automatiquement dans le serializer
                     # Pas besoin de logique supplémentaire ici
-            
                     # Préparer les informations du chauffeur
                     user_info = {
                         'id': driver.id,
@@ -102,9 +103,9 @@ class RegisterDriverView(APIView):
                         'phone_number': driver.phone_number,
                         'gender': driver.gender,
                         'age': driver.age,
-                        'birthday': driver.birthday.isoformat() if driver.birthday else None
+                        'birthday': driver.birthday.isoformat() if driver.birthday else None,
+                        'profile_picture_url': driver.get_profile_picture_url(request) if driver.profile_picture else None
                     }
-                    
                     return Response({
                         'success': True,
                         'message': 'Inscription chauffeur réussie. Vous pouvez maintenant vous connecter.',
@@ -130,6 +131,7 @@ class RegisterCustomerView(APIView):
     """
     Vue pour l'inscription des clients
     """
+    parser_classes = [MultiPartParser, FormParser]
     
     @extend_schema(
         tags=['Authentication'],
@@ -207,9 +209,9 @@ class RegisterCustomerView(APIView):
                         'id': customer.id,
                         'name': customer.name,
                         'surname': customer.surname,
-                        'phone_number': customer.phone_number
+                        'phone_number': customer.phone_number,
+                        'profile_picture_url': customer.get_profile_picture_url(request) if customer.profile_picture else None
                     }
-                    
                     return Response({
                         'success': True,
                         'message': 'Inscription client réussie. Vous pouvez maintenant vous connecter.',
@@ -223,7 +225,6 @@ class RegisterCustomerView(APIView):
                     'success': False,
                     'errors': str(e)
                 }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
         return Response({
             'success': False,
             'errors': serializer.errors

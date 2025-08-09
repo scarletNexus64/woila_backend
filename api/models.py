@@ -51,6 +51,9 @@ class UserDriver(models.Model):
     def check_password(self, raw_password):
         return check_password(raw_password, self.password)
     
+    def set_password(self, raw_password):
+        self.password = make_password(raw_password)
+    
     def get_profile_picture_url(self, request=None):
         """Retourne l'URL de la photo de profil"""
         if self.profile_picture:
@@ -90,6 +93,9 @@ class UserCustomer(models.Model):
     
     def check_password(self, raw_password):
         return check_password(raw_password, self.password)
+    
+    def set_password(self, raw_password):
+        self.password = make_password(raw_password)
     
     def get_profile_picture_url(self, request=None):
         """Retourne l'URL de la photo de profil"""
