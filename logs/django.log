@@ -248,3 +248,95 @@ INFO 2025-08-09 18:39:59,083 basehttp 8692 123145563496448 "GET /static/admin/im
 INFO 2025-08-09 18:39:59,084 basehttp 8692 123145529917440 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
 INFO 2025-08-09 18:39:59,098 basehttp 8692 123145597075456 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
 INFO 2025-08-09 18:40:25,134 basehttp 8692 123145597075456 "GET /api/v1/profiles/drivers/ HTTP/1.1" 200 301
+INFO 2025-08-09 18:47:09,609 autoreload 8692 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-09 18:47:10,934 autoreload 26532 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 18:47:42,631 autoreload 26532 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-09 18:47:43,632 autoreload 26861 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 18:48:10,200 autoreload 26861 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-09 18:48:10,902 autoreload 27157 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 18:50:47,198 autoreload 27157 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-09 18:50:47,801 autoreload 28364 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 18:51:16,112 autoreload 28364 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-09 18:51:17,053 autoreload 28638 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 19:11:48,721 autoreload 37804 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 19:22:11,063 autoreload 37804 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-09 19:22:11,806 autoreload 42245 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 19:23:41,237 basehttp 42245 123145501876224 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-08-09 19:23:41,600 basehttp 42245 123145501876224 "GET /api/schema/ HTTP/1.1" 200 111487
+INFO 2025-08-09 19:23:46,089 basehttp 42245 123145501876224 "GET /api/v1/profiles/drivers/ HTTP/1.1" 200 328
+INFO 2025-08-09 19:33:45,496 basehttp 42245 123145501876224 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-08-09 19:33:45,823 basehttp 42245 123145501876224 "GET /api/schema/ HTTP/1.1" 200 111487
+INFO 2025-08-09 19:35:59,192 basehttp 42245 123145501876224 "GET /admin/api/userdriver/17/change/ HTTP/1.1" 200 64669
+INFO 2025-08-09 19:35:59,221 basehttp 42245 123145501876224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 19:36:23,131 basehttp 42245 123145501876224 "POST /admin/api/userdriver/17/change/ HTTP/1.1" 302 0
+INFO 2025-08-09 19:36:23,175 basehttp 42245 123145501876224 "GET /admin/api/userdriver/ HTTP/1.1" 200 38094
+INFO 2025-08-09 19:36:23,213 basehttp 42245 123145501876224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 19:36:23,217 basehttp 42245 123145518665728 "GET /media/profile_pictures/driver/17/1718882053_Sample_1.jpeg HTTP/1.1" 200 80301
+INFO 2025-08-09 19:40:45,701 basehttp 42245 123145535455232 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-09 19:40:56,689 basehttp 42245 123145535455232 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 19:58:58,711 basehttp 42245 123145501876224 "GET /api/v1/profiles/drivers/ HTTP/1.1" 200 403
+INFO 2025-08-09 20:03:29,860 basehttp 42245 123145501876224 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-09 20:03:31,768 basehttp 42245 123145501876224 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-09 20:03:37,433 basehttp 42245 123145501876224 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 20:04:26,837 basehttp 42245 123145501876224 "POST /api/v1/auth/logout/ HTTP/1.1" 200 50
+INFO 2025-08-09 20:04:45,251 basehttp 42245 123145501876224 "POST /admin/api/userdriver/ HTTP/1.1" 200 27363
+INFO 2025-08-09 20:04:45,301 basehttp 42245 123145501876224 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-08-09 20:04:46,603 basehttp 42245 123145501876224 "POST /admin/api/userdriver/ HTTP/1.1" 302 0
+INFO 2025-08-09 20:04:46,632 basehttp 42245 123145501876224 "GET /admin/api/userdriver/ HTTP/1.1" 200 31691
+INFO 2025-08-09 20:04:46,657 basehttp 42245 123145501876224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 20:04:49,004 basehttp 42245 123145501876224 "GET /admin/api/vehicle/ HTTP/1.1" 200 36039
+INFO 2025-08-09 20:04:49,025 basehttp 42245 123145501876224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 20:04:51,025 basehttp 42245 123145501876224 "GET /admin/api/vehicle/ HTTP/1.1" 200 36039
+INFO 2025-08-09 20:04:51,046 basehttp 42245 123145501876224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 20:04:54,811 basehttp 42245 123145501876224 "GET /admin/api/document/ HTTP/1.1" 200 38481
+INFO 2025-08-09 20:04:54,832 basehttp 42245 123145501876224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 20:04:54,834 basehttp 42245 123145518665728 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-08-09 20:04:59,535 basehttp 42245 123145518665728 "POST /admin/api/document/ HTTP/1.1" 200 27610
+INFO 2025-08-09 20:05:00,833 basehttp 42245 123145518665728 "POST /admin/api/document/ HTTP/1.1" 302 0
+INFO 2025-08-09 20:05:00,856 basehttp 42245 123145518665728 "GET /admin/api/document/ HTTP/1.1" 200 30916
+INFO 2025-08-09 20:05:00,876 basehttp 42245 123145518665728 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 20:06:29,430 nexah_service 42245 123145535455232 Sending SMS to +237658895572
+INFO 2025-08-09 20:06:31,095 nexah_service 42245 123145535455232 Nexah API response: 200
+INFO 2025-08-09 20:06:31,096 otp 42245 123145535455232 OTP send result for +237658895572: {'success': True, 'message': 'SMS sent successfully!', 'data': {'responsecode': 1, 'responsedescription': 'success', 'responsemessage': 'success', 'sms': [{'status': 'success', 'smsclientid': 'smpp.ocm.6897aa46d6ce2e072991fc3a', 'messageid': 'smpp.ocm.8eaba34b-093c-49e6-b341-3f1f19e137af', 'mobileno': '237658895572', 'errorcode': None, 'errordescription': None, 'total_sms_unit': 1, 'balance': 788}]}}
+INFO 2025-08-09 20:06:31,097 basehttp 42245 123145535455232 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-09 20:06:49,754 basehttp 42245 123145535455232 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-09 20:06:51,080 basehttp 42245 123145535455232 "POST /api/v1/auth/register/driver/ HTTP/1.1" 201 381
+INFO 2025-08-09 20:06:52,574 basehttp 42245 123145552781312 "POST /api/v1/auth/login/ HTTP/1.1" 200 262
+INFO 2025-08-09 20:07:04,879 basehttp 42245 123145535455232 "POST /api/v1/documents/import/ HTTP/1.1" 201 526
+INFO 2025-08-09 20:07:05,300 basehttp 42245 123145535455232 "GET /api/v1/vehicles/configs/types/ HTTP/1.1" 200 318
+INFO 2025-08-09 20:07:05,303 basehttp 42245 123145552781312 "GET /api/v1/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-08-09 20:07:05,305 basehttp 42245 123145569570816 "GET /api/v1/vehicles/configs/models/ HTTP/1.1" 200 210
+INFO 2025-08-09 20:07:05,308 basehttp 42245 123145586360320 "GET /api/v1/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-08-09 20:08:04,644 basehttp 42245 123145535455232 "POST /api/v1/vehicles/create/ HTTP/1.1" 201 1050
+INFO 2025-08-09 20:08:18,942 basehttp 42245 123145535455232 "POST /api/v1/documents/import/ HTTP/1.1" 201 530
+INFO 2025-08-09 20:08:19,046 basehttp 42245 123145535455232 "POST /api/v1/documents/import/ HTTP/1.1" 201 515
+INFO 2025-08-09 20:08:24,404 basehttp 42245 123145535455232 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 20:08:37,641 basehttp 42245 123145501876224 "GET /admin/api/userdriver/ HTTP/1.1" 200 37514
+INFO 2025-08-09 20:08:37,669 basehttp 42245 123145518665728 "GET /media/profile_pictures/driver/18/woila_profile_1754769984647.jpg HTTP/1.1" 200 62050
+INFO 2025-08-09 20:08:37,670 basehttp 42245 123145501876224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 20:15:58,157 basehttp 42245 123145501876224 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 263
+INFO 2025-08-09 20:16:03,902 basehttp 42245 123145501876224 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 263
+INFO 2025-08-09 20:16:16,760 basehttp 42245 123145501876224 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 20:16:27,778 basehttp 42245 123145501876224 "POST /api/v1/auth/logout/ HTTP/1.1" 200 50
+INFO 2025-08-09 20:16:42,864 basehttp 42245 123145501876224 "POST /api/v1/auth/login/ HTTP/1.1" 200 262
+INFO 2025-08-09 20:16:43,138 basehttp 42245 123145501876224 "GET /api/v1/profiles/driver/18/ HTTP/1.1" 200 403
+INFO 2025-08-09 20:16:47,862 basehttp 42245 123145501876224 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 20:17:12,020 basehttp 42245 123145501876224 "GET /media/profile_pictures/driver/18/woila_profile_1754769984647.jpg HTTP/1.1" 200 62050
+INFO 2025-08-09 20:17:14,983 basehttp 42245 123145518665728 "GET /api/v1/profiles/driver/18/ HTTP/1.1" 200 403
+INFO 2025-08-09 20:18:57,033 basehttp 42245 123145501876224 "GET /api/v1/profiles/driver/18/ HTTP/1.1" 200 403
+INFO 2025-08-09 20:19:07,120 basehttp 42245 123145501876224 "GET /api/v1/profiles/driver/18/ HTTP/1.1" 200 403
+INFO 2025-08-09 20:19:10,700 basehttp 42245 123145501876224 "GET /admin/api/userdriver/ HTTP/1.1" 200 37514
+INFO 2025-08-09 20:19:10,745 basehttp 42245 123145518665728 "GET /media/profile_pictures/driver/18/woila_profile_1754769984647.jpg HTTP/1.1" 304 0
+INFO 2025-08-09 20:19:10,760 basehttp 42245 123145501876224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 20:19:11,881 basehttp 42245 123145501876224 "GET /admin/api/userdriver/ HTTP/1.1" 200 37514
+INFO 2025-08-09 20:19:11,901 basehttp 42245 123145501876224 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 20:20:24,129 autoreload 42245 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-09 20:20:24,992 autoreload 70020 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 20:20:28,638 autoreload 70020 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-09 20:20:29,079 autoreload 70054 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 20:20:30,732 autoreload 70054 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-09 20:20:31,211 autoreload 70072 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 20:20:36,907 autoreload 70072 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-09 20:20:37,433 autoreload 70125 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 20:20:38,955 autoreload 70125 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-09 20:20:39,466 autoreload 70139 140704327262976 Watching for file changes with StatReloader

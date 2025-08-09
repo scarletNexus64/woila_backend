@@ -47,7 +47,7 @@ Authorization: Bearer YOUR_TOKEN_HERE
 - `gender` (string) : Genre (M, F, O)
 - `age` (integer) : Âge (18-80 ans)
 - `birthday` (date) : Date de naissance (YYYY-MM-DD)
-- `profile_picture` (file) : Photo de profil (optionnel, max 5MB, images uniquement)
+- `profile_picture` (file) : Photo de profil (optionnel, max 5MB, JPG/PNG/GIF/WebP uniquement)
 - `referral_code` (string) : Code de parrainage (optionnel)
 
 **Réponse (201)** :
@@ -86,7 +86,7 @@ Authorization: Bearer YOUR_TOKEN_HERE
 - `confirm_password` (string) : Confirmation du mot de passe
 - `name` (string) : Prénom
 - `surname` (string) : Nom de famille
-- `profile_picture` (file) : Photo de profil (optionnel, max 5MB, images uniquement)
+- `profile_picture` (file) : Photo de profil (optionnel, max 5MB, JPG/PNG/GIF/WebP uniquement)
 - `referral_code` (string) : Code de parrainage (optionnel)
 
 **Réponse (201)** :
@@ -715,7 +715,7 @@ ou
 - `age` (integer) : Âge (18-80 ans)
 - `birthday` (date) : Date de naissance (YYYY-MM-DD)
 - `phone_number` (string) : Numéro de téléphone
-- `profile_picture` (file) : Nouvelle photo de profil (optionnel, max 5MB, images uniquement)
+- `profile_picture` (file) : Nouvelle photo de profil (optionnel, max 5MB, JPG/PNG/GIF/WebP uniquement)
 
 ### 6.2 Profil Client
 
@@ -751,7 +751,7 @@ ou
 - `name` (string) : Prénom
 - `surname` (string) : Nom de famille
 - `phone_number` (string) : Numéro de téléphone
-- `profile_picture` (file) : Nouvelle photo de profil (optionnel, max 5MB, images uniquement)
+- `profile_picture` (file) : Nouvelle photo de profil (optionnel, max 5MB, JPG/PNG/GIF/WebP uniquement)
 
 ### 6.3 Liste des Chauffeurs
 
@@ -975,6 +975,8 @@ L'app `order` est configurée pour les WebSockets mais les endpoints REST ne son
    - Taille maximale : 5MB par image
    - Formats acceptés : JPG, PNG, GIF, WebP
    - Stockage : `/media/profile_pictures/{user_type}/{user_id}/`
+   - URL accessible via le champ `profile_picture_url` dans les réponses API
+   - La photo est optionnelle lors de l'inscription et peut être ajoutée/modifiée plus tard
 
 ---
 
