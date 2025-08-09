@@ -54,15 +54,6 @@ class GenerateOTPView(APIView):
         
         identifier = serializer.validated_data['identifier']
         
-        # Vérifier si le numéro de téléphone est déjà utilisé (seulement pour les numéros de téléphone)
-        if '+' in identifier or identifier.startswith('237'):  # C'est probablement un numéro de téléphone
-            if (UserDriver.objects.filter(phone_number=identifier).exists() or 
-                UserCustomer.objects.filter(phone_number=identifier).exists()):
-                return Response(
-                    {'error': 'Ce numéro est déjà utilisé'},
-                    status=status.HTTP_400_BAD_REQUEST
-                )
-        
         # Générer un code OTP à 4 chiffres
         otp = str(randint(1000, 9999))
         

@@ -176,3 +176,75 @@ INFO 2025-08-09 15:51:45,310 basehttp 79969 123145411620864 "GET /api/v1/order/d
 INFO 2025-08-09 15:51:58,092 basehttp 79969 123145411620864 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
 INFO 2025-08-09 15:51:59,953 basehttp 79969 123145411620864 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
 INFO 2025-08-09 15:52:01,521 basehttp 79969 123145411620864 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 15:53:52,243 basehttp 79969 123145411620864 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-09 15:53:54,155 basehttp 79969 123145411620864 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-09 15:53:59,193 basehttp 79969 123145411620864 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 15:54:12,249 basehttp 79969 123145411620864 "POST /api/v1/auth/logout/ HTTP/1.1" 200 50
+WARNING 2025-08-09 16:52:36,228 log 79969 123145394831360 Bad Request: /api/v1/auth/generate-otp/
+WARNING 2025-08-09 16:52:36,229 basehttp 79969 123145394831360 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 400 42
+INFO 2025-08-09 16:53:49,962 autoreload 79969 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/viewsets/otp.py changed, reloading.
+INFO 2025-08-09 16:53:50,775 autoreload 8624 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 16:53:58,753 autoreload 8624 140704327262976 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/BackendV2/woila_backend/api/viewsets/otp.py changed, reloading.
+INFO 2025-08-09 16:53:59,426 autoreload 8692 140704327262976 Watching for file changes with StatReloader
+INFO 2025-08-09 16:54:03,276 nexah_service 8692 123145512591360 Sending SMS to +237658895572
+INFO 2025-08-09 16:54:04,760 nexah_service 8692 123145512591360 Nexah API response: 200
+INFO 2025-08-09 16:54:04,760 otp 8692 123145512591360 OTP send result for +237658895572: {'success': True, 'message': 'SMS sent successfully!', 'data': {'responsecode': 1, 'responsedescription': 'success', 'responsemessage': 'success', 'sms': [{'status': 'success', 'smsclientid': 'smpp.ocm.68977d2cd6ce2e072991f1a2', 'messageid': 'smpp.ocm.60fa1a2f-0183-4302-af59-e657622d819a', 'mobileno': '237658895572', 'errorcode': None, 'errordescription': None, 'total_sms_unit': 1, 'balance': 790}]}}
+INFO 2025-08-09 16:54:04,761 basehttp 8692 123145512591360 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-09 16:54:21,516 basehttp 8692 123145512591360 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-09 16:58:19,981 nexah_service 8692 123145512591360 Sending SMS to +237658895572
+INFO 2025-08-09 16:58:21,265 nexah_service 8692 123145512591360 Nexah API response: 200
+INFO 2025-08-09 16:58:21,267 otp 8692 123145512591360 OTP send result for +237658895572: {'success': True, 'message': 'SMS sent successfully!', 'data': {'responsecode': 1, 'responsedescription': 'success', 'responsemessage': 'success', 'sms': [{'status': 'success', 'smsclientid': 'smpp.ocm.68977e2dd6ce2e072991f1d8', 'messageid': 'smpp.ocm.54c9981b-6176-4504-b399-f7d0f420661b', 'mobileno': '237658895572', 'errorcode': None, 'errordescription': None, 'total_sms_unit': 1, 'balance': 789}]}}
+INFO 2025-08-09 16:58:21,268 basehttp 8692 123145512591360 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-09 16:58:35,882 basehttp 8692 123145512591360 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-09 16:59:04,460 forgot_password 8692 123145512591360 Mot de passe réinitialisé pour +237658895572 (driver)
+INFO 2025-08-09 16:59:04,460 basehttp 8692 123145512591360 "POST /api/v1/auth/forgot-password/ HTTP/1.1" 200 66
+WARNING 2025-08-09 18:39:07,962 log 8692 123145512591360 Bad Request: /api/v1/auth/login/
+WARNING 2025-08-09 18:39:07,966 basehttp 8692 123145512591360 "POST /api/v1/auth/login/ HTTP/1.1" 400 75
+INFO 2025-08-09 18:39:15,223 basehttp 8692 123145512591360 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-09 18:39:25,459 basehttp 8692 123145512591360 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 18:39:37,620 basehttp 8692 123145512591360 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-09 18:39:39,544 basehttp 8692 123145512591360 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-09 18:39:44,897 basehttp 8692 123145512591360 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-09 18:39:57,417 basehttp 8692 123145512591360 "GET /admin/api/userdriver/ HTTP/1.1" 200 36946
+INFO 2025-08-09 18:39:57,470 basehttp 8692 123145512591360 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,476 basehttp 8692 123145563496448 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,478 basehttp 8692 123145546706944 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,481 basehttp 8692 123145512591360 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,483 basehttp 8692 123145580285952 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,485 basehttp 8692 123145597075456 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,486 basehttp 8692 123145563496448 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,487 basehttp 8692 123145512591360 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,487 basehttp 8692 123145546706944 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,490 basehttp 8692 123145580285952 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,492 basehttp 8692 123145597075456 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,494 basehttp 8692 123145563496448 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,495 basehttp 8692 123145546706944 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,497 basehttp 8692 123145512591360 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,497 basehttp 8692 123145597075456 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,500 basehttp 8692 123145529917440 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 18:39:57,513 basehttp 8692 123145529917440 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,514 basehttp 8692 123145597075456 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,554 basehttp 8692 123145529917440 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,555 basehttp 8692 123145597075456 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,602 basehttp 8692 123145597075456 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:57,603 basehttp 8692 123145529917440 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:58,987 basehttp 8692 123145529917440 "GET /admin/api/userdriver/17/change/ HTTP/1.1" 200 63763
+INFO 2025-08-09 18:39:59,014 basehttp 8692 123145529917440 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-09 18:39:59,051 basehttp 8692 123145563496448 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-08-09 18:39:59,053 basehttp 8692 123145597075456 "GET /static/admin/css/autocomplete.css HTTP/1.1" 200 9185
+INFO 2025-08-09 18:39:59,053 basehttp 8692 123145580285952 "GET /static/admin/js/vendor/select2/i18n/en.js HTTP/1.1" 200 844
+INFO 2025-08-09 18:39:59,057 basehttp 8692 123145512591360 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-08-09 18:39:59,059 basehttp 8692 123145529917440 "GET /static/admin/css/vendor/select2/select2.css HTTP/1.1" 200 17358
+INFO 2025-08-09 18:39:59,061 basehttp 8692 123145580285952 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:59,063 basehttp 8692 123145563496448 "GET /static/admin/js/autocomplete.js HTTP/1.1" 200 1060
+INFO 2025-08-09 18:39:59,064 basehttp 8692 123145529917440 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:59,067 basehttp 8692 123145597075456 "GET /static/admin/js/inlines.js HTTP/1.1" 200 15628
+INFO 2025-08-09 18:39:59,068 basehttp 8692 123145546706944 "GET /static/admin/js/vendor/select2/select2.full.js HTTP/1.1" 200 173566
+INFO 2025-08-09 18:39:59,070 basehttp 8692 123145529917440 "GET /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:59,070 basehttp 8692 123145597075456 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:59,077 basehttp 8692 123145597075456 "GET /static/jazzmin/js/related-modal.js HTTP/1.1" 304 0
+INFO 2025-08-09 18:39:59,083 basehttp 8692 123145546706944 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-08-09 18:39:59,083 basehttp 8692 123145563496448 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-08-09 18:39:59,084 basehttp 8692 123145529917440 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-08-09 18:39:59,098 basehttp 8692 123145597075456 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-08-09 18:40:25,134 basehttp 8692 123145597075456 "GET /api/v1/profiles/drivers/ HTTP/1.1" 200 301
