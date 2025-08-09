@@ -224,7 +224,7 @@ class ReferralCodeAdmin(admin.ModelAdmin):
 class VehicleInline(admin.TabularInline):
     model = Vehicle
     extra = 0
-    fields = ['brand', 'model', 'nom', 'plaque_immatriculation', 'etat_vehicule', 'is_active']
+    fields = ['brand', 'model', 'nom', 'plaque_immatriculation', 'etat_vehicule', 'is_active', 'is_online']
     readonly_fields = ['created_at']
     autocomplete_fields = ['brand', 'model']
 
@@ -640,10 +640,10 @@ class VehicleColorAdmin(admin.ModelAdmin):
 class VehicleAdmin(admin.ModelAdmin):
     list_display = [
         'plaque_immatriculation', 'get_vehicle_info', 'get_driver_display', 
-        'etat_display', 'color', 'has_images', 'created_at', 'is_active'
+        'etat_display', 'color', 'get_online_status', 'has_images', 'created_at', 'is_active'
     ]
     list_filter = [
-        'brand', 'model', 'vehicle_type', 'etat_vehicule', 'color', 'is_active', 'created_at',
+        'brand', 'model', 'vehicle_type', 'etat_vehicule', 'color', 'is_active', 'is_online', 'created_at',
         'driver__gender'  # Filtre par genre du chauffeur
     ]
     search_fields = [
@@ -671,7 +671,7 @@ class VehicleAdmin(admin.ModelAdmin):
             'classes': ('collapse',)
         }),
         ('État et dates', {
-            'fields': ('is_active', 'created_at', 'updated_at'),
+            'fields': ('is_active', 'is_online', 'created_at', 'updated_at'),
             'classes': ('collapse',)
         }),
     )
@@ -708,6 +708,15 @@ class VehicleAdmin(admin.ModelAdmin):
     etat_display.short_description = 'État'
     etat_display.admin_order_field = 'etat_vehicule'
     
+    def get_online_status(self, obj):
+        """Affiche le statut en service"""
+        if obj.is_online:
+            return format_html('<span style="color: green; font-weight: bold;">🟢 En service</span>')
+        else:
+            return format_html('<span style="color: red;">🔴 Hors service</span>')
+    get_online_status.short_description = 'Statut service'
+    get_online_status.admin_order_field = 'is_online'
+    
     def has_images(self, obj):
         """Indique si le véhicule a des photos"""
         images = [obj.photo_exterieur_1, obj.photo_exterieur_2, obj.photo_interieur_1, obj.photo_interieur_2]
@@ -735,7 +744,7 @@ class VehicleAdmin(admin.ModelAdmin):
         return super().get_queryset(request).select_related('driver', 'vehicle_type', 'brand', 'model', 'color')
     
     # Actions personnalisées
-    actions = ['mark_as_inactive', 'mark_as_active', 'reset_vehicle_state']
+    actions = ['mark_as_inactive', 'mark_as_active', 'reset_vehicle_state', 'put_online', 'put_offline']
     
     def mark_as_inactive(self, request, queryset):
         """Désactiver les véhicules sélectionnés"""
@@ -754,6 +763,51 @@ class VehicleAdmin(admin.ModelAdmin):
         updated = queryset.update(etat_vehicule=7)
         self.message_user(request, f'{updated} véhicule(s) remis à l\'état 7/10.')
     reset_vehicle_state.short_description = "Remettre l'état à 7/10"
+    
+    def put_online(self, request, queryset):
+        """Mettre les véhicules sélectionnés en service"""
+        # Vérifier que tous les véhicules sont actifs
+        inactive_vehicles = queryset.filter(is_active=False)
+        if inactive_vehicles.exists():
+            self.message_user(
+                request, 
+                f'❌ {inactive_vehicles.count()} véhicule(s) inactif(s) ne peuvent pas être mis en service. Activez-les d\'abord.',
+                level='ERROR'
+            )
+            return
+        
+        # Mettre hors service tous les autres véhicules du même chauffeur pour chaque véhicule sélectionné
+        updated_count = 0
+        conflicts = 0
+        
+        for vehicle in queryset.filter(is_active=True):
+            # Mettre hors service les autres véhicules du même chauffeur
+            other_vehicles = Vehicle.objects.filter(
+                driver=vehicle.driver, 
+                is_online=True
+            ).exclude(id=vehicle.id)
+            
+            if other_vehicles.exists():
+                conflicts += other_vehicles.count()
+                other_vehicles.update(is_online=False)
+            
+            # Mettre ce véhicule en service
+            vehicle.is_online = True
+            vehicle.save()
+            updated_count += 1
+        
+        message = f'🟢 {updated_count} véhicule(s) mis en service.'
+        if conflicts > 0:
+            message += f' {conflicts} autre(s) véhicule(s) automatiquement mis hors service pour respecter la règle "un seul véhicule en service par chauffeur".'
+            
+        self.message_user(request, message)
+    put_online.short_description = "🟢 Mettre en service"
+    
+    def put_offline(self, request, queryset):
+        """Mettre les véhicules sélectionnés hors service"""
+        updated = queryset.update(is_online=False)
+        self.message_user(request, f'🔴 {updated} véhicule(s) mis hors service.')
+    put_offline.short_description = "🔴 Mettre hors service"
 
 
 @admin.register(Country)
