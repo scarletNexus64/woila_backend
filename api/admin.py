@@ -5,8 +5,9 @@ from .models import (
     GeneralConfig, Wallet, ReferralCode,
     VehicleType, VehicleBrand, VehicleModel, VehicleColor,
     Country, City, VipZone, VipZoneKilometerRule,
-    OTPVerification, NotificationConfig
+    OTPVerification, NotificationConfig, Notification, FCMToken
 )
+from .services.notification_service import NotificationService
 
 
 @admin.register(GeneralConfig)
@@ -754,8 +755,24 @@ class VehicleAdmin(admin.ModelAdmin):
     
     def mark_as_active(self, request, queryset):
         """Activer les véhicules sélectionnés"""
-        updated = queryset.update(is_active=True)
-        self.message_user(request, f'{updated} véhicule(s) activé(s).')
+        activated_count = 0
+        notifications_sent = 0
+        
+        for vehicle in queryset.filter(is_active=False):
+            # Activer le véhicule
+            vehicle.is_active = True
+            vehicle.save()
+            activated_count += 1
+            
+            # Envoyer notification au chauffeur
+            if NotificationService.send_vehicle_approval_notification(vehicle.driver, vehicle):
+                notifications_sent += 1
+        
+        message = f'{activated_count} véhicule(s) activé(s).'
+        if notifications_sent > 0:
+            message += f' {notifications_sent} notification(s) envoyée(s) aux chauffeurs.'
+        
+        self.message_user(request, message)
     mark_as_active.short_description = "Activer les véhicules sélectionnés"
     
     def reset_vehicle_state(self, request, queryset):
@@ -1243,4 +1260,224 @@ class NotificationConfigAdmin(admin.ModelAdmin):
             f'🔔 Configuration mise à jour ! Canal par défaut : {canal}',
             level='SUCCESS'
         )
+
+
+@admin.register(Notification)
+class NotificationAdmin(admin.ModelAdmin):
+    """
+    Admin pour la gestion des notifications utilisateurs
+    """
+    list_display = (
+        'get_title_display', 'get_user_display', 'get_type_display',
+        'get_read_status', 'get_deleted_status', 'created_at'
+    )
+    list_filter = ('notification_type', 'is_read', 'is_deleted', 'user_type', 'created_at')
+    search_fields = ('title', 'content', 'user_id')
+    readonly_fields = ('created_at', 'read_at', 'deleted_at')
+    list_per_page = 25
+    ordering = ['-created_at']
+    actions = ['mark_as_read', 'mark_as_unread', 'soft_delete', 'restore']
+    
+    fieldsets = (
+        ('👤 Utilisateur', {
+            'fields': ('user_type', 'user_id'),
+            'description': 'Utilisateur qui recevra la notification'
+        }),
+        ('📢 Notification', {
+            'fields': ('title', 'content', 'notification_type', 'metadata'),
+            'description': 'Contenu de la notification'
+        }),
+        ('📊 Statuts', {
+            'fields': ('is_read', 'is_deleted'),
+            'description': 'États de lecture et suppression'
+        }),
+        ('📅 Horodatage', {
+            'fields': ('created_at', 'read_at', 'deleted_at'),
+            'classes': ('collapse',)
+        }),
+    )
+    
+    def get_title_display(self, obj):
+        """Affiche le titre avec icône selon le type"""
+        icons = {
+            'welcome': '👋',
+            'referral_used': '🎁',
+            'vehicle_approved': '🚗✅',
+            'system': '⚙️',
+            'order': '📋',
+            'other': '📌'
+        }
+        icon = icons.get(obj.notification_type, '📌')
+        return format_html(
+            '{} <strong>{}</strong>',
+            icon, obj.title
+        )
+    get_title_display.short_description = 'Titre'
+    get_title_display.admin_order_field = 'title'
+    
+    def get_user_display(self, obj):
+        """Affiche les informations de l'utilisateur"""
+        if obj.user:
+            user_type_icon = '🚗' if obj.user_type.model == 'userdriver' else '👥'
+            return format_html(
+                '{} <strong>{} {}</strong><br><small>{}</small>',
+                user_type_icon, obj.user.name, obj.user.surname, obj.user.phone_number
+            )
+        return format_html(
+            '<span style="color: red;">❌ Utilisateur supprimé (ID: {})</span>',
+            obj.user_id
+        )
+    get_user_display.short_description = 'Utilisateur'
+    get_user_display.admin_order_field = 'user_id'
+    
+    def get_type_display(self, obj):
+        """Affiche le type de notification avec couleur"""
+        colors = {
+            'welcome': '#4CAF50',      # Vert
+            'referral_used': '#FF9800', # Orange  
+            'vehicle_approved': '#2196F3', # Bleu
+            'system': '#607D8B',       # Bleu-gris
+            'order': '#9C27B0',        # Violet
+            'other': '#795548'         # Marron
+        }
+        color = colors.get(obj.notification_type, '#666')
+        return format_html(
+            '<span style="color: {}; font-weight: bold;">{}</span>',
+            color, obj.get_notification_type_display()
+        )
+    get_type_display.short_description = 'Type'
+    get_type_display.admin_order_field = 'notification_type'
+    
+    def get_read_status(self, obj):
+        """Affiche le statut de lecture"""
+        if obj.is_read:
+            return format_html(
+                '<span style="color: green;">👁️ Lu</span><br><small>{}</small>',
+                obj.read_at.strftime('%d/%m/%Y %H:%M') if obj.read_at else ''
+            )
+        else:
+            return format_html('<span style="color: orange;">📩 Non lu</span>')
+    get_read_status.short_description = 'Statut lecture'
+    get_read_status.admin_order_field = 'is_read'
+    
+    def get_deleted_status(self, obj):
+        """Affiche le statut de suppression"""
+        if obj.is_deleted:
+            return format_html(
+                '<span style="color: red;">🗑️ Supprimé</span><br><small>{}</small>',
+                obj.deleted_at.strftime('%d/%m/%Y %H:%M') if obj.deleted_at else ''
+            )
+        else:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+    get_deleted_status.short_description = 'Statut suppression'
+    get_deleted_status.admin_order_field = 'is_deleted'
+    
+    def mark_as_read(self, request, queryset):
+        """Marquer les notifications comme lues"""
+        count = 0
+        for notification in queryset:
+            if not notification.is_read:
+                notification.mark_as_read()
+                count += 1
+        self.message_user(request, f'👁️ {count} notification(s) marquée(s) comme lue(s).')
+    mark_as_read.short_description = "👁️ Marquer comme lues"
+    
+    def mark_as_unread(self, request, queryset):
+        """Marquer les notifications comme non lues"""
+        updated = queryset.update(is_read=False, read_at=None)
+        self.message_user(request, f'📩 {updated} notification(s) marquée(s) comme non lue(s).')
+    mark_as_unread.short_description = "📩 Marquer comme non lues"
+    
+    def soft_delete(self, request, queryset):
+        """Supprimer (soft delete) les notifications"""
+        count = 0
+        for notification in queryset:
+            if not notification.is_deleted:
+                notification.mark_as_deleted()
+                count += 1
+        self.message_user(request, f'🗑️ {count} notification(s) supprimée(s).')
+    soft_delete.short_description = "🗑️ Supprimer les notifications"
+    
+    def restore(self, request, queryset):
+        """Restaurer les notifications supprimées"""
+        updated = queryset.update(is_deleted=False, deleted_at=None)
+        self.message_user(request, f'♻️ {updated} notification(s) restaurée(s).')
+    restore.short_description = "♻️ Restaurer les notifications"
+
+
+@admin.register(FCMToken)
+class FCMTokenAdmin(admin.ModelAdmin):
+    list_display = [
+        'get_user_display', 'get_token_preview', 'platform', 
+        'device_id', 'is_active_display', 'last_used', 'created_at'
+    ]
+    list_filter = ['platform', 'is_active', 'last_used', 'created_at']
+    search_fields = ['user__name', 'user__surname', 'device_id', 'token']
+    readonly_fields = ['created_at', 'updated_at', 'last_used']
+    fieldsets = (
+        ('Utilisateur', {
+            'fields': ('user_type', 'user_id')
+        }),
+        ('Token & Appareil', {
+            'fields': ('token', 'platform', 'device_id', 'device_info')
+        }),
+        ('Statut', {
+            'fields': ('is_active',)
+        }),
+        ('Dates', {
+            'fields': ('created_at', 'updated_at', 'last_used'),
+            'classes': ['collapse']
+        }),
+    )
+    
+    actions = ['activate_tokens', 'deactivate_tokens', 'clean_inactive_tokens']
+    
+    def get_user_display(self, obj):
+        """Affiche l'utilisateur propriétaire du token"""
+        if obj.user:
+            user_type = "👤" if obj.user_type.model == 'usercustomer' else "🚗"
+            return f"{user_type} {obj.user.name} {obj.user.surname}"
+        return f"❌ Utilisateur supprimé (ID: {obj.user_id})"
+    get_user_display.short_description = 'Utilisateur'
+    
+    def get_token_preview(self, obj):
+        """Affiche un aperçu sécurisé du token"""
+        if len(obj.token) > 20:
+            return f"{obj.token[:10]}...{obj.token[-10:]}"
+        return obj.token
+    get_token_preview.short_description = 'Token'
+    
+    def is_active_display(self, obj):
+        """Affiche le statut actif avec des couleurs"""
+        if obj.is_active:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+        return format_html('<span style="color: red;">❌ Inactif</span>')
+    is_active_display.short_description = 'Statut'
+    
+    def activate_tokens(self, request, queryset):
+        """Active les tokens sélectionnés"""
+        count = 0
+        for token in queryset:
+            if not token.is_active:
+                token.activate()
+                count += 1
+        self.message_user(request, f'✅ {count} token(s) FCM activé(s).')
+    activate_tokens.short_description = "✅ Activer les tokens"
+    
+    def deactivate_tokens(self, request, queryset):
+        """Désactive les tokens sélectionnés"""
+        count = 0
+        for token in queryset:
+            if token.is_active:
+                token.deactivate()
+                count += 1
+        self.message_user(request, f'❌ {count} token(s) FCM désactivé(s).')
+    deactivate_tokens.short_description = "❌ Désactiver les tokens"
+    
+    def clean_inactive_tokens(self, request, queryset):
+        """Supprime les tokens inactifs anciens"""
+        from ..services.fcm_service import FCMService
+        deleted_count = FCMService.cleanup_inactive_tokens(days_old=30)
+        self.message_user(request, f'🧹 {deleted_count} token(s) FCM inactifs supprimés.')
+    clean_inactive_tokens.short_description = "🧹 Nettoyer les tokens inactifs"
     

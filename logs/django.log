@@ -943,3 +943,49 @@ WARNING 2025-08-10 09:58:57,603 basehttp 25959 123145558024192 "PATCH /api/v1/ve
 INFO 2025-08-10 09:59:32,242 basehttp 25959 123145558024192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
 INFO 2025-08-10 10:00:32,235 basehttp 25959 123145558024192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
 INFO 2025-08-10 10:01:32,234 basehttp 25959 123145558024192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 11:17:03,587 autoreload 62317 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:24:55,814 autoreload 62317 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-10 11:24:56,861 autoreload 66324 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:25:02,569 autoreload 66324 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-10 11:25:03,309 autoreload 66406 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:25:51,236 autoreload 66406 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-10 11:25:52,000 autoreload 66899 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:27:52,012 autoreload 66899 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/urls.py changed, reloading.
+INFO 2025-08-10 11:27:52,794 autoreload 67994 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:27:59,493 autoreload 67994 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/urls.py changed, reloading.
+INFO 2025-08-10 11:28:00,413 autoreload 68065 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:28:30,684 autoreload 68065 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 11:28:32,158 autoreload 68399 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:28:54,272 autoreload 68399 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 11:28:56,270 autoreload 68677 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:29:22,069 autoreload 68677 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 11:29:25,853 autoreload 68961 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:29:47,522 autoreload 68961 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 11:29:48,399 autoreload 69195 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:30:07,594 autoreload 69195 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 11:30:08,328 autoreload 69414 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:30:30,461 autoreload 69414 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 11:30:31,405 autoreload 69653 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:32:37,773 autoreload 71125 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:37:02,794 basehttp 71125 123145483427840 "GET /admin/api/vehicle/ HTTP/1.1" 200 45565
+INFO 2025-08-10 11:37:02,900 basehttp 71125 123145483427840 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 11:46:28,139 autoreload 71125 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/woila_backend/settings.py changed, reloading.
+INFO 2025-08-10 11:46:29,110 autoreload 78759 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:47:15,031 autoreload 78759 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 11:47:15,998 autoreload 79262 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:47:26,795 autoreload 79262 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 11:47:27,372 autoreload 79390 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:47:52,580 autoreload 79390 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 11:47:53,516 autoreload 79634 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:48:02,336 autoreload 79634 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 11:48:02,993 autoreload 79742 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:48:58,997 autoreload 80476 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:53:07,616 basehttp 80476 123145453215744 "GET /admin/api/userdriver/ HTTP/1.1" 200 38485
+INFO 2025-08-10 11:53:07,638 basehttp 80476 123145470005248 "GET /media/profile_pictures/driver/18/woila_profile_1754773078231.jpg HTTP/1.1" 304 0
+INFO 2025-08-10 11:53:07,640 basehttp 80476 123145453215744 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 11:53:09,422 basehttp 80476 123145453215744 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31455
+INFO 2025-08-10 11:53:09,447 basehttp 80476 123145453215744 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 11:53:11,654 basehttp 80476 123145453215744 "GET /admin/api/fcmtoken/add/ HTTP/1.1" 200 40151
+INFO 2025-08-10 11:53:11,681 basehttp 80476 123145453215744 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 11:53:20,334 basehttp 80476 123145453215744 "GET /admin/api/userdriver/ HTTP/1.1" 200 38485
+INFO 2025-08-10 11:53:20,357 basehttp 80476 123145453215744 "GET /admin/jsi18n/ HTTP/1.1" 200 3342

@@ -37,6 +37,20 @@ from .viewsets.profiles import (
     CustomerProfileView
 )
 from .viewsets.referral import ReferralViewSet
+from .viewsets.notifications import (
+    NotificationListView,
+    NotificationUnreadView,
+    NotificationDetailView,
+    NotificationMarkAllReadView,
+    NotificationStatsView
+)
+from .viewsets.fcm import (
+    FCMTokenRegisterView,
+    FCMTokenUnregisterView,
+    FCMTokenListView,
+    FCMTokenDetailView,
+    FCMTestNotificationView
+)
 
 # Router pour les ViewSets
 router = DefaultRouter()
@@ -91,4 +105,18 @@ urlpatterns = [
     
     # Forgot password endpoint
     path('auth/forgot-password/', ForgotPasswordView.as_view(), name='forgot-password'),
+    
+    # Notification endpoints
+    path('notifications/', NotificationListView.as_view(), name='notification-list'),
+    path('notifications/unread/', NotificationUnreadView.as_view(), name='notification-unread'),
+    path('notifications/stats/', NotificationStatsView.as_view(), name='notification-stats'),
+    path('notifications/mark-all-read/', NotificationMarkAllReadView.as_view(), name='notification-mark-all-read'),
+    path('notifications/<int:notification_id>/', NotificationDetailView.as_view(), name='notification-detail'),
+    
+    # FCM Token endpoints
+    path('fcm/register/', FCMTokenRegisterView.as_view(), name='fcm-register'),
+    path('fcm/unregister/', FCMTokenUnregisterView.as_view(), name='fcm-unregister'),
+    path('fcm/tokens/', FCMTokenListView.as_view(), name='fcm-tokens'),
+    path('fcm/tokens/<int:token_id>/', FCMTokenDetailView.as_view(), name='fcm-token-detail'),
+    path('fcm/test-notification/', FCMTestNotificationView.as_view(), name='fcm-test'),
 ]

@@ -7,6 +7,7 @@ from django.utils.decorators import method_decorator
 from drf_spectacular.utils import extend_schema, OpenApiExample
 from ..serializers import RegisterDriverSerializer, RegisterCustomerSerializer
 from ..models import Token, ReferralCode, Wallet, GeneralConfig
+from ..services.notification_service import NotificationService
 from django.db import transaction
 from django.contrib.contenttypes.models import ContentType
 
@@ -95,6 +96,10 @@ class RegisterDriverView(APIView):
 
                     # Le bonus de parrainage est géré automatiquement dans le serializer
                     # Pas besoin de logique supplémentaire ici
+                    
+                    # Envoyer notification de bienvenue
+                    NotificationService.send_welcome_notification(driver)
+                    
                     # Préparer les informations du chauffeur
                     user_info = {
                         'id': driver.id,
@@ -203,6 +208,9 @@ class RegisterCustomerView(APIView):
 
                     # Le bonus de parrainage est géré automatiquement dans le serializer
                     # Pas besoin de logique supplémentaire ici
+                    
+                    # Envoyer notification de bienvenue
+                    NotificationService.send_welcome_notification(customer)
 
                     # Préparer les informations du client
                     user_info = {

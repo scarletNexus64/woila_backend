@@ -728,3 +728,167 @@ class NotificationConfig(models.Model):
         """Get or create the notification configuration"""
         config, created = cls.objects.get_or_create(pk=1)
         return config
+
+
+class Notification(models.Model):
+    """
+    Model pour stocker les notifications des utilisateurs (chauffeurs et clients)
+    """
+    NOTIFICATION_TYPES = [
+        ('welcome', 'Notification de bienvenue'),
+        ('referral_used', 'Code parrain utilisé'),
+        ('vehicle_approved', 'Véhicule approuvé'),
+        ('system', 'Notification système'),
+        ('order', 'Commande'),
+        ('other', 'Autre'),
+    ]
+    
+    # Utilisateur qui recoit la notification (Generic Foreign Key)
+    limit = models.Q(app_label='api', model='userdriver') | models.Q(app_label='api', model='usercustomer')
+    user_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, limit_choices_to=limit)
+    user_id = models.PositiveIntegerField()
+    user = GenericForeignKey('user_type', 'user_id')
+    
+    # Contenu de la notification
+    title = models.CharField(max_length=200, verbose_name="Titre")
+    content = models.TextField(verbose_name="Contenu")
+    notification_type = models.CharField(
+        max_length=20,
+        choices=NOTIFICATION_TYPES,
+        default='system',
+        verbose_name="Type de notification"
+    )
+    
+    # Statuts de lecture
+    is_read = models.BooleanField(default=False, verbose_name="Lu")
+    is_deleted = models.BooleanField(default=False, verbose_name="Supprimé")
+    
+    # Métadonnées supplémentaires (JSON pour flexibilité)
+    try:
+        from django.db.models import JSONField
+    except ImportError:
+        from django.contrib.postgres.fields import JSONField
+    
+    metadata = JSONField(
+        default=dict,
+        blank=True,
+        verbose_name="Métadonnées",
+        help_text="Données supplémentaires (code parrain, ID véhicule, etc.)"
+    )
+    
+    # Horodatage
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+    read_at = models.DateTimeField(null=True, blank=True, verbose_name="Lu le")
+    deleted_at = models.DateTimeField(null=True, blank=True, verbose_name="Supprimé le")
+    
+    def mark_as_read(self):
+        """Marquer la notification comme lue"""
+        if not self.is_read:
+            self.is_read = True
+            self.read_at = timezone.now()
+            self.save(update_fields=['is_read', 'read_at'])
+    
+    def mark_as_deleted(self):
+        """Marquer la notification comme supprimée (soft delete)"""
+        if not self.is_deleted:
+            self.is_deleted = True
+            self.deleted_at = timezone.now()
+            self.save(update_fields=['is_deleted', 'deleted_at'])
+    
+    def get_user_display(self):
+        """Retourne l'affichage de l'utilisateur"""
+        if self.user:
+            return f"{self.user.name} {self.user.surname}"
+        return f"Utilisateur supprimé (ID: {self.user_id})"
+    
+    def __str__(self):
+        username = self.get_user_display() if self.user else f"User ID {self.user_id}"
+        return f"{self.title} - {username}"
+    
+    class Meta:
+        db_table = 'notifications'
+        verbose_name = 'Notification'
+        verbose_name_plural = 'Notifications'
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['user_type', 'user_id', 'is_read']),
+            models.Index(fields=['user_type', 'user_id', 'is_deleted']),
+            models.Index(fields=['notification_type']),
+            models.Index(fields=['created_at']),
+        ]
+
+
+class FCMToken(models.Model):
+    """
+    Modèle pour stocker les tokens FCM des utilisateurs
+    """
+    # Utilisateur qui possède ce token (Generic Foreign Key)
+    limit = models.Q(app_label='api', model='userdriver') | models.Q(app_label='api', model='usercustomer')
+    user_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, limit_choices_to=limit)
+    user_id = models.PositiveIntegerField()
+    user = GenericForeignKey('user_type', 'user_id')
+    
+    # Token FCM
+    token = models.TextField(verbose_name="Token FCM", unique=True)
+    
+    # Informations sur l'appareil
+    platform = models.CharField(
+        max_length=20, 
+        verbose_name="Plateforme",
+        help_text="android, ios, web, etc."
+    )
+    device_id = models.CharField(
+        max_length=255,
+        verbose_name="ID de l'appareil",
+        help_text="Identifiant unique de l'appareil"
+    )
+    device_info = models.JSONField(
+        default=dict,
+        blank=True,
+        verbose_name="Informations appareil",
+        help_text="Version OS, modèle, etc."
+    )
+    
+    # Statut
+    is_active = models.BooleanField(default=True, verbose_name="Actif")
+    last_used = models.DateTimeField(auto_now=True, verbose_name="Dernière utilisation")
+    
+    # Horodatage
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Dernière mise à jour")
+    
+    def deactivate(self):
+        """Désactiver le token"""
+        self.is_active = False
+        self.save(update_fields=['is_active', 'updated_at'])
+    
+    def activate(self):
+        """Activer le token"""
+        self.is_active = True
+        self.save(update_fields=['is_active', 'updated_at'])
+    
+    def get_user_display(self):
+        """Retourne l'affichage de l'utilisateur"""
+        if self.user:
+            return f"{self.user.name} {self.user.surname}"
+        return f"Utilisateur supprimé (ID: {self.user_id})"
+    
+    def __str__(self):
+        username = self.get_user_display() if self.user else f"User ID {self.user_id}"
+        token_preview = self.token[:20] + "..." if len(self.token) > 20 else self.token
+        return f"{username} - {self.platform} ({token_preview})"
+    
+    class Meta:
+        db_table = 'fcm_tokens'
+        verbose_name = 'Token FCM'
+        verbose_name_plural = 'Tokens FCM'
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['user_type', 'user_id']),
+            models.Index(fields=['token']),
+            models.Index(fields=['platform']),
+            models.Index(fields=['is_active']),
+            models.Index(fields=['last_used']),
+        ]
+        # Un utilisateur peut avoir plusieurs tokens (plusieurs appareils)
+        unique_together = [['user_type', 'user_id', 'device_id']]
