@@ -1172,6 +1172,72 @@ curl -X GET http://localhost:8000/api/v1/vehicles/ \
 }
 ```
 
+### 5.9 Mettre en Service/Hors Service un Véhicule
+
+**Endpoint** : `PATCH /api/v1/vehicles/{vehicle_id}/toggle-online/`
+
+**Auth** : Token Bearer requis
+
+**Description** : Met un véhicule en service (is_online=True) ou hors service (is_online=False). Cette API respecte les critères suivants :
+- Le véhicule doit être actif (is_active=True) avant de pouvoir être mis en service
+- Il ne peut y avoir qu'une seule voiture en service à la fois pour un chauffeur
+- Si un véhicule est déjà en service, cette API le met hors service
+- Si aucun véhicule n'est en service, cette API met le véhicule demandé en service
+
+**Réponse (200) - Mise en service réussie** :
+```json
+{
+    "success": true,
+    "message": "Véhicule Toyota Corolla (AB-123-CD) mis en service avec succès",
+    "vehicle": {
+        "id": 1,
+        "nom": "Corolla 2020",
+        "plaque_immatriculation": "AB-123-CD",
+        "is_active": true,
+        "is_online": true
+    }
+}
+```
+
+**Réponse (200) - Mise hors service réussie** :
+```json
+{
+    "success": true,
+    "message": "Véhicule Toyota Corolla (AB-123-CD) mis hors service avec succès",
+    "vehicle": {
+        "id": 1,
+        "nom": "Corolla 2020",
+        "plaque_immatriculation": "AB-123-CD",
+        "is_active": true,
+        "is_online": false
+    }
+}
+```
+
+**Réponse d'erreur (400) - Véhicule inactif** :
+```json
+{
+    "success": false,
+    "message": "Ce véhicule doit être actif (is_active=True) avant de pouvoir être mis en service"
+}
+```
+
+**Réponse d'erreur (400) - Autre véhicule déjà en service** :
+```json
+{
+    "success": false,
+    "message": "Un autre véhicule est déjà en service : Mercedes C180 (XY-456-ZA). Seul un véhicule peut être en service à la fois."
+}
+```
+
+**Réponse d'erreur (404)** :
+```json
+{
+    "success": false,
+    "message": "Véhicule introuvable"
+}
+```
+
 ---
 
 ## 9. Gestion du Statut des Chauffeurs

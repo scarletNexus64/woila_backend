@@ -392,3 +392,162 @@ class VehicleDeactivateView(APIView):
             'success': True,
             'message': f'Véhicule {vehicle.brand} {vehicle.model} ({vehicle.plaque_immatriculation}) désactivé avec succès'
         }, status=status.HTTP_200_OK)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class VehicleToggleOnlineView(APIView):
+    """
+    Vue dédiée pour mettre un véhicule en service/hors service (is_online)
+    """
+    
+    def get_object(self, vehicle_id):
+        return get_object_or_404(Vehicle, id=vehicle_id)
+
+    @extend_schema(
+        tags=['Véhicules'],
+        summary='Mettre en service/hors service',
+        description='Met un véhicule en service (is_online=True) en respectant les critères : '
+                   'le véhicule doit être actif (is_active=True) et il ne peut y avoir qu\'une seule voiture en service à la fois.',
+        responses={
+            200: {
+                'description': 'Véhicule mis en service avec succès',
+                'examples': {
+                    'application/json': {
+                        'success': True,
+                        'message': 'Véhicule mis en service avec succès',
+                        'vehicle': {
+                            'id': 1,
+                            'nom': 'Corolla 2020',
+                            'plaque_immatriculation': 'AB-123-CD',
+                            'is_active': True,
+                            'is_online': True
+                        }
+                    }
+                }
+            },
+            400: {'description': 'Véhicule inactif ou autre véhicule déjà en service'},
+            404: {'description': 'Véhicule introuvable'},
+        }
+    )
+    def patch(self, request, vehicle_id):
+        """
+        Met un véhicule en service en respectant les critères
+        """
+        vehicle = self.get_object(vehicle_id)
+        
+        # Vérifier si le véhicule est actif
+        if not vehicle.is_active:
+            return Response({
+                'success': False,
+                'message': 'Ce véhicule doit être actif (is_active=True) avant de pouvoir être mis en service'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Si le véhicule est déjà en service, le mettre hors service
+        if vehicle.is_online:
+            vehicle.is_online = False
+            vehicle.save()
+            
+            return Response({
+                'success': True,
+                'message': f'Véhicule {vehicle.brand} {vehicle.model} ({vehicle.plaque_immatriculation}) mis hors service avec succès',
+                'vehicle': {
+                    'id': vehicle.id,
+                    'nom': vehicle.nom,
+                    'plaque_immatriculation': vehicle.plaque_immatriculation,
+                    'is_active': vehicle.is_active,
+                    'is_online': vehicle.is_online
+                }
+            }, status=status.HTTP_200_OK)
+        
+        # Vérifier s'il y a déjà un véhicule en service pour ce chauffeur
+        existing_online_vehicle = Vehicle.objects.filter(
+            driver=vehicle.driver,
+            is_online=True,
+            is_active=True
+        ).exclude(id=vehicle.id).first()
+        
+        if existing_online_vehicle:
+            return Response({
+                'success': False,
+                'message': f'Un autre véhicule est déjà en service : {existing_online_vehicle.brand} {existing_online_vehicle.model} ({existing_online_vehicle.plaque_immatriculation}). Seul un véhicule peut être en service à la fois.'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Mettre le véhicule en service
+        vehicle.is_online = True
+        vehicle.save()
+        
+        return Response({
+            'success': True,
+            'message': f'Véhicule {vehicle.brand} {vehicle.model} ({vehicle.plaque_immatriculation}) mis en service avec succès',
+            'vehicle': {
+                'id': vehicle.id,
+                'nom': vehicle.nom,
+                'plaque_immatriculation': vehicle.plaque_immatriculation,
+                'is_active': vehicle.is_active,
+                'is_online': vehicle.is_online
+            }
+        }, status=status.HTTP_200_OK)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class VehicleToggleOfflineView(APIView):
+    """
+    Vue dédiée pour mettre un véhicule hors service (is_online=False)
+    """
+    
+    def get_object(self, vehicle_id):
+        return get_object_or_404(Vehicle, id=vehicle_id)
+
+    @extend_schema(
+        tags=['Véhicules'],
+        summary='Mettre hors service',
+        description='Met un véhicule hors service (is_online=False)',
+        responses={
+            200: {
+                'description': 'Véhicule mis hors service avec succès',
+                'examples': {
+                    'application/json': {
+                        'success': True,
+                        'message': 'Véhicule mis hors service avec succès',
+                        'vehicle': {
+                            'id': 1,
+                            'nom': 'Corolla 2020',
+                            'plaque_immatriculation': 'AB-123-CD',
+                            'is_active': True,
+                            'is_online': False
+                        }
+                    }
+                }
+            },
+            400: {'description': 'Véhicule déjà hors service'},
+            404: {'description': 'Véhicule introuvable'},
+        }
+    )
+    def patch(self, request, vehicle_id):
+        """
+        Met un véhicule hors service
+        """
+        vehicle = self.get_object(vehicle_id)
+        
+        # Si le véhicule est déjà hors service
+        if not vehicle.is_online:
+            return Response({
+                'success': False,
+                'message': 'Ce véhicule est déjà hors service'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Mettre le véhicule hors service
+        vehicle.is_online = False
+        vehicle.save()
+        
+        return Response({
+            'success': True,
+            'message': f'Véhicule {vehicle.brand} {vehicle.model} ({vehicle.plaque_immatriculation}) mis hors service avec succès',
+            'vehicle': {
+                'id': vehicle.id,
+                'nom': vehicle.nom,
+                'plaque_immatriculation': vehicle.plaque_immatriculation,
+                'is_active': vehicle.is_active,
+                'is_online': vehicle.is_online
+            }
+        }, status=status.HTTP_200_OK)

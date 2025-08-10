@@ -348,6 +348,7 @@ class Vehicle(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Dernière modification")
     is_active = models.BooleanField(default=False, verbose_name="Actif")
+    is_online = models.BooleanField(default=False, verbose_name="En service")
 
     def get_etat_display_short(self):
         """Retourne l'état sous forme courte"""
