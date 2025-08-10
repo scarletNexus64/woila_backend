@@ -26,6 +26,7 @@ from .viewsets.vehicles import (
     VehicleDeleteView,
     VehicleDeactivateView,
     VehicleToggleOnlineView,
+    VehicleToggleOfflineView,
     VehicleTypeListView,
     VehicleBrandListView,
     VehicleModelListView,
@@ -69,6 +70,7 @@ urlpatterns = [
     path('vehicles/<int:vehicle_id>/delete/', VehicleDeleteView.as_view(), name='vehicle-delete'),
     path('vehicles/<int:vehicle_id>/deactivate/', VehicleDeactivateView.as_view(), name='vehicle-deactivate'),
     path('vehicles/<int:vehicle_id>/toggle-online/', VehicleToggleOnlineView.as_view(), name='vehicle-toggle-online'),
+    path('vehicles/<int:vehicle_id>/toggle-offline/', VehicleToggleOfflineView.as_view(), name='vehicle-toggle-offline'),
     path('vehicles/driver/<int:driver_id>/', VehiclesByDriverView.as_view(), name='vehicles-by-driver'),
 
     # Vehicle Config endpoints
