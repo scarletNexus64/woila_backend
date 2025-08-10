@@ -506,9 +506,13 @@ class RegisterDriverSerializer(serializers.Serializer):
                         sponsor_wallet.balance += Decimal(str(bonus_amount))
                         sponsor_wallet.save()
                         
-                        # Envoyer notification au parrain
+                        # Récupérer l'utilisateur parrain via le Generic Foreign Key
+                        sponsor_user_model = sponsor_referral.user_type.model_class()
+                        sponsor_user = sponsor_user_model.objects.get(id=sponsor_referral.user_id)
+                        
+                        # Envoyer notification au parrain  
                         NotificationService.send_referral_bonus_notification(
-                            referrer_user=sponsor_referral.user,
+                            referrer_user=sponsor_user,
                             referred_user=user,
                             referral_code=referral_code,
                             bonus_amount=float(bonus_amount)
@@ -607,9 +611,13 @@ class RegisterCustomerSerializer(serializers.Serializer):
                         sponsor_wallet.balance += Decimal(str(bonus_amount))
                         sponsor_wallet.save()
                         
-                        # Envoyer notification au parrain
+                        # Récupérer l'utilisateur parrain via le Generic Foreign Key
+                        sponsor_user_model = sponsor_referral.user_type.model_class()
+                        sponsor_user = sponsor_user_model.objects.get(id=sponsor_referral.user_id)
+                        
+                        # Envoyer notification au parrain  
                         NotificationService.send_referral_bonus_notification(
-                            referrer_user=sponsor_referral.user,
+                            referrer_user=sponsor_user,
                             referred_user=user,
                             referral_code=referral_code,
                             bonus_amount=float(bonus_amount)

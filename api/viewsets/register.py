@@ -97,8 +97,9 @@ class RegisterDriverView(APIView):
                     # Le bonus de parrainage est géré automatiquement dans le serializer
                     # Pas besoin de logique supplémentaire ici
                     
-                    # Envoyer notification de bienvenue
-                    NotificationService.send_welcome_notification(driver)
+                    # La notification de bienvenue sera envoyée lors du premier login
+                    # quand on aura le token FCM (voir login.py)
+                    # NotificationService.send_welcome_notification(driver)
                     
                     # Préparer les informations du chauffeur
                     user_info = {
@@ -209,8 +210,9 @@ class RegisterCustomerView(APIView):
                     # Le bonus de parrainage est géré automatiquement dans le serializer
                     # Pas besoin de logique supplémentaire ici
                     
-                    # Envoyer notification de bienvenue
-                    NotificationService.send_welcome_notification(customer)
+                    # La notification de bienvenue sera envoyée lors du premier login
+                    # quand on aura le token FCM (voir login.py)
+                    # NotificationService.send_welcome_notification(customer)
 
                     # Préparer les informations du client
                     user_info = {

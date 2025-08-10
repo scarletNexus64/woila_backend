@@ -919,6 +919,224 @@ L'app `order` est configurée pour les WebSockets mais les endpoints REST ne son
 
 ---
 
+## 10. Gestion des Notifications
+
+### 10.1 Lister les Notifications
+
+**Endpoint** : `GET /api/v1/notifications/`
+
+**Auth** : Token Bearer requis
+
+**Description** : Récupère toutes les notifications de l'utilisateur connecté
+
+**Query Parameters** :
+- `include_read` (boolean) : Inclure les notifications lues (défaut: true)
+- `limit` (integer) : Nombre maximum de notifications à retourner (défaut: 50)
+
+**Réponse (200)** :
+```json
+{
+    "success": true,
+    "count": 5,
+    "unread_count": 2,
+    "notifications": [
+        {
+            "id": 1,
+            "title": "🎉 Bienvenue sur WOILA !",
+            "content": "Bonjour Jean, Bienvenue dans la famille WOILA !...",
+            "notification_type": "welcome",
+            "type_display": "Notification de bienvenue",
+            "is_read": false,
+            "is_deleted": false,
+            "metadata": {},
+            "created_at": "2024-01-15T10:30:00Z",
+            "read_at": null,
+            "deleted_at": null,
+            "user_display": "Jean Dupont",
+            "is_new": true
+        }
+    ]
+}
+```
+
+### 10.2 Notifications Non Lues
+
+**Endpoint** : `GET /api/v1/notifications/unread/`
+
+**Auth** : Token Bearer requis
+
+**Description** : Récupère uniquement les notifications non lues de l'utilisateur
+
+**Réponse (200)** :
+```json
+{
+    "success": true,
+    "count": 2,
+    "notifications": [
+        {
+            "id": 1,
+            "title": "🎉 Bienvenue sur WOILA !",
+            "content": "Bonjour Jean, Bienvenue dans la famille WOILA !...",
+            "notification_type": "welcome",
+            "type_display": "Notification de bienvenue",
+            "is_read": false,
+            "is_deleted": false,
+            "metadata": {},
+            "created_at": "2024-01-15T10:30:00Z",
+            "read_at": null,
+            "deleted_at": null,
+            "user_display": "Jean Dupont",
+            "is_new": true
+        }
+    ]
+}
+```
+
+### 10.3 Détail d'une Notification
+
+**Endpoint** : `GET /api/v1/notifications/{notification_id}/`
+
+**Auth** : Token Bearer requis
+
+**Description** : Récupère les détails d'une notification spécifique
+
+**Réponse (200)** :
+```json
+{
+    "success": true,
+    "notification": {
+        "id": 1,
+        "title": "🎉 Bienvenue sur WOILA !",
+        "content": "Bonjour Jean, Bienvenue dans la famille WOILA !...",
+        "notification_type": "welcome",
+        "type_display": "Notification de bienvenue",
+        "is_read": false,
+        "is_deleted": false,
+        "metadata": {},
+        "created_at": "2024-01-15T10:30:00Z",
+        "read_at": null,
+        "deleted_at": null,
+        "user_display": "Jean Dupont",
+        "is_new": true
+    }
+}
+```
+
+### 10.4 Marquer une Notification comme Lue
+
+**Endpoint** : `PATCH /api/v1/notifications/{notification_id}/`
+
+**Auth** : Token Bearer requis
+
+**Description** : Marque une notification spécifique comme lue
+
+**Réponse (200)** :
+```json
+{
+    "success": true,
+    "message": "Notification marquée comme lue"
+}
+```
+
+**Réponse d'erreur (400)** :
+```json
+{
+    "success": false,
+    "error": "Impossible de marquer la notification comme lue"
+}
+```
+
+### 10.5 Supprimer une Notification
+
+**Endpoint** : `DELETE /api/v1/notifications/{notification_id}/`
+
+**Auth** : Token Bearer requis
+
+**Description** : Supprime définitivement une notification (soft delete)
+
+**Réponse (200)** :
+```json
+{
+    "success": true,
+    "message": "Notification supprimée"
+}
+```
+
+**Réponse d'erreur (400)** :
+```json
+{
+    "success": false,
+    "error": "Impossible de supprimer la notification"
+}
+```
+
+### 10.6 Marquer Toutes les Notifications comme Lues
+
+**Endpoint** : `POST /api/v1/notifications/mark-all-read/`
+
+**Auth** : Token Bearer requis
+
+**Description** : Marque toutes les notifications de l'utilisateur comme lues
+
+**Réponse (200)** :
+```json
+{
+    "success": true,
+    "message": "3 notification(s) marquée(s) comme lue(s)",
+    "updated_count": 3
+}
+```
+
+### 10.7 Statistiques des Notifications
+
+**Endpoint** : `GET /api/v1/notifications/stats/`
+
+**Auth** : Token Bearer requis
+
+**Description** : Obtient les statistiques des notifications de l'utilisateur
+
+**Réponse (200)** :
+```json
+{
+    "success": true,
+    "stats": {
+        "total": 15,
+        "unread": 3,
+        "today": 2,
+        "this_week": 7,
+        "by_type": {
+            "welcome": 1,
+            "referral_used": 2,
+            "vehicle_approved": 1,
+            "system": 11,
+            "order": 0,
+            "other": 0
+        }
+    }
+}
+```
+
+### Types de Notifications
+
+Le système supporte les types de notifications suivants :
+
+- **welcome** : Notification de bienvenue (envoyée lors de l'inscription)
+- **referral_used** : Code parrain utilisé (envoyée au parrain quand son code est utilisé)
+- **vehicle_approved** : Véhicule approuvé (envoyée au chauffeur quand son véhicule est activé)
+- **system** : Notification système (messages administratifs)
+- **order** : Notifications liées aux commandes
+- **other** : Autres notifications
+
+### Métadonnées des Notifications
+
+Le champ `metadata` peut contenir des données supplémentaires selon le type :
+
+- **referral_used** : `{"referral_code": "ABC123", "referred_user_info": "..."}`
+- **vehicle_approved** : `{"vehicle_id": 1, "vehicle_name": "Toyota Corolla"}`
+- **order** : `{"order_id": 1, "order_status": "completed"}`
+
+---
+
 ## Codes d'Erreur
 
 ### Erreurs HTTP Standard

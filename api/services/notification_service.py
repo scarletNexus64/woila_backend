@@ -206,17 +206,15 @@ L'équipe WOILA vous souhaite la bienvenue ! 🤝"""
             True si succès, False sinon
         """
         try:
-            # Ajouter le bonus au wallet du parrain
+            # IMPORTANT: Le bonus est déjà ajouté dans le RegisterSerializer
+            # On ne fait ici QUE la notification, pas l'ajout du bonus wallet
             content_type = ContentType.objects.get_for_model(referrer_user)
-            wallet, created = Wallet.objects.get_or_create(
-                user_type=content_type,
-                user_id=referrer_user.id,
-                defaults={'balance': bonus_amount}
-            )
             
-            if not created:
-                wallet.balance += bonus_amount
-                wallet.save()
+            # Récupérer le wallet pour afficher le solde actuel
+            wallet = Wallet.objects.get(
+                user_type=content_type,
+                user_id=referrer_user.id
+            )
             
             # Créer la notification
             title = f"🎁 Code parrain utilisé !"
@@ -276,6 +274,7 @@ Merci de faire grandir la communauté WOILA ! 🚀"""
             True si succès, False sinon
         """
         try:
+            logger.info(f"🚗 NOTIFICATION: Début envoi notification approbation véhicule pour {driver.name} - Véhicule: {vehicle.nom}")
             title = f"🚗✅ Véhicule approuvé !"
             content = f"""Félicitations {driver.name} !
 
@@ -309,15 +308,20 @@ Bonne route avec WOILA ! 🛣️"""
                 metadata=metadata
             )
             
+            logger.info(f"🚗 NOTIFICATION: Création notification DB: {'✅' if notification else '❌'}")
+            
             if notification:
                 # Envoyer également via FCM (notification push)
+                logger.info(f"🚗 NOTIFICATION: Tentative envoi FCM pour véhicule {vehicle.nom}")
                 fcm_success = FCMService.send_vehicle_approval_notification(
                     driver=driver,
                     vehicle_name=vehicle.nom
                 )
                 
-                logger.info(f"Notification d'approbation véhicule envoyée à {driver.name} pour {vehicle.nom} - DB: ✅ FCM: {'✅' if fcm_success else '❌'}")
+                logger.info(f"🚗 NOTIFICATION: Notification d'approbation véhicule envoyée à {driver.name} pour {vehicle.nom} - DB: ✅ FCM: {'✅' if fcm_success else '❌'}")
                 return True
+            else:
+                logger.error(f"🚗 NOTIFICATION: Échec création notification DB pour {driver.name}")
             
             return False
             
@@ -382,3 +386,75 @@ Bonne route avec WOILA ! 🛣️"""
         except Exception as e:
             logger.error(f"Erreur lors du comptage des notifications non lues: {str(e)}")
             return 0
+    
+    @classmethod
+    def mark_notification_as_read(cls, notification_id: int, user) -> bool:
+        """
+        Marque une notification comme lue
+        
+        Args:
+            notification_id: ID de la notification
+            user: Instance UserDriver ou UserCustomer
+            
+        Returns:
+            True si succès, False sinon
+        """
+        try:
+            content_type = ContentType.objects.get_for_model(user)
+            
+            # Récupérer la notification
+            notification = Notification.objects.get(
+                id=notification_id,
+                user_type=content_type,
+                user_id=user.id,
+                is_deleted=False
+            )
+            
+            # Marquer comme lue si elle ne l'est pas déjà
+            if not notification.is_read:
+                notification.mark_as_read()
+                logger.info(f"Notification {notification_id} marquée comme lue pour {user.name} {user.surname}")
+            
+            return True
+            
+        except Notification.DoesNotExist:
+            logger.warning(f"Notification {notification_id} introuvable pour l'utilisateur {user.name} {user.surname}")
+            return False
+        except Exception as e:
+            logger.error(f"Erreur lors du marquage de la notification {notification_id} comme lue: {str(e)}")
+            return False
+    
+    @classmethod
+    def delete_notification(cls, notification_id: int, user) -> bool:
+        """
+        Supprime une notification (soft delete)
+        
+        Args:
+            notification_id: ID de la notification
+            user: Instance UserDriver ou UserCustomer
+            
+        Returns:
+            True si succès, False sinon
+        """
+        try:
+            content_type = ContentType.objects.get_for_model(user)
+            
+            # Récupérer la notification
+            notification = Notification.objects.get(
+                id=notification_id,
+                user_type=content_type,
+                user_id=user.id,
+                is_deleted=False
+            )
+            
+            # Supprimer (soft delete)
+            notification.mark_as_deleted()
+            logger.info(f"Notification {notification_id} supprimée pour {user.name} {user.surname}")
+            return True
+            
+        except Notification.DoesNotExist:
+            logger.warning(f"Notification {notification_id} introuvable pour l'utilisateur {user.name} {user.surname}")
+            return False
+        except Exception as e:
+            logger.error(f"Erreur lors de la suppression de la notification {notification_id}: {str(e)}")
+            return False

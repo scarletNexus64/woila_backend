@@ -1,2 +1,8 @@
 /venv
 /.claude
+
+# Secrets Firebase
+api/secret/
+*.json
+*firebase-adminsdk*.json
+*-firebase-*.json

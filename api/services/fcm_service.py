@@ -88,25 +88,30 @@ class FCMService:
             platform = device_info.get('platform', 'unknown')
             device_id = device_info.get('device_id', f"{platform}-{timezone.now().timestamp()}")
             
-            # Vérifier si le token existe déjà
-            fcm_token, created = FCMToken.objects.get_or_create(
-                user_type=content_type,
-                user_id=user.id,
-                device_id=device_id,
-                defaults={
-                    'token': token,
-                    'platform': platform,
-                    'device_info': device_info,
-                    'is_active': True
-                }
-            )
-            
-            # Si le token existe, le mettre à jour
-            if not created:
-                fcm_token.token = token
+            # Vérifier si le token existe déjà (chercher d'abord par token pour éviter les conflits unique)
+            try:
+                fcm_token = FCMToken.objects.get(token=token)
+                # Token existe déjà, mettre à jour les infos utilisateur et appareil
+                fcm_token.user_type = content_type
+                fcm_token.user_id = user.id
+                fcm_token.device_id = device_id
+                fcm_token.platform = platform
                 fcm_token.device_info = device_info
                 fcm_token.is_active = True
-                fcm_token.save(update_fields=['token', 'device_info', 'is_active', 'updated_at'])
+                fcm_token.save()
+                created = False
+            except FCMToken.DoesNotExist:
+                # Token n'existe pas, le créer
+                fcm_token = FCMToken.objects.create(
+                    user_type=content_type,
+                    user_id=user.id,
+                    device_id=device_id,
+                    token=token,
+                    platform=platform,
+                    device_info=device_info,
+                    is_active=True
+                )
+                created = True
             
             logger.info(f"Token FCM {'créé' if created else 'mis à jour'} pour {user.name} {user.surname}")
             return fcm_token
@@ -176,12 +181,32 @@ class FCMService:
         Envoie une notification à un utilisateur spécifique
         """
         try:
-            tokens = cls.get_user_tokens(user)
-            if not tokens:
-                logger.warning(f"Aucun token FCM trouvé pour {user.name} {user.surname}")
+            logger.info(f"🔔 Début envoi FCM pour {user.name} {user.surname} - Type: {notification_type}")
+            
+            # Vérifier si l'utilisateur a une session active
+            from ..models import Token
+            user_type_name = 'driver' if isinstance(user, UserDriver) else 'customer'
+            
+            has_active_session = Token.objects.filter(
+                user_type=user_type_name,
+                user_id=user.id,
+                is_active=True
+            ).exists()
+            
+            logger.info(f"🔐 Session active pour {user.name} {user.surname}: {'✅ Oui' if has_active_session else '❌ Non'}")
+            
+            if not has_active_session:
+                logger.warning(f"❌ Pas de session active pour {user.name} {user.surname} - Notification non envoyée")
                 return False
             
-            return cls.send_to_tokens(
+            tokens = cls.get_user_tokens(user)
+            if not tokens:
+                logger.warning(f"❌ Aucun token FCM trouvé pour {user.name} {user.surname}")
+                return False
+            
+            logger.info(f"✅ {len(tokens)} token(s) FCM trouvé(s) pour {user.name} {user.surname}")
+            
+            result = cls.send_to_tokens(
                 tokens=tokens,
                 title=title,
                 body=body,
@@ -189,8 +214,12 @@ class FCMService:
                 notification_type=notification_type
             )
             
+            logger.info(f"🎯 Résultat envoi FCM pour {user.name} {user.surname}: {'✅ Succès' if result else '❌ Échec'}")
+            return result
+            
         except Exception as e:
-            logger.error(f"Erreur lors de l'envoi de notification à {user.name} {user.surname}: {e}")
+            logger.error(f"💥 Erreur lors de l'envoi de notification à {user.name} {user.surname}: {e}")
+            logger.error(traceback.format_exc())
             return False
     
     @classmethod
@@ -204,16 +233,28 @@ class FCMService:
         Envoie une notification à plusieurs tokens en utilisant la nouvelle API Firebase v1
         """
         try:
+            logger.info(f"🚀 Début envoi FCM vers {len(tokens)} token(s)")
+            logger.info(f"📋 Titre: {title}")
+            logger.info(f"💬 Corps: {body[:100]}{'...' if len(body) > 100 else ''}")
+            logger.info(f"🏷️ Type: {notification_type}")
+            
             # Obtenir le token OAuth2
             oauth2_token = cls.get_firebase_oauth2_token()
             if not oauth2_token:
-                logger.error("Échec de l'obtention du token OAuth2")
+                logger.error("❌ Échec de l'obtention du token OAuth2")
                 return False
             
+            logger.info("✅ Token OAuth2 Firebase obtenu")
+            
             # Obtenir le project_id depuis le fichier service account
-            with open(settings.FCM_SERVICE_ACCOUNT_PATH, 'r') as f:
-                service_account = json.load(f)
-            project_id = service_account['project_id']
+            try:
+                with open(settings.FCM_SERVICE_ACCOUNT_PATH, 'r') as f:
+                    service_account = json.load(f)
+                project_id = service_account['project_id']
+                logger.info(f"🔧 Project ID Firebase: {project_id}")
+            except Exception as e:
+                logger.error(f"❌ Erreur lecture fichier Firebase service account: {e}")
+                return False
             
             # Préparer les données
             notification_data = data or {}
@@ -229,7 +270,9 @@ class FCMService:
             invalid_tokens = []
             
             # Envoyer à chaque token individuellement (nouvelle API Firebase v1)
-            for token in tokens:
+            for i, token in enumerate(tokens, 1):
+                logger.info(f"📤 Envoi {i}/{len(tokens)} vers token: {token[:20]}...")
+                
                 fcm_message = {
                     "message": {
                         "token": token,
@@ -265,6 +308,8 @@ class FCMService:
                 
                 # Envoyer la requête à l'API FCM v1
                 url = cls.FCM_API_URL.format(project_id)
+                logger.debug(f"🌐 URL FCM: {url}")
+                
                 response = requests.post(
                     url,
                     json=fcm_message,
@@ -272,11 +317,17 @@ class FCMService:
                     timeout=30
                 )
                 
+                logger.info(f"📨 Réponse FCM {i}/{len(tokens)}: Status {response.status_code}")
+                
                 if response.status_code == 200:
                     success_count += 1
-                    logger.debug(f"FCM envoyé avec succès au token: {token[:20]}...")
+                    logger.info(f"✅ FCM envoyé avec succès au token: {token[:20]}...")
+                    response_data = response.json()
+                    if 'name' in response_data:
+                        logger.debug(f"💌 Message ID Firebase: {response_data['name']}")
                 else:
-                    logger.warning(f"FCM échoué pour token {token[:20]}...: {response.status_code} - {response.text}")
+                    logger.error(f"❌ FCM échoué pour token {token[:20]}...: {response.status_code}")
+                    logger.error(f"📝 Réponse: {response.text}")
                     # Si le token FCM n'est plus valide, le marquer comme invalide
                     if response.status_code == 404 or "registration token" in response.text.lower():
                         invalid_tokens.append(token)
@@ -336,7 +387,7 @@ class FCMService:
         return cls.send_notification(
             user=user,
             title="🎁 Bonus de parrainage reçu !",
-            body=f"Félicitations ! Votre code parrain {referral_code} a été utilisé. Vous avez reçu {bonus_amount}€ de bonus !",
+            body=f"Félicitations ! Votre code parrain {referral_code} a été utilisé. Vous avez reçu {bonus_amount} FCFA de bonus !",
             notification_type='referral_used',
             data={
                 'referral_code': referral_code,
