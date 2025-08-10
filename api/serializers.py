@@ -3,8 +3,9 @@ from .models import (
     UserDriver, UserCustomer, Token, Document, Vehicle, 
     GeneralConfig, Wallet, ReferralCode,
     VehicleType, VehicleBrand, VehicleModel, VehicleColor,
-    OTPVerification, NotificationConfig
+    OTPVerification, NotificationConfig, Notification, FCMToken
 )
+from .services.notification_service import NotificationService
 from django.contrib.auth.hashers import check_password
 import uuid
 
@@ -98,6 +99,102 @@ class ReferralCodeSerializer(serializers.ModelSerializer):
     class Meta:
         model = ReferralCode
         fields = '__all__'
+
+
+# ===== NOTIFICATION SERIALIZERS =====
+
+class NotificationSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour les notifications utilisateurs
+    """
+    user_display = serializers.SerializerMethodField()
+    type_display = serializers.SerializerMethodField()
+    is_new = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Notification
+        fields = [
+            'id', 'title', 'content', 'notification_type', 'type_display',
+            'is_read', 'is_deleted', 'metadata', 'created_at', 'read_at',
+            'deleted_at', 'user_display', 'is_new'
+        ]
+        read_only_fields = ['id', 'created_at', 'read_at', 'deleted_at', 'user_display', 'type_display', 'is_new']
+    
+    def get_user_display(self, obj):
+        """Retourne l'affichage de l'utilisateur"""
+        return obj.get_user_display()
+    
+    def get_type_display(self, obj):
+        """Retourne l'affichage du type de notification"""
+        return obj.get_notification_type_display()
+    
+    def get_is_new(self, obj):
+        """Considère une notification comme nouvelle si créée dans les 24h"""
+        from django.utils import timezone
+        from datetime import timedelta
+        return (timezone.now() - obj.created_at) < timedelta(hours=24)
+
+
+class NotificationCreateSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour créer des notifications
+    """
+    class Meta:
+        model = Notification
+        fields = [
+            'user_type', 'user_id', 'title', 'content', 
+            'notification_type', 'metadata'
+        ]
+    
+    def validate(self, data):
+        """Valide que l'utilisateur existe"""
+        from django.contrib.contenttypes.models import ContentType
+        
+        user_type = data.get('user_type')
+        user_id = data.get('user_id')
+        
+        if user_type and user_id:
+            model_class = user_type.model_class()
+            if not model_class.objects.filter(id=user_id).exists():
+                raise serializers.ValidationError("Utilisateur introuvable")
+        
+        return data
+
+
+class NotificationListSerializer(serializers.ModelSerializer):
+    """
+    Serializer simplifié pour lister les notifications
+    """
+    type_display = serializers.SerializerMethodField()
+    time_ago = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Notification
+        fields = [
+            'id', 'title', 'content', 'notification_type', 'type_display',
+            'is_read', 'metadata', 'created_at', 'time_ago'
+        ]
+    
+    def get_type_display(self, obj):
+        return obj.get_notification_type_display()
+    
+    def get_time_ago(self, obj):
+        """Retourne le temps écoulé depuis la création"""
+        from django.utils import timezone
+        
+        now = timezone.now()
+        diff = now - obj.created_at
+        
+        if diff.days > 0:
+            return f"Il y a {diff.days} jour{'s' if diff.days > 1 else ''}"
+        elif diff.seconds > 3600:
+            hours = diff.seconds // 3600
+            return f"Il y a {hours} heure{'s' if hours > 1 else ''}"
+        elif diff.seconds > 60:
+            minutes = diff.seconds // 60
+            return f"Il y a {minutes} minute{'s' if minutes > 1 else ''}"
+        else:
+            return "À l'instant"
 
 
 class UserDriverSerializer(serializers.ModelSerializer):
@@ -198,6 +295,132 @@ class LoginSerializer(serializers.Serializer):
         return data
 
 
+# --- Notification Serializers ---
+
+class NotificationSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour les détails d'une notification
+    """
+    user_display = serializers.CharField(source='get_user_display', read_only=True)
+    type_display = serializers.CharField(source='get_notification_type_display', read_only=True)
+    time_ago = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Notification
+        fields = [
+            'id', 'title', 'content', 'notification_type', 'type_display',
+            'is_read', 'is_deleted', 'metadata', 'created_at', 'read_at',
+            'deleted_at', 'user_display', 'time_ago'
+        ]
+        read_only_fields = ['id', 'created_at', 'read_at', 'deleted_at', 'user_display', 'type_display', 'time_ago']
+    
+    def get_time_ago(self, obj):
+        """Calcule le temps écoulé depuis la création"""
+        from django.utils import timezone
+        now = timezone.now()
+        diff = now - obj.created_at
+        
+        if diff.days > 0:
+            return f"Il y a {diff.days} jour{'s' if diff.days > 1 else ''}"
+        elif diff.seconds > 3600:
+            hours = diff.seconds // 3600
+            return f"Il y a {hours}h"
+        elif diff.seconds > 60:
+            minutes = diff.seconds // 60
+            return f"Il y a {minutes} min"
+        else:
+            return "À l'instant"
+
+
+class NotificationListSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour la liste des notifications (version simplifiée)
+    """
+    type_display = serializers.CharField(source='get_notification_type_display', read_only=True)
+    time_ago = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Notification
+        fields = [
+            'id', 'title', 'content', 'notification_type', 'type_display',
+            'is_read', 'created_at', 'time_ago'
+        ]
+        read_only_fields = ['id', 'created_at', 'type_display', 'time_ago']
+    
+    def get_time_ago(self, obj):
+        """Calcule le temps écoulé depuis la création"""
+        from django.utils import timezone
+        now = timezone.now()
+        diff = now - obj.created_at
+        
+        if diff.days > 0:
+            return f"Il y a {diff.days} jour{'s' if diff.days > 1 else ''}"
+        elif diff.seconds > 3600:
+            hours = diff.seconds // 3600
+            return f"Il y a {hours}h"
+        elif diff.seconds > 60:
+            minutes = diff.seconds // 60
+            return f"Il y a {minutes} min"
+        else:
+            return "À l'instant"
+
+
+# --- FCM Token Serializers ---
+
+class FCMTokenSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour les tokens FCM
+    """
+    user_display = serializers.CharField(source='get_user_display', read_only=True)
+    
+    class Meta:
+        model = FCMToken
+        fields = [
+            'id', 'token', 'platform', 'device_id', 'device_info',
+            'is_active', 'last_used', 'created_at', 'updated_at', 'user_display'
+        ]
+        read_only_fields = ['id', 'last_used', 'created_at', 'updated_at', 'user_display']
+
+
+class FCMTokenRegisterSerializer(serializers.Serializer):
+    """
+    Serializer pour l'enregistrement d'un token FCM
+    """
+    fcm_token = serializers.CharField(
+        max_length=1000,
+        help_text="Token FCM de l'appareil"
+    )
+    device_info = serializers.JSONField(
+        default=dict,
+        required=False,
+        help_text="Informations sur l'appareil (platform, version, etc.)"
+    )
+    
+    def validate_fcm_token(self, value):
+        """Valide le format du token FCM"""
+        if not value or len(value) < 10:
+            raise serializers.ValidationError("Token FCM invalide")
+        return value
+
+
+class FCMTokenListSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour lister les tokens FCM (version simplifiée)
+    """
+    token_preview = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = FCMToken
+        fields = ['id', 'token_preview', 'platform', 'device_id', 'is_active', 'last_used']
+        read_only_fields = ['id', 'token_preview', 'last_used']
+    
+    def get_token_preview(self, obj):
+        """Affiche un aperçu du token (premiers et derniers caractères)"""
+        if len(obj.token) > 20:
+            return f"{obj.token[:10]}...{obj.token[-10:]}"
+        return obj.token
+
+
 class RegisterDriverSerializer(serializers.Serializer):
     """
     Serializer pour l'inscription des chauffeurs
@@ -282,6 +505,18 @@ class RegisterDriverSerializer(serializers.Serializer):
                         from decimal import Decimal
                         sponsor_wallet.balance += Decimal(str(bonus_amount))
                         sponsor_wallet.save()
+                        
+                        # Récupérer l'utilisateur parrain via le Generic Foreign Key
+                        sponsor_user_model = sponsor_referral.user_type.model_class()
+                        sponsor_user = sponsor_user_model.objects.get(id=sponsor_referral.user_id)
+                        
+                        # Envoyer notification au parrain  
+                        NotificationService.send_referral_bonus_notification(
+                            referrer_user=sponsor_user,
+                            referred_user=user,
+                            referral_code=referral_code,
+                            bonus_amount=float(bonus_amount)
+                        )
                         
                 except GeneralConfig.DoesNotExist:
                     # Si la config n'existe pas, pas de bonus mais pas d'erreur non plus
@@ -375,6 +610,18 @@ class RegisterCustomerSerializer(serializers.Serializer):
                         from decimal import Decimal
                         sponsor_wallet.balance += Decimal(str(bonus_amount))
                         sponsor_wallet.save()
+                        
+                        # Récupérer l'utilisateur parrain via le Generic Foreign Key
+                        sponsor_user_model = sponsor_referral.user_type.model_class()
+                        sponsor_user = sponsor_user_model.objects.get(id=sponsor_referral.user_id)
+                        
+                        # Envoyer notification au parrain  
+                        NotificationService.send_referral_bonus_notification(
+                            referrer_user=sponsor_user,
+                            referred_user=user,
+                            referral_code=referral_code,
+                            bonus_amount=float(bonus_amount)
+                        )
                         
                 except GeneralConfig.DoesNotExist:
                     # Si la config n'existe pas, pas de bonus mais pas d'erreur non plus
@@ -1087,3 +1334,129 @@ class ForgotPasswordSerializer(serializers.Serializer):
         
         data['user'] = user
         return data
+
+
+# --- Notification Serializers ---
+
+class NotificationSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour les détails d'une notification
+    """
+    user_display = serializers.CharField(source='get_user_display', read_only=True)
+    type_display = serializers.CharField(source='get_notification_type_display', read_only=True)
+    time_ago = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Notification
+        fields = [
+            'id', 'title', 'content', 'notification_type', 'type_display',
+            'is_read', 'is_deleted', 'metadata', 'created_at', 'read_at',
+            'deleted_at', 'user_display', 'time_ago'
+        ]
+        read_only_fields = ['id', 'created_at', 'read_at', 'deleted_at', 'user_display', 'type_display', 'time_ago']
+    
+    def get_time_ago(self, obj):
+        """Calcule le temps écoulé depuis la création"""
+        from django.utils import timezone
+        now = timezone.now()
+        diff = now - obj.created_at
+        
+        if diff.days > 0:
+            return f"Il y a {diff.days} jour{'s' if diff.days > 1 else ''}"
+        elif diff.seconds > 3600:
+            hours = diff.seconds // 3600
+            return f"Il y a {hours}h"
+        elif diff.seconds > 60:
+            minutes = diff.seconds // 60
+            return f"Il y a {minutes} min"
+        else:
+            return "À l'instant"
+
+
+class NotificationListSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour la liste des notifications (version simplifiée)
+    """
+    type_display = serializers.CharField(source='get_notification_type_display', read_only=True)
+    time_ago = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = Notification
+        fields = [
+            'id', 'title', 'content', 'notification_type', 'type_display',
+            'is_read', 'created_at', 'time_ago'
+        ]
+        read_only_fields = ['id', 'created_at', 'type_display', 'time_ago']
+    
+    def get_time_ago(self, obj):
+        """Calcule le temps écoulé depuis la création"""
+        from django.utils import timezone
+        now = timezone.now()
+        diff = now - obj.created_at
+        
+        if diff.days > 0:
+            return f"Il y a {diff.days} jour{'s' if diff.days > 1 else ''}"
+        elif diff.seconds > 3600:
+            hours = diff.seconds // 3600
+            return f"Il y a {hours}h"
+        elif diff.seconds > 60:
+            minutes = diff.seconds // 60
+            return f"Il y a {minutes} min"
+        else:
+            return "À l'instant"
+
+
+# --- FCM Token Serializers ---
+
+class FCMTokenSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour les tokens FCM
+    """
+    user_display = serializers.CharField(source='get_user_display', read_only=True)
+    
+    class Meta:
+        model = FCMToken
+        fields = [
+            'id', 'token', 'platform', 'device_id', 'device_info',
+            'is_active', 'last_used', 'created_at', 'updated_at', 'user_display'
+        ]
+        read_only_fields = ['id', 'last_used', 'created_at', 'updated_at', 'user_display']
+
+
+class FCMTokenRegisterSerializer(serializers.Serializer):
+    """
+    Serializer pour l'enregistrement d'un token FCM
+    """
+    fcm_token = serializers.CharField(
+        max_length=1000,
+        help_text="Token FCM de l'appareil"
+    )
+    device_info = serializers.JSONField(
+        default=dict,
+        required=False,
+        help_text="Informations sur l'appareil (platform, version, etc.)"
+    )
+    
+    def validate_fcm_token(self, value):
+        """Valide le format du token FCM"""
+        if not value or len(value) < 10:
+            raise serializers.ValidationError("Token FCM invalide")
+        return value
+
+
+class FCMTokenListSerializer(serializers.ModelSerializer):
+    """
+    Serializer pour lister les tokens FCM (version simplifiée)
+    """
+    token_preview = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = FCMToken
+        fields = ['id', 'token_preview', 'platform', 'device_id', 'is_active', 'last_used']
+        read_only_fields = ['id', 'token_preview', 'last_used']
+    
+    def get_token_preview(self, obj):
+        """Affiche un aperçu du token (premiers et derniers caractères)"""
+        if len(obj.token) > 20:
+            return f"{obj.token[:10]}...{obj.token[-10:]}"
+        return obj.token

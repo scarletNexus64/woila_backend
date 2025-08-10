@@ -325,3 +325,8 @@ JAZZMIN_UI_TWEAKS = {
     },
     "actions_sticky_top": False
 }
+
+
+# Firebase Cloud Messaging Configuration
+import os
+FCM_SERVICE_ACCOUNT_PATH = os.path.join(BASE_DIR, 'api', 'secret', 'woila-4be6b-firebase-adminsdk-fbsvc-14075b647a.json')

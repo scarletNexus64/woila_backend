@@ -5,8 +5,9 @@ from .models import (
     GeneralConfig, Wallet, ReferralCode,
     VehicleType, VehicleBrand, VehicleModel, VehicleColor,
     Country, City, VipZone, VipZoneKilometerRule,
-    OTPVerification, NotificationConfig
+    OTPVerification, NotificationConfig, Notification, FCMToken
 )
+from .services.notification_service import NotificationService
 
 
 @admin.register(GeneralConfig)
@@ -332,7 +333,7 @@ class UserDriverAdmin(admin.ModelAdmin):
             readonly_fields.append('password')
         return readonly_fields
     
-    actions = ['activate_drivers', 'deactivate_drivers']
+    actions = ['activate_drivers', 'deactivate_drivers', 'test_fcm_notification']
     
     def activate_drivers(self, request, queryset):
         updated = queryset.update(is_active=True)
@@ -343,6 +344,65 @@ class UserDriverAdmin(admin.ModelAdmin):
         updated = queryset.update(is_active=False)
         self.message_user(request, f'❌ {updated} chauffeur(s) désactivé(s).')
     deactivate_drivers.short_description = "❌ Désactiver les chauffeurs"
+    
+    def test_fcm_notification(self, request, queryset):
+        """Envoie une notification de test aux chauffeurs sélectionnés"""
+        from api.services.fcm_service import FCMService
+        from api.models import Token
+        
+        success_count = 0
+        error_count = 0
+        no_session_count = 0
+        no_token_count = 0
+        
+        for driver in queryset:
+            # Vérifier session active
+            has_session = Token.objects.filter(
+                user_type='driver',
+                user_id=driver.id,
+                is_active=True
+            ).exists()
+            
+            if not has_session:
+                no_session_count += 1
+                continue
+                
+            # Vérifier tokens FCM
+            tokens = FCMService.get_user_tokens(driver)
+            if not tokens:
+                no_token_count += 1
+                continue
+            
+            # Envoyer notification de test
+            success = FCMService.send_notification(
+                user=driver,
+                title="🧪 Test Admin WOILA",
+                body=f"Bonjour {driver.name} ! Notification de test envoyée depuis l'admin Django. ✅",
+                notification_type='system',
+                data={'test_admin': True}
+            )
+            
+            if success:
+                success_count += 1
+            else:
+                error_count += 1
+        
+        # Message de résultat
+        messages = []
+        if success_count > 0:
+            messages.append(f'✅ {success_count} notification(s) envoyée(s)')
+        if error_count > 0:
+            messages.append(f'❌ {error_count} échec(s)')
+        if no_session_count > 0:
+            messages.append(f'🔐 {no_session_count} sans session active')
+        if no_token_count > 0:
+            messages.append(f'📱 {no_token_count} sans token FCM')
+            
+        if messages:
+            self.message_user(request, ' | '.join(messages))
+        else:
+            self.message_user(request, 'Aucune notification envoyée')
+    test_fcm_notification.short_description = "🧪 Test notification FCM"
 
 @admin.register(UserCustomer)
 class UserCustomerAdmin(admin.ModelAdmin):
@@ -676,6 +736,122 @@ class VehicleAdmin(admin.ModelAdmin):
         }),
     )
     
+    def save_model(self, request, obj, form, change):
+        """Override save_model pour détecter l'activation de véhicule"""
+        # Récupérer l'état original du véhicule si c'est une modification
+        was_inactive = False
+        if change:
+            try:
+                original = Vehicle.objects.get(pk=obj.pk)
+                was_inactive = not original.is_active
+            except Vehicle.DoesNotExist:
+                was_inactive = False
+        
+        # Sauvegarder le véhicule
+        super().save_model(request, obj, form, change)
+        
+        # Si le véhicule vient d'être activé (was_inactive -> is_active)
+        if was_inactive and obj.is_active:
+            self._send_vehicle_activation_notification(obj)
+    
+    def _send_vehicle_activation_notification(self, vehicle):
+        """Envoie une notification d'activation de véhicule ET la sauvegarde en DB"""
+        import logging
+        from api.services.fcm_service import FCMService
+        from api.models import Token, Notification
+        from django.contrib.contenttypes.models import ContentType
+        from django.utils import timezone
+        
+        logger = logging.getLogger(__name__)
+        driver = vehicle.driver
+        
+        print(f"🚗 SAVE: Véhicule {vehicle.nom} activé pour {driver.name} {driver.surname}")
+        logger.info(f"🚗 SAVE: Véhicule {vehicle.nom} activé pour {driver.name} {driver.surname}")
+        
+        try:
+            # 1. CRÉER LA NOTIFICATION EN BASE DE DONNÉES
+            content_type = ContentType.objects.get_for_model(driver)
+            
+            notification = Notification.objects.create(
+                user_type=content_type,
+                user_id=driver.id,
+                title="🚗✅ Véhicule approuvé !",
+                content=f"""Félicitations {driver.name} !
+
+Votre véhicule "{vehicle.nom}" ({vehicle.brand} {vehicle.model}) a été approuvé par notre équipe.
+
+📋 Détails du véhicule:
+• Marque: {vehicle.brand}
+• Modèle: {vehicle.model}
+• Plaque: {vehicle.plaque_immatriculation}
+• État: {vehicle.get_etat_display_short()}
+
+Vous pouvez désormais commencer à opérer avec ce véhicule ! 🎉
+
+Bonne route avec WOILA ! 🛣️""",
+                notification_type='vehicle_approved',
+                metadata={
+                    'vehicle_id': vehicle.id,
+                    'vehicle_name': vehicle.nom,
+                    'vehicle_brand': str(vehicle.brand),
+                    'vehicle_model': str(vehicle.model),
+                    'license_plate': vehicle.plaque_immatriculation,
+                    'vehicle_state': vehicle.etat_vehicule,
+                    'approval_date': timezone.now().isoformat()
+                }
+            )
+            
+            print(f"✅ SAVE: Notification sauvegardée en DB (ID: {notification.id})")
+            logger.info(f"✅ SAVE: Notification sauvegardée en DB (ID: {notification.id})")
+            
+            # 2. VÉRIFIER SESSION ACTIVE
+            has_active_session = Token.objects.filter(
+                user_type='driver',
+                user_id=driver.id,
+                is_active=True
+            ).exists()
+            
+            print(f"🔐 SAVE: Session active pour {driver.name}: {'Oui' if has_active_session else 'Non'}")
+            
+            if not has_active_session:
+                print(f"❌ SAVE: Pas de session active - Notification FCM ignorée")
+                logger.warning(f"❌ SAVE: Pas de session active pour {driver.name}")
+                return
+            
+            # 3. VÉRIFIER TOKENS FCM
+            fcm_tokens = FCMService.get_user_tokens(driver)
+            print(f"📱 SAVE: {len(fcm_tokens)} token(s) FCM trouvé(s) pour {driver.name}")
+            
+            if not fcm_tokens:
+                print(f"❌ SAVE: Aucun token FCM - Notification FCM ignorée")
+                logger.warning(f"❌ SAVE: Aucun token FCM pour {driver.name}")
+                return
+            
+            # 4. ENVOYER NOTIFICATION FCM
+            fcm_success = FCMService.send_notification(
+                user=driver,
+                title="🚗✅ Véhicule approuvé !",
+                body=f"Excellente nouvelle ! Votre véhicule {vehicle.nom} a été approuvé et est maintenant actif sur la plateforme.",
+                notification_type='vehicle_approved',
+                data={
+                    'vehicle_name': vehicle.nom,
+                    'vehicle_id': str(vehicle.id),
+                    'approval_status': 'approved',
+                    'notification_id': str(notification.id)
+                }
+            )
+            
+            if fcm_success:
+                print(f"✅ SAVE: Notification FCM + DB envoyée avec succès pour {vehicle.nom}")
+                logger.info(f"✅ SAVE: Notification FCM + DB envoyée avec succès pour {vehicle.nom}")
+            else:
+                print(f"❌ SAVE: Notification DB créée mais FCM échoué pour {vehicle.nom}")
+                logger.warning(f"❌ SAVE: Notification DB créée mais FCM échoué pour {vehicle.nom}")
+                
+        except Exception as e:
+            print(f"💥 SAVE: Erreur notification: {str(e)}")
+            logger.error(f"💥 SAVE: Erreur notification: {str(e)}")
+
     def get_vehicle_info(self, obj):
         """Affiche les infos du véhicule"""
         return f"{obj.brand} {obj.model} ({obj.nom})"
@@ -754,8 +930,129 @@ class VehicleAdmin(admin.ModelAdmin):
     
     def mark_as_active(self, request, queryset):
         """Activer les véhicules sélectionnés"""
-        updated = queryset.update(is_active=True)
-        self.message_user(request, f'{updated} véhicule(s) activé(s).')
+        activated_count = 0
+        notifications_sent = 0
+        
+        import logging
+        logger = logging.getLogger(__name__)
+        
+        print(f"🚗 ADMIN: Tentative d'activation de {queryset.count()} véhicule(s)")
+        logger.info(f"🚗 ADMIN: Tentative d'activation de {queryset.count()} véhicule(s)")
+        
+        inactive_vehicles = queryset.filter(is_active=False)
+        print(f"🚗 ADMIN: {inactive_vehicles.count()} véhicule(s) inactif(s) trouvé(s)")
+        logger.info(f"🚗 ADMIN: {inactive_vehicles.count()} véhicule(s) inactif(s) trouvé(s)")
+        
+        for vehicle in inactive_vehicles:
+            # Activer le véhicule
+            vehicle.is_active = True
+            vehicle.save()
+            activated_count += 1
+            
+            # Envoyer notification au chauffeur - LOGIQUE DIRECTE DANS ADMIN
+            print(f"🚗 ADMIN: Envoi notification pour véhicule {vehicle.nom} au chauffeur {vehicle.driver.name}")
+            logger.info(f"🚗 ADMIN: Envoi notification pour véhicule {vehicle.nom} au chauffeur {vehicle.driver.name}")
+            
+            # LOGIQUE FCM DIRECTE - AVEC SAUVEGARDE EN DB
+            try:
+                # Import direct dans l'admin
+                from api.services.fcm_service import FCMService
+                from api.models import Token, Notification
+                from django.contrib.contenttypes.models import ContentType
+                from django.utils import timezone
+                
+                driver = vehicle.driver
+                print(f"📤 ADMIN: Début envoi FCM direct pour {driver.name} {driver.surname}")
+                
+                # 1. CRÉER LA NOTIFICATION EN BASE DE DONNÉES
+                content_type = ContentType.objects.get_for_model(driver)
+                
+                notification = Notification.objects.create(
+                    user_type=content_type,
+                    user_id=driver.id,
+                    title="🚗✅ Véhicule approuvé !",
+                    content=f"""Félicitations {driver.name} !
+
+Votre véhicule "{vehicle.nom}" ({vehicle.brand} {vehicle.model}) a été approuvé par notre équipe.
+
+📋 Détails du véhicule:
+• Marque: {vehicle.brand}
+• Modèle: {vehicle.model}  
+• Plaque: {vehicle.plaque_immatriculation}
+• État: {vehicle.get_etat_display_short()}
+
+Vous pouvez désormais commencer à opérer avec ce véhicule ! 🎉
+
+Bonne route avec WOILA ! 🛣️""",
+                    notification_type='vehicle_approved',
+                    metadata={
+                        'vehicle_id': vehicle.id,
+                        'vehicle_name': vehicle.nom,
+                        'vehicle_brand': str(vehicle.brand),
+                        'vehicle_model': str(vehicle.model),
+                        'license_plate': vehicle.plaque_immatriculation,
+                        'vehicle_state': vehicle.etat_vehicule,
+                        'approval_date': timezone.now().isoformat()
+                    }
+                )
+                
+                print(f"✅ ADMIN: Notification sauvegardée en DB (ID: {notification.id})")
+                logger.info(f"✅ ADMIN: Notification sauvegardée en DB (ID: {notification.id})")
+                
+                # 2. Vérifier session active
+                has_active_session = Token.objects.filter(
+                    user_type='driver',
+                    user_id=driver.id,
+                    is_active=True
+                ).exists()
+                
+                print(f"🔐 ADMIN: Session active pour {driver.name}: {'Oui' if has_active_session else 'Non'}")
+                
+                if not has_active_session:
+                    print(f"❌ ADMIN: Pas de session active pour {driver.name} - Notification ignorée")
+                    logger.warning(f"❌ ADMIN: Pas de session active pour {driver.name}")
+                    continue
+                
+                # Récupérer tokens FCM
+                fcm_tokens = FCMService.get_user_tokens(driver)
+                print(f"📱 ADMIN: {len(fcm_tokens)} token(s) FCM trouvé(s) pour {driver.name}")
+                
+                if not fcm_tokens:
+                    print(f"❌ ADMIN: Aucun token FCM pour {driver.name} - Notification ignorée") 
+                    logger.warning(f"❌ ADMIN: Aucun token FCM pour {driver.name}")
+                    continue
+                
+                # 3. Envoyer notification FCM directement
+                fcm_success = FCMService.send_notification(
+                    user=driver,
+                    title="🚗✅ Véhicule approuvé !",
+                    body=f"Excellente nouvelle ! Votre véhicule {vehicle.nom} a été approuvé et est maintenant actif sur la plateforme.",
+                    notification_type='vehicle_approved',
+                    data={
+                        'vehicle_name': vehicle.nom,
+                        'vehicle_id': str(vehicle.id),
+                        'approval_status': 'approved',
+                        'notification_id': str(notification.id)
+                    }
+                )
+                
+                if fcm_success:
+                    notifications_sent += 1
+                    print(f"✅ ADMIN: Notification DB + FCM envoyée avec succès pour {vehicle.nom} à {driver.name}")
+                    logger.info(f"✅ ADMIN: Notification DB + FCM envoyée avec succès pour {vehicle.nom} à {driver.name}")
+                else:
+                    print(f"❌ ADMIN: Notification DB créée mais FCM échoué pour {vehicle.nom} à {driver.name}")
+                    logger.warning(f"❌ ADMIN: Notification DB créée mais FCM échoué pour {vehicle.nom} à {driver.name}")
+                    
+            except Exception as e:
+                print(f"💥 ADMIN: Erreur lors de l'envoi FCM: {str(e)}")
+                logger.error(f"💥 ADMIN: Erreur lors de l'envoi FCM: {str(e)}")
+        
+        message = f'{activated_count} véhicule(s) activé(s).'
+        if notifications_sent > 0:
+            message += f' {notifications_sent} notification(s) envoyée(s) aux chauffeurs.'
+        
+        self.message_user(request, message)
     mark_as_active.short_description = "Activer les véhicules sélectionnés"
     
     def reset_vehicle_state(self, request, queryset):
@@ -1243,4 +1540,224 @@ class NotificationConfigAdmin(admin.ModelAdmin):
             f'🔔 Configuration mise à jour ! Canal par défaut : {canal}',
             level='SUCCESS'
         )
+
+
+@admin.register(Notification)
+class NotificationAdmin(admin.ModelAdmin):
+    """
+    Admin pour la gestion des notifications utilisateurs
+    """
+    list_display = (
+        'get_title_display', 'get_user_display', 'get_type_display',
+        'get_read_status', 'get_deleted_status', 'created_at'
+    )
+    list_filter = ('notification_type', 'is_read', 'is_deleted', 'user_type', 'created_at')
+    search_fields = ('title', 'content', 'user_id')
+    readonly_fields = ('created_at', 'read_at', 'deleted_at')
+    list_per_page = 25
+    ordering = ['-created_at']
+    actions = ['mark_as_read', 'mark_as_unread', 'soft_delete', 'restore']
+    
+    fieldsets = (
+        ('👤 Utilisateur', {
+            'fields': ('user_type', 'user_id'),
+            'description': 'Utilisateur qui recevra la notification'
+        }),
+        ('📢 Notification', {
+            'fields': ('title', 'content', 'notification_type', 'metadata'),
+            'description': 'Contenu de la notification'
+        }),
+        ('📊 Statuts', {
+            'fields': ('is_read', 'is_deleted'),
+            'description': 'États de lecture et suppression'
+        }),
+        ('📅 Horodatage', {
+            'fields': ('created_at', 'read_at', 'deleted_at'),
+            'classes': ('collapse',)
+        }),
+    )
+    
+    def get_title_display(self, obj):
+        """Affiche le titre avec icône selon le type"""
+        icons = {
+            'welcome': '👋',
+            'referral_used': '🎁',
+            'vehicle_approved': '🚗✅',
+            'system': '⚙️',
+            'order': '📋',
+            'other': '📌'
+        }
+        icon = icons.get(obj.notification_type, '📌')
+        return format_html(
+            '{} <strong>{}</strong>',
+            icon, obj.title
+        )
+    get_title_display.short_description = 'Titre'
+    get_title_display.admin_order_field = 'title'
+    
+    def get_user_display(self, obj):
+        """Affiche les informations de l'utilisateur"""
+        if obj.user:
+            user_type_icon = '🚗' if obj.user_type.model == 'userdriver' else '👥'
+            return format_html(
+                '{} <strong>{} {}</strong><br><small>{}</small>',
+                user_type_icon, obj.user.name, obj.user.surname, obj.user.phone_number
+            )
+        return format_html(
+            '<span style="color: red;">❌ Utilisateur supprimé (ID: {})</span>',
+            obj.user_id
+        )
+    get_user_display.short_description = 'Utilisateur'
+    get_user_display.admin_order_field = 'user_id'
+    
+    def get_type_display(self, obj):
+        """Affiche le type de notification avec couleur"""
+        colors = {
+            'welcome': '#4CAF50',      # Vert
+            'referral_used': '#FF9800', # Orange  
+            'vehicle_approved': '#2196F3', # Bleu
+            'system': '#607D8B',       # Bleu-gris
+            'order': '#9C27B0',        # Violet
+            'other': '#795548'         # Marron
+        }
+        color = colors.get(obj.notification_type, '#666')
+        return format_html(
+            '<span style="color: {}; font-weight: bold;">{}</span>',
+            color, obj.get_notification_type_display()
+        )
+    get_type_display.short_description = 'Type'
+    get_type_display.admin_order_field = 'notification_type'
+    
+    def get_read_status(self, obj):
+        """Affiche le statut de lecture"""
+        if obj.is_read:
+            return format_html(
+                '<span style="color: green;">👁️ Lu</span><br><small>{}</small>',
+                obj.read_at.strftime('%d/%m/%Y %H:%M') if obj.read_at else ''
+            )
+        else:
+            return format_html('<span style="color: orange;">📩 Non lu</span>')
+    get_read_status.short_description = 'Statut lecture'
+    get_read_status.admin_order_field = 'is_read'
+    
+    def get_deleted_status(self, obj):
+        """Affiche le statut de suppression"""
+        if obj.is_deleted:
+            return format_html(
+                '<span style="color: red;">🗑️ Supprimé</span><br><small>{}</small>',
+                obj.deleted_at.strftime('%d/%m/%Y %H:%M') if obj.deleted_at else ''
+            )
+        else:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+    get_deleted_status.short_description = 'Statut suppression'
+    get_deleted_status.admin_order_field = 'is_deleted'
+    
+    def mark_as_read(self, request, queryset):
+        """Marquer les notifications comme lues"""
+        count = 0
+        for notification in queryset:
+            if not notification.is_read:
+                notification.mark_as_read()
+                count += 1
+        self.message_user(request, f'👁️ {count} notification(s) marquée(s) comme lue(s).')
+    mark_as_read.short_description = "👁️ Marquer comme lues"
+    
+    def mark_as_unread(self, request, queryset):
+        """Marquer les notifications comme non lues"""
+        updated = queryset.update(is_read=False, read_at=None)
+        self.message_user(request, f'📩 {updated} notification(s) marquée(s) comme non lue(s).')
+    mark_as_unread.short_description = "📩 Marquer comme non lues"
+    
+    def soft_delete(self, request, queryset):
+        """Supprimer (soft delete) les notifications"""
+        count = 0
+        for notification in queryset:
+            if not notification.is_deleted:
+                notification.mark_as_deleted()
+                count += 1
+        self.message_user(request, f'🗑️ {count} notification(s) supprimée(s).')
+    soft_delete.short_description = "🗑️ Supprimer les notifications"
+    
+    def restore(self, request, queryset):
+        """Restaurer les notifications supprimées"""
+        updated = queryset.update(is_deleted=False, deleted_at=None)
+        self.message_user(request, f'♻️ {updated} notification(s) restaurée(s).')
+    restore.short_description = "♻️ Restaurer les notifications"
+
+
+@admin.register(FCMToken)
+class FCMTokenAdmin(admin.ModelAdmin):
+    list_display = [
+        'get_user_display', 'get_token_preview', 'platform', 
+        'device_id', 'is_active_display', 'last_used', 'created_at'
+    ]
+    list_filter = ['platform', 'is_active', 'last_used', 'created_at']
+    search_fields = ['user__name', 'user__surname', 'device_id', 'token']
+    readonly_fields = ['created_at', 'updated_at', 'last_used']
+    fieldsets = (
+        ('Utilisateur', {
+            'fields': ('user_type', 'user_id')
+        }),
+        ('Token & Appareil', {
+            'fields': ('token', 'platform', 'device_id', 'device_info')
+        }),
+        ('Statut', {
+            'fields': ('is_active',)
+        }),
+        ('Dates', {
+            'fields': ('created_at', 'updated_at', 'last_used'),
+            'classes': ['collapse']
+        }),
+    )
+    
+    actions = ['activate_tokens', 'deactivate_tokens', 'clean_inactive_tokens']
+    
+    def get_user_display(self, obj):
+        """Affiche l'utilisateur propriétaire du token"""
+        if obj.user:
+            user_type = "👤" if obj.user_type.model == 'usercustomer' else "🚗"
+            return f"{user_type} {obj.user.name} {obj.user.surname}"
+        return f"❌ Utilisateur supprimé (ID: {obj.user_id})"
+    get_user_display.short_description = 'Utilisateur'
+    
+    def get_token_preview(self, obj):
+        """Affiche un aperçu sécurisé du token"""
+        if len(obj.token) > 20:
+            return f"{obj.token[:10]}...{obj.token[-10:]}"
+        return obj.token
+    get_token_preview.short_description = 'Token'
+    
+    def is_active_display(self, obj):
+        """Affiche le statut actif avec des couleurs"""
+        if obj.is_active:
+            return format_html('<span style="color: green;">✅ Actif</span>')
+        return format_html('<span style="color: red;">❌ Inactif</span>')
+    is_active_display.short_description = 'Statut'
+    
+    def activate_tokens(self, request, queryset):
+        """Active les tokens sélectionnés"""
+        count = 0
+        for token in queryset:
+            if not token.is_active:
+                token.activate()
+                count += 1
+        self.message_user(request, f'✅ {count} token(s) FCM activé(s).')
+    activate_tokens.short_description = "✅ Activer les tokens"
+    
+    def deactivate_tokens(self, request, queryset):
+        """Désactive les tokens sélectionnés"""
+        count = 0
+        for token in queryset:
+            if token.is_active:
+                token.deactivate()
+                count += 1
+        self.message_user(request, f'❌ {count} token(s) FCM désactivé(s).')
+    deactivate_tokens.short_description = "❌ Désactiver les tokens"
+    
+    def clean_inactive_tokens(self, request, queryset):
+        """Supprime les tokens inactifs anciens"""
+        from ..services.fcm_service import FCMService
+        deleted_count = FCMService.cleanup_inactive_tokens(days_old=30)
+        self.message_user(request, f'🧹 {deleted_count} token(s) FCM inactifs supprimés.')
+    clean_inactive_tokens.short_description = "🧹 Nettoyer les tokens inactifs"
     

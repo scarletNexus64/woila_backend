@@ -5,7 +5,9 @@ from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 from drf_spectacular.utils import extend_schema, OpenApiExample
 from ..serializers import LoginSerializer
-from ..models import Token, UserDriver, UserCustomer
+from ..models import Token, UserDriver, UserCustomer, Notification
+from ..services.notification_service import NotificationService
+from django.contrib.contenttypes.models import ContentType
 
 
 @method_decorator(csrf_exempt, name='dispatch')
@@ -90,6 +92,40 @@ class LoginView(APIView):
                 user_type=user_type,
                 user_id=user.id
             )
+            
+            # Vérifier si c'est le premier login (pour envoyer notification de bienvenue)
+            # On vérifie s'il n'a jamais eu de token avant celui qu'on vient de créer
+            previous_tokens_count = Token.objects.filter(
+                user_type=user_type,
+                user_id=user.id
+            ).exclude(id=token.id).count()
+            
+            if previous_tokens_count == 0:
+                # C'est le premier login - Vérifier s'il n'a pas déjà reçu de notification de bienvenue
+                content_type = ContentType.objects.get_for_model(user)
+                welcome_notifications = Notification.objects.filter(
+                    user_type=content_type,
+                    user_id=user.id,
+                    notification_type='welcome'
+                ).exists()
+                
+                if not welcome_notifications:
+                    # Envoyer notification de bienvenue après un délai de 2 secondes
+                    # pour laisser le temps au front d'enregistrer le token FCM
+                    import threading
+                    import time
+                    
+                    def send_welcome_delayed():
+                        time.sleep(2)  # Attendre 2 secondes
+                        try:
+                            NotificationService.send_welcome_notification(user)
+                            print(f"📤 Notification de bienvenue envoyée à {user.name} lors du premier login")
+                        except Exception as e:
+                            print(f"❌ Erreur envoi notification bienvenue: {e}")
+                    
+                    thread = threading.Thread(target=send_welcome_delayed)
+                    thread.daemon = True
+                    thread.start()
             
             # Préparer les informations utilisateur
             if user_type == 'driver':

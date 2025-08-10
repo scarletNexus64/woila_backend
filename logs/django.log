@@ -943,3 +943,1717 @@ WARNING 2025-08-10 09:58:57,603 basehttp 25959 123145558024192 "PATCH /api/v1/ve
 INFO 2025-08-10 09:59:32,242 basehttp 25959 123145558024192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
 INFO 2025-08-10 10:00:32,235 basehttp 25959 123145558024192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
 INFO 2025-08-10 10:01:32,234 basehttp 25959 123145558024192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 11:17:03,587 autoreload 62317 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:24:55,814 autoreload 62317 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-10 11:24:56,861 autoreload 66324 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:25:02,569 autoreload 66324 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-10 11:25:03,309 autoreload 66406 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:25:51,236 autoreload 66406 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-10 11:25:52,000 autoreload 66899 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:27:52,012 autoreload 66899 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/urls.py changed, reloading.
+INFO 2025-08-10 11:27:52,794 autoreload 67994 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:27:59,493 autoreload 67994 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/urls.py changed, reloading.
+INFO 2025-08-10 11:28:00,413 autoreload 68065 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:28:30,684 autoreload 68065 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 11:28:32,158 autoreload 68399 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:28:54,272 autoreload 68399 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 11:28:56,270 autoreload 68677 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:29:22,069 autoreload 68677 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 11:29:25,853 autoreload 68961 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:29:47,522 autoreload 68961 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 11:29:48,399 autoreload 69195 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:30:07,594 autoreload 69195 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 11:30:08,328 autoreload 69414 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:30:30,461 autoreload 69414 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 11:30:31,405 autoreload 69653 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:32:37,773 autoreload 71125 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:37:02,794 basehttp 71125 123145483427840 "GET /admin/api/vehicle/ HTTP/1.1" 200 45565
+INFO 2025-08-10 11:37:02,900 basehttp 71125 123145483427840 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 11:46:28,139 autoreload 71125 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/woila_backend/settings.py changed, reloading.
+INFO 2025-08-10 11:46:29,110 autoreload 78759 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:47:15,031 autoreload 78759 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 11:47:15,998 autoreload 79262 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:47:26,795 autoreload 79262 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 11:47:27,372 autoreload 79390 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:47:52,580 autoreload 79390 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 11:47:53,516 autoreload 79634 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:48:02,336 autoreload 79634 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 11:48:02,993 autoreload 79742 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:48:58,997 autoreload 80476 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 11:53:07,616 basehttp 80476 123145453215744 "GET /admin/api/userdriver/ HTTP/1.1" 200 38485
+INFO 2025-08-10 11:53:07,638 basehttp 80476 123145470005248 "GET /media/profile_pictures/driver/18/woila_profile_1754773078231.jpg HTTP/1.1" 304 0
+INFO 2025-08-10 11:53:07,640 basehttp 80476 123145453215744 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 11:53:09,422 basehttp 80476 123145453215744 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31455
+INFO 2025-08-10 11:53:09,447 basehttp 80476 123145453215744 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 11:53:11,654 basehttp 80476 123145453215744 "GET /admin/api/fcmtoken/add/ HTTP/1.1" 200 40151
+INFO 2025-08-10 11:53:11,681 basehttp 80476 123145453215744 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 11:53:20,334 basehttp 80476 123145453215744 "GET /admin/api/userdriver/ HTTP/1.1" 200 38485
+INFO 2025-08-10 11:53:20,357 basehttp 80476 123145453215744 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:11:12,662 autoreload 96236 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 12:26:35,376 basehttp 96236 123145378177024 "POST /admin/api/userdriver/ HTTP/1.1" 200 28687
+INFO 2025-08-10 12:26:35,451 basehttp 96236 123145378177024 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-08-10 12:26:37,544 basehttp 96236 123145378177024 "POST /admin/api/userdriver/ HTTP/1.1" 302 0
+INFO 2025-08-10 12:26:37,610 basehttp 96236 123145378177024 "GET /admin/api/userdriver/ HTTP/1.1" 200 32654
+INFO 2025-08-10 12:26:37,654 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:26:41,806 basehttp 96236 123145378177024 "GET /admin/api/document/ HTTP/1.1" 200 40428
+INFO 2025-08-10 12:26:41,851 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:26:47,244 basehttp 96236 123145378177024 "POST /admin/api/document/ HTTP/1.1" 200 28814
+INFO 2025-08-10 12:26:48,672 basehttp 96236 123145378177024 "POST /admin/api/document/ HTTP/1.1" 302 0
+INFO 2025-08-10 12:26:48,695 basehttp 96236 123145378177024 "GET /admin/api/document/ HTTP/1.1" 200 31879
+INFO 2025-08-10 12:26:48,712 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:27:22,894 basehttp 96236 123145378177024 "GET /admin/api/vehicletype/ HTTP/1.1" 200 34289
+INFO 2025-08-10 12:27:22,922 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:27:23,617 basehttp 96236 123145378177024 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31455
+INFO 2025-08-10 12:27:23,641 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:28:24,577 nexah_service 96236 123145411756032 Sending SMS to +237658895572
+INFO 2025-08-10 12:28:25,930 nexah_service 96236 123145411756032 Nexah API response: 200
+INFO 2025-08-10 12:28:25,932 otp 96236 123145411756032 OTP send result for +237658895572: {'success': True, 'message': 'SMS sent successfully!', 'data': {'responsecode': 1, 'responsedescription': 'success', 'responsemessage': 'success', 'sms': [{'status': 'success', 'smsclientid': 'smpp.ocm.68989069d6ce2e072992565a', 'messageid': 'smpp.ocm.b3ebf010-6634-4e2f-b737-afc0f9b6cb81', 'mobileno': '237658895572', 'errorcode': None, 'errordescription': None, 'total_sms_unit': 1, 'balance': 780}]}}
+INFO 2025-08-10 12:28:25,933 basehttp 96236 123145411756032 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-10 12:28:36,827 basehttp 96236 123145411756032 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-10 12:28:38,677 notification_service 96236 123145411756032 Notification créée: 🎉 Bienvenue sur WOILA ! pour Boussa Steve
+WARNING 2025-08-10 12:28:38,679 fcm_service 96236 123145411756032 Aucun token FCM trouvé pour Boussa Steve
+INFO 2025-08-10 12:28:38,680 notification_service 96236 123145411756032 Notification de bienvenue envoyée à Boussa Steve - DB: ✅ FCM: ❌
+INFO 2025-08-10 12:28:38,685 basehttp 96236 123145411756032 "POST /api/v1/auth/register/driver/ HTTP/1.1" 201 380
+INFO 2025-08-10 12:28:40,062 basehttp 96236 123145429082112 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-10 12:28:40,259 basehttp 96236 123145429082112 "GET /api/v1/profiles/driver/19/ HTTP/1.1" 200 402
+INFO 2025-08-10 12:28:52,311 basehttp 96236 123145411756032 "POST /api/v1/documents/import/ HTTP/1.1" 201 525
+INFO 2025-08-10 12:28:52,715 basehttp 96236 123145411756032 "GET /api/v1/vehicles/configs/types/ HTTP/1.1" 200 318
+INFO 2025-08-10 12:28:52,715 basehttp 96236 123145429082112 "GET /api/v1/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-08-10 12:28:52,720 basehttp 96236 123145445871616 "GET /api/v1/vehicles/configs/models/ HTTP/1.1" 200 210
+INFO 2025-08-10 12:28:52,722 basehttp 96236 123145462661120 "GET /api/v1/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-08-10 12:29:40,851 basehttp 96236 123145411756032 "POST /api/v1/vehicles/create/ HTTP/1.1" 201 1056
+INFO 2025-08-10 12:29:57,048 basehttp 96236 123145411756032 "POST /api/v1/documents/import/ HTTP/1.1" 201 529
+INFO 2025-08-10 12:29:57,151 basehttp 96236 123145411756032 "POST /api/v1/documents/import/ HTTP/1.1" 201 513
+INFO 2025-08-10 12:30:06,784 basehttp 96236 123145411756032 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 12:30:35,070 basehttp 96236 123145411756032 "GET /media/profile_pictures/driver/19/woila_profile_1754828876363.jpg HTTP/1.1" 200 67682
+WARNING 2025-08-10 12:30:37,111 log 96236 123145429082112 Not Found: /notifications/
+WARNING 2025-08-10 12:30:37,111 basehttp 96236 123145429082112 "GET /notifications/?include_read=true&limit=50 HTTP/1.1" 404 3253
+INFO 2025-08-10 12:30:46,131 basehttp 96236 123145378177024 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31455
+INFO 2025-08-10 12:30:46,168 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:30:50,432 basehttp 96236 123145378177024 "GET /admin/api/notification/ HTTP/1.1" 200 38374
+INFO 2025-08-10 12:30:50,462 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:34:46,256 basehttp 96236 123145411756032 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-10 12:34:46,581 basehttp 96236 123145411756032 "GET /api/v1/profiles/driver/19/ HTTP/1.1" 200 402
+INFO 2025-08-10 12:34:56,578 basehttp 96236 123145411756032 "GET /media/profile_pictures/driver/19/woila_profile_1754828876363.jpg HTTP/1.1" 200 67682
+INFO 2025-08-10 12:34:57,780 basehttp 96236 123145429082112 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 12:41:07,005 basehttp 96236 123145378177024 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31455
+INFO 2025-08-10 12:41:07,099 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:41:29,089 basehttp 96236 123145411756032 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-10 12:41:29,414 basehttp 96236 123145411756032 "GET /api/v1/profiles/driver/19/ HTTP/1.1" 200 402
+WARNING 2025-08-10 12:41:29,589 log 96236 123145429082112 Not Found: /fcm/register/
+WARNING 2025-08-10 12:41:29,590 basehttp 96236 123145429082112 "POST /fcm/register/ HTTP/1.1" 404 3220
+INFO 2025-08-10 12:41:37,803 basehttp 96236 123145378177024 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31455
+INFO 2025-08-10 12:41:37,835 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:41:40,406 basehttp 96236 123145411756032 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 12:41:40,804 basehttp 96236 123145411756032 "GET /media/profile_pictures/driver/19/woila_profile_1754828876363.jpg HTTP/1.1" 200 67682
+INFO 2025-08-10 12:41:48,253 basehttp 96236 123145378177024 "GET /admin/api/vehicle/ HTTP/1.1" 200 44515
+INFO 2025-08-10 12:41:48,281 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:41:50,512 basehttp 96236 123145378177024 "GET /admin/api/vehicle/6/change/ HTTP/1.1" 200 56256
+INFO 2025-08-10 12:41:50,541 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:41:55,055 basehttp 96236 123145378177024 "POST /admin/api/vehicle/6/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 12:41:55,160 basehttp 96236 123145378177024 "GET /admin/api/vehicle/6/change/ HTTP/1.1" 200 56907
+INFO 2025-08-10 12:41:55,187 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:42:41,479 basehttp 96236 123145378177024 "POST /admin/api/vehicle/6/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 12:42:41,546 basehttp 96236 123145378177024 "GET /admin/api/vehicle/ HTTP/1.1" 200 45129
+INFO 2025-08-10 12:42:41,587 basehttp 96236 123145378177024 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:50:29,339 basehttp 96236 123145411756032 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-10 12:50:29,644 basehttp 96236 123145411756032 "GET /api/v1/profiles/driver/19/ HTTP/1.1" 200 402
+INFO 2025-08-10 12:50:29,881 fcm_service 96236 123145429082112 Token FCM créé pour Boussa Steve
+INFO 2025-08-10 12:50:29,884 basehttp 96236 123145429082112 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 12:50:40,273 basehttp 96236 123145411756032 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 12:51:01,372 basehttp 96236 123145378177024 - Broken pipe from ('127.0.0.1', 51258)
+INFO 2025-08-10 12:51:01,405 basehttp 96236 123145394966528 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 37384
+INFO 2025-08-10 12:51:01,452 basehttp 96236 123145394966528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:51:14,195 basehttp 96236 123145394966528 "GET /admin/api/vehicle/ HTTP/1.1" 200 44515
+INFO 2025-08-10 12:51:14,229 basehttp 96236 123145394966528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:51:15,897 basehttp 96236 123145394966528 "GET /admin/api/vehicle/6/change/ HTTP/1.1" 200 56256
+INFO 2025-08-10 12:51:15,925 basehttp 96236 123145394966528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:51:20,144 basehttp 96236 123145394966528 "POST /admin/api/vehicle/6/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 12:51:20,195 basehttp 96236 123145394966528 "GET /admin/api/vehicle/ HTTP/1.1" 200 45148
+INFO 2025-08-10 12:51:20,231 basehttp 96236 123145394966528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:51:25,743 basehttp 96236 123145394966528 "GET /admin/api/vehicle/6/change/ HTTP/1.1" 200 56264
+INFO 2025-08-10 12:51:25,772 basehttp 96236 123145394966528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:51:30,433 basehttp 96236 123145394966528 "POST /admin/api/vehicle/6/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 12:51:30,494 basehttp 96236 123145394966528 "GET /admin/api/vehicle/ HTTP/1.1" 200 45129
+INFO 2025-08-10 12:51:30,529 basehttp 96236 123145394966528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:51:52,448 basehttp 96236 123145411756032 "GET /media/profile_pictures/driver/19/woila_profile_1754828876363.jpg HTTP/1.1" 200 67682
+INFO 2025-08-10 12:51:56,463 basehttp 96236 123145429082112 "GET /api/v1/referral/wallet/?user_type=driver&user_id=19 HTTP/1.1" 200 176
+INFO 2025-08-10 12:51:59,824 basehttp 96236 123145429082112 "GET /api/v1/vehicles/?driver_id=19 HTTP/1.1" 200 979
+INFO 2025-08-10 12:52:00,382 basehttp 96236 123145411756032 "GET /media/vehicles/19/temp/photo_exterieur_1.jpg HTTP/1.1" 200 11394
+INFO 2025-08-10 12:52:07,629 basehttp 96236 123145394966528 "GET /admin/api/vehicle/6/change/ HTTP/1.1" 200 56264
+INFO 2025-08-10 12:52:07,663 basehttp 96236 123145394966528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:52:11,759 basehttp 96236 123145394966528 "POST /admin/api/vehicle/6/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 12:52:11,818 basehttp 96236 123145394966528 "GET /admin/api/vehicle/ HTTP/1.1" 200 45129
+INFO 2025-08-10 12:52:11,861 basehttp 96236 123145394966528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:53:19,012 basehttp 96236 123145411756032 "GET /api/v1/vehicles/?driver_id=19 HTTP/1.1" 200 980
+INFO 2025-08-10 12:53:21,361 basehttp 96236 123145429082112 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 615
+ERROR 2025-08-10 12:53:36,041 log 96236 123145411756032 Internal Server Error: /api/v1/notifications/1/
+ERROR 2025-08-10 12:53:36,042 basehttp 96236 123145411756032 "PATCH /api/v1/notifications/1/ HTTP/1.1" 500 106
+INFO 2025-08-10 12:53:40,754 basehttp 96236 123145411756032 "POST /api/v1/notifications/mark-all-read/ HTTP/1.1" 200 89
+INFO 2025-08-10 12:53:44,359 basehttp 96236 123145411756032 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 614
+ERROR 2025-08-10 12:53:51,664 log 96236 123145411756032 Internal Server Error: /api/v1/notifications/1/
+ERROR 2025-08-10 12:53:51,664 basehttp 96236 123145411756032 "DELETE /api/v1/notifications/1/ HTTP/1.1" 500 100
+INFO 2025-08-10 12:53:55,199 basehttp 96236 123145411756032 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 614
+ERROR 2025-08-10 12:54:15,228 log 96236 123145411756032 Internal Server Error: /api/v1/notifications/1/
+ERROR 2025-08-10 12:54:15,230 basehttp 96236 123145411756032 "DELETE /api/v1/notifications/1/ HTTP/1.1" 500 100
+INFO 2025-08-10 12:54:26,044 basehttp 96236 123145411756032 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 614
+INFO 2025-08-10 12:54:30,175 basehttp 96236 123145411756032 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 614
+INFO 2025-08-10 12:54:40,394 basehttp 96236 123145394966528 "GET /admin/api/notification/ HTTP/1.1" 200 38407
+INFO 2025-08-10 12:54:40,443 basehttp 96236 123145394966528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 12:57:23,125 autoreload 26996 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:00:02,589 basehttp 26996 123145546067968 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-10 13:00:02,946 basehttp 26996 123145546067968 "GET /api/v1/profiles/driver/19/ HTTP/1.1" 200 402
+INFO 2025-08-10 13:00:03,184 fcm_service 26996 123145562857472 Token FCM créé pour Boussa Steve
+INFO 2025-08-10 13:00:03,186 basehttp 26996 123145562857472 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 13:00:14,414 basehttp 26996 123145546067968 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 13:00:28,759 basehttp 26996 123145546067968 "GET /admin/api/userdriver/ HTTP/1.1" 200 38477
+INFO 2025-08-10 13:00:28,859 basehttp 26996 123145562857472 "GET /media/profile_pictures/driver/19/woila_profile_1754828876363.jpg HTTP/1.1" 200 67682
+INFO 2025-08-10 13:00:28,861 basehttp 26996 123145546067968 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:00:32,628 basehttp 26996 123145546067968 "GET /admin/api/userdriver/19/change/ HTTP/1.1" 200 67611
+INFO 2025-08-10 13:00:32,689 basehttp 26996 123145546067968 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:00:32,704 basehttp 26996 123145579646976 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:00:32,705 basehttp 26996 123145562857472 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:00:32,707 basehttp 26996 123145596436480 "GET /static/admin/js/inlines.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:00:40,172 basehttp 26996 123145596436480 "GET /admin/api/vehicletype/ HTTP/1.1" 200 34289
+INFO 2025-08-10 13:00:40,198 basehttp 26996 123145596436480 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:00:44,067 basehttp 26996 123145596436480 "GET /admin/api/vehiclemodel/ HTTP/1.1" 200 33982
+INFO 2025-08-10 13:00:44,099 basehttp 26996 123145596436480 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:00:48,334 basehttp 26996 123145596436480 "GET /admin/api/vehicletype/ HTTP/1.1" 200 34289
+INFO 2025-08-10 13:00:48,366 basehttp 26996 123145596436480 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:00:56,523 basehttp 26996 123145596436480 "GET /admin/api/vehicle/ HTTP/1.1" 200 44515
+INFO 2025-08-10 13:00:56,564 basehttp 26996 123145596436480 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:00:59,469 basehttp 26996 123145596436480 "GET /admin/api/vehicle/6/change/ HTTP/1.1" 200 56256
+INFO 2025-08-10 13:00:59,505 basehttp 26996 123145596436480 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:01:03,384 basehttp 26996 123145596436480 "POST /admin/api/vehicle/6/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:01:03,435 basehttp 26996 123145596436480 "GET /admin/api/vehicle/ HTTP/1.1" 200 45129
+INFO 2025-08-10 13:01:03,479 basehttp 26996 123145596436480 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:01:21,301 basehttp 26996 123145613225984 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 13:01:23,259 basehttp 26996 123145596436480 "GET /admin/api/notification/ HTTP/1.1" 200 38407
+INFO 2025-08-10 13:01:23,289 basehttp 26996 123145596436480 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:01:26,407 basehttp 26996 123145613225984 "GET /media/profile_pictures/driver/19/woila_profile_1754828876363.jpg HTTP/1.1" 200 67682
+INFO 2025-08-10 13:06:29,707 autoreload 26996 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 13:06:31,385 autoreload 32842 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:06:54,165 autoreload 32842 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 13:06:55,218 autoreload 33073 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:11:01,050 basehttp 33073 123145517350912 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-10 13:11:01,358 basehttp 33073 123145517350912 "GET /api/v1/profiles/driver/19/ HTTP/1.1" 200 402
+INFO 2025-08-10 13:11:01,521 fcm_service 33073 123145534140416 Token FCM créé pour Boussa Steve
+INFO 2025-08-10 13:11:01,523 basehttp 33073 123145534140416 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 13:11:11,859 basehttp 33073 123145517350912 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 13:16:06,927 basehttp 33073 123145517350912 "POST /admin/api/notification/ HTTP/1.1" 200 28130
+INFO 2025-08-10 13:16:08,370 basehttp 33073 123145517350912 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:16:08,452 basehttp 33073 123145517350912 "GET /admin/api/notification/ HTTP/1.1" 200 33266
+INFO 2025-08-10 13:16:08,488 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:16:09,870 basehttp 33073 123145517350912 "GET /admin/api/userdriver/ HTTP/1.1" 200 38477
+INFO 2025-08-10 13:16:09,908 basehttp 33073 123145534140416 "GET /media/profile_pictures/driver/19/woila_profile_1754828876363.jpg HTTP/1.1" 304 0
+INFO 2025-08-10 13:16:09,910 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:16:16,274 basehttp 33073 123145517350912 "POST /admin/api/userdriver/ HTTP/1.1" 200 28326
+INFO 2025-08-10 13:16:17,613 basehttp 33073 123145517350912 "POST /admin/api/userdriver/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:16:17,735 basehttp 33073 123145517350912 "GET /admin/api/userdriver/ HTTP/1.1" 200 32654
+INFO 2025-08-10 13:16:17,779 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:16:20,299 basehttp 33073 123145517350912 "GET /admin/api/notification/ HTTP/1.1" 200 32762
+INFO 2025-08-10 13:16:20,338 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:16:23,944 basehttp 33073 123145517350912 "GET /admin/api/document/ HTTP/1.1" 200 39456
+INFO 2025-08-10 13:16:23,975 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:16:27,629 basehttp 33073 123145517350912 "POST /admin/api/document/ HTTP/1.1" 200 28579
+INFO 2025-08-10 13:16:28,924 basehttp 33073 123145517350912 "POST /admin/api/document/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:16:28,958 basehttp 33073 123145517350912 "GET /admin/api/document/ HTTP/1.1" 200 31879
+INFO 2025-08-10 13:16:28,986 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-08-10 13:18:03,689 log 33073 123145550929920 Unauthorized: /api/v1/auth/token/verify/
+WARNING 2025-08-10 13:18:03,692 basehttp 33073 123145550929920 "POST /api/v1/auth/token/verify/ HTTP/1.1" 401 55
+INFO 2025-08-10 13:19:45,440 nexah_service 33073 123145550929920 Sending SMS to +237658895572
+INFO 2025-08-10 13:19:46,816 nexah_service 33073 123145550929920 Nexah API response: 200
+INFO 2025-08-10 13:19:46,818 otp 33073 123145550929920 OTP send result for +237658895572: {'success': True, 'message': 'SMS sent successfully!', 'data': {'responsecode': 1, 'responsedescription': 'success', 'responsemessage': 'success', 'sms': [{'status': 'success', 'smsclientid': 'smpp.ocm.68989c72d6ce2e0729925a1f', 'messageid': 'smpp.ocm.d866366d-b87a-492d-92d7-040ad2dab596', 'mobileno': '237658895572', 'errorcode': None, 'errordescription': None, 'total_sms_unit': 1, 'balance': 779}]}}
+INFO 2025-08-10 13:19:46,818 basehttp 33073 123145550929920 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-10 13:19:59,241 basehttp 33073 123145550929920 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-10 13:20:00,442 notification_service 33073 123145550929920 Notification créée: 🎉 Bienvenue sur WOILA ! pour boboussa Stevr
+INFO 2025-08-10 13:20:00,442 fcm_service 33073 123145550929920 🔔 Début envoi FCM pour boboussa Stevr - Type: welcome
+WARNING 2025-08-10 13:20:00,444 fcm_service 33073 123145550929920 ❌ Aucun token FCM trouvé pour boboussa Stevr
+INFO 2025-08-10 13:20:00,444 notification_service 33073 123145550929920 Notification de bienvenue envoyée à boboussa Stevr - DB: ✅ FCM: ❌
+INFO 2025-08-10 13:20:00,447 basehttp 33073 123145550929920 "POST /api/v1/auth/register/driver/ HTTP/1.1" 201 382
+INFO 2025-08-10 13:20:01,977 basehttp 33073 123145568256000 "POST /api/v1/auth/login/ HTTP/1.1" 200 263
+INFO 2025-08-10 13:20:02,525 basehttp 33073 123145568256000 "GET /api/v1/profiles/driver/20/ HTTP/1.1" 200 404
+INFO 2025-08-10 13:20:02,648 fcm_service 33073 123145585045504 Token FCM créé pour boboussa Stevr
+INFO 2025-08-10 13:20:02,649 basehttp 33073 123145585045504 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 13:20:21,179 basehttp 33073 123145550929920 "POST /api/v1/documents/import/ HTTP/1.1" 201 529
+INFO 2025-08-10 13:20:22,160 basehttp 33073 123145550929920 "GET /api/v1/vehicles/configs/types/ HTTP/1.1" 200 318
+INFO 2025-08-10 13:20:22,163 basehttp 33073 123145568256000 "GET /api/v1/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-08-10 13:20:22,169 basehttp 33073 123145585045504 "GET /api/v1/vehicles/configs/models/ HTTP/1.1" 200 210
+INFO 2025-08-10 13:20:22,171 basehttp 33073 123145601835008 "GET /api/v1/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-08-10 13:21:00,545 basehttp 33073 123145550929920 "POST /api/v1/vehicles/create/ HTTP/1.1" 201 1056
+INFO 2025-08-10 13:21:10,811 basehttp 33073 123145550929920 "POST /api/v1/documents/import/ HTTP/1.1" 201 533
+INFO 2025-08-10 13:21:10,879 basehttp 33073 123145550929920 "POST /api/v1/documents/import/ HTTP/1.1" 201 517
+INFO 2025-08-10 13:21:15,269 basehttp 33073 123145550929920 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 13:21:26,980 basehttp 33073 123145550929920 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-10 13:21:28,009 basehttp 33073 123145568256000 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 616
+INFO 2025-08-10 13:21:35,274 basehttp 33073 123145568256000 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 13:22:10,190 basehttp 33073 123145517350912 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 13:22:10,233 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:22:12,693 basehttp 33073 123145517350912 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 13:22:12,721 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:22:16,822 basehttp 33073 123145517350912 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:22:16,858 basehttp 33073 123145517350912 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 13:22:16,885 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:22:52,277 basehttp 33073 123145517350912 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 13:22:52,308 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:22:56,032 basehttp 33073 123145517350912 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:22:56,064 basehttp 33073 123145517350912 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 13:22:56,088 basehttp 33073 123145517350912 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:23:07,818 autoreload 33073 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 13:23:09,143 autoreload 43912 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:23:23,120 autoreload 43912 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 13:23:23,937 autoreload 44063 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:23:29,254 basehttp 44063 123145429655552 "POST /api/v1/auth/logout/ HTTP/1.1" 200 50
+INFO 2025-08-10 13:23:43,918 basehttp 44063 123145429655552 "POST /api/v1/auth/login/ HTTP/1.1" 200 263
+INFO 2025-08-10 13:23:44,431 basehttp 44063 123145429655552 "GET /api/v1/profiles/driver/20/ HTTP/1.1" 200 404
+ERROR 2025-08-10 13:23:44,489 fcm_service 44063 123145446445056 Erreur lors de l'enregistrement du token FCM: UNIQUE constraint failed: fcm_tokens.token
+ERROR 2025-08-10 13:23:44,491 log 44063 123145446445056 Internal Server Error: /api/v1/fcm/register/
+ERROR 2025-08-10 13:23:44,491 basehttp 44063 123145446445056 "POST /api/v1/fcm/register/ HTTP/1.1" 500 70
+INFO 2025-08-10 13:23:46,313 basehttp 44063 123145446445056 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 13:24:25,331 autoreload 44767 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:24:29,876 basehttp 44767 123145508147200 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 13:24:29,900 basehttp 44767 123145508147200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:24:33,653 basehttp 44767 123145508147200 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:24:33,710 basehttp 44767 123145508147200 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 13:24:33,734 basehttp 44767 123145508147200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:24:35,977 basehttp 44767 123145508147200 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 13:24:35,997 basehttp 44767 123145508147200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:24:43,396 basehttp 44767 123145508147200 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:24:43,430 basehttp 44767 123145508147200 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 13:24:43,455 basehttp 44767 123145508147200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:25:31,129 basehttp 44767 123145508147200 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 39820
+INFO 2025-08-10 13:25:31,172 basehttp 44767 123145508147200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:25:41,754 basehttp 44767 123145508147200 "POST /admin/api/fcmtoken/ HTTP/1.1" 200 28586
+INFO 2025-08-10 13:25:43,264 basehttp 44767 123145508147200 "POST /admin/api/fcmtoken/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:25:43,295 basehttp 44767 123145508147200 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 37888
+INFO 2025-08-10 13:25:43,321 basehttp 44767 123145508147200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:25:54,044 basehttp 44767 123145541726208 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 13:25:56,921 basehttp 44767 123145541726208 "POST /api/v1/auth/logout/ HTTP/1.1" 200 50
+INFO 2025-08-10 13:25:58,376 basehttp 44767 123145508147200 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 37386
+INFO 2025-08-10 13:25:58,403 basehttp 44767 123145508147200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:26:02,035 autoreload 44767 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 13:26:02,629 autoreload 45761 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:26:09,183 autoreload 45761 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 13:26:09,791 autoreload 45839 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:26:11,843 basehttp 45839 123145409671168 "POST /api/v1/auth/login/ HTTP/1.1" 200 263
+INFO 2025-08-10 13:26:12,447 basehttp 45839 123145409671168 "GET /api/v1/profiles/driver/20/ HTTP/1.1" 200 404
+INFO 2025-08-10 13:26:12,515 fcm_service 45839 123145426460672 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 13:26:12,517 basehttp 45839 123145426460672 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 13:26:14,094 basehttp 45839 123145426460672 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 13:26:15,107 basehttp 45839 123145426460672 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 37386
+INFO 2025-08-10 13:26:15,172 basehttp 45839 123145426460672 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:26:17,525 autoreload 45839 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 13:26:18,392 autoreload 45929 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:26:25,751 basehttp 45929 123145597235200 "GET /admin/api/fcmtoken/4/change/ HTTP/1.1" 200 41440
+INFO 2025-08-10 13:26:25,773 basehttp 45929 123145597235200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:26:31,712 basehttp 45929 123145597235200 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 13:26:31,732 basehttp 45929 123145597235200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:26:33,190 basehttp 45929 123145597235200 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 13:26:33,214 basehttp 45929 123145597235200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:26:36,582 basehttp 45929 123145597235200 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:26:36,632 basehttp 45929 123145597235200 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56907
+INFO 2025-08-10 13:26:36,655 basehttp 45929 123145597235200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:26:42,091 basehttp 45929 123145597235200 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:26:42,152 basehttp 45929 123145597235200 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56899
+INFO 2025-08-10 13:26:42,179 basehttp 45929 123145597235200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:29:08,394 basehttp 45929 123145630814208 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 13:30:50,706 basehttp 45929 123145630814208 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 13:31:03,689 basehttp 45929 123145630814208 "POST /api/v1/order/driver/status/toggle/ HTTP/1.1" 200 106
+INFO 2025-08-10 13:31:09,935 basehttp 45929 123145630814208 "POST /api/v1/order/driver/status/toggle/ HTTP/1.1" 200 109
+INFO 2025-08-10 13:31:15,587 basehttp 45929 123145630814208 "POST /api/v1/order/driver/status/toggle/ HTTP/1.1" 200 106
+INFO 2025-08-10 13:31:21,203 basehttp 45929 123145630814208 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 13:31:21,410 basehttp 45929 123145630814208 "POST /api/v1/order/driver/status/toggle/ HTTP/1.1" 200 109
+INFO 2025-08-10 13:31:41,028 basehttp 45929 123145630814208 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 13:31:41,090 fcm_service 45929 123145647603712 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 13:31:41,092 basehttp 45929 123145647603712 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 13:31:44,911 fcm_service 45929 123145630814208 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 13:31:44,912 basehttp 45929 123145630814208 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 13:31:46,957 basehttp 45929 123145630814208 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 13:31:47,000 fcm_service 45929 123145630814208 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 13:31:47,001 basehttp 45929 123145630814208 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 13:31:50,395 basehttp 45929 123145630814208 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:31:50,883 basehttp 45929 123145630814208 "POST /api/v1/order/driver/status/toggle/ HTTP/1.1" 200 106
+INFO 2025-08-10 13:31:56,685 basehttp 45929 123145630814208 "POST /api/v1/order/driver/status/toggle/ HTTP/1.1" 200 109
+INFO 2025-08-10 13:33:24,597 basehttp 45929 123145630814208 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-10 13:33:27,047 basehttp 45929 123145647603712 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 617
+ERROR 2025-08-10 13:33:32,139 log 45929 123145647603712 Internal Server Error: /api/v1/notifications/2/
+ERROR 2025-08-10 13:33:32,139 basehttp 45929 123145647603712 "PATCH /api/v1/notifications/2/ HTTP/1.1" 500 106
+INFO 2025-08-10 13:33:44,668 basehttp 45929 123145630814208 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 617
+INFO 2025-08-10 13:33:50,826 autoreload 45929 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 13:33:51,714 autoreload 50841 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:34:12,852 autoreload 50841 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 13:34:13,483 autoreload 51095 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:34:43,832 autoreload 51095 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 13:34:44,543 autoreload 51409 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:34:48,559 basehttp 51409 123145524633600 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:34:48,656 basehttp 51409 123145524633600 "POST /api/v1/order/driver/status/offline/ HTTP/1.1" 200 65
+INFO 2025-08-10 13:36:55,412 basehttp 51409 123145524633600 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:37:47,829 autoreload 51409 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 13:37:48,929 autoreload 53302 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:39:42,694 basehttp 53302 123145346838528 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-10 13:39:56,095 basehttp 53302 123145363628032 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:40:37,333 autoreload 55044 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:40:46,039 basehttp 55044 123145584750592 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 13:40:46,080 basehttp 55044 123145601540096 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,086 basehttp 55044 123145601540096 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,093 basehttp 55044 123145618329600 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,094 basehttp 55044 123145635119104 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,095 basehttp 55044 123145601540096 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,095 basehttp 55044 123145651908608 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,095 basehttp 55044 123145584750592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:40:46,099 basehttp 55044 123145668698112 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,101 basehttp 55044 123145618329600 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,102 basehttp 55044 123145651908608 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,103 basehttp 55044 123145668698112 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,103 basehttp 55044 123145635119104 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,105 basehttp 55044 123145601540096 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,106 basehttp 55044 123145584750592 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,177 basehttp 55044 123145651908608 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,178 basehttp 55044 123145668698112 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,184 basehttp 55044 123145601540096 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,184 basehttp 55044 123145635119104 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,189 basehttp 55044 123145584750592 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,191 basehttp 55044 123145651908608 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:46,192 basehttp 55044 123145668698112 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:48,225 basehttp 55044 123145668698112 "GET /admin/api/userdriver/ HTTP/1.1" 200 38557
+INFO 2025-08-10 13:40:48,253 basehttp 55044 123145584750592 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:40:48,263 basehttp 55044 123145668698112 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:40:48,264 basehttp 55044 123145651908608 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-10 13:40:51,028 basehttp 55044 123145651908608 "GET /admin/api/userdriver/20/change/ HTTP/1.1" 200 67612
+INFO 2025-08-10 13:40:51,056 basehttp 55044 123145651908608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:41:33,373 basehttp 55044 123145651908608 "GET /admin/api/userdriver/ HTTP/1.1" 200 38557
+INFO 2025-08-10 13:41:33,401 basehttp 55044 123145651908608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:41:36,131 basehttp 55044 123145651908608 "GET /admin/api/userdriver/20/change/ HTTP/1.1" 200 67612
+INFO 2025-08-10 13:41:36,152 basehttp 55044 123145651908608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:41:48,067 basehttp 55044 123145651908608 "GET /admin/api/notification/ HTTP/1.1" 200 38377
+INFO 2025-08-10 13:41:48,095 basehttp 55044 123145651908608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:41:51,448 basehttp 55044 123145651908608 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 37386
+INFO 2025-08-10 13:41:51,473 basehttp 55044 123145651908608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:41:54,271 basehttp 55044 123145651908608 "GET /admin/api/vehicletype/ HTTP/1.1" 200 34289
+INFO 2025-08-10 13:41:54,298 basehttp 55044 123145651908608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:42:25,702 basehttp 55044 123145685487616 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 980
+INFO 2025-08-10 13:42:26,054 basehttp 55044 123145702277120 "GET /media/vehicles/20/temp/photo_exterieur_1.jpg HTTP/1.1" 200 35809
+INFO 2025-08-10 13:42:32,233 basehttp 55044 123145685487616 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 617
+INFO 2025-08-10 13:42:43,352 basehttp 55044 123145651908608 "GET /admin/api/userdriver/ HTTP/1.1" 200 38557
+INFO 2025-08-10 13:42:43,375 basehttp 55044 123145651908608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:42:44,622 basehttp 55044 123145651908608 "GET /admin/api/userdriver/20/change/ HTTP/1.1" 200 67612
+INFO 2025-08-10 13:42:44,644 basehttp 55044 123145651908608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:42:56,557 basehttp 55044 123145651908608 "GET /admin/api/userdriver/ HTTP/1.1" 200 38557
+INFO 2025-08-10 13:42:56,582 basehttp 55044 123145651908608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:42:56,582 basehttp 55044 123145668698112 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 304 0
+ERROR 2025-08-10 13:43:01,166 log 55044 123145651908608 Internal Server Error: /admin/api/userdriver/
+Traceback (most recent call last):
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/contrib/admin/options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 246, in inner
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/utils/decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/utils/decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/contrib/admin/options.py", line 2057, in changelist_view
+    response = self.response_action(
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/django/contrib/admin/options.py", line 1686, in response_action
+    response = func(self, request, queryset)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py", line 350, in test_fcm_notification
+    from ..services.fcm_service import FCMService
+ImportError: attempted relative import beyond top-level package
+ERROR 2025-08-10 13:43:01,170 basehttp 55044 123145651908608 "POST /admin/api/userdriver/ HTTP/1.1" 500 126318
+WARNING 2025-08-10 13:43:01,277 log 55044 123145651908608 Not Found: /favicon.ico
+WARNING 2025-08-10 13:43:01,277 basehttp 55044 123145651908608 "GET /favicon.ico HTTP/1.1" 404 3208
+INFO 2025-08-10 13:43:45,588 autoreload 55044 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 13:43:46,733 autoreload 56785 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:43:54,119 basehttp 56785 123145496526848 "GET /admin/api/userdriver/ HTTP/1.1" 200 38557
+INFO 2025-08-10 13:43:55,741 basehttp 56785 123145496526848 "GET /admin/api/userdriver/ HTTP/1.1" 200 38557
+INFO 2025-08-10 13:43:55,764 basehttp 56785 123145496526848 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:44:01,649 fcm_service 56785 123145496526848 🔔 Début envoi FCM pour boboussa Stevr - Type: system
+INFO 2025-08-10 13:44:01,650 fcm_service 56785 123145496526848 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 13:44:01,651 fcm_service 56785 123145496526848 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 13:44:01,652 fcm_service 56785 123145496526848 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 13:44:01,652 fcm_service 56785 123145496526848 📋 Titre: 🧪 Test Admin WOILA
+INFO 2025-08-10 13:44:01,652 fcm_service 56785 123145496526848 💬 Corps: Bonjour boboussa ! Notification de test envoyée depuis l'admin Django. ✅
+INFO 2025-08-10 13:44:01,652 fcm_service 56785 123145496526848 🏷️ Type: system
+INFO 2025-08-10 13:44:02,304 fcm_service 56785 123145496526848 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 13:44:02,304 fcm_service 56785 123145496526848 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 13:44:02,304 fcm_service 56785 123145496526848 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 13:44:02,971 fcm_service 56785 123145496526848 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 13:44:02,971 fcm_service 56785 123145496526848 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 13:44:02,971 fcm_service 56785 123145496526848 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 13:44:02,973 fcm_service 56785 123145496526848 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 13:44:02,974 basehttp 56785 123145496526848 "POST /admin/api/userdriver/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:44:03,000 basehttp 56785 123145496526848 "GET /admin/api/userdriver/ HTTP/1.1" 200 39054
+INFO 2025-08-10 13:44:03,033 basehttp 56785 123145496526848 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:44:03,353 basehttp 56785 123145531179008 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 617
+INFO 2025-08-10 13:44:09,395 basehttp 56785 123145530642432 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:44:10,533 basehttp 56785 123145530642432 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 617
+INFO 2025-08-10 13:44:27,250 basehttp 56785 123145530642432 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:44:30,032 basehttp 56785 123145496526848 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 13:44:30,056 basehttp 56785 123145496526848 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:44:30,058 basehttp 56785 123145513316352 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-08-10 13:44:31,536 basehttp 56785 123145513316352 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 13:44:31,555 basehttp 56785 123145513316352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:44:35,683 basehttp 56785 123145513316352 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:44:35,749 basehttp 56785 123145513316352 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56907
+INFO 2025-08-10 13:44:35,777 basehttp 56785 123145513316352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:45:11,424 basehttp 56785 123145513316352 "GET /admin/api/userdriver/ HTTP/1.1" 200 38557
+INFO 2025-08-10 13:45:11,444 basehttp 56785 123145513316352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:45:12,782 basehttp 56785 123145513316352 "GET /admin/api/userdriver/20/change/ HTTP/1.1" 200 67620
+INFO 2025-08-10 13:45:12,800 basehttp 56785 123145513316352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:45:20,975 basehttp 56785 123145513316352 "GET /admin/api/userdriver/ HTTP/1.1" 200 38557
+INFO 2025-08-10 13:45:20,999 basehttp 56785 123145496526848 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 304 0
+INFO 2025-08-10 13:45:21,002 basehttp 56785 123145513316352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:45:25,612 fcm_service 56785 123145513316352 🔔 Début envoi FCM pour boboussa Stevr - Type: system
+INFO 2025-08-10 13:45:25,613 fcm_service 56785 123145513316352 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 13:45:25,614 fcm_service 56785 123145513316352 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 13:45:25,614 fcm_service 56785 123145513316352 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 13:45:25,614 fcm_service 56785 123145513316352 📋 Titre: 🧪 Test Admin WOILA
+INFO 2025-08-10 13:45:25,614 fcm_service 56785 123145513316352 💬 Corps: Bonjour boboussa ! Notification de test envoyée depuis l'admin Django. ✅
+INFO 2025-08-10 13:45:25,614 fcm_service 56785 123145513316352 🏷️ Type: system
+INFO 2025-08-10 13:45:26,502 fcm_service 56785 123145513316352 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 13:45:26,503 fcm_service 56785 123145513316352 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 13:45:26,503 fcm_service 56785 123145513316352 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 13:45:27,130 fcm_service 56785 123145513316352 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 13:45:27,131 fcm_service 56785 123145513316352 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 13:45:27,131 fcm_service 56785 123145513316352 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 13:45:27,134 fcm_service 56785 123145513316352 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 13:45:27,135 basehttp 56785 123145513316352 "POST /admin/api/userdriver/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:45:27,163 basehttp 56785 123145513316352 "GET /admin/api/userdriver/ HTTP/1.1" 200 39054
+INFO 2025-08-10 13:45:27,182 basehttp 56785 123145513316352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:45:27,630 basehttp 56785 123145530642432 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 617
+INFO 2025-08-10 13:45:31,248 basehttp 56785 123145513316352 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 13:45:31,271 basehttp 56785 123145513316352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:45:31,275 basehttp 56785 123145513316352 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-08-10 13:45:32,557 basehttp 56785 123145513316352 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 13:45:32,580 basehttp 56785 123145513316352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:45:36,961 basehttp 56785 123145513316352 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:45:36,990 basehttp 56785 123145513316352 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 13:45:37,019 basehttp 56785 123145513316352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:48:12,352 autoreload 56785 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 13:48:13,482 autoreload 59268 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:48:26,540 autoreload 59268 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 13:48:27,421 autoreload 59401 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:49:31,349 notification_service 60145 140704724091648 🚗 NOTIFICATION: Début envoi notification approbation véhicule pour boboussa - Véhicule: Gj
+INFO 2025-08-10 13:49:31,369 notification_service 60145 140704724091648 Notification créée: 🚗✅ Véhicule approuvé ! pour boboussa Stevr
+INFO 2025-08-10 13:49:31,369 notification_service 60145 140704724091648 🚗 NOTIFICATION: Création notification DB: ✅
+INFO 2025-08-10 13:49:31,369 notification_service 60145 140704724091648 🚗 NOTIFICATION: Tentative envoi FCM pour véhicule Gj
+INFO 2025-08-10 13:49:31,369 fcm_service 60145 140704724091648 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 13:49:31,370 fcm_service 60145 140704724091648 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 13:49:31,373 fcm_service 60145 140704724091648 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 13:49:31,373 fcm_service 60145 140704724091648 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 13:49:31,373 fcm_service 60145 140704724091648 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 13:49:31,373 fcm_service 60145 140704724091648 💬 Corps: Excellente nouvelle ! Votre véhicule Gj a été approuvé et est maintenant actif sur la plateforme.
+INFO 2025-08-10 13:49:31,373 fcm_service 60145 140704724091648 🏷️ Type: vehicle_approved
+INFO 2025-08-10 13:49:31,957 fcm_service 60145 140704724091648 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 13:49:31,957 fcm_service 60145 140704724091648 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 13:49:31,957 fcm_service 60145 140704724091648 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 13:49:32,592 fcm_service 60145 140704724091648 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 13:49:32,593 fcm_service 60145 140704724091648 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 13:49:32,593 fcm_service 60145 140704724091648 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 13:49:32,594 fcm_service 60145 140704724091648 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 13:49:32,595 notification_service 60145 140704724091648 🚗 NOTIFICATION: Notification d'approbation véhicule envoyée à boboussa pour Gj - DB: ✅ FCM: ✅
+INFO 2025-08-10 13:49:33,006 basehttp 59401 123145411006464 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1170
+INFO 2025-08-10 13:50:13,594 autoreload 59401 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 13:50:14,427 autoreload 60633 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:50:19,203 basehttp 60633 123145531629568 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:50:27,495 autoreload 60633 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 13:50:28,224 autoreload 60786 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:50:45,494 basehttp 60786 123145369776128 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:50:49,207 basehttp 60786 123145369776128 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 13:50:49,233 basehttp 60786 123145369776128 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:50:50,843 basehttp 60786 123145369776128 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 13:50:50,863 basehttp 60786 123145369776128 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:50:58,992 basehttp 60786 123145403355136 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 980
+INFO 2025-08-10 13:51:03,629 basehttp 60786 123145369776128 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:51:03,666 basehttp 60786 123145369776128 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 13:51:03,690 basehttp 60786 123145369776128 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:51:11,884 basehttp 60786 123145403355136 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:51:41,372 basehttp 60786 123145369776128 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 13:51:41,399 basehttp 60786 123145369776128 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:51:46,615 basehttp 60786 123145369776128 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:51:46,667 basehttp 60786 123145369776128 "GET /admin/api/vehicle/add/ HTTP/1.1" 200 54525
+INFO 2025-08-10 13:51:46,692 basehttp 60786 123145369776128 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:51:49,012 basehttp 60786 123145369776128 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 13:51:49,037 basehttp 60786 123145369776128 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:51:50,621 basehttp 60786 123145369776128 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 13:51:50,640 basehttp 60786 123145369776128 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:53:10,679 basehttp 60786 123145403355136 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 980
+INFO 2025-08-10 13:53:34,130 autoreload 60786 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 13:53:35,310 autoreload 62564 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 13:54:21,101 admin 63027 140704724091648 🚗 ADMIN: Tentative d'activation de 1 véhicule(s)
+INFO 2025-08-10 13:54:21,124 admin 63027 140704724091648 🚗 ADMIN: 1 véhicule(s) inactif(s) trouvé(s)
+INFO 2025-08-10 13:54:21,143 admin 63027 140704724091648 🚗 ADMIN: Envoi notification pour véhicule Gj au chauffeur boboussa
+INFO 2025-08-10 13:54:21,146 fcm_service 63027 140704724091648 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 13:54:21,147 fcm_service 63027 140704724091648 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 13:54:21,148 fcm_service 63027 140704724091648 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 13:54:21,148 fcm_service 63027 140704724091648 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 13:54:21,148 fcm_service 63027 140704724091648 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 13:54:21,148 fcm_service 63027 140704724091648 💬 Corps: Excellente nouvelle ! Votre véhicule Gj a été approuvé et est maintenant actif sur la plateforme.
+INFO 2025-08-10 13:54:21,148 fcm_service 63027 140704724091648 🏷️ Type: vehicle_approved
+INFO 2025-08-10 13:54:22,008 fcm_service 63027 140704724091648 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 13:54:22,009 fcm_service 63027 140704724091648 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 13:54:22,009 fcm_service 63027 140704724091648 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 13:54:22,642 fcm_service 63027 140704724091648 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 13:54:22,642 fcm_service 63027 140704724091648 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 13:54:22,642 fcm_service 63027 140704724091648 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 13:54:22,644 fcm_service 63027 140704724091648 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 13:54:22,644 admin 63027 140704724091648 ✅ ADMIN: Notification FCM envoyée avec succès pour Gj à boboussa
+INFO 2025-08-10 13:54:29,717 basehttp 62564 123145448804352 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 13:54:41,443 basehttp 62564 123145448804352 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 13:54:41,465 basehttp 62564 123145499172864 "GET /static/admin/js/vendor/select2/select2.full.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,467 basehttp 62564 123145482383360 "GET /static/admin/css/autocomplete.css HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,468 basehttp 62564 123145515962368 "GET /static/admin/js/vendor/select2/i18n/en.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,469 basehttp 62564 123145532751872 "GET /static/admin/js/autocomplete.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,470 basehttp 62564 123145465593856 "GET /static/admin/css/vendor/select2/select2.css HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,472 basehttp 62564 123145532751872 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,473 basehttp 62564 123145515962368 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,474 basehttp 62564 123145448804352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:54:41,477 basehttp 62564 123145448804352 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,478 basehttp 62564 123145515962368 "GET /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,489 basehttp 62564 123145515962368 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,489 basehttp 62564 123145482383360 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,490 basehttp 62564 123145532751872 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,491 basehttp 62564 123145448804352 "GET /static/jazzmin/js/related-modal.js HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:41,492 basehttp 62564 123145465593856 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-08-10 13:54:46,821 basehttp 62564 123145465593856 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:54:46,876 basehttp 62564 123145465593856 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56899
+INFO 2025-08-10 13:54:46,898 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:54:49,406 basehttp 62564 123145549541376 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 980
+INFO 2025-08-10 13:54:52,463 basehttp 62564 123145566330880 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1170
+INFO 2025-08-10 13:54:56,453 basehttp 62564 123145549541376 "POST /api/v1/notifications/mark-all-read/ HTTP/1.1" 200 89
+ERROR 2025-08-10 13:55:01,361 log 62564 123145549541376 Internal Server Error: /api/v1/notifications/3/
+ERROR 2025-08-10 13:55:01,361 basehttp 62564 123145549541376 "DELETE /api/v1/notifications/3/ HTTP/1.1" 500 100
+ERROR 2025-08-10 13:55:03,713 log 62564 123145549541376 Internal Server Error: /api/v1/notifications/2/
+ERROR 2025-08-10 13:55:03,713 basehttp 62564 123145549541376 "DELETE /api/v1/notifications/2/ HTTP/1.1" 500 100
+INFO 2025-08-10 13:55:04,648 basehttp 62564 123145549541376 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1168
+INFO 2025-08-10 13:55:06,812 basehttp 62564 123145465593856 "GET /admin/api/notification/ HTTP/1.1" 200 39370
+INFO 2025-08-10 13:55:06,834 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:55:11,045 basehttp 62564 123145465593856 "POST /admin/api/notification/ HTTP/1.1" 200 28377
+INFO 2025-08-10 13:55:12,446 basehttp 62564 123145465593856 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:55:12,470 basehttp 62564 123145465593856 "GET /admin/api/notification/ HTTP/1.1" 200 33267
+INFO 2025-08-10 13:55:12,495 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:55:15,473 basehttp 62564 123145549541376 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-10 13:55:18,464 basehttp 62564 123145549541376 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-10 13:55:25,289 basehttp 62564 123145465593856 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 13:55:25,310 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:55:26,564 basehttp 62564 123145465593856 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 13:55:26,585 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:55:34,898 basehttp 62564 123145465593856 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:55:34,959 basehttp 62564 123145465593856 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56907
+INFO 2025-08-10 13:55:34,982 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:55:42,911 basehttp 62564 123145549541376 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-10 13:55:42,914 basehttp 62564 123145566330880 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:55:48,871 basehttp 62564 123145549541376 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:55:50,734 basehttp 62564 123145549541376 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-10 13:55:51,944 basehttp 62564 123145549541376 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-10 13:55:52,448 basehttp 62564 123145549541376 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-10 13:55:53,070 basehttp 62564 123145549541376 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-10 13:55:57,377 basehttp 62564 123145549541376 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 13:55:58,968 basehttp 62564 123145549541376 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 13:56:02,266 basehttp 62564 123145465593856 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:56:02,317 basehttp 62564 123145465593856 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56899
+INFO 2025-08-10 13:56:02,338 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:56:04,836 basehttp 62564 123145465593856 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 13:56:04,856 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:56:06,577 basehttp 62564 123145549541376 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 980
+INFO 2025-08-10 13:56:13,890 admin 62564 123145465593856 🚗 ADMIN: Tentative d'activation de 1 véhicule(s)
+INFO 2025-08-10 13:56:13,892 admin 62564 123145465593856 🚗 ADMIN: 1 véhicule(s) inactif(s) trouvé(s)
+INFO 2025-08-10 13:56:13,897 admin 62564 123145465593856 🚗 ADMIN: Envoi notification pour véhicule Gj au chauffeur boboussa
+INFO 2025-08-10 13:56:13,899 fcm_service 62564 123145465593856 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 13:56:13,900 fcm_service 62564 123145465593856 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 13:56:13,901 fcm_service 62564 123145465593856 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 13:56:13,901 fcm_service 62564 123145465593856 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 13:56:13,901 fcm_service 62564 123145465593856 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 13:56:13,901 fcm_service 62564 123145465593856 💬 Corps: Excellente nouvelle ! Votre véhicule Gj a été approuvé et est maintenant actif sur la plateforme.
+INFO 2025-08-10 13:56:13,901 fcm_service 62564 123145465593856 🏷️ Type: vehicle_approved
+INFO 2025-08-10 13:56:14,500 fcm_service 62564 123145465593856 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 13:56:14,501 fcm_service 62564 123145465593856 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 13:56:14,501 fcm_service 62564 123145465593856 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 13:56:15,113 fcm_service 62564 123145465593856 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 13:56:15,113 fcm_service 62564 123145465593856 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 13:56:15,113 fcm_service 62564 123145465593856 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 13:56:15,115 fcm_service 62564 123145465593856 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 13:56:15,115 admin 62564 123145465593856 ✅ ADMIN: Notification FCM envoyée avec succès pour Gj à boboussa
+INFO 2025-08-10 13:56:15,116 basehttp 62564 123145465593856 "POST /admin/api/vehicle/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:56:15,181 basehttp 62564 123145465593856 "GET /admin/api/vehicle/ HTTP/1.1" 200 45052
+INFO 2025-08-10 13:56:15,210 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:56:22,025 basehttp 62564 123145566867456 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:56:22,025 basehttp 62564 123145550077952 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-10 13:56:25,406 basehttp 62564 123145550077952 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-10 13:56:29,629 basehttp 62564 123145550077952 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 13:56:31,806 basehttp 62564 123145465593856 "GET /admin/api/notification/ HTTP/1.1" 200 32762
+INFO 2025-08-10 13:56:31,826 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:56:33,564 basehttp 62564 123145465593856 "GET /admin/api/notification/ HTTP/1.1" 200 32762
+INFO 2025-08-10 13:56:33,584 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:56:40,583 basehttp 62564 123145550077952 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 13:56:41,331 basehttp 62564 123145465593856 "GET /admin/api/notification/ HTTP/1.1" 200 32762
+INFO 2025-08-10 13:56:41,356 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:57:05,319 basehttp 62564 123145465593856 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 13:57:05,348 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:57:21,387 basehttp 62564 123145465593856 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 13:57:21,408 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:59:01,970 basehttp 62564 123145550077952 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 13:59:06,643 basehttp 62564 123145465593856 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 13:59:06,680 basehttp 62564 123145465593856 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 13:59:06,707 basehttp 62564 123145465593856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 13:59:08,319 basehttp 62564 123145550077952 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 980
+INFO 2025-08-10 14:00:04,093 autoreload 62564 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 14:00:05,380 autoreload 66229 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:00:23,769 autoreload 66229 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 14:00:24,770 autoreload 66438 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:00:36,756 autoreload 66438 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 14:00:37,783 autoreload 66577 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:00:45,743 autoreload 66577 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 14:00:46,634 autoreload 66673 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:00:54,563 autoreload 66673 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-10 14:00:55,589 autoreload 66778 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:01:08,959 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 14:01:08,986 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:01:10,556 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 14:01:10,578 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:01:14,231 admin 66778 123145466564608 🚗 SAVE: Véhicule Gj activé pour boboussa Stevr
+INFO 2025-08-10 14:01:14,235 admin 66778 123145466564608 ✅ SAVE: Notification sauvegardée en DB (ID: 4)
+INFO 2025-08-10 14:01:14,238 fcm_service 66778 123145466564608 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 14:01:14,239 fcm_service 66778 123145466564608 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:01:14,241 fcm_service 66778 123145466564608 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:01:14,241 fcm_service 66778 123145466564608 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:01:14,241 fcm_service 66778 123145466564608 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 14:01:14,241 fcm_service 66778 123145466564608 💬 Corps: Excellente nouvelle ! Votre véhicule Gj a été approuvé et est maintenant actif sur la plateforme.
+INFO 2025-08-10 14:01:14,242 fcm_service 66778 123145466564608 🏷️ Type: vehicle_approved
+INFO 2025-08-10 14:01:14,887 fcm_service 66778 123145466564608 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:01:14,890 fcm_service 66778 123145466564608 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:01:14,890 fcm_service 66778 123145466564608 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:01:15,570 fcm_service 66778 123145466564608 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:01:15,570 fcm_service 66778 123145466564608 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:01:15,571 fcm_service 66778 123145466564608 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:01:15,572 fcm_service 66778 123145466564608 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:01:15,573 admin 66778 123145466564608 ✅ SAVE: Notification FCM + DB envoyée avec succès pour Gj
+INFO 2025-08-10 14:01:15,589 basehttp 66778 123145466564608 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:01:15,624 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 14:01:15,647 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:01:24,135 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:01:26,073 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:01:39,775 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 14:01:43,788 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:01:49,382 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 14:01:49,405 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:01:52,951 basehttp 66778 123145466564608 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:01:53,004 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56899
+INFO 2025-08-10 14:01:53,031 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:02:07,475 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 38380
+INFO 2025-08-10 14:02:07,494 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:02:14,630 admin 67593 140704724091648 🚗 SAVE: Véhicule Gj activé pour boboussa Stevr
+INFO 2025-08-10 14:02:14,635 admin 67593 140704724091648 ✅ SAVE: Notification sauvegardée en DB (ID: 5)
+INFO 2025-08-10 14:02:14,639 fcm_service 67593 140704724091648 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 14:02:14,640 fcm_service 67593 140704724091648 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:02:14,641 fcm_service 67593 140704724091648 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:02:14,641 fcm_service 67593 140704724091648 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:02:14,641 fcm_service 67593 140704724091648 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 14:02:14,641 fcm_service 67593 140704724091648 💬 Corps: Excellente nouvelle ! Votre véhicule Gj a été approuvé et est maintenant actif sur la plateforme.
+INFO 2025-08-10 14:02:14,641 fcm_service 67593 140704724091648 🏷️ Type: vehicle_approved
+INFO 2025-08-10 14:02:15,217 fcm_service 67593 140704724091648 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:02:15,217 fcm_service 67593 140704724091648 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:02:15,218 fcm_service 67593 140704724091648 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:02:15,854 fcm_service 67593 140704724091648 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:02:15,855 fcm_service 67593 140704724091648 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:02:15,855 fcm_service 67593 140704724091648 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:02:15,856 fcm_service 67593 140704724091648 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:02:15,857 admin 67593 140704724091648 ✅ SAVE: Notification FCM + DB envoyée avec succès pour Gj
+INFO 2025-08-10 14:02:33,935 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:02:34,710 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 14:03:13,098 basehttp 66778 123145466564608 "POST /admin/api/notification/ HTTP/1.1" 200 28135
+INFO 2025-08-10 14:03:14,150 basehttp 66778 123145466564608 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:03:14,179 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 38884
+INFO 2025-08-10 14:03:14,200 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:16,876 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 38380
+INFO 2025-08-10 14:03:16,903 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:21,194 basehttp 66778 123145466564608 "POST /admin/api/notification/ HTTP/1.1" 200 28135
+INFO 2025-08-10 14:03:22,468 basehttp 66778 123145466564608 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:03:22,489 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 33266
+INFO 2025-08-10 14:03:22,507 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:25,639 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 14:03:25,664 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:26,874 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 14:03:26,896 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:29,945 basehttp 66778 123145466564608 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:03:29,998 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56899
+INFO 2025-08-10 14:03:30,023 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:31,308 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 980
+INFO 2025-08-10 14:03:33,339 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 14:03:33,359 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:35,002 basehttp 66778 123145466564608 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:03:35,036 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 14:03:35,066 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:37,237 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 14:03:37,257 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:40,472 admin 66778 123145466564608 🚗 SAVE: Véhicule Gj activé pour boboussa Stevr
+INFO 2025-08-10 14:03:40,474 admin 66778 123145466564608 ✅ SAVE: Notification sauvegardée en DB (ID: 6)
+INFO 2025-08-10 14:03:40,476 fcm_service 66778 123145466564608 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 14:03:40,477 fcm_service 66778 123145466564608 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:03:40,479 fcm_service 66778 123145466564608 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:03:40,479 fcm_service 66778 123145466564608 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:03:40,479 fcm_service 66778 123145466564608 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 14:03:40,479 fcm_service 66778 123145466564608 💬 Corps: Excellente nouvelle ! Votre véhicule Gj a été approuvé et est maintenant actif sur la plateforme.
+INFO 2025-08-10 14:03:40,479 fcm_service 66778 123145466564608 🏷️ Type: vehicle_approved
+INFO 2025-08-10 14:03:41,035 fcm_service 66778 123145466564608 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:03:41,036 fcm_service 66778 123145466564608 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:03:41,036 fcm_service 66778 123145466564608 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:03:42,183 fcm_service 66778 123145466564608 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:03:42,186 fcm_service 66778 123145466564608 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:03:42,207 fcm_service 66778 123145466564608 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:03:42,231 fcm_service 66778 123145466564608 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:03:42,250 admin 66778 123145466564608 ✅ SAVE: Notification FCM + DB envoyée avec succès pour Gj
+INFO 2025-08-10 14:03:42,302 basehttp 66778 123145466564608 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:03:42,339 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 14:03:42,369 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:45,328 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 14:03:45,350 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:49,789 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 38380
+INFO 2025-08-10 14:03:49,810 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:03:52,633 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 14:03:59,752 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:04:11,427 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 14:04:15,853 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 14:04:15,888 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:04:21,050 basehttp 66778 123145500680192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 614
+INFO 2025-08-10 14:04:25,529 basehttp 66778 123145466564608 "POST /admin/api/vehicle/ HTTP/1.1" 200 28120
+INFO 2025-08-10 14:04:30,800 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 14:04:30,819 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:04:32,182 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 14:04:32,201 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:04:35,326 basehttp 66778 123145466564608 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:04:35,358 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 14:04:35,381 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:04:43,811 admin 66778 123145466564608 🚗 ADMIN: Tentative d'activation de 1 véhicule(s)
+INFO 2025-08-10 14:04:43,813 admin 66778 123145466564608 🚗 ADMIN: 1 véhicule(s) inactif(s) trouvé(s)
+INFO 2025-08-10 14:04:43,818 admin 66778 123145466564608 🚗 ADMIN: Envoi notification pour véhicule Gj au chauffeur boboussa
+INFO 2025-08-10 14:04:43,821 admin 66778 123145466564608 ✅ ADMIN: Notification sauvegardée en DB (ID: 7)
+INFO 2025-08-10 14:04:43,822 fcm_service 66778 123145466564608 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 14:04:43,823 fcm_service 66778 123145466564608 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:04:43,824 fcm_service 66778 123145466564608 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:04:43,824 fcm_service 66778 123145466564608 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:04:43,824 fcm_service 66778 123145466564608 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 14:04:43,824 fcm_service 66778 123145466564608 💬 Corps: Excellente nouvelle ! Votre véhicule Gj a été approuvé et est maintenant actif sur la plateforme.
+INFO 2025-08-10 14:04:43,824 fcm_service 66778 123145466564608 🏷️ Type: vehicle_approved
+INFO 2025-08-10 14:04:44,386 fcm_service 66778 123145466564608 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:04:44,387 fcm_service 66778 123145466564608 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:04:44,387 fcm_service 66778 123145466564608 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:04:44,956 fcm_service 66778 123145466564608 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:04:44,957 fcm_service 66778 123145466564608 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:04:44,957 fcm_service 66778 123145466564608 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:04:44,959 fcm_service 66778 123145466564608 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:04:44,959 admin 66778 123145466564608 ✅ ADMIN: Notification DB + FCM envoyée avec succès pour Gj à boboussa
+INFO 2025-08-10 14:04:44,960 basehttp 66778 123145466564608 "POST /admin/api/vehicle/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:04:44,987 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 45052
+INFO 2025-08-10 14:04:45,011 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:04:52,075 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:04:53,569 basehttp 66778 123145466564608 "GET /admin/api/otpverification/ HTTP/1.1" 200 35203
+INFO 2025-08-10 14:04:53,592 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:04:56,994 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 39307
+INFO 2025-08-10 14:04:57,018 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:05:07,747 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:05:16,097 basehttp 66778 123145466564608 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:05:16,135 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 39893
+INFO 2025-08-10 14:05:16,161 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:05:21,517 basehttp 66778 123145466564608 "POST /admin/api/notification/ HTTP/1.1" 200 28380
+INFO 2025-08-10 14:05:22,633 basehttp 66778 123145466564608 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:05:22,662 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 33267
+INFO 2025-08-10 14:05:22,684 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:05:27,216 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 14:05:27,237 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:05:28,859 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 14:05:28,881 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:05:32,278 basehttp 66778 123145466564608 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:05:32,334 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56899
+INFO 2025-08-10 14:05:32,357 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:05:34,239 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 14:05:34,260 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:05:52,112 basehttp 66778 123145500680192 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 14:05:52,418 fcm_service 66778 123145500680192 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 14:05:52,419 basehttp 66778 123145500680192 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 14:05:56,027 fcm_service 66778 123145500680192 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 14:05:56,029 basehttp 66778 123145500680192 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 14:05:58,131 basehttp 66778 123145500680192 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 14:05:58,175 fcm_service 66778 123145500680192 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 14:05:58,176 basehttp 66778 123145500680192 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 14:06:01,894 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:06:13,939 basehttp 66778 123145466564608 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:06:14,002 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56899
+INFO 2025-08-10 14:06:14,025 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:06:20,332 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 14:06:20,356 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:06:33,230 admin 66778 123145466564608 🚗 ADMIN: Tentative d'activation de 1 véhicule(s)
+INFO 2025-08-10 14:06:33,231 admin 66778 123145466564608 🚗 ADMIN: 1 véhicule(s) inactif(s) trouvé(s)
+INFO 2025-08-10 14:06:33,276 admin 66778 123145466564608 🚗 ADMIN: Envoi notification pour véhicule Gj au chauffeur boboussa
+INFO 2025-08-10 14:06:33,281 admin 66778 123145466564608 ✅ ADMIN: Notification sauvegardée en DB (ID: 8)
+INFO 2025-08-10 14:06:33,284 fcm_service 66778 123145466564608 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 14:06:33,285 fcm_service 66778 123145466564608 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:06:33,286 fcm_service 66778 123145466564608 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:06:33,286 fcm_service 66778 123145466564608 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:06:33,286 fcm_service 66778 123145466564608 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 14:06:33,287 fcm_service 66778 123145466564608 💬 Corps: Excellente nouvelle ! Votre véhicule Gj a été approuvé et est maintenant actif sur la plateforme.
+INFO 2025-08-10 14:06:33,287 fcm_service 66778 123145466564608 🏷️ Type: vehicle_approved
+INFO 2025-08-10 14:06:33,927 fcm_service 66778 123145466564608 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:06:33,928 fcm_service 66778 123145466564608 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:06:33,928 fcm_service 66778 123145466564608 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:06:34,540 fcm_service 66778 123145466564608 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:06:34,541 fcm_service 66778 123145466564608 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:06:34,541 fcm_service 66778 123145466564608 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:06:34,543 fcm_service 66778 123145466564608 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:06:34,543 admin 66778 123145466564608 ✅ ADMIN: Notification DB + FCM envoyée avec succès pour Gj à boboussa
+INFO 2025-08-10 14:06:34,544 basehttp 66778 123145466564608 "POST /admin/api/vehicle/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:06:34,570 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 45052
+INFO 2025-08-10 14:06:34,591 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:06:40,653 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:07:02,453 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:07:04,086 basehttp 66778 123145500680192 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-10 14:07:06,922 basehttp 66778 123145466564608 "GET /admin/api/userdriver/ HTTP/1.1" 200 38557
+INFO 2025-08-10 14:07:06,950 basehttp 66778 123145483354112 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 304 0
+INFO 2025-08-10 14:07:06,955 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:07:15,149 basehttp 66778 123145517469696 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:07:16,202 basehttp 66778 123145517469696 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 616
+INFO 2025-08-10 14:07:29,462 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 38380
+INFO 2025-08-10 14:07:29,484 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:07:35,357 basehttp 66778 123145466564608 "POST /admin/api/notification/ HTTP/1.1" 200 28135
+INFO 2025-08-10 14:07:37,424 basehttp 66778 123145466564608 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:07:37,447 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 33266
+INFO 2025-08-10 14:07:37,465 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:07:39,125 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 32762
+INFO 2025-08-10 14:07:39,154 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:07:44,451 basehttp 66778 123145500680192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-10 14:07:49,249 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 32762
+INFO 2025-08-10 14:07:49,275 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:07:51,713 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 32762
+INFO 2025-08-10 14:07:51,740 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:08:24,391 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 14:08:25,204 basehttp 66778 123145517469696 "GET /media/vehicles/20/temp/photo_exterieur_1.jpg HTTP/1.1" 200 35809
+INFO 2025-08-10 14:08:25,983 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 14:08:29,292 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 14:08:29,320 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:08:30,929 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 14:08:30,950 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:08:34,761 basehttp 66778 123145466564608 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:08:34,797 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 14:08:34,825 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:08:37,184 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 980
+INFO 2025-08-10 14:08:43,315 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 980
+INFO 2025-08-10 14:08:47,157 basehttp 66778 123145517469696 "GET /api/v1/profiles/driver/20/ HTTP/1.1" 200 404
+INFO 2025-08-10 14:08:52,767 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 14:08:52,788 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:08:58,264 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 14:08:58,288 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:09:03,718 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 14:09:03,739 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:09:06,228 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 32762
+INFO 2025-08-10 14:09:06,255 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:09:07,432 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 44516
+INFO 2025-08-10 14:09:07,455 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:09:08,448 basehttp 66778 123145466564608 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56255
+INFO 2025-08-10 14:09:08,470 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:09:12,437 admin 66778 123145466564608 🚗 SAVE: Véhicule Gj activé pour boboussa Stevr
+INFO 2025-08-10 14:09:12,439 admin 66778 123145466564608 ✅ SAVE: Notification sauvegardée en DB (ID: 9)
+INFO 2025-08-10 14:09:12,442 fcm_service 66778 123145466564608 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 14:09:12,443 fcm_service 66778 123145466564608 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:09:12,445 fcm_service 66778 123145466564608 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:09:12,445 fcm_service 66778 123145466564608 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:09:12,445 fcm_service 66778 123145466564608 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 14:09:12,445 fcm_service 66778 123145466564608 💬 Corps: Excellente nouvelle ! Votre véhicule Gj a été approuvé et est maintenant actif sur la plateforme.
+INFO 2025-08-10 14:09:12,445 fcm_service 66778 123145466564608 🏷️ Type: vehicle_approved
+INFO 2025-08-10 14:09:13,053 fcm_service 66778 123145466564608 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:09:13,054 fcm_service 66778 123145466564608 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:09:13,054 fcm_service 66778 123145466564608 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:09:13,679 fcm_service 66778 123145466564608 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:09:13,679 fcm_service 66778 123145466564608 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:09:13,679 fcm_service 66778 123145466564608 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:09:13,681 fcm_service 66778 123145466564608 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:09:13,682 admin 66778 123145466564608 ✅ SAVE: Notification FCM + DB envoyée avec succès pour Gj
+INFO 2025-08-10 14:09:13,699 basehttp 66778 123145466564608 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:09:13,732 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 45131
+INFO 2025-08-10 14:09:13,757 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:09:22,017 basehttp 66778 123145500680192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 614
+INFO 2025-08-10 14:09:22,409 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:09:39,970 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:09:46,212 basehttp 66778 123145500680192 "POST /api/v1/order/driver/status/toggle/ HTTP/1.1" 200 106
+INFO 2025-08-10 14:09:49,584 basehttp 66778 123145500680192 "POST /api/v1/order/driver/status/toggle/ HTTP/1.1" 200 109
+INFO 2025-08-10 14:09:53,061 basehttp 66778 123145500680192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 614
+INFO 2025-08-10 14:10:25,315 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 979
+INFO 2025-08-10 14:10:27,577 basehttp 66778 123145517469696 "GET /api/v1/vehicles/configs/types/ HTTP/1.1" 200 318
+INFO 2025-08-10 14:10:27,584 basehttp 66778 123145534259200 "GET /api/v1/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-08-10 14:10:27,624 basehttp 66778 123145551048704 "GET /api/v1/vehicles/configs/models/ HTTP/1.1" 200 210
+INFO 2025-08-10 14:10:27,626 basehttp 66778 123145567838208 "GET /api/v1/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-08-10 14:11:10,534 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:11:18,383 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:11:27,985 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:11:34,298 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:11:55,050 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:11:59,862 basehttp 66778 123145500680192 "POST /api/v1/vehicles/create/ HTTP/1.1" 201 1097
+INFO 2025-08-10 14:12:00,114 basehttp 66778 123145517469696 "POST /api/v1/documents/import/ HTTP/1.1" 201 545
+INFO 2025-08-10 14:12:00,503 basehttp 66778 123145517469696 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 1961
+INFO 2025-08-10 14:12:00,782 basehttp 66778 123145534259200 "GET /media/vehicles/20/temp/photo_exterieur_1_dLwgHeF.jpg HTTP/1.1" 200 15388
+INFO 2025-08-10 14:12:06,780 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 45529
+INFO 2025-08-10 14:12:06,808 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:12:10,749 basehttp 66778 123145466564608 "GET /admin/api/vehicle/8/change/ HTTP/1.1" 200 56329
+INFO 2025-08-10 14:12:10,772 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:12:14,398 admin 66778 123145466564608 🚗 SAVE: Véhicule Moliicebi activé pour boboussa Stevr
+INFO 2025-08-10 14:12:14,400 admin 66778 123145466564608 ✅ SAVE: Notification sauvegardée en DB (ID: 10)
+INFO 2025-08-10 14:12:14,402 fcm_service 66778 123145466564608 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 14:12:14,403 fcm_service 66778 123145466564608 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:12:14,404 fcm_service 66778 123145466564608 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:12:14,404 fcm_service 66778 123145466564608 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:12:14,404 fcm_service 66778 123145466564608 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 14:12:14,405 fcm_service 66778 123145466564608 💬 Corps: Excellente nouvelle ! Votre véhicule Moliicebi a été approuvé et est maintenant actif sur la platefo...
+INFO 2025-08-10 14:12:14,405 fcm_service 66778 123145466564608 🏷️ Type: vehicle_approved
+INFO 2025-08-10 14:12:15,227 fcm_service 66778 123145466564608 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:12:15,228 fcm_service 66778 123145466564608 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:12:15,228 fcm_service 66778 123145466564608 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:12:15,792 fcm_service 66778 123145466564608 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:12:15,792 fcm_service 66778 123145466564608 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:12:15,792 fcm_service 66778 123145466564608 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:12:15,794 fcm_service 66778 123145466564608 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:12:15,794 admin 66778 123145466564608 ✅ SAVE: Notification FCM + DB envoyée avec succès pour Moliicebi
+INFO 2025-08-10 14:12:15,800 basehttp 66778 123145466564608 "POST /admin/api/vehicle/8/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:12:15,830 basehttp 66778 123145466564608 "GET /admin/api/vehicle/ HTTP/1.1" 200 46147
+INFO 2025-08-10 14:12:15,855 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:12:20,066 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 1960
+INFO 2025-08-10 14:12:23,342 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 1960
+INFO 2025-08-10 14:12:31,067 basehttp 66778 123145500680192 "PATCH /api/v1/vehicles/8/toggle-online/ HTTP/1.1" 200 200
+INFO 2025-08-10 14:12:31,296 basehttp 66778 123145517469696 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:12:31,382 basehttp 66778 123145517469696 "POST /api/v1/order/driver/status/online/ HTTP/1.1" 200 106
+WARNING 2025-08-10 14:12:33,480 log 66778 123145500680192 Bad Request: /api/v1/vehicles/7/toggle-online/
+WARNING 2025-08-10 14:12:33,480 basehttp 66778 123145500680192 "PATCH /api/v1/vehicles/7/toggle-online/ HTTP/1.1" 400 154
+INFO 2025-08-10 14:12:45,278 basehttp 66778 123145500680192 "PATCH /api/v1/vehicles/8/toggle-online/ HTTP/1.1" 200 203
+INFO 2025-08-10 14:12:45,331 basehttp 66778 123145517469696 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:12:45,479 basehttp 66778 123145517469696 "POST /api/v1/order/driver/status/offline/ HTTP/1.1" 200 65
+INFO 2025-08-10 14:12:46,486 basehttp 66778 123145500680192 "PATCH /api/v1/vehicles/7/toggle-online/ HTTP/1.1" 200 187
+INFO 2025-08-10 14:12:47,169 basehttp 66778 123145517469696 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:12:47,290 basehttp 66778 123145517469696 "POST /api/v1/order/driver/status/online/ HTTP/1.1" 200 106
+INFO 2025-08-10 14:12:49,965 basehttp 66778 123145500680192 "PATCH /api/v1/vehicles/7/toggle-online/ HTTP/1.1" 200 190
+INFO 2025-08-10 14:12:50,608 basehttp 66778 123145517469696 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:12:50,753 basehttp 66778 123145517469696 "POST /api/v1/order/driver/status/offline/ HTTP/1.1" 200 65
+INFO 2025-08-10 14:12:55,619 basehttp 66778 123145500680192 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 1960
+INFO 2025-08-10 14:12:56,632 basehttp 66778 123145500680192 "PATCH /api/v1/vehicles/8/toggle-online/ HTTP/1.1" 200 200
+INFO 2025-08-10 14:12:56,935 basehttp 66778 123145517469696 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 141
+INFO 2025-08-10 14:12:56,997 basehttp 66778 123145517469696 "POST /api/v1/order/driver/status/online/ HTTP/1.1" 200 106
+INFO 2025-08-10 14:13:05,204 basehttp 66778 123145500680192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1178
+INFO 2025-08-10 14:13:16,295 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 39309
+INFO 2025-08-10 14:13:16,323 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-08-10 14:13:20,297 log 66778 123145500680192 Internal Server Error: /api/v1/notifications/9/
+ERROR 2025-08-10 14:13:20,298 basehttp 66778 123145500680192 "DELETE /api/v1/notifications/9/ HTTP/1.1" 500 100
+INFO 2025-08-10 14:13:21,778 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 39309
+INFO 2025-08-10 14:13:21,796 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:13:23,788 basehttp 66778 123145500680192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1178
+ERROR 2025-08-10 14:13:33,396 log 66778 123145500680192 Internal Server Error: /api/v1/notifications/9/
+ERROR 2025-08-10 14:13:33,397 basehttp 66778 123145500680192 "PATCH /api/v1/notifications/9/ HTTP/1.1" 500 106
+INFO 2025-08-10 14:13:35,071 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 39309
+INFO 2025-08-10 14:13:35,094 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:13:37,619 basehttp 66778 123145500680192 "POST /api/v1/notifications/mark-all-read/ HTTP/1.1" 200 89
+INFO 2025-08-10 14:13:39,393 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 39375
+INFO 2025-08-10 14:13:39,410 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-08-10 14:13:43,558 log 66778 123145500680192 Internal Server Error: /api/v1/notifications/9/
+ERROR 2025-08-10 14:13:43,558 basehttp 66778 123145500680192 "DELETE /api/v1/notifications/9/ HTTP/1.1" 500 100
+INFO 2025-08-10 14:13:46,294 basehttp 66778 123145466564608 "GET /admin/api/notification/ HTTP/1.1" 200 39375
+INFO 2025-08-10 14:13:46,313 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:13:57,361 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:14:57,397 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:15:38,823 basehttp 66778 123145466564608 "GET /admin/api/referralcode/ HTTP/1.1" 200 53399
+INFO 2025-08-10 14:15:38,846 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:15:48,498 basehttp 66778 123145466564608 "POST /admin/api/referralcode/ HTTP/1.1" 200 33508
+INFO 2025-08-10 14:15:49,859 basehttp 66778 123145466564608 "POST /admin/api/referralcode/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:15:49,884 basehttp 66778 123145466564608 "GET /admin/api/referralcode/ HTTP/1.1" 200 35882
+INFO 2025-08-10 14:15:49,904 basehttp 66778 123145466564608 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:15:57,070 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:15:59,628 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:16:57,114 basehttp 66778 123145500680192 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:17:57,389 basehttp 66778 123145483354112 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:18:57,418 basehttp 66778 123145483354112 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:19:57,539 basehttp 66778 123145483354112 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:20:35,475 notification_service 78045 140704724091648 Notification créée: 🎉 Bienvenue sur WOILA ! pour Nouveau Filleul
+INFO 2025-08-10 14:20:35,476 fcm_service 78045 140704724091648 🔔 Début envoi FCM pour Nouveau Filleul - Type: welcome
+INFO 2025-08-10 14:20:35,479 fcm_service 78045 140704724091648 🔐 Session active pour Nouveau Filleul: ❌ Non
+WARNING 2025-08-10 14:20:35,479 fcm_service 78045 140704724091648 ❌ Pas de session active pour Nouveau Filleul - Notification non envoyée
+INFO 2025-08-10 14:20:35,480 notification_service 78045 140704724091648 Notification de bienvenue envoyée à Nouveau Filleul - DB: ✅ FCM: ❌
+ERROR 2025-08-10 14:20:35,490 notification_service 78045 140704724091648 Erreur lors de l'envoi de notification de parrainage: unsupported operand type(s) for +=: 'decimal.Decimal' and 'float'
+INFO 2025-08-10 14:20:57,628 basehttp 66778 123145483354112 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:21:08,721 autoreload 66778 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 14:21:12,193 autoreload 78427 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:21:57,450 basehttp 78427 123145383260160 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:22:57,425 basehttp 78427 123145383260160 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:23:57,522 basehttp 78427 123145383260160 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:24:54,803 notification_service 80747 140704724091648 Notification créée: 🎉 Bienvenue sur WOILA ! pour Nouveau Filleul
+INFO 2025-08-10 14:24:54,803 fcm_service 80747 140704724091648 🔔 Début envoi FCM pour Nouveau Filleul - Type: welcome
+INFO 2025-08-10 14:24:54,804 fcm_service 80747 140704724091648 🔐 Session active pour Nouveau Filleul: ✅ Oui
+WARNING 2025-08-10 14:24:54,806 fcm_service 80747 140704724091648 ❌ Aucun token FCM trouvé pour Nouveau Filleul
+INFO 2025-08-10 14:24:54,806 notification_service 80747 140704724091648 Notification de bienvenue envoyée à Nouveau Filleul - DB: ✅ FCM: ❌
+INFO 2025-08-10 14:24:54,811 notification_service 80747 140704724091648 Notification créée: 🎁 Code parrain utilisé ! pour boboussa Stevr
+INFO 2025-08-10 14:24:54,812 fcm_service 80747 140704724091648 🔔 Début envoi FCM pour boboussa Stevr - Type: referral_used
+INFO 2025-08-10 14:24:54,813 fcm_service 80747 140704724091648 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:24:54,814 fcm_service 80747 140704724091648 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:24:54,814 fcm_service 80747 140704724091648 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:24:54,814 fcm_service 80747 140704724091648 📋 Titre: 🎁 Bonus de parrainage reçu !
+INFO 2025-08-10 14:24:54,814 fcm_service 80747 140704724091648 💬 Corps: Félicitations ! Votre code parrain FF7B4AE2 a été utilisé. Vous avez reçu 500.0€ de bonus !
+INFO 2025-08-10 14:24:54,814 fcm_service 80747 140704724091648 🏷️ Type: referral_used
+INFO 2025-08-10 14:24:55,475 fcm_service 80747 140704724091648 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:24:55,475 fcm_service 80747 140704724091648 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:24:55,475 fcm_service 80747 140704724091648 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:24:56,081 fcm_service 80747 140704724091648 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:24:56,081 fcm_service 80747 140704724091648 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:24:56,081 fcm_service 80747 140704724091648 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:24:56,083 fcm_service 80747 140704724091648 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:24:56,083 notification_service 80747 140704724091648 Notification de parrainage envoyée à boboussa - Bonus: 500.0 FCFA - DB: ✅ FCM: ✅
+INFO 2025-08-10 14:24:56,388 basehttp 78427 123145383260160 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1660
+INFO 2025-08-10 14:24:57,446 basehttp 78427 123145383260160 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:25:08,534 basehttp 78427 123145383260160 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:25:12,806 basehttp 78427 123145383260160 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:25:15,042 basehttp 78427 123145383260160 "GET /api/v1/referral/wallet/?user_type=driver&user_id=20 HTTP/1.1" 200 182
+INFO 2025-08-10 14:25:18,411 basehttp 78427 123145383260160 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:25:25,683 basehttp 78427 123145383260160 "GET /api/v1/referral/wallet/?user_type=driver&user_id=20 HTTP/1.1" 200 182
+INFO 2025-08-10 14:25:28,556 basehttp 78427 123145400049664 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1660
+ERROR 2025-08-10 14:25:31,833 log 78427 123145383260160 Internal Server Error: /api/v1/notifications/13/
+ERROR 2025-08-10 14:25:31,834 basehttp 78427 123145383260160 "PATCH /api/v1/notifications/13/ HTTP/1.1" 500 106
+INFO 2025-08-10 14:25:57,435 basehttp 78427 123145383260160 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:26:31,619 autoreload 78427 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-10 14:26:32,605 autoreload 81707 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:26:57,683 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:27:55,678 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+ERROR 2025-08-10 14:27:56,630 log 81707 123145554886656 Internal Server Error: /api/v1/notifications/13/
+ERROR 2025-08-10 14:27:56,631 basehttp 81707 123145554886656 "DELETE /api/v1/notifications/13/ HTTP/1.1" 500 100
+INFO 2025-08-10 14:27:57,447 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:28:57,584 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:29:57,101 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:30:57,629 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:31:00,810 basehttp 81707 123145554886656 "GET /admin/api/notificationconfig/ HTTP/1.1" 200 30340
+INFO 2025-08-10 14:31:02,174 basehttp 81707 123145554886656 "GET /admin/api/notificationconfig/1/change/ HTTP/1.1" 200 46102
+INFO 2025-08-10 14:31:02,215 basehttp 81707 123145554886656 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:31:05,276 basehttp 81707 123145554886656 "POST /admin/api/notificationconfig/1/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:31:05,300 basehttp 81707 123145554886656 "GET /admin/api/notificationconfig/ HTTP/1.1" 200 31513
+INFO 2025-08-10 14:31:31,266 basehttp 81707 123145588465664 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:31:39,066 basehttp 81707 123145588465664 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:31:41,610 basehttp 81707 123145588465664 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1660
+INFO 2025-08-10 14:31:57,385 basehttp 81707 123145588465664 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:32:57,626 basehttp 81707 123145588465664 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:33:58,098 basehttp 81707 123145588465664 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:34:57,423 basehttp 81707 123145588465664 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:35:57,643 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:36:57,126 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:37:08,810 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:38:34,000 whatsapp_service 81707 123145554886656 Sending WhatsApp OTP to +237651826475
+INFO 2025-08-10 14:38:35,595 whatsapp_service 81707 123145554886656 WhatsApp API response status: 200
+INFO 2025-08-10 14:38:35,598 otp 81707 123145554886656 OTP send result for +237651826475: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjUxODI2NDc1FQIAERgSQUQwM0E5M0MwRDMyNDY1NTdCAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237651826475', 'wa_id': '237651826475'}], 'messages': [{'id': 'wamid.HBgMMjM3NjUxODI2NDc1FQIAERgSQUQwM0E5M0MwRDMyNDY1NTdCAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-10 14:38:35,600 basehttp 81707 123145554886656 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-10 14:38:49,220 basehttp 81707 123145554886656 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-10 14:38:50,974 notification_service 81707 123145554886656 Notification créée: 🎉 Bienvenue sur WOILA ! pour Juni Nio
+INFO 2025-08-10 14:38:50,975 fcm_service 81707 123145554886656 🔔 Début envoi FCM pour Juni Nio - Type: welcome
+INFO 2025-08-10 14:38:50,977 fcm_service 81707 123145554886656 🔐 Session active pour Juni Nio: ❌ Non
+WARNING 2025-08-10 14:38:50,977 fcm_service 81707 123145554886656 ❌ Pas de session active pour Juni Nio - Notification non envoyée
+INFO 2025-08-10 14:38:50,977 notification_service 81707 123145554886656 Notification de bienvenue envoyée à Juni Nio - DB: ✅ FCM: ❌
+INFO 2025-08-10 14:38:50,986 basehttp 81707 123145554886656 "POST /api/v1/auth/register/driver/ HTTP/1.1" 201 376
+INFO 2025-08-10 14:38:52,453 basehttp 81707 123145572212736 "POST /api/v1/auth/login/ HTTP/1.1" 200 257
+INFO 2025-08-10 14:38:52,638 basehttp 81707 123145572212736 "GET /api/v1/profiles/driver/24/ HTTP/1.1" 200 398
+INFO 2025-08-10 14:38:52,751 fcm_service 81707 123145589002240 Token FCM créé pour Juni Nio
+INFO 2025-08-10 14:38:52,754 basehttp 81707 123145589002240 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 14:39:04,472 basehttp 81707 123145554886656 "POST /api/v1/documents/import/ HTTP/1.1" 201 499
+INFO 2025-08-10 14:39:04,971 basehttp 81707 123145554886656 "GET /api/v1/vehicles/configs/types/ HTTP/1.1" 200 318
+INFO 2025-08-10 14:39:04,978 basehttp 81707 123145572212736 "GET /api/v1/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-08-10 14:39:04,981 basehttp 81707 123145589002240 "GET /api/v1/vehicles/configs/models/ HTTP/1.1" 200 210
+INFO 2025-08-10 14:39:04,982 basehttp 81707 123145605791744 "GET /api/v1/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-08-10 14:39:53,531 basehttp 81707 123145554886656 "POST /api/v1/vehicles/create/ HTTP/1.1" 201 1052
+INFO 2025-08-10 14:40:10,330 basehttp 81707 123145554886656 "POST /api/v1/documents/import/ HTTP/1.1" 201 521
+INFO 2025-08-10 14:40:10,468 basehttp 81707 123145554886656 "POST /api/v1/documents/import/ HTTP/1.1" 201 505
+INFO 2025-08-10 14:40:21,568 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 14:40:40,661 basehttp 81707 123145554886656 "GET /media/profile_pictures/driver/24/woila_profile_1754836662887.jpg HTTP/1.1" 200 78335
+INFO 2025-08-10 14:40:43,953 basehttp 81707 123145572212736 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 613
+INFO 2025-08-10 14:41:51,697 basehttp 81707 123145554886656 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 14:41:59,988 basehttp 81707 123145554886656 "GET /admin/api/userdriver/ HTTP/1.1" 200 39658
+INFO 2025-08-10 14:42:00,107 basehttp 81707 123145572212736 "GET /media/profile_pictures/driver/24/woila_profile_1754836662887.jpg HTTP/1.1" 200 78335
+INFO 2025-08-10 14:42:00,138 basehttp 81707 123145572212736 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 304 0
+INFO 2025-08-10 14:42:00,175 basehttp 81707 123145554886656 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:42:11,538 basehttp 81707 123145554886656 "POST /admin/api/userdriver/ HTTP/1.1" 200 28319
+INFO 2025-08-10 14:42:12,713 basehttp 81707 123145554886656 "POST /admin/api/userdriver/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:42:12,765 basehttp 81707 123145554886656 "GET /admin/api/userdriver/ HTTP/1.1" 200 39058
+INFO 2025-08-10 14:42:12,795 basehttp 81707 123145554886656 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:42:15,266 basehttp 81707 123145554886656 "GET /admin/api/vehicle/ HTTP/1.1" 200 45548
+INFO 2025-08-10 14:42:15,306 basehttp 81707 123145554886656 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:42:17,588 autoreload 81707 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/viewsets/login.py changed, reloading.
+INFO 2025-08-10 14:42:18,798 autoreload 91691 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:42:21,178 basehttp 91691 123145546616832 "GET /admin/api/document/ HTTP/1.1" 200 43035
+INFO 2025-08-10 14:42:21,202 basehttp 91691 123145546616832 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:42:29,937 autoreload 91691 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/viewsets/login.py changed, reloading.
+INFO 2025-08-10 14:42:30,751 autoreload 91800 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:42:34,096 basehttp 91800 123145536344064 "POST /admin/api/document/ HTTP/1.1" 200 28576
+INFO 2025-08-10 14:42:35,190 basehttp 91800 123145536344064 "POST /admin/api/document/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:42:35,237 basehttp 91800 123145536344064 "GET /admin/api/document/ HTTP/1.1" 200 40984
+INFO 2025-08-10 14:42:35,258 basehttp 91800 123145536344064 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:43:55,167 autoreload 91800 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-10 14:43:55,738 autoreload 92603 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:44:19,962 autoreload 92603 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-10 14:44:20,566 autoreload 92863 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:45:51,463 notification_service 93649 140704724091648 Notification créée: 🎉 Bienvenue sur WOILA ! pour TestWelcome User
+INFO 2025-08-10 14:45:51,465 fcm_service 93649 140704724091648 🔔 Début envoi FCM pour TestWelcome User - Type: welcome
+INFO 2025-08-10 14:45:51,466 fcm_service 93649 140704724091648 🔐 Session active pour TestWelcome User: ✅ Oui
+INFO 2025-08-10 14:45:51,467 fcm_service 93649 140704724091648 ✅ 1 token(s) FCM trouvé(s) pour TestWelcome User
+INFO 2025-08-10 14:45:51,467 fcm_service 93649 140704724091648 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:45:51,467 fcm_service 93649 140704724091648 📋 Titre: 🎉 Bienvenue sur WOILA !
+INFO 2025-08-10 14:45:51,467 fcm_service 93649 140704724091648 💬 Corps: Bonjour TestWelcome, bienvenue dans la famille WOILA ! Nous sommes ravis de vous compter parmi nous.
+INFO 2025-08-10 14:45:51,467 fcm_service 93649 140704724091648 🏷️ Type: welcome
+INFO 2025-08-10 14:45:52,138 fcm_service 93649 140704724091648 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:45:52,139 fcm_service 93649 140704724091648 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:45:52,139 fcm_service 93649 140704724091648 📤 Envoi 1/1 vers token: fake_token_for_test_...
+INFO 2025-08-10 14:45:52,746 fcm_service 93649 140704724091648 📨 Réponse FCM 1/1: Status 400
+ERROR 2025-08-10 14:45:52,746 fcm_service 93649 140704724091648 ❌ FCM échoué pour token fake_token_for_test_...: 400
+ERROR 2025-08-10 14:45:52,746 fcm_service 93649 140704724091648 📝 Réponse: {
+  "error": {
+    "code": 400,
+    "message": "The registration token is not a valid FCM registration token",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "INVALID_ARGUMENT"
+      }
+    ]
+  }
+}
+
+INFO 2025-08-10 14:45:52,748 fcm_service 93649 140704724091648 Désactivé 1 token(s) FCM invalide(s)
+INFO 2025-08-10 14:45:52,748 fcm_service 93649 140704724091648 FCM envoyé: 0/1 réussis, 1 tokens invalides
+INFO 2025-08-10 14:45:52,750 fcm_service 93649 140704724091648 🎯 Résultat envoi FCM pour TestWelcome User: ❌ Échec
+INFO 2025-08-10 14:45:52,750 notification_service 93649 140704724091648 Notification de bienvenue envoyée à TestWelcome User - DB: ✅ FCM: ❌
+INFO 2025-08-10 14:48:23,906 basehttp 92863 123145361731584 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 14:48:23,958 fcm_service 92863 123145378521088 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 14:48:23,960 basehttp 92863 123145378521088 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 14:48:27,640 fcm_service 92863 123145361731584 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 14:48:27,641 basehttp 92863 123145361731584 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 14:48:29,860 basehttp 92863 123145361731584 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 14:48:29,907 fcm_service 92863 123145361731584 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 14:48:29,909 basehttp 92863 123145361731584 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 14:48:34,981 basehttp 92863 123145361731584 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:48:37,975 basehttp 92863 123145361731584 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-10 14:48:46,415 basehttp 92863 123145378521088 "GET /api/v1/referral/user-info/?user_type=driver&user_id=20 HTTP/1.1" 200 239
+INFO 2025-08-10 14:48:46,573 basehttp 92863 123145378521088 "GET /api/v1/referral/wallet/?user_type=driver&user_id=20 HTTP/1.1" 200 182
+INFO 2025-08-10 14:49:25,588 whatsapp_service 92863 123145361731584 Sending WhatsApp OTP to +237651826475
+INFO 2025-08-10 14:49:26,823 whatsapp_service 92863 123145361731584 WhatsApp API response status: 200
+INFO 2025-08-10 14:49:26,828 otp 92863 123145361731584 OTP send result for +237651826475: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjUxODI2NDc1FQIAERgSNTQxREU3ODIzNzk4OUMyMEIzAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237651826475', 'wa_id': '237651826475'}], 'messages': [{'id': 'wamid.HBgMMjM3NjUxODI2NDc1FQIAERgSNTQxREU3ODIzNzk4OUMyMEIzAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-10 14:49:26,830 basehttp 92863 123145361731584 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-10 14:49:30,688 basehttp 92863 123145361731584 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:49:42,913 basehttp 92863 123145361731584 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-10 14:49:44,478 notification_service 92863 123145361731584 Notification créée: 🎁 Code parrain utilisé ! pour boboussa Stevr
+INFO 2025-08-10 14:49:44,479 fcm_service 92863 123145361731584 🔔 Début envoi FCM pour boboussa Stevr - Type: referral_used
+INFO 2025-08-10 14:49:44,481 fcm_service 92863 123145361731584 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:49:44,483 fcm_service 92863 123145361731584 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:49:44,483 fcm_service 92863 123145361731584 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:49:44,483 fcm_service 92863 123145361731584 📋 Titre: 🎁 Bonus de parrainage reçu !
+INFO 2025-08-10 14:49:44,483 fcm_service 92863 123145361731584 💬 Corps: Félicitations ! Votre code parrain FF7B4AE2 a été utilisé. Vous avez reçu 5000.0 FCFA de bonus !
+INFO 2025-08-10 14:49:44,484 fcm_service 92863 123145361731584 🏷️ Type: referral_used
+INFO 2025-08-10 14:49:45,193 fcm_service 92863 123145361731584 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:49:45,194 fcm_service 92863 123145361731584 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:49:45,194 fcm_service 92863 123145361731584 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:49:45,819 fcm_service 92863 123145361731584 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:49:45,819 fcm_service 92863 123145361731584 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:49:45,819 fcm_service 92863 123145361731584 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:49:45,822 fcm_service 92863 123145361731584 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:49:45,823 notification_service 92863 123145361731584 Notification de parrainage envoyée à boboussa - Bonus: 5000.0 FCFA - DB: ✅ FCM: ✅
+INFO 2025-08-10 14:49:45,830 basehttp 92863 123145361731584 "POST /api/v1/auth/register/driver/ HTTP/1.1" 201 380
+INFO 2025-08-10 14:49:47,085 basehttp 92863 123145379057664 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-10 14:49:47,307 basehttp 92863 123145379057664 "GET /api/v1/profiles/driver/26/ HTTP/1.1" 200 402
+INFO 2025-08-10 14:49:47,440 fcm_service 92863 123145412636672 Token FCM créé pour Junior Steve
+INFO 2025-08-10 14:49:47,441 basehttp 92863 123145412636672 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 14:49:49,099 notification_service 92863 123145395847168 Notification créée: 🎉 Bienvenue sur WOILA ! pour Junior Steve
+INFO 2025-08-10 14:49:49,099 fcm_service 92863 123145395847168 🔔 Début envoi FCM pour Junior Steve - Type: welcome
+INFO 2025-08-10 14:49:49,101 fcm_service 92863 123145395847168 🔐 Session active pour Junior Steve: ✅ Oui
+INFO 2025-08-10 14:49:49,102 fcm_service 92863 123145395847168 ✅ 1 token(s) FCM trouvé(s) pour Junior Steve
+INFO 2025-08-10 14:49:49,102 fcm_service 92863 123145395847168 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:49:49,102 fcm_service 92863 123145395847168 📋 Titre: 🎉 Bienvenue sur WOILA !
+INFO 2025-08-10 14:49:49,102 fcm_service 92863 123145395847168 💬 Corps: Bonjour Junior, bienvenue dans la famille WOILA ! Nous sommes ravis de vous compter parmi nous.
+INFO 2025-08-10 14:49:49,102 fcm_service 92863 123145395847168 🏷️ Type: welcome
+INFO 2025-08-10 14:49:49,635 fcm_service 92863 123145395847168 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:49:49,636 fcm_service 92863 123145395847168 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:49:49,636 fcm_service 92863 123145395847168 📤 Envoi 1/1 vers token: chYY2dokQau6Q6GSNn3a...
+INFO 2025-08-10 14:49:50,231 fcm_service 92863 123145395847168 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:49:50,231 fcm_service 92863 123145395847168 ✅ FCM envoyé avec succès au token: chYY2dokQau6Q6GSNn3a...
+INFO 2025-08-10 14:49:50,231 fcm_service 92863 123145395847168 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:49:50,233 fcm_service 92863 123145395847168 🎯 Résultat envoi FCM pour Junior Steve: ✅ Succès
+INFO 2025-08-10 14:49:50,234 notification_service 92863 123145395847168 Notification de bienvenue envoyée à Junior Steve - DB: ✅ FCM: ✅
+INFO 2025-08-10 14:51:11,388 basehttp 92863 123145361731584 "POST /api/v1/documents/import/ HTTP/1.1" 201 507
+INFO 2025-08-10 14:51:12,118 basehttp 92863 123145361731584 "GET /api/v1/vehicles/configs/types/ HTTP/1.1" 200 318
+INFO 2025-08-10 14:51:12,123 basehttp 92863 123145379057664 "GET /api/v1/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-08-10 14:51:12,129 basehttp 92863 123145395847168 "GET /api/v1/vehicles/configs/models/ HTTP/1.1" 200 210
+INFO 2025-08-10 14:51:12,132 basehttp 92863 123145412636672 "GET /api/v1/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-08-10 14:51:38,612 basehttp 92863 123145361731584 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:51:41,464 basehttp 92863 123145361731584 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:51:45,893 basehttp 92863 123145361731584 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:51:47,595 basehttp 92863 123145361731584 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-10 14:51:49,258 basehttp 92863 123145379057664 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 2143
+INFO 2025-08-10 14:51:54,998 basehttp 92863 123145379057664 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:51:56,910 basehttp 92863 123145379057664 "GET /api/v1/referral/user-info/?user_type=driver&user_id=20 HTTP/1.1" 200 241
+INFO 2025-08-10 14:51:56,983 basehttp 92863 123145379057664 "GET /api/v1/referral/wallet/?user_type=driver&user_id=20 HTTP/1.1" 200 187
+INFO 2025-08-10 14:52:00,426 basehttp 92863 123145379057664 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 2143
+INFO 2025-08-10 14:52:06,744 basehttp 92863 123145361731584 "GET /api/v1/referral/user-info/?user_type=driver&user_id=20 HTTP/1.1" 200 241
+INFO 2025-08-10 14:52:06,814 basehttp 92863 123145361731584 "GET /api/v1/referral/wallet/?user_type=driver&user_id=20 HTTP/1.1" 200 187
+INFO 2025-08-10 14:52:09,629 basehttp 92863 123145379057664 "GET /api/v1/referral/wallet/?user_type=driver&user_id=20 HTTP/1.1" 200 187
+INFO 2025-08-10 14:52:13,743 basehttp 92863 123145361731584 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:52:26,635 basehttp 92863 123145361731584 "GET /api/v1/referral/user-info/?user_type=driver&user_id=20 HTTP/1.1" 200 241
+INFO 2025-08-10 14:52:26,671 basehttp 92863 123145361731584 "GET /api/v1/referral/wallet/?user_type=driver&user_id=20 HTTP/1.1" 200 187
+INFO 2025-08-10 14:52:31,039 basehttp 92863 123145361731584 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 2143
+ERROR 2025-08-10 14:52:33,603 log 92863 123145361731584 Internal Server Error: /api/v1/notifications/16/
+ERROR 2025-08-10 14:52:33,604 basehttp 92863 123145361731584 "PATCH /api/v1/notifications/16/ HTTP/1.1" 500 106
+ERROR 2025-08-10 14:52:40,146 log 92863 123145361731584 Internal Server Error: /api/v1/notifications/13/
+ERROR 2025-08-10 14:52:40,146 basehttp 92863 123145361731584 "PATCH /api/v1/notifications/13/ HTTP/1.1" 500 106
+INFO 2025-08-10 14:53:29,949 basehttp 92863 123145361731584 "GET /admin/api/generalconfig/ HTTP/1.1" 200 45451
+INFO 2025-08-10 14:53:29,984 basehttp 92863 123145361731584 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-08-10 14:53:29,989 basehttp 92863 123145379057664 "GET /static/admin/css/custom_admin.css HTTP/1.1" 404 1890
+INFO 2025-08-10 14:55:01,604 basehttp 92863 123145379057664 "POST /api/v1/vehicles/create/ HTTP/1.1" 201 1062
+INFO 2025-08-10 14:55:18,077 basehttp 92863 123145379057664 "POST /api/v1/documents/import/ HTTP/1.1" 201 529
+INFO 2025-08-10 14:55:18,165 basehttp 92863 123145379057664 "POST /api/v1/documents/import/ HTTP/1.1" 201 513
+INFO 2025-08-10 14:55:27,715 basehttp 92863 123145379057664 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 14:55:36,739 basehttp 92863 123145379057664 "GET /media/profile_pictures/driver/26/woila_profile_1754837236736.jpg HTTP/1.1" 200 67682
+INFO 2025-08-10 14:56:19,483 basehttp 92863 123145361731584 "GET /admin/api/vehicle/ HTTP/1.1" 200 46556
+INFO 2025-08-10 14:56:19,559 basehttp 92863 123145361731584 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:56:24,185 basehttp 92863 123145361731584 "GET /admin/api/vehicle/10/change/ HTTP/1.1" 200 56262
+INFO 2025-08-10 14:56:24,232 basehttp 92863 123145361731584 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:56:28,142 admin 92863 123145361731584 🚗 SAVE: Véhicule kjhkjb activé pour Junior Steve
+INFO 2025-08-10 14:56:28,146 admin 92863 123145361731584 ✅ SAVE: Notification sauvegardée en DB (ID: 18)
+INFO 2025-08-10 14:56:28,151 fcm_service 92863 123145361731584 🔔 Début envoi FCM pour Junior Steve - Type: vehicle_approved
+INFO 2025-08-10 14:56:28,152 fcm_service 92863 123145361731584 🔐 Session active pour Junior Steve: ✅ Oui
+INFO 2025-08-10 14:56:28,154 fcm_service 92863 123145361731584 ✅ 1 token(s) FCM trouvé(s) pour Junior Steve
+INFO 2025-08-10 14:56:28,155 fcm_service 92863 123145361731584 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:56:28,155 fcm_service 92863 123145361731584 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 14:56:28,155 fcm_service 92863 123145361731584 💬 Corps: Excellente nouvelle ! Votre véhicule kjhkjb a été approuvé et est maintenant actif sur la plateforme...
+INFO 2025-08-10 14:56:28,156 fcm_service 92863 123145361731584 🏷️ Type: vehicle_approved
+INFO 2025-08-10 14:56:28,807 fcm_service 92863 123145361731584 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:56:28,808 fcm_service 92863 123145361731584 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:56:28,808 fcm_service 92863 123145361731584 📤 Envoi 1/1 vers token: chYY2dokQau6Q6GSNn3a...
+INFO 2025-08-10 14:56:29,491 fcm_service 92863 123145361731584 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:56:29,492 fcm_service 92863 123145361731584 ✅ FCM envoyé avec succès au token: chYY2dokQau6Q6GSNn3a...
+INFO 2025-08-10 14:56:29,492 fcm_service 92863 123145361731584 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:56:29,495 fcm_service 92863 123145361731584 🎯 Résultat envoi FCM pour Junior Steve: ✅ Succès
+INFO 2025-08-10 14:56:29,495 admin 92863 123145361731584 ✅ SAVE: Notification FCM + DB envoyée avec succès pour kjhkjb
+INFO 2025-08-10 14:56:29,509 basehttp 92863 123145361731584 "POST /admin/api/vehicle/10/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 14:56:29,578 basehttp 92863 123145361731584 "GET /admin/api/vehicle/ HTTP/1.1" 200 47172
+INFO 2025-08-10 14:56:29,612 basehttp 92863 123145361731584 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 14:56:41,113 basehttp 92863 123145395847168 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 14:56:44,583 basehttp 92863 123145395847168 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1173
+INFO 2025-08-10 14:57:01,678 basehttp 92863 123145395847168 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 14:58:35,292 notification_service 1140 140704724091648 Notification créée: 🎁 Code parrain utilisé ! pour boboussa Stevr
+INFO 2025-08-10 14:58:35,293 fcm_service 1140 140704724091648 🔔 Début envoi FCM pour boboussa Stevr - Type: referral_used
+INFO 2025-08-10 14:58:35,295 fcm_service 1140 140704724091648 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:58:35,298 fcm_service 1140 140704724091648 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:58:35,299 fcm_service 1140 140704724091648 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:58:35,299 fcm_service 1140 140704724091648 📋 Titre: 🎁 Bonus de parrainage reçu !
+INFO 2025-08-10 14:58:35,299 fcm_service 1140 140704724091648 💬 Corps: Félicitations ! Votre code parrain FF7B4AE2 a été utilisé. Vous avez reçu 5000.0 FCFA de bonus !
+INFO 2025-08-10 14:58:35,299 fcm_service 1140 140704724091648 🏷️ Type: referral_used
+INFO 2025-08-10 14:58:36,019 fcm_service 1140 140704724091648 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:58:36,019 fcm_service 1140 140704724091648 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:58:36,019 fcm_service 1140 140704724091648 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:58:36,691 fcm_service 1140 140704724091648 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:58:36,691 fcm_service 1140 140704724091648 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:58:36,692 fcm_service 1140 140704724091648 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:58:36,694 fcm_service 1140 140704724091648 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:58:36,694 notification_service 1140 140704724091648 Notification de parrainage envoyée à boboussa - Bonus: 5000.0 FCFA - DB: ✅ FCM: ✅
+INFO 2025-08-10 14:58:36,704 notification_service 1140 140704724091648 Notification créée: 🎁 Code parrain utilisé ! pour boboussa Stevr
+INFO 2025-08-10 14:58:36,704 fcm_service 1140 140704724091648 🔔 Début envoi FCM pour boboussa Stevr - Type: referral_used
+INFO 2025-08-10 14:58:36,706 fcm_service 1140 140704724091648 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:58:36,708 fcm_service 1140 140704724091648 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:58:36,708 fcm_service 1140 140704724091648 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:58:36,708 fcm_service 1140 140704724091648 📋 Titre: 🎁 Bonus de parrainage reçu !
+INFO 2025-08-10 14:58:36,708 fcm_service 1140 140704724091648 💬 Corps: Félicitations ! Votre code parrain FF7B4AE2 a été utilisé. Vous avez reçu 5000.0 FCFA de bonus !
+INFO 2025-08-10 14:58:36,708 fcm_service 1140 140704724091648 🏷️ Type: referral_used
+INFO 2025-08-10 14:58:37,331 fcm_service 1140 140704724091648 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:58:37,332 fcm_service 1140 140704724091648 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:58:37,332 fcm_service 1140 140704724091648 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:58:37,976 fcm_service 1140 140704724091648 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:58:37,976 fcm_service 1140 140704724091648 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:58:37,977 fcm_service 1140 140704724091648 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:58:37,979 fcm_service 1140 140704724091648 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:58:37,979 notification_service 1140 140704724091648 Notification de parrainage envoyée à boboussa - Bonus: 5000.0 FCFA - DB: ✅ FCM: ✅
+INFO 2025-08-10 14:58:37,988 notification_service 1140 140704724091648 Notification créée: 🎁 Code parrain utilisé ! pour boboussa Stevr
+INFO 2025-08-10 14:58:37,988 fcm_service 1140 140704724091648 🔔 Début envoi FCM pour boboussa Stevr - Type: referral_used
+INFO 2025-08-10 14:58:37,989 fcm_service 1140 140704724091648 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 14:58:37,992 fcm_service 1140 140704724091648 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 14:58:37,992 fcm_service 1140 140704724091648 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 14:58:37,992 fcm_service 1140 140704724091648 📋 Titre: 🎁 Bonus de parrainage reçu !
+INFO 2025-08-10 14:58:37,992 fcm_service 1140 140704724091648 💬 Corps: Félicitations ! Votre code parrain FF7B4AE2 a été utilisé. Vous avez reçu 5000.0 FCFA de bonus !
+INFO 2025-08-10 14:58:37,992 fcm_service 1140 140704724091648 🏷️ Type: referral_used
+INFO 2025-08-10 14:58:38,638 fcm_service 1140 140704724091648 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 14:58:38,639 fcm_service 1140 140704724091648 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 14:58:38,639 fcm_service 1140 140704724091648 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:58:39,260 fcm_service 1140 140704724091648 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 14:58:39,260 fcm_service 1140 140704724091648 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 14:58:39,261 fcm_service 1140 140704724091648 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 14:58:39,263 fcm_service 1140 140704724091648 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 14:58:39,263 notification_service 1140 140704724091648 Notification de parrainage envoyée à boboussa - Bonus: 5000.0 FCFA - DB: ✅ FCM: ✅
+INFO 2025-08-10 14:58:58,559 autoreload 92863 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 14:59:00,218 autoreload 1421 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:59:06,551 autoreload 1421 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 14:59:08,309 autoreload 1506 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 14:59:28,236 autoreload 1506 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-10 14:59:29,823 autoreload 1728 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 15:00:37,510 notification_service 2431 140704724091648 Notification créée: 🎁 Code parrain utilisé ! pour boboussa Stevr
+INFO 2025-08-10 15:00:37,512 fcm_service 2431 140704724091648 🔔 Début envoi FCM pour boboussa Stevr - Type: referral_used
+INFO 2025-08-10 15:00:37,514 fcm_service 2431 140704724091648 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 15:00:37,516 fcm_service 2431 140704724091648 ✅ 1 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 15:00:37,516 fcm_service 2431 140704724091648 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-10 15:00:37,517 fcm_service 2431 140704724091648 📋 Titre: 🎁 Bonus de parrainage reçu !
+INFO 2025-08-10 15:00:37,517 fcm_service 2431 140704724091648 💬 Corps: Félicitations ! Votre code parrain FF7B4AE2 a été utilisé. Vous avez reçu 5000.0 FCFA de bonus !
+INFO 2025-08-10 15:00:37,517 fcm_service 2431 140704724091648 🏷️ Type: referral_used
+INFO 2025-08-10 15:00:38,119 fcm_service 2431 140704724091648 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 15:00:38,119 fcm_service 2431 140704724091648 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 15:00:38,120 fcm_service 2431 140704724091648 📤 Envoi 1/1 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 15:00:38,683 fcm_service 2431 140704724091648 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-10 15:00:38,683 fcm_service 2431 140704724091648 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 15:00:38,683 fcm_service 2431 140704724091648 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-10 15:00:38,685 fcm_service 2431 140704724091648 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 15:00:38,685 notification_service 2431 140704724091648 Notification de parrainage envoyée à boboussa - Bonus: 5000.0 FCFA - DB: ✅ FCM: ✅
+INFO 2025-08-10 15:01:02,700 basehttp 1728 123145457799168 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 15:01:02,881 fcm_service 1728 123145474588672 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 15:01:02,884 basehttp 1728 123145474588672 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:01:06,643 fcm_service 1728 123145457799168 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 15:01:06,646 basehttp 1728 123145457799168 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:01:08,066 basehttp 1728 123145457799168 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 15:01:08,112 fcm_service 1728 123145457799168 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 15:01:08,113 basehttp 1728 123145457799168 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:01:21,808 basehttp 1728 123145457799168 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 15:01:25,665 basehttp 1728 123145457799168 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+ERROR 2025-08-10 15:03:47,405 log 1728 123145457799168 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:03:47,406 basehttp 1728 123145457799168 "PATCH /api/v1/notifications/17/ HTTP/1.1" 500 106
+ERROR 2025-08-10 15:03:49,813 log 1728 123145457799168 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:03:49,813 basehttp 1728 123145457799168 "PATCH /api/v1/notifications/17/ HTTP/1.1" 500 106
+ERROR 2025-08-10 15:04:08,639 log 1728 123145457799168 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:04:08,640 basehttp 1728 123145457799168 "PATCH /api/v1/notifications/17/ HTTP/1.1" 500 106
+ERROR 2025-08-10 15:04:10,309 log 1728 123145457799168 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:04:10,309 basehttp 1728 123145457799168 "DELETE /api/v1/notifications/17/ HTTP/1.1" 500 100
+INFO 2025-08-10 15:30:32,146 basehttp 1728 123145457799168 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-10 15:30:32,258 fcm_service 1728 123145474588672 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:30:32,261 basehttp 1728 123145474588672 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:30:33,882 fcm_service 1728 123145457799168 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:30:33,883 basehttp 1728 123145457799168 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:30:35,833 basehttp 1728 123145457799168 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-10 15:30:35,879 fcm_service 1728 123145457799168 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:30:35,880 basehttp 1728 123145457799168 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:30:41,285 basehttp 1728 123145457799168 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 15:31:32,977 basehttp 1728 123145457799168 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-10 15:31:33,134 fcm_service 1728 123145457799168 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:31:33,136 basehttp 1728 123145457799168 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:31:34,689 basehttp 1728 123145457799168 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1175
+INFO 2025-08-10 15:31:34,694 fcm_service 1728 123145474588672 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:31:34,695 basehttp 1728 123145474588672 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:31:36,657 basehttp 1728 123145457799168 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-10 15:31:36,725 fcm_service 1728 123145457799168 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:31:36,726 basehttp 1728 123145457799168 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:31:39,252 basehttp 1728 123145457799168 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 15:31:43,703 basehttp 1728 123145457799168 "GET /media/profile_pictures/driver/26/woila_profile_1754837236736.jpg HTTP/1.1" 200 67682
+ERROR 2025-08-10 15:31:58,052 log 1728 123145474588672 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:31:58,053 basehttp 1728 123145474588672 "PATCH /api/v1/notifications/17/ HTTP/1.1" 500 106
+ERROR 2025-08-10 15:32:16,076 log 1728 123145457799168 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:32:16,077 basehttp 1728 123145457799168 "DELETE /api/v1/notifications/17/ HTTP/1.1" 500 100
+ERROR 2025-08-10 15:32:50,260 log 1728 123145457799168 Internal Server Error: /api/v1/notifications/18/
+ERROR 2025-08-10 15:32:50,261 basehttp 1728 123145457799168 "PATCH /api/v1/notifications/18/ HTTP/1.1" 500 106
+INFO 2025-08-10 15:35:56,261 basehttp 1728 123145457799168 "POST /api/v1/auth/login/ HTTP/1.1" 200 261
+INFO 2025-08-10 15:35:56,566 basehttp 1728 123145457799168 "GET /api/v1/profiles/driver/26/ HTTP/1.1" 200 402
+INFO 2025-08-10 15:35:56,737 fcm_service 1728 123145474588672 Token FCM créé pour Junior Steve
+INFO 2025-08-10 15:35:56,738 basehttp 1728 123145474588672 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:36:13,973 basehttp 1728 123145457799168 "GET /media/profile_pictures/driver/26/woila_profile_1754837236736.jpg HTTP/1.1" 200 67682
+INFO 2025-08-10 15:36:24,310 basehttp 1728 123145474588672 "GET /admin/api/vehicle/ HTTP/1.1" 200 46556
+INFO 2025-08-10 15:36:24,424 basehttp 1728 123145474588672 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 15:36:28,144 basehttp 1728 123145474588672 "GET /admin/api/vehicle/10/change/ HTTP/1.1" 200 56270
+INFO 2025-08-10 15:36:28,196 basehttp 1728 123145474588672 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 15:36:32,097 basehttp 1728 123145474588672 "POST /admin/api/vehicle/10/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 15:36:32,387 basehttp 1728 123145474588672 "GET /admin/api/vehicle/10/change/ HTTP/1.1" 200 56907
+INFO 2025-08-10 15:36:32,488 basehttp 1728 123145474588672 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 15:36:38,731 basehttp 1728 123145457799168 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-10 15:36:39,096 fcm_service 1728 123145457799168 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:36:39,098 basehttp 1728 123145457799168 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:36:41,442 basehttp 1728 123145457799168 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1175
+INFO 2025-08-10 15:36:41,540 fcm_service 1728 123145508167680 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:36:41,541 basehttp 1728 123145508167680 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:36:43,480 basehttp 1728 123145457799168 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-10 15:36:43,552 fcm_service 1728 123145457799168 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:36:43,554 basehttp 1728 123145457799168 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:36:46,540 basehttp 1728 123145457799168 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 15:36:47,825 basehttp 1728 123145457799168 "GET /media/profile_pictures/driver/26/woila_profile_1754837236736.jpg HTTP/1.1" 200 67682
+ERROR 2025-08-10 15:36:58,402 log 1728 123145508167680 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:36:58,404 basehttp 1728 123145508167680 "PATCH /api/v1/notifications/17/ HTTP/1.1" 500 106
+ERROR 2025-08-10 15:37:24,322 log 1728 123145457799168 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:37:24,323 basehttp 1728 123145457799168 "DELETE /api/v1/notifications/17/ HTTP/1.1" 500 100
+INFO 2025-08-10 15:37:40,257 basehttp 1728 123145457799168 "POST /api/v1/notifications/mark-all-read/ HTTP/1.1" 200 89
+INFO 2025-08-10 15:38:05,798 basehttp 1728 123145457799168 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1173
+INFO 2025-08-10 15:41:35,462 basehttp 1728 123145457799168 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-10 15:41:35,617 fcm_service 1728 123145508167680 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:41:35,620 basehttp 1728 123145508167680 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:41:37,400 basehttp 1728 123145457799168 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1173
+INFO 2025-08-10 15:41:37,438 basehttp 1728 123145508167680 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1173
+INFO 2025-08-10 15:41:37,535 fcm_service 1728 123145524957184 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:41:37,536 basehttp 1728 123145524957184 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:41:39,393 basehttp 1728 123145457799168 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 262
+INFO 2025-08-10 15:41:39,454 fcm_service 1728 123145457799168 Token FCM mis à jour pour Junior Steve
+INFO 2025-08-10 15:41:39,455 basehttp 1728 123145457799168 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:41:44,882 basehttp 1728 123145457799168 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 53
+INFO 2025-08-10 15:41:49,103 basehttp 1728 123145457799168 "GET /media/profile_pictures/driver/26/woila_profile_1754837236736.jpg HTTP/1.1" 200 67682
+ERROR 2025-08-10 15:42:13,654 log 1728 123145457799168 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:42:13,655 basehttp 1728 123145457799168 "DELETE /api/v1/notifications/17/ HTTP/1.1" 500 100
+INFO 2025-08-10 15:42:24,439 basehttp 1728 123145457799168 "GET /admin/api/notification/ HTTP/1.1" 200 50531
+INFO 2025-08-10 15:42:24,493 basehttp 1728 123145457799168 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 15:42:36,360 basehttp 1728 123145457799168 "POST /admin/api/notification/ HTTP/1.1" 200 28609
+INFO 2025-08-10 15:42:37,872 basehttp 1728 123145457799168 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-10 15:42:37,937 basehttp 1728 123145457799168 "GET /admin/api/notification/ HTTP/1.1" 200 48275
+INFO 2025-08-10 15:42:37,964 basehttp 1728 123145457799168 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 15:42:51,417 basehttp 1728 123145457799168 "GET /admin/api/notification/18/change/ HTTP/1.1" 200 43228
+INFO 2025-08-10 15:42:51,459 basehttp 1728 123145457799168 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 15:42:57,301 basehttp 1728 123145457799168 "POST /admin/api/notification/18/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 15:42:57,390 basehttp 1728 123145457799168 "GET /admin/api/notification/ HTTP/1.1" 200 48347
+INFO 2025-08-10 15:42:57,424 basehttp 1728 123145457799168 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 15:43:05,198 basehttp 1728 123145457799168 "GET /admin/api/notification/17/change/ HTTP/1.1" 200 42938
+INFO 2025-08-10 15:43:05,224 basehttp 1728 123145457799168 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 15:43:10,582 basehttp 1728 123145457799168 "POST /admin/api/notification/17/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 15:43:10,624 basehttp 1728 123145457799168 "GET /admin/api/notification/ HTTP/1.1" 200 48311
+INFO 2025-08-10 15:43:10,644 basehttp 1728 123145457799168 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 15:43:24,737 basehttp 1728 123145491378176 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1211
+ERROR 2025-08-10 15:43:26,514 log 1728 123145491378176 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:43:26,514 basehttp 1728 123145491378176 "PATCH /api/v1/notifications/17/ HTTP/1.1" 500 106
+ERROR 2025-08-10 15:43:38,730 log 1728 123145491378176 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:43:38,731 basehttp 1728 123145491378176 "PATCH /api/v1/notifications/17/ HTTP/1.1" 500 106
+ERROR 2025-08-10 15:43:43,586 log 1728 123145491378176 Internal Server Error: /api/v1/notifications/17/
+ERROR 2025-08-10 15:43:43,586 basehttp 1728 123145491378176 "PATCH /api/v1/notifications/17/ HTTP/1.1" 500 106
+ERROR 2025-08-10 15:44:04,782 log 1728 123145491378176 Internal Server Error: /api/v1/notifications/18/
+ERROR 2025-08-10 15:44:04,782 basehttp 1728 123145491378176 "PATCH /api/v1/notifications/18/ HTTP/1.1" 500 106
+INFO 2025-08-10 15:51:01,181 autoreload 31841 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 15:52:37,655 basehttp 31841 123145448230912 "POST /api/v1/auth/login/ HTTP/1.1" 200 263
+INFO 2025-08-10 15:52:38,065 basehttp 31841 123145448230912 "GET /api/v1/profiles/driver/20/ HTTP/1.1" 200 404
+INFO 2025-08-10 15:52:38,246 fcm_service 31841 123145465020416 Token FCM créé pour boboussa Stevr
+INFO 2025-08-10 15:52:38,249 basehttp 31841 123145465020416 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:52:51,710 basehttp 31841 123145448230912 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+WARNING 2025-08-10 15:59:14,303 log 31841 123145448230912 Unauthorized: /api/v1/auth/token/verify/
+WARNING 2025-08-10 15:59:14,305 basehttp 31841 123145448230912 "POST /api/v1/auth/token/verify/ HTTP/1.1" 401 55
+WARNING 2025-08-10 15:59:14,473 log 31841 123145465020416 Unauthorized: /api/v1/fcm/register/
+WARNING 2025-08-10 15:59:14,473 basehttp 31841 123145465020416 "POST /api/v1/fcm/register/ HTTP/1.1" 401 42
+INFO 2025-08-10 15:59:47,951 basehttp 31841 123145448230912 "POST /api/v1/auth/login/ HTTP/1.1" 200 263
+INFO 2025-08-10 15:59:50,620 basehttp 31841 123145448230912 "GET /api/v1/profiles/driver/20/ HTTP/1.1" 200 404
+INFO 2025-08-10 15:59:50,845 fcm_service 31841 123145465020416 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 15:59:50,846 basehttp 31841 123145465020416 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 15:59:55,570 basehttp 31841 123145448230912 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 16:00:05,689 basehttp 31841 123145448230912 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-10 16:00:14,122 basehttp 31841 123145465020416 "GET /api/v1/referral/wallet/?user_type=driver&user_id=20 HTTP/1.1" 200 185
+INFO 2025-08-10 16:00:32,057 basehttp 31841 123145448230912 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 1959
+INFO 2025-08-10 16:00:32,819 basehttp 31841 123145465020416 "GET /media/vehicles/20/temp/photo_exterieur_1_dLwgHeF.jpg HTTP/1.1" 200 15388
+INFO 2025-08-10 16:00:32,821 basehttp 31841 123145481809920 "GET /media/vehicles/20/temp/photo_exterieur_1.jpg HTTP/1.1" 200 35809
+INFO 2025-08-10 16:00:58,269 basehttp 31841 123145448230912 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 16:00:58,324 fcm_service 31841 123145465020416 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:00:58,325 basehttp 31841 123145465020416 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:01:01,766 basehttp 31841 123145448230912 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 4056
+INFO 2025-08-10 16:01:01,891 basehttp 31841 123145465020416 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 4056
+INFO 2025-08-10 16:01:01,899 fcm_service 31841 123145481809920 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:01:01,900 basehttp 31841 123145481809920 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:01:04,751 basehttp 31841 123145448230912 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 16:01:04,797 fcm_service 31841 123145448230912 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:01:04,798 basehttp 31841 123145448230912 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:01:08,210 basehttp 31841 123145448230912 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 16:01:09,567 basehttp 31841 123145448230912 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+ERROR 2025-08-10 16:01:32,527 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/22/
+ERROR 2025-08-10 16:01:32,528 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/22/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:01:37,849 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/22/
+ERROR 2025-08-10 16:01:37,850 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/22/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:01:43,994 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/21/
+ERROR 2025-08-10 16:01:43,995 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/21/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:01:50,235 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/21/
+ERROR 2025-08-10 16:01:50,236 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/21/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:02:06,013 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/20/
+ERROR 2025-08-10 16:02:06,014 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/20/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:02:11,622 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/20/
+ERROR 2025-08-10 16:02:11,623 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/20/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:02:15,440 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/20/
+ERROR 2025-08-10 16:02:15,440 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/20/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:02:24,241 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/20/
+ERROR 2025-08-10 16:02:24,242 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/20/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:02:31,694 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/20/
+ERROR 2025-08-10 16:02:31,695 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/20/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:02:37,200 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/20/
+ERROR 2025-08-10 16:02:37,200 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/20/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:02:48,893 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/20/
+ERROR 2025-08-10 16:02:48,894 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/20/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:02:57,262 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/20/
+ERROR 2025-08-10 16:02:57,263 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/20/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:03:09,808 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/20/
+ERROR 2025-08-10 16:03:09,809 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/20/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:03:16,895 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/22/
+ERROR 2025-08-10 16:03:16,895 basehttp 31841 123145448230912 "PATCH /api/v1/notifications/22/ HTTP/1.1" 500 106
+ERROR 2025-08-10 16:03:23,125 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/22/
+ERROR 2025-08-10 16:03:23,126 basehttp 31841 123145448230912 "DELETE /api/v1/notifications/22/ HTTP/1.1" 500 100
+ERROR 2025-08-10 16:03:41,244 log 31841 123145448230912 Internal Server Error: /api/v1/notifications/20/
+ERROR 2025-08-10 16:03:41,245 basehttp 31841 123145448230912 "DELETE /api/v1/notifications/20/ HTTP/1.1" 500 100
+INFO 2025-08-10 16:05:59,224 autoreload 31841 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 16:06:00,688 autoreload 42432 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 16:06:40,533 basehttp 42432 123145457430528 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 16:06:56,709 autoreload 43066 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 16:07:07,986 basehttp 43066 123145580425216 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 16:07:08,264 fcm_service 43066 123145580425216 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:07:08,266 basehttp 43066 123145580425216 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:07:11,958 basehttp 43066 123145580425216 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 4056
+INFO 2025-08-10 16:07:11,983 basehttp 43066 123145597214720 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 4056
+INFO 2025-08-10 16:07:11,989 fcm_service 43066 123145614004224 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:07:11,991 basehttp 43066 123145614004224 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:07:14,953 basehttp 43066 123145580425216 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 16:07:16,117 fcm_service 43066 123145580425216 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:07:16,119 basehttp 43066 123145580425216 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:07:19,265 basehttp 43066 123145580425216 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 16:07:30,421 basehttp 43066 123145580425216 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-10 16:07:34,821 notification_service 43066 123145597214720 Notification 22 marquée comme lue pour boboussa Stevr
+INFO 2025-08-10 16:07:34,822 basehttp 43066 123145597214720 "PATCH /api/v1/notifications/22/ HTTP/1.1" 200 60
+INFO 2025-08-10 16:07:40,143 notification_service 43066 123145597214720 Notification 21 marquée comme lue pour boboussa Stevr
+INFO 2025-08-10 16:07:40,143 basehttp 43066 123145597214720 "PATCH /api/v1/notifications/21/ HTTP/1.1" 200 60
+ERROR 2025-08-10 16:07:40,829 notification_service 43066 123145614004224 Erreur lors de la suppression de la notification 21: 'Notification' object has no attribute 'soft_delete'
+WARNING 2025-08-10 16:07:40,830 log 43066 123145614004224 Bad Request: /api/v1/notifications/21/
+WARNING 2025-08-10 16:07:40,830 basehttp 43066 123145614004224 "DELETE /api/v1/notifications/21/ HTTP/1.1" 400 67
+ERROR 2025-08-10 16:07:46,191 notification_service 43066 123145580425216 Erreur lors de la suppression de la notification 21: 'Notification' object has no attribute 'soft_delete'
+WARNING 2025-08-10 16:07:46,193 log 43066 123145580425216 Bad Request: /api/v1/notifications/21/
+WARNING 2025-08-10 16:07:46,194 basehttp 43066 123145580425216 "DELETE /api/v1/notifications/21/ HTTP/1.1" 400 67
+INFO 2025-08-10 16:09:09,705 autoreload 43066 140704724091648 /Users/boussastevejunior/Desktop/Dev/Personal/WOILA/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-10 16:09:10,308 autoreload 44442 140704724091648 Watching for file changes with StatReloader
+INFO 2025-08-10 16:11:29,119 basehttp 44442 123145479827456 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 16:12:32,991 basehttp 44442 123145479827456 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 16:12:35,046 fcm_service 44442 123145479827456 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:12:35,053 basehttp 44442 123145479827456 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:12:38,404 basehttp 44442 123145479827456 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 4054
+INFO 2025-08-10 16:12:38,416 basehttp 44442 123145496616960 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 4054
+INFO 2025-08-10 16:12:40,960 basehttp 44442 123145479827456 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 16:12:41,048 fcm_service 44442 123145479827456 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:12:41,050 basehttp 44442 123145479827456 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:12:46,087 basehttp 44442 123145479827456 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 16:12:59,268 basehttp 44442 123145479827456 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 16:12:59,574 fcm_service 44442 123145479827456 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:12:59,576 basehttp 44442 123145479827456 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:13:02,902 basehttp 44442 123145479827456 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 4054
+INFO 2025-08-10 16:13:03,039 basehttp 44442 123145496616960 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 4054
+INFO 2025-08-10 16:13:03,048 fcm_service 44442 123145513406464 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:13:03,049 basehttp 44442 123145513406464 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:13:04,903 basehttp 44442 123145479827456 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-08-10 16:13:04,960 fcm_service 44442 123145479827456 Token FCM mis à jour pour boboussa Stevr
+INFO 2025-08-10 16:13:04,961 basehttp 44442 123145479827456 "POST /api/v1/fcm/register/ HTTP/1.1" 200 93
+INFO 2025-08-10 16:13:09,186 basehttp 44442 123145479827456 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-10 16:13:09,187 basehttp 44442 123145496616960 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 140
+INFO 2025-08-10 16:13:17,890 notification_service 44442 123145496616960 Notification 22 supprimée pour boboussa Stevr
+INFO 2025-08-10 16:13:17,890 basehttp 44442 123145496616960 "DELETE /api/v1/notifications/22/ HTTP/1.1" 200 52
+INFO 2025-08-10 16:13:21,021 notification_service 44442 123145496616960 Notification 20 marquée comme lue pour boboussa Stevr
+INFO 2025-08-10 16:13:21,022 basehttp 44442 123145496616960 "PATCH /api/v1/notifications/20/ HTTP/1.1" 200 60
+INFO 2025-08-10 16:14:18,214 notification_service 44442 123145479827456 Notification 20 supprimée pour boboussa Stevr
+INFO 2025-08-10 16:14:18,215 basehttp 44442 123145479827456 "DELETE /api/v1/notifications/20/ HTTP/1.1" 200 52
+INFO 2025-08-10 16:14:21,807 notification_service 44442 123145479827456 Notification 21 supprimée pour boboussa Stevr
+INFO 2025-08-10 16:14:21,808 basehttp 44442 123145479827456 "DELETE /api/v1/notifications/21/ HTTP/1.1" 200 52
+INFO 2025-08-10 16:14:23,957 notification_service 44442 123145479827456 Notification 19 marquée comme lue pour boboussa Stevr
+INFO 2025-08-10 16:14:23,958 basehttp 44442 123145479827456 "PATCH /api/v1/notifications/19/ HTTP/1.1" 200 60
+INFO 2025-08-10 16:15:23,495 notification_service 44442 123145479827456 Notification 16 marquée comme lue pour boboussa Stevr
+INFO 2025-08-10 16:15:23,496 basehttp 44442 123145479827456 "PATCH /api/v1/notifications/16/ HTTP/1.1" 200 60
+INFO 2025-08-10 16:15:24,517 notification_service 44442 123145479827456 Notification 16 supprimée pour boboussa Stevr
+INFO 2025-08-10 16:15:24,518 basehttp 44442 123145479827456 "DELETE /api/v1/notifications/16/ HTTP/1.1" 200 52
+INFO 2025-08-10 16:15:27,672 notification_service 44442 123145479827456 Notification 19 supprimée pour boboussa Stevr
+INFO 2025-08-10 16:15:27,672 basehttp 44442 123145479827456 "DELETE /api/v1/notifications/19/ HTTP/1.1" 200 52
+INFO 2025-08-10 16:15:30,471 notification_service 44442 123145479827456 Notification 9 supprimée pour boboussa Stevr
+INFO 2025-08-10 16:15:30,471 basehttp 44442 123145479827456 "DELETE /api/v1/notifications/9/ HTTP/1.1" 200 52
+INFO 2025-08-10 16:15:41,035 basehttp 44442 123145479827456 "GET /admin/api/notification/ HTTP/1.1" 200 48115
+INFO 2025-08-10 16:15:41,116 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:15:44,478 basehttp 44442 123145479827456 "GET /admin/api/vehicle/ HTTP/1.1" 200 46556
+INFO 2025-08-10 16:15:44,506 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:15:49,732 basehttp 44442 123145479827456 "GET /admin/api/vehiclemodel/ HTTP/1.1" 200 33982
+INFO 2025-08-10 16:15:49,757 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:15:51,556 basehttp 44442 123145479827456 "GET /admin/api/generalconfig/ HTTP/1.1" 200 45451
+INFO 2025-08-10 16:15:51,580 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-08-10 16:15:51,589 basehttp 44442 123145496616960 "GET /static/admin/css/custom_admin.css HTTP/1.1" 404 1890
+INFO 2025-08-10 16:15:55,730 basehttp 44442 123145479827456 "GET /admin/api/vehiclemodel/ HTTP/1.1" 200 33982
+INFO 2025-08-10 16:15:55,759 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:15:59,933 basehttp 44442 123145479827456 "GET /admin/api/vehicle/ HTTP/1.1" 200 46556
+INFO 2025-08-10 16:15:59,958 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:16:11,105 basehttp 44442 123145479827456 "GET /admin/api/vehicletype/ HTTP/1.1" 200 34289
+INFO 2025-08-10 16:16:11,144 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:16:38,186 basehttp 44442 123145479827456 "GET /admin/api/vehiclemodel/ HTTP/1.1" 200 33982
+INFO 2025-08-10 16:16:38,209 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:16:39,831 basehttp 44442 123145479827456 "GET /admin/api/vehiclecolor/ HTTP/1.1" 200 34598
+INFO 2025-08-10 16:16:39,857 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:16:43,036 basehttp 44442 123145479827456 "GET /admin/api/notification/ HTTP/1.1" 200 48115
+INFO 2025-08-10 16:16:43,065 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:16:59,539 basehttp 44442 123145513406464 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1100
+INFO 2025-08-10 16:17:07,199 notification_service 44442 123145513406464 Notification 10 supprimée pour boboussa Stevr
+INFO 2025-08-10 16:17:07,200 basehttp 44442 123145513406464 "DELETE /api/v1/notifications/10/ HTTP/1.1" 200 52
+INFO 2025-08-10 16:17:08,768 basehttp 44442 123145479827456 "GET /admin/api/notification/ HTTP/1.1" 200 48156
+INFO 2025-08-10 16:17:08,788 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:17:26,058 basehttp 44442 123145479827456 "POST /admin/api/notification/ HTTP/1.1" 200 28136
+INFO 2025-08-10 16:17:27,490 basehttp 44442 123145479827456 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-10 16:17:27,546 basehttp 44442 123145479827456 "GET /admin/api/notification/ HTTP/1.1" 200 47730
+INFO 2025-08-10 16:17:27,568 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:17:37,325 notification_service 44442 123145513406464 Notification 13 marquée comme lue pour boboussa Stevr
+INFO 2025-08-10 16:17:37,325 basehttp 44442 123145513406464 "PATCH /api/v1/notifications/13/ HTTP/1.1" 200 60
+INFO 2025-08-10 16:17:38,709 notification_service 44442 123145513406464 Notification 13 supprimée pour boboussa Stevr
+INFO 2025-08-10 16:17:38,710 basehttp 44442 123145513406464 "DELETE /api/v1/notifications/13/ HTTP/1.1" 200 52
+INFO 2025-08-10 16:17:50,721 basehttp 44442 123145479827456 "GET /admin/api/notification/ HTTP/1.1" 200 47300
+INFO 2025-08-10 16:17:50,739 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:17:58,371 basehttp 44442 123145479827456 "GET /admin/api/vehicle/ HTTP/1.1" 200 46556
+INFO 2025-08-10 16:17:58,390 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:18:04,215 basehttp 44442 123145513406464 "GET /api/v1/profiles/driver/20/ HTTP/1.1" 200 404
+INFO 2025-08-10 16:18:11,303 basehttp 44442 123145513406464 "GET /api/v1/vehicles/?driver_id=20 HTTP/1.1" 200 1959
+INFO 2025-08-10 16:18:11,778 basehttp 44442 123145530195968 "GET /media/vehicles/20/temp/photo_exterieur_1_dLwgHeF.jpg HTTP/1.1" 200 15388
+INFO 2025-08-10 16:18:11,778 basehttp 44442 123145546985472 "GET /media/vehicles/20/temp/photo_exterieur_1.jpg HTTP/1.1" 200 35809
+INFO 2025-08-10 16:18:15,331 basehttp 44442 123145479827456 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56263
+INFO 2025-08-10 16:18:15,352 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:18:19,158 basehttp 44442 123145479827456 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 16:18:19,212 basehttp 44442 123145479827456 "GET /admin/api/vehicle/7/change/ HTTP/1.1" 200 56899
+INFO 2025-08-10 16:18:19,238 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:18:22,114 admin 44442 123145479827456 🚗 SAVE: Véhicule Gj activé pour boboussa Stevr
+INFO 2025-08-10 16:18:22,116 admin 44442 123145479827456 ✅ SAVE: Notification sauvegardée en DB (ID: 23)
+INFO 2025-08-10 16:18:22,118 fcm_service 44442 123145479827456 🔔 Début envoi FCM pour boboussa Stevr - Type: vehicle_approved
+INFO 2025-08-10 16:18:22,119 fcm_service 44442 123145479827456 🔐 Session active pour boboussa Stevr: ✅ Oui
+INFO 2025-08-10 16:18:22,121 fcm_service 44442 123145479827456 ✅ 2 token(s) FCM trouvé(s) pour boboussa Stevr
+INFO 2025-08-10 16:18:22,121 fcm_service 44442 123145479827456 🚀 Début envoi FCM vers 2 token(s)
+INFO 2025-08-10 16:18:22,121 fcm_service 44442 123145479827456 📋 Titre: 🚗✅ Véhicule approuvé !
+INFO 2025-08-10 16:18:22,121 fcm_service 44442 123145479827456 💬 Corps: Excellente nouvelle ! Votre véhicule Gj a été approuvé et est maintenant actif sur la plateforme.
+INFO 2025-08-10 16:18:22,121 fcm_service 44442 123145479827456 🏷️ Type: vehicle_approved
+INFO 2025-08-10 16:18:22,849 fcm_service 44442 123145479827456 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-10 16:18:22,850 fcm_service 44442 123145479827456 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-10 16:18:22,850 fcm_service 44442 123145479827456 📤 Envoi 1/2 vers token: fjTdXPGLTkiU9I7AoD5y...
+INFO 2025-08-10 16:18:23,601 fcm_service 44442 123145479827456 📨 Réponse FCM 1/2: Status 404
+ERROR 2025-08-10 16:18:23,602 fcm_service 44442 123145479827456 ❌ FCM échoué pour token fjTdXPGLTkiU9I7AoD5y...: 404
+ERROR 2025-08-10 16:18:23,602 fcm_service 44442 123145479827456 📝 Réponse: {
+  "error": {
+    "code": 404,
+    "message": "Requested entity was not found.",
+    "status": "NOT_FOUND",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.firebase.fcm.v1.FcmError",
+        "errorCode": "UNREGISTERED"
+      }
+    ]
+  }
+}
+
+INFO 2025-08-10 16:18:23,602 fcm_service 44442 123145479827456 📤 Envoi 2/2 vers token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 16:18:24,074 fcm_service 44442 123145479827456 📨 Réponse FCM 2/2: Status 200
+INFO 2025-08-10 16:18:24,074 fcm_service 44442 123145479827456 ✅ FCM envoyé avec succès au token: co3JxdaOQVm-SAshtOFA...
+INFO 2025-08-10 16:18:24,076 fcm_service 44442 123145479827456 Désactivé 1 token(s) FCM invalide(s)
+INFO 2025-08-10 16:18:24,076 fcm_service 44442 123145479827456 FCM envoyé: 1/2 réussis, 1 tokens invalides
+INFO 2025-08-10 16:18:24,078 fcm_service 44442 123145479827456 🎯 Résultat envoi FCM pour boboussa Stevr: ✅ Succès
+INFO 2025-08-10 16:18:24,078 admin 44442 123145479827456 ✅ SAVE: Notification FCM + DB envoyée avec succès pour Gj
+INFO 2025-08-10 16:18:24,082 basehttp 44442 123145479827456 "POST /admin/api/vehicle/7/change/ HTTP/1.1" 302 0
+INFO 2025-08-10 16:18:24,118 basehttp 44442 123145479827456 "GET /admin/api/vehicle/ HTTP/1.1" 200 47171
+INFO 2025-08-10 16:18:24,150 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-10 16:18:25,744 basehttp 44442 123145563774976 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 615
+INFO 2025-08-10 16:18:34,298 basehttp 44442 123145513943040 "POST /api/v1/order/driver/status/toggle/ HTTP/1.1" 200 109
