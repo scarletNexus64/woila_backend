@@ -127,7 +127,7 @@ def test_notification_send(driver_id=None):
         success = FCMService.send_notification(
             user=driver,
             title="🧪 Test WOILA - Configuration",
-            body=f"Bonjour {driver.name} ! Si vous recevez cette notification, la configuration FCM fonctionne parfaitement ! ✅",
+            body=f"Bonjour ! Si vous recevez cette notification, la configuration FCM fonctionne parfaitement ! ✅",
             notification_type='system',
             data={
                 'test_mode': True,

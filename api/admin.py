@@ -377,7 +377,7 @@ class UserDriverAdmin(admin.ModelAdmin):
             success = FCMService.send_notification(
                 user=driver,
                 title="🧪 Test Admin WOILA",
-                body=f"Bonjour {driver.name} ! Notification de test envoyée depuis l'admin Django. ✅",
+                body=f"Bonjour, ! Notification de test envoyée depuis l'admin Django. ✅",
                 notification_type='system',
                 data={'test_admin': True}
             )
@@ -469,7 +469,7 @@ class UserCustomerAdmin(admin.ModelAdmin):
             readonly_fields.append('password')
         return readonly_fields
     
-    actions = ['activate_customers', 'deactivate_customers']
+    actions = ['activate_customers', 'deactivate_customers', 'test_fcm_notification']
     
     def activate_customers(self, request, queryset):
         updated = queryset.update(is_active=True)
@@ -480,6 +480,65 @@ class UserCustomerAdmin(admin.ModelAdmin):
         updated = queryset.update(is_active=False)
         self.message_user(request, f'❌ {updated} client(s) désactivé(s).')
     deactivate_customers.short_description = "❌ Désactiver les clients"
+    
+    def test_fcm_notification(self, request, queryset):
+        """Envoie une notification de test aux clients sélectionnés"""
+        from api.services.fcm_service import FCMService
+        from api.models import Token
+        
+        success_count = 0
+        error_count = 0
+        no_session_count = 0
+        no_token_count = 0
+        
+        for customer in queryset:
+            # Vérifier session active
+            has_session = Token.objects.filter(
+                user_type='customer',
+                user_id=customer.id,
+                is_active=True
+            ).exists()
+            
+            if not has_session:
+                no_session_count += 1
+                continue
+                
+            # Vérifier tokens FCM
+            tokens = FCMService.get_user_tokens(customer)
+            if not tokens:
+                no_token_count += 1
+                continue
+            
+            # Envoyer notification de test
+            success = FCMService.send_notification(
+                user=customer,
+                title="🧪 Test Admin WOILA",
+                body=f"Bonjour ! Notification de test envoyée depuis l'admin Django. ✅",
+                notification_type='system',
+                data={'test_admin': True}
+            )
+            
+            if success:
+                success_count += 1
+            else:
+                error_count += 1
+        
+        # Message de résultat
+        messages = []
+        if success_count > 0:
+            messages.append(f'✅ {success_count} notification(s) envoyée(s)')
+        if error_count > 0:
+            messages.append(f'❌ {error_count} échec(s)')
+        if no_session_count > 0:
+            messages.append(f'🔐 {no_session_count} sans session active')
+        if no_token_count > 0:
+            messages.append(f'📱 {no_token_count} sans token FCM')
+            
+        if messages:
+            self.message_user(request, ' | '.join(messages))
+        else:
+            self.message_user(request, 'Aucune notification envoyée')
+    test_fcm_notification.short_description = "🧪 Test notification FCM"
 
 @admin.register(Token)
 class TokenAdmin(admin.ModelAdmin):
@@ -1583,10 +1642,16 @@ class NotificationAdmin(admin.ModelAdmin):
         """Affiche les informations de l'utilisateur"""
         if obj.user:
             user_type_icon = '🚗' if obj.user_type.model == 'userdriver' else '👥'
-            return format_html(
-                '{} <strong>{} {}</strong><br><small>{}</small>',
-                user_type_icon, obj.user.name, obj.user.surname, obj.user.phone_number
-            )
+            if obj.user_type.model == 'userdriver':
+                return format_html(
+                    '{} <strong>{} {}</strong><br><small>{}</small>',
+                    user_type_icon, obj.user.name, obj.user.surname, obj.user.phone_number
+                )
+            else:  # UserCustomer
+                return format_html(
+                    '{} <strong>Client</strong><br><small>{}</small>',
+                    user_type_icon, obj.user.phone_number
+                )
         return format_html(
             '<span style="color: red;">❌ Utilisateur supprimé (ID: {})</span>',
             obj.user_id

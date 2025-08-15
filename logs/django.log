@@ -3242,3 +3242,2158 @@ INFO 2025-08-14 21:12:19,482 basehttp 41845 123145515552768 "POST /api/v1/auth/v
 WARNING 2025-08-14 21:12:19,509 log 41845 123145515552768 Unsupported Media Type: /api/v1/auth/register/customer/
 WARNING 2025-08-14 21:12:19,509 basehttp 41845 123145515552768 "POST /api/v1/auth/register/customer/ HTTP/1.1" 415 83
 INFO 2025-08-15 11:01:15,360 autoreload 23275 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 11:18:38,136 whatsapp_service 23275 123145403817984 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 11:18:39,706 whatsapp_service 23275 123145403817984 WhatsApp API response status: 200
+INFO 2025-08-15 11:18:39,708 otp 23275 123145403817984 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSRURFNUMwRTBBQ0QyMzIxRDE3AA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSRURFNUMwRTBBQ0QyMzIxRDE3AA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 11:18:39,710 basehttp 23275 123145403817984 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+WARNING 2025-08-15 11:24:00,259 log 23275 123145403817984 Bad Request: /api/v1/auth/verify-otp/
+WARNING 2025-08-15 11:24:00,262 basehttp 23275 123145403817984 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 400 29
+INFO 2025-08-15 11:24:01,754 whatsapp_service 23275 123145403817984 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 11:24:02,835 whatsapp_service 23275 123145403817984 WhatsApp API response status: 200
+INFO 2025-08-15 11:24:02,841 otp 23275 123145403817984 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSQThDMUFERTc4QTUwOUQ4NTNDAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSQThDMUFERTc4QTUwOUQ4NTNDAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 11:24:02,847 basehttp 23275 123145403817984 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-15 11:24:34,797 basehttp 23275 123145403817984 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+WARNING 2025-08-15 11:24:34,849 log 23275 123145403817984 Unsupported Media Type: /api/v1/auth/register/customer/
+WARNING 2025-08-15 11:24:34,850 basehttp 23275 123145403817984 "POST /api/v1/auth/register/customer/ HTTP/1.1" 415 83
+WARNING 2025-08-15 11:46:57,813 log 23275 123145403817984 Bad Request: /api/v1/auth/verify-otp/
+WARNING 2025-08-15 11:46:57,816 basehttp 23275 123145403817984 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 400 47
+INFO 2025-08-15 11:48:05,522 whatsapp_service 23275 123145403817984 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 11:48:07,065 whatsapp_service 23275 123145403817984 WhatsApp API response status: 200
+INFO 2025-08-15 11:48:07,067 otp 23275 123145403817984 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSRDZGQzdENDk5N0EwRjRCNEMyAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSRDZGQzdENDk5N0EwRjRCNEMyAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 11:48:07,068 basehttp 23275 123145403817984 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-15 11:48:32,812 basehttp 23275 123145403817984 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+WARNING 2025-08-15 11:48:32,843 log 23275 123145403817984 Unsupported Media Type: /api/v1/auth/register/customer/
+WARNING 2025-08-15 11:48:32,843 basehttp 23275 123145403817984 "POST /api/v1/auth/register/customer/ HTTP/1.1" 415 83
+WARNING 2025-08-15 11:50:25,800 log 23275 123145403817984 Not Found: /
+WARNING 2025-08-15 11:50:25,801 basehttp 23275 123145403817984 "GET / HTTP/1.1" 404 3157
+WARNING 2025-08-15 11:50:26,046 log 23275 123145403817984 Not Found: /favicon.ico
+WARNING 2025-08-15 11:50:26,046 basehttp 23275 123145403817984 "GET /favicon.ico HTTP/1.1" 404 3208
+INFO 2025-08-15 11:50:31,554 basehttp 23275 123145403817984 "GET /admin/ HTTP/1.1" 200 60930
+INFO 2025-08-15 11:50:31,565 basehttp 23275 123145403817984 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:31,566 basehttp 23275 123145421144064 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:31,566 basehttp 23275 123145437933568 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:31,570 basehttp 23275 123145437933568 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:31,582 basehttp 23275 123145437933568 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:31,583 basehttp 23275 123145403817984 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:31,583 basehttp 23275 123145421144064 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:31,635 basehttp 23275 123145403817984 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:31,635 basehttp 23275 123145421144064 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:32,043 basehttp 23275 123145421144064 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:32,043 basehttp 23275 123145403817984 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-08-15 11:50:33,167 basehttp 23275 123145403817984 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-08-15 11:50:33,569 basehttp 23275 123145403817984 "GET /api/schema/ HTTP/1.1" 200 151408
+INFO 2025-08-15 11:54:58,566 whatsapp_service 23275 123145454723072 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 11:54:59,617 whatsapp_service 23275 123145454723072 WhatsApp API response status: 200
+INFO 2025-08-15 11:54:59,619 otp 23275 123145454723072 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSNjEyMDY1QkJGMjIxRkVDRDM3AA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSNjEyMDY1QkJGMjIxRkVDRDM3AA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 11:54:59,621 basehttp 23275 123145454723072 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-15 11:55:25,918 basehttp 23275 123145454723072 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+WARNING 2025-08-15 11:55:25,958 log 23275 123145454723072 Unsupported Media Type: /api/v1/auth/register/customer/
+WARNING 2025-08-15 11:55:25,958 basehttp 23275 123145454723072 "POST /api/v1/auth/register/customer/ HTTP/1.1" 415 83
+WARNING 2025-08-15 11:57:00,513 log 23275 123145454723072 Bad Request: /api/v1/auth/verify-otp/
+WARNING 2025-08-15 11:57:00,513 basehttp 23275 123145454723072 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 400 47
+INFO 2025-08-15 11:57:51,367 whatsapp_service 23275 123145454723072 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 11:57:52,673 whatsapp_service 23275 123145454723072 WhatsApp API response status: 200
+INFO 2025-08-15 11:57:52,674 otp 23275 123145454723072 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSQzdERjJFQjFCQUZEQjE0MzJFAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSQzdERjJFQjFCQUZEQjE0MzJFAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 11:57:52,674 basehttp 23275 123145454723072 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-15 11:58:05,117 basehttp 23275 123145403817984 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+WARNING 2025-08-15 11:58:05,159 log 23275 123145403817984 Unsupported Media Type: /api/v1/auth/register/customer/
+WARNING 2025-08-15 11:58:05,161 basehttp 23275 123145403817984 "POST /api/v1/auth/register/customer/ HTTP/1.1" 415 68
+INFO 2025-08-15 11:58:56,498 basehttp 23275 123145403817984 "GET /admin/ HTTP/1.1" 200 60930
+WARNING 2025-08-15 11:58:56,877 basehttp 23275 123145403817984 "GET /static/fas%20fa-car HTTP/1.1" 404 1844
+INFO 2025-08-15 11:58:59,228 basehttp 23275 123145421144064 "GET /admin/api/userdriver/ HTTP/1.1" 200 32002
+INFO 2025-08-15 11:58:59,253 basehttp 23275 123145403817984 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO 2025-08-15 11:58:59,257 basehttp 23275 123145454723072 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:58:59,257 basehttp 23275 123145471512576 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:58:59,259 basehttp 23275 123145403817984 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:58:59,259 basehttp 23275 123145437933568 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:58:59,264 basehttp 23275 123145454723072 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:58:59,264 basehttp 23275 123145488302080 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:58:59,265 basehttp 23275 123145471512576 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:58:59,266 basehttp 23275 123145403817984 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:58:59,271 basehttp 23275 123145454723072 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO 2025-08-15 11:58:59,274 basehttp 23275 123145421144064 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 11:58:59,991 basehttp 23275 123145421144064 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30138
+INFO 2025-08-15 11:59:00,016 basehttp 23275 123145421144064 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:00:03,265 basehttp 23275 123145421144064 "POST /api/v1/auth/register/customer/ HTTP/1.1" 201 179
+INFO 2025-08-15 12:00:12,292 basehttp 23275 123145421144064 "GET /admin/api/userdriver/ HTTP/1.1" 200 32002
+INFO 2025-08-15 12:00:12,314 basehttp 23275 123145421144064 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:00:13,655 basehttp 23275 123145421144064 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34123
+INFO 2025-08-15 12:00:13,675 basehttp 23275 123145421144064 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:00:19,245 basehttp 23275 123145421144064 "POST /admin/api/usercustomer/ HTTP/1.1" 200 28083
+INFO 2025-08-15 12:00:19,270 basehttp 23275 123145421144064 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-08-15 12:00:20,623 basehttp 23275 123145421144064 "POST /admin/api/usercustomer/ HTTP/1.1" 302 0
+INFO 2025-08-15 12:00:20,645 basehttp 23275 123145421144064 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30636
+INFO 2025-08-15 12:00:20,663 basehttp 23275 123145421144064 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:14:36,344 whatsapp_service 23275 123145403817984 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 12:14:37,476 whatsapp_service 23275 123145403817984 WhatsApp API response status: 200
+INFO 2025-08-15 12:14:37,478 otp 23275 123145403817984 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSNkY4Q0U3MjI0NTU2RkJCNUE0AA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSNkY4Q0U3MjI0NTU2RkJCNUE0AA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 12:14:37,479 basehttp 23275 123145403817984 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-15 12:14:47,534 basehttp 23275 123145403817984 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-15 12:14:48,504 basehttp 23275 123145403817984 "POST /api/v1/auth/register/customer/ HTTP/1.1" 201 183
+ERROR 2025-08-15 12:14:49,539 log 23275 123145403817984 Internal Server Error: /api/v1/auth/login/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/login.py", line 144, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 12:14:49,549 basehttp 23275 123145403817984 "POST /api/v1/auth/login/ HTTP/1.1" 500 106784
+INFO 2025-08-15 12:14:51,470 notification_service 23275 123145421144064 Notification créée: 🎉 Bienvenue sur WOILA ! pour Client +237658895572
+ERROR 2025-08-15 12:14:51,471 notification_service 23275 123145421144064 Erreur lors de l'envoi de notification de bienvenue: 'UserCustomer' object has no attribute 'name'
+INFO 2025-08-15 12:15:25,452 basehttp 23275 123145403817984 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34137
+INFO 2025-08-15 12:15:25,488 basehttp 23275 123145403817984 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-08-15 12:15:28,097 log 23275 123145403817984 Internal Server Error: /admin/api/notification/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'action_checkbox'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Notification has no field named 'action_checkbox'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/options.py", line 1031, in action_checkbox
+    _("Select this object for an action - {}"), str(obj)
+                                                ^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py", line 788, in __str__
+    username = self.get_user_display() if self.user else f"User ID {self.user_id}"
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py", line 784, in get_user_display
+    return f"{self.user.name} {self.user.surname}"
+              ^^^^^^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 12:15:28,107 basehttp 23275 123145403817984 "GET /admin/api/notification/ HTTP/1.1" 500 506396
+INFO 2025-08-15 12:19:06,833 autoreload 23275 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-15 12:19:06,852 autoreload 62270 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-15 12:19:07,915 autoreload 60723 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:19:37,361 autoreload 60723 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-15 12:19:37,818 autoreload 60947 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:19:42,108 autoreload 60947 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-15 12:19:42,598 autoreload 60998 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:19:43,968 autoreload 60998 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-15 12:19:44,516 autoreload 61012 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:19:47,941 autoreload 61012 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-15 12:19:48,479 autoreload 61040 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:19:53,969 autoreload 61040 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-15 12:19:54,549 autoreload 61093 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:19:56,964 autoreload 61093 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-15 12:19:57,518 autoreload 61124 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:20:14,382 autoreload 61124 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-15 12:20:14,924 autoreload 61251 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:20:46,284 autoreload 61251 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/fcm.py changed, reloading.
+INFO 2025-08-15 12:20:47,127 autoreload 61505 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:22:38,580 autoreload 62617 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:23:09,107 basehttp 62617 123145522958336 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34137
+ERROR 2025-08-15 12:23:11,875 log 62617 123145522958336 Internal Server Error: /admin/api/notification/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'action_checkbox'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Notification has no field named 'action_checkbox'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/options.py", line 1031, in action_checkbox
+    _("Select this object for an action - {}"), str(obj)
+                                                ^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py", line 788, in __str__
+    username = self.get_user_display() if self.user else f"User ID {self.user_id}"
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py", line 784, in get_user_display
+    return f"{self.user.name} {self.user.surname}"
+              ^^^^^^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 12:23:11,880 basehttp 62617 123145522958336 "GET /admin/api/notification/ HTTP/1.1" 500 506410
+INFO 2025-08-15 12:28:04,581 autoreload 62617 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-15 12:28:05,466 autoreload 64972 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:28:08,944 autoreload 64972 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-15 12:28:09,452 autoreload 65011 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:28:10,905 autoreload 65011 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-15 12:28:11,409 autoreload 65024 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:28:13,857 autoreload 65024 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-15 12:28:14,472 autoreload 65052 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:28:17,042 autoreload 65052 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-15 12:28:17,618 autoreload 65087 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:28:21,055 autoreload 65087 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-15 12:28:21,573 autoreload 65119 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:28:24,051 autoreload 65119 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-15 12:28:24,621 autoreload 65140 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:28:29,232 autoreload 65140 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-15 12:28:29,801 autoreload 65176 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:28:31,218 autoreload 65176 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-15 12:28:31,712 autoreload 65192 140704591549184 Watching for file changes with StatReloader
+ERROR 2025-08-15 12:28:40,694 log 65192 123145345892352 Internal Server Error: /admin/api/notification/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'get_user_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Notification has no field named 'get_user_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py", line 1588, in get_user_display
+    user_type_icon, obj.user.name, obj.user.surname, obj.user.phone_number
+                    ^^^^^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 12:28:40,699 basehttp 65192 123145345892352 "GET /admin/api/notification/ HTTP/1.1" 500 501366
+INFO 2025-08-15 12:28:42,614 basehttp 65192 123145345892352 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34137
+INFO 2025-08-15 12:28:43,641 basehttp 65192 123145345892352 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34137
+INFO 2025-08-15 12:28:43,660 basehttp 65192 123145345892352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-08-15 12:28:46,010 log 65192 123145345892352 Internal Server Error: /admin/api/notification/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'get_user_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: Notification has no field named 'get_user_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py", line 1588, in get_user_display
+    user_type_icon, obj.user.name, obj.user.surname, obj.user.phone_number
+                    ^^^^^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 12:28:46,014 basehttp 65192 123145345892352 "GET /admin/api/notification/ HTTP/1.1" 500 501229
+INFO 2025-08-15 12:32:52,331 autoreload 65192 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-15 12:32:53,560 autoreload 67296 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:33:07,523 basehttp 67296 123145569857536 "GET /admin/api/notification/ HTTP/1.1" 200 50023
+INFO 2025-08-15 12:33:07,542 basehttp 67296 123145569857536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:33:21,587 basehttp 67296 123145569857536 "POST /admin/api/notification/ HTTP/1.1" 200 31031
+INFO 2025-08-15 12:33:23,124 basehttp 67296 123145569857536 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-15 12:33:23,146 basehttp 67296 123145569857536 "GET /admin/api/notification/ HTTP/1.1" 200 33266
+INFO 2025-08-15 12:33:23,164 basehttp 67296 123145569857536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:34:25,022 whatsapp_service 67296 123145603436544 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 12:34:26,047 whatsapp_service 67296 123145603436544 WhatsApp API response status: 200
+INFO 2025-08-15 12:34:26,049 otp 67296 123145603436544 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSRDQ2MEM5MUQ1RUY1NTZEMDQwAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSRDQ2MEM5MUQ1RUY1NTZEMDQwAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 12:34:26,050 basehttp 67296 123145603436544 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-15 12:34:36,980 basehttp 67296 123145586647040 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+WARNING 2025-08-15 12:34:37,043 log 67296 123145586647040 Bad Request: /api/v1/auth/register/customer/
+WARNING 2025-08-15 12:34:37,043 basehttp 67296 123145586647040 "POST /api/v1/auth/register/customer/ HTTP/1.1" 400 108
+INFO 2025-08-15 12:37:03,776 basehttp 67296 123145569857536 "GET /admin/api/userdriver/ HTTP/1.1" 200 32002
+INFO 2025-08-15 12:37:03,794 basehttp 67296 123145569857536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:37:04,786 basehttp 67296 123145569857536 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34137
+INFO 2025-08-15 12:37:04,805 basehttp 67296 123145569857536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:37:10,770 basehttp 67296 123145569857536 "POST /admin/api/usercustomer/ HTTP/1.1" 200 28087
+INFO 2025-08-15 12:37:11,931 basehttp 67296 123145569857536 "POST /admin/api/usercustomer/ HTTP/1.1" 302 0
+INFO 2025-08-15 12:37:11,957 basehttp 67296 123145569857536 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30636
+INFO 2025-08-15 12:37:11,976 basehttp 67296 123145569857536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:37:17,042 whatsapp_service 67296 123145603436544 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 12:37:18,263 whatsapp_service 67296 123145603436544 WhatsApp API response status: 200
+INFO 2025-08-15 12:37:18,264 otp 67296 123145603436544 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSNTYwNjYyQTQ2RkJGQjk1ODNDAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSNTYwNjYyQTQ2RkJGQjk1ODNDAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 12:37:18,265 basehttp 67296 123145603436544 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-15 12:37:39,698 basehttp 67296 123145603436544 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-15 12:37:40,572 basehttp 67296 123145603436544 "POST /api/v1/auth/register/customer/ HTTP/1.1" 201 185
+ERROR 2025-08-15 12:37:41,493 log 67296 123145603436544 Internal Server Error: /api/v1/auth/login/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/login.py", line 144, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 12:37:41,498 basehttp 67296 123145603436544 "POST /api/v1/auth/login/ HTTP/1.1" 500 106799
+INFO 2025-08-15 12:37:43,464 notification_service 67296 123145620762624 Notification créée: 🎉 Bienvenue sur WOILA ! pour Client +237658895572
+ERROR 2025-08-15 12:37:43,464 notification_service 67296 123145620762624 Erreur lors de l'envoi de notification de bienvenue: 'UserCustomer' object has no attribute 'name'
+INFO 2025-08-15 12:41:17,524 autoreload 67296 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/login.py changed, reloading.
+INFO 2025-08-15 12:41:18,421 autoreload 71855 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:42:20,773 autoreload 71855 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-15 12:42:21,594 autoreload 72393 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:43:01,991 autoreload 72725 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:43:54,908 basehttp 72725 123145495810048 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34139
+INFO 2025-08-15 12:43:54,932 basehttp 72725 123145495810048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:44:00,572 basehttp 72725 123145495810048 "POST /admin/api/usercustomer/ HTTP/1.1" 200 28089
+INFO 2025-08-15 12:44:01,971 basehttp 72725 123145495810048 "POST /admin/api/usercustomer/ HTTP/1.1" 302 0
+INFO 2025-08-15 12:44:01,993 basehttp 72725 123145495810048 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30636
+INFO 2025-08-15 12:44:02,023 basehttp 72725 123145495810048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:44:03,377 basehttp 72725 123145495810048 "GET /admin/api/userdriver/ HTTP/1.1" 200 32002
+INFO 2025-08-15 12:44:03,399 basehttp 72725 123145495810048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:44:04,107 basehttp 72725 123145495810048 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30138
+INFO 2025-08-15 12:44:04,128 basehttp 72725 123145495810048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:46:00,875 whatsapp_service 72725 123145529389056 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 12:46:02,031 whatsapp_service 72725 123145529389056 WhatsApp API response status: 200
+INFO 2025-08-15 12:46:02,033 otp 72725 123145529389056 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSQkJEMjc0OTMyRDk5ODM5NUM3AA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSQkJEMjc0OTMyRDk5ODM5NUM3AA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 12:46:02,034 basehttp 72725 123145529389056 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-15 12:46:14,830 basehttp 72725 123145512599552 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-15 12:46:15,716 basehttp 72725 123145512599552 "POST /api/v1/auth/register/customer/ HTTP/1.1" 201 185
+INFO 2025-08-15 12:46:16,572 basehttp 72725 123145512599552 "POST /api/v1/auth/login/ HTTP/1.1" 200 183
+INFO 2025-08-15 12:46:18,577 notification_service 72725 123145529389056 Notification créée: 🎉 Bienvenue sur WOILA ! pour Client +237658895572
+INFO 2025-08-15 12:46:18,577 fcm_service 72725 123145529389056 Client +237658895572 - Type: welcome
+INFO 2025-08-15 12:46:18,578 fcm_service 72725 123145529389056 Client +237658895572: ✅ Oui
+WARNING 2025-08-15 12:46:18,579 fcm_service 72725 123145529389056 Client +237658895572
+INFO 2025-08-15 12:46:18,579 notification_service 72725 123145529389056 Notification de bienvenue envoyée à Client +237658895572 - DB: ✅ FCM: ❌
+INFO 2025-08-15 12:46:36,041 basehttp 72725 123145495810048 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34139
+INFO 2025-08-15 12:46:36,063 basehttp 72725 123145495810048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:46:41,872 basehttp 72725 123145495810048 "POST /admin/api/usercustomer/ HTTP/1.1" 200 28089
+INFO 2025-08-15 12:46:42,962 basehttp 72725 123145495810048 "POST /admin/api/usercustomer/ HTTP/1.1" 302 0
+INFO 2025-08-15 12:46:42,983 basehttp 72725 123145495810048 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30636
+INFO 2025-08-15 12:46:43,006 basehttp 72725 123145495810048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:46:44,686 basehttp 72725 123145495810048 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30138
+INFO 2025-08-15 12:46:44,705 basehttp 72725 123145495810048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:46:52,741 basehttp 72725 123145495810048 "GET /admin/api/notification/ HTTP/1.1" 200 39295
+INFO 2025-08-15 12:46:52,762 basehttp 72725 123145495810048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:47:01,509 basehttp 72725 123145495810048 "POST /admin/api/notification/ HTTP/1.1" 200 28368
+INFO 2025-08-15 12:47:02,751 basehttp 72725 123145495810048 "POST /admin/api/notification/ HTTP/1.1" 302 0
+INFO 2025-08-15 12:47:02,773 basehttp 72725 123145495810048 "GET /admin/api/notification/ HTTP/1.1" 200 33265
+INFO 2025-08-15 12:47:02,792 basehttp 72725 123145495810048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 12:47:08,857 basehttp 72725 123145495810048 "GET /admin/api/notification/ HTTP/1.1" 200 32760
+INFO 2025-08-15 12:47:08,874 basehttp 72725 123145495810048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-08-15 12:47:18,744 log 72725 123145529389056 Unauthorized: /api/v1/auth/token/verify/
+WARNING 2025-08-15 12:47:18,744 basehttp 72725 123145529389056 "POST /api/v1/auth/token/verify/ HTTP/1.1" 401 82
+INFO 2025-08-15 12:49:38,015 autoreload 72725 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/login.py changed, reloading.
+INFO 2025-08-15 12:49:38,977 autoreload 75760 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 12:59:57,917 autoreload 80190 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 13:04:14,830 whatsapp_service 80190 123145602056192 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 13:04:16,323 whatsapp_service 80190 123145602056192 WhatsApp API response status: 200
+INFO 2025-08-15 13:04:16,324 otp 80190 123145602056192 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSRTAwNTY1NTFENjFGMDhEQUNDAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSRTAwNTY1NTFENjFGMDhEQUNDAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 13:04:16,326 basehttp 80190 123145602056192 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+WARNING 2025-08-15 13:04:31,040 log 80190 123145602056192 Bad Request: /api/v1/auth/verify-otp/
+WARNING 2025-08-15 13:04:31,041 basehttp 80190 123145602056192 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 400 29
+INFO 2025-08-15 13:04:49,301 basehttp 80190 123145602056192 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-15 13:04:50,212 basehttp 80190 123145602056192 "POST /api/v1/auth/register/customer/ HTTP/1.1" 201 185
+INFO 2025-08-15 13:04:51,086 basehttp 80190 123145602056192 "POST /api/v1/auth/login/ HTTP/1.1" 200 183
+INFO 2025-08-15 13:04:53,092 notification_service 80190 123145619382272 Notification créée: 🎉 Bienvenue sur WOILA ! pour Client +237658895572
+INFO 2025-08-15 13:04:53,093 fcm_service 80190 123145619382272 Client +237658895572 - Type: welcome
+INFO 2025-08-15 13:04:53,093 fcm_service 80190 123145619382272 Client +237658895572: ✅ Oui
+WARNING 2025-08-15 13:04:53,096 fcm_service 80190 123145619382272 Client +237658895572
+INFO 2025-08-15 13:04:53,097 notification_service 80190 123145619382272 Notification de bienvenue envoyée à Client +237658895572 - DB: ✅ FCM: ❌
+INFO 2025-08-15 13:05:24,723 basehttp 80190 123145602056192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 622
+WARNING 2025-08-15 13:05:49,627 log 80190 123145602056192 Bad Request: /api/v1/auth/login/
+WARNING 2025-08-15 13:05:49,628 basehttp 80190 123145602056192 "POST /api/v1/auth/login/ HTTP/1.1" 400 75
+WARNING 2025-08-15 13:06:00,452 log 80190 123145602056192 Bad Request: /api/v1/auth/login/
+WARNING 2025-08-15 13:06:00,452 basehttp 80190 123145602056192 "POST /api/v1/auth/login/ HTTP/1.1" 400 75
+ERROR 2025-08-15 13:06:15,707 log 80190 123145602056192 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 13:06:15,709 basehttp 80190 123145602056192 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 13:06:33,042 basehttp 80190 123145602056192 "POST /api/v1/auth/login/ HTTP/1.1" 200 183
+ERROR 2025-08-15 13:22:13,627 log 80190 123145602056192 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 13:22:13,630 basehttp 80190 123145602056192 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 13:22:14,987 basehttp 80190 123145619382272 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 623
+INFO 2025-08-15 13:22:51,560 basehttp 80190 123145602056192 "POST /api/v1/auth/login/ HTTP/1.1" 200 183
+INFO 2025-08-15 13:27:09,908 basehttp 80190 123145602056192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 623
+ERROR 2025-08-15 13:33:59,163 log 80190 123145602056192 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 13:33:59,165 basehttp 80190 123145602056192 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 13:34:58,709 basehttp 80190 123145602056192 "POST /api/v1/auth/login/ HTTP/1.1" 200 183
+ERROR 2025-08-15 13:35:46,119 log 80190 123145602056192 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 13:35:46,121 basehttp 80190 123145602056192 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 13:42:05,252 basehttp 80190 123145602056192 "POST /api/v1/auth/login/ HTTP/1.1" 200 183
+INFO 2025-08-15 13:43:25,791 basehttp 80190 123145602056192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 623
+INFO 2025-08-15 13:43:51,580 notification_service 80190 123145602056192 Notification 28 marquée comme lue pour Client +237658895572
+INFO 2025-08-15 13:43:51,581 basehttp 80190 123145602056192 "PATCH /api/v1/notifications/28/ HTTP/1.1" 200 60
+INFO 2025-08-15 13:43:59,663 basehttp 80190 123145602056192 "GET /admin/api/notification/ HTTP/1.1" 200 38408
+INFO 2025-08-15 13:43:59,695 basehttp 80190 123145602056192 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 13:44:02,927 notification_service 80190 123145636171776 Notification 28 supprimée pour Client +237658895572
+INFO 2025-08-15 13:44:02,928 basehttp 80190 123145636171776 "DELETE /api/v1/notifications/28/ HTTP/1.1" 200 52
+INFO 2025-08-15 13:44:05,341 basehttp 80190 123145636171776 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-15 13:44:12,516 basehttp 80190 123145636171776 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-15 13:49:22,582 basehttp 80190 123145602056192 "GET /admin/api/referralcode/ HTTP/1.1" 200 45729
+INFO 2025-08-15 13:49:22,607 basehttp 80190 123145636171776 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:22,608 basehttp 80190 123145619382272 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:22,614 basehttp 80190 123145652961280 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:22,616 basehttp 80190 123145669750784 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:22,616 basehttp 80190 123145636171776 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:22,617 basehttp 80190 123145686540288 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:22,618 basehttp 80190 123145619382272 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:22,623 basehttp 80190 123145602056192 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 13:49:22,636 basehttp 80190 123145602056192 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:22,637 basehttp 80190 123145619382272 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:22,694 basehttp 80190 123145602056192 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:22,695 basehttp 80190 123145619382272 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-08-15 13:49:30,018 basehttp 80190 123145619382272 "POST /admin/api/referralcode/ HTTP/1.1" 200 31115
+INFO 2025-08-15 13:49:31,478 basehttp 80190 123145619382272 "POST /admin/api/referralcode/ HTTP/1.1" 302 0
+INFO 2025-08-15 13:49:31,510 basehttp 80190 123145619382272 "GET /admin/api/referralcode/ HTTP/1.1" 200 35865
+INFO 2025-08-15 13:49:31,545 basehttp 80190 123145619382272 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 13:53:11,591 basehttp 80190 123145619382272 "GET /api/v1/referral/stats/ HTTP/1.1" 200 106
+ERROR 2025-08-15 13:58:23,767 log 80190 123145703329792 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 13:58:23,769 basehttp 80190 123145703329792 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 13:58:31,117 basehttp 80190 123145703329792 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-15 13:58:31,135 basehttp 80190 123145720119296 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+ERROR 2025-08-15 13:58:36,234 log 80190 123145703329792 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 13:58:36,235 basehttp 80190 123145703329792 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 13:58:50,586 basehttp 80190 123145602056192 "GET /api/v1/referral/user-info/?user_type=customer&user_id=12 HTTP/1.1" 200 233
+INFO 2025-08-15 13:58:50,707 basehttp 80190 123145602056192 "GET /api/v1/referral/wallet/?user_type=customer&user_id=12 HTTP/1.1" 200 172
+INFO 2025-08-15 14:02:40,452 basehttp 80190 123145602056192 "POST /api/v1/auth/logout/ HTTP/1.1" 200 50
+INFO 2025-08-15 14:02:51,406 basehttp 80190 123145602056192 "POST /api/v1/auth/login/ HTTP/1.1" 200 183
+INFO 2025-08-15 14:03:04,051 basehttp 80190 123145602056192 "GET /api/v1/referral/user-info/?user_type=customer&user_id=12 HTTP/1.1" 200 233
+INFO 2025-08-15 14:03:04,085 basehttp 80190 123145602056192 "GET /api/v1/referral/wallet/?user_type=customer&user_id=12 HTTP/1.1" 200 172
+ERROR 2025-08-15 14:21:03,570 log 80190 123145602056192 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 14:21:03,572 basehttp 80190 123145602056192 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 14:21:04,937 basehttp 80190 123145602056192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-15 14:21:04,946 basehttp 80190 123145619382272 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+ERROR 2025-08-15 14:21:06,963 log 80190 123145602056192 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 14:21:06,964 basehttp 80190 123145602056192 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 14:35:47,761 basehttp 80190 123145602056192 "POST /api/v1/auth/login/ HTTP/1.1" 200 183
+INFO 2025-08-15 14:39:23,145 basehttp 80190 123145602056192 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34138
+INFO 2025-08-15 14:39:23,190 basehttp 80190 123145619382272 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO 2025-08-15 14:39:23,208 basehttp 80190 123145652961280 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-08-15 14:39:23,209 basehttp 80190 123145636171776 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-08-15 14:39:23,211 basehttp 80190 123145669750784 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-08-15 14:39:23,211 basehttp 80190 123145619382272 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-08-15 14:39:23,212 basehttp 80190 123145686540288 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-08-15 14:39:23,212 basehttp 80190 123145652961280 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-08-15 14:39:23,217 basehttp 80190 123145602056192 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 14:39:23,218 basehttp 80190 123145669750784 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2025-08-15 14:39:23,219 basehttp 80190 123145652961280 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO 2025-08-15 14:39:23,219 basehttp 80190 123145636171776 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-08-15 14:39:29,753 basehttp 80190 123145652961280 "GET /admin/api/userdriver/ HTTP/1.1" 200 32002
+INFO 2025-08-15 14:39:29,783 basehttp 80190 123145652961280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 14:39:30,600 basehttp 80190 123145652961280 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34138
+INFO 2025-08-15 14:39:30,622 basehttp 80190 123145652961280 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-08-15 14:54:10,864 log 80190 123145602056192 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 14:54:10,870 basehttp 80190 123145602056192 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 14:54:12,212 basehttp 80190 123145619382272 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-15 14:54:12,221 basehttp 80190 123145602056192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+ERROR 2025-08-15 14:54:14,257 log 80190 123145602056192 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 14:54:14,259 basehttp 80190 123145602056192 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 14:56:25,200 basehttp 80190 123145602056192 "POST /api/v1/auth/logout/ HTTP/1.1" 200 50
+INFO 2025-08-15 14:57:03,458 basehttp 80190 123145602056192 "POST /api/v1/auth/login/ HTTP/1.1" 200 183
+INFO 2025-08-15 14:59:32,520 basehttp 80190 123145602056192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-15 14:59:33,189 basehttp 80190 123145602056192 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-15 14:59:41,976 basehttp 80190 123145602056192 "GET /admin/api/notification/ HTTP/1.1" 200 38449
+INFO 2025-08-15 14:59:42,008 basehttp 80190 123145602056192 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 14:59:46,066 basehttp 80190 123145602056192 "GET /admin/api/notification/ HTTP/1.1" 200 38449
+INFO 2025-08-15 14:59:46,085 basehttp 80190 123145602056192 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-08-15 15:01:01,942 log 80190 123145636171776 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:01:01,945 basehttp 80190 123145636171776 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 15:01:03,370 basehttp 80190 123145652961280 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-15 15:01:03,379 basehttp 80190 123145636171776 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+ERROR 2025-08-15 15:01:05,403 log 80190 123145636171776 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:01:05,405 basehttp 80190 123145636171776 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+ERROR 2025-08-15 15:01:24,260 log 80190 123145636171776 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:01:24,261 basehttp 80190 123145636171776 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 15:01:25,767 basehttp 80190 123145636171776 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+INFO 2025-08-15 15:01:25,774 basehttp 80190 123145652961280 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 62
+ERROR 2025-08-15 15:01:27,872 log 80190 123145636171776 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:01:27,874 basehttp 80190 123145636171776 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 15:08:57,149 autoreload 80190 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-15 15:08:58,657 autoreload 39451 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 15:09:45,820 autoreload 39451 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-15 15:09:46,882 autoreload 39836 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-15 15:12:31,704 basehttp 39836 123145494528000 "GET /admin/api/notification/ HTTP/1.1" 200 38449
+INFO 2025-08-15 15:12:31,731 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:12:34,694 basehttp 39836 123145494528000 "GET /admin/api/userdriver/ HTTP/1.1" 200 32002
+INFO 2025-08-15 15:12:34,723 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:12:35,504 basehttp 39836 123145494528000 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34215
+INFO 2025-08-15 15:12:35,526 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:12:39,875 basehttp 39836 123145494528000 "POST /admin/api/usercustomer/ HTTP/1.1" 302 0
+INFO 2025-08-15 15:12:39,924 basehttp 39836 123145494528000 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34700
+INFO 2025-08-15 15:12:39,959 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:12:45,288 basehttp 39836 123145494528000 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 41451
+INFO 2025-08-15 15:12:45,308 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:12:52,459 basehttp 39836 123145494528000 "POST /admin/api/fcmtoken/ HTTP/1.1" 200 29295
+INFO 2025-08-15 15:12:52,485 basehttp 39836 123145494528000 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-08-15 15:12:53,759 basehttp 39836 123145494528000 "POST /admin/api/fcmtoken/ HTTP/1.1" 302 0
+INFO 2025-08-15 15:12:53,785 basehttp 39836 123145494528000 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31955
+INFO 2025-08-15 15:12:53,806 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:12:59,301 basehttp 39836 123145528107008 "POST /api/v1/auth/logout/ HTTP/1.1" 200 50
+INFO 2025-08-15 15:13:02,187 basehttp 39836 123145494528000 "GET /admin/api/userdriver/ HTTP/1.1" 200 32002
+INFO 2025-08-15 15:13:02,208 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:13:02,880 basehttp 39836 123145494528000 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34215
+INFO 2025-08-15 15:13:02,900 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:13:10,117 basehttp 39836 123145494528000 "POST /admin/api/usercustomer/ HTTP/1.1" 200 28089
+INFO 2025-08-15 15:13:11,123 basehttp 39836 123145494528000 "POST /admin/api/usercustomer/ HTTP/1.1" 302 0
+INFO 2025-08-15 15:13:11,145 basehttp 39836 123145494528000 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30636
+INFO 2025-08-15 15:13:11,165 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:13:14,475 basehttp 39836 123145494528000 "GET /admin/api/token/ HTTP/1.1" 200 61837
+INFO 2025-08-15 15:13:14,496 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:13:14,499 basehttp 39836 123145494528000 "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+INFO 2025-08-15 15:13:14,502 basehttp 39836 123145494528000 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-08-15 15:13:16,168 basehttp 39836 123145494528000 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31453
+INFO 2025-08-15 15:13:16,186 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:13:17,049 basehttp 39836 123145494528000 "GET /admin/api/token/ HTTP/1.1" 200 61837
+INFO 2025-08-15 15:13:17,071 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:13:21,382 basehttp 39836 123145494528000 "POST /admin/api/token/ HTTP/1.1" 200 36789
+INFO 2025-08-15 15:13:22,531 basehttp 39836 123145494528000 "POST /admin/api/token/ HTTP/1.1" 302 0
+INFO 2025-08-15 15:13:22,552 basehttp 39836 123145494528000 "GET /admin/api/token/ HTTP/1.1" 200 31229
+INFO 2025-08-15 15:13:22,573 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:14:46,242 whatsapp_service 39836 123145528107008 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 15:14:48,088 whatsapp_service 39836 123145528107008 WhatsApp API response status: 200
+INFO 2025-08-15 15:14:48,090 otp 39836 123145528107008 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSNjBEQzFBMjI3RTNGRTBGQUI2AA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSNjBEQzFBMjI3RTNGRTBGQUI2AA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 15:14:48,091 basehttp 39836 123145528107008 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-15 15:15:04,551 basehttp 39836 123145511317504 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-15 15:15:05,451 basehttp 39836 123145511317504 "POST /api/v1/auth/register/customer/ HTTP/1.1" 201 185
+INFO 2025-08-15 15:17:40,177 basehttp 39836 123145494528000 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34215
+INFO 2025-08-15 15:17:40,210 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:17:46,865 basehttp 39836 123145494528000 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31453
+INFO 2025-08-15 15:17:46,888 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:17:47,790 basehttp 39836 123145494528000 "GET /admin/api/token/ HTTP/1.1" 200 30730
+INFO 2025-08-15 15:17:47,813 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:17:48,628 basehttp 39836 123145494528000 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31453
+INFO 2025-08-15 15:17:48,652 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:17:50,588 basehttp 39836 123145494528000 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34215
+INFO 2025-08-15 15:17:50,612 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:17:55,160 basehttp 39836 123145494528000 "POST /admin/api/usercustomer/ HTTP/1.1" 200 28089
+INFO 2025-08-15 15:17:56,108 basehttp 39836 123145494528000 "POST /admin/api/usercustomer/ HTTP/1.1" 302 0
+INFO 2025-08-15 15:17:56,129 basehttp 39836 123145494528000 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30636
+INFO 2025-08-15 15:17:56,161 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:31:06,357 basehttp 39836 123145494528000 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30138
+INFO 2025-08-15 15:31:06,406 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:31:20,378 whatsapp_service 39836 123145528107008 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-15 15:31:21,497 whatsapp_service 39836 123145528107008 WhatsApp API response status: 200
+INFO 2025-08-15 15:31:21,498 otp 39836 123145528107008 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSMTc3Q0I5Qjk0RjU1Njg4QzRFAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSMTc3Q0I5Qjk0RjU1Njg4QzRFAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-15 15:31:21,499 basehttp 39836 123145528107008 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-15 15:31:36,399 basehttp 39836 123145528107008 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+INFO 2025-08-15 15:31:37,281 basehttp 39836 123145528107008 "POST /api/v1/auth/register/customer/ HTTP/1.1" 201 185
+INFO 2025-08-15 15:31:47,381 basehttp 39836 123145494528000 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34215
+INFO 2025-08-15 15:31:47,406 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:31:48,843 basehttp 39836 123145494528000 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31453
+INFO 2025-08-15 15:31:48,865 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:31:49,544 basehttp 39836 123145494528000 "GET /admin/api/token/ HTTP/1.1" 200 30730
+INFO 2025-08-15 15:31:49,564 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:31:50,508 basehttp 39836 123145494528000 "GET /admin/api/fcmtoken/ HTTP/1.1" 200 31453
+INFO 2025-08-15 15:31:50,528 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:32:03,559 basehttp 39836 123145528107008 "POST /api/v1/auth/login/ HTTP/1.1" 200 183
+INFO 2025-08-15 15:32:03,662 fcm_service 39836 123145528107008 Client +237658895572
+INFO 2025-08-15 15:32:03,664 basehttp 39836 123145528107008 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-08-15 15:32:05,567 notification_service 39836 123145545433088 Notification créée: 🎉 Bienvenue sur WOILA ! pour Client +237658895572
+INFO 2025-08-15 15:32:05,567 fcm_service 39836 123145545433088 Client +237658895572 - Type: welcome
+INFO 2025-08-15 15:32:05,569 fcm_service 39836 123145545433088 Client +237658895572: ✅ Oui
+INFO 2025-08-15 15:32:05,570 fcm_service 39836 123145545433088 Client +237658895572
+INFO 2025-08-15 15:32:05,570 fcm_service 39836 123145545433088 🚀 Début envoi FCM vers 1 token(s)
+INFO 2025-08-15 15:32:05,570 fcm_service 39836 123145545433088 📋 Titre: 🎉 Bienvenue sur WOILA !
+INFO 2025-08-15 15:32:05,570 fcm_service 39836 123145545433088 💬 Corps: Bonjour et bienvenue dans la famille WOILA ! Nous sommes ravis de vous compter parmi nous.
+INFO 2025-08-15 15:32:05,570 fcm_service 39836 123145545433088 🏷️ Type: welcome
+INFO 2025-08-15 15:32:06,277 fcm_service 39836 123145545433088 ✅ Token OAuth2 Firebase obtenu
+INFO 2025-08-15 15:32:06,277 fcm_service 39836 123145545433088 🔧 Project ID Firebase: woila-4be6b
+INFO 2025-08-15 15:32:06,277 fcm_service 39836 123145545433088 📤 Envoi 1/1 vers token: cM2DXgnpRgOhugtrYt_m...
+INFO 2025-08-15 15:32:06,924 fcm_service 39836 123145545433088 📨 Réponse FCM 1/1: Status 200
+INFO 2025-08-15 15:32:06,924 fcm_service 39836 123145545433088 ✅ FCM envoyé avec succès au token: cM2DXgnpRgOhugtrYt_m...
+INFO 2025-08-15 15:32:06,924 fcm_service 39836 123145545433088 FCM envoyé: 1/1 réussis, 0 tokens invalides
+INFO 2025-08-15 15:32:06,925 fcm_service 39836 123145545433088 Client +237658895572: ✅ Succès
+INFO 2025-08-15 15:32:06,925 notification_service 39836 123145545433088 Notification de bienvenue envoyée à Client +237658895572 - DB: ✅ FCM: ✅
+INFO 2025-08-15 15:32:07,065 basehttp 39836 123145528107008 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 622
+ERROR 2025-08-15 15:32:14,730 log 39836 123145494528000 Internal Server Error: /admin/api/fcmtoken/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'action_checkbox'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: FCMToken has no field named 'action_checkbox'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/options.py", line 1031, in action_checkbox
+    _("Select this object for an action - {}"), str(obj)
+                                                ^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py", line 860, in __str__
+    username = self.get_user_display() if self.user else f"User ID {self.user_id}"
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py", line 856, in get_user_display
+    return f"{self.user.name} {self.user.surname}"
+              ^^^^^^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:32:14,736 basehttp 39836 123145494528000 "GET /admin/api/fcmtoken/ HTTP/1.1" 500 506113
+INFO 2025-08-15 15:32:18,810 basehttp 39836 123145494528000 "GET /admin/api/token/ HTTP/1.1" 200 34927
+ERROR 2025-08-15 15:32:21,267 log 39836 123145494528000 Internal Server Error: /admin/api/fcmtoken/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'action_checkbox'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: FCMToken has no field named 'action_checkbox'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/options.py", line 1031, in action_checkbox
+    _("Select this object for an action - {}"), str(obj)
+                                                ^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py", line 860, in __str__
+    username = self.get_user_display() if self.user else f"User ID {self.user_id}"
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py", line 856, in get_user_display
+    return f"{self.user.name} {self.user.surname}"
+              ^^^^^^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:32:21,271 basehttp 39836 123145494528000 "GET /admin/api/fcmtoken/ HTTP/1.1" 500 506110
+INFO 2025-08-15 15:32:23,312 basehttp 39836 123145494528000 "GET /admin/api/token/ HTTP/1.1" 200 34927
+INFO 2025-08-15 15:32:24,798 basehttp 39836 123145494528000 "GET /admin/api/vehiclecolor/ HTTP/1.1" 200 34596
+INFO 2025-08-15 15:32:24,827 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-15 15:32:26,295 basehttp 39836 123145494528000 "GET /admin/api/token/ HTTP/1.1" 200 34927
+INFO 2025-08-15 15:32:26,318 basehttp 39836 123145494528000 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-08-15 15:32:28,291 log 39836 123145494528000 Internal Server Error: /admin/api/fcmtoken/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'action_checkbox'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: FCMToken has no field named 'action_checkbox'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/options.py", line 1031, in action_checkbox
+    _("Select this object for an action - {}"), str(obj)
+                                                ^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py", line 860, in __str__
+    username = self.get_user_display() if self.user else f"User ID {self.user_id}"
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py", line 856, in get_user_display
+    return f"{self.user.name} {self.user.surname}"
+              ^^^^^^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:32:28,295 basehttp 39836 123145494528000 "GET /admin/api/fcmtoken/ HTTP/1.1" 500 506110
+INFO 2025-08-15 15:33:09,201 notification_service 39836 123145528107008 Notification 29 marquée comme lue pour Client +237658895572
+INFO 2025-08-15 15:33:09,201 basehttp 39836 123145528107008 "PATCH /api/v1/notifications/29/ HTTP/1.1" 200 60
+ERROR 2025-08-15 15:33:56,028 log 39836 123145528107008 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:33:56,030 basehttp 39836 123145528107008 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 15:33:57,722 basehttp 39836 123145528107008 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 621
+INFO 2025-08-15 15:33:57,734 basehttp 39836 123145545433088 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 621
+ERROR 2025-08-15 15:33:59,776 log 39836 123145528107008 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:33:59,778 basehttp 39836 123145528107008 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+WARNING 2025-08-15 15:34:53,384 log 39836 123145528107008 Not Found: /api/v1/referral/user-info/
+WARNING 2025-08-15 15:34:53,385 basehttp 39836 123145528107008 "GET /api/v1/referral/user-info/?user_type=customer&user_id=0 HTTP/1.1" 404 35
+ERROR 2025-08-15 15:35:13,563 log 39836 123145528107008 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:35:13,564 basehttp 39836 123145528107008 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419
+INFO 2025-08-15 15:35:14,929 basehttp 39836 123145528107008 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 621
+INFO 2025-08-15 15:35:14,939 basehttp 39836 123145545433088 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 621
+ERROR 2025-08-15 15:35:16,952 log 39836 123145528107008 Internal Server Error: /api/v1/auth/token/verify/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/token.py", line 118, in post
+    'name': user.name,
+            ^^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-15 15:35:16,953 basehttp 39836 123145528107008 "POST /api/v1/auth/token/verify/ HTTP/1.1" 500 105419

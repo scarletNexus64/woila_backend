@@ -368,11 +368,11 @@ class FCMService:
         return cls.send_notification(
             user=user,
             title="🎉 Bienvenue sur WOILA !",
-            body=f"Bonjour {user.name}, bienvenue dans la famille WOILA ! Nous sommes ravis de vous compter parmi nous.",
+            body=f"Bonjour et bienvenue dans la famille WOILA ! Nous sommes ravis de vous compter parmi nous.",
             notification_type='welcome',
             data={
                 'welcome_message': True,
-                'user_name': user.name
+                'user_name': user.name if hasattr(user, 'name') else f"Client {user.phone_number}"
             }
         )
     

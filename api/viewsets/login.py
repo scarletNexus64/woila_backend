@@ -119,7 +119,7 @@ class LoginView(APIView):
                         time.sleep(2)  # Attendre 2 secondes
                         try:
                             NotificationService.send_welcome_notification(user)
-                            print(f"📤 Notification de bienvenue envoyée à {user.name} lors du premier login")
+                            print(f"📤 Notification de bienvenue envoyée à {user.name if hasattr(user, 'name') else f'Client {user.phone_number}'} lors du premier login")
                         except Exception as e:
                             print(f"❌ Erreur envoi notification bienvenue: {e}")
                     
@@ -141,8 +141,6 @@ class LoginView(APIView):
             else:
                 user_info = {
                     'id': user.id,
-                    'name': user.name,
-                    'surname': user.surname,
                     'phone_number': user.phone_number
                 }
             

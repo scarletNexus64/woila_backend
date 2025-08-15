@@ -781,7 +781,7 @@ class Notification(models.Model):
     def get_user_display(self):
         """Retourne l'affichage de l'utilisateur"""
         if self.user:
-            return f"{self.user.name} {self.user.surname}"
+            return f"{self.user.name} {self.user.surname}" if hasattr(self.user, 'name') else f"Client {self.user.phone_number}"
         return f"Utilisateur supprimé (ID: {self.user_id})"
     
     def __str__(self):
