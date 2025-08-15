@@ -141,7 +141,7 @@ class DocumentImportView(APIView):
                     user_info = f"{user.name} {user.surname} (Chauffeur)"
                 else:
                     user = UserCustomer.objects.get(id=user_id)
-                    user_info = f"{user.name} {user.surname} (Client)"
+                    user_info = f"Client {user.phone_number}"
                 
                 return Response({
                     'success': True,

@@ -157,8 +157,6 @@ class RegisterCustomerView(APIView):
                     'phone_number': '+33987654321',
                     'password': 'motdepasse456',
                     'confirm_password': 'motdepasse456',
-                    'name': 'Marie',
-                    'surname': 'Martin',
                     'referral_code': 'REF54321'
                 },
                 request_only=True,
@@ -174,8 +172,6 @@ class RegisterCustomerView(APIView):
                     'user_id': 1,
                     'user_info': {
                         'id': 1,
-                        'name': 'Marie',
-                        'surname': 'Martin',
                         'phone_number': '+33987654321'
                     }
                 },
@@ -217,10 +213,7 @@ class RegisterCustomerView(APIView):
                     # Préparer les informations du client
                     user_info = {
                         'id': customer.id,
-                        'name': customer.name,
-                        'surname': customer.surname,
-                        'phone_number': customer.phone_number,
-                        'profile_picture_url': customer.get_profile_picture_url(request) if customer.profile_picture else None
+                        'phone_number': customer.phone_number
                     }
                     return Response({
                         'success': True,

@@ -113,7 +113,7 @@ class FCMService:
                 )
                 created = True
             
-            logger.info(f"Token FCM {'créé' if created else 'mis à jour'} pour {user.name} {user.surname}")
+            logger.info(f"Token FCM {'créé' if created else 'mis à jour'} pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}")
             return fcm_token
             
         except Exception as e:
@@ -137,7 +137,7 @@ class FCMService:
             
             updated_count = fcm_tokens.update(is_active=False)
             
-            logger.info(f"Désactivé {updated_count} token(s) FCM pour {user.name} {user.surname}")
+            logger.info(f"Désactivé {updated_count} token(s) FCM pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}")
             return updated_count > 0
             
         except Exception as e:
@@ -163,7 +163,7 @@ class FCMService:
             
             tokens = [fcm_token.token for fcm_token in tokens_queryset]
             
-            logger.debug(f"Récupéré {len(tokens)} token(s) pour {user.name} {user.surname}")
+            logger.debug(f"Récupéré {len(tokens)} token(s) pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}")
             return tokens
             
         except Exception as e:
@@ -181,7 +181,7 @@ class FCMService:
         Envoie une notification à un utilisateur spécifique
         """
         try:
-            logger.info(f"🔔 Début envoi FCM pour {user.name} {user.surname} - Type: {notification_type}")
+            logger.info(f"🔔 Début envoi FCM pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number} - Type: {notification_type}")
             
             # Vérifier si l'utilisateur a une session active
             from ..models import Token
@@ -193,18 +193,18 @@ class FCMService:
                 is_active=True
             ).exists()
             
-            logger.info(f"🔐 Session active pour {user.name} {user.surname}: {'✅ Oui' if has_active_session else '❌ Non'}")
+            logger.info(f"🔐 Session active pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}: {'✅ Oui' if has_active_session else '❌ Non'}")
             
             if not has_active_session:
-                logger.warning(f"❌ Pas de session active pour {user.name} {user.surname} - Notification non envoyée")
+                logger.warning(f"❌ Pas de session active pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number} - Notification non envoyée")
                 return False
             
             tokens = cls.get_user_tokens(user)
             if not tokens:
-                logger.warning(f"❌ Aucun token FCM trouvé pour {user.name} {user.surname}")
+                logger.warning(f"❌ Aucun token FCM trouvé pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}")
                 return False
             
-            logger.info(f"✅ {len(tokens)} token(s) FCM trouvé(s) pour {user.name} {user.surname}")
+            logger.info(f"✅ {len(tokens)} token(s) FCM trouvé(s) pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}")
             
             result = cls.send_to_tokens(
                 tokens=tokens,
@@ -214,11 +214,11 @@ class FCMService:
                 notification_type=notification_type
             )
             
-            logger.info(f"🎯 Résultat envoi FCM pour {user.name} {user.surname}: {'✅ Succès' if result else '❌ Échec'}")
+            logger.info(f"🎯 Résultat envoi FCM pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}: {'✅ Succès' if result else '❌ Échec'}")
             return result
             
         except Exception as e:
-            logger.error(f"💥 Erreur lors de l'envoi de notification à {user.name} {user.surname}: {e}")
+            logger.error(f"💥 Erreur lors de l'envoi de notification à {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}: {e}")
             logger.error(traceback.format_exc())
             return False
     

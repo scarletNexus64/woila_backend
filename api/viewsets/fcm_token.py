@@ -60,7 +60,8 @@ class FCMTokenCreateView(APIView):
                 # Créer ou mettre à jour le token FCM
                 fcm_token_obj = serializer.save(user=user)
                 
-                logger.info(f"📱 Token FCM enregistré pour {user.name} {user.surname}")
+                user_display = f"{user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}"
+                logger.info(f"📱 Token FCM enregistré pour {user_display}")
                 
                 # Vérifier s'il y a une notification de bienvenue en attente
                 content_type = ContentType.objects.get_for_model(user)

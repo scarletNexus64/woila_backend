@@ -226,14 +226,13 @@ class UserDriverSerializer(serializers.ModelSerializer):
 
 class UserCustomerSerializer(serializers.ModelSerializer):
     """
-    Serializer pour les clients
+    Serializer pour les clients (simplifié : phone_number et password uniquement)
     """
     confirm_password = serializers.CharField(write_only=True, required=False)
     
     class Meta:
         model = UserCustomer
-        fields = ['id', 'phone_number', 'password', 'confirm_password', 'name', 
-                 'surname', 'created_at', 'is_active']
+        fields = ['id', 'phone_number', 'password', 'confirm_password', 'created_at', 'is_active']
         extra_kwargs = {
             'password': {'write_only': True},
             'id': {'read_only': True},
@@ -531,14 +530,11 @@ class RegisterDriverSerializer(serializers.Serializer):
 
 class RegisterCustomerSerializer(serializers.Serializer):
     """
-    Serializer pour l'inscription des clients
+    Serializer pour l'inscription des clients (simplifié : phone_number, password et referral_code optionnel)
     """
     phone_number = serializers.CharField(max_length=15)
     password = serializers.CharField(write_only=True, min_length=6)
     confirm_password = serializers.CharField(write_only=True)
-    name = serializers.CharField(max_length=100)
-    surname = serializers.CharField(max_length=100)
-    profile_picture = serializers.ImageField(required=False, allow_null=True, help_text="Photo de profil (optionnel)")
     referral_code = serializers.CharField(max_length=8, required=False, allow_blank=True, help_text="Code de parrainage (optionnel)")
     
     def validate_phone_number(self, value):
@@ -563,18 +559,12 @@ class RegisterCustomerSerializer(serializers.Serializer):
         from django.contrib.contenttypes.models import ContentType
         from .models import ReferralCode, Wallet, GeneralConfig
         
-        # Extraire le code de parrainage et la photo avant la création
+        # Extraire le code de parrainage avant la création
         referral_code = validated_data.pop('referral_code', None)
         validated_data.pop('confirm_password')
-        profile_picture = validated_data.pop('profile_picture', None)
         
         # Créer le client
         user = UserCustomer.objects.create(**validated_data)
-        
-        # Ajouter la photo de profil si fournie
-        if profile_picture:
-            user.profile_picture = profile_picture
-            user.save()
         
         # Créer le wallet du client
         user_ct = ContentType.objects.get_for_model(UserCustomer)
@@ -1004,12 +994,9 @@ class UserDriverUpdateSerializer(serializers.Serializer):
 
 class UserCustomerUpdateSerializer(serializers.Serializer):
     """
-    Serializer pour la mise à jour du profil client
+    Serializer pour la mise à jour du profil client (simplifié : phone_number uniquement)
     """
-    name = serializers.CharField(max_length=100, help_text="Prénom du client")
-    surname = serializers.CharField(max_length=100, help_text="Nom de famille du client")
     phone_number = serializers.CharField(max_length=15, help_text="Numéro de téléphone")
-    profile_picture = serializers.ImageField(required=False, allow_null=True, help_text="Nouvelle photo de profil (optionnel)")
     
     def validate_phone_number(self, value):
         """Valide l'unicité du numéro de téléphone"""
@@ -1025,15 +1012,8 @@ class UserCustomerUpdateSerializer(serializers.Serializer):
     
     def update(self, instance, validated_data):
         """Mettre à jour le profil client"""
-        profile_picture = validated_data.pop('profile_picture', None)
-        
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
-        
-        # Gérer la photo de profil séparément
-        if profile_picture is not None:
-            instance.profile_picture = profile_picture
-            
         instance.save()
         return instance
 
@@ -1075,18 +1055,17 @@ class UserDriverDetailSerializer(serializers.ModelSerializer):
 
 class UserCustomerDetailSerializer(serializers.ModelSerializer):
     """
-    Serializer détaillé pour l'affichage du profil client
+    Serializer détaillé pour l'affichage du profil client (simplifié)
     """
     documents_count = serializers.SerializerMethodField()
-    profile_picture_url = serializers.SerializerMethodField()
     
     class Meta:
         model = UserCustomer
         fields = [
-            'id', 'phone_number', 'name', 'surname', 'profile_picture_url', 'documents_count',
+            'id', 'phone_number', 'documents_count',
             'created_at', 'updated_at', 'is_active'
         ]
-        read_only_fields = ['id', 'created_at', 'updated_at', 'documents_count', 'profile_picture_url']
+        read_only_fields = ['id', 'created_at', 'updated_at', 'documents_count']
     
     def get_documents_count(self, obj):
         """Nombre de documents actifs"""
@@ -1096,11 +1075,6 @@ class UserCustomerDetailSerializer(serializers.ModelSerializer):
             user_id=obj.id,
             is_active=True
         ).count()
-    
-    def get_profile_picture_url(self, obj):
-        """URL de la photo de profil"""
-        request = self.context.get('request')
-        return obj.get_profile_picture_url(request)
 
 
 # --- Serializers spécifiques au système de parrainage ---

@@ -2657,3 +2657,588 @@ INFO 2025-08-10 16:18:24,118 basehttp 44442 123145479827456 "GET /admin/api/vehi
 INFO 2025-08-10 16:18:24,150 basehttp 44442 123145479827456 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 INFO 2025-08-10 16:18:25,744 basehttp 44442 123145563774976 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 615
 INFO 2025-08-10 16:18:34,298 basehttp 44442 123145513943040 "POST /api/v1/order/driver/status/toggle/ HTTP/1.1" 200 109
+INFO 2025-08-14 16:57:00,340 autoreload 5214 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 16:57:55,949 autoreload 5441 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 16:58:05,811 autoreload 5477 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:00:51,568 autoreload 5477 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 17:00:52,562 autoreload 6814 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:02:42,741 autoreload 6814 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-14 17:02:43,244 autoreload 7252 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:03:25,929 autoreload 7252 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-14 17:03:26,720 autoreload 7497 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:05:01,129 autoreload 7497 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-14 17:05:01,887 autoreload 8894 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:05:22,913 autoreload 8894 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-14 17:05:23,512 autoreload 9066 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:07:38,112 autoreload 9066 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 17:07:39,418 autoreload 10427 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:07:55,704 autoreload 10427 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 17:07:56,840 autoreload 10576 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:07:59,804 autoreload 10576 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 17:08:00,920 autoreload 10630 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:08:13,126 autoreload 10630 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 17:08:14,599 autoreload 10748 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:08:18,608 autoreload 10748 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 17:08:19,650 autoreload 10823 140704591549184 Watching for file changes with StatReloader
+WARNING 2025-08-14 17:09:34,412 log 10823 123145458167808 Not Found: /swagger/
+WARNING 2025-08-14 17:09:34,413 basehttp 10823 123145458167808 "GET /swagger/ HTTP/1.1" 404 3199
+WARNING 2025-08-14 17:09:34,559 log 10823 123145458167808 Not Found: /favicon.ico
+WARNING 2025-08-14 17:09:34,559 basehttp 10823 123145458167808 "GET /favicon.ico HTTP/1.1" 404 3208
+INFO 2025-08-14 17:09:46,169 basehttp 10823 123145458167808 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-08-14 17:09:47,450 basehttp 10823 123145458167808 "GET /api/schema/ HTTP/1.1" 200 151312
+INFO 2025-08-14 17:10:07,343 basehttp 10823 123145458167808 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-08-14 17:10:07,378 basehttp 10823 123145458167808 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 3387
+INFO 2025-08-14 17:10:07,467 basehttp 10823 123145525325824 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+INFO 2025-08-14 17:10:07,468 basehttp 10823 123145542115328 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2025-08-14 17:10:07,483 basehttp 10823 123145525325824 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+INFO 2025-08-14 17:10:07,485 basehttp 10823 123145542115328 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 62440
+INFO 2025-08-14 17:10:07,490 basehttp 10823 123145491746816 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 200 164202
+INFO 2025-08-14 17:10:07,496 basehttp 10823 123145508536320 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-08-14 17:10:07,502 basehttp 10823 123145458167808 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+INFO 2025-08-14 17:10:07,510 basehttp 10823 123145474957312 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+INFO 2025-08-14 17:10:07,603 basehttp 10823 123145474957312 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+WARNING 2025-08-14 17:10:07,852 basehttp 10823 123145474957312 "GET /static/fas%20fa-car HTTP/1.1" 404 1844
+INFO 2025-08-14 17:11:04,334 autoreload 12521 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 17:11:12,918 basehttp 12521 123145413545984 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-08-14 17:11:13,025 basehttp 12521 123145413545984 "GET /admin/ HTTP/1.1" 200 55777
+INFO 2025-08-14 17:11:13,115 basehttp 12521 123145413545984 "GET /static/jazzmin/js/main.js HTTP/1.1" 200 2391
+INFO 2025-08-14 17:11:13,117 basehttp 12521 123145430335488 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+INFO 2025-08-14 18:01:28,643 autoreload 12521 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 18:01:29,595 autoreload 35343 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:02:50,873 autoreload 35343 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 18:02:51,678 autoreload 36208 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:07:56,873 autoreload 36208 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 18:07:57,931 autoreload 39615 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:08:06,695 autoreload 39615 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 18:08:07,552 autoreload 39745 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:08:57,593 autoreload 39745 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-14 18:08:58,464 autoreload 40359 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:11:05,848 autoreload 40359 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 18:11:06,662 autoreload 41877 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:15:07,638 autoreload 41877 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/models.py changed, reloading.
+INFO 2025-08-14 18:15:08,540 autoreload 44769 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:15:51,727 autoreload 44769 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-14 18:15:53,188 autoreload 45262 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:16:05,223 autoreload 45262 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/serializers.py changed, reloading.
+INFO 2025-08-14 18:16:06,046 autoreload 45452 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:17:49,186 basehttp 45452 123145479528448 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-08-14 18:17:49,539 basehttp 45452 123145479528448 "GET /api/schema/ HTTP/1.1" 200 151542
+ERROR 2025-08-14 18:18:12,501 log 45452 123145479528448 Internal Server Error: /api/v1/auth/register/customer/
+ERROR 2025-08-14 18:18:12,501 basehttp 45452 123145479528448 "POST /api/v1/auth/register/customer/ HTTP/1.1" 500 74
+INFO 2025-08-14 18:19:35,449 autoreload 45452 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-14 18:19:36,293 autoreload 47993 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:19:39,846 autoreload 47993 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-14 18:19:40,400 autoreload 48058 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:19:58,274 autoreload 48058 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-14 18:19:58,770 autoreload 48296 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:20:03,271 autoreload 48296 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-14 18:20:03,874 autoreload 48373 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:20:09,415 autoreload 48373 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-14 18:20:10,053 autoreload 48465 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:20:15,540 autoreload 48465 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-14 18:20:16,102 autoreload 48540 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:20:21,586 autoreload 48540 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-14 18:20:22,146 autoreload 48630 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:20:27,619 autoreload 48630 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-14 18:20:28,192 autoreload 48716 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:20:37,782 autoreload 48716 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-14 18:20:38,360 autoreload 48860 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:20:42,865 autoreload 48860 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/notification_service.py changed, reloading.
+INFO 2025-08-14 18:20:43,416 autoreload 48937 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:21:05,437 autoreload 48937 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/services/fcm_service.py changed, reloading.
+INFO 2025-08-14 18:21:05,952 autoreload 49231 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:21:24,034 autoreload 49471 140704591549184 Watching for file changes with StatReloader
+ERROR 2025-08-14 18:23:21,413 log 49231 123145402888192 Internal Server Error: /api/v1/auth/register/customer/
+ERROR 2025-08-14 18:23:21,414 basehttp 49231 123145402888192 "POST /api/v1/auth/register/customer/ HTTP/1.1" 500 74
+INFO 2025-08-14 18:23:39,644 autoreload 50953 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:24:03,832 basehttp 50953 123145425498112 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-08-14 18:24:04,077 basehttp 50953 123145425498112 "GET /api/schema/ HTTP/1.1" 200 151542
+ERROR 2025-08-14 18:24:18,314 log 50953 123145425498112 Internal Server Error: /api/v1/auth/register/customer/
+ERROR 2025-08-14 18:24:18,314 basehttp 50953 123145425498112 "POST /api/v1/auth/register/customer/ HTTP/1.1" 500 74
+ERROR 2025-08-14 18:24:42,645 log 50953 123145425498112 Internal Server Error: /admin/api/usercustomer/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'get_name_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: UserCustomer has no field named 'get_name_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py", line 445, in get_name_display
+    obj.name, obj.surname
+    ^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-14 18:24:42,653 basehttp 50953 123145425498112 "GET /admin/api/usercustomer/ HTTP/1.1" 500 499914
+ERROR 2025-08-14 18:25:29,871 log 50953 123145425498112 Internal Server Error: /admin/api/usercustomer/
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 683, in get_field
+    return self.fields_map[field_name]
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'get_name_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 290, in lookup_field
+    f = _get_non_gfk_field(opts, name)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 330, in _get_non_gfk_field
+    field = opts.get_field(name)
+            ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/db/models/options.py", line 685, in get_field
+    raise FieldDoesNotExist(
+django.core.exceptions.FieldDoesNotExist: UserCustomer has no field named 'get_name_display'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 220, in _get_response
+    response = response.render()
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/base.py", line 45, in render
+    return super().render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/template/library.py", line 359, in render
+    _dict = self.func(*resolved_args, **resolved_kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 354, in result_list
+    "results": list(results(cl)),
+               ^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 330, in results
+    yield ResultList(None, items_for_result(cl, res, None))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 321, in __init__
+    super().__init__(*items)
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/templatetags/admin_list.py", line 219, in items_for_result
+    f, attr, value = lookup_field(field_name, result, cl.model_admin)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/venv/lib/python3.11/site-packages/django/contrib/admin/utils.py", line 299, in lookup_field
+    value = attr(obj)
+            ^^^^^^^^^
+  File "/Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py", line 445, in get_name_display
+    obj.name, obj.surname
+    ^^^^^^^^
+AttributeError: 'UserCustomer' object has no attribute 'name'
+ERROR 2025-08-14 18:25:29,875 basehttp 50953 123145425498112 "GET /admin/api/usercustomer/ HTTP/1.1" 500 500051
+INFO 2025-08-14 18:25:31,895 basehttp 50953 123145425498112 "GET /admin/ HTTP/1.1" 200 55777
+ERROR 2025-08-14 18:25:36,183 log 50953 123145425498112 Internal Server Error: /api/v1/auth/register/customer/
+ERROR 2025-08-14 18:25:36,183 basehttp 50953 123145425498112 "POST /api/v1/auth/register/customer/ HTTP/1.1" 500 74
+INFO 2025-08-14 18:27:21,569 autoreload 49471 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-14 18:27:21,894 autoreload 50953 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-14 18:27:22,512 autoreload 53523 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:27:22,717 autoreload 53530 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:27:45,947 autoreload 53530 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-14 18:27:45,951 autoreload 53523 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-14 18:27:46,821 autoreload 53824 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:27:46,822 autoreload 53823 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:29:14,246 autoreload 53823 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-14 18:29:14,253 autoreload 53824 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/admin.py changed, reloading.
+INFO 2025-08-14 18:29:14,916 autoreload 54891 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:29:14,917 autoreload 54890 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:29:57,778 basehttp 54890 123145532563456 "GET /admin/ HTTP/1.1" 200 55777
+INFO 2025-08-14 18:29:57,791 basehttp 54890 123145532563456 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:57,798 basehttp 54890 123145599721472 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:57,799 basehttp 54890 123145532563456 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:57,801 basehttp 54890 123145566142464 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:57,801 basehttp 54890 123145549352960 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:57,801 basehttp 54890 123145582931968 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:57,802 basehttp 54890 123145616510976 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:57,805 basehttp 54890 123145566142464 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:57,806 basehttp 54890 123145582931968 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:57,854 basehttp 54890 123145582931968 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:57,855 basehttp 54890 123145582931968 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-08-14 18:29:58,739 basehttp 54890 123145582931968 "GET /admin/api/userdriver/ HTTP/1.1" 200 40534
+INFO 2025-08-14 18:29:58,797 basehttp 54890 123145549352960 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-08-14 18:29:58,801 basehttp 54890 123145532563456 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-08-14 18:29:58,802 basehttp 54890 123145599721472 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-08-14 18:29:58,803 basehttp 54890 123145582931968 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 16264
+INFO 2025-08-14 18:29:58,805 basehttp 54890 123145616510976 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 18:29:58,807 basehttp 54890 123145549352960 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-08-14 18:29:58,808 basehttp 54890 123145532563456 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-08-14 18:29:58,811 basehttp 54890 123145599721472 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-08-14 18:29:58,815 basehttp 54890 123145549352960 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 2252
+INFO 2025-08-14 18:29:58,818 basehttp 54890 123145616510976 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 73170
+INFO 2025-08-14 18:29:58,820 basehttp 54890 123145566142464 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-08-14 18:29:58,824 basehttp 54890 123145616510976 "GET /media/profile_pictures/driver/26/woila_profile_1754837236736.jpg HTTP/1.1" 200 67682
+INFO 2025-08-14 18:29:58,828 basehttp 54890 123145566142464 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 200 85270
+INFO 2025-08-14 18:30:01,991 basehttp 54890 123145566142464 "GET /admin/api/usercustomer/ HTTP/1.1" 200 36827
+INFO 2025-08-14 18:30:02,009 basehttp 54890 123145566142464 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 18:30:15,267 basehttp 54890 123145566142464 "GET /admin/api/userdriver/ HTTP/1.1" 200 40534
+INFO 2025-08-14 18:30:15,286 basehttp 54890 123145566142464 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 18:30:16,717 basehttp 54890 123145566142464 "GET /admin/api/usercustomer/ HTTP/1.1" 200 36827
+INFO 2025-08-14 18:30:16,737 basehttp 54890 123145566142464 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 18:31:54,653 autoreload 54890 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/documents.py changed, reloading.
+INFO 2025-08-14 18:31:55,339 autoreload 54891 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/documents.py changed, reloading.
+INFO 2025-08-14 18:31:55,588 autoreload 56827 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:31:56,170 autoreload 56847 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:32:54,425 basehttp 56827 123145437605888 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-08-14 18:32:54,705 basehttp 56827 123145437605888 "GET /api/schema/ HTTP/1.1" 200 151542
+WARNING 2025-08-14 18:32:57,294 log 56827 123145437605888 Not Found: /swagger/
+WARNING 2025-08-14 18:32:57,295 basehttp 56827 123145437605888 "GET /swagger/ HTTP/1.1" 404 3199
+INFO 2025-08-14 18:32:59,006 basehttp 56827 123145437605888 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-08-14 18:32:59,191 basehttp 56827 123145437605888 "GET /api/schema/ HTTP/1.1" 200 151542
+INFO 2025-08-14 18:33:06,308 basehttp 56827 123145437605888 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-08-14 18:33:06,482 basehttp 56827 123145437605888 "GET /api/schema/ HTTP/1.1" 200 151542
+ERROR 2025-08-14 18:34:03,349 log 56827 123145437605888 Internal Server Error: /api/v1/auth/register/customer/
+ERROR 2025-08-14 18:34:03,350 basehttp 56827 123145437605888 "POST /api/v1/auth/register/customer/ HTTP/1.1" 500 74
+INFO 2025-08-14 18:39:36,819 autoreload 56827 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-14 18:39:36,826 autoreload 56847 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-14 18:39:37,797 autoreload 61997 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:39:37,797 autoreload 61996 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:39:49,081 autoreload 61996 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-14 18:39:49,101 autoreload 61997 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-14 18:39:49,734 autoreload 62176 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:39:49,745 autoreload 62177 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:39:55,236 autoreload 62176 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-14 18:39:55,255 autoreload 62177 140704591549184 /Users/boussastevejunior/Desktop/Dev/Personnals/woila_backend/api/viewsets/register.py changed, reloading.
+INFO 2025-08-14 18:39:55,928 autoreload 62269 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:39:55,938 autoreload 62270 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 18:40:58,253 basehttp 62269 123145382678528 "POST /api/v1/auth/register/customer/ HTTP/1.1" 201 179
+INFO 2025-08-14 18:41:37,167 basehttp 62269 123145382678528 "GET /admin/api/usercustomer/ HTTP/1.1" 200 37491
+INFO 2025-08-14 18:41:37,181 basehttp 62269 123145382678528 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,188 basehttp 62269 123145399468032 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,188 basehttp 62269 123145416257536 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,189 basehttp 62269 123145433047040 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,193 basehttp 62269 123145416257536 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,195 basehttp 62269 123145399468032 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,196 basehttp 62269 123145433047040 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,196 basehttp 62269 123145449836544 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,197 basehttp 62269 123145466626048 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,198 basehttp 62269 123145416257536 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,199 basehttp 62269 123145399468032 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,200 basehttp 62269 123145433047040 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,201 basehttp 62269 123145449836544 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,202 basehttp 62269 123145466626048 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,203 basehttp 62269 123145433047040 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,206 basehttp 62269 123145382678528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 18:41:37,209 basehttp 62269 123145382678528 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,209 basehttp 62269 123145433047040 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,244 basehttp 62269 123145433047040 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,244 basehttp 62269 123145382678528 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,276 basehttp 62269 123145382678528 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:37,277 basehttp 62269 123145433047040 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-08-14 18:41:46,487 basehttp 62269 123145433047040 "POST /admin/api/usercustomer/ HTTP/1.1" 200 28952
+INFO 2025-08-14 18:41:46,511 basehttp 62269 123145433047040 "GET /static/admin/js/cancel.js HTTP/1.1" 200 564
+INFO 2025-08-14 18:41:48,086 basehttp 62269 123145433047040 "POST /admin/api/usercustomer/ HTTP/1.1" 302 0
+INFO 2025-08-14 18:41:48,110 basehttp 62269 123145433047040 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34627
+INFO 2025-08-14 18:41:48,129 basehttp 62269 123145433047040 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 18:41:52,146 basehttp 62269 123145433047040 "GET /admin/api/notification/ HTTP/1.1" 200 48227
+INFO 2025-08-14 18:41:52,166 basehttp 62269 123145433047040 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 18:42:24,486 basehttp 62269 123145433047040 "GET /admin/api/referralcode/ HTTP/1.1" 200 41439
+INFO 2025-08-14 18:42:24,507 basehttp 62269 123145433047040 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 18:42:34,490 basehttp 62269 123145433047040 "GET /admin/api/wallet/ HTTP/1.1" 200 52777
+INFO 2025-08-14 18:42:34,513 basehttp 62269 123145433047040 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 18:42:48,393 notification_service 62269 123145433047040 Notification créée: 🎁 Code parrain utilisé ! pour Client 658895572
+INFO 2025-08-14 18:42:48,394 fcm_service 62269 123145433047040 Client 658895572 - Type: referral_used
+INFO 2025-08-14 18:42:48,395 fcm_service 62269 123145433047040 Client 658895572: ❌ Non
+WARNING 2025-08-14 18:42:48,395 fcm_service 62269 123145433047040 Client 658895572 - Notification non envoyée
+INFO 2025-08-14 18:42:48,395 notification_service 62269 123145433047040 Notification de parrainage envoyée à Client 658895572 - Bonus: 5000.0 FCFA - DB: ✅ FCM: ❌
+INFO 2025-08-14 18:42:48,397 basehttp 62269 123145433047040 "POST /api/v1/auth/register/customer/ HTTP/1.1" 201 179
+INFO 2025-08-14 18:42:52,793 basehttp 62269 123145433047040 "GET /admin/api/wallet/ HTTP/1.1" 200 52811
+INFO 2025-08-14 18:42:52,812 basehttp 62269 123145433047040 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:21:25,900 basehttp 62269 123145382678528 "GET /admin/api/usercustomer/ HTTP/1.1" 200 34793
+INFO 2025-08-14 20:21:25,945 basehttp 62269 123145382678528 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,958 basehttp 62269 123145399468032 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,960 basehttp 62269 123145449836544 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,962 basehttp 62269 123145416257536 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,966 basehttp 62269 123145449836544 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,966 basehttp 62269 123145433047040 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,967 basehttp 62269 123145399468032 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,969 basehttp 62269 123145466626048 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,971 basehttp 62269 123145416257536 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,974 basehttp 62269 123145399468032 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,980 basehttp 62269 123145433047040 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,980 basehttp 62269 123145449836544 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,984 basehttp 62269 123145382678528 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:21:25,986 basehttp 62269 123145466626048 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,986 basehttp 62269 123145399468032 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:25,987 basehttp 62269 123145416257536 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:26,006 basehttp 62269 123145416257536 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:26,024 basehttp 62269 123145399468032 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:26,025 basehttp 62269 123145466626048 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:26,025 basehttp 62269 123145416257536 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:26,053 basehttp 62269 123145416257536 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:26,053 basehttp 62269 123145466626048 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-08-14 20:21:32,942 basehttp 62269 123145466626048 "POST /admin/api/usercustomer/ HTTP/1.1" 302 0
+INFO 2025-08-14 20:21:32,975 basehttp 62269 123145466626048 "GET /admin/api/usercustomer/ HTTP/1.1" 200 35288
+INFO 2025-08-14 20:21:33,003 basehttp 62269 123145466626048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:22:56,591 basehttp 62269 123145466626048 "POST /admin/api/usercustomer/ HTTP/1.1" 200 28296
+INFO 2025-08-14 20:22:56,614 basehttp 62269 123145466626048 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-08-14 20:22:58,298 basehttp 62269 123145466626048 "POST /admin/api/usercustomer/ HTTP/1.1" 302 0
+INFO 2025-08-14 20:22:58,320 basehttp 62269 123145466626048 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30637
+INFO 2025-08-14 20:22:58,339 basehttp 62269 123145466626048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:23:00,823 basehttp 62269 123145466626048 "GET /admin/api/userdriver/ HTTP/1.1" 200 40534
+INFO 2025-08-14 20:23:00,848 basehttp 62269 123145416257536 "GET /media/profile_pictures/driver/26/woila_profile_1754837236736.jpg HTTP/1.1" 304 0
+INFO 2025-08-14 20:23:00,850 basehttp 62269 123145466626048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:23:00,853 basehttp 62269 123145466626048 "GET /media/profile_pictures/driver/20/woila_profile_1754831932717.jpg HTTP/1.1" 304 0
+INFO 2025-08-14 20:23:10,723 basehttp 62269 123145466626048 "POST /admin/api/userdriver/ HTTP/1.1" 200 29263
+INFO 2025-08-14 20:23:12,119 basehttp 62269 123145466626048 "POST /admin/api/userdriver/ HTTP/1.1" 302 0
+INFO 2025-08-14 20:23:12,157 basehttp 62269 123145466626048 "GET /admin/api/userdriver/ HTTP/1.1" 200 32504
+INFO 2025-08-14 20:23:12,182 basehttp 62269 123145466626048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:23:13,356 basehttp 62269 123145466626048 "GET /admin/api/document/ HTTP/1.1" 200 43009
+INFO 2025-08-14 20:23:13,377 basehttp 62269 123145466626048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:23:13,380 basehttp 62269 123145416257536 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-08-14 20:23:17,551 basehttp 62269 123145416257536 "POST /admin/api/document/ HTTP/1.1" 200 29526
+INFO 2025-08-14 20:23:18,731 basehttp 62269 123145416257536 "POST /admin/api/document/ HTTP/1.1" 302 0
+INFO 2025-08-14 20:23:18,752 basehttp 62269 123145416257536 "GET /admin/api/document/ HTTP/1.1" 200 31877
+INFO 2025-08-14 20:23:18,768 basehttp 62269 123145416257536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:23:20,010 basehttp 62269 123145416257536 "GET /admin/api/userdriver/ HTTP/1.1" 200 32002
+INFO 2025-08-14 20:23:20,027 basehttp 62269 123145416257536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:23:20,987 basehttp 62269 123145416257536 "GET /admin/api/usercustomer/ HTTP/1.1" 200 30138
+INFO 2025-08-14 20:23:21,011 basehttp 62269 123145416257536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:26:13,430 basehttp 62269 123145416257536 "GET /admin/api/token/ HTTP/1.1" 200 54912
+INFO 2025-08-14 20:26:13,459 basehttp 62269 123145416257536 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:26:13,460 basehttp 62269 123145466626048 "GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+INFO 2025-08-14 20:26:16,766 basehttp 62269 123145466626048 "GET /admin/api/notification/ HTTP/1.1" 200 49098
+INFO 2025-08-14 20:26:16,785 basehttp 62269 123145466626048 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-08-14 20:26:19,326 basehttp 62269 123145466626048 "GET /admin/api/notificationconfig/ HTTP/1.1" 200 30343
+INFO 2025-08-14 20:35:43,404 autoreload 36770 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 20:44:49,067 autoreload 40714 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 20:44:57,897 autoreload 40774 140704591549184 Watching for file changes with StatReloader
+INFO 2025-08-14 20:47:30,353 autoreload 41845 140704591549184 Watching for file changes with StatReloader
+WARNING 2025-08-14 20:58:47,355 log 41845 123145515552768 Method Not Allowed: /api/v1/auth/generate-otp/
+WARNING 2025-08-14 20:58:47,365 basehttp 41845 123145515552768 "GET /api/v1/auth/generate-otp/ HTTP/1.1" 405 40
+INFO 2025-08-14 21:10:51,350 whatsapp_service 41845 123145515552768 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-14 21:10:53,321 whatsapp_service 41845 123145515552768 WhatsApp API response status: 200
+INFO 2025-08-14 21:10:53,324 otp 41845 123145515552768 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSMjc3ODRCRkMwRDg5OURDODRDAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSMjc3ODRCRkMwRDg5OURDODRDAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-14 21:10:53,326 basehttp 41845 123145515552768 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-14 21:11:13,731 basehttp 41845 123145515552768 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+WARNING 2025-08-14 21:11:13,790 log 41845 123145515552768 Unsupported Media Type: /api/v1/auth/register/customer/
+WARNING 2025-08-14 21:11:13,791 basehttp 41845 123145515552768 "POST /api/v1/auth/register/customer/ HTTP/1.1" 415 83
+WARNING 2025-08-14 21:11:21,163 log 41845 123145515552768 Bad Request: /api/v1/auth/verify-otp/
+WARNING 2025-08-14 21:11:21,163 basehttp 41845 123145515552768 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 400 47
+INFO 2025-08-14 21:12:05,614 whatsapp_service 41845 123145515552768 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-14 21:12:06,459 whatsapp_service 41845 123145532878848 Sending WhatsApp OTP to +237658895572
+INFO 2025-08-14 21:12:06,719 whatsapp_service 41845 123145515552768 WhatsApp API response status: 200
+INFO 2025-08-14 21:12:06,721 otp 41845 123145515552768 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSMkQ4MjQ3Mjk0MUUyNzc3MjRBAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSMkQ4MjQ3Mjk0MUUyNzc3MjRBAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-14 21:12:06,722 basehttp 41845 123145515552768 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-14 21:12:07,396 whatsapp_service 41845 123145532878848 WhatsApp API response status: 200
+INFO 2025-08-14 21:12:07,398 otp 41845 123145532878848 OTP send result for +237658895572: {'success': True, 'message': 'WhatsApp message accepted', 'message_id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSRDZEM0M1OEQxRTkzNTBFMjlBAA==', 'data': {'messaging_product': 'whatsapp', 'contacts': [{'input': '+237658895572', 'wa_id': '237658895572'}], 'messages': [{'id': 'wamid.HBgMMjM3NjU4ODk1NTcyFQIAERgSRDZEM0M1OEQxRTkzNTBFMjlBAA==', 'message_status': 'accepted'}]}}
+INFO 2025-08-14 21:12:07,399 basehttp 41845 123145532878848 "POST /api/v1/auth/generate-otp/ HTTP/1.1" 200 132
+INFO 2025-08-14 21:12:19,482 basehttp 41845 123145515552768 "POST /api/v1/auth/verify-otp/ HTTP/1.1" 200 65
+WARNING 2025-08-14 21:12:19,509 log 41845 123145515552768 Unsupported Media Type: /api/v1/auth/register/customer/
+WARNING 2025-08-14 21:12:19,509 basehttp 41845 123145515552768 "POST /api/v1/auth/register/customer/ HTTP/1.1" 415 83
+INFO 2025-08-15 11:01:15,360 autoreload 23275 140704591549184 Watching for file changes with StatReloader

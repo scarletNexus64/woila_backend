@@ -14,6 +14,14 @@ class NotificationService:
     """Unified service for sending notifications via SMS or WhatsApp"""
     
     @classmethod
+    def _get_user_display_name(cls, user):
+        """Retourne le nom d'affichage d'un utilisateur selon son type"""
+        if hasattr(user, 'name') and hasattr(user, 'surname'):
+            return f"{user.name} {user.surname}"
+        else:
+            return f"Client {user.phone_number}"
+    
+    @classmethod
     def send_otp(cls, recipient, otp_code, message=None, channel=None):
         """
         Send OTP code via the configured notification channel
@@ -134,7 +142,7 @@ Il expire dans 5 minutes."""
                 metadata=metadata or {}
             )
             
-            logger.info(f"Notification créée: {title} pour {user.name} {user.surname}")
+            logger.info(f"Notification créée: {title} pour {cls._get_user_display_name(user)}")
             return notification
             
         except Exception as e:
@@ -156,7 +164,8 @@ Il expire dans 5 minutes."""
             user_type = "chauffeur" if isinstance(user, UserDriver) else "client"
             
             title = f"🎉 Bienvenue sur WOILA !"
-            content = f"""Bonjour {user.name},
+            user_name = user.name if hasattr(user, 'name') else "Cher utilisateur"
+            content = f"""Bonjour {user_name},
 
 Bienvenue dans la famille WOILA ! Nous sommes ravis de vous accueillir en tant que {user_type}.
 
@@ -182,7 +191,7 @@ L'équipe WOILA vous souhaite la bienvenue ! 🤝"""
                 # Envoyer également via FCM (notification push)
                 fcm_success = FCMService.send_welcome_notification(user)
                 
-                logger.info(f"Notification de bienvenue envoyée à {user.name} {user.surname} - DB: ✅ FCM: {'✅' if fcm_success else '❌'}")
+                logger.info(f"Notification de bienvenue envoyée à {cls._get_user_display_name(user)} - DB: ✅ FCM: {'✅' if fcm_success else '❌'}")
                 return True
             
             return False
@@ -218,9 +227,11 @@ L'équipe WOILA vous souhaite la bienvenue ! 🤝"""
             
             # Créer la notification
             title = f"🎁 Code parrain utilisé !"
-            content = f"""Excellente nouvelle {referrer_user.name} !
+            referrer_name = referrer_user.name if hasattr(referrer_user, 'name') else "Cher utilisateur"
+            referred_name = cls._get_user_display_name(referred_user)
+            content = f"""Excellente nouvelle {referrer_name} !
 
-Votre code parrain "{referral_code}" a été utilisé par {referred_user.name} {referred_user.surname}.
+Votre code parrain "{referral_code}" a été utilisé par {referred_name}.
 
 💰 Vous avez reçu un bonus de {bonus_amount} FCFA dans votre portefeuille !
 
@@ -231,7 +242,7 @@ Merci de faire grandir la communauté WOILA ! 🚀"""
             metadata = {
                 'referral_code': referral_code,
                 'referred_user_id': referred_user.id,
-                'referred_user_name': f"{referred_user.name} {referred_user.surname}",
+                'referred_user_name': cls._get_user_display_name(referred_user),
                 'bonus_amount': bonus_amount,
                 'new_balance': float(wallet.balance)
             }
@@ -252,7 +263,7 @@ Merci de faire grandir la communauté WOILA ! 🚀"""
                     bonus_amount=bonus_amount
                 )
                 
-                logger.info(f"Notification de parrainage envoyée à {referrer_user.name} - Bonus: {bonus_amount} FCFA - DB: ✅ FCM: {'✅' if fcm_success else '❌'}")
+                logger.info(f"Notification de parrainage envoyée à {cls._get_user_display_name(referrer_user)} - Bonus: {bonus_amount} FCFA - DB: ✅ FCM: {'✅' if fcm_success else '❌'}")
                 return True
             
             return False
@@ -413,12 +424,12 @@ Bonne route avec WOILA ! 🛣️"""
             # Marquer comme lue si elle ne l'est pas déjà
             if not notification.is_read:
                 notification.mark_as_read()
-                logger.info(f"Notification {notification_id} marquée comme lue pour {user.name} {user.surname}")
+                logger.info(f"Notification {notification_id} marquée comme lue pour {cls._get_user_display_name(user)}")
             
             return True
             
         except Notification.DoesNotExist:
-            logger.warning(f"Notification {notification_id} introuvable pour l'utilisateur {user.name} {user.surname}")
+            logger.warning(f"Notification {notification_id} introuvable pour l'utilisateur {cls._get_user_display_name(user)}")
             return False
         except Exception as e:
             logger.error(f"Erreur lors du marquage de la notification {notification_id} comme lue: {str(e)}")
@@ -449,11 +460,11 @@ Bonne route avec WOILA ! 🛣️"""
             
             # Supprimer (soft delete)
             notification.mark_as_deleted()
-            logger.info(f"Notification {notification_id} supprimée pour {user.name} {user.surname}")
+            logger.info(f"Notification {notification_id} supprimée pour {cls._get_user_display_name(user)}")
             return True
             
         except Notification.DoesNotExist:
-            logger.warning(f"Notification {notification_id} introuvable pour l'utilisateur {user.name} {user.surname}")
+            logger.warning(f"Notification {notification_id} introuvable pour l'utilisateur {cls._get_user_display_name(user)}")
             return False
         except Exception as e:
             logger.error(f"Erreur lors de la suppression de la notification {notification_id}: {str(e)}")

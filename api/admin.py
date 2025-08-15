@@ -407,17 +407,17 @@ class UserDriverAdmin(admin.ModelAdmin):
 @admin.register(UserCustomer)
 class UserCustomerAdmin(admin.ModelAdmin):
     list_display = [
-        'get_phone_display', 'get_name_display', 'get_profile_picture_display', 'get_status_display', 
+        'get_phone_display', 'get_status_display', 
         'get_documents_count', 'created_at'
     ]
     list_filter = ['is_active', 'created_at']
-    search_fields = ['phone_number', 'name', 'surname']
+    search_fields = ['phone_number']
     readonly_fields = ['created_at', 'updated_at']
     list_per_page = 25
     
     fieldsets = (
         ('👥 Informations personnelles', {
-            'fields': ('phone_number', 'name', 'surname', 'profile_picture'),
+            'fields': ('phone_number',),
             'description': 'Informations de base du client'
         }),
         ('🔐 Sécurité', {
@@ -439,13 +439,6 @@ class UserCustomerAdmin(admin.ModelAdmin):
     get_phone_display.short_description = 'Téléphone'
     get_phone_display.admin_order_field = 'phone_number'
     
-    def get_name_display(self, obj):
-        return format_html(
-            '👤 {} {}',
-            obj.name, obj.surname
-        )
-    get_name_display.short_description = 'Nom complet'
-    get_name_display.admin_order_field = 'name'
     
     def get_status_display(self, obj):
         if obj.is_active:
@@ -454,15 +447,6 @@ class UserCustomerAdmin(admin.ModelAdmin):
             return format_html('<span style="color: red;">❌ Inactif</span>')
     get_status_display.short_description = 'Statut'
     get_status_display.admin_order_field = 'is_active'
-    
-    def get_profile_picture_display(self, obj):
-        if obj.profile_picture:
-            return format_html(
-                '<img src="{}" width="30" height="30" style="border-radius: 50%; object-fit: cover;" />',
-                obj.profile_picture.url
-            )
-        return format_html('<span style="color: gray;">📷 Aucune photo</span>')
-    get_profile_picture_display.short_description = 'Photo'
     
     def get_documents_count(self, obj):
         from .models import Document

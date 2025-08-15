@@ -18,7 +18,6 @@ class UserDriver(models.Model):
     GENDER_CHOICES = [
         ('M', 'Male'),
         ('F', 'Female'),
-        ('O', 'Other'),
     ]
     
     phone_number = models.CharField(max_length=15, unique=True)
@@ -74,14 +73,6 @@ class UserDriver(models.Model):
 class UserCustomer(models.Model):
     phone_number = models.CharField(max_length=15, unique=True)
     password = models.CharField(max_length=128)
-    name = models.CharField(max_length=100)
-    surname = models.CharField(max_length=100)
-    profile_picture = models.ImageField(
-        upload_to=profile_picture_upload_path, 
-        null=True, 
-        blank=True,
-        verbose_name="Photo de profil"
-    )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)
@@ -97,16 +88,8 @@ class UserCustomer(models.Model):
     def set_password(self, raw_password):
         self.password = make_password(raw_password)
     
-    def get_profile_picture_url(self, request=None):
-        """Retourne l'URL de la photo de profil"""
-        if self.profile_picture:
-            if request:
-                return request.build_absolute_uri(self.profile_picture.url)
-            return self.profile_picture.url
-        return None
-    
     def __str__(self):
-        return f"{self.name} {self.surname} - {self.phone_number}"
+        return f"Customer - {self.phone_number}"
     
     class Meta:
         db_table = 'user_customers'
@@ -177,7 +160,7 @@ class Document(models.Model):
         else:
             try:
                 user = UserCustomer.objects.get(id=self.user_id)
-                return f"{user.name} {user.surname} ({user.phone_number})"
+                return f"Customer ({user.phone_number})"
             except UserCustomer.DoesNotExist:
                 return f"Client ID {self.user_id} (supprimé)"
     

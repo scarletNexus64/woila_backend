@@ -76,17 +76,24 @@ Authorization: Bearer YOUR_TOKEN_HERE
 
 **Auth** : Non requis
 
-**Content-Type** : `multipart/form-data`
+**Content-Type** : `application/json`
 
-**Description** : Permet à un nouveau client de s'inscrire avec ses informations de base. Utilisez un formulaire multipart pour uploader la photo de profil.
+**Description** : Permet à un nouveau client de s'inscrire avec ses informations de base (simplifié : téléphone et mot de passe uniquement).
 
-**Body** (formulaire multipart) :
+**Body** :
+```json
+{
+    "phone_number": "+237987654321",
+    "password": "motdepasse456",
+    "confirm_password": "motdepasse456",
+    "referral_code": "REF54321"
+}
+```
+
+**Paramètres** :
 - `phone_number` (string) : Numéro de téléphone (+237987654321)
 - `password` (string) : Mot de passe (min 6 caractères)
 - `confirm_password` (string) : Confirmation du mot de passe
-- `name` (string) : Prénom
-- `surname` (string) : Nom de famille
-- `profile_picture` (file) : Photo de profil (optionnel, max 5MB, JPG/PNG/GIF/WebP uniquement)
 - `referral_code` (string) : Code de parrainage (optionnel)
 
 **Réponse (201)** :
@@ -98,10 +105,7 @@ Authorization: Bearer YOUR_TOKEN_HERE
     "user_id": 1,
     "user_info": {
         "id": 1,
-        "name": "Marie",
-        "surname": "Martin",
-        "phone_number": "+237987654321",
-        "profile_picture_url": "http://localhost:8000/media/profile_pictures/customer/1/photo.jpg"
+        "phone_number": "+237987654321"
     }
 }
 ```
@@ -121,7 +125,7 @@ Authorization: Bearer YOUR_TOKEN_HERE
 }
 ```
 
-**Réponse (200)** :
+**Réponse (200) - Chauffeur** :
 ```json
 {
     "success": true,
@@ -137,6 +141,21 @@ Authorization: Bearer YOUR_TOKEN_HERE
         "gender": "M",
         "age": 35,
         "birthday": "1988-05-15"
+    }
+}
+```
+
+**Réponse (200) - Client** :
+```json
+{
+    "success": true,
+    "message": "Connexion réussie",
+    "token": "550e8400-e29b-41d4-a716-446655440001",
+    "user_type": "customer",
+    "user_id": 2,
+    "user_info": {
+        "id": 2,
+        "phone_number": "+237987654321"
     }
 }
 ```
@@ -295,7 +314,7 @@ ou
 }
 ```
 
-**Réponse (200)** :
+**Réponse (200) - Chauffeur** :
 ```json
 {
     "success": true,
@@ -310,6 +329,21 @@ ou
         "gender": "M",
         "age": 35,
         "birthday": "1988-05-15"
+    },
+    "token_created_at": "2023-12-01T10:30:00Z"
+}
+```
+
+**Réponse (200) - Client** :
+```json
+{
+    "success": true,
+    "message": "Token valide",
+    "user_type": "customer",
+    "user_id": 2,
+    "user_info": {
+        "id": 2,
+        "phone_number": "+237987654321"
     },
     "token_created_at": "2023-12-01T10:30:00Z"
 }
@@ -730,9 +764,6 @@ ou
     "customer": {
         "id": 1,
         "phone_number": "+237987654321",
-        "name": "Marie",
-        "surname": "Martin",
-        "profile_picture_url": "http://localhost:8000/media/profile_pictures/customer/1/photo.jpg",
         "documents_count": 1,
         "created_at": "2023-12-01T10:30:00Z",
         "updated_at": "2023-12-01T10:30:00Z",
@@ -743,15 +774,16 @@ ou
 
 **Mise à jour** : `PUT /api/v1/profiles/customer/{customer_id}/`
 
-**Content-Type** : `multipart/form-data`
+**Content-Type** : `application/json`
 
-**Description** : Modifie les informations personnelles d'un client. Utilisez un formulaire multipart pour uploader une nouvelle photo de profil.
+**Description** : Modifie les informations personnelles d'un client (simplifié : téléphone uniquement).
 
-**Body** (formulaire multipart) :
-- `name` (string) : Prénom
-- `surname` (string) : Nom de famille
-- `phone_number` (string) : Numéro de téléphone
-- `profile_picture` (file) : Nouvelle photo de profil (optionnel, max 5MB, JPG/PNG/GIF/WebP uniquement)
+**Body** :
+```json
+{
+    "phone_number": "+237987654321"
+}
+```
 
 ### 6.3 Liste des Chauffeurs
 
@@ -795,7 +827,7 @@ ou
 
 **Query Parameters** :
 - `is_active` (boolean) : Filtrer par statut actif
-- `search` (string) : Rechercher par nom, prénom ou téléphone
+- `search` (string) : Rechercher par téléphone
 
 **Réponse (200)** :
 ```json
@@ -805,9 +837,7 @@ ou
     "customers": [
         {
             "id": 1,
-            "phone_number": "+33987654321",
-            "name": "Marie",
-            "surname": "Martin",
+            "phone_number": "+237987654321",
             "documents_count": 1,
             "created_at": "2023-12-01T10:30:00Z",
             "updated_at": "2023-12-01T10:30:00Z",
@@ -1189,12 +1219,13 @@ Le champ `metadata` peut contenir des données supplémentaires selon le type :
    - Workflow : Création → Vérification admin → Activation → Utilisation
 
 9. **Photos de profil** :
-   - Supportées pour les chauffeurs et clients lors de l'inscription et modification de profil
+   - Supportées uniquement pour les chauffeurs lors de l'inscription et modification de profil
    - Taille maximale : 5MB par image
    - Formats acceptés : JPG, PNG, GIF, WebP
-   - Stockage : `/media/profile_pictures/{user_type}/{user_id}/`
+   - Stockage : `/media/profile_pictures/driver/{user_id}/`
    - URL accessible via le champ `profile_picture_url` dans les réponses API
    - La photo est optionnelle lors de l'inscription et peut être ajoutée/modifiée plus tard
+   - Les clients n'ont pas de photo de profil (simplifié)
 
 ---
 
