@@ -1765,7 +1765,7 @@ class FCMTokenAdmin(admin.ModelAdmin):
         """Affiche l'utilisateur propriétaire du token"""
         if obj.user:
             user_type = "👤" if obj.user_type.model == 'usercustomer' else "🚗"
-            return f"{user_type} {obj.user.name} {obj.user.surname}"
+            return f"{user_type} {obj.user.phone_number}"
         return f"❌ Utilisateur supprimé (ID: {obj.user_id})"
     get_user_display.short_description = 'Utilisateur'
     
@@ -1805,7 +1805,7 @@ class FCMTokenAdmin(admin.ModelAdmin):
     
     def clean_inactive_tokens(self, request, queryset):
         """Supprime les tokens inactifs anciens"""
-        from ..services.fcm_service import FCMService
+        from .services.fcm_service import FCMService
         deleted_count = FCMService.cleanup_inactive_tokens(days_old=30)
         self.message_user(request, f'🧹 {deleted_count} token(s) FCM inactifs supprimés.')
     clean_inactive_tokens.short_description = "🧹 Nettoyer les tokens inactifs"
