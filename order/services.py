@@ -65,6 +65,8 @@ class PricingService:
             waiting_price
         )
         
+        # Retourner les valeurs Decimal pour utilisation interne
+        # Les vues/serializers doivent convertir en float pour JSON
         return {
             'base_price': Decimal(str(base_price)),
             'distance_price': distance_price,
@@ -152,9 +154,9 @@ class PricingService:
         )
         
         return {
-            'min_price': min_price['total_price'],
-            'max_price': max_price['total_price'],
-            'estimated_price': (min_price['total_price'] + max_price['total_price']) / 2,
+            'min_price': float(min_price['total_price']),
+            'max_price': float(max_price['total_price']),
+            'estimated_price': float((min_price['total_price'] + max_price['total_price']) / 2),
             'is_night_fare': is_night,
             'currency': 'FCFA'
         }
@@ -234,20 +236,14 @@ class OrderService:
     def find_nearby_drivers(self, pickup_lat, pickup_lng, vehicle_type_id=None, 
                            radius_km=None, limit=20) -> List[Dict]:
         """
-        Trouve et trie les chauffeurs disponibles par distance
-        Retourne une liste triée avec les distances calculées
+        VERSION SIMPLIFIÉE POUR DEMO - Trouve les chauffeurs disponibles
+        Ignore la position GPS pour les tests WebSocket
         """
-        if radius_km is None:
-            radius_km = self._get_config_value('DRIVER_SEARCH_RADIUS', 5)
-        
-        # Récupérer les chauffeurs en ligne dans le rayon
         drivers_with_distance = []
         
-        # Filtrer par statut ONLINE
+        # Récupérer TOUS les chauffeurs ONLINE sans vérifier la position GPS
         query = DriverStatus.objects.filter(
-            status='ONLINE',
-            current_latitude__isnull=False,
-            current_longitude__isnull=False
+            status='ONLINE'
         ).select_related('driver')
         
         # Si un type de véhicule est spécifié, filtrer
@@ -259,29 +255,32 @@ class OrderService:
             ).distinct()
         
         for driver_status in query:
-            distance = self.calculate_real_distance(
-                pickup_lat, pickup_lng,
-                float(driver_status.current_latitude),
-                float(driver_status.current_longitude)
-            )
+            # DEMO: Distance fictive pour tous les chauffeurs (entre 1 et 5 km)
+            import random
+            distance = round(random.uniform(1.0, 5.0), 2)
             
-            if distance <= radius_km:
-                # Récupérer les infos du véhicule
-                vehicle = None
-                if vehicle_type_id:
-                    vehicle = Vehicle.objects.filter(
-                        driver=driver_status.driver,
-                        vehicle_type_id=vehicle_type_id,
-                        is_active=True,
-                        is_online=True
-                    ).first()
-                else:
-                    vehicle = Vehicle.objects.filter(
-                        driver=driver_status.driver,
-                        is_active=True,
-                        is_online=True
-                    ).first()
-                
+            # Position fictive autour de Yaoundé pour la demo
+            driver_lat = 3.8480 + random.uniform(-0.05, 0.05)
+            driver_lng = 11.5020 + random.uniform(-0.05, 0.05)
+            
+            # Récupérer les infos du véhicule
+            vehicle = None
+            if vehicle_type_id:
+                vehicle = Vehicle.objects.filter(
+                    driver=driver_status.driver,
+                    vehicle_type_id=vehicle_type_id,
+                    is_active=True,
+                    is_online=True
+                ).first()
+            else:
+                vehicle = Vehicle.objects.filter(
+                    driver=driver_status.driver,
+                    is_active=True,
+                    is_online=True
+                ).first()
+            
+            # Si le chauffeur a un véhicule actif, l'ajouter à la liste
+            if vehicle:
                 # Calculer le rating moyen du chauffeur
                 avg_rating = Rating.objects.filter(
                     rated_driver=driver_status.driver,
@@ -292,23 +291,26 @@ class OrderService:
                     'driver_id': driver_status.driver.id,
                     'driver_name': f"{driver_status.driver.name} {driver_status.driver.surname}",
                     'driver_phone': driver_status.driver.phone_number,
-                    'distance_km': round(distance, 2),
-                    'latitude': float(driver_status.current_latitude),
-                    'longitude': float(driver_status.current_longitude),
+                    'distance_km': distance,  # Distance fictive pour la demo
+                    'latitude': driver_lat,
+                    'longitude': driver_lng,
                     'vehicle': {
-                        'id': vehicle.id if vehicle else None,
-                        'type': vehicle.vehicle_type.name if vehicle else None,
-                        'plaque': vehicle.plaque_immatriculation if vehicle else None,
-                        'brand': vehicle.brand.name if vehicle and vehicle.brand else None,
-                        'model': vehicle.model.name if vehicle and vehicle.model else None,
-                        'color': vehicle.color.name if vehicle and vehicle.color else None,
-                    } if vehicle else None,
+                        'id': vehicle.id,
+                        'vehicle_type_id': vehicle.vehicle_type.id if vehicle.vehicle_type else None,
+                        'type': vehicle.vehicle_type.name if vehicle.vehicle_type else None,
+                        'plaque': vehicle.plaque_immatriculation,
+                        'brand': vehicle.brand.name if vehicle.brand else None,
+                        'model': vehicle.model.name if vehicle.model else None,
+                        'color': vehicle.color.name if vehicle.color else None,
+                    },
                     'rating': round(avg_rating, 1),
                     'orders_today': driver_status.total_orders_today,
                     'last_update': driver_status.last_location_update.isoformat() if driver_status.last_location_update else None
                 })
+                
+                logger.info(f"✅ DEMO: Chauffeur {driver_status.driver.id} ajouté avec distance fictive {distance}km")
         
-        # Trier par distance croissante
+        # Trier par distance croissante (fictive)
         drivers_with_distance.sort(key=lambda x: x['distance_km'])
         
         # Limiter le nombre de résultats
@@ -361,22 +363,25 @@ class OrderService:
         
         vehicle_types = {}
         for driver_info in nearby_drivers:
-            if driver_info['vehicle']:
-                vehicle_type = driver_info['vehicle']['type']
-                if vehicle_type not in vehicle_types:
-                    vehicle_types[vehicle_type] = {
-                        'type': vehicle_type,
+            if driver_info['vehicle'] and driver_info['vehicle']['vehicle_type_id']:
+                vehicle_type_id = driver_info['vehicle']['vehicle_type_id']
+                vehicle_type_name = driver_info['vehicle']['type']
+                
+                if vehicle_type_id not in vehicle_types:
+                    vehicle_types[vehicle_type_id] = {
+                        'vehicle_type_id': vehicle_type_id,
+                        'type': vehicle_type_name,
                         'count': 0,
                         'nearest_distance': float('inf'),
                         'drivers': []
                     }
                 
-                vehicle_types[vehicle_type]['count'] += 1
-                vehicle_types[vehicle_type]['nearest_distance'] = min(
-                    vehicle_types[vehicle_type]['nearest_distance'],
+                vehicle_types[vehicle_type_id]['count'] += 1
+                vehicle_types[vehicle_type_id]['nearest_distance'] = min(
+                    vehicle_types[vehicle_type_id]['nearest_distance'],
                     driver_info['distance_km']
                 )
-                vehicle_types[vehicle_type]['drivers'].append(driver_info['driver_id'])
+                vehicle_types[vehicle_type_id]['drivers'].append(driver_info['driver_id'])
         
         return list(vehicle_types.values())
     
@@ -430,13 +435,26 @@ class OrderService:
         )
         
         # Créer l'événement de tracking
+        # Convertir les Decimal en float pour la sérialisation JSON
+        pricing_for_metadata = {
+            'base_price': float(pricing['base_price']),
+            'distance_price': float(pricing['distance_price']),
+            'vehicle_additional_price': float(pricing['vehicle_additional_price']),
+            'city_price': float(pricing['city_price']),
+            'vip_zone_price': float(pricing['vip_zone_price']),
+            'waiting_price': float(pricing['waiting_price']),
+            'total_price': float(pricing['total_price']),
+            'is_night_fare': pricing['is_night_fare'],
+            'breakdown': pricing['breakdown']  # Déjà en float
+        }
+        
         OrderTracking.objects.create(
             order=order,
             event_type='ORDER_CREATED',
             customer=customer,
             latitude=order_data['pickup_latitude'],
             longitude=order_data['pickup_longitude'],
-            metadata={'pricing': pricing}
+            metadata={'pricing': pricing_for_metadata}
         )
         
         logger.info(f"Commande {order.id} créée pour le client {customer_id}")
@@ -566,7 +584,7 @@ class DriverPoolService:
             event_type='DRIVER_SEARCH_STARTED',
             metadata={
                 'drivers_found': len(pool_entries),
-                'max_distance': pool_entries[-1].distance_km if pool_entries else 0
+                'max_distance': float(pool_entries[-1].distance_km) if pool_entries else 0
             }
         )
         

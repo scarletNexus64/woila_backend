@@ -115,8 +115,6 @@ class TokenVerifyView(APIView):
                         user = UserCustomer.objects.get(id=token.user_id, is_active=True)
                         user_info = {
                             'id': user.id,
-                            'name': user.name,
-                            'surname': user.surname,
                             'phone_number': user.phone_number
                         }
                     except UserCustomer.DoesNotExist:

@@ -57,4 +57,25 @@ urlpatterns = [
     
     # Order details (accessible by both driver and customer)
     path('order/<uuid:order_id>/', views.get_order_details, name='order_details'),
+    
+    # ============= SEARCH ENDPOINTS =============
+    
+    # City search
+    path('search/cities/', views.search_city_by_name, name='search_city_by_name'),
+    path('cities/', views.list_cities, name='list_cities'),
+    
+    # VIP Zone search
+    path('search/vip-zones/', views.search_vip_zone_by_name, name='search_vip_zone_by_name'),
+    path('vip-zones/', views.list_vip_zones, name='list_vip_zones'),
+    
+    # ============= DEMO/TEST ENDPOINTS =============
+    
+    # Demo tools for testing
+    path('demo/order/create-direct/', views.demo_create_direct_order, name='demo_create_direct_order'),
+    
+    # ============= DEBUG ENDPOINTS =============
+    
+    # Debug tools
+    path('debug/online-drivers/', views.debug_online_drivers, name='debug_online_drivers'),
+    path('debug/search-drivers/', views.debug_search_drivers, name='debug_search_drivers'),
 ]

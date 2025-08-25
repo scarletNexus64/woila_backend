@@ -13,7 +13,7 @@ from drf_spectacular.utils import extend_schema, OpenApiParameter
 from decimal import Decimal
 import logging
 
-from api.models import UserDriver, UserCustomer, Token
+from api.models import UserDriver, UserCustomer, Token, City, VipZone
 from .models import (
     Order, DriverStatus, OrderTracking, PaymentMethod,
     Rating, TripTracking, DriverPool
@@ -1162,3 +1162,549 @@ def set_driver_offline(request):
         'message': 'Vous êtes maintenant hors ligne',
         'status': DriverStatusSerializer(driver_status).data
     })
+
+
+# ============= SEARCH ENDPOINTS =============
+
+@extend_schema(
+    tags=['Search'],
+    summary='Rechercher une ville par nom',
+    description='Recherche une ville par son nom pour obtenir son ID et ses informations tarifaires',
+    parameters=[
+        OpenApiParameter(
+            name='name',
+            type=str,
+            location=OpenApiParameter.QUERY,
+            description='Nom de la ville à rechercher (ex: "Yaoundé", "Dakar")',
+            required=True
+        ),
+        OpenApiParameter(
+            name='country',
+            type=str,
+            location=OpenApiParameter.QUERY,
+            description='Nom du pays pour filtrer (optionnel)',
+            required=False
+        )
+    ]
+)
+@api_view(['GET'])
+def search_city_by_name(request):
+    """Recherche une ville par son nom"""
+    city_name = request.GET.get('name')
+    country_name = request.GET.get('country')
+    
+    if not city_name:
+        return Response(
+            {'error': 'Le paramètre "name" est requis'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    try:
+        # Construire la requête
+        query = City.objects.filter(
+            name__icontains=city_name,
+            active=True
+        ).select_related('country')
+        
+        # Filtrer par pays si fourni
+        if country_name:
+            query = query.filter(country__name__icontains=country_name)
+        
+        # Exécuter la recherche
+        cities = query[:10]  # Limiter à 10 résultats
+        
+        if not cities:
+            return Response({
+                'success': True,
+                'message': 'Aucune ville trouvée',
+                'cities': []
+            })
+        
+        # Formatter les résultats
+        cities_data = []
+        for city in cities:
+            cities_data.append({
+                'id': city.id,
+                'name': city.name,
+                'country': city.country.name,
+                'prix_jour': float(city.prix_jour),
+                'prix_nuit': float(city.prix_nuit),
+                'full_name': f"{city.name} ({city.country.name})"
+            })
+        
+        return Response({
+            'success': True,
+            'message': f'{len(cities)} ville(s) trouvée(s)',
+            'cities': cities_data
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur recherche ville: {str(e)}")
+        return Response(
+            {'error': 'Erreur lors de la recherche'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
+@extend_schema(
+    tags=['Search'],
+    summary='Rechercher une zone VIP par nom',
+    description='Recherche une zone VIP par son nom pour obtenir son ID et ses informations tarifaires',
+    parameters=[
+        OpenApiParameter(
+            name='name',
+            type=str,
+            location=OpenApiParameter.QUERY,
+            description='Nom de la zone VIP à rechercher (ex: "Plateau", "Airport")',
+            required=True
+        )
+    ]
+)
+@api_view(['GET'])
+def search_vip_zone_by_name(request):
+    """Recherche une zone VIP par son nom"""
+    zone_name = request.GET.get('name')
+    
+    if not zone_name:
+        return Response(
+            {'error': 'Le paramètre "name" est requis'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    try:
+        # Rechercher les zones VIP
+        zones = VipZone.objects.filter(
+            name__icontains=zone_name,
+            active=True
+        ).prefetch_related('kilometer_rules')[:10]  # Limiter à 10 résultats
+        
+        if not zones:
+            return Response({
+                'success': True,
+                'message': 'Aucune zone VIP trouvée',
+                'zones': []
+            })
+        
+        # Formatter les résultats
+        zones_data = []
+        for zone in zones:
+            # Récupérer les règles kilométriques actives
+            km_rules = []
+            for rule in zone.kilometer_rules.filter(active=True).order_by('min_kilometers'):
+                km_rules.append({
+                    'min_kilometers': float(rule.min_kilometers),
+                    'prix_jour_per_km': float(rule.prix_jour_per_km),
+                    'prix_nuit_per_km': float(rule.prix_nuit_per_km)
+                })
+            
+            zones_data.append({
+                'id': zone.id,
+                'name': zone.name,
+                'prix_jour': float(zone.prix_jour),
+                'prix_nuit': float(zone.prix_nuit),
+                'kilometer_rules': km_rules
+            })
+        
+        return Response({
+            'success': True,
+            'message': f'{len(zones)} zone(s) VIP trouvée(s)',
+            'zones': zones_data
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur recherche zone VIP: {str(e)}")
+        return Response(
+            {'error': 'Erreur lors de la recherche'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
+@extend_schema(
+    tags=['Search'],
+    summary='Lister toutes les villes actives',
+    description='Récupère la liste complète des villes actives avec pagination'
+)
+@api_view(['GET'])
+def list_cities(request):
+    """Liste toutes les villes actives"""
+    try:
+        # Paramètres de pagination
+        page = int(request.GET.get('page', 1))
+        page_size = int(request.GET.get('page_size', 50))
+        offset = (page - 1) * page_size
+        
+        # Récupérer les villes
+        total_count = City.objects.filter(active=True).count()
+        cities = City.objects.filter(active=True).select_related('country')[offset:offset + page_size]
+        
+        cities_data = []
+        for city in cities:
+            cities_data.append({
+                'id': city.id,
+                'name': city.name,
+                'country': city.country.name,
+                'prix_jour': float(city.prix_jour),
+                'prix_nuit': float(city.prix_nuit),
+                'full_name': f"{city.name} ({city.country.name})"
+            })
+        
+        return Response({
+            'success': True,
+            'total': total_count,
+            'page': page,
+            'page_size': page_size,
+            'cities': cities_data
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur liste villes: {str(e)}")
+        return Response(
+            {'error': 'Erreur lors de la récupération'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
+@extend_schema(
+    tags=['Search'],
+    summary='Lister toutes les zones VIP actives',
+    description='Récupère la liste complète des zones VIP actives avec leurs règles kilométriques'
+)
+@api_view(['GET'])
+def list_vip_zones(request):
+    """Liste toutes les zones VIP actives"""
+    try:
+        zones = VipZone.objects.filter(active=True).prefetch_related('kilometer_rules')
+        
+        zones_data = []
+        for zone in zones:
+            # Récupérer les règles kilométriques actives
+            km_rules = []
+            for rule in zone.kilometer_rules.filter(active=True).order_by('min_kilometers'):
+                km_rules.append({
+                    'min_kilometers': float(rule.min_kilometers),
+                    'prix_jour_per_km': float(rule.prix_jour_per_km),
+                    'prix_nuit_per_km': float(rule.prix_nuit_per_km)
+                })
+            
+            zones_data.append({
+                'id': zone.id,
+                'name': zone.name,
+                'prix_jour': float(zone.prix_jour),
+                'prix_nuit': float(zone.prix_nuit),
+                'kilometer_rules': km_rules
+            })
+        
+        return Response({
+            'success': True,
+            'total': len(zones_data),
+            'zones': zones_data
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur liste zones VIP: {str(e)}")
+        return Response(
+            {'error': 'Erreur lors de la récupération'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
+# ============= DEMO/TEST ENDPOINTS =============
+
+@extend_schema(
+    tags=['Demo'],
+    summary='DEMO - Créer une commande directe avec un chauffeur',
+    description='API de test pour créer une commande directement assignée à un chauffeur (pour tester WebSocket)'
+)
+@api_view(['POST'])
+def demo_create_direct_order(request):
+    """DEMO: Crée une commande directement avec un chauffeur spécifique"""
+    customer = get_customer_from_token(request)
+    if not customer:
+        return Response(
+            {'error': 'Authentification requise en tant que client'},
+            status=status.HTTP_401_UNAUTHORIZED
+        )
+    
+    # Récupérer le driver_id depuis la requête
+    driver_id = request.data.get('driver_id')
+    if not driver_id:
+        return Response(
+            {'error': 'driver_id est requis pour cette API de test'},
+            status=status.HTTP_400_BAD_REQUEST
+        )
+    
+    try:
+        driver = UserDriver.objects.get(id=driver_id)
+        
+        # Vérifier que le chauffeur est en ligne
+        driver_status, created = DriverStatus.objects.get_or_create(
+            driver=driver,
+            defaults={'status': 'ONLINE'}
+        )
+        
+        if driver_status.status == 'OFFLINE':
+            driver_status.status = 'ONLINE'
+            driver_status.save()
+            logger.info(f"🔧 DEMO: Chauffeur {driver_id} mis en ligne automatiquement")
+        
+        # Créer la commande avec les données de test
+        order_data = {
+            'pickup_address': request.data.get('pickup_address', 'Rue 1.590'),
+            'pickup_latitude': request.data.get('pickup_latitude', 3.8968711),
+            'pickup_longitude': request.data.get('pickup_longitude', 11.5470538),
+            'destination_address': request.data.get('destination_address', 'Awae'),
+            'destination_latitude': request.data.get('destination_latitude', 3.83599),
+            'destination_longitude': request.data.get('destination_longitude', 11.5505661),
+            'vehicle_type_id': request.data.get('vehicle_type_id', 1),
+            'city_id': request.data.get('city_id', 1),
+            'customer_notes': request.data.get('customer_notes', 'Commande de test WebSocket')
+        }
+        
+        with transaction.atomic():
+            order_service = OrderService()
+            
+            # Créer la commande
+            order = order_service.create_order(
+                customer_id=customer.id,
+                order_data=order_data
+            )
+            
+            # Assigner directement le chauffeur
+            order.driver = driver
+            order.status = 'ACCEPTED'
+            order.accepted_at = timezone.now()
+            order.save()
+            
+            # Mettre le chauffeur en BUSY
+            driver_status.status = 'BUSY'
+            driver_status.save()
+            
+            # Créer une entrée dans le pool pour la traçabilité
+            DriverPool.objects.create(
+                order=order,
+                driver=driver,
+                priority_order=1,
+                distance_km=2.5,  # Distance fictive
+                request_status='ACCEPTED',
+                requested_at=timezone.now(),
+                responded_at=timezone.now(),
+                timeout_at=timezone.now()
+            )
+            
+            # Créer l'événement de tracking
+            OrderTracking.objects.create(
+                order=order,
+                event_type='DRIVER_ACCEPTED',
+                driver=driver,
+                customer=customer,
+                notes='Commande de test - Assignation directe',
+                metadata={'demo': True, 'driver_id': driver_id}
+            )
+            
+            logger.info(f"✅ DEMO: Commande {order.id} créée et assignée au chauffeur {driver_id}")
+            
+            # TODO: Envoyer notification WebSocket au chauffeur
+            # notification_service = NotificationService(channel_layer)
+            # await notification_service.notify_driver_new_order(...)
+            
+            return Response({
+                'success': True,
+                'message': f'Commande de test créée et assignée au chauffeur {driver.name} {driver.surname}',
+                'order': OrderSerializer(order).data,
+                'driver_info': {
+                    'id': driver.id,
+                    'name': f"{driver.name} {driver.surname}",
+                    'phone': driver.phone_number,
+                    'status': driver_status.status
+                },
+                'note': 'Commande créée en mode DEMO - Le chauffeur devrait recevoir une notification WebSocket'
+            }, status=status.HTTP_201_CREATED)
+            
+    except UserDriver.DoesNotExist:
+        return Response(
+            {'error': f'Chauffeur avec ID {driver_id} non trouvé'},
+            status=status.HTTP_404_NOT_FOUND
+        )
+    except Exception as e:
+        logger.error(f"Erreur demo create order: {str(e)}")
+        return Response(
+            {'error': f'Erreur lors de la création: {str(e)}'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+# ============= DEBUG ENDPOINTS =============
+
+@extend_schema(
+    tags=['Debug'],
+    summary='Debug - État des chauffeurs en ligne',
+    description='API de débogage pour vérifier l\'état des chauffeurs ONLINE avec leurs positions'
+)
+@api_view(['GET'])
+def debug_online_drivers(request):
+    """Debug : Affiche l'état de tous les chauffeurs ONLINE"""
+    try:
+        # Récupérer tous les chauffeurs ONLINE
+        online_drivers = DriverStatus.objects.filter(
+            status='ONLINE'
+        ).select_related('driver')
+        
+        debug_data = {
+            'total_online_drivers': online_drivers.count(),
+            'drivers': []
+        }
+        
+        for driver_status in online_drivers:
+            # Vérifier les véhicules
+            vehicles = Vehicle.objects.filter(
+                driver=driver_status.driver,
+                is_active=True
+            )
+            
+            vehicles_data = []
+            for vehicle in vehicles:
+                vehicles_data.append({
+                    'id': vehicle.id,
+                    'nom': vehicle.nom,
+                    'is_active': vehicle.is_active,
+                    'is_online': vehicle.is_online,
+                    'vehicle_type': vehicle.vehicle_type.name if vehicle.vehicle_type else None,
+                    'plaque': vehicle.plaque_immatriculation
+                })
+            
+            driver_data = {
+                'driver_id': driver_status.driver.id,
+                'driver_name': f"{driver_status.driver.name} {driver_status.driver.surname}",
+                'status': driver_status.status,
+                'has_position': {
+                    'latitude': driver_status.current_latitude is not None,
+                    'longitude': driver_status.current_longitude is not None,
+                    'lat_value': float(driver_status.current_latitude) if driver_status.current_latitude else None,
+                    'lng_value': float(driver_status.current_longitude) if driver_status.current_longitude else None
+                },
+                'last_location_update': driver_status.last_location_update.isoformat() if driver_status.last_location_update else None,
+                'session_started_at': driver_status.session_started_at.isoformat() if driver_status.session_started_at else None,
+                'total_vehicles': vehicles.count(),
+                'active_vehicles': vehicles.filter(is_active=True).count(),
+                'online_vehicles': vehicles.filter(is_active=True, is_online=True).count(),
+                'vehicles': vehicles_data
+            }
+            
+            debug_data['drivers'].append(driver_data)
+        
+        return Response({
+            'success': True,
+            'debug_info': debug_data,
+            'message': f'Trouvé {debug_data["total_online_drivers"]} chauffeur(s) ONLINE'
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur debug drivers: {str(e)}")
+        return Response(
+            {'error': f'Erreur debug: {str(e)}'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
+@extend_schema(
+    tags=['Debug'],
+    summary='Debug - Test recherche chauffeur avec logs',
+    description='API de débogage pour tester la recherche avec logs détaillés'
+)
+@api_view(['POST'])
+def debug_search_drivers(request):
+    """Debug : Test la recherche avec logs détaillés"""
+    try:
+        pickup_lat = float(request.data.get('pickup_latitude', 0))
+        pickup_lng = float(request.data.get('pickup_longitude', 0))
+        radius_km = float(request.data.get('radius_km', 10))
+        vehicle_type_id = request.data.get('vehicle_type_id')
+        
+        logger.info(f"🔍 DEBUG SEARCH - Pickup: {pickup_lat}, {pickup_lng}")
+        logger.info(f"🔍 DEBUG SEARCH - Radius: {radius_km}km")
+        logger.info(f"🔍 DEBUG SEARCH - Vehicle type: {vehicle_type_id}")
+        
+        # Étape 1: Récupérer les chauffeurs ONLINE
+        query = DriverStatus.objects.filter(
+            status='ONLINE',
+            current_latitude__isnull=False,
+            current_longitude__isnull=False
+        ).select_related('driver')
+        
+        online_count = query.count()
+        logger.info(f"🔍 DEBUG SEARCH - Chauffeurs ONLINE avec position: {online_count}")
+        
+        debug_steps = {
+            'step_1_online_drivers': online_count,
+            'step_2_within_radius': 0,
+            'step_3_with_vehicles': 0,
+            'drivers_details': [],
+            'distances_calculated': []
+        }
+        
+        # Étape 2: Calculer les distances
+        order_service = OrderService()
+        
+        for driver_status in query:
+            driver_lat = float(driver_status.current_latitude)
+            driver_lng = float(driver_status.current_longitude)
+            
+            distance = order_service.calculate_real_distance(
+                pickup_lat, pickup_lng, driver_lat, driver_lng
+            )
+            
+            debug_steps['distances_calculated'].append({
+                'driver_id': driver_status.driver.id,
+                'driver_name': f"{driver_status.driver.name} {driver_status.driver.surname}",
+                'driver_position': [driver_lat, driver_lng],
+                'distance_km': round(distance, 2),
+                'within_radius': distance <= radius_km
+            })
+            
+            if distance <= radius_km:
+                debug_steps['step_2_within_radius'] += 1
+                
+                # Étape 3: Vérifier les véhicules
+                if vehicle_type_id:
+                    vehicle = Vehicle.objects.filter(
+                        driver=driver_status.driver,
+                        vehicle_type_id=vehicle_type_id,
+                        is_active=True,
+                        is_online=True
+                    ).first()
+                else:
+                    vehicle = Vehicle.objects.filter(
+                        driver=driver_status.driver,
+                        is_active=True,
+                        is_online=True
+                    ).first()
+                
+                if vehicle:
+                    debug_steps['step_3_with_vehicles'] += 1
+                
+                debug_steps['drivers_details'].append({
+                    'driver_id': driver_status.driver.id,
+                    'distance_km': round(distance, 2),
+                    'has_vehicle': vehicle is not None,
+                    'vehicle_info': {
+                        'id': vehicle.id if vehicle else None,
+                        'type': vehicle.vehicle_type.name if vehicle and vehicle.vehicle_type else None,
+                        'is_active': vehicle.is_active if vehicle else None,
+                        'is_online': vehicle.is_online if vehicle else None
+                    } if vehicle else None
+                })
+        
+        logger.info(f"🔍 DEBUG SEARCH - Dans le rayon: {debug_steps['step_2_within_radius']}")
+        logger.info(f"🔍 DEBUG SEARCH - Avec véhicules: {debug_steps['step_3_with_vehicles']}")
+        
+        return Response({
+            'success': True,
+            'debug_steps': debug_steps,
+            'final_result': f"{debug_steps['step_3_with_vehicles']} chauffeur(s) éligible(s)"
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur debug search: {str(e)}")
+        return Response(
+            {'error': f'Erreur debug: {str(e)}'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )

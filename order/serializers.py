@@ -97,7 +97,7 @@ class OrderSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'created_at']
     
     def get_customer_name(self, obj):
-        return f"{obj.customer.name} {obj.customer.surname}" if obj.customer else None
+        return f"Client {obj.customer.phone_number}" if obj.customer else None
     
     def get_driver_name(self, obj):
         return f"{obj.driver.name} {obj.driver.surname}" if obj.driver else None
@@ -120,7 +120,7 @@ class OrderListSerializer(serializers.ModelSerializer):
         ]
     
     def get_customer_name(self, obj):
-        return f"{obj.customer.name} {obj.customer.surname}" if obj.customer else None
+        return f"Client {obj.customer.phone_number}" if obj.customer else None
     
     def get_driver_name(self, obj):
         return f"{obj.driver.name} {obj.driver.surname}" if obj.driver else None
@@ -272,7 +272,7 @@ class RatingSerializer(serializers.ModelSerializer):
         if obj.rated_driver:
             return f"{obj.rated_driver.name} {obj.rated_driver.surname}"
         elif obj.rated_customer:
-            return f"{obj.rated_customer.name} {obj.rated_customer.surname}"
+            return f"Client {obj.rated_customer.phone_number}"
         return None
 
 
@@ -323,7 +323,7 @@ class OrderTrackingSerializer(serializers.ModelSerializer):
         return f"{obj.driver.name} {obj.driver.surname}" if obj.driver else None
     
     def get_customer_name(self, obj):
-        return f"{obj.customer.name} {obj.customer.surname}" if obj.customer else None
+        return f"Client {obj.customer.phone_number}" if obj.customer else None
 
 
 # ============= DRIVER POOL SERIALIZERS =============
