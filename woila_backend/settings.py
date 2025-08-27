@@ -78,10 +78,13 @@ ASGI_APPLICATION = 'woila_backend.asgi.application'
 # Channels configuration
 CHANNEL_LAYERS = {
     'default': {
-        'BACKEND': 'channels_redis.core.RedisChannelLayer',
-        'CONFIG': {
-            "hosts": [('127.0.0.1', 6379)],
-        },
+        # Utiliser InMemoryChannelLayer pour le développement (pas besoin de Redis)
+        'BACKEND': 'channels.layers.InMemoryChannelLayer',
+        # Pour la production avec Redis (décommentez ci-dessous):
+        # 'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        # 'CONFIG': {
+        #     "hosts": [('127.0.0.1', 6379)],
+        # },
     },
 }
 

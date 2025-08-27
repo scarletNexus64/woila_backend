@@ -33,6 +33,7 @@ from .viewsets.vehicles import (
     VehicleColorListView
 )
 from .viewsets.profiles import (
+    MeProfileView,
     DriverProfileView,
     CustomerProfileView
 )
@@ -63,6 +64,7 @@ urlpatterns = [
     # Authentication endpoints
     path('auth/login/', LoginView.as_view(), name='login'),
     path('auth/logout/', LogoutView.as_view(), name='logout'),
+    path('auth/me/', MeProfileView.as_view(), name='me-profile'),
     
     # Registration endpoints
     path('auth/register/driver/', RegisterDriverView.as_view(), name='register-driver'),

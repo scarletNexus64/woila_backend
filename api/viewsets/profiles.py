@@ -7,11 +7,111 @@ from django.shortcuts import get_object_or_404
 from drf_spectacular.utils import extend_schema, OpenApiExample, OpenApiParameter
 from drf_spectacular.openapi import OpenApiTypes
 from rest_framework.parsers import MultiPartParser, FormParser
+from rest_framework.permissions import IsAuthenticated
+from rest_framework.decorators import permission_classes
 from ..serializers import (
     UserDriverUpdateSerializer, UserCustomerUpdateSerializer,
     UserDriverDetailSerializer, UserCustomerDetailSerializer
 )
-from ..models import UserDriver, UserCustomer
+from ..models import UserDriver, UserCustomer, Token
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class MeProfileView(APIView):
+    """
+    Vue pour récupérer le profil de l'utilisateur connecté (chauffeur ou client)
+    """
+    
+    @extend_schema(
+        tags=['Profils'],
+        summary='Récupérer le profil de l\'utilisateur connecté',
+        description='Récupère les informations détaillées de l\'utilisateur connecté via son token',
+        responses={
+            200: {
+                'description': 'Profil utilisateur récupéré avec succès',
+                'examples': {
+                    'application/json': {
+                        'success': True,
+                        'user_type': 'customer',  # ou 'driver'
+                        'user': {
+                            'id': 1,
+                            'name': 'John',
+                            'surname': 'Doe', 
+                            'phone_number': '+237123456789',
+                            'is_active': True,
+                            'created_at': '2023-12-01T10:30:00Z',
+                            'updated_at': '2023-12-05T15:45:00Z'
+                        }
+                    }
+                }
+            },
+            401: {'description': 'Token manquant ou invalide'},
+            404: {'description': 'Utilisateur introuvable'},
+        }
+    )
+    def get(self, request):
+        """
+        Récupérer le profil de l'utilisateur connecté via le token
+        """
+        # Récupérer le token depuis l'en-tête Authorization
+        auth_header = request.headers.get('Authorization')
+        if not auth_header or not auth_header.startswith('Bearer '):
+            return Response({
+                'success': False,
+                'message': 'Token manquant ou format invalide'
+            }, status=status.HTTP_401_UNAUTHORIZED)
+        
+        token_key = auth_header.split(' ')[1]
+        
+        try:
+            # Chercher le token dans la base de données
+            token = Token.objects.get(token=token_key, is_active=True)
+        except Token.DoesNotExist:
+            return Response({
+                'success': False,
+                'message': 'Token invalide ou expiré'
+            }, status=status.HTTP_401_UNAUTHORIZED)
+        
+        # Déterminer le type d'utilisateur et récupérer ses données
+        user_type = token.user_type
+        user_id = token.user_id
+        
+        if user_type == 'driver':
+            try:
+                user = UserDriver.objects.get(id=user_id, is_active=True)
+                serializer = UserDriverDetailSerializer(user, context={'request': request})
+            except UserDriver.DoesNotExist:
+                return Response({
+                    'success': False,
+                    'message': 'Chauffeur associé au token introuvable'
+                }, status=status.HTTP_404_NOT_FOUND)
+        elif user_type == 'customer':
+            try:
+                user = UserCustomer.objects.get(id=user_id, is_active=True)
+                serializer = UserCustomerDetailSerializer(user, context={'request': request})
+            except UserCustomer.DoesNotExist:
+                return Response({
+                    'success': False,
+                    'message': 'Client associé au token introuvable'
+                }, status=status.HTTP_404_NOT_FOUND)
+        else:
+            return Response({
+                'success': False,
+                'message': 'Type d\'utilisateur invalide'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Vérifier que l'utilisateur est actif
+        if not user.is_active:
+            return Response({
+                'success': False,
+                'message': 'Compte utilisateur désactivé'
+            }, status=status.HTTP_403_FORBIDDEN)
+        
+        return Response({
+            'success': True,
+            'user_type': user_type,
+            'user': serializer.data
+        }, status=status.HTTP_200_OK)
 
 
 @method_decorator(csrf_exempt, name='dispatch')

@@ -236,14 +236,16 @@ class OrderService:
     def find_nearby_drivers(self, pickup_lat, pickup_lng, vehicle_type_id=None, 
                            radius_km=None, limit=20) -> List[Dict]:
         """
-        VERSION SIMPLIFIÉE POUR DEMO - Trouve les chauffeurs disponibles
-        Ignore la position GPS pour les tests WebSocket
+        Trouve les chauffeurs disponibles basé sur leur position GPS réelle
         """
         drivers_with_distance = []
+        radius_km = radius_km or 10  # Rayon par défaut de 10 km
         
-        # Récupérer TOUS les chauffeurs ONLINE sans vérifier la position GPS
+        # Récupérer les chauffeurs ONLINE avec position GPS disponible
         query = DriverStatus.objects.filter(
-            status='ONLINE'
+            status='ONLINE',
+            current_latitude__isnull=False,
+            current_longitude__isnull=False
         ).select_related('driver')
         
         # Si un type de véhicule est spécifié, filtrer
@@ -255,63 +257,69 @@ class OrderService:
             ).distinct()
         
         for driver_status in query:
-            # DEMO: Distance fictive pour tous les chauffeurs (entre 1 et 5 km)
-            import random
-            distance = round(random.uniform(1.0, 5.0), 2)
+            # Calculer la distance réelle basée sur la position GPS
+            distance = self.calculate_real_distance(
+                pickup_lat, pickup_lng,
+                float(driver_status.current_latitude),
+                float(driver_status.current_longitude)
+            )
             
-            # Position fictive autour de Yaoundé pour la demo
-            driver_lat = 3.8480 + random.uniform(-0.05, 0.05)
-            driver_lng = 11.5020 + random.uniform(-0.05, 0.05)
-            
-            # Récupérer les infos du véhicule
-            vehicle = None
-            if vehicle_type_id:
-                vehicle = Vehicle.objects.filter(
-                    driver=driver_status.driver,
-                    vehicle_type_id=vehicle_type_id,
-                    is_active=True,
-                    is_online=True
-                ).first()
-            else:
-                vehicle = Vehicle.objects.filter(
-                    driver=driver_status.driver,
-                    is_active=True,
-                    is_online=True
-                ).first()
-            
-            # Si le chauffeur a un véhicule actif, l'ajouter à la liste
-            if vehicle:
-                # Calculer le rating moyen du chauffeur
-                avg_rating = Rating.objects.filter(
-                    rated_driver=driver_status.driver,
-                    rating_type='CUSTOMER_TO_DRIVER'
-                ).aggregate(avg=Avg('score'))['avg'] or 5.0
+            # Filtrer par rayon seulement si dans le rayon demandé
+            if distance <= radius_km:
+                driver_lat = float(driver_status.current_latitude)
+                driver_lng = float(driver_status.current_longitude)
                 
-                drivers_with_distance.append({
-                    'driver_id': driver_status.driver.id,
-                    'driver_name': f"{driver_status.driver.name} {driver_status.driver.surname}",
-                    'driver_phone': driver_status.driver.phone_number,
-                    'distance_km': distance,  # Distance fictive pour la demo
-                    'latitude': driver_lat,
-                    'longitude': driver_lng,
-                    'vehicle': {
-                        'id': vehicle.id,
-                        'vehicle_type_id': vehicle.vehicle_type.id if vehicle.vehicle_type else None,
-                        'type': vehicle.vehicle_type.name if vehicle.vehicle_type else None,
-                        'plaque': vehicle.plaque_immatriculation,
-                        'brand': vehicle.brand.name if vehicle.brand else None,
-                        'model': vehicle.model.name if vehicle.model else None,
-                        'color': vehicle.color.name if vehicle.color else None,
-                    },
-                    'rating': round(avg_rating, 1),
-                    'orders_today': driver_status.total_orders_today,
-                    'last_update': driver_status.last_location_update.isoformat() if driver_status.last_location_update else None
-                })
+                # Récupérer les infos du véhicule
+                vehicle = None
+                if vehicle_type_id:
+                    vehicle = Vehicle.objects.filter(
+                        driver=driver_status.driver,
+                        vehicle_type_id=vehicle_type_id,
+                        is_active=True,
+                        is_online=True
+                    ).first()
+                else:
+                    vehicle = Vehicle.objects.filter(
+                        driver=driver_status.driver,
+                        is_active=True,
+                        is_online=True
+                    ).first()
                 
-                logger.info(f"✅ DEMO: Chauffeur {driver_status.driver.id} ajouté avec distance fictive {distance}km")
+                # Si le chauffeur a un véhicule actif, l'ajouter à la liste
+                if vehicle:
+                    # Calculer le rating moyen du chauffeur
+                    avg_rating = Rating.objects.filter(
+                        rated_driver=driver_status.driver,
+                        rating_type='CUSTOMER_TO_DRIVER'
+                    ).aggregate(avg=Avg('score'))['avg'] or 5.0
+                    
+                    drivers_with_distance.append({
+                        'driver_id': driver_status.driver.id,
+                        'driver_name': f"{driver_status.driver.name} {driver_status.driver.surname}",
+                        'driver_phone': driver_status.driver.phone_number,
+                        'distance_km': round(distance, 2),  # Distance GPS réelle
+                        'latitude': driver_lat,
+                        'longitude': driver_lng,
+                        'vehicle': {
+                            'id': vehicle.id,
+                            'vehicle_type_id': vehicle.vehicle_type.id if vehicle.vehicle_type else None,
+                            'type': vehicle.vehicle_type.name if vehicle.vehicle_type else None,
+                            'plaque': vehicle.plaque_immatriculation,
+                            'brand': vehicle.brand.name if vehicle.brand else None,
+                            'model': vehicle.model.name if vehicle.model else None,
+                            'color': vehicle.color.name if vehicle.color else None,
+                        },
+                        'rating': round(avg_rating, 1),
+                        'orders_today': driver_status.total_orders_today,
+                        'last_update': driver_status.last_location_update.isoformat() if driver_status.last_location_update else None
+                    })
+                    
+                    logger.info(f"📍 Chauffeur {driver_status.driver.id} trouvé à {round(distance, 2)}km de distance GPS réelle")
         
-        # Trier par distance croissante (fictive)
+        # Trier par distance croissante (GPS réelle)
         drivers_with_distance.sort(key=lambda x: x['distance_km'])
+        
+        logger.info(f"🔍 Recherche GPS terminée: {len(drivers_with_distance)} chauffeurs trouvés dans un rayon de {radius_km}km")
         
         # Limiter le nombre de résultats
         return drivers_with_distance[:limit]

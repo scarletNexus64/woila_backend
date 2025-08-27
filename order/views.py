@@ -12,6 +12,9 @@ from django.db.models import Q
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 from decimal import Decimal
 import logging
+import asyncio
+from channels.layers import get_channel_layer
+from asgiref.sync import async_to_sync
 
 from api.models import UserDriver, UserCustomer, Token, City, VipZone
 from .models import (
@@ -70,6 +73,104 @@ def get_customer_from_token(request):
     return None
 
 
+def notify_drivers_new_order(order, pool_entries):
+    """Envoie une notification WebSocket ET FCM à tous les chauffeurs concernés par une commande"""
+    from api.services.fcm_service import FCMService
+    import json
+    
+    try:
+        channel_layer = get_channel_layer()
+        if not channel_layer:
+            logger.warning("Channel layer non disponible - notifications WebSocket non envoyées")
+        
+        # Préparer les données de la commande pour les chauffeurs - Format compatible Flutter
+        order_data = {
+            'id': str(order.id),
+            'customer_id': str(order.customer.id),  # Ajouter customer_id
+            'customer_name': f"Client {order.customer.phone_number}",
+            'customer_phone': order.customer.phone_number,
+            'pickup_address': order.pickup_address,
+            'pickup_latitude': float(order.pickup_latitude),
+            'pickup_longitude': float(order.pickup_longitude),
+            'destination_address': order.destination_address,
+            'destination_latitude': float(order.destination_latitude),
+            'destination_longitude': float(order.destination_longitude),
+            'vehicle_type': order.vehicle_type.name if order.vehicle_type else 'Standard',
+            'estimated_distance_km': float(order.estimated_distance_km or 0),  # Match exact field name
+            'total_price': float(order.total_price),
+            'customer_notes': order.customer_notes or '',
+            'timeout_seconds': 30,  # 30 secondes pour répondre
+            'created_at': order.created_at.isoformat(),
+        }
+        
+        # Envoyer la notification à chaque chauffeur du pool
+        websocket_notifications_sent = 0
+        fcm_notifications_sent = 0
+        
+        for pool_entry in pool_entries:
+            try:
+                driver = pool_entry.driver
+                driver_id = driver.id
+                driver_group_name = f'driver_{driver_id}'
+                
+                logger.info(f"📤 Envoi notification → Chauffeur {driver_id}")
+                
+                # 1. Envoyer via WebSocket
+                if channel_layer:
+                    try:
+                        async_to_sync(channel_layer.group_send)(
+                            driver_group_name,
+                            {
+                                'type': 'order_request',
+                                'order_data': order_data
+                            }
+                        )
+                        websocket_notifications_sent += 1
+                        logger.info(f"✅ WebSocket envoyé au chauffeur {driver_id}")
+                    except Exception as ws_error:
+                        logger.error(f"❌ Erreur WebSocket chauffeur {driver_id}: {ws_error}")
+                
+                # 2. Envoyer via FCM (NOUVEAU!)
+                try:
+                    customer_name = order_data['customer_name']
+                    distance = order_data['estimated_distance_km']
+                    price = order_data['total_price']
+                    
+                    fcm_success = FCMService.send_notification(
+                        user=driver,
+                        title="🚗 Nouvelle commande disponible!",
+                        body=f"{customer_name} • {distance:.1f} km • {price:.0f} FCFA",
+                        data={
+                            'notification_type': 'new_order',
+                            'order_id': str(order.id),
+                            'order_data': json.dumps(order_data),  # Inclure toutes les données
+                            'action_required': 'accept_or_decline',
+                            'timeout_seconds': '30'
+                        },
+                        notification_type='new_order'
+                    )
+                    
+                    if fcm_success:
+                        fcm_notifications_sent += 1
+                        logger.info(f"✅ FCM envoyé au chauffeur {driver_id}")
+                    else:
+                        logger.warning(f"⚠️ FCM échoué pour chauffeur {driver_id}")
+                        
+                except Exception as fcm_error:
+                    logger.error(f"❌ Erreur FCM chauffeur {driver_id}: {fcm_error}")
+                
+            except Exception as driver_error:
+                logger.error(f"❌ Erreur notification chauffeur {pool_entry.driver.id}: {driver_error}")
+                continue
+        
+        logger.info(f"📊 Notifications envoyées: WebSocket {websocket_notifications_sent}/{len(pool_entries)}, FCM {fcm_notifications_sent}/{len(pool_entries)} chauffeurs")
+        return websocket_notifications_sent + fcm_notifications_sent
+        
+    except Exception as e:
+        logger.error(f"❌ Erreur générale notifications: {e}")
+        return 0
+
+
 # ============= DRIVER ENDPOINTS =============
 
 @extend_schema(
@@ -97,10 +198,16 @@ def toggle_driver_status(request):
             driver_status.go_online()
             message = 'Vous êtes maintenant en ligne'
             new_status = 'ONLINE'
+            
+            # Démarrer automatiquement la diffusion GPS via WebSocket
+            _start_driver_location_broadcasting(driver.id)
         else:
             driver_status.go_offline()
             message = 'Vous êtes maintenant hors ligne'
             new_status = 'OFFLINE'
+            
+            # Arrêter la diffusion GPS
+            _stop_driver_location_broadcasting(driver.id)
         
         return Response({
             'success': True,
@@ -689,13 +796,16 @@ def create_order(request):
                     'order_id': str(order.id)
                 }, status=status.HTTP_404_NOT_FOUND)
             
-            # TODO: Notifier les chauffeurs via WebSocket
+            # Notifier les chauffeurs via WebSocket
+            notifications_sent = notify_drivers_new_order(order, pool_entries)
+            logger.info(f"🔔 Commande {order.id}: {notifications_sent} notifications WebSocket envoyées")
             
             return Response({
                 'success': True,
                 'message': 'Commande créée, recherche de chauffeur en cours',
                 'order': OrderSerializer(order).data,
-                'drivers_contacted': len(pool_entries)
+                'drivers_contacted': len(pool_entries),
+                'notifications_sent': notifications_sent
             }, status=status.HTTP_201_CREATED)
             
     except Exception as e:
@@ -1503,9 +1613,10 @@ def demo_create_direct_order(request):
             
             logger.info(f"✅ DEMO: Commande {order.id} créée et assignée au chauffeur {driver_id}")
             
-            # TODO: Envoyer notification WebSocket au chauffeur
-            # notification_service = NotificationService(channel_layer)
-            # await notification_service.notify_driver_new_order(...)
+            # Envoyer notification WebSocket au chauffeur (même pour les commandes DEMO)
+            pool_entries = DriverPool.objects.filter(order=order)
+            notifications_sent = notify_drivers_new_order(order, pool_entries)
+            logger.info(f"🔔 DEMO: Commande {order.id}: {notifications_sent} notification WebSocket envoyée")
             
             return Response({
                 'success': True,
@@ -1517,7 +1628,8 @@ def demo_create_direct_order(request):
                     'phone': driver.phone_number,
                     'status': driver_status.status
                 },
-                'note': 'Commande créée en mode DEMO - Le chauffeur devrait recevoir une notification WebSocket'
+                'notifications_sent': notifications_sent,
+                'note': 'Commande créée en mode DEMO - Notification WebSocket envoyée au chauffeur'
             }, status=status.HTTP_201_CREATED)
             
     except UserDriver.DoesNotExist:
@@ -1708,3 +1820,84 @@ def debug_search_drivers(request):
             {'error': f'Erreur debug: {str(e)}'},
             status=status.HTTP_500_INTERNAL_SERVER_ERROR
         )
+
+
+# ============= HELPER FUNCTIONS FOR GPS BROADCASTING =============
+
+def _start_driver_location_broadcasting(driver_id):
+    """
+    Démarrer la diffusion GPS automatique pour un chauffeur
+    """
+    try:
+        channel_layer = get_channel_layer()
+        driver_group_name = f'driver_{driver_id}'
+        
+        # Envoyer un message au consumer pour démarrer la diffusion
+        async_to_sync(channel_layer.group_send)(
+            driver_group_name,
+            {
+                'type': 'start_location_broadcasting',
+                'driver_id': driver_id
+            }
+        )
+        logger.info(f"🚀📡 DIFFUSION GPS DÉMARRÉE pour le chauffeur {driver_id}")
+        logger.info(f"📡 Le chauffeur {driver_id} va diffuser sa position GPS toutes les 5 secondes")
+        
+    except Exception as e:
+        logger.error(f"❌ Erreur lors du démarrage de la diffusion GPS pour le chauffeur {driver_id}: {str(e)}")
+
+
+def _stop_driver_location_broadcasting(driver_id):
+    """
+    Arrêter la diffusion GPS automatique pour un chauffeur
+    """
+    try:
+        channel_layer = get_channel_layer()
+        driver_group_name = f'driver_{driver_id}'
+        
+        # Envoyer un message au consumer pour arrêter la diffusion
+        async_to_sync(channel_layer.group_send)(
+            driver_group_name,
+            {
+                'type': 'stop_location_broadcasting',
+                'driver_id': driver_id
+            }
+        )
+        logger.info(f"📡 Diffusion GPS arrêtée pour le chauffeur {driver_id}")
+        
+    except Exception as e:
+        logger.error(f"❌ Erreur lors de l'arrêt de la diffusion GPS pour le chauffeur {driver_id}: {str(e)}")
+
+
+def _broadcast_driver_location(driver_id, latitude, longitude):
+    """
+    Diffuser la position d'un chauffeur vers tous les clients connectés qui l'écoutent
+    """
+    try:
+        channel_layer = get_channel_layer()
+        
+        # Diffuser vers le groupe des clients qui suivent ce chauffeur
+        async_to_sync(channel_layer.group_send)(
+            f'driver_tracking_{driver_id}',
+            {
+                'type': 'driver_location_update',
+                'driver_id': driver_id,
+                'latitude': latitude,
+                'longitude': longitude,
+                'timestamp': timezone.now().isoformat()
+            }
+        )
+        
+        # Également informer le chauffeur lui-même de sa position
+        async_to_sync(channel_layer.group_send)(
+            f'driver_{driver_id}',
+            {
+                'type': 'location_broadcast_confirmation',
+                'latitude': latitude,
+                'longitude': longitude,
+                'timestamp': timezone.now().isoformat()
+            }
+        )
+        
+    except Exception as e:
+        logger.error(f"❌ Erreur lors de la diffusion de la position du chauffeur {driver_id}: {str(e)}")
