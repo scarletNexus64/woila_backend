@@ -875,3 +875,184 @@ class FCMToken(models.Model):
         ]
         # Un utilisateur peut avoir plusieurs tokens (plusieurs appareils)
         unique_together = [['user_type', 'user_id', 'device_id']]
+
+
+class WalletTransaction(models.Model):
+    """
+    Model pour les transactions de wallet (dépôts, retraits, etc.)
+    """
+    TRANSACTION_TYPES = [
+        ('deposit', 'Dépôt'),
+        ('withdrawal', 'Retrait'),
+        ('transfer_in', 'Transfert entrant'),
+        ('transfer_out', 'Transfert sortant'),
+        ('refund', 'Remboursement'),
+        ('payment', 'Paiement'),
+    ]
+    
+    TRANSACTION_STATUS = [
+        ('pending', 'En attente'),
+        ('processing', 'En cours'),
+        ('completed', 'Complété'),
+        ('failed', 'Échoué'),
+        ('cancelled', 'Annulé'),
+    ]
+    
+    PAYMENT_METHODS = [
+        ('mobile_money', 'Mobile Money'),
+        ('bank_transfer', 'Virement bancaire'),
+        ('cash', 'Espèces'),
+        ('other', 'Autre'),
+    ]
+    
+    # Référence unique de la transaction
+    reference = models.CharField(
+        max_length=50, 
+        unique=True, 
+        verbose_name="Référence",
+        help_text="Référence unique de la transaction"
+    )
+    
+    # Utilisateur propriétaire du wallet
+    limit = models.Q(app_label='api', model='userdriver') | models.Q(app_label='api', model='usercustomer')
+    user_type = models.ForeignKey(ContentType, on_delete=models.CASCADE, limit_choices_to=limit)
+    user_id = models.PositiveIntegerField()
+    user = GenericForeignKey('user_type', 'user_id')
+    
+    # Détails de la transaction
+    transaction_type = models.CharField(
+        max_length=20, 
+        choices=TRANSACTION_TYPES, 
+        verbose_name="Type de transaction"
+    )
+    amount = models.DecimalField(
+        max_digits=10, 
+        decimal_places=2, 
+        verbose_name="Montant"
+    )
+    status = models.CharField(
+        max_length=20, 
+        choices=TRANSACTION_STATUS, 
+        default='pending',
+        verbose_name="Statut"
+    )
+    
+    # Informations de paiement
+    payment_method = models.CharField(
+        max_length=20, 
+        choices=PAYMENT_METHODS, 
+        blank=True,
+        verbose_name="Méthode de paiement"
+    )
+    phone_number = models.CharField(
+        max_length=15, 
+        blank=True,
+        verbose_name="Numéro de téléphone",
+        help_text="Numéro pour Mobile Money"
+    )
+    
+    # Détails FreeMoPay
+    freemopay_reference = models.CharField(
+        max_length=100, 
+        blank=True,
+        verbose_name="Référence FreeMoPay"
+    )
+    freemopay_external_id = models.CharField(
+        max_length=100, 
+        blank=True,
+        verbose_name="ID externe FreeMoPay"
+    )
+    
+    # Soldes avant/après transaction
+    balance_before = models.DecimalField(
+        max_digits=10, 
+        decimal_places=2, 
+        default=0.00,
+        verbose_name="Solde avant"
+    )
+    balance_after = models.DecimalField(
+        max_digits=10, 
+        decimal_places=2, 
+        default=0.00,
+        verbose_name="Solde après"
+    )
+    
+    # Description et métadonnées
+    description = models.TextField(
+        blank=True,
+        verbose_name="Description"
+    )
+    metadata = models.JSONField(
+        default=dict,
+        blank=True,
+        verbose_name="Métadonnées",
+        help_text="Données supplémentaires JSON"
+    )
+    
+    # Notes d'erreur
+    error_message = models.TextField(
+        blank=True,
+        verbose_name="Message d'erreur"
+    )
+    
+    # Horodatage
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Dernière mise à jour")
+    completed_at = models.DateTimeField(
+        null=True, 
+        blank=True, 
+        verbose_name="Date de completion"
+    )
+    
+    def generate_reference(self):
+        """Génère une référence unique pour la transaction"""
+        import uuid
+        from datetime import datetime
+        timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
+        unique_id = str(uuid.uuid4())[:8].upper()
+        prefix = self.transaction_type.upper()[:3]
+        return f"{prefix}-{timestamp}-{unique_id}"
+    
+    def save(self, *args, **kwargs):
+        if not self.reference:
+            self.reference = self.generate_reference()
+        super().save(*args, **kwargs)
+    
+    def mark_as_completed(self):
+        """Marquer la transaction comme complétée"""
+        self.status = 'completed'
+        self.completed_at = timezone.now()
+        self.save(update_fields=['status', 'completed_at', 'updated_at'])
+    
+    def mark_as_failed(self, error_message=None):
+        """Marquer la transaction comme échouée"""
+        self.status = 'failed'
+        if error_message:
+            self.error_message = error_message
+        self.save(update_fields=['status', 'error_message', 'updated_at'])
+    
+    def get_user_display(self):
+        """Retourne l'affichage de l'utilisateur"""
+        if self.user:
+            if hasattr(self.user, 'name'):
+                return f"{self.user.name} {self.user.surname} ({self.user.phone_number})"
+            else:
+                return f"Client ({self.user.phone_number})"
+        return f"Utilisateur supprimé (ID: {self.user_id})"
+    
+    def __str__(self):
+        return f"{self.get_transaction_type_display()} - {self.amount} FCFA - {self.get_user_display()}"
+    
+    class Meta:
+        db_table = 'wallet_transactions'
+        verbose_name = '💳 Transaction Wallet'
+        verbose_name_plural = '💳 Transactions Wallet'
+        ordering = ['-created_at']
+        indexes = [
+            models.Index(fields=['user_type', 'user_id']),
+            models.Index(fields=['reference']),
+            models.Index(fields=['transaction_type']),
+            models.Index(fields=['status']),
+            models.Index(fields=['created_at']),
+            models.Index(fields=['freemopay_reference']),
+        ]

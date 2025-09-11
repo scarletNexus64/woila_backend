@@ -18,11 +18,11 @@ from asgiref.sync import async_to_sync
 
 from api.models import UserDriver, UserCustomer, Token, City, VipZone
 from .models import (
-    Order, DriverStatus, OrderTracking, PaymentMethod,
+    Order, DriverStatus, CustomerStatus, OrderTracking, PaymentMethod,
     Rating, TripTracking, DriverPool
 )
 from .serializers import (
-    PaymentMethodSerializer, DriverStatusSerializer, UpdateLocationSerializer,
+    PaymentMethodSerializer, DriverStatusSerializer, CustomerStatusSerializer, UpdateLocationSerializer,
     SearchDriversSerializer, EstimatePriceSerializer, CreateOrderSerializer,
     OrderSerializer, OrderListSerializer, RatingSerializer, CreateRatingSerializer,
     TripTrackingSerializer, OrderTrackingSerializer, DriverPoolSerializer,
@@ -32,6 +32,8 @@ from .services import (
     PricingService, OrderService, DriverPoolService,
     PaymentService, TrackingService
 )
+import requests
+import json
 
 logger = logging.getLogger(__name__)
 
@@ -195,6 +197,20 @@ def toggle_driver_status(request):
         )
         
         if driver_status.status == 'OFFLINE':
+            # Vérifier qu'il a au moins un véhicule actif et en service
+            from api.models import Vehicle
+            active_online_vehicle = Vehicle.objects.filter(
+                driver=driver,
+                is_active=True,
+                is_online=True
+            ).first()
+            
+            if not active_online_vehicle:
+                return Response({
+                    'success': False,
+                    'error': 'Vous devez avoir au moins un véhicule actif et en service pour passer en ligne'
+                }, status=status.HTTP_400_BAD_REQUEST)
+            
             driver_status.go_online()
             message = 'Vous êtes maintenant en ligne'
             new_status = 'ONLINE'
@@ -668,27 +684,53 @@ def search_drivers(request):
     try:
         order_service = OrderService()
         
-        # Trouver les chauffeurs proches
-        nearby_drivers = order_service.find_nearby_drivers(
-            pickup_lat=float(serializer.validated_data['pickup_latitude']),
-            pickup_lng=float(serializer.validated_data['pickup_longitude']),
-            vehicle_type_id=serializer.validated_data.get('vehicle_type_id'),
-            radius_km=serializer.validated_data.get('radius_km', 5)
-        )
+        # Utiliser la recherche progressive si aucun rayon spécifique n'est demandé
+        requested_radius = serializer.validated_data.get('radius_km')
         
-        # Obtenir les types de véhicules disponibles
-        vehicle_types = order_service.get_available_vehicle_types(
-            pickup_lat=float(serializer.validated_data['pickup_latitude']),
-            pickup_lng=float(serializer.validated_data['pickup_longitude']),
-            radius_km=serializer.validated_data.get('radius_km', 5)
-        )
-        
-        return Response({
-            'success': True,
-            'drivers_found': len(nearby_drivers),
-            'vehicle_types': vehicle_types,
-            'drivers': nearby_drivers[:10]  # Limiter pour la réponse
-        })
+        if requested_radius:
+            # Recherche classique avec rayon fixe
+            nearby_drivers = order_service.find_nearby_drivers(
+                pickup_lat=float(serializer.validated_data['pickup_latitude']),
+                pickup_lng=float(serializer.validated_data['pickup_longitude']),
+                vehicle_type_id=serializer.validated_data.get('vehicle_type_id'),
+                radius_km=requested_radius
+            )
+            
+            vehicle_types = order_service.get_available_vehicle_types(
+                pickup_lat=float(serializer.validated_data['pickup_latitude']),
+                pickup_lng=float(serializer.validated_data['pickup_longitude']),
+                radius_km=requested_radius
+            )
+            
+            return Response({
+                'success': True,
+                'drivers_found': len(nearby_drivers),
+                'vehicle_types': vehicle_types,
+                'drivers': nearby_drivers[:10],
+                'radius_used_km': requested_radius,
+                'search_type': 'fixed_radius'
+            })
+        else:
+            # Recherche progressive (nouveau comportement par défaut)
+            search_result = order_service.find_nearby_drivers_progressive(
+                pickup_lat=float(serializer.validated_data['pickup_latitude']),
+                pickup_lng=float(serializer.validated_data['pickup_longitude']),
+                vehicle_type_id=serializer.validated_data.get('vehicle_type_id'),
+                initial_radius_km=5,  # Commencer par 5km
+                max_radius_km=50,     # Aller jusqu'à 50km si nécessaire
+                step_km=5,           # Augmenter par pas de 5km
+                min_drivers=1        # S'arrêter dès qu'on trouve au moins 1 chauffeur
+            )
+            
+            return Response({
+                'success': True,
+                'drivers_found': len(search_result['drivers']),
+                'vehicle_types': search_result['vehicle_types'],
+                'drivers': search_result['drivers'][:10],
+                'radius_used_km': search_result['radius_used_km'],
+                'max_radius_reached': search_result['max_radius_reached'],
+                'search_type': 'progressive'
+            })
         
     except Exception as e:
         logger.error(f"Erreur search drivers: {str(e)}")
@@ -1243,6 +1285,20 @@ def set_driver_online(request):
             {'error': 'Authentification requise en tant que chauffeur'},
             status=status.HTTP_401_UNAUTHORIZED
         )
+    
+    # Vérifier qu'il a au moins un véhicule actif et en service
+    from api.models import Vehicle
+    active_online_vehicle = Vehicle.objects.filter(
+        driver=driver,
+        is_active=True,
+        is_online=True
+    ).first()
+    
+    if not active_online_vehicle:
+        return Response({
+            'success': False,
+            'error': 'Vous devez avoir au moins un véhicule actif et en service pour passer en ligne'
+        }, status=status.HTTP_400_BAD_REQUEST)
     
     driver_status, created = DriverStatus.objects.get_or_create(driver=driver)
     driver_status.go_online()
@@ -1901,3 +1957,254 @@ def _broadcast_driver_location(driver_id, latitude, longitude):
         
     except Exception as e:
         logger.error(f"❌ Erreur lors de la diffusion de la position du chauffeur {driver_id}: {str(e)}")
+
+
+# ============= CUSTOMER LOCATION ENDPOINT =============
+
+@extend_schema(
+    tags=['Customer'],
+    summary='Mettre à jour la position client',
+    description='Permet au client de partager sa position GPS en temps réel'
+)
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def update_customer_location(request):
+    """Update customer GPS location"""
+    customer = get_customer_from_token(request)
+    if not customer:
+        return Response(
+            {'error': 'Authentification requise en tant que client'},
+            status=status.HTTP_401_UNAUTHORIZED
+        )
+    
+    serializer = UpdateLocationSerializer(data=request.data)
+    if not serializer.is_valid():
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    try:
+        # Créer ou mettre à jour le statut client
+        customer_status, created = CustomerStatus.objects.get_or_create(
+            customer=customer,
+            defaults={
+                'current_latitude': serializer.validated_data['latitude'],
+                'current_longitude': serializer.validated_data['longitude'],
+                'last_location_update': timezone.now(),
+            }
+        )
+        
+        if not created:
+            # Mettre à jour la position existante
+            customer_status.current_latitude = serializer.validated_data['latitude']
+            customer_status.current_longitude = serializer.validated_data['longitude']
+            customer_status.last_location_update = timezone.now()
+            customer_status.save()
+        
+        # Vérifier si le client a une commande active
+        active_order = Order.objects.filter(
+            customer=customer,
+            status__in=['PENDING', 'ACCEPTED', 'DRIVER_ARRIVED', 'IN_PROGRESS']
+        ).first()
+        
+        if active_order:
+            customer_status.current_order = active_order
+            customer_status.save()
+            
+            # Envoyer la position au chauffeur via WebSocket
+            if active_order.driver:
+                channel_layer = get_channel_layer()
+                if channel_layer:
+                    try:
+                        async_to_sync(channel_layer.group_send)(
+                            f'driver_{active_order.driver.id}',
+                            {
+                                'type': 'customer_location_update',
+                                'order_id': str(active_order.id),
+                                'customer_location': {
+                                    'latitude': float(serializer.validated_data['latitude']),
+                                    'longitude': float(serializer.validated_data['longitude']),
+                                    'timestamp': timezone.now().isoformat()
+                                }
+                            }
+                        )
+                        logger.info(f"Position client envoyée au chauffeur {active_order.driver.id}")
+                    except Exception as e:
+                        logger.error(f"Erreur envoi WebSocket position client: {e}")
+        
+        return Response({
+            'success': True,
+            'message': 'Position mise à jour avec succès',
+            'customer_status': CustomerStatusSerializer(customer_status).data,
+            'active_order_id': str(active_order.id) if active_order else None
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur mise à jour position client: {e}")
+        return Response(
+            {'error': 'Erreur interne du serveur'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )
+
+
+@extend_schema(
+    tags=['Realtime'],
+    summary='Calculer ETA temps réel entre chauffeur et client',
+    description='Calcule le temps d\'arrivée estimé (ETA) en temps réel entre la position du chauffeur et du client',
+    responses={
+        200: {
+            'type': 'object',
+            'properties': {
+                'success': {'type': 'boolean'},
+                'eta_minutes': {'type': 'integer'},
+                'distance_km': {'type': 'number'},
+                'driver_location': {
+                    'type': 'object',
+                    'properties': {
+                        'latitude': {'type': 'number'},
+                        'longitude': {'type': 'number'},
+                        'last_update': {'type': 'string'}
+                    }
+                },
+                'customer_location': {
+                    'type': 'object',
+                    'properties': {
+                        'latitude': {'type': 'number'},
+                        'longitude': {'type': 'number'},
+                        'last_update': {'type': 'string'}
+                    }
+                }
+            }
+        }
+    }
+)
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def calculate_realtime_eta(request, order_id):
+    """Calculer l'ETA en temps réel entre chauffeur et client pour une commande active"""
+    try:
+        # Récupérer la commande
+        order = get_object_or_404(Order, id=order_id)
+        
+        # Vérifier que la commande est active
+        if order.status not in ['ACCEPTED', 'DRIVER_ARRIVED', 'IN_PROGRESS']:
+            return Response({
+                'error': 'Cette commande n\'est pas en cours'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Vérifier que la commande a un chauffeur assigné
+        if not order.driver:
+            return Response({
+                'error': 'Aucun chauffeur assigné à cette commande'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Récupérer les positions actuelles
+        driver_status = DriverStatus.objects.filter(driver=order.driver).first()
+        customer_status = CustomerStatus.objects.filter(customer=order.customer).first()
+        
+        if not driver_status or not driver_status.current_latitude:
+            return Response({
+                'error': 'Position du chauffeur non disponible'
+            }, status=status.HTTP_400_BAD_REQUEST)
+        
+        # Pour le client, utiliser soit sa position actuelle soit l'adresse de prise en charge
+        if order.status == 'ACCEPTED' or order.status == 'DRIVER_ARRIVED':
+            # Chauffeur se dirige vers le point de prise en charge
+            destination_lat = order.pickup_latitude
+            destination_lng = order.pickup_longitude
+            destination_address = order.pickup_address
+            leg_type = 'to_pickup'
+        else:  # IN_PROGRESS
+            # Chauffeur se dirige vers la destination finale
+            destination_lat = order.destination_latitude
+            destination_lng = order.destination_longitude
+            destination_address = order.destination_address
+            leg_type = 'to_destination'
+        
+        # Calculer la distance directe
+        order_service = OrderService()
+        distance_km = order_service.calculate_real_distance(
+            float(driver_status.current_latitude),
+            float(driver_status.current_longitude),
+            float(destination_lat),
+            float(destination_lng)
+        )
+        
+        # Calculer l'ETA basé sur la vitesse moyenne en ville
+        # Vitesse moyenne en ville: 25-35 km/h, on prend 30 km/h
+        average_speed_kmh = 30.0
+        eta_hours = distance_km / average_speed_kmh
+        eta_minutes = int(eta_hours * 60)
+        
+        # Ajouter un buffer de temps pour les arrêts, feux, etc.
+        eta_minutes = max(eta_minutes + 3, 1)  # Minimum 1 minute
+        
+        # Préparer les données de réponse
+        driver_location = {
+            'latitude': float(driver_status.current_latitude),
+            'longitude': float(driver_status.current_longitude),
+            'last_update': driver_status.last_location_update.isoformat() if driver_status.last_location_update else None
+        }
+        
+        customer_location = None
+        if customer_status and customer_status.current_latitude:
+            customer_location = {
+                'latitude': float(customer_status.current_latitude),
+                'longitude': float(customer_status.current_longitude),
+                'last_update': customer_status.last_location_update.isoformat() if customer_status.last_location_update else None
+            }
+        
+        # Envoyer les informations ETA via WebSocket aux deux parties
+        channel_layer = get_channel_layer()
+        if channel_layer:
+            eta_data = {
+                'eta_minutes': eta_minutes,
+                'distance_km': round(distance_km, 2),
+                'leg_type': leg_type,
+                'destination_address': destination_address
+            }
+            
+            # Envoyer au chauffeur
+            try:
+                async_to_sync(channel_layer.group_send)(
+                    f'driver_{order.driver.id}',
+                    {
+                        'type': 'eta_update',
+                        'order_id': str(order.id),
+                        'eta_data': eta_data
+                    }
+                )
+            except Exception as e:
+                logger.error(f"Erreur envoi ETA au chauffeur: {e}")
+            
+            # Envoyer au client
+            try:
+                async_to_sync(channel_layer.group_send)(
+                    f'customer_{order.customer.id}',
+                    {
+                        'type': 'eta_update',
+                        'order_id': str(order.id),
+                        'eta_data': eta_data,
+                        'driver_location': driver_location
+                    }
+                )
+            except Exception as e:
+                logger.error(f"Erreur envoi ETA au client: {e}")
+        
+        return Response({
+            'success': True,
+            'order_id': str(order.id),
+            'order_status': order.status,
+            'eta_minutes': eta_minutes,
+            'distance_km': round(distance_km, 2),
+            'leg_type': leg_type,
+            'destination_address': destination_address,
+            'driver_location': driver_location,
+            'customer_location': customer_location,
+            'calculation_time': timezone.now().isoformat()
+        })
+        
+    except Exception as e:
+        logger.error(f"Erreur calcul ETA temps réel: {e}")
+        return Response(
+            {'error': 'Erreur lors du calcul de l\'ETA'},
+            status=status.HTTP_500_INTERNAL_SERVER_ERROR
+        )

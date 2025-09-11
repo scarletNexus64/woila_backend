@@ -744,6 +744,24 @@ class CustomerConsumer(AsyncWebsocketConsumer):
             'timestamp': event['timestamp']
         }))
 
+    async def customer_location_update(self, event):
+        """Handler pour recevoir les mises à jour de position du client"""
+        await self.send(text_data=json.dumps({
+            'type': 'customer_location_update',
+            'order_id': event['order_id'],
+            'customer_location': event['customer_location']
+        }))
+    
+    async def eta_update(self, event):
+        """Handler pour recevoir les mises à jour d'ETA temps réel avec position du chauffeur"""
+        await self.send(text_data=json.dumps({
+            'type': 'eta_update',
+            'order_id': event['order_id'],
+            'eta_data': event['eta_data'],
+            'driver_location': event.get('driver_location'),
+            'message': f"Chauffeur à {event['eta_data']['eta_minutes']} min ({event['eta_data']['distance_km']} km)"
+        }))
+
     @database_sync_to_async
     def get_customer(self, customer_id):
         try:

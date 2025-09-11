@@ -470,6 +470,46 @@ class DriverStatus(models.Model):
         ]
 
 
+class CustomerStatus(models.Model):
+    """Statut en temps réel des clients pendant les commandes"""
+    
+    customer = models.OneToOneField(UserCustomer, on_delete=models.CASCADE, related_name='status')
+    
+    # Position actuelle
+    current_latitude = models.DecimalField(max_digits=10, decimal_places=8, null=True, blank=True, verbose_name="Latitude actuelle")
+    current_longitude = models.DecimalField(max_digits=11, decimal_places=8, null=True, blank=True, verbose_name="Longitude actuelle")
+    last_location_update = models.DateTimeField(null=True, blank=True, verbose_name="Dernière MAJ position")
+    
+    # Commande active
+    current_order = models.ForeignKey(
+        Order, 
+        on_delete=models.SET_NULL, 
+        null=True, 
+        blank=True, 
+        related_name='customer_tracking',
+        verbose_name="Commande active"
+    )
+    
+    # WebSocket
+    websocket_channel = models.CharField(max_length=255, null=True, blank=True, verbose_name="Canal WebSocket")
+    
+    # Timestamps
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Créé le")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Mis à jour le")
+    
+    def __str__(self):
+        return f"{self.customer} - Position tracking"
+    
+    class Meta:
+        db_table = 'customer_status'
+        verbose_name = 'Statut Client'
+        verbose_name_plural = 'Statuts Clients'
+        indexes = [
+            models.Index(fields=['current_latitude', 'current_longitude']),
+            models.Index(fields=['current_order']),
+        ]
+
+
 class OrderTracking(models.Model):
     """Événements de suivi d'une commande"""
     EVENT_CHOICES = [

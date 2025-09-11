@@ -9,6 +9,14 @@ from .viewsets.documents import DocumentImportView, DocumentListView
 from .viewsets.vehicles import VehicleCreateView, VehicleListView, VehicleDetailView, VehiclesByDriverView
 from .viewsets.profiles import DriverProfileView, CustomerProfileView, AllDriversView, AllCustomersView
 from .viewsets.forgot_password import ForgotPasswordView
+from .viewsets.wallet import (
+    WalletBalanceView,
+    WalletDepositView,
+    WalletWithdrawalView,
+    WalletTransactionHistoryView,
+    WalletTransactionDetailView,
+    WalletTransactionStatusView
+)
 
 # Export views for URL configuration
 __all__ = [
@@ -29,4 +37,10 @@ __all__ = [
     'AllDriversView',
     'AllCustomersView',
     'ForgotPasswordView',
+    'WalletBalanceView',
+    'WalletDepositView',
+    'WalletWithdrawalView',
+    'WalletTransactionHistoryView',
+    'WalletTransactionDetailView',
+    'WalletTransactionStatusView',
 ]

@@ -35,6 +35,12 @@ urlpatterns = [
     path('customer/search-drivers/', views.search_drivers, name='search_drivers'),
     path('customer/estimate-price/', views.estimate_price, name='estimate_price'),
     
+    # Location sharing
+    path('customer/location/update/', views.update_customer_location, name='update_customer_location'),
+    
+    # Real-time ETA calculation
+    path('realtime/eta/<uuid:order_id>/', views.calculate_realtime_eta, name='calculate_realtime_eta'),
+    
     # Order management
     path('customer/order/create/', views.create_order, name='create_order'),
     path('customer/order/<uuid:order_id>/cancel/', views.cancel_order, name='cancel_order'),

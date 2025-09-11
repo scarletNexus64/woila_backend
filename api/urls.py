@@ -52,6 +52,14 @@ from .viewsets.fcm import (
     FCMTokenDetailView,
     FCMTestNotificationView
 )
+from .viewsets.wallet import (
+    WalletBalanceView,
+    WalletDepositView,
+    WalletWithdrawalView,
+    WalletTransactionHistoryView,
+    WalletTransactionDetailView,
+    WalletTransactionStatusView
+)
 
 # Router pour les ViewSets
 router = DefaultRouter()
@@ -121,4 +129,12 @@ urlpatterns = [
     path('fcm/tokens/', FCMTokenListView.as_view(), name='fcm-tokens'),
     path('fcm/tokens/<int:token_id>/', FCMTokenDetailView.as_view(), name='fcm-token-detail'),
     path('fcm/test-notification/', FCMTestNotificationView.as_view(), name='fcm-test'),
+    
+    # Wallet endpoints
+    path('wallet/balance/', WalletBalanceView.as_view(), name='wallet-balance'),
+    path('wallet/deposit/', WalletDepositView.as_view(), name='wallet-deposit'),
+    path('wallet/withdrawal/', WalletWithdrawalView.as_view(), name='wallet-withdrawal'),
+    path('wallet/transactions/', WalletTransactionHistoryView.as_view(), name='wallet-transactions'),
+    path('wallet/transactions/<str:reference>/', WalletTransactionDetailView.as_view(), name='wallet-transaction-detail'),
+    path('wallet/transactions/<str:reference>/check-status/', WalletTransactionStatusView.as_view(), name='wallet-transaction-status'),
 ]

@@ -7,7 +7,7 @@ from decimal import Decimal
 
 from api.models import UserDriver, UserCustomer, VehicleType, City, VipZone
 from .models import (
-    Order, DriverStatus, OrderTracking, PaymentMethod,
+    Order, DriverStatus, CustomerStatus, OrderTracking, PaymentMethod,
     Rating, TripTracking, DriverPool
 )
 
@@ -45,6 +45,23 @@ class DriverStatusSerializer(serializers.ModelSerializer):
     
     def get_driver_name(self, obj):
         return f"{obj.driver.name} {obj.driver.surname}"
+
+
+class CustomerStatusSerializer(serializers.ModelSerializer):
+    """Serializer pour le statut du client"""
+    customer_name = serializers.SerializerMethodField()
+    
+    class Meta:
+        model = CustomerStatus
+        fields = [
+            'id', 'customer', 'customer_name',
+            'current_latitude', 'current_longitude', 'last_location_update',
+            'current_order', 'created_at', 'updated_at'
+        ]
+        read_only_fields = ['id', 'customer', 'created_at', 'updated_at']
+    
+    def get_customer_name(self, obj):
+        return f"Client {obj.customer.phone_number}"
 
 
 class UpdateLocationSerializer(serializers.Serializer):

@@ -324,6 +324,51 @@ class OrderService:
         # Limiter le nombre de résultats
         return drivers_with_distance[:limit]
     
+    def find_nearby_drivers_progressive(self, pickup_lat, pickup_lng, vehicle_type_id=None, 
+                                       initial_radius_km=5, max_radius_km=50, step_km=5, 
+                                       min_drivers=1) -> Dict:
+        """
+        Recherche progressive de chauffeurs : augmente le rayon progressivement jusqu'à trouver des chauffeurs
+        Retourne les informations de recherche avec le rayon utilisé
+        """
+        current_radius = initial_radius_km
+        drivers_found = []
+        
+        logger.info(f"🔍 Démarrage recherche progressive - Rayon initial: {initial_radius_km}km, Max: {max_radius_km}km")
+        
+        while current_radius <= max_radius_km and len(drivers_found) < min_drivers:
+            logger.info(f"📏 Tentative de recherche avec rayon: {current_radius}km")
+            
+            # Rechercher les chauffeurs à ce rayon
+            drivers_found = self.find_nearby_drivers(
+                pickup_lat=pickup_lat,
+                pickup_lng=pickup_lng,
+                vehicle_type_id=vehicle_type_id,
+                radius_km=current_radius
+            )
+            
+            if len(drivers_found) >= min_drivers:
+                logger.info(f"✅ Chauffeurs trouvés ! Rayon utilisé: {current_radius}km, Chauffeurs: {len(drivers_found)}")
+                break
+            
+            logger.info(f"⚠️ Aucun chauffeur trouvé à {current_radius}km, élargissement...")
+            current_radius += step_km
+        
+        # Obtenir les types de véhicules disponibles au rayon final
+        vehicle_types = self.get_available_vehicle_types(
+            pickup_lat=pickup_lat,
+            pickup_lng=pickup_lng,
+            radius_km=current_radius if drivers_found else max_radius_km
+        )
+        
+        return {
+            'drivers': drivers_found,
+            'vehicle_types': vehicle_types,
+            'radius_used_km': current_radius if drivers_found else max_radius_km,
+            'search_attempted': True,
+            'max_radius_reached': current_radius > max_radius_km
+        }
+    
     def calculate_real_distance(self, lat1: float, lng1: float, 
                                lat2: float, lng2: float) -> float:
         """
