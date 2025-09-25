@@ -3,6 +3,7 @@
 
 # Secrets Firebase
 api/secret/
+secret/
 *.json
 *firebase-adminsdk*.json
 *-firebase-*.json
