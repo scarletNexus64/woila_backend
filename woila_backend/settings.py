@@ -41,8 +41,17 @@ INSTALLED_APPS = [
     'rest_framework',
     'drf_spectacular',
     'channels',
-    'api',
+    
+    # Existing apps
     'order',
+    
+    # New organized apps
+    'core.apps.CoreConfig',
+    'authentication.apps.AuthenticationConfig',
+    'users.apps.UsersConfig',
+    'vehicles.apps.VehiclesConfig',
+    'notifications.apps.NotificationsConfig',
+    'wallet.apps.WalletConfig',
 ]
 
 MIDDLEWARE = [

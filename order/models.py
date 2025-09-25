@@ -2,7 +2,9 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils import timezone
-from api.models import UserDriver, UserCustomer, VehicleType, City, VipZone
+from users.models import UserDriver, UserCustomer
+from vehicles.models import VehicleType
+from core.models import City, VipZone
 import uuid
 
 

@@ -16,7 +16,9 @@ import asyncio
 from channels.layers import get_channel_layer
 from asgiref.sync import async_to_sync
 
-from api.models import UserDriver, UserCustomer, Token, City, VipZone
+from users.models import UserDriver, UserCustomer
+from authentication.models import Token
+from core.models import City, VipZone
 from .models import (
     Order, DriverStatus, CustomerStatus, OrderTracking, PaymentMethod,
     Rating, TripTracking, DriverPool
@@ -77,7 +79,7 @@ def get_customer_from_token(request):
 
 def notify_drivers_new_order(order, pool_entries):
     """Envoie une notification WebSocket ET FCM à tous les chauffeurs concernés par une commande"""
-    from api.services.fcm_service import FCMService
+    from notifications.services.fcm_service import FCMService
     import json
     
     try:
@@ -198,7 +200,7 @@ def toggle_driver_status(request):
         
         if driver_status.status == 'OFFLINE':
             # Vérifier qu'il a au moins un véhicule actif et en service
-            from api.models import Vehicle
+            from vehicles.models import Vehicle
             active_online_vehicle = Vehicle.objects.filter(
                 driver=driver,
                 is_active=True,

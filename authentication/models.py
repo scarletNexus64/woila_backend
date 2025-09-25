@@ -1,0 +1,77 @@
+from django.db import models
+from django.utils import timezone
+from datetime import datetime, timedelta
+import uuid
+
+
+class Token(models.Model):
+    USER_TYPE_CHOICES = [
+        ('driver', 'Driver'),
+        ('customer', 'Customer'),
+    ]
+    
+    token = models.UUIDField(default=uuid.uuid4, unique=True, editable=False)
+    user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES)
+    user_id = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=True)
+    
+    def __str__(self):
+        return f"Token {self.user_type} - {self.user_id}"
+    
+    class Meta:
+        db_table = 'auth_tokens'
+        verbose_name = 'Token'
+        verbose_name_plural = 'Tokens'
+        unique_together = ['user_type', 'user_id']
+
+
+class OTPVerification(models.Model):
+    USER_TYPE_CHOICES = [
+        ('driver', 'Driver'),
+        ('customer', 'Customer'),
+    ]
+    
+    phone_number = models.CharField(max_length=15)
+    otp_code = models.CharField(max_length=6)
+    user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES)
+    created_at = models.DateTimeField(auto_now_add=True)
+    expires_at = models.DateTimeField()
+    is_verified = models.BooleanField(default=False)
+    attempts = models.IntegerField(default=0)
+    
+    def save(self, *args, **kwargs):
+        if not self.expires_at:
+            self.expires_at = timezone.now() + timedelta(minutes=10)
+        super().save(*args, **kwargs)
+    
+    def is_expired(self):
+        return timezone.now() > self.expires_at
+    
+    def can_attempt(self):
+        return self.attempts < 3 and not self.is_expired()
+    
+    def __str__(self):
+        return f"OTP {self.phone_number} - {self.otp_code}"
+    
+    class Meta:
+        db_table = 'otp_verifications'
+        verbose_name = 'Vérification OTP'
+        verbose_name_plural = 'Vérifications OTP'
+        ordering = ['-created_at']
+
+
+class ReferralCode(models.Model):
+    code = models.CharField(max_length=20, unique=True)
+    driver_id = models.IntegerField(unique=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=True)
+    used_count = models.IntegerField(default=0)
+    
+    def __str__(self):
+        return f"Code {self.code} - Driver {self.driver_id}"
+    
+    class Meta:
+        db_table = 'referral_codes'
+        verbose_name = 'Code de parrainage'
+        verbose_name_plural = 'Codes de parrainage'
