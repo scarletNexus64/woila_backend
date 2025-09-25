@@ -24,9 +24,13 @@ urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
     
-    # API endpoints
-    path('api/v1/', include('api.urls')),
-    path('api/v1/order/', include('order.urls')),
+    # API endpoints - Clean organized structure
+    path('api/auth/', include('authentication.urls')),
+    path('api/users/', include('users.urls')),
+    path('api/vehicles/', include('vehicles.urls')),
+    path('api/notifications/', include('notifications.urls')),
+    path('api/wallet/', include('wallet.urls')),
+    path('api/order/', include('order.urls')),
     
     # API Documentation
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
