@@ -4,6 +4,8 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 from decimal import Decimal, InvalidOperation
 from django.contrib.contenttypes.models import ContentType
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
 import logging
 
 from ..models import UserDriver, UserCustomer, Token, WalletTransaction, Wallet
@@ -16,6 +18,35 @@ from drf_spectacular.types import OpenApiTypes
 from django.utils import timezone
 
 logger = logging.getLogger(__name__)
+
+
+def get_user_from_token(request):
+    """Helper function to get user from authorization token"""
+    auth_header = request.META.get('HTTP_AUTHORIZATION')
+    if not auth_header or not auth_header.startswith('Bearer '):
+        return None, Response({
+            'success': False,
+            'message': 'Token d\'authentification manquant'
+        }, status=status.HTTP_401_UNAUTHORIZED)
+    
+    token_value = auth_header[7:]  # Remove 'Bearer ' prefix
+    try:
+        token_obj = Token.objects.get(token=token_value, is_active=True)
+        if token_obj.user_type == 'driver':
+            user = UserDriver.objects.get(id=token_obj.user_id)
+        else:
+            user = UserCustomer.objects.get(id=token_obj.user_id)
+        return user, None
+    except Token.DoesNotExist:
+        return None, Response({
+            'success': False,
+            'message': 'Token invalide'
+        }, status=status.HTTP_401_UNAUTHORIZED)
+    except (UserDriver.DoesNotExist, UserCustomer.DoesNotExist):
+        return None, Response({
+            'success': False,
+            'message': 'Utilisateur introuvable'
+        }, status=status.HTTP_404_NOT_FOUND)
 
 
 # Serializers pour la documentation Swagger
@@ -147,11 +178,11 @@ class TransactionStatusResponseSerializer(serializers.Serializer):
     new_balance = serializers.DecimalField(max_digits=10, decimal_places=2, help_text="Nouveau solde", required=False)
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class WalletBalanceView(APIView):
     """
     API pour obtenir le solde du wallet de l'utilisateur connecté
     """
-    permission_classes = [IsAuthenticated]
     
     @extend_schema(
         operation_id="wallet_get_balance",
@@ -166,50 +197,37 @@ class WalletBalanceView(APIView):
     )
     def get(self, request):
         try:
-            # Obtenir l'utilisateur et son type depuis le token
-            auth_header = request.headers.get('Authorization', '')
-            if auth_header.startswith('Bearer '):
-                token_str = auth_header.replace('Bearer ', '')
-            else:
-                # Support pour le cas où le token est envoyé directement (sans Bearer)
-                token_str = auth_header
-            try:
-                token_obj = Token.objects.get(token=token_str, is_active=True)
-            except Token.DoesNotExist:
-                return Response({
-                    'success': False,
-                    'message': 'Token invalide'
-                }, status=status.HTTP_401_UNAUTHORIZED)
+            # Obtenir l'utilisateur depuis le token
+            user, auth_error = get_user_from_token(request)
+            if auth_error:
+                return auth_error
             
-            # Obtenir l'utilisateur
-            if token_obj.user_type == 'driver':
-                user = UserDriver.objects.get(id=token_obj.user_id)
-            else:
-                user = UserCustomer.objects.get(id=token_obj.user_id)
+            # Déterminer le type d'utilisateur
+            user_type = 'driver' if isinstance(user, UserDriver) else 'customer'
             
             # Obtenir le solde
-            balance = WalletService.get_wallet_balance(user, token_obj.user_type)
+            balance = WalletService.get_wallet_balance(user, user_type)
             
             return Response({
                 'success': True,
                 'balance': float(balance),
-                'user_type': token_obj.user_type,
-                'user_id': token_obj.user_id
+                'user_type': user_type,
+                'user_id': user.id
             }, status=status.HTTP_200_OK)
             
         except Exception as e:
             logger.error(f"Erreur lors de la récupération du solde: {str(e)}")
             return Response({
                 'success': False,
-                'message': 'Erreur interne du serveur'
+                'message': str(e)
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class WalletDepositView(APIView):
     """
     API pour initier un dépôt d'argent dans le wallet
     """
-    permission_classes = [IsAuthenticated]
     
     @extend_schema(
         operation_id="wallet_deposit",
@@ -238,26 +256,13 @@ class WalletDepositView(APIView):
     )
     def post(self, request):
         try:
-            # Obtenir l'utilisateur et son type depuis le token
-            auth_header = request.headers.get('Authorization', '')
-            if auth_header.startswith('Bearer '):
-                token_str = auth_header.replace('Bearer ', '')
-            else:
-                # Support pour le cas où le token est envoyé directement (sans Bearer)
-                token_str = auth_header
-            try:
-                token_obj = Token.objects.get(token=token_str, is_active=True)
-            except Token.DoesNotExist:
-                return Response({
-                    'success': False,
-                    'message': 'Token invalide'
-                }, status=status.HTTP_401_UNAUTHORIZED)
+            # Obtenir l'utilisateur depuis le token
+            user, auth_error = get_user_from_token(request)
+            if auth_error:
+                return auth_error
             
-            # Obtenir l'utilisateur
-            if token_obj.user_type == 'driver':
-                user = UserDriver.objects.get(id=token_obj.user_id)
-            else:
-                user = UserCustomer.objects.get(id=token_obj.user_id)
+            # Déterminer le type d'utilisateur
+            user_type = 'driver' if isinstance(user, UserDriver) else 'customer'
             
             # Valider les données
             data = request.data
@@ -290,7 +295,7 @@ class WalletDepositView(APIView):
             # Initier le dépôt
             result = WalletService.initiate_deposit(
                 user=user,
-                user_type=token_obj.user_type,
+                user_type=user_type,
                 amount=amount,
                 phone_number=phone_number,
                 description=description
@@ -305,15 +310,15 @@ class WalletDepositView(APIView):
             logger.error(f"Erreur lors de l'initiation du dépôt: {str(e)}")
             return Response({
                 'success': False,
-                'message': 'Erreur interne du serveur'
+                'message': str(e)
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class WalletWithdrawalView(APIView):
     """
     API pour initier un retrait d'argent du wallet
     """
-    permission_classes = [IsAuthenticated]
     
     @extend_schema(
         operation_id="wallet_withdrawal",
@@ -342,26 +347,13 @@ class WalletWithdrawalView(APIView):
     )
     def post(self, request):
         try:
-            # Obtenir l'utilisateur et son type depuis le token
-            auth_header = request.headers.get('Authorization', '')
-            if auth_header.startswith('Bearer '):
-                token_str = auth_header.replace('Bearer ', '')
-            else:
-                # Support pour le cas où le token est envoyé directement (sans Bearer)
-                token_str = auth_header
-            try:
-                token_obj = Token.objects.get(token=token_str, is_active=True)
-            except Token.DoesNotExist:
-                return Response({
-                    'success': False,
-                    'message': 'Token invalide'
-                }, status=status.HTTP_401_UNAUTHORIZED)
+            # Obtenir l'utilisateur depuis le token
+            user, auth_error = get_user_from_token(request)
+            if auth_error:
+                return auth_error
             
-            # Obtenir l'utilisateur
-            if token_obj.user_type == 'driver':
-                user = UserDriver.objects.get(id=token_obj.user_id)
-            else:
-                user = UserCustomer.objects.get(id=token_obj.user_id)
+            # Déterminer le type d'utilisateur
+            user_type = 'driver' if isinstance(user, UserDriver) else 'customer'
             
             # Valider les données
             data = request.data
@@ -394,7 +386,7 @@ class WalletWithdrawalView(APIView):
             # Initier le retrait
             result = WalletService.initiate_withdrawal(
                 user=user,
-                user_type=token_obj.user_type,
+                user_type=user_type,
                 amount=amount,
                 phone_number=phone_number,
                 description=description
@@ -409,15 +401,15 @@ class WalletWithdrawalView(APIView):
             logger.error(f"Erreur lors de l'initiation du retrait: {str(e)}")
             return Response({
                 'success': False,
-                'message': 'Erreur interne du serveur'
+                'message': str(e)
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class WalletTransactionHistoryView(APIView):
     """
     API pour obtenir l'historique des transactions du wallet
     """
-    permission_classes = [IsAuthenticated]
     
     @extend_schema(
         operation_id="wallet_transaction_history",
@@ -468,26 +460,13 @@ class WalletTransactionHistoryView(APIView):
     )
     def get(self, request):
         try:
-            # Obtenir l'utilisateur et son type depuis le token
-            auth_header = request.headers.get('Authorization', '')
-            if auth_header.startswith('Bearer '):
-                token_str = auth_header.replace('Bearer ', '')
-            else:
-                # Support pour le cas où le token est envoyé directement (sans Bearer)
-                token_str = auth_header
-            try:
-                token_obj = Token.objects.get(token=token_str, is_active=True)
-            except Token.DoesNotExist:
-                return Response({
-                    'success': False,
-                    'message': 'Token invalide'
-                }, status=status.HTTP_401_UNAUTHORIZED)
+            # Obtenir l'utilisateur depuis le token
+            user, auth_error = get_user_from_token(request)
+            if auth_error:
+                return auth_error
             
-            # Obtenir l'utilisateur
-            if token_obj.user_type == 'driver':
-                user = UserDriver.objects.get(id=token_obj.user_id)
-            else:
-                user = UserCustomer.objects.get(id=token_obj.user_id)
+            # Déterminer le type d'utilisateur
+            user_type = 'driver' if isinstance(user, UserDriver) else 'customer'
             
             # Paramètres de pagination et filtrage
             page = int(request.query_params.get('page', 1))
@@ -497,7 +476,7 @@ class WalletTransactionHistoryView(APIView):
             # Obtenir l'historique
             result = WalletService.get_transaction_history(
                 user=user,
-                user_type=token_obj.user_type,
+                user_type=user_type,
                 page=page,
                 page_size=page_size,
                 transaction_type=transaction_type
@@ -517,15 +496,15 @@ class WalletTransactionHistoryView(APIView):
             logger.error(f"Erreur lors de la récupération de l'historique: {str(e)}")
             return Response({
                 'success': False,
-                'message': 'Erreur interne du serveur'
+                'message': str(e)
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class WalletTransactionDetailView(APIView):
     """
     API pour obtenir les détails d'une transaction spécifique
     """
-    permission_classes = [IsAuthenticated]
     
     @extend_schema(
         operation_id="wallet_transaction_detail",
@@ -554,28 +533,21 @@ class WalletTransactionDetailView(APIView):
     )
     def get(self, request, reference):
         try:
-            # Obtenir l'utilisateur et son type depuis le token
-            auth_header = request.headers.get('Authorization', '')
-            if auth_header.startswith('Bearer '):
-                token_str = auth_header.replace('Bearer ', '')
-            else:
-                # Support pour le cas où le token est envoyé directement (sans Bearer)
-                token_str = auth_header
-            try:
-                token_obj = Token.objects.get(token=token_str, is_active=True)
-            except Token.DoesNotExist:
-                return Response({
-                    'success': False,
-                    'message': 'Token invalide'
-                }, status=status.HTTP_401_UNAUTHORIZED)
+            # Obtenir l'utilisateur depuis le token
+            user, auth_error = get_user_from_token(request)
+            if auth_error:
+                return auth_error
+            
+            # Déterminer le type d'utilisateur
+            user_type = 'driver' if isinstance(user, UserDriver) else 'customer'
             
             # Obtenir la transaction
             try:
-                content_type = WalletService.get_content_type_for_user(token_obj.user_type)
+                content_type = WalletService.get_content_type_for_user(user_type)
                 transaction_obj = WalletTransaction.objects.get(
                     reference=reference,
                     user_type=content_type,
-                    user_id=token_obj.user_id
+                    user_id=user.id
                 )
             except WalletTransaction.DoesNotExist:
                 return Response({
@@ -615,16 +587,16 @@ class WalletTransactionDetailView(APIView):
             logger.error(f"Erreur lors de la récupération des détails: {str(e)}")
             return Response({
                 'success': False,
-                'message': 'Erreur interne du serveur'
+                'message': str(e)
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class WalletTransactionStatusView(APIView):
     """
     API pour vérifier et mettre à jour le statut d'une transaction wallet
     en consultant directement FreeMoPay (utile si le polling a timeout)
     """
-    permission_classes = [IsAuthenticated]
     
     @extend_schema(
         operation_id="wallet_check_transaction_status",
@@ -652,29 +624,21 @@ class WalletTransactionStatusView(APIView):
     )
     def post(self, request, reference):
         try:
-            # Obtenir l'utilisateur et son type depuis le token
-            auth_header = request.headers.get('Authorization', '')
-            if auth_header.startswith('Bearer '):
-                token_str = auth_header.replace('Bearer ', '')
-            else:
-                # Support pour le cas où le token est envoyé directement (sans Bearer)
-                token_str = auth_header
-                
-            try:
-                token_obj = Token.objects.get(token=token_str, is_active=True)
-            except Token.DoesNotExist:
-                return Response({
-                    'success': False,
-                    'message': 'Token invalide'
-                }, status=status.HTTP_401_UNAUTHORIZED)
+            # Obtenir l'utilisateur depuis le token
+            user, auth_error = get_user_from_token(request)
+            if auth_error:
+                return auth_error
+            
+            # Déterminer le type d'utilisateur
+            user_type = 'driver' if isinstance(user, UserDriver) else 'customer'
             
             # Vérifier que la transaction appartient bien à l'utilisateur
             try:
-                content_type = WalletService.get_content_type_for_user(token_obj.user_type)
+                content_type = WalletService.get_content_type_for_user(user_type)
                 wallet_transaction = WalletTransaction.objects.get(
                     reference=reference,
                     user_type=content_type,
-                    user_id=token_obj.user_id
+                    user_id=user.id
                 )
             except WalletTransaction.DoesNotExist:
                 return Response({
@@ -772,5 +736,5 @@ class WalletTransactionStatusView(APIView):
             logger.error(f"[WalletTransactionStatus] Erreur lors de la vérification: {str(e)}")
             return Response({
                 'success': False,
-                'message': 'Erreur interne du serveur'
+                'message': str(e)
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

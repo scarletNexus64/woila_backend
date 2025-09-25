@@ -165,6 +165,21 @@ SPECTACULAR_SETTINGS = {
     'SERVE_INCLUDE_SCHEMA': False,
     'COMPONENT_SPLIT_REQUEST': True,
     'SORT_OPERATIONS': False,
+    'SECURITY': [
+        {
+            'bearerAuth': [],
+        }
+    ],
+    'COMPONENTS': {
+        'securitySchemes': {
+            'bearerAuth': {
+                'type': 'http',
+                'scheme': 'bearer',
+                'bearerFormat': 'UUID',
+                'description': 'Token UUID d\'authentification. Format: Bearer <uuid_token>'
+            }
+        }
+    },
 }
 
 # Jazzmin settings

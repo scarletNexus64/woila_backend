@@ -21842,3 +21842,453 @@ INFO 2025-09-11 08:17:58,457 freemopay 10810 123145389719552 [FreeMoPay Withdraw
 INFO 2025-09-11 08:17:58,473 wallet_service 10810 123145389719552 Réponse FreeMoPay pour retrait WIT-20250911081755-6EE8CA3F: {'reference': '857215cf-d560-450b-a976-c1a3bd322b7d', 'status': 'CREATED', 'message': 'cashout created', 'external_id': 'WIT-20250911081755-6EE8CA3F'}
 INFO 2025-09-11 08:17:58,476 wallet_service 10810 123145389719552 Retrait FreeMoPay initié: 857215cf-d560-450b-a976-c1a3bd322b7d pour transaction WIT-20250911081755-6EE8CA3F
 INFO 2025-09-11 08:17:58,477 basehttp 10810 123145389719552 "POST /api/v1/wallet/withdrawal/ HTTP/1.1" 200 229
+INFO 2025-09-11 12:38:01,351 autoreload 42855 140704432328576 Watching for file changes with StatReloader
+WARNING 2025-09-11 12:38:10,525 log 42855 123145464164352 Unauthorized: /api/v1/auth/token/verify/
+WARNING 2025-09-11 12:38:10,525 basehttp 42855 123145464164352 "POST /api/v1/auth/token/verify/ HTTP/1.1" 401 55
+INFO 2025-09-11 12:38:51,721 basehttp 42855 123145464164352 "POST /api/v1/auth/login/ HTTP/1.1" 200 263
+INFO 2025-09-11 12:38:51,931 basehttp 42855 123145464164352 "GET /api/v1/profiles/driver/31/ HTTP/1.1" 200 405
+INFO 2025-09-11 12:38:52,067 fcm_service 42855 123145480953856 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 12:38:52,069 basehttp 42855 123145480953856 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 12:38:52,446 basehttp 42855 123145480953856 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 409
+INFO 2025-09-11 12:39:17,817 basehttp 42855 123145464164352 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-09-11 12:39:18,192 basehttp 42855 123145464164352 "GET /api/schema/ HTTP/1.1" 200 222590
+ERROR 2025-09-11 12:39:53,922 wallet 42855 123145464164352 Erreur lors de l'initiation du dépôt: ['“” is not a valid UUID.']
+ERROR 2025-09-11 12:39:53,923 log 42855 123145464164352 Internal Server Error: /api/v1/wallet/deposit/
+ERROR 2025-09-11 12:39:53,924 basehttp 42855 123145464164352 "POST /api/v1/wallet/deposit/ HTTP/1.1" 500 55
+ERROR 2025-09-11 12:40:02,689 wallet 42855 123145464164352 Erreur lors de l'initiation du dépôt: ['“” is not a valid UUID.']
+ERROR 2025-09-11 12:40:02,690 log 42855 123145464164352 Internal Server Error: /api/v1/wallet/deposit/
+ERROR 2025-09-11 12:40:02,690 basehttp 42855 123145464164352 "POST /api/v1/wallet/deposit/ HTTP/1.1" 500 55
+INFO 2025-09-11 12:40:12,856 basehttp 42855 123145464164352 "GET /admin/api/token/ HTTP/1.1" 200 54444
+INFO 2025-09-11 12:40:12,908 basehttp 42855 123145464164352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 12:40:30,065 wallet_service 42855 123145464164352 [WalletService] Initialisation du paiement FreeMoPay pour 10 FCFA...
+INFO 2025-09-11 12:40:32,688 freemopay 42855 123145464164352 [FreeMoPay] Paiement initié avec succès - Référence: 4c04f956-8afd-46e7-958b-4815f5bb295b
+INFO 2025-09-11 12:40:32,696 wallet_service 42855 123145464164352 [WalletService] Paiement initié avec succès - Référence: 4c04f956-8afd-46e7-958b-4815f5bb295b
+INFO 2025-09-11 12:40:32,697 wallet_service 42855 123145464164352 [WalletService] Début du polling pour la référence: 4c04f956-8afd-46e7-958b-4815f5bb295b
+INFO 2025-09-11 12:40:32,697 freemopay 42855 123145464164352 [FreeMoPay Polling] Début du polling pour la référence: 4c04f956-8afd-46e7-958b-4815f5bb295b
+INFO 2025-09-11 12:40:32,697 freemopay 42855 123145464164352 [FreeMoPay Polling] Durée max: 120s, Intervalle: 1s
+INFO 2025-09-11 12:40:34,535 freemopay 42855 123145464164352 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 12:40:37,317 freemopay 42855 123145464164352 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 12:40:41,039 freemopay 42855 123145464164352 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 12:40:41,386 basehttp 42855 123145481490432 "GET /admin/api/token/ HTTP/1.1" 200 54444
+INFO 2025-09-11 12:40:41,412 basehttp 42855 123145481490432 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 12:40:42,769 basehttp 42855 123145481490432 "GET /admin/api/wallet/ HTTP/1.1" 200 38692
+INFO 2025-09-11 12:40:42,798 basehttp 42855 123145481490432 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 12:40:44,470 freemopay 42855 123145464164352 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 12:40:47,651 freemopay 42855 123145464164352 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 12:40:50,920 freemopay 42855 123145464164352 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 12:40:54,369 freemopay 42855 123145464164352 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 12:40:57,606 freemopay 42855 123145464164352 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 12:41:00,749 freemopay 42855 123145464164352 [FreeMoPay Polling] Statut actuel: SUCCESS - Raison: paiement en cours de traitement
+INFO 2025-09-11 12:41:00,749 freemopay 42855 123145464164352 [FreeMoPay Polling] ✅ Paiement confirmé après 25.9s
+INFO 2025-09-11 12:41:00,749 wallet_service 42855 123145464164352 [WalletService] Résultat du polling: SUCCESS après 9 tentatives
+INFO 2025-09-11 12:41:00,749 wallet_service 42855 123145464164352 [WalletService] ✅ Paiement confirmé avec succès
+INFO 2025-09-11 12:41:00,756 basehttp 42855 123145464164352 "POST /api/v1/wallet/deposit/ HTTP/1.1" 200 347
+INFO 2025-09-11 12:41:14,068 basehttp 42855 123145464164352 "GET /admin/api/notification/ HTTP/1.1" 200 49727
+INFO 2025-09-11 12:41:14,100 basehttp 42855 123145464164352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 12:41:15,813 basehttp 42855 123145464164352 "GET /admin/api/wallet/ HTTP/1.1" 200 38696
+INFO 2025-09-11 12:41:15,840 basehttp 42855 123145464164352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 12:41:40,468 basehttp 42855 123145464164352 "GET /admin/api/userdriver/ HTTP/1.1" 200 42551
+INFO 2025-09-11 12:41:40,496 basehttp 42855 123145464164352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 12:41:43,829 basehttp 42855 123145464164352 "GET /admin/api/usercustomer/ HTTP/1.1" 200 36159
+INFO 2025-09-11 12:41:43,859 basehttp 42855 123145464164352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 12:41:46,931 basehttp 42855 123145464164352 "GET /admin/api/userdriver/ HTTP/1.1" 200 42551
+INFO 2025-09-11 12:41:46,959 basehttp 42855 123145464164352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 12:41:56,535 basehttp 42855 123145464164352 "GET /admin/api/usercustomer/ HTTP/1.1" 200 36159
+INFO 2025-09-11 12:41:56,564 basehttp 42855 123145464164352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-09-11 13:12:25,061 basehttp 42855 123145464164352 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-09-11 13:12:25,254 fcm_service 42855 123145464164352 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 13:12:25,259 basehttp 42855 123145464164352 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 13:12:27,303 basehttp 42855 123145464164352 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1182
+INFO 2025-09-11 13:12:27,315 basehttp 42855 123145481490432 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1182
+INFO 2025-09-11 13:12:29,325 basehttp 42855 123145464164352 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-09-11 13:12:29,397 fcm_service 42855 123145464164352 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 13:12:29,398 basehttp 42855 123145464164352 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 13:12:29,923 basehttp 42855 123145464164352 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 409
+INFO 2025-09-11 13:12:35,138 basehttp 42855 123145464164352 "POST /api/v1/order/driver/location/update/ HTTP/1.1" 200 161
+INFO 2025-09-11 13:13:05,779 basehttp 42855 123145464164352 "GET /media/profile_pictures/driver/31/woila_profile_1756550190047.jpg HTTP/1.1" 200 10957
+WARNING 2025-09-11 13:13:10,141 log 42855 123145481490432 Forbidden: /api/v1/wallet/balance/
+WARNING 2025-09-11 13:13:10,142 basehttp 42855 123145481490432 "GET /api/v1/wallet/balance/ HTTP/1.1" 403 58
+WARNING 2025-09-11 13:13:10,144 log 42855 123145498279936 Forbidden: /api/v1/wallet/transactions/
+WARNING 2025-09-11 13:13:10,145 basehttp 42855 123145498279936 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 403 58
+INFO 2025-09-11 13:13:10,290 basehttp 42855 123145498279936 "GET /api/v1/referral/wallet/?user_type=driver&user_id=31 HTTP/1.1" 200 180
+WARNING 2025-09-11 13:23:18,130 log 42855 123145464164352 Forbidden: /api/v1/wallet/deposit/
+WARNING 2025-09-11 13:23:18,132 basehttp 42855 123145464164352 "POST /api/v1/wallet/deposit/ HTTP/1.1" 403 58
+INFO 2025-09-11 13:26:04,103 basehttp 42855 123145464164352 "GET /admin/api/token/ HTTP/1.1" 200 54444
+INFO 2025-09-11 13:26:04,184 basehttp 42855 123145464164352 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-09-11 13:28:23,724 log 42855 123145481490432 Forbidden: /api/v1/wallet/balance/
+WARNING 2025-09-11 13:28:23,726 basehttp 42855 123145481490432 "GET /api/v1/wallet/balance/ HTTP/1.1" 403 58
+WARNING 2025-09-11 13:28:23,793 log 42855 123145498279936 Forbidden: /api/v1/wallet/transactions/
+WARNING 2025-09-11 13:28:23,794 basehttp 42855 123145498279936 "GET /api/v1/wallet/transactions/?page=1&page_size=5 HTTP/1.1" 403 58
+INFO 2025-09-11 13:28:23,823 basehttp 42855 123145515069440 "GET /api/v1/referral/wallet/?user_type=driver&user_id=31 HTTP/1.1" 200 180
+WARNING 2025-09-11 13:28:23,848 log 42855 123145531858944 Forbidden: /api/v1/wallet/deposit/
+WARNING 2025-09-11 13:28:23,848 basehttp 42855 123145531858944 "POST /api/v1/wallet/deposit/ HTTP/1.1" 403 58
+WARNING 2025-09-11 13:28:23,865 log 42855 123145548648448 Forbidden: /api/v1/wallet/withdrawal/
+WARNING 2025-09-11 13:28:23,865 basehttp 42855 123145548648448 "POST /api/v1/wallet/withdrawal/ HTTP/1.1" 403 58
+WARNING 2025-09-11 13:28:23,907 log 42855 123145565437952 Not Found: /
+WARNING 2025-09-11 13:28:23,907 basehttp 42855 123145565437952 "GET / HTTP/1.1" 404 3163
+INFO 2025-09-11 13:29:15,981 basehttp 42855 123145481490432 "GET /api/v1/referral/wallet/?user_type=driver&user_id=31 HTTP/1.1" 200 180
+INFO 2025-09-11 13:29:16,032 basehttp 42855 123145481490432 "GET /api/v1/referral/user-info/?user_type=driver&user_id=31 HTTP/1.1" 200 238
+WARNING 2025-09-11 13:29:16,046 log 42855 123145498279936 Forbidden: /api/v1/wallet/balance/
+WARNING 2025-09-11 13:29:16,047 basehttp 42855 123145498279936 "GET /api/v1/wallet/balance/ HTTP/1.1" 403 58
+ERROR 2025-09-11 13:29:16,125 log 42855 123145515069440 Internal Server Error: /api/v1/wallet/balance/
+Traceback (most recent call last):
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/authentication.py", line 201, in authenticate_credentials
+    token = model.objects.select_related('user').get(key=key)
+            ^^^^^^^^^^^^^
+AttributeError: type object 'Token' has no attribute 'objects'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 74, in wrap_attributeerrors
+    yield
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 232, in user
+    self._authenticate()
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/authentication.py", line 202, in authenticate_credentials
+    except model.DoesNotExist:
+           ^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'Token' has no attribute 'DoesNotExist'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 420, in initial
+    self.perform_authentication(request)
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/views.py", line 330, in perform_authentication
+    request.user
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 231, in user
+    with wrap_attributeerrors():
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/contextlib.py", line 158, in __exit__
+    self.gen.throw(typ, value, traceback)
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 78, in wrap_attributeerrors
+    raise exc.with_traceback(info[2])
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 74, in wrap_attributeerrors
+    yield
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 232, in user
+    self._authenticate()
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/request.py", line 385, in _authenticate
+    user_auth_tuple = authenticator.authenticate(self)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/authentication.py", line 196, in authenticate
+    return self.authenticate_credentials(token)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/venv/lib/python3.11/site-packages/rest_framework/authentication.py", line 202, in authenticate_credentials
+    except model.DoesNotExist:
+           ^^^^^^^^^^^^^^^^^^
+rest_framework.request.WrappedAttributeError: type object 'Token' has no attribute 'DoesNotExist'
+ERROR 2025-09-11 13:29:16,132 basehttp 42855 123145515069440 "GET /api/v1/wallet/balance/ HTTP/1.1" 500 25820
+INFO 2025-09-11 13:29:16,185 basehttp 42855 123145531858944 "GET /api/v1/notifications/ HTTP/1.1" 200 1182
+INFO 2025-09-11 13:29:16,219 basehttp 42855 123145531858944 "GET /api/v1/vehicles/?driver_id=31 HTTP/1.1" 200 991
+WARNING 2025-09-11 13:29:16,239 log 42855 123145548648448 Not Found: /api/v1/wallet/
+WARNING 2025-09-11 13:29:16,240 basehttp 42855 123145548648448 "GET /api/v1/wallet/ HTTP/1.1" 404 19994
+WARNING 2025-09-11 13:29:16,244 log 42855 123145548648448 Forbidden: /api/v1/wallet/balance/
+WARNING 2025-09-11 13:29:16,245 basehttp 42855 123145548648448 "GET /api/v1/wallet/balance/ HTTP/1.1" 403 58
+WARNING 2025-09-11 13:29:16,250 log 42855 123145548648448 Forbidden: /api/v1/wallet/deposit/
+WARNING 2025-09-11 13:29:16,250 basehttp 42855 123145548648448 "GET /api/v1/wallet/deposit/ HTTP/1.1" 403 58
+WARNING 2025-09-11 13:29:16,255 log 42855 123145548648448 Forbidden: /api/v1/wallet/withdrawal/
+WARNING 2025-09-11 13:29:16,255 basehttp 42855 123145548648448 "GET /api/v1/wallet/withdrawal/ HTTP/1.1" 403 58
+WARNING 2025-09-11 13:29:16,260 log 42855 123145548648448 Forbidden: /api/v1/wallet/transactions/
+WARNING 2025-09-11 13:29:16,260 basehttp 42855 123145548648448 "GET /api/v1/wallet/transactions/ HTTP/1.1" 403 58
+INFO 2025-09-11 13:38:49,421 autoreload 42855 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:38:50,880 autoreload 51582 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:38:55,493 autoreload 51582 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:38:56,419 autoreload 51622 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:39:08,400 autoreload 51622 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:39:09,024 autoreload 51664 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:39:13,540 autoreload 51664 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:39:14,367 autoreload 51691 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:39:37,467 autoreload 51691 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:39:38,362 autoreload 51779 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:39:48,228 autoreload 51779 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:39:49,120 autoreload 51824 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:40:04,031 autoreload 51824 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:40:05,021 autoreload 51870 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:40:09,619 autoreload 51870 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:40:10,237 autoreload 51901 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:40:20,940 autoreload 51901 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:40:21,607 autoreload 51954 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:40:26,117 autoreload 51954 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:40:26,803 autoreload 51982 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:40:35,523 autoreload 51982 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:40:36,127 autoreload 52018 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:40:43,711 autoreload 52018 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:40:44,295 autoreload 52051 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:40:59,122 autoreload 52051 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:40:59,785 autoreload 52105 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:41:11,500 autoreload 52105 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:41:12,103 autoreload 52175 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:41:17,707 autoreload 52175 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:41:18,409 autoreload 52206 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:41:26,020 autoreload 52206 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:41:26,614 autoreload 52240 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:41:32,132 autoreload 52240 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:41:32,764 autoreload 52267 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:41:38,299 autoreload 52267 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:41:38,869 autoreload 52301 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:41:43,377 autoreload 52301 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/viewsets/wallet.py changed, reloading.
+INFO 2025-09-11 13:41:45,159 autoreload 52335 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:43:35,171 basehttp 52335 123145477767168 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-09-11 13:43:35,447 basehttp 52335 123145477767168 "GET /api/schema/ HTTP/1.1" 200 222734
+WARNING 2025-09-11 13:44:13,697 log 52335 123145477767168 Unauthorized: /api/v1/wallet/deposit/
+WARNING 2025-09-11 13:44:13,698 basehttp 52335 123145477767168 "POST /api/v1/wallet/deposit/ HTTP/1.1" 401 63
+WARNING 2025-09-11 13:44:34,548 log 52335 123145477767168 Unauthorized: /api/v1/wallet/deposit/
+WARNING 2025-09-11 13:44:34,548 basehttp 52335 123145477767168 "POST /api/v1/wallet/deposit/ HTTP/1.1" 401 63
+INFO 2025-09-11 13:44:45,228 basehttp 52335 123145477767168 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-09-11 13:44:45,396 basehttp 52335 123145477767168 "GET /api/schema/ HTTP/1.1" 200 222734
+INFO 2025-09-11 13:44:46,774 basehttp 52335 123145477767168 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-09-11 13:44:46,914 basehttp 52335 123145477767168 "GET /api/schema/ HTTP/1.1" 200 222734
+INFO 2025-09-11 13:44:52,053 basehttp 52335 123145477767168 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-09-11 13:44:52,211 basehttp 52335 123145477767168 "GET /api/schema/ HTTP/1.1" 200 222734
+INFO 2025-09-11 13:45:01,477 basehttp 52335 123145477767168 "GET /admin/api/token/ HTTP/1.1" 200 54444
+INFO 2025-09-11 13:45:01,520 basehttp 52335 123145477767168 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-09-11 13:45:41,562 log 52335 123145477767168 Unauthorized: /api/v1/wallet/deposit/
+WARNING 2025-09-11 13:45:41,563 basehttp 52335 123145477767168 "POST /api/v1/wallet/deposit/ HTTP/1.1" 401 63
+INFO 2025-09-11 13:47:02,815 autoreload 52335 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/woila_backend/settings.py changed, reloading.
+INFO 2025-09-11 13:47:03,796 autoreload 53067 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:47:40,624 autoreload 53315 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 13:47:54,074 basehttp 53315 123145431334912 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-09-11 13:47:54,397 basehttp 53315 123145431334912 "GET /api/schema/ HTTP/1.1" 200 230130
+INFO 2025-09-11 13:48:02,350 basehttp 53315 123145431334912 "GET /api/docs/swagger/ HTTP/1.1" 200 4651
+INFO 2025-09-11 13:48:02,578 basehttp 53315 123145431334912 "GET /api/schema/ HTTP/1.1" 200 230130
+WARNING 2025-09-11 13:48:36,515 log 53315 123145431334912 Unauthorized: /api/v1/wallet/deposit/
+WARNING 2025-09-11 13:48:36,516 basehttp 53315 123145431334912 "POST /api/v1/wallet/deposit/ HTTP/1.1" 401 63
+WARNING 2025-09-11 13:48:58,039 log 53315 123145431334912 Unauthorized: /api/v1/wallet/deposit/
+WARNING 2025-09-11 13:48:58,039 basehttp 53315 123145431334912 "POST /api/v1/wallet/deposit/ HTTP/1.1" 401 63
+INFO 2025-09-11 13:50:16,093 basehttp 53315 123145431334912 "GET /admin/api/usercustomer/ HTTP/1.1" 200 36159
+INFO 2025-09-11 13:50:19,836 basehttp 53315 123145431334912 "GET /admin/api/token/ HTTP/1.1" 200 54444
+INFO 2025-09-11 14:13:09,116 wallet_service 53315 123145431334912 [WalletService] Initialisation du paiement FreeMoPay pour 100 FCFA...
+INFO 2025-09-11 14:13:11,466 freemopay 53315 123145431334912 [FreeMoPay] Paiement initié avec succès - Référence: 088b777e-c223-453c-98a7-93c96109b3f4
+INFO 2025-09-11 14:13:11,471 wallet_service 53315 123145431334912 [WalletService] Paiement initié avec succès - Référence: 088b777e-c223-453c-98a7-93c96109b3f4
+INFO 2025-09-11 14:13:11,472 wallet_service 53315 123145431334912 [WalletService] Début du polling pour la référence: 088b777e-c223-453c-98a7-93c96109b3f4
+INFO 2025-09-11 14:13:11,472 freemopay 53315 123145431334912 [FreeMoPay Polling] Début du polling pour la référence: 088b777e-c223-453c-98a7-93c96109b3f4
+INFO 2025-09-11 14:13:11,472 freemopay 53315 123145431334912 [FreeMoPay Polling] Durée max: 120s, Intervalle: 1s
+INFO 2025-09-11 14:13:13,158 freemopay 53315 123145431334912 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 14:13:15,891 freemopay 53315 123145431334912 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+ERROR 2025-09-11 14:13:33,160 freemopay 53315 123145431334912 [FreeMoPay] Erreur de connexion: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+INFO 2025-09-11 14:13:33,161 freemopay 53315 123145431334912 [FreeMoPay Polling] Statut actuel: FAILED - Raison: 
+WARNING 2025-09-11 14:13:33,161 freemopay 53315 123145431334912 [FreeMoPay Polling] ❌ Paiement échoué/annulé après 5.4s - Raison: 
+INFO 2025-09-11 14:13:33,161 wallet_service 53315 123145431334912 [WalletService] Résultat du polling: FAILED après 3 tentatives
+WARNING 2025-09-11 14:13:33,161 wallet_service 53315 123145431334912 [WalletService] ❌ Paiement échoué/annulé - Raison: 
+WARNING 2025-09-11 14:13:33,169 log 53315 123145431334912 Bad Request: /api/v1/wallet/deposit/
+WARNING 2025-09-11 14:13:33,170 basehttp 53315 123145431334912 "POST /api/v1/wallet/deposit/ HTTP/1.1" 400 284
+INFO 2025-09-11 14:30:54,338 basehttp 53315 123145431334912 "POST /api/v1/auth/login/ HTTP/1.1" 200 263
+INFO 2025-09-11 14:31:09,524 fcm_service 53315 123145431334912 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 14:31:09,526 basehttp 53315 123145431334912 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 14:31:09,987 basehttp 53315 123145431334912 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 409
+INFO 2025-09-11 14:35:16,110 basehttp 53315 123145448660992 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 65
+INFO 2025-09-11 14:35:16,116 basehttp 53315 123145431334912 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 920
+WARNING 2025-09-11 14:36:04,793 log 53315 123145431334912 Unauthorized: /api/v1/wallet/balance/
+WARNING 2025-09-11 14:36:04,794 basehttp 53315 123145431334912 "GET /api/v1/wallet/balance/ HTTP/1.1" 401 44
+WARNING 2025-09-11 14:37:40,367 log 53315 123145431334912 Unauthorized: /api/v1/wallet/balance/
+WARNING 2025-09-11 14:37:40,367 basehttp 53315 123145431334912 "GET /api/v1/wallet/balance/ HTTP/1.1" 401 44
+WARNING 2025-09-11 14:37:40,432 log 53315 123145448660992 Unauthorized: /api/v1/wallet/transactions/
+WARNING 2025-09-11 14:37:40,433 basehttp 53315 123145448660992 "GET /api/v1/wallet/transactions/?page=1&page_size=5 HTTP/1.1" 401 44
+INFO 2025-09-11 14:37:40,462 basehttp 53315 123145465450496 "GET /api/v1/referral/wallet/?user_type=driver&user_id=31 HTTP/1.1" 200 180
+WARNING 2025-09-11 14:37:40,487 log 53315 123145482240000 Unauthorized: /api/v1/wallet/deposit/
+WARNING 2025-09-11 14:37:40,488 basehttp 53315 123145482240000 "POST /api/v1/wallet/deposit/ HTTP/1.1" 401 44
+WARNING 2025-09-11 14:37:40,506 log 53315 123145499029504 Unauthorized: /api/v1/wallet/withdrawal/
+WARNING 2025-09-11 14:37:40,507 basehttp 53315 123145499029504 "POST /api/v1/wallet/withdrawal/ HTTP/1.1" 401 44
+WARNING 2025-09-11 14:37:40,560 log 53315 123145515819008 Not Found: /
+WARNING 2025-09-11 14:37:40,561 basehttp 53315 123145515819008 "GET / HTTP/1.1" 404 3163
+INFO 2025-09-11 14:40:47,707 basehttp 53315 123145431334912 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-09-11 14:40:47,868 fcm_service 53315 123145431334912 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 14:40:47,870 basehttp 53315 123145431334912 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 14:40:49,964 basehttp 53315 123145431334912 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1182
+INFO 2025-09-11 14:40:49,970 basehttp 53315 123145448660992 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1182
+INFO 2025-09-11 14:40:51,984 basehttp 53315 123145431334912 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-09-11 14:40:52,047 fcm_service 53315 123145431334912 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 14:40:52,048 basehttp 53315 123145431334912 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 14:40:52,516 basehttp 53315 123145431334912 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 409
+INFO 2025-09-11 14:40:58,174 basehttp 53315 123145431334912 "POST /api/v1/order/driver/location/update/ HTTP/1.1" 200 161
+INFO 2025-09-11 14:41:02,596 basehttp 53315 123145431334912 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 920
+INFO 2025-09-11 14:41:02,597 basehttp 53315 123145448660992 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 65
+INFO 2025-09-11 14:42:00,726 wallet_service 53315 123145431334912 [WalletService] Initialisation du paiement FreeMoPay pour 100.0 FCFA...
+INFO 2025-09-11 14:42:01,918 wallet_service 53315 123145448660992 [WalletService] Initialisation du paiement FreeMoPay pour 100.0 FCFA...
+ERROR 2025-09-11 14:42:09,005 freemopay 53315 123145431334912 [FreeMoPay] Erreur de connexion: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+ERROR 2025-09-11 14:42:09,006 wallet_service 53315 123145431334912 [WalletService] Échec de l'initialisation: Échec de génération du token d'authentification
+WARNING 2025-09-11 14:42:09,011 log 53315 123145431334912 Bad Request: /api/v1/wallet/deposit/
+WARNING 2025-09-11 14:42:09,011 basehttp 53315 123145431334912 "POST /api/v1/wallet/deposit/ HTTP/1.1" 400 225
+ERROR 2025-09-11 14:42:09,517 freemopay 53315 123145448660992 [FreeMoPay] Erreur de connexion: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+ERROR 2025-09-11 14:42:09,520 wallet_service 53315 123145448660992 [WalletService] Échec de l'initialisation: Échec de génération du token d'authentification
+WARNING 2025-09-11 14:42:09,525 log 53315 123145448660992 Bad Request: /api/v1/wallet/deposit/
+WARNING 2025-09-11 14:42:09,526 basehttp 53315 123145448660992 "POST /api/v1/wallet/deposit/ HTTP/1.1" 400 225
+INFO 2025-09-11 14:43:41,780 wallet_service 53315 123145431334912 [WalletService] Initialisation du paiement FreeMoPay pour 100.0 FCFA...
+ERROR 2025-09-11 14:43:49,183 freemopay 53315 123145431334912 [FreeMoPay] Erreur de connexion: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+ERROR 2025-09-11 14:43:49,184 wallet_service 53315 123145431334912 [WalletService] Échec de l'initialisation: Échec de génération du token d'authentification
+WARNING 2025-09-11 14:43:49,188 log 53315 123145431334912 Bad Request: /api/v1/wallet/deposit/
+WARNING 2025-09-11 14:43:49,189 basehttp 53315 123145431334912 "POST /api/v1/wallet/deposit/ HTTP/1.1" 400 225
+INFO 2025-09-11 14:46:57,827 basehttp 53315 123145431334912 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-09-11 14:46:58,040 fcm_service 53315 123145431334912 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 14:46:58,042 basehttp 53315 123145431334912 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 14:46:59,956 basehttp 53315 123145431334912 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1182
+INFO 2025-09-11 14:46:59,968 basehttp 53315 123145448660992 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1182
+INFO 2025-09-11 14:47:01,984 basehttp 53315 123145431334912 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-09-11 14:47:02,046 fcm_service 53315 123145431334912 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 14:47:02,049 basehttp 53315 123145431334912 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 14:47:02,460 basehttp 53315 123145431334912 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 409
+INFO 2025-09-11 14:50:14,337 basehttp 53315 123145448660992 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 65
+INFO 2025-09-11 14:50:14,339 basehttp 53315 123145431334912 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 2210
+INFO 2025-09-11 14:50:30,988 wallet_service 53315 123145431334912 [WalletService] Initialisation du paiement FreeMoPay pour 100.0 FCFA...
+ERROR 2025-09-11 14:50:38,681 freemopay 53315 123145431334912 [FreeMoPay] Erreur de connexion: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+ERROR 2025-09-11 14:50:38,682 wallet_service 53315 123145431334912 [WalletService] Échec de l'initialisation: Échec de génération du token d'authentification
+WARNING 2025-09-11 14:50:38,685 log 53315 123145431334912 Bad Request: /api/v1/wallet/deposit/
+WARNING 2025-09-11 14:50:38,686 basehttp 53315 123145431334912 "POST /api/v1/wallet/deposit/ HTTP/1.1" 400 225
+WARNING 2025-09-11 14:51:40,125 log 53315 123145431334912 Unauthorized: /api/v1/wallet/deposit/
+WARNING 2025-09-11 14:51:40,126 basehttp 53315 123145431334912 "POST /api/v1/wallet/deposit/ HTTP/1.1" 401 63
+INFO 2025-09-11 14:54:37,090 wallet_service 53315 123145448660992 [WalletService] Initialisation du paiement FreeMoPay pour 50.0 FCFA...
+ERROR 2025-09-11 14:54:44,643 freemopay 53315 123145448660992 [FreeMoPay] Erreur de connexion: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+ERROR 2025-09-11 14:54:44,643 wallet_service 53315 123145448660992 [WalletService] Échec de l'initialisation: Échec de génération du token d'authentification
+WARNING 2025-09-11 14:54:44,646 log 53315 123145448660992 Bad Request: /api/v1/wallet/deposit/
+WARNING 2025-09-11 14:54:44,647 basehttp 53315 123145448660992 "POST /api/v1/wallet/deposit/ HTTP/1.1" 400 225
+INFO 2025-09-11 14:56:42,600 autoreload 53315 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/services/freemopay.py changed, reloading.
+INFO 2025-09-11 14:56:43,761 autoreload 61049 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 14:57:02,802 autoreload 61049 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/services/freemopay.py changed, reloading.
+INFO 2025-09-11 14:57:03,498 autoreload 61114 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 14:57:12,106 autoreload 61114 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/services/freemopay.py changed, reloading.
+INFO 2025-09-11 14:57:12,739 autoreload 61148 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 14:57:19,291 autoreload 61148 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/services/freemopay.py changed, reloading.
+INFO 2025-09-11 14:57:20,034 autoreload 61169 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 14:57:31,836 autoreload 61169 140704432328576 /Users/macbookpro/Desktop/Developments/Personnals/Woila/woila_backend/api/services/freemopay.py changed, reloading.
+INFO 2025-09-11 14:57:32,488 autoreload 61210 140704432328576 Watching for file changes with StatReloader
+INFO 2025-09-11 14:58:07,734 wallet_service 61210 123145595604992 [WalletService] Initialisation du paiement FreeMoPay pour 50.0 FCFA...
+WARNING 2025-09-11 14:58:16,610 freemopay 61210 123145595604992 [FreeMoPay Retry] Erreur de connexion (tentative 1/4): ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+INFO 2025-09-11 14:58:16,610 freemopay 61210 123145595604992 [FreeMoPay Retry] Tentative 2/4 après 2s...
+WARNING 2025-09-11 14:58:26,069 freemopay 61210 123145595604992 [FreeMoPay Retry] Erreur de connexion (tentative 2/4): ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+INFO 2025-09-11 14:58:26,069 freemopay 61210 123145595604992 [FreeMoPay Retry] Tentative 3/4 après 4s...
+WARNING 2025-09-11 14:58:38,138 freemopay 61210 123145595604992 [FreeMoPay Retry] Erreur de connexion (tentative 3/4): ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+INFO 2025-09-11 14:58:38,140 freemopay 61210 123145595604992 [FreeMoPay Retry] Tentative 4/4 après 8s...
+WARNING 2025-09-11 14:58:54,434 freemopay 61210 123145595604992 [FreeMoPay Retry] Erreur de connexion (tentative 4/4): ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+ERROR 2025-09-11 14:58:54,435 freemopay 61210 123145595604992 [FreeMoPay] Erreur de connexion définitive: ('Connection aborted.', ConnectionResetError(54, 'Connection reset by peer'))
+ERROR 2025-09-11 14:58:54,435 wallet_service 61210 123145595604992 [WalletService] Échec de l'initialisation: Échec de génération du token d'authentification
+WARNING 2025-09-11 14:58:54,440 log 61210 123145595604992 Bad Request: /api/v1/wallet/deposit/
+WARNING 2025-09-11 14:58:54,441 basehttp 61210 123145595604992 "POST /api/v1/wallet/deposit/ HTTP/1.1" 400 225
+INFO 2025-09-11 15:02:00,686 basehttp 61210 123145595604992 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-09-11 15:02:00,880 fcm_service 61210 123145595604992 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 15:02:00,882 basehttp 61210 123145595604992 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 15:02:03,138 basehttp 61210 123145595604992 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1182
+INFO 2025-09-11 15:02:03,157 basehttp 61210 123145612931072 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1182
+INFO 2025-09-11 15:02:05,170 basehttp 61210 123145595604992 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-09-11 15:02:05,338 fcm_service 61210 123145595604992 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 15:02:05,341 basehttp 61210 123145595604992 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 15:02:06,227 basehttp 61210 123145595604992 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 409
+INFO 2025-09-11 15:02:11,564 basehttp 61210 123145595604992 "POST /api/v1/order/driver/location/update/ HTTP/1.1" 200 161
+INFO 2025-09-11 15:05:20,907 basehttp 61210 123145595604992 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 3498
+INFO 2025-09-11 15:05:20,908 basehttp 61210 123145612931072 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 65
+INFO 2025-09-11 15:05:46,761 wallet_service 61210 123145595604992 [WalletService] Initialisation du paiement FreeMoPay pour 100.0 FCFA...
+INFO 2025-09-11 15:05:48,146 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:05:49,024 freemopay 61210 123145595604992 [FreeMoPay] Paiement initié avec succès - Référence: d216aec1-77ec-49d3-b942-e24f095366bc
+INFO 2025-09-11 15:05:49,032 wallet_service 61210 123145595604992 [WalletService] Paiement initié avec succès - Référence: d216aec1-77ec-49d3-b942-e24f095366bc
+INFO 2025-09-11 15:05:49,032 wallet_service 61210 123145595604992 [WalletService] Début du polling pour la référence: d216aec1-77ec-49d3-b942-e24f095366bc
+INFO 2025-09-11 15:05:49,033 freemopay 61210 123145595604992 [FreeMoPay Polling] Début du polling pour la référence: d216aec1-77ec-49d3-b942-e24f095366bc
+INFO 2025-09-11 15:05:49,033 freemopay 61210 123145595604992 [FreeMoPay Polling] Durée max: 120s, Intervalle: 1s
+INFO 2025-09-11 15:05:49,813 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:05:50,537 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:05:53,064 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:05:53,836 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:05:55,595 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:05:56,211 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:05:58,169 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:05:59,057 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:06:01,036 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:06:02,203 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:06:04,212 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:06:05,119 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:06:07,078 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:06:08,107 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:06:09,953 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:06:10,663 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:06:12,439 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:06:13,224 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:06:15,149 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:06:16,093 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:06:17,867 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:06:18,651 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:06:20,906 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:06:21,566 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: SUCCESS - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:06:21,566 freemopay 61210 123145595604992 [FreeMoPay Polling] ✅ Paiement confirmé après 30.6s
+INFO 2025-09-11 15:06:21,566 wallet_service 61210 123145595604992 [WalletService] Résultat du polling: SUCCESS après 12 tentatives
+INFO 2025-09-11 15:06:21,566 wallet_service 61210 123145595604992 [WalletService] ✅ Paiement confirmé avec succès
+INFO 2025-09-11 15:06:21,576 basehttp 61210 123145595604992 "POST /api/v1/wallet/deposit/ HTTP/1.1" 200 352
+INFO 2025-09-11 15:06:40,144 basehttp 61210 123145612931072 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 66
+INFO 2025-09-11 15:06:40,148 basehttp 61210 123145595604992 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 3915
+INFO 2025-09-11 15:16:06,913 basehttp 61210 123145595604992 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-09-11 15:16:07,072 fcm_service 61210 123145595604992 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 15:16:07,074 basehttp 61210 123145595604992 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 15:16:08,906 basehttp 61210 123145595604992 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1182
+INFO 2025-09-11 15:16:08,926 basehttp 61210 123145612931072 "GET /api/v1/notifications/?include_read=true&limit=50 HTTP/1.1" 200 1182
+INFO 2025-09-11 15:16:10,941 basehttp 61210 123145595604992 "POST /api/v1/auth/token/verify/ HTTP/1.1" 200 264
+INFO 2025-09-11 15:16:10,994 fcm_service 61210 123145595604992 Token FCM mis à jour pour JuniorD SteveD
+INFO 2025-09-11 15:16:10,995 basehttp 61210 123145595604992 "POST /api/v1/fcm/register/ HTTP/1.1" 200 94
+INFO 2025-09-11 15:16:11,484 basehttp 61210 123145595604992 "GET /api/v1/order/driver/status/ HTTP/1.1" 200 409
+INFO 2025-09-11 15:20:04,532 basehttp 61210 123145612931072 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 66
+INFO 2025-09-11 15:20:04,533 basehttp 61210 123145595604992 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 3915
+INFO 2025-09-11 15:20:06,198 basehttp 61210 123145595604992 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 66
+INFO 2025-09-11 15:20:06,339 basehttp 61210 123145595604992 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 3915
+INFO 2025-09-11 15:21:31,176 freemopay 61210 123145595604992 [FreeMoPay Withdrawal] Retrait initié avec succès - Référence: ac42aa54-1ff8-404d-8744-613476093533
+INFO 2025-09-11 15:21:31,180 wallet_service 61210 123145595604992 Réponse FreeMoPay pour retrait WIT-20250911152129-EE223673: {'reference': 'ac42aa54-1ff8-404d-8744-613476093533', 'status': 'CREATED', 'message': 'cashout created', 'external_id': 'WIT-20250911152129-EE223673'}
+INFO 2025-09-11 15:21:31,184 wallet_service 61210 123145595604992 Retrait FreeMoPay initié: ac42aa54-1ff8-404d-8744-613476093533 pour transaction WIT-20250911152129-EE223673
+INFO 2025-09-11 15:21:31,185 basehttp 61210 123145595604992 "POST /api/v1/wallet/withdrawal/ HTTP/1.1" 200 229
+INFO 2025-09-11 15:21:31,398 basehttp 61210 123145595604992 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 65
+INFO 2025-09-11 15:21:31,640 basehttp 61210 123145595604992 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 4308
+INFO 2025-09-11 15:24:59,763 basehttp 61210 123145595604992 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 65
+INFO 2025-09-11 15:24:59,875 basehttp 61210 123145595604992 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 4308
+INFO 2025-09-11 15:25:08,613 basehttp 61210 123145595604992 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 65
+INFO 2025-09-11 15:25:08,751 basehttp 61210 123145595604992 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 4308
+INFO 2025-09-11 15:27:34,839 wallet_service 61210 123145595604992 [WalletService] Initialisation du paiement FreeMoPay pour 100.0 FCFA...
+INFO 2025-09-11 15:27:36,337 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:27:37,106 freemopay 61210 123145595604992 [FreeMoPay] Paiement initié avec succès - Référence: e4dc9cda-3f9f-436b-b36f-0ad54955534d
+INFO 2025-09-11 15:27:37,111 wallet_service 61210 123145595604992 [WalletService] Paiement initié avec succès - Référence: e4dc9cda-3f9f-436b-b36f-0ad54955534d
+INFO 2025-09-11 15:27:37,111 wallet_service 61210 123145595604992 [WalletService] Début du polling pour la référence: e4dc9cda-3f9f-436b-b36f-0ad54955534d
+INFO 2025-09-11 15:27:37,112 freemopay 61210 123145595604992 [FreeMoPay Polling] Début du polling pour la référence: e4dc9cda-3f9f-436b-b36f-0ad54955534d
+INFO 2025-09-11 15:27:37,112 freemopay 61210 123145595604992 [FreeMoPay Polling] Durée max: 120s, Intervalle: 1s
+INFO 2025-09-11 15:27:37,872 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:27:40,023 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:27:41,762 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:27:43,132 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:27:45,349 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:27:46,373 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:27:48,931 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:27:50,468 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:27:53,112 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:27:55,282 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:27:57,329 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:27:58,062 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:28:01,083 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:28:01,980 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:28:03,984 freemopay 61210 123145595604992 [FreeMoPay] Token généré avec succès
+INFO 2025-09-11 15:28:05,114 freemopay 61210 123145595604992 [FreeMoPay Polling] Statut actuel: SUCCESS - Raison: paiement en cours de traitement
+INFO 2025-09-11 15:28:05,114 freemopay 61210 123145595604992 [FreeMoPay Polling] ✅ Paiement confirmé après 25.9s
+INFO 2025-09-11 15:28:05,115 wallet_service 61210 123145595604992 [WalletService] Résultat du polling: SUCCESS après 8 tentatives
+INFO 2025-09-11 15:28:05,115 wallet_service 61210 123145595604992 [WalletService] ✅ Paiement confirmé avec succès
+INFO 2025-09-11 15:28:05,122 basehttp 61210 123145595604992 "POST /api/v1/wallet/deposit/ HTTP/1.1" 200 351
+INFO 2025-09-11 15:28:05,240 basehttp 61210 123145595604992 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 66
+INFO 2025-09-11 15:28:05,333 basehttp 61210 123145595604992 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 4725
+INFO 2025-09-11 15:28:07,922 basehttp 61210 123145629720576 "GET /api/v1/wallet/balance/ HTTP/1.1" 200 66
+INFO 2025-09-11 15:28:07,925 basehttp 61210 123145612931072 "GET /api/v1/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 4725

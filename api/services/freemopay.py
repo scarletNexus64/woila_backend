@@ -15,7 +15,8 @@ class FreemoPayDirect:
     BASE_URL = "https://api-v2.freemopay.com/api/v2"
     APP_KEY = "ff05617a-70d8-4a3d-a150-e881f7e63abe"
     SECRET_KEY = "42oHaGkcySbUqyLfsWjF"
-    REQUEST_TIMEOUT = 30  # secondes
+    REQUEST_TIMEOUT = 60  # secondes (augmenté pour connexions lentes)
+    MAX_RETRIES = 3  # Nombre de tentatives en cas d'erreur réseau
     
     # Credentials pour les retraits (Basic Auth)
     WITHDRAWAL_USERNAME = "ff05617a-70d8-4a3d-a150-e881f7e63abe"  # Utilise APP_KEY comme username
@@ -43,8 +44,53 @@ class FreemoPayDirect:
             logger.debug(f"[FreeMoPay] Payload: {safe_payload}")
     
     @classmethod
+    def _make_request_with_retry(cls, method, url, headers=None, data=None, max_retries=None):
+        """Effectue une requête HTTP avec retry automatique en cas d'erreur réseau"""
+        if max_retries is None:
+            max_retries = cls.MAX_RETRIES
+            
+        last_exception = None
+        
+        for attempt in range(max_retries + 1):
+            try:
+                if attempt > 0:
+                    wait_time = 2 ** attempt  # Backoff exponentiel: 2s, 4s, 8s...
+                    logger.info(f"[FreeMoPay Retry] Tentative {attempt + 1}/{max_retries + 1} après {wait_time}s...")
+                    time.sleep(wait_time)
+                
+                response = requests.request(
+                    method,
+                    url,
+                    headers=headers,
+                    data=data,
+                    timeout=cls.REQUEST_TIMEOUT
+                )
+                
+                return response
+                
+            except requests.exceptions.ConnectionError as e:
+                last_exception = e
+                logger.warning(f"[FreeMoPay Retry] Erreur de connexion (tentative {attempt + 1}/{max_retries + 1}): {str(e)}")
+                if attempt == max_retries:
+                    raise
+                    
+            except requests.exceptions.Timeout as e:
+                last_exception = e
+                logger.warning(f"[FreeMoPay Retry] Timeout (tentative {attempt + 1}/{max_retries + 1}): {str(e)}")
+                if attempt == max_retries:
+                    raise
+                    
+            except Exception as e:
+                # Pour les autres erreurs, on ne retry pas
+                logger.error(f"[FreeMoPay] Erreur non-retry: {str(e)}")
+                raise
+        
+        # Si on arrive ici, toutes les tentatives ont échoué
+        raise last_exception
+
+    @classmethod
     def generate_token(cls):
-        """Génère un token d'authentification FreeMo Pay"""
+        """Génère un token d'authentification FreeMo Pay avec retry automatique"""
         url = f"{cls.BASE_URL}/payment/token"
         
         payload = {
@@ -53,19 +99,20 @@ class FreemoPayDirect:
         }
         
         headers = {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'User-Agent': 'WoilaApp/1.0',
+            'Connection': 'close'  # Évite les problèmes de connexion persistante
         }
         
         cls._log_request("POST", url, headers, {"appKey": payload["appKey"], "secretKey": "[HIDDEN]"})
         
         try:
             payload_json = json.dumps(payload)
-            response = requests.request(
+            response = cls._make_request_with_retry(
                 "POST", 
                 url, 
                 headers=headers, 
-                data=payload_json,
-                timeout=cls.REQUEST_TIMEOUT
+                data=payload_json
             )
             
             logger.debug(f"[FreeMoPay] Response status: {response.status_code}")
@@ -73,16 +120,19 @@ class FreemoPayDirect:
             
             if response.status_code == 200:
                 token_data = response.json()
-                return token_data.get('access_token')
+                token = token_data.get('access_token')
+                if token:
+                    logger.info("[FreeMoPay] Token généré avec succès")
+                return token
             else:
                 logger.error(f"[FreeMoPay] Erreur de réponse: {response.status_code} - {response.text}")
                 return None
                 
         except requests.exceptions.Timeout:
-            logger.error(f"[FreeMoPay] Timeout lors de la génération du token (>{cls.REQUEST_TIMEOUT}s)")
+            logger.error(f"[FreeMoPay] Timeout définitif lors de la génération du token (>{cls.REQUEST_TIMEOUT}s)")
             return None
         except requests.exceptions.ConnectionError as e:
-            logger.error(f"[FreeMoPay] Erreur de connexion: {str(e)}")
+            logger.error(f"[FreeMoPay] Erreur de connexion définitive: {str(e)}")
             return None
         except Exception as e:
             logger.error(f"[FreeMoPay] Erreur inattendue: {str(e)}")
@@ -112,7 +162,9 @@ class FreemoPayDirect:
         
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': f'Bearer {token}'
+            'Authorization': f'Bearer {token}',
+            'User-Agent': 'WoilaApp/1.0',
+            'Connection': 'close'
         }
         
         # Log la requête
@@ -122,13 +174,12 @@ class FreemoPayDirect:
             # Convertir le payload en JSON
             payload_json = json.dumps(payload)
             
-            # Utiliser exactement la méthode de l'exemple
-            response = requests.request(
+            # Utiliser la méthode avec retry
+            response = cls._make_request_with_retry(
                 "POST", 
                 url, 
                 headers=headers, 
-                data=payload_json,
-                timeout=cls.REQUEST_TIMEOUT
+                data=payload_json
             )
             
             # Log la réponse
@@ -166,20 +217,21 @@ class FreemoPayDirect:
         url = f"{cls.BASE_URL}/payment/{reference}"
         
         headers = {
-            'Authorization': f'Bearer {token}'
+            'Authorization': f'Bearer {token}',
+            'User-Agent': 'WoilaApp/1.0',
+            'Connection': 'close'
         }
         
         # Log la requête
         cls._log_request("GET", url, headers)
         
         try:
-            # Utiliser exactement la méthode de l'exemple
-            response = requests.request(
+            # Utiliser la méthode avec retry
+            response = cls._make_request_with_retry(
                 "GET", 
                 url, 
                 headers=headers, 
-                data={},
-                timeout=cls.REQUEST_TIMEOUT
+                data=None
             )
             
             # Log la réponse
@@ -350,7 +402,9 @@ class FreemoPayDirect:
         
         headers = {
             'Content-Type': 'application/json',
-            'Authorization': cls._get_basic_auth_header()
+            'Authorization': cls._get_basic_auth_header(),
+            'User-Agent': 'WoilaApp/1.0',
+            'Connection': 'close'
         }
         
         # Log la requête (sans exposer les credentials)
@@ -360,12 +414,11 @@ class FreemoPayDirect:
         
         try:
             payload_json = json.dumps(payload)
-            response = requests.request(
+            response = cls._make_request_with_retry(
                 "POST", 
                 url, 
                 headers=headers, 
-                data=payload_json,
-                timeout=cls.REQUEST_TIMEOUT
+                data=payload_json
             )
             
             logger.debug(f"[FreeMoPay Withdrawal] Response status: {response.status_code}")
