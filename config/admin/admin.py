@@ -1,13 +1,22 @@
 from django.contrib import admin
 from django.utils.html import format_html
-from .models import (
-    UserDriver, UserCustomer, Token, Document, Vehicle, 
-    GeneralConfig, Wallet, ReferralCode,
-    VehicleType, VehicleBrand, VehicleModel, VehicleColor,
-    Country, City, VipZone, VipZoneKilometerRule,
-    OTPVerification, NotificationConfig, Notification, FCMToken
+from core.models import (
+    GeneralConfig, Country, City, VipZone, VipZoneKilometerRule
 )
-from .services.notification_service import NotificationService
+from applications.users.models import (
+    UserDriver, UserCustomer
+)
+from applications.authentication.models import (
+    Token, OTPVerification, ReferralCode
+)
+from applications.vehicles.models import (
+    Vehicle, VehicleType, VehicleBrand, VehicleModel, VehicleColor
+)
+from applications.users.models import Document
+from applications.wallet.models import Wallet
+from applications.notifications.models import (
+    NotificationConfig, Notification, FCMToken
+)
 
 
 @admin.register(GeneralConfig)
@@ -165,8 +174,9 @@ class WalletAdmin(admin.ModelAdmin):
     get_user_type_display.short_description = 'Type'
     get_user_type_display.admin_order_field = 'user_type'
 
-@admin.register(ReferralCode)
-class ReferralCodeAdmin(admin.ModelAdmin):
+# Commenté temporairement - modèle a changé
+# @admin.register(ReferralCode)
+class ReferralCodeAdminDisabled(admin.ModelAdmin):
     list_display = ('get_user_display', 'get_code_display', 'get_status_display', 'get_user_type_display', 'created_at')
     list_filter = ('is_active', 'user_type', 'created_at')
     search_fields = ('code', 'user_id')
@@ -347,8 +357,8 @@ class UserDriverAdmin(admin.ModelAdmin):
     
     def test_fcm_notification(self, request, queryset):
         """Envoie une notification de test aux chauffeurs sélectionnés"""
-        from api.services.fcm_service import FCMService
-        from api.models import Token
+        from applications.notifications.services.fcm_service import FCMService
+        from applications.authentication.models import Token
         
         success_count = 0
         error_count = 0
@@ -449,7 +459,7 @@ class UserCustomerAdmin(admin.ModelAdmin):
     get_status_display.admin_order_field = 'is_active'
     
     def get_documents_count(self, obj):
-        from .models import Document
+        from applications.users.models import Document
         count = Document.objects.filter(
             user_type='customer',
             user_id=obj.id,
@@ -483,8 +493,8 @@ class UserCustomerAdmin(admin.ModelAdmin):
     
     def test_fcm_notification(self, request, queryset):
         """Envoie une notification de test aux clients sélectionnés"""
-        from api.services.fcm_service import FCMService
-        from api.models import Token
+        from applications.notifications.services.fcm_service import FCMService
+        from applications.authentication.models import Token
         
         success_count = 0
         error_count = 0
@@ -800,8 +810,8 @@ class VehicleAdmin(admin.ModelAdmin):
     def _send_vehicle_activation_notification(self, vehicle):
         """Envoie une notification d'activation de véhicule ET la sauvegarde en DB"""
         import logging
-        from api.services.fcm_service import FCMService
-        from api.models import Token, Notification
+        from applications.notifications.services.fcm_service import FCMService
+        from applications.authentication.models import Token, Notification
         from django.contrib.contenttypes.models import ContentType
         from django.utils import timezone
         
@@ -999,8 +1009,8 @@ Bonne route avec WOILA ! 🛣️""",
             # LOGIQUE FCM DIRECTE - AVEC SAUVEGARDE EN DB
             try:
                 # Import direct dans l'admin
-                from api.services.fcm_service import FCMService
-                from api.models import Token, Notification
+                from applications.notifications.services.fcm_service import FCMService
+                from applications.authentication.models import Token, Notification
                 from django.contrib.contenttypes.models import ContentType
                 from django.utils import timezone
                 
@@ -1277,7 +1287,9 @@ class CityAdmin(admin.ModelAdmin):
     deactivate_cities.short_description = "❌ Désactiver les villes sélectionnées"
 
 
-class VipZoneKilometerRuleInline(admin.TabularInline):
+# Commenté temporairement - champs manquants
+# class VipZoneKilometerRuleInline(admin.TabularInline):
+class VipZoneKilometerRuleInlineDisabled(admin.TabularInline):
     model = VipZoneKilometerRule
     extra = 1
     fields = ['min_kilometers', 'prix_jour_per_km', 'prix_nuit_per_km', 'active']
@@ -1295,7 +1307,7 @@ class VipZoneAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'updated_at')
     list_per_page = 25
     actions = ['activate_zones', 'deactivate_zones']
-    inlines = [VipZoneKilometerRuleInline]
+    # inlines = [VipZoneKilometerRuleInline] # Désactivé temporairement
     
     fieldsets = (
         ('👑 Informations de la zone VIP', {
@@ -1362,8 +1374,9 @@ class VipZoneAdmin(admin.ModelAdmin):
     deactivate_zones.short_description = "❌ Désactiver les zones VIP sélectionnées"
 
 
-@admin.register(VipZoneKilometerRule)
-class VipZoneKilometerRuleAdmin(admin.ModelAdmin):
+# Commenté temporairement - champs manquants  
+# @admin.register(VipZoneKilometerRule)
+class VipZoneKilometerRuleAdminDisabled(admin.ModelAdmin):
     list_display = (
         'get_zone_display', 'get_min_km_display', 'get_prix_jour_km_display',
         'get_prix_nuit_km_display', 'get_status_display', 'created_at'
@@ -1424,15 +1437,15 @@ class OTPVerificationAdmin(admin.ModelAdmin):
         'get_validity_display', 'created_at'
     )
     list_filter = ('is_verified', 'created_at')
-    search_fields = ('identifier',)
-    readonly_fields = ('otp', 'created_at')
+    search_fields = ('phone_number',)
+    readonly_fields = ('otp_code', 'created_at')
     list_per_page = 25
     ordering = ['-created_at']
     actions = ['mark_as_verified', 'mark_as_unverified']
     
     fieldsets = (
         ('📱 Informations OTP', {
-            'fields': ('identifier', 'otp', 'is_verified'),
+            'fields': ('phone_number', 'otp_code', 'is_verified'),
             'description': 'Détails de la vérification OTP'
         }),
         ('📅 Horodatage', {
@@ -1805,7 +1818,7 @@ class FCMTokenAdmin(admin.ModelAdmin):
     
     def clean_inactive_tokens(self, request, queryset):
         """Supprime les tokens inactifs anciens"""
-        from .services.fcm_service import FCMService
+        from applications.notifications.services.fcm_service import FCMService
         deleted_count = FCMService.cleanup_inactive_tokens(days_old=30)
         self.message_user(request, f'🧹 {deleted_count} token(s) FCM inactifs supprimés.')
     clean_inactive_tokens.short_description = "🧹 Nettoyer les tokens inactifs"
