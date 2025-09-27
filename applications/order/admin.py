@@ -3,7 +3,7 @@ from django.utils.html import format_html
 from django.urls import reverse
 from django.utils import timezone
 from .models import (
-    Order, DriverStatus, OrderTracking, PaymentMethod, 
+    Order, DriverStatus, CustomerStatus, OrderTracking, PaymentMethod, 
     Rating, TripTracking, DriverPool
 )
 
@@ -99,14 +99,14 @@ class OrderAdmin(admin.ModelAdmin):
     
     def customer_link(self, obj):
         if obj.customer:
-            url = reverse('admin:api_usercustomer_change', args=[obj.customer.pk])
+            url = reverse('admin:users_usercustomer_change', args=[obj.customer.pk])
             return format_html('<a href="{}">{}</a>', url, obj.customer)
         return '-'
     customer_link.short_description = 'Client'
     
     def driver_link(self, obj):
         if obj.driver:
-            url = reverse('admin:api_userdriver_change', args=[obj.driver.pk])
+            url = reverse('admin:users_userdriver_change', args=[obj.driver.pk])
             return format_html('<a href="{}">{}</a>', url, obj.driver)
         return '-'
     driver_link.short_description = 'Chauffeur'
@@ -263,8 +263,9 @@ class TripTrackingAdmin(admin.ModelAdmin):
     
     def coordinates(self, obj):
         return format_html(
-            '<a href="https://maps.google.com/?q={},{}" target="_blank">📍 {:.6f}, {:.6f}</a>',
-            obj.latitude, obj.longitude, obj.latitude, obj.longitude
+            '<a href="https://maps.google.com/?q={},{}" target="_blank">📍 {}, {}</a>',
+            obj.latitude, obj.longitude, 
+            round(float(obj.latitude), 6), round(float(obj.longitude), 6)
         )
     coordinates.short_description = 'Coordonnées'
     
@@ -490,7 +491,9 @@ class OrderTrackingAdmin(admin.ModelAdmin):
     
     def location(self, obj):
         if obj.latitude and obj.longitude:
-            return format_html('📍 {:.6f}, {:.6f}', obj.latitude, obj.longitude)
+            return format_html('📍 {}, {}', 
+                             round(float(obj.latitude), 6), 
+                             round(float(obj.longitude), 6))
         return '-'
     location.short_description = 'Position'
     
@@ -498,3 +501,55 @@ class OrderTrackingAdmin(admin.ModelAdmin):
         return super().get_queryset(request).select_related(
             'order', 'driver', 'customer'
         )
+
+
+@admin.register(CustomerStatus)
+class CustomerStatusAdmin(admin.ModelAdmin):
+    list_display = [
+        'customer', 'location_link', 'current_order_link', 
+        'last_location_update', 'updated_at'
+    ]
+    list_filter = ['last_location_update', 'updated_at']
+    search_fields = [
+        'customer__name', 'customer__surname', 'customer__phone_number'
+    ]
+    readonly_fields = [
+        'created_at', 'updated_at', 'last_location_update'
+    ]
+    
+    fieldsets = (
+        ('👤 Client', {
+            'fields': ('customer',)
+        }),
+        ('📍 Position actuelle', {
+            'fields': (
+                ('current_latitude', 'current_longitude'),
+                'last_location_update'
+            )
+        }),
+        ('📋 Commande active', {
+            'fields': ('current_order',)
+        }),
+        ('🔌 WebSocket', {
+            'fields': ('websocket_channel',)
+        }),
+        ('⏰ Timestamps', {
+            'fields': ('created_at', 'updated_at')
+        })
+    )
+    
+    def location_link(self, obj):
+        if obj.current_latitude and obj.current_longitude:
+            return format_html(
+                '<a href="https://maps.google.com/?q={},{}" target="_blank">📍 Voir sur la carte</a>',
+                obj.current_latitude, obj.current_longitude
+            )
+        return '📍 Position inconnue'
+    location_link.short_description = 'Position'
+    
+    def current_order_link(self, obj):
+        if obj.current_order:
+            url = reverse('admin:order_order_change', args=[obj.current_order.pk])
+            return format_html('<a href="{}">🚗 #{}</a>', url, str(obj.current_order.id)[:8])
+        return '🚗 Aucune commande active'
+    current_order_link.short_description = 'Commande active'

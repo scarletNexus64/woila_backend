@@ -4,7 +4,8 @@ from django.core.validators import MinValueValidator, MaxValueValidator
 from django.utils import timezone
 from applications.users.models import UserDriver, UserCustomer
 from applications.vehicles.models import VehicleType
-from core.models import City, VipZone
+from core.models import City
+from core.admin import VipZoneProxy
 import uuid
 
 
@@ -89,7 +90,7 @@ class Order(models.Model):
     # Configuration de la commande
     vehicle_type = models.ForeignKey(VehicleType, on_delete=models.CASCADE, verbose_name="Type de véhicule")
     city = models.ForeignKey(City, on_delete=models.CASCADE, verbose_name="Ville")
-    vip_zone = models.ForeignKey(VipZone, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Zone VIP")
+    vip_zone = models.ForeignKey(VipZoneProxy, on_delete=models.SET_NULL, null=True, blank=True, verbose_name="Zone VIP")
     
     # Paiement
     payment_method = models.ForeignKey(
