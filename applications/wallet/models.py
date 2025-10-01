@@ -146,13 +146,19 @@ class WalletTransaction(models.Model):
         blank=True,
         verbose_name="Description"
     )
+    error_message = models.TextField(
+        blank=True,
+        null=True,
+        verbose_name="Message d'erreur",
+        help_text="Message d'erreur en cas d'échec de la transaction"
+    )
     metadata = models.JSONField(
         default=dict,
         blank=True,
         verbose_name="Métadonnées",
         help_text="Données supplémentaires en JSON"
     )
-    
+
     # Horodatage
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Date de création")
     updated_at = models.DateTimeField(auto_now=True, verbose_name="Dernière modification")
@@ -170,8 +176,8 @@ class WalletTransaction(models.Model):
         if self.status != 'failed':
             self.status = 'failed'
             if reason:
-                self.description = f"{self.description}\nÉchoué: {reason}".strip()
-            self.save(update_fields=['status', 'description'])
+                self.error_message = reason
+            self.save(update_fields=['status', 'error_message'])
     
     def __str__(self):
         user_str = f"{self.user_type.model} {self.user_id}"

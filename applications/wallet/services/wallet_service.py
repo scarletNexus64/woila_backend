@@ -134,137 +134,18 @@ class WalletService:
             wallet_transaction.save()
             
             logger.info(f"[WalletService] Paiement initié avec succès - Référence: {reference}")
-            
-            # NOUVEAU: Faire le polling pour obtenir le statut final (comme dans payment.py)
-            logger.info(f"[WalletService] Début du polling pour la référence: {reference}")
-            polling_result = FreemoPayDirect.poll_payment_status(
-                reference=reference,
-                max_duration=120,  # 2 minutes comme dans payment.py
-                interval=1  # 1 seconde comme dans payment.py
-            )
-            
-            logger.info(f"[WalletService] Résultat du polling: {polling_result.get('status')} après {polling_result.get('attempts', 0)} tentatives")
-            
-            # Déterminer le statut final de la transaction
-            polling_status = polling_result.get('status')
-            final_freemo_status = polling_result.get('final_status')
-            
-            if polling_status == 'SUCCESS':
-                # Paiement confirmé, créditer le wallet
-                logger.info(f"[WalletService] ✅ Paiement confirmé avec succès")
-                with transaction.atomic():
-                    wallet = Wallet.objects.select_for_update().get(
-                        user_type=wallet_transaction.user_type,
-                        user_id=wallet_transaction.user_id
-                    )
-                    
-                    # Mettre à jour le solde
-                    new_balance = wallet.balance + wallet_transaction.amount
-                    wallet.balance = new_balance
-                    wallet.save()
-                    
-                    # Mettre à jour la transaction
-                    wallet_transaction.balance_after = new_balance
-                    wallet_transaction.mark_as_completed()
-                    wallet_transaction.metadata.update({
-                        'freemopay_polling_result': polling_result,
-                        'completed_at': timezone.now().isoformat()
-                    })
-                    wallet_transaction.save()
-                
-                return {
-                    'success': True,
-                    'transaction_reference': wallet_transaction.reference,
-                    'freemopay_reference': reference,
-                    'amount': amount,
-                    'status': 'completed',
-                    'message': 'Dépôt effectué avec succès',
-                    'new_balance': float(new_balance),
-                    'polling_result': {
-                        'final_status': polling_result.get('final_status'),
-                        'reason': polling_result.get('reason'),
-                        'duration': polling_result.get('polling_duration'),
-                        'attempts': polling_result.get('attempts')
-                    }
-                }
-                
-            elif polling_status == 'FAILED':
-                # Paiement échoué
-                error_message = polling_result.get('reason', 'Paiement échoué')
-                logger.warning(f"[WalletService] ❌ Paiement échoué/annulé - Raison: {error_message}")
-                
-                wallet_transaction.mark_as_failed(error_message)
-                wallet_transaction.metadata.update({
-                    'freemopay_polling_result': polling_result
-                })
-                wallet_transaction.save()
-                
-                return {
-                    'success': False,
-                    'transaction_reference': wallet_transaction.reference,
-                    'freemopay_reference': reference,
-                    'amount': amount,
-                    'status': 'failed',
-                    'message': f'Paiement échoué: {error_message}',
-                    'polling_result': {
-                        'final_status': polling_result.get('final_status'),
-                        'reason': polling_result.get('reason'),
-                        'duration': polling_result.get('polling_duration'),
-                        'attempts': polling_result.get('attempts')
-                    }
-                }
-                
-            elif polling_status == 'TIMEOUT':
-                # Timeout
-                error_message = 'Timeout - Paiement non confirmé dans les délais'
-                logger.warning(f"[WalletService] ⏱️ Timeout du paiement après {polling_result.get('polling_duration')}s")
-                
-                wallet_transaction.status = 'failed'
-                wallet_transaction.error_message = error_message
-                wallet_transaction.metadata.update({
-                    'freemopay_polling_result': polling_result
-                })
-                wallet_transaction.save()
-                
-                return {
-                    'success': False,
-                    'transaction_reference': wallet_transaction.reference,
-                    'freemopay_reference': reference,
-                    'amount': amount,
-                    'status': 'timeout',
-                    'message': error_message,
-                    'polling_result': {
-                        'final_status': polling_result.get('final_status'),
-                        'reason': polling_result.get('reason'),
-                        'duration': polling_result.get('polling_duration'),
-                        'attempts': polling_result.get('attempts')
-                    }
-                }
-            else:
-                # Statut inconnu
-                error_message = f'Statut inconnu: {polling_status}'
-                logger.error(f"[WalletService] Statut inconnu: {polling_status}")
-                
-                wallet_transaction.mark_as_failed(error_message)
-                wallet_transaction.metadata.update({
-                    'freemopay_polling_result': polling_result
-                })
-                wallet_transaction.save()
-                
-                return {
-                    'success': False,
-                    'transaction_reference': wallet_transaction.reference,
-                    'freemopay_reference': reference,
-                    'amount': amount,
-                    'status': 'failed',
-                    'message': error_message,
-                    'polling_result': {
-                        'final_status': polling_result.get('final_status'),
-                        'reason': polling_result.get('reason'),
-                        'duration': polling_result.get('polling_duration'),
-                        'attempts': polling_result.get('attempts')
-                    }
-                }
+
+            # Retourner immédiatement sans polling pour éviter le timeout
+            # Le client doit appeler check_transaction_status pour vérifier le statut
+            return {
+                'success': True,
+                'transaction_reference': wallet_transaction.reference,
+                'freemopay_reference': reference,
+                'amount': float(amount),
+                'status': 'processing',
+                'message': 'Dépôt en cours de traitement. Veuillez valider le paiement sur votre téléphone.',
+                'requires_validation': True
+            }
                 
         except Exception as e:
             logger.error(f"Erreur lors de l'initiation du dépôt: {str(e)}", exc_info=True)
@@ -354,10 +235,10 @@ class WalletService:
                     'success': True,
                     'transaction_reference': wallet_transaction.reference,
                     'freemopay_reference': freemopay_reference,
-                    'amount': amount,
+                    'amount': float(amount),
                     'status': 'processing',
                     'message': 'Retrait en cours de traitement',
-                    'new_balance': wallet.balance
+                    'new_balance': float(wallet.balance)
                 }
             else:
                 # Erreur dans l'initiation du retrait FreeMoPay
@@ -480,3 +361,183 @@ class WalletService:
             return WalletTransaction.objects.get(reference=reference)
         except WalletTransaction.DoesNotExist:
             return None
+
+    @staticmethod
+    def get_transaction_detail(user, reference: str) -> Dict[str, Any]:
+        """
+        Obtenir les détails d'une transaction spécifique
+        """
+        try:
+            # Déterminer le user_type
+            if isinstance(user, UserDriver):
+                user_type = 'driver'
+            elif isinstance(user, UserCustomer):
+                user_type = 'customer'
+            else:
+                return {
+                    'success': False,
+                    'message': 'Type d\'utilisateur invalide'
+                }
+
+            content_type = WalletService.get_content_type_for_user(user_type)
+
+            # Récupérer la transaction
+            transaction_obj = WalletTransaction.objects.filter(
+                reference=reference,
+                user_type=content_type,
+                user_id=user.id
+            ).first()
+
+            if not transaction_obj:
+                return {
+                    'success': False,
+                    'message': 'Transaction non trouvée'
+                }
+
+            # Sérialiser la transaction
+            transaction_data = {
+                'id': transaction_obj.id,
+                'reference': transaction_obj.reference,
+                'type': transaction_obj.transaction_type,
+                'type_display': transaction_obj.get_transaction_type_display(),
+                'amount': float(transaction_obj.amount),
+                'status': transaction_obj.status,
+                'status_display': transaction_obj.get_status_display(),
+                'payment_method': transaction_obj.payment_method,
+                'phone_number': transaction_obj.phone_number,
+                'description': transaction_obj.description,
+                'balance_before': float(transaction_obj.balance_before),
+                'balance_after': float(transaction_obj.balance_after),
+                'freemopay_reference': transaction_obj.freemopay_reference,
+                'created_at': transaction_obj.created_at.isoformat(),
+                'completed_at': transaction_obj.completed_at.isoformat() if transaction_obj.completed_at else None,
+                'error_message': transaction_obj.error_message,
+                'metadata': transaction_obj.metadata
+            }
+
+            return {
+                'success': True,
+                'transaction': transaction_data
+            }
+
+        except Exception as e:
+            logger.error(f"Erreur lors de la récupération des détails de la transaction: {str(e)}", exc_info=True)
+            return {
+                'success': False,
+                'message': f'Erreur interne: {str(e)}'
+            }
+
+    @staticmethod
+    def check_transaction_status(user, reference: str) -> Dict[str, Any]:
+        """
+        Vérifier le statut d'une transaction et la mettre à jour si nécessaire
+        """
+        try:
+            # Déterminer le user_type
+            if isinstance(user, UserDriver):
+                user_type = 'driver'
+            elif isinstance(user, UserCustomer):
+                user_type = 'customer'
+            else:
+                return {
+                    'success': False,
+                    'message': 'Type d\'utilisateur invalide'
+                }
+
+            content_type = WalletService.get_content_type_for_user(user_type)
+
+            # Récupérer la transaction
+            transaction_obj = WalletTransaction.objects.filter(
+                reference=reference,
+                user_type=content_type,
+                user_id=user.id
+            ).first()
+
+            if not transaction_obj:
+                return {
+                    'success': False,
+                    'message': 'Transaction non trouvée'
+                }
+
+            # Si la transaction est déjà terminée, pas besoin de vérifier
+            if transaction_obj.status in ['completed', 'failed', 'cancelled']:
+                return {
+                    'success': True,
+                    'transaction': {
+                        'reference': transaction_obj.reference,
+                        'status': transaction_obj.status,
+                        'amount': float(transaction_obj.amount)
+                    },
+                    'freemopay_status': None,
+                    'status_updated': False,
+                    'wallet_credited': False,
+                    'message': 'Transaction déjà terminée'
+                }
+
+            # Vérifier le statut avec FreeMoPay
+            if transaction_obj.freemopay_reference:
+                freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+
+                status_updated = False
+                wallet_credited = False
+                new_balance = None
+
+                # Mettre à jour selon le statut FreeMoPay
+                if freemopay_status.get('status') == 'SUCCESS':
+                    # Transaction réussie, créditer le wallet si c'est un dépôt
+                    if transaction_obj.transaction_type == 'deposit' and transaction_obj.status != 'completed':
+                        with transaction.atomic():
+                            wallet = Wallet.objects.select_for_update().get(
+                                user_type=transaction_obj.user_type,
+                                user_id=transaction_obj.user_id
+                            )
+
+                            new_balance = wallet.balance + transaction_obj.amount
+                            wallet.balance = new_balance
+                            wallet.save()
+
+                            transaction_obj.balance_after = new_balance
+                            transaction_obj.mark_as_completed()
+                            transaction_obj.metadata.update({
+                                'freemopay_check_status': freemopay_status,
+                                'completed_at': timezone.now().isoformat()
+                            })
+                            transaction_obj.save()
+
+                            status_updated = True
+                            wallet_credited = True
+
+                elif freemopay_status.get('status') in ['FAILED', 'CANCELLED']:
+                    # Transaction échouée
+                    error_msg = freemopay_status.get('message', 'Transaction échouée')
+                    transaction_obj.mark_as_failed(error_msg)
+                    transaction_obj.metadata.update({
+                        'freemopay_check_status': freemopay_status
+                    })
+                    transaction_obj.save()
+                    status_updated = True
+
+                return {
+                    'success': True,
+                    'transaction': {
+                        'reference': transaction_obj.reference,
+                        'status': transaction_obj.status,
+                        'amount': float(transaction_obj.amount)
+                    },
+                    'freemopay_status': freemopay_status,
+                    'status_updated': status_updated,
+                    'wallet_credited': wallet_credited,
+                    'new_balance': float(new_balance) if new_balance else None
+                }
+            else:
+                return {
+                    'success': False,
+                    'message': 'Pas de référence FreeMoPay pour cette transaction'
+                }
+
+        except Exception as e:
+            logger.error(f"Erreur lors de la vérification du statut: {str(e)}", exc_info=True)
+            return {
+                'success': False,
+                'message': f'Erreur interne: {str(e)}'
+            }

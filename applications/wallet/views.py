@@ -131,12 +131,13 @@ class WalletBalanceView(APIView):
                 return auth_error
             
             # Récupérer le solde
-            balance = WalletService.get_balance(user)
-            
+            user_type = 'driver' if isinstance(user, UserDriver) else 'customer'
+            balance = WalletService.get_wallet_balance(user, user_type)
+
             return Response({
                 'success': True,
-                'balance': balance,
-                'user_type': 'driver' if isinstance(user, UserDriver) else 'customer',
+                'balance': float(balance),
+                'user_type': user_type,
                 'user_id': user.id
             }, status=status.HTTP_200_OK)
             
@@ -211,13 +212,15 @@ class WalletDepositView(APIView):
                 }, status=status.HTTP_400_BAD_REQUEST)
             
             # Effectuer le dépôt
-            result = WalletService.deposit(
+            user_type = 'driver' if isinstance(user, UserDriver) else 'customer'
+            result = WalletService.initiate_deposit(
                 user=user,
+                user_type=user_type,
                 amount=amount,
                 phone_number=phone_number,
                 description=description
             )
-            
+
             return Response(result, status=status.HTTP_200_OK)
             
         except Exception as e:
@@ -291,13 +294,15 @@ class WalletWithdrawalView(APIView):
                 }, status=status.HTTP_400_BAD_REQUEST)
             
             # Effectuer le retrait
-            result = WalletService.withdraw(
+            user_type = 'driver' if isinstance(user, UserDriver) else 'customer'
+            result = WalletService.initiate_withdrawal(
                 user=user,
+                user_type=user_type,
                 amount=amount,
                 phone_number=phone_number,
                 description=description
             )
-            
+
             return Response(result, status=status.HTTP_200_OK)
             
         except Exception as e:
@@ -375,13 +380,15 @@ class WalletTransactionHistoryView(APIView):
             transaction_type = request.query_params.get('transaction_type')
             
             # Récupérer l'historique
+            user_type = 'driver' if isinstance(user, UserDriver) else 'customer'
             result = WalletService.get_transaction_history(
                 user=user,
+                user_type=user_type,
                 page=page,
                 page_size=page_size,
                 transaction_type=transaction_type
             )
-            
+
             return Response(result, status=status.HTTP_200_OK)
             
         except ValueError:

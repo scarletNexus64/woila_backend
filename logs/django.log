@@ -32911,3 +32911,1150 @@ INFO 2025-10-01 12:51:29,266 autoreload 9712 17192 Watching for file changes wit
 INFO 2025-10-01 12:51:49,001 autoreload 9712 17192 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py changed, reloading.
 INFO 2025-10-01 12:51:50,292 autoreload 12304 860 Watching for file changes with StatReloader
 INFO 2025-10-01 12:53:03,558 autoreload 14656 13980 Watching for file changes with StatReloader
+INFO 2025-10-01 12:53:41,156 basehttp 14656 3316 "POST /api/auth/login/ HTTP/1.1" 200 261
+INFO 2025-10-01 12:53:41,306 basehttp 14656 1740 "GET /api/users/driver/61/ HTTP/1.1" 200 578
+WARNING 2025-10-01 12:53:41,381 log 14656 248 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:53:41,384 basehttp 14656 248 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:53:41,499 basehttp 14656 12872 "GET /api/order/driver/status/ HTTP/1.1" 200 341
+INFO 2025-10-01 12:53:42,962 basehttp 14656 952 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+INFO 2025-10-01 12:54:03,219 basehttp 14656 17216 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 490
+INFO 2025-10-01 12:54:03,296 basehttp 14656 11148 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+INFO 2025-10-01 12:54:03,298 basehttp 14656 11996 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:54:03,363 log 14656 5996 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:54:03,367 log 14656 16260 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:54:03,372 basehttp 14656 5996 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+WARNING 2025-10-01 12:54:03,378 basehttp 14656 16260 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:54:05,505 basehttp 14656 5016 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:54:05,552 log 14656 16512 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:54:05,552 basehttp 14656 16512 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:54:09,634 basehttp 14656 10084 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:54:09,681 log 14656 3168 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:54:09,681 basehttp 14656 3168 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:54:10,204 basehttp 14656 9720 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:54:15,741 basehttp 14656 12680 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:54:15,788 log 14656 9952 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:54:15,788 basehttp 14656 9952 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:54:23,961 basehttp 14656 14240 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:54:24,043 log 14656 9596 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:54:24,044 basehttp 14656 9596 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:54:34,171 basehttp 14656 17348 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:54:34,221 log 14656 3332 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:54:34,223 basehttp 14656 3332 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:54:40,274 basehttp 14656 14752 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:54:59,748 basehttp 14656 16256 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:55:00,184 log 14656 4272 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:55:00,185 basehttp 14656 4272 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:55:00,866 basehttp 14656 3400 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:55:00,884 basehttp 14656 14404 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:55:02,874 basehttp 14656 12344 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:55:02,902 log 14656 9424 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:55:02,902 basehttp 14656 9424 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:55:03,355 basehttp 14656 15680 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 12:55:04,912 basehttp 14656 17312 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+INFO 2025-10-01 12:55:31,096 basehttp 14656 3792 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 471
+INFO 2025-10-01 12:55:35,368 basehttp 14656 14140 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 490
+INFO 2025-10-01 12:55:35,413 basehttp 14656 13784 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+INFO 2025-10-01 12:55:35,413 basehttp 14656 9892 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:55:35,460 log 14656 1076 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:55:35,464 log 14656 16332 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:55:35,464 basehttp 14656 1076 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+WARNING 2025-10-01 12:55:35,464 basehttp 14656 16332 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:55:37,543 basehttp 14656 10496 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:55:37,576 log 14656 11580 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:55:37,577 basehttp 14656 11580 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:55:41,698 basehttp 14656 15860 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:55:41,755 log 14656 16548 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:55:41,757 basehttp 14656 16548 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:55:47,906 basehttp 14656 9172 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:55:47,963 log 14656 7720 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:55:47,965 basehttp 14656 7720 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:55:56,129 basehttp 14656 15952 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:55:56,254 log 14656 9184 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:55:56,385 basehttp 14656 9184 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:56:00,285 basehttp 14656 3316 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 12:56:06,540 basehttp 14656 8584 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:56:06,590 log 14656 17392 Not Found: /ws/driver/61/
+WARNING 2025-10-01 12:56:06,599 basehttp 14656 17392 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 12:56:33,675 basehttp 14656 4664 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:56:34,108 log 14656 14784 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:56:34,112 basehttp 14656 14784 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:56:34,779 basehttp 14656 13072 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 565
+INFO 2025-10-01 12:56:34,807 basehttp 14656 12956 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 565
+INFO 2025-10-01 12:56:36,835 basehttp 14656 14348 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:56:36,885 log 14656 3636 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:56:36,897 basehttp 14656 3636 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:56:37,336 basehttp 14656 4140 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 12:56:53,634 basehttp 14656 712 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:56:54,087 log 14656 5892 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:56:54,087 basehttp 14656 5892 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:56:54,790 basehttp 14656 14684 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 565
+INFO 2025-10-01 12:56:54,815 basehttp 14656 11488 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 565
+INFO 2025-10-01 12:56:56,816 basehttp 14656 12584 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:56:56,855 log 14656 15924 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:56:56,856 basehttp 14656 15924 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:56:57,356 basehttp 14656 13780 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 12:56:58,852 basehttp 14656 12036 "POST /api/order/driver/location/update/ HTTP/1.1" 200 163
+INFO 2025-10-01 12:57:07,675 basehttp 14656 12828 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:57:07,777 log 14656 16472 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:57:07,777 basehttp 14656 16472 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:57:08,507 basehttp 14656 10924 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 576
+INFO 2025-10-01 12:57:08,540 basehttp 14656 332 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 576
+INFO 2025-10-01 12:57:10,636 basehttp 14656 2276 "POST /api/auth/token/verify/ HTTP/1.1" 200 325
+WARNING 2025-10-01 12:57:10,727 log 14656 10992 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:57:10,728 basehttp 14656 10992 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:57:10,961 basehttp 14656 13108 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 12:57:15,174 basehttp 14656 11020 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+INFO 2025-10-01 12:57:37,898 basehttp 14656 3476 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 576
+INFO 2025-10-01 12:58:07,912 basehttp 14656 13532 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 12:58:29,767 basehttp 14656 12692 "GET /media/profile_pictures/driver/None/woila_profile_1759312523847.jpg HTTP/1.1" 200 40073
+INFO 2025-10-01 12:58:32,258 basehttp 14656 9064 "GET /api/users/driver/61/ HTTP/1.1" 200 578
+INFO 2025-10-01 12:58:35,722 basehttp 14656 15916 "PUT /api/users/driver/61/ HTTP/1.1" 200 630
+INFO 2025-10-01 12:58:37,854 basehttp 14656 4980 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 12:58:38,884 basehttp 14656 8608 "PUT /api/users/driver/61/ HTTP/1.1" 200 629
+INFO 2025-10-01 12:58:44,127 basehttp 14656 13596 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 12:59:01,199 basehttp 14656 7752 "GET /api/users/driver/61/ HTTP/1.1" 200 578
+INFO 2025-10-01 12:59:07,822 basehttp 14656 12532 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 12:59:10,287 basehttp 14656 15728 "PUT /api/users/driver/61/ HTTP/1.1" 200 625
+INFO 2025-10-01 12:59:10,458 basehttp 14656 5076 "GET /media/profile_pictures/driver/61/woila_profile_1759316347466.jpg HTTP/1.1" 200 44895
+INFO 2025-10-01 12:59:37,857 basehttp 14656 7184 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:00:07,901 basehttp 14656 10796 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:00:27,902 basehttp 14656 15660 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+INFO 2025-10-01 13:00:37,861 basehttp 14656 16524 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:01:07,865 basehttp 14656 17104 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:01:37,856 basehttp 14656 14768 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:02:07,892 basehttp 14656 2824 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:02:37,855 basehttp 14656 10124 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:03:07,903 basehttp 14656 2524 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:03:30,260 basehttp 14656 12124 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:03:37,898 basehttp 14656 2764 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:03:38,099 basehttp 14656 2764 - Broken pipe from ('192.168.0.114', 46668)
+INFO 2025-10-01 13:10:24,410 autoreload 1092 10164 Watching for file changes with StatReloader
+INFO 2025-10-01 13:10:42,827 autoreload 11572 5476 Watching for file changes with StatReloader
+WARNING 2025-10-01 13:11:04,586 utils 11572 12152 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:11:04,587 utils 11572 12152 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:11:04,587 utils 11572 12152 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:11:04,650 utils 11572 12152 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:11:04,650 utils 11572 12152 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:11:04,650 utils 11572 12152 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:11:04,655 utils 11572 12152 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:11:04,655 utils 11572 12152 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:11:04,656 utils 11572 12152 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:11:04,656 utils 11572 12152 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:11:04,657 utils 11572 12152 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:11:04,658 utils 11572 12152 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:11:04,658 utils 11572 12152 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:11:04,663 utils 11572 12152 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:11:04,664 utils 11572 12152 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:11:04,664 utils 11572 12152 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:11:04,679 basehttp 11572 12152 "GET /admin/ HTTP/1.1" 200 76318
+INFO 2025-10-01 13:11:04,938 basehttp 11572 12152 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 304 0
+INFO 2025-10-01 13:11:04,939 basehttp 11572 5748 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 304 0
+INFO 2025-10-01 13:11:04,940 basehttp 11572 16424 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:11:04,955 basehttp 11572 17060 "GET /static/jazzmin/css/main.css HTTP/1.1" 304 0
+INFO 2025-10-01 13:11:04,962 basehttp 11572 11904 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 304 0
+INFO 2025-10-01 13:11:04,978 basehttp 11572 11904 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:11:04,986 basehttp 11572 17060 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:11:05,007 basehttp 11572 7780 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 304 0
+INFO 2025-10-01 13:11:05,017 basehttp 11572 11904 "GET /static/jazzmin/js/main.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:11:05,268 basehttp 11572 11904 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-10-01 13:11:05,269 basehttp 11572 7780 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+WARNING 2025-10-01 13:11:05,567 basehttp 11572 7780 "GET /static/fas%20fa-car HTTP/1.1" 404 1850
+INFO 2025-10-01 13:12:21,941 basehttp 11572 6344 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:12:22,516 log 11572 5224 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:12:22,527 basehttp 11572 5224 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:12:23,440 basehttp 11572 1164 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:12:23,442 basehttp 11572 12184 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:12:25,357 basehttp 11572 12480 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:12:25,565 log 11572 8924 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:12:25,596 basehttp 11572 8924 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:12:26,180 basehttp 11572 9564 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:12:37,277 basehttp 11572 16816 "GET /media/profile_pictures/driver/61/woila_profile_1759316347466.jpg HTTP/1.1" 200 44895
+INFO 2025-10-01 13:12:40,192 basehttp 11572 10784 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+INFO 2025-10-01 13:12:51,468 basehttp 11572 4240 "PUT /api/users/driver/61/ HTTP/1.1" 200 625
+INFO 2025-10-01 13:12:51,737 basehttp 11572 16816 "GET /media/profile_pictures/driver/61/woila_profile_1759317165728.jpg HTTP/1.1" 200 47716
+INFO 2025-10-01 13:12:52,682 basehttp 11572 14440 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:13:15,764 basehttp 11572 15516 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:13:22,730 basehttp 11572 13864 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:13:24,988 basehttp 11572 8128 "PUT /api/users/driver/61/ HTTP/1.1" 200 625
+INFO 2025-10-01 13:13:25,256 basehttp 11572 14416 "GET /media/profile_pictures/driver/61/woila_profile_1759317202995.jpg HTTP/1.1" 200 75516
+INFO 2025-10-01 13:13:34,282 basehttp 11572 14416 - Broken pipe from ('192.168.0.114', 59456)
+INFO 2025-10-01 13:13:43,296 basehttp 11572 1976 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:13:43,759 log 11572 12372 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:13:43,760 basehttp 11572 12372 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:13:44,465 basehttp 11572 4488 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:13:44,483 basehttp 11572 604 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:13:46,554 basehttp 11572 15436 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:13:46,588 log 11572 14932 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:13:46,589 basehttp 11572 14932 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:13:47,104 basehttp 11572 4528 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:13:49,553 basehttp 11572 1800 "GET /media/profile_pictures/driver/61/woila_profile_1759317202995.jpg HTTP/1.1" 200 75516
+INFO 2025-10-01 13:13:52,271 basehttp 11572 8348 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+INFO 2025-10-01 13:14:02,209 basehttp 11572 17380 "PUT /api/users/driver/61/ HTTP/1.1" 200 625
+INFO 2025-10-01 13:14:02,297 basehttp 11572 1800 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 13:14:09,941 basehttp 11572 16420 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:14:13,856 basehttp 11572 3412 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:14:43,863 basehttp 11572 9380 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:15:13,905 basehttp 11572 2392 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:15:43,835 basehttp 11572 14464 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:16:09,987 basehttp 11572 4260 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:16:13,924 basehttp 11572 16532 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:21:13,042 basehttp 11572 6280 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:21:13,057 basehttp 11572 3960 "POST /api/order/driver/status/offline/ HTTP/1.1" 200 454
+INFO 2025-10-01 13:21:13,143 basehttp 11572 17336 "GET /api/order/driver/status/ HTTP/1.1" 200 383
+INFO 2025-10-01 13:21:13,799 basehttp 11572 10656 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+ERROR 2025-10-01 13:21:23,932 views 11572 5336 Erreur lors de la récupération de l'historique: WalletService.get_transaction_history() missing 1 required positional argument: 'user_type'
+ERROR 2025-10-01 13:21:23,932 views 11572 15876 Erreur lors de la récupération du solde: type object 'WalletService' has no attribute 'get_balance'
+ERROR 2025-10-01 13:21:23,933 log 11572 5336 Internal Server Error: /api/wallet/transactions/
+ERROR 2025-10-01 13:21:23,934 log 11572 15876 Internal Server Error: /api/wallet/balance/
+ERROR 2025-10-01 13:21:23,934 basehttp 11572 5336 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 500 78
+ERROR 2025-10-01 13:21:23,935 basehttp 11572 15876 "GET /api/wallet/balance/ HTTP/1.1" 500 71
+INFO 2025-10-01 13:21:23,979 basehttp 11572 5336 "GET /api/auth/referral/wallet/?user_type=driver&user_id=61 HTTP/1.1" 200 92
+INFO 2025-10-01 13:21:43,841 basehttp 11572 9252 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:22:13,890 basehttp 11572 7100 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:22:34,486 autoreload 11572 5476 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\views.py changed, reloading.
+INFO 2025-10-01 13:22:42,946 autoreload 9380 15100 Watching for file changes with StatReloader
+INFO 2025-10-01 13:22:51,104 basehttp 9380 13372 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:22:54,815 autoreload 9380 15100 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\views.py changed, reloading.
+INFO 2025-10-01 13:22:56,717 autoreload 976 13700 Watching for file changes with StatReloader
+INFO 2025-10-01 13:23:13,831 basehttp 976 9784 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:23:23,820 autoreload 976 13700 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\views.py changed, reloading.
+INFO 2025-10-01 13:23:25,160 autoreload 11844 3812 Watching for file changes with StatReloader
+INFO 2025-10-01 13:23:35,768 autoreload 11844 3812 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\views.py changed, reloading.
+INFO 2025-10-01 13:23:37,156 autoreload 14844 4816 Watching for file changes with StatReloader
+INFO 2025-10-01 13:23:43,900 basehttp 14844 11416 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:24:08,572 autoreload 14844 4816 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py changed, reloading.
+INFO 2025-10-01 13:24:09,867 autoreload 13020 14764 Watching for file changes with StatReloader
+INFO 2025-10-01 13:24:13,842 basehttp 13020 10484 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:24:40,644 basehttp 13020 11360 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:24:40,705 log 13020 15540 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:24:40,714 basehttp 13020 15540 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:24:41,476 basehttp 13020 12784 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:24:41,490 basehttp 13020 2396 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:24:43,534 basehttp 13020 16948 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:24:43,567 log 13020 4864 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:24:43,567 basehttp 13020 4864 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:24:43,845 basehttp 13020 15164 "GET /api/order/driver/status/ HTTP/1.1" 200 383
+INFO 2025-10-01 13:24:45,368 basehttp 13020 2756 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+INFO 2025-10-01 13:24:48,185 basehttp 13020 12500 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 490
+INFO 2025-10-01 13:24:48,312 basehttp 13020 8840 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+INFO 2025-10-01 13:24:48,312 basehttp 13020 14040 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:24:48,441 log 13020 16756 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:24:48,444 log 13020 11456 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:24:48,445 basehttp 13020 16756 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+WARNING 2025-10-01 13:24:48,445 basehttp 13020 11456 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 13:24:49,792 basehttp 13020 340 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 13:24:50,488 basehttp 13020 14440 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:24:50,515 log 13020 12424 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:24:50,515 basehttp 13020 12424 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 13:24:51,154 wallet_service 13020 12020 Nouveau wallet créé pour jean Vincent - +237655314313 (driver)
+INFO 2025-10-01 13:24:51,154 basehttp 13020 12020 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 127
+INFO 2025-10-01 13:24:51,163 basehttp 13020 2880 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-01 13:24:54,582 basehttp 13020 2468 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:24:54,626 log 13020 9732 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:24:54,633 basehttp 13020 9732 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 13:25:00,701 basehttp 13020 6216 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:25:00,745 log 13020 4704 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:25:00,746 basehttp 13020 4704 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 13:25:08,887 basehttp 13020 11248 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:25:08,942 log 13020 6880 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:25:08,942 basehttp 13020 6880 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 13:25:10,841 basehttp 13020 12108 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:25:18,993 basehttp 13020 5584 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:25:19,025 log 13020 3420 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:25:19,025 basehttp 13020 3420 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+ERROR 2025-10-01 13:25:30,844 wallet_service 13020 10568 Erreur lors de l'initiation du dépôt: NOT NULL constraint failed: wallet_transactions.error_message
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: wallet_transactions.error_message
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 73, in initiate_deposit
+    wallet_transaction = WalletTransaction.objects.create(
+        user_type=content_type,
+    ...<13 lines>...
+        }
+    )
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: wallet_transactions.error_message
+INFO 2025-10-01 13:25:30,976 basehttp 13020 10568 "POST /api/wallet/deposit/ HTTP/1.1" 200 107
+INFO 2025-10-01 13:25:40,846 basehttp 13020 9828 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+ERROR 2025-10-01 13:25:59,935 wallet_service 13020 556 Erreur lors de l'initiation du dépôt: NOT NULL constraint failed: wallet_transactions.error_message
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: wallet_transactions.error_message
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 73, in initiate_deposit
+    wallet_transaction = WalletTransaction.objects.create(
+        user_type=content_type,
+    ...<13 lines>...
+        }
+    )
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\query.py", line 663, in create
+    obj.save(force_insert=True, using=self.db)
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+    ~~~~~~~~~~~~~~^
+        using=using,
+        ^^^^^^^^^^^^
+    ...<2 lines>...
+        update_fields=update_fields,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\base.py", line 1008, in save_base
+    updated = self._save_table(
+        raw,
+    ...<4 lines>...
+        update_fields,
+    )
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\base.py", line 1169, in _save_table
+    results = self._do_insert(
+        cls._base_manager, using, fields, returning_fields, raw
+    )
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\base.py", line 1210, in _do_insert
+    return manager._insert(
+           ~~~~~~~~~~~~~~~^
+        [self],
+        ^^^^^^^
+    ...<3 lines>...
+        raw=raw,
+        ^^^^^^^^
+    )
+    ^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\query.py", line 1868, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\models\sql\compiler.py", line 1882, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: wallet_transactions.error_message
+INFO 2025-10-01 13:25:59,956 basehttp 13020 556 "POST /api/wallet/deposit/ HTTP/1.1" 200 107
+INFO 2025-10-01 13:26:10,892 basehttp 13020 4240 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:26:40,836 basehttp 13020 5256 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:26:48,354 basehttp 13020 4328 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:27:10,840 basehttp 13020 5328 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:27:11,008 autoreload 13020 14764 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\models.py changed, reloading.
+INFO 2025-10-01 13:27:12,279 autoreload 14308 13396 Watching for file changes with StatReloader
+INFO 2025-10-01 13:27:18,189 autoreload 14308 13396 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\models.py changed, reloading.
+INFO 2025-10-01 13:27:19,384 autoreload 13420 11860 Watching for file changes with StatReloader
+INFO 2025-10-01 13:27:40,851 basehttp 13420 10080 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:28:10,894 basehttp 13420 8148 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:28:40,839 basehttp 13420 13052 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:28:48,315 basehttp 13420 14108 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:29:10,890 basehttp 13420 16360 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:29:28,663 basehttp 13420 15068 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:29:28,771 log 13420 8432 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:29:28,771 basehttp 13420 8432 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:29:29,480 basehttp 13420 556 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:29:29,508 basehttp 13420 6192 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:29:31,499 basehttp 13420 15944 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:29:31,524 log 13420 15904 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:29:31,524 basehttp 13420 15904 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:29:31,751 basehttp 13420 4816 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:29:34,767 basehttp 13420 13332 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 13:29:35,804 basehttp 13420 12500 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-01 13:29:35,807 basehttp 13420 4808 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 127
+INFO 2025-10-01 13:29:48,517 wallet_service 13420 1196 [WalletService] Initialisation du paiement FreeMoPay pour 100.0 FCFA...
+INFO 2025-10-01 13:29:49,961 wallet_service 13420 3400 [WalletService] Initialisation du paiement FreeMoPay pour 100.0 FCFA...
+INFO 2025-10-01 13:29:50,269 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:29:51,289 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:29:51,608 freemopay 13420 1196 [FreeMoPay] Paiement initié avec succès - Référence: 5bcf10b1-f97e-4727-941c-8998d8e4c7d4
+INFO 2025-10-01 13:29:51,617 wallet_service 13420 1196 [WalletService] Paiement initié avec succès - Référence: 5bcf10b1-f97e-4727-941c-8998d8e4c7d4
+INFO 2025-10-01 13:29:51,618 wallet_service 13420 1196 [WalletService] Début du polling pour la référence: 5bcf10b1-f97e-4727-941c-8998d8e4c7d4
+INFO 2025-10-01 13:29:51,618 freemopay 13420 1196 [FreeMoPay Polling] Début du polling pour la référence: 5bcf10b1-f97e-4727-941c-8998d8e4c7d4
+INFO 2025-10-01 13:29:51,619 freemopay 13420 1196 [FreeMoPay Polling] Durée max: 120s, Intervalle: 1s
+INFO 2025-10-01 13:29:52,870 freemopay 13420 3400 [FreeMoPay] Paiement initié avec succès - Référence: acea5712-d5bd-4c80-b88e-ef10cc7032bc
+INFO 2025-10-01 13:29:52,882 wallet_service 13420 3400 [WalletService] Paiement initié avec succès - Référence: acea5712-d5bd-4c80-b88e-ef10cc7032bc
+INFO 2025-10-01 13:29:52,882 wallet_service 13420 3400 [WalletService] Début du polling pour la référence: acea5712-d5bd-4c80-b88e-ef10cc7032bc
+INFO 2025-10-01 13:29:52,883 freemopay 13420 3400 [FreeMoPay Polling] Début du polling pour la référence: acea5712-d5bd-4c80-b88e-ef10cc7032bc
+INFO 2025-10-01 13:29:52,883 freemopay 13420 3400 [FreeMoPay Polling] Durée max: 120s, Intervalle: 1s
+INFO 2025-10-01 13:29:53,173 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:29:54,222 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:29:54,446 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:29:55,487 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:29:56,731 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:29:58,000 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:29:58,258 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:29:58,865 basehttp 13420 17176 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:29:59,539 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:00,362 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:01,620 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:02,058 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:03,428 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:04,091 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:05,470 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:05,851 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:07,120 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:08,067 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:09,397 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:09,482 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:10,656 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:11,743 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:13,011 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:13,082 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:14,295 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:15,318 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:16,613 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:16,667 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:17,856 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:18,922 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:20,203 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:20,254 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:21,504 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:22,586 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:23,987 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:24,010 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:25,258 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:26,310 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:27,547 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:27,708 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:28,871 basehttp 13420 8128 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:30:28,927 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:29,891 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:31,369 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:32,728 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:33,156 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:35,067 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:35,474 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:36,454 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:36,808 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:38,730 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:39,085 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:40,044 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:40,391 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:42,561 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:42,813 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:43,940 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:44,410 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:46,326 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:46,891 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:48,803 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:49,488 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:51,172 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:51,972 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:52,578 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:53,293 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:54,981 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:55,743 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:56,310 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:57,032 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:30:58,510 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:58,819 basehttp 13420 9256 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:30:59,277 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:30:59,703 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:00,443 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:02,081 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:02,788 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:03,257 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:04,089 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:05,582 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:06,431 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:06,890 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:07,732 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:09,181 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:10,368 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:11,181 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:12,586 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:12,618 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:13,842 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:14,982 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:16,305 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:16,336 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:17,616 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:18,620 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:19,982 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:19,984 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:21,298 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:22,479 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:23,656 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:23,787 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:25,039 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:26,187 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:27,876 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:28,103 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:28,838 basehttp 13420 13632 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:31:29,393 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:30,600 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:32,138 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:33,471 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:34,629 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:34,992 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:36,011 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:37,370 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:38,440 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:38,678 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:39,874 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:41,076 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:42,356 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:42,569 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:43,747 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:45,151 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:46,230 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:46,586 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:48,166 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:48,918 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:50,512 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:50,841 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:52,403 freemopay 13420 1196 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:53,052 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:54,438 freemopay 13420 3400 [FreeMoPay Polling] Statut actuel: PENDING - Raison: paiement en cours de traitement
+INFO 2025-10-01 13:31:54,898 freemopay 13420 1196 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:56,251 wallet_service 13420 1196 [WalletService] Résultat du polling: TIMEOUT après 31 tentatives
+INFO 2025-10-01 13:31:56,274 basehttp 13420 1196 "POST /api/wallet/deposit/ HTTP/1.1" 200 333
+INFO 2025-10-01 13:31:57,032 freemopay 13420 3400 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:31:58,421 wallet_service 13420 3400 [WalletService] Résultat du polling: TIMEOUT après 32 tentatives
+INFO 2025-10-01 13:31:58,449 basehttp 13420 3400 "POST /api/wallet/deposit/ HTTP/1.1" 200 333
+INFO 2025-10-01 13:31:58,820 basehttp 13420 13328 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:32:07,073 basehttp 13420 16760 "GET /api/wallet/transactions/?page=1&page_size=20&type=deposit HTTP/1.1" 200 968
+INFO 2025-10-01 13:32:14,116 autoreload 13420 11860 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py changed, reloading.
+INFO 2025-10-01 13:32:15,443 autoreload 14492 11716 Watching for file changes with StatReloader
+INFO 2025-10-01 13:32:21,145 basehttp 14492 16948 "GET /api/wallet/transactions/?page=1&page_size=20&type=transfer_in HTTP/1.1" 200 968
+INFO 2025-10-01 13:32:23,830 basehttp 14492 16948 "GET /api/wallet/transactions/?page=1&page_size=20&type=transfer_out HTTP/1.1" 200 968
+INFO 2025-10-01 13:32:28,911 basehttp 14492 6276 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:32:56,882 basehttp 14492 11848 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:32:56,888 log 14492 11148 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:32:56,888 basehttp 14492 11148 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:32:57,591 basehttp 14492 6152 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:32:57,606 basehttp 14492 7856 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:32:59,597 basehttp 14492 13068 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:32:59,638 log 14492 6176 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:32:59,639 basehttp 14492 6176 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:32:59,819 basehttp 14492 8888 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:33:02,848 basehttp 14492 13872 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 13:33:03,726 basehttp 14492 12084 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-01 13:33:03,731 basehttp 14492 6776 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 968
+INFO 2025-10-01 13:33:15,950 wallet_service 14492 964 [WalletService] Initialisation du paiement FreeMoPay pour 50.0 FCFA...
+INFO 2025-10-01 13:33:17,563 freemopay 14492 964 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 13:33:19,106 freemopay 14492 964 [FreeMoPay] Paiement initié avec succès - Référence: 09d1d911-74ca-48d4-a947-2bd494219456
+INFO 2025-10-01 13:33:19,118 wallet_service 14492 964 [WalletService] Paiement initié avec succès - Référence: 09d1d911-74ca-48d4-a947-2bd494219456
+INFO 2025-10-01 13:33:19,119 basehttp 14492 964 "POST /api/wallet/deposit/ HTTP/1.1" 200 284
+INFO 2025-10-01 13:33:19,330 basehttp 14492 964 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-01 13:33:19,361 basehttp 14492 964 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 1345
+INFO 2025-10-01 13:33:26,964 basehttp 14492 9820 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:34:05,477 basehttp 14492 10464 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:34:12,271 basehttp 14492 9620 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:34:27,033 basehttp 14492 2256 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:34:57,039 basehttp 14492 15600 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:35:27,038 basehttp 14492 11988 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:35:56,891 autoreload 14492 11716 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py changed, reloading.
+INFO 2025-10-01 13:35:58,378 autoreload 7804 11072 Watching for file changes with StatReloader
+INFO 2025-10-01 13:36:27,037 basehttp 7804 14844 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:36:57,024 basehttp 7804 4972 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:37:27,033 basehttp 7804 14328 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:37:52,742 basehttp 7804 15612 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 13:37:57,033 basehttp 7804 8660 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:38:27,025 basehttp 7804 7876 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:38:57,028 basehttp 7804 3812 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:39:26,974 basehttp 7804 6216 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:39:57,033 basehttp 7804 12000 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:40:21,175 basehttp 7804 15212 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+INFO 2025-10-01 13:40:26,948 basehttp 7804 12416 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:40:57,002 basehttp 7804 12580 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:41:27,028 basehttp 7804 13392 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:41:57,155 basehttp 7804 13892 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:41:57,212 log 7804 14780 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:41:57,215 basehttp 7804 14780 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:41:57,965 basehttp 7804 16588 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:41:57,983 basehttp 7804 10464 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:41:59,973 basehttp 7804 16120 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:42:00,013 log 7804 11084 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:42:00,016 basehttp 7804 11084 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:42:00,222 basehttp 7804 16176 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:42:27,416 basehttp 7804 2624 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:42:57,353 basehttp 7804 17164 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:43:01,438 basehttp 7804 14776 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 13:43:02,684 basehttp 7804 12120 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-01 13:43:02,689 basehttp 7804 4104 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 1345
+INFO 2025-10-01 13:43:27,413 basehttp 7804 11744 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:43:57,349 basehttp 7804 5732 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:44:25,084 basehttp 7804 6804 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+INFO 2025-10-01 13:44:27,367 basehttp 7804 12864 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:44:57,368 basehttp 7804 5240 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:45:27,374 basehttp 7804 12092 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:45:57,367 basehttp 7804 8276 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:46:27,329 basehttp 7804 15060 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:46:57,321 basehttp 7804 3912 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:47:27,375 basehttp 7804 5020 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:47:57,315 basehttp 7804 11312 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:48:27,364 basehttp 7804 10368 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:48:57,320 basehttp 7804 5848 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:49:27,376 basehttp 7804 14076 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:49:57,375 basehttp 7804 11988 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:50:00,681 basehttp 7804 13332 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:50:00,744 log 7804 6148 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:50:00,745 basehttp 7804 6148 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:50:01,480 basehttp 7804 9456 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:50:01,494 basehttp 7804 6192 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:50:03,542 basehttp 7804 16424 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:50:03,573 log 7804 6032 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:50:03,574 basehttp 7804 6032 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:50:03,777 basehttp 7804 16040 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:50:06,531 basehttp 7804 13676 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 13:50:09,204 basehttp 7804 16240 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+INFO 2025-10-01 13:50:30,841 basehttp 7804 8292 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:51:00,846 basehttp 7804 8796 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:51:30,902 basehttp 7804 14536 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:52:01,733 basehttp 7804 13852 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:52:01,831 log 7804 8544 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:52:01,832 basehttp 7804 8544 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:52:02,539 basehttp 7804 5584 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:52:02,551 basehttp 7804 364 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:52:04,610 basehttp 7804 14076 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:52:04,642 log 7804 16820 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:52:04,642 basehttp 7804 16820 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:52:04,828 basehttp 7804 13924 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:52:07,803 basehttp 7804 2016 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 13:52:10,003 basehttp 7804 8308 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+INFO 2025-10-01 13:52:10,031 basehttp 7804 8308 "GET /api/auth/referral/wallet/?user_type=driver&user_id=61 HTTP/1.1" 200 92
+INFO 2025-10-01 13:52:31,421 basehttp 7804 11844 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 13:52:31,896 basehttp 7804 16016 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:52:33,826 basehttp 7804 10600 "GET /api/vehicles/?driver_id=61 HTTP/1.1" 200 1226
+INFO 2025-10-01 13:52:33,953 basehttp 7804 11844 "GET /media/vehicles/61/temp/photo_exterieur_1.jpg HTTP/1.1" 200 64486
+INFO 2025-10-01 13:53:01,958 basehttp 7804 17188 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:53:31,911 basehttp 7804 2772 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:54:01,963 basehttp 7804 5360 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:54:31,922 basehttp 7804 8316 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:54:47,482 basehttp 7804 15668 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 471
+WARNING 2025-10-01 13:54:50,129 utils 7804 16000 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:54:50,129 utils 7804 16000 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:54:50,130 utils 7804 16000 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:54:50,154 utils 7804 16000 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:54:50,154 utils 7804 16000 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:54:50,154 utils 7804 16000 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:54:50,162 utils 7804 16000 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:54:50,163 utils 7804 16000 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:54:50,163 utils 7804 16000 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:54:50,164 utils 7804 16000 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:54:50,165 utils 7804 16000 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:54:50,165 utils 7804 16000 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:54:50,165 utils 7804 16000 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:54:50,168 utils 7804 16000 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:54:50,169 utils 7804 16000 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:54:50,169 utils 7804 16000 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:54:50,183 basehttp 7804 16000 "GET /admin/ HTTP/1.1" 200 76333
+WARNING 2025-10-01 13:54:54,749 utils 7804 2316 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:54:54,763 utils 7804 2316 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:54:54,764 utils 7804 2316 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:54:54,765 utils 7804 2316 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:54:54,766 utils 7804 2316 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:54:54,766 utils 7804 2316 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:54:54,770 utils 7804 2316 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:54:54,770 utils 7804 2316 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:54:54,771 utils 7804 2316 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:54:54,771 utils 7804 2316 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:54:54,772 utils 7804 2316 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:54:54,772 utils 7804 2316 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:54:54,773 utils 7804 2316 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:54:55,013 basehttp 7804 2316 "GET /admin/vehicles/vehicle/ HTTP/1.1" 200 46895
+INFO 2025-10-01 13:54:55,073 basehttp 7804 2316 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 304 0
+INFO 2025-10-01 13:54:55,073 basehttp 7804 7792 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:54:55,075 basehttp 7804 10132 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:54:55,082 basehttp 7804 2316 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:54:55,083 basehttp 7804 7792 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:54:55,083 basehttp 7804 9932 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:54:55,083 basehttp 7804 15536 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:54:55,094 basehttp 7804 12800 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:54:55,098 basehttp 7804 9932 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:54:55,099 basehttp 7804 15536 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:54:55,153 basehttp 7804 10132 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 13:55:00,695 utils 7804 10132 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:00,696 utils 7804 10132 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:00,696 utils 7804 10132 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:00,699 utils 7804 10132 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:00,699 utils 7804 10132 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:00,700 utils 7804 10132 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:00,705 utils 7804 10132 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:00,706 utils 7804 10132 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:00,706 utils 7804 10132 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:00,707 utils 7804 10132 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:55:00,708 utils 7804 10132 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:00,709 utils 7804 10132 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:00,710 utils 7804 10132 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:00,714 utils 7804 10132 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:00,715 utils 7804 10132 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:00,715 utils 7804 10132 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:55:00,856 basehttp 7804 10132 "GET /admin/vehicles/vehicle/27/change/ HTTP/1.1" 200 59869
+INFO 2025-10-01 13:55:00,919 basehttp 7804 10132 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 13:55:00,931 basehttp 7804 12800 "GET /static/admin/css/autocomplete.css HTTP/1.1" 200 9185
+INFO 2025-10-01 13:55:00,939 basehttp 7804 15536 "GET /static/admin/css/vendor/select2/select2.css HTTP/1.1" 200 17358
+INFO 2025-10-01 13:55:00,948 basehttp 7804 10132 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:55:00,957 basehttp 7804 9932 "GET /static/admin/js/vendor/select2/i18n/en.js HTTP/1.1" 200 844
+INFO 2025-10-01 13:55:00,961 basehttp 7804 7792 "GET /static/admin/js/autocomplete.js HTTP/1.1" 200 1060
+INFO 2025-10-01 13:55:00,966 basehttp 7804 12800 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:55:00,971 basehttp 7804 10132 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:55:00,975 basehttp 7804 12800 "GET /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:55:00,975 basehttp 7804 10132 "GET /static/jazzmin/js/related-modal.js HTTP/1.1" 304 0
+INFO 2025-10-01 13:55:00,999 basehttp 7804 10132 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-01 13:55:01,019 basehttp 7804 10132 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-01 13:55:01,041 basehttp 7804 10132 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-01 13:55:01,056 basehttp 7804 2316 "GET /static/admin/js/vendor/select2/select2.full.js HTTP/1.1" 200 173566
+INFO 2025-10-01 13:55:01,069 basehttp 7804 10132 "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+INFO 2025-10-01 13:55:01,965 basehttp 7804 3488 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+WARNING 2025-10-01 13:55:19,302 utils 7804 15424 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:19,302 utils 7804 15424 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:19,303 utils 7804 15424 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:19,305 utils 7804 15424 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:19,305 utils 7804 15424 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:19,306 utils 7804 15424 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:19,309 utils 7804 15424 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:19,310 utils 7804 15424 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:19,310 utils 7804 15424 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:19,311 utils 7804 15424 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:55:19,312 utils 7804 15424 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:19,313 utils 7804 15424 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:19,313 utils 7804 15424 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:55:19,333 basehttp 7804 15424 "GET /admin/users/userdriver/ HTTP/1.1" 200 40114
+INFO 2025-10-01 13:55:19,381 basehttp 7804 15424 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 13:55:22,230 basehttp 7804 8516 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 490
+INFO 2025-10-01 13:55:22,339 basehttp 7804 12136 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+INFO 2025-10-01 13:55:22,340 basehttp 7804 12216 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:55:22,707 log 7804 4520 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:55:22,711 log 7804 10692 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:55:22,712 basehttp 7804 4520 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+WARNING 2025-10-01 13:55:22,712 basehttp 7804 10692 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 13:55:23,113 basehttp 7804 10600 "POST /api/order/driver/location/update/ HTTP/1.1" 200 163
+INFO 2025-10-01 13:55:24,767 basehttp 7804 11108 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:55:24,797 log 7804 10640 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:55:24,798 basehttp 7804 10640 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+WARNING 2025-10-01 13:55:26,937 utils 7804 8836 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:26,940 utils 7804 8836 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:26,941 utils 7804 8836 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:26,943 utils 7804 8836 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:26,943 utils 7804 8836 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:26,943 utils 7804 8836 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:26,947 utils 7804 8836 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:26,948 utils 7804 8836 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:26,950 utils 7804 8836 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:26,951 utils 7804 8836 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:55:26,953 utils 7804 8836 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:26,953 utils 7804 8836 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:26,954 utils 7804 8836 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:26,957 utils 7804 8836 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:26,957 utils 7804 8836 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:26,958 utils 7804 8836 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:55:27,326 basehttp 7804 8836 "GET /admin/users/userdriver/61/change/ HTTP/1.1" 200 47318
+INFO 2025-10-01 13:55:27,376 basehttp 7804 8836 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 13:55:27,414 basehttp 7804 7576 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-10-01 13:55:27,444 basehttp 7804 12784 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-10-01 13:55:28,861 basehttp 7804 12488 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:55:28,906 log 7804 8112 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:55:28,907 basehttp 7804 8112 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 13:55:31,895 basehttp 7804 10616 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:55:33,046 basehttp 7804 17308 "POST /admin/users/userdriver/61/change/ HTTP/1.1" 302 0
+WARNING 2025-10-01 13:55:33,064 utils 7804 17308 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:33,064 utils 7804 17308 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:33,065 utils 7804 17308 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:33,066 utils 7804 17308 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:33,067 utils 7804 17308 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:33,067 utils 7804 17308 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:33,072 utils 7804 17308 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:33,073 utils 7804 17308 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:33,074 utils 7804 17308 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:55:33,075 utils 7804 17308 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:55:33,076 utils 7804 17308 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:55:33,076 utils 7804 17308 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:55:33,076 utils 7804 17308 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:55:33,085 basehttp 7804 17308 "GET /admin/users/userdriver/ HTTP/1.1" 200 40705
+INFO 2025-10-01 13:55:33,133 basehttp 7804 17308 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 13:55:34,975 basehttp 7804 8644 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:55:35,026 log 7804 13592 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:55:35,026 basehttp 7804 13592 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 13:55:43,155 basehttp 7804 12084 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:55:43,205 log 7804 13040 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:55:43,208 basehttp 7804 13040 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 13:55:53,361 basehttp 7804 16444 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:55:53,415 log 7804 13896 Not Found: /ws/driver/61/
+WARNING 2025-10-01 13:55:53,416 basehttp 7804 13896 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 13:56:01,954 basehttp 7804 14536 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:56:31,962 basehttp 7804 13924 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 566
+INFO 2025-10-01 13:57:01,947 basehttp 7804 11216 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 566
+INFO 2025-10-01 13:57:22,359 basehttp 7804 9436 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:57:31,951 basehttp 7804 2980 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:57:38,274 basehttp 7804 2716 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:57:38,407 log 7804 13056 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:57:38,421 basehttp 7804 13056 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:57:39,167 basehttp 7804 5428 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:57:39,172 basehttp 7804 8228 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 13:57:41,126 basehttp 7804 11772 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 13:57:41,159 log 7804 10316 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 13:57:41,167 basehttp 7804 10316 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 13:57:41,390 basehttp 7804 5364 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 13:57:43,290 basehttp 7804 1232 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 13:57:45,616 basehttp 7804 6128 "GET /api/vehicles/?driver_id=61 HTTP/1.1" 200 1226
+INFO 2025-10-01 13:57:45,756 basehttp 7804 1232 "GET /media/vehicles/61/temp/photo_exterieur_1.jpg HTTP/1.1" 200 64486
+INFO 2025-10-01 13:57:47,424 basehttp 7804 6128 "PATCH /api/vehicles/27/toggle-online/ HTTP/1.1" 200 211
+INFO 2025-10-01 13:57:47,522 basehttp 7804 14812 "POST /api/order/driver/status/offline/ HTTP/1.1" 200 454
+WARNING 2025-10-01 13:57:54,757 utils 7804 3876 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:57:54,758 utils 7804 3876 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:57:54,759 utils 7804 3876 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:57:54,760 utils 7804 3876 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:57:54,761 utils 7804 3876 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:57:54,761 utils 7804 3876 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:57:54,773 utils 7804 3876 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:57:54,773 utils 7804 3876 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:57:54,774 utils 7804 3876 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:57:54,775 utils 7804 3876 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:57:54,776 utils 7804 3876 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:57:54,776 utils 7804 3876 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:57:54,776 utils 7804 3876 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:57:54,789 basehttp 7804 3876 "GET /admin/users/userdriver/ HTTP/1.1" 200 40114
+INFO 2025-10-01 13:57:54,843 basehttp 7804 3876 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 13:57:59,494 utils 7804 3876 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:57:59,495 utils 7804 3876 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:57:59,495 utils 7804 3876 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:57:59,497 utils 7804 3876 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:57:59,498 utils 7804 3876 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:57:59,498 utils 7804 3876 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:57:59,502 utils 7804 3876 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:57:59,503 utils 7804 3876 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:57:59,503 utils 7804 3876 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:57:59,504 utils 7804 3876 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:57:59,505 utils 7804 3876 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:57:59,505 utils 7804 3876 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:57:59,506 utils 7804 3876 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:57:59,522 basehttp 7804 3876 "GET /admin/vehicles/vehicle/ HTTP/1.1" 200 46895
+INFO 2025-10-01 13:57:59,571 basehttp 7804 3876 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 13:58:02,951 basehttp 7804 4860 "PATCH /api/vehicles/27/toggle-online/ HTTP/1.1" 200 208
+ERROR 2025-10-01 13:58:03,043 log 7804 15808 Internal Server Error: /api/order/driver/status/online/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\order\views.py", line 1292, in set_driver_online
+    from applications.users.models import Vehicle
+ImportError: cannot import name 'Vehicle' from 'applications.users.models' (C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\models.py). Did you mean: 'vehicles'?
+ERROR 2025-10-01 13:58:03,049 basehttp 7804 15808 "POST /api/order/driver/status/online/ HTTP/1.1" 500 25272
+WARNING 2025-10-01 13:58:06,811 utils 7804 9336 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:06,812 utils 7804 9336 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:06,812 utils 7804 9336 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:58:06,814 utils 7804 9336 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:06,815 utils 7804 9336 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:06,815 utils 7804 9336 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:58:06,821 utils 7804 9336 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:06,822 utils 7804 9336 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:06,822 utils 7804 9336 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:58:06,824 utils 7804 9336 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:58:06,825 utils 7804 9336 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:06,825 utils 7804 9336 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:06,825 utils 7804 9336 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:58:06,840 basehttp 7804 9336 "GET /admin/vehicles/vehicle/ HTTP/1.1" 200 46895
+INFO 2025-10-01 13:58:06,888 basehttp 7804 9336 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 13:58:08,550 basehttp 7804 7652 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:58:09,228 basehttp 7804 4416 "GET /api/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-10-01 13:58:09,231 basehttp 7804 9120 "GET /api/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-10-01 13:58:09,232 basehttp 7804 10572 "GET /api/vehicles/configs/types/ HTTP/1.1" 200 312
+INFO 2025-10-01 13:58:09,234 basehttp 7804 8712 "GET /api/vehicles/configs/models/ HTTP/1.1" 200 581
+INFO 2025-10-01 13:58:09,351 basehttp 7804 11584 "GET /media/vehicles/61/temp/photo_interieur_1.jpg HTTP/1.1" 200 61601
+INFO 2025-10-01 13:58:09,351 basehttp 7804 17176 "GET /media/vehicles/61/temp/photo_interieur_2.jpg HTTP/1.1" 200 59206
+INFO 2025-10-01 13:58:09,352 basehttp 7804 2724 "GET /media/vehicles/61/temp/photo_exterieur_2.jpg HTTP/1.1" 200 65486
+INFO 2025-10-01 13:58:17,742 basehttp 7804 17180 "PUT /api/vehicles/27/update/ HTTP/1.1" 200 1253
+INFO 2025-10-01 13:58:20,093 basehttp 7804 17180 "PUT /api/vehicles/27/update/ HTTP/1.1" 200 1253
+INFO 2025-10-01 13:58:22,262 basehttp 7804 17180 "PUT /api/vehicles/27/update/ HTTP/1.1" 200 1253
+INFO 2025-10-01 13:58:27,372 basehttp 7804 8244 "PUT /api/vehicles/27/update/ HTTP/1.1" 200 1253
+INFO 2025-10-01 13:58:32,385 basehttp 7804 5160 "GET /api/vehicles/?driver_id=61 HTTP/1.1" 200 1222
+INFO 2025-10-01 13:58:38,484 basehttp 7804 14848 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+WARNING 2025-10-01 13:58:43,012 utils 7804 8376 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:43,014 utils 7804 8376 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:43,014 utils 7804 8376 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:58:43,016 utils 7804 8376 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:43,016 utils 7804 8376 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:43,017 utils 7804 8376 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:58:43,022 utils 7804 8376 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:43,022 utils 7804 8376 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:43,023 utils 7804 8376 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:58:43,024 utils 7804 8376 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:58:43,024 utils 7804 8376 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:43,025 utils 7804 8376 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:43,025 utils 7804 8376 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:58:43,039 basehttp 7804 8376 "GET /admin/vehicles/vehicle/ HTTP/1.1" 200 46895
+INFO 2025-10-01 13:58:43,077 basehttp 7804 8376 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 13:58:49,308 utils 7804 8376 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:49,308 utils 7804 8376 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:49,309 utils 7804 8376 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:58:49,311 utils 7804 8376 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:49,312 utils 7804 8376 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:49,312 utils 7804 8376 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:58:49,317 utils 7804 8376 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:49,317 utils 7804 8376 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:49,318 utils 7804 8376 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:58:49,319 utils 7804 8376 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:58:49,320 utils 7804 8376 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:49,320 utils 7804 8376 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:49,320 utils 7804 8376 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:58:49,324 utils 7804 8376 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:58:49,324 utils 7804 8376 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:58:49,325 utils 7804 8376 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:58:49,351 basehttp 7804 8376 "GET /admin/vehicles/vehicle/27/change/ HTTP/1.1" 200 59866
+INFO 2025-10-01 13:58:49,400 basehttp 7804 8376 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 13:58:52,517 basehttp 7804 8376 "GET /admin/autocomplete/?app_label=vehicles&model_name=vehicle&field_name=vehicle_type HTTP/1.1" 200 172
+INFO 2025-10-01 13:58:56,163 basehttp 7804 10640 "GET /api/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-10-01 13:58:56,165 basehttp 7804 9820 "GET /api/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-10-01 13:58:56,166 basehttp 7804 16156 "GET /api/vehicles/configs/types/ HTTP/1.1" 200 312
+INFO 2025-10-01 13:58:56,168 basehttp 7804 9472 "GET /api/vehicles/configs/models/ HTTP/1.1" 200 581
+INFO 2025-10-01 13:59:00,224 basehttp 7804 13384 "PUT /api/vehicles/27/update/ HTTP/1.1" 200 1257
+INFO 2025-10-01 13:59:08,515 basehttp 7804 6900 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:59:09,110 basehttp 7804 10244 "GET /api/vehicles/?driver_id=61 HTTP/1.1" 200 1226
+WARNING 2025-10-01 13:59:12,018 utils 7804 17292 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:59:12,018 utils 7804 17292 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:59:12,019 utils 7804 17292 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:59:12,021 utils 7804 17292 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:59:12,023 utils 7804 17292 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:59:12,024 utils 7804 17292 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:59:12,027 utils 7804 17292 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:59:12,028 utils 7804 17292 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:59:12,028 utils 7804 17292 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:59:12,029 utils 7804 17292 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 13:59:12,030 utils 7804 17292 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:59:12,031 utils 7804 17292 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:59:12,031 utils 7804 17292 Could not reverse url from api.vehicle
+WARNING 2025-10-01 13:59:12,034 utils 7804 17292 Could not reverse url from api.userdriver
+WARNING 2025-10-01 13:59:12,035 utils 7804 17292 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 13:59:12,035 utils 7804 17292 Could not reverse url from api.vehicle
+INFO 2025-10-01 13:59:12,060 basehttp 7804 17292 "GET /admin/vehicles/vehicle/27/change/ HTTP/1.1" 200 59870
+INFO 2025-10-01 13:59:12,109 basehttp 7804 17292 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 13:59:20,381 basehttp 7804 4108 "GET /api/vehicles/configs/brands/ HTTP/1.1" 200 154
+INFO 2025-10-01 13:59:20,382 basehttp 7804 12544 "GET /api/vehicles/configs/types/ HTTP/1.1" 200 312
+INFO 2025-10-01 13:59:20,383 basehttp 7804 15600 "GET /api/vehicles/configs/colors/ HTTP/1.1" 200 269
+INFO 2025-10-01 13:59:20,385 basehttp 7804 7004 "GET /api/vehicles/configs/models/ HTTP/1.1" 200 581
+INFO 2025-10-01 13:59:38,507 basehttp 7804 4796 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 13:59:43,771 basehttp 7804 2452 "GET /api/order/driver/status/ HTTP/1.1" 200 383
+INFO 2025-10-01 13:59:43,956 basehttp 7804 13708 "POST /api/order/driver/status/offline/ HTTP/1.1" 200 454
+INFO 2025-10-01 13:59:50,572 basehttp 7804 16424 "POST /api/order/driver/status/offline/ HTTP/1.1" 200 454
+INFO 2025-10-01 13:59:59,240 basehttp 7804 6868 "POST /api/order/driver/status/offline/ HTTP/1.1" 200 454
+INFO 2025-10-01 14:00:05,403 basehttp 7804 14280 "POST /api/order/driver/status/offline/ HTTP/1.1" 200 454
+INFO 2025-10-01 14:00:08,475 basehttp 7804 15816 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 14:00:13,013 basehttp 7804 4268 "POST /api/order/driver/status/offline/ HTTP/1.1" 200 454
+INFO 2025-10-01 14:00:15,351 basehttp 7804 14596 "GET /api/order/driver/status/ HTTP/1.1" 200 383
+INFO 2025-10-01 14:00:18,781 basehttp 7804 5076 "POST /api/vehicles/create/ HTTP/1.1" 201 1357
+INFO 2025-10-01 14:00:18,951 basehttp 7804 14484 "POST /api/users/documents/upload/ HTTP/1.1" 201 615
+INFO 2025-10-01 14:00:19,031 basehttp 7804 14852 "GET /api/vehicles/?driver_id=61 HTTP/1.1" 200 2468
+INFO 2025-10-01 14:00:19,079 basehttp 7804 3004 "GET /media/vehicles/61/temp/photo_exterieur_1.jpg HTTP/1.1" 200 64486
+INFO 2025-10-01 14:00:19,101 basehttp 7804 7356 "GET /media/vehicles/61/temp/photo_exterieur_1_gpap9DO.jpg HTTP/1.1" 200 100416
+INFO 2025-10-01 14:00:38,545 basehttp 7804 16068 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 14:01:08,545 basehttp 7804 5476 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+WARNING 2025-10-01 14:01:09,972 utils 7804 13284 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:09,972 utils 7804 13284 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:09,973 utils 7804 13284 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:09,974 utils 7804 13284 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:09,975 utils 7804 13284 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:09,977 utils 7804 13284 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:09,981 utils 7804 13284 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:09,982 utils 7804 13284 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:09,982 utils 7804 13284 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:09,983 utils 7804 13284 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 14:01:09,984 utils 7804 13284 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:09,984 utils 7804 13284 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:09,985 utils 7804 13284 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:09,988 utils 7804 13284 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:09,988 utils 7804 13284 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:09,989 utils 7804 13284 Could not reverse url from api.vehicle
+INFO 2025-10-01 14:01:10,015 basehttp 7804 13284 "GET /admin/vehicles/vehicle/27/change/ HTTP/1.1" 200 59870
+INFO 2025-10-01 14:01:10,063 basehttp 7804 13284 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 14:01:13,184 utils 7804 13284 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:13,184 utils 7804 13284 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:13,184 utils 7804 13284 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:13,186 utils 7804 13284 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:13,186 utils 7804 13284 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:13,187 utils 7804 13284 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:13,190 utils 7804 13284 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:13,191 utils 7804 13284 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:13,191 utils 7804 13284 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:13,192 utils 7804 13284 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 14:01:13,193 utils 7804 13284 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:13,194 utils 7804 13284 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:13,195 utils 7804 13284 Could not reverse url from api.vehicle
+INFO 2025-10-01 14:01:13,211 basehttp 7804 13284 "GET /admin/vehicles/vehicle/ HTTP/1.1" 200 47783
+INFO 2025-10-01 14:01:13,266 basehttp 7804 13284 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 14:01:17,456 utils 7804 16360 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:17,457 utils 7804 16360 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:17,457 utils 7804 16360 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:17,459 utils 7804 16360 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:17,459 utils 7804 16360 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:17,459 utils 7804 16360 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:17,465 utils 7804 16360 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:17,466 utils 7804 16360 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:17,466 utils 7804 16360 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:17,467 utils 7804 16360 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 14:01:17,468 utils 7804 16360 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:17,468 utils 7804 16360 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:17,468 utils 7804 16360 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:17,472 utils 7804 16360 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:17,472 utils 7804 16360 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:17,472 utils 7804 16360 Could not reverse url from api.vehicle
+INFO 2025-10-01 14:01:17,498 basehttp 7804 16360 "GET /admin/vehicles/vehicle/28/change/ HTTP/1.1" 200 59888
+INFO 2025-10-01 14:01:17,551 basehttp 7804 16360 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 14:01:25,167 basehttp 7804 8612 "POST /admin/vehicles/vehicle/28/change/ HTTP/1.1" 302 0
+WARNING 2025-10-01 14:01:25,191 utils 7804 8612 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:25,191 utils 7804 8612 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:25,192 utils 7804 8612 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:25,193 utils 7804 8612 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:25,194 utils 7804 8612 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:25,194 utils 7804 8612 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:25,199 utils 7804 8612 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:25,200 utils 7804 8612 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:25,200 utils 7804 8612 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:25,201 utils 7804 8612 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 14:01:25,202 utils 7804 8612 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:25,202 utils 7804 8612 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:25,203 utils 7804 8612 Could not reverse url from api.vehicle
+INFO 2025-10-01 14:01:25,220 basehttp 7804 8612 "GET /admin/vehicles/vehicle/ HTTP/1.1" 200 48403
+INFO 2025-10-01 14:01:25,282 basehttp 7804 8612 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 14:01:27,403 basehttp 7804 6968 "GET /api/vehicles/?driver_id=61 HTTP/1.1" 200 2466
+INFO 2025-10-01 14:01:35,265 basehttp 7804 7444 "DELETE /api/vehicles/27/delete/ HTTP/1.1" 200 109
+INFO 2025-10-01 14:01:38,460 basehttp 7804 16908 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+WARNING 2025-10-01 14:01:38,696 utils 7804 17248 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:38,697 utils 7804 17248 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:38,697 utils 7804 17248 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:38,699 utils 7804 17248 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:38,699 utils 7804 17248 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:38,700 utils 7804 17248 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:38,705 utils 7804 17248 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:38,706 utils 7804 17248 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:38,706 utils 7804 17248 Could not reverse url from api.vehicle
+WARNING 2025-10-01 14:01:38,707 utils 7804 17248 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 14:01:38,708 utils 7804 17248 Could not reverse url from api.userdriver
+WARNING 2025-10-01 14:01:38,708 utils 7804 17248 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 14:01:38,709 utils 7804 17248 Could not reverse url from api.vehicle
+INFO 2025-10-01 14:01:38,723 basehttp 7804 17248 "GET /admin/vehicles/vehicle/ HTTP/1.1" 200 46873
+INFO 2025-10-01 14:01:38,761 basehttp 7804 17248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 14:01:46,664 basehttp 7804 15672 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 14:02:08,486 basehttp 7804 3116 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 14:02:18,279 basehttp 7804 11724 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+INFO 2025-10-01 14:02:29,612 basehttp 7804 5532 "GET /api/auth/referral/wallet/?user_type=driver&user_id=61 HTTP/1.1" 200 92
+INFO 2025-10-01 14:02:38,491 basehttp 7804 15156 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 14:03:08,487 basehttp 7804 10796 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 14:03:38,532 basehttp 7804 13548 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 14:04:08,487 basehttp 7804 7788 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 14:04:38,538 basehttp 7804 8740 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 14:05:08,539 basehttp 7804 11400 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 14:05:38,491 basehttp 7804 7316 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 14:06:08,547 basehttp 7804 8688 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
