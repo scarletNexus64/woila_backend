@@ -66,6 +66,24 @@ class NotificationConfig(models.Model):
         blank=True,
         verbose_name="ID Business WhatsApp"
     )
+    whatsapp_api_version = models.CharField(
+        max_length=10,
+        default='v18.0',
+        verbose_name="Version API WhatsApp",
+        help_text="Version de l'API Graph (ex: v18.0)"
+    )
+    whatsapp_template_name = models.CharField(
+        max_length=100,
+        default='otp_verification',
+        verbose_name="Nom du template WhatsApp",
+        help_text="Nom du template approuvé pour les OTP"
+    )
+    whatsapp_language = models.CharField(
+        max_length=10,
+        default='en',
+        verbose_name="Code langue du template",
+        help_text="Code langue du template (ex: en, fr, fr_FR)"
+    )
     
     is_active = models.BooleanField(default=True, verbose_name="Actif")
     created_at = models.DateTimeField(auto_now_add=True)
@@ -73,7 +91,13 @@ class NotificationConfig(models.Model):
 
     def __str__(self):
         return f"Configuration OTP - Canal: {self.get_default_channel_display()}"
-    
+
+    @classmethod
+    def get_config(cls):
+        """Get or create the notification configuration"""
+        config, created = cls.objects.get_or_create(pk=1)
+        return config
+
     class Meta:
         db_table = 'notification_configs'
         verbose_name = 'Configuration de notification'

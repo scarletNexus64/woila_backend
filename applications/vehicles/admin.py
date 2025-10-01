@@ -5,17 +5,20 @@ from .models import Vehicle, VehicleType, VehicleBrand, VehicleModel, VehicleCol
 @admin.register(VehicleType)
 class VehicleTypeAdmin(admin.ModelAdmin):
     list_display = ['name_display', 'amount_display', 'status_display']
-    
+    list_filter = ['is_active']
+    search_fields = ['name']  # ✅ Required for autocomplete
+    actions = ['activate', 'deactivate']
+
     def name_display(self, obj):
         return format_html('🚙 {}', obj.name)
     name_display.short_description = 'Type de véhicule'
     name_display.admin_order_field = 'name'
-    
+
     def amount_display(self, obj):
         return format_html('💰 {} FCFA', obj.additional_amount)
     amount_display.short_description = 'Montant additionnel'
     amount_display.admin_order_field = 'additional_amount'
-    
+
     def status_display(self, obj):
         if obj.is_active:
             return format_html('<span style="color: green;">✅ Actif</span>')
@@ -23,9 +26,6 @@ class VehicleTypeAdmin(admin.ModelAdmin):
             return format_html('<span style="color: red;">❌ Inactif</span>')
     status_display.short_description = 'Statut'
     status_display.admin_order_field = 'is_active'
-    list_filter = ['is_active']
-    search_fields = ['name']
-    actions = ['activate', 'deactivate']
     
     def activate(self, request, queryset):
         queryset.update(is_active=True)
@@ -38,12 +38,15 @@ class VehicleTypeAdmin(admin.ModelAdmin):
 @admin.register(VehicleBrand)
 class VehicleBrandAdmin(admin.ModelAdmin):
     list_display = ['name_display', 'status_display']
-    
+    list_filter = ['is_active']
+    search_fields = ['name']  # ✅ Required for autocomplete
+    actions = ['activate', 'deactivate']
+
     def name_display(self, obj):
         return format_html('🏭 {}', obj.name)
     name_display.short_description = 'Marque'
     name_display.admin_order_field = 'name'
-    
+
     def status_display(self, obj):
         if obj.is_active:
             return format_html('<span style="color: green;">✅ Actif</span>')
@@ -51,9 +54,6 @@ class VehicleBrandAdmin(admin.ModelAdmin):
             return format_html('<span style="color: red;">❌ Inactif</span>')
     status_display.short_description = 'Statut'
     status_display.admin_order_field = 'is_active'
-    list_filter = ['is_active']
-    search_fields = ['name']
-    actions = ['activate', 'deactivate']
     
     def activate(self, request, queryset):
         queryset.update(is_active=True)
@@ -66,17 +66,21 @@ class VehicleBrandAdmin(admin.ModelAdmin):
 @admin.register(VehicleModel)
 class VehicleModelAdmin(admin.ModelAdmin):
     list_display = ['name_display', 'brand_display', 'status_display']
-    
+    list_filter = ['is_active', 'brand']
+    search_fields = ['name', 'brand__name']  # ✅ Required for autocomplete
+    autocomplete_fields = ['brand']
+    actions = ['activate', 'deactivate']
+
     def name_display(self, obj):
         return format_html('🚗 {}', obj.name)
     name_display.short_description = 'Modèle'
     name_display.admin_order_field = 'name'
-    
+
     def brand_display(self, obj):
         return format_html('🏭 {}', obj.brand.name if obj.brand else 'N/A')
     brand_display.short_description = 'Marque'
     brand_display.admin_order_field = 'brand__name'
-    
+
     def status_display(self, obj):
         if obj.is_active:
             return format_html('<span style="color: green;">✅ Actif</span>')
@@ -84,10 +88,6 @@ class VehicleModelAdmin(admin.ModelAdmin):
             return format_html('<span style="color: red;">❌ Inactif</span>')
     status_display.short_description = 'Statut'
     status_display.admin_order_field = 'is_active'
-    list_filter = ['is_active', 'brand']
-    search_fields = ['name', 'brand__name']
-    autocomplete_fields = ['brand']
-    actions = ['activate', 'deactivate']
     
     def activate(self, request, queryset):
         queryset.update(is_active=True)
@@ -100,12 +100,15 @@ class VehicleModelAdmin(admin.ModelAdmin):
 @admin.register(VehicleColor)
 class VehicleColorAdmin(admin.ModelAdmin):
     list_display = ['name_display', 'status_display']
-    
+    list_filter = ['is_active']
+    search_fields = ['name']  # ✅ Required for autocomplete
+    actions = ['activate', 'deactivate']
+
     def name_display(self, obj):
         return format_html('🎨 {}', obj.name)
     name_display.short_description = 'Couleur'
     name_display.admin_order_field = 'name'
-    
+
     def status_display(self, obj):
         if obj.is_active:
             return format_html('<span style="color: green;">✅ Actif</span>')
@@ -113,9 +116,6 @@ class VehicleColorAdmin(admin.ModelAdmin):
             return format_html('<span style="color: red;">❌ Inactif</span>')
     status_display.short_description = 'Statut'
     status_display.admin_order_field = 'is_active'
-    list_filter = ['is_active']
-    search_fields = ['name']
-    actions = ['activate', 'deactivate']
     
     def activate(self, request, queryset):
         queryset.update(is_active=True)

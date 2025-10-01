@@ -9,7 +9,7 @@ class NotificationConfigProxy(models.Model):
         ('sms', 'SMS (Nexah)'),
         ('whatsapp', 'WhatsApp (Meta)')
     ]
-    
+
     default_channel = models.CharField(max_length=20, choices=CHANNEL_CHOICES)
     nexah_base_url = models.CharField(max_length=255)
     nexah_send_endpoint = models.CharField(max_length=100)
@@ -68,7 +68,7 @@ class NotificationProxy(models.Model):
 
 @admin.register(NotificationConfigProxy)
 class NotificationConfigProxyAdmin(admin.ModelAdmin):
-    list_display = ['get_channel_display', 'get_nexah_status', 'get_whatsapp_status', 'is_active_display', 'updated_at']
+    list_display = ['get_channel_display', 'get_nexah_status', 'get_whatsapp_status', 'updated_at']
     readonly_fields = ['created_at', 'updated_at']
     
     fieldsets = (
@@ -114,13 +114,6 @@ class NotificationConfigProxyAdmin(admin.ModelAdmin):
         else:
             return format_html('<span style="color: #F44336; font-weight: bold;">❌ Non configuré</span>')
     get_whatsapp_status.short_description = 'WhatsApp Meta'
-    
-    def is_active_display(self, obj):
-        if obj.is_active:
-            return format_html('<span style="color: #4CAF50; font-weight: bold;">🟢 Actif</span>')
-        else:
-            return format_html('<span style="color: #F44336; font-weight: bold;">🔴 Inactif</span>')
-    is_active_display.short_description = 'Statut'
 
 @admin.register(NotificationProxy)
 class NotificationProxyAdmin(admin.ModelAdmin):

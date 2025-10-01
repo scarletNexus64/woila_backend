@@ -1,5 +1,7 @@
 from rest_framework import serializers
+from drf_spectacular.utils import extend_schema_field
 from .models import Vehicle, VehicleType, VehicleBrand, VehicleModel, VehicleColor
+from typing import Dict
 
 
 class VehicleSerializer(serializers.ModelSerializer):
@@ -13,11 +15,60 @@ class VehicleSerializer(serializers.ModelSerializer):
 
 class VehicleCreateUpdateSerializer(serializers.ModelSerializer):
     """Serializer pour créer/modifier des véhicules"""
-    
+    # Accepter les IDs en plus des objets
+    vehicle_type_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+    brand_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+    model_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+    color_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+
     class Meta:
         model = Vehicle
         fields = '__all__'
         read_only_fields = ['id', 'created_at', 'updated_at', 'is_approved']
+        extra_kwargs = {
+            'vehicle_type': {'required': False, 'allow_null': True},
+            'brand': {'required': False, 'allow_null': True},
+            'model': {'required': False, 'allow_null': True},
+            'color': {'required': False, 'allow_null': True},
+        }
+
+    def create(self, validated_data):
+        # Extraire les IDs si présents
+        vehicle_type_id = validated_data.pop('vehicle_type_id', None)
+        brand_id = validated_data.pop('brand_id', None)
+        model_id = validated_data.pop('model_id', None)
+        color_id = validated_data.pop('color_id', None)
+
+        # Assigner les IDs aux champs ForeignKey
+        if vehicle_type_id:
+            validated_data['vehicle_type_id'] = vehicle_type_id
+        if brand_id:
+            validated_data['brand_id'] = brand_id
+        if model_id:
+            validated_data['model_id'] = model_id
+        if color_id:
+            validated_data['color_id'] = color_id
+
+        return super().create(validated_data)
+
+    def update(self, instance, validated_data):
+        # Extraire les IDs si présents
+        vehicle_type_id = validated_data.pop('vehicle_type_id', None)
+        brand_id = validated_data.pop('brand_id', None)
+        model_id = validated_data.pop('model_id', None)
+        color_id = validated_data.pop('color_id', None)
+
+        # Assigner les IDs aux champs ForeignKey
+        if vehicle_type_id:
+            validated_data['vehicle_type_id'] = vehicle_type_id
+        if brand_id:
+            validated_data['brand_id'] = brand_id
+        if model_id:
+            validated_data['model_id'] = model_id
+        if color_id:
+            validated_data['color_id'] = color_id
+
+        return super().update(instance, validated_data)
 
 
 class VehicleTypeSerializer(serializers.ModelSerializer):
@@ -40,12 +91,13 @@ class VehicleBrandSerializer(serializers.ModelSerializer):
 
 class VehicleModelSerializer(serializers.ModelSerializer):
     """Serializer pour les modèles de véhicules"""
-    brand_name = serializers.CharField(source='brand.name', read_only=True)
-    
+    brand = VehicleBrandSerializer(read_only=True)
+    brand_id = serializers.IntegerField(write_only=True, required=False)
+
     class Meta:
         model = VehicleModel
-        fields = ['id', 'name', 'brand', 'brand_name', 'is_active']
-        read_only_fields = ['id', 'brand_name']
+        fields = ['id', 'name', 'brand', 'brand_id', 'is_active']
+        read_only_fields = ['id']
 
 
 class VehicleColorSerializer(serializers.ModelSerializer):
@@ -62,7 +114,7 @@ class VehicleSerializer(serializers.ModelSerializer):
     driver_info = serializers.SerializerMethodField()
     etat_display = serializers.SerializerMethodField()
     images_urls = serializers.SerializerMethodField()
-    
+
     # Informations des relations
     vehicle_type_name = serializers.CharField(source='vehicle_type.name', read_only=True)
     brand_name = serializers.CharField(source='brand.name', read_only=True)
@@ -89,28 +141,62 @@ class VehicleSerializer(serializers.ModelSerializer):
             'brand_name', 'model_name', 'color_name'
         ]
 
-    def get_driver_info(self, obj):
+    @extend_schema_field(serializers.DictField)
+    def get_driver_info(self, obj) -> Dict:
         return obj.get_driver_info()
 
-    def get_etat_display(self, obj):
+    @extend_schema_field(serializers.CharField)
+    def get_etat_display(self, obj) -> str:
         return obj.get_etat_display_short()
 
-    def get_images_urls(self, obj):
+    @extend_schema_field(serializers.DictField)
+    def get_images_urls(self, obj) -> Dict:
         request = self.context.get('request')
         return obj.get_images_urls(request)
 
 
 class VehicleCreateSerializer(serializers.ModelSerializer):
     """Serializer pour créer un véhicule"""
-    
+    # Accepter les IDs en plus des objets
+    vehicle_type_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+    brand_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+    model_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+    color_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+
     class Meta:
         model = Vehicle
         fields = [
-            'driver', 'vehicle_type', 'brand', 'model', 'color',
+            'driver', 'vehicle_type', 'vehicle_type_id', 'brand', 'brand_id',
+            'model', 'model_id', 'color', 'color_id',
             'nom', 'plaque_immatriculation', 'etat_vehicule',
             'photo_exterieur_1', 'photo_exterieur_2',
             'photo_interieur_1', 'photo_interieur_2'
         ]
+        extra_kwargs = {
+            'vehicle_type': {'required': False, 'allow_null': True},
+            'brand': {'required': False, 'allow_null': True},
+            'model': {'required': False, 'allow_null': True},
+            'color': {'required': False, 'allow_null': True},
+        }
+
+    def create(self, validated_data):
+        # Extraire les IDs si présents
+        vehicle_type_id = validated_data.pop('vehicle_type_id', None)
+        brand_id = validated_data.pop('brand_id', None)
+        model_id = validated_data.pop('model_id', None)
+        color_id = validated_data.pop('color_id', None)
+
+        # Assigner les IDs aux champs ForeignKey
+        if vehicle_type_id:
+            validated_data['vehicle_type_id'] = vehicle_type_id
+        if brand_id:
+            validated_data['brand_id'] = brand_id
+        if model_id:
+            validated_data['model_id'] = model_id
+        if color_id:
+            validated_data['color_id'] = color_id
+
+        return super().create(validated_data)
 
     def validate_plaque_immatriculation(self, value):
         """Valide l'unicité de la plaque d'immatriculation"""
@@ -123,16 +209,47 @@ class VehicleCreateSerializer(serializers.ModelSerializer):
 
 class VehicleUpdateSerializer(serializers.ModelSerializer):
     """Serializer pour mettre à jour un véhicule"""
-    
+    # Accepter les IDs en plus des objets
+    vehicle_type_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+    brand_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+    model_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+    color_id = serializers.IntegerField(write_only=True, required=False, allow_null=True)
+
     class Meta:
         model = Vehicle
         fields = [
-            'vehicle_type', 'brand', 'model', 'color',
+            'vehicle_type', 'vehicle_type_id', 'brand', 'brand_id',
+            'model', 'model_id', 'color', 'color_id',
             'nom', 'etat_vehicule',
             'photo_exterieur_1', 'photo_exterieur_2',
             'photo_interieur_1', 'photo_interieur_2',
             'is_active'
         ]
+        extra_kwargs = {
+            'vehicle_type': {'required': False, 'allow_null': True},
+            'brand': {'required': False, 'allow_null': True},
+            'model': {'required': False, 'allow_null': True},
+            'color': {'required': False, 'allow_null': True},
+        }
+
+    def update(self, instance, validated_data):
+        # Extraire les IDs si présents
+        vehicle_type_id = validated_data.pop('vehicle_type_id', None)
+        brand_id = validated_data.pop('brand_id', None)
+        model_id = validated_data.pop('model_id', None)
+        color_id = validated_data.pop('color_id', None)
+
+        # Assigner les IDs aux champs ForeignKey
+        if vehicle_type_id:
+            validated_data['vehicle_type_id'] = vehicle_type_id
+        if brand_id:
+            validated_data['brand_id'] = brand_id
+        if model_id:
+            validated_data['model_id'] = model_id
+        if color_id:
+            validated_data['color_id'] = color_id
+
+        return super().update(instance, validated_data)
 
     def validate_plaque_immatriculation(self, value):
         """Valide l'unicité de la plaque d'immatriculation lors de la mise à jour"""
@@ -161,11 +278,14 @@ class VehicleListSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ['id', 'driver_name', 'brand_model', 'etat_display']
 
-    def get_driver_name(self, obj):
+    @extend_schema_field(serializers.CharField)
+    def get_driver_name(self, obj) -> str:
         return f"{obj.driver.name} {obj.driver.surname}"
 
-    def get_brand_model(self, obj):
+    @extend_schema_field(serializers.CharField)
+    def get_brand_model(self, obj) -> str:
         return f"{obj.brand.name if obj.brand else 'N/A'} {obj.model.name if obj.model else 'N/A'}"
 
-    def get_etat_display(self, obj):
+    @extend_schema_field(serializers.CharField)
+    def get_etat_display(self, obj) -> str:
         return obj.get_etat_display_short()

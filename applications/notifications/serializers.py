@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from drf_spectacular.utils import extend_schema_field
 from .models import Notification, FCMToken, NotificationConfig
 
 
@@ -20,11 +21,13 @@ class NotificationSerializer(serializers.ModelSerializer):
             'time_ago', 'user_info'
         ]
 
-    def get_time_ago(self, obj):
+    @extend_schema_field(serializers.CharField)
+    def get_time_ago(self, obj) -> str:
         from django.utils.timesince import timesince
         return timesince(obj.created_at)
 
-    def get_user_info(self, obj):
+    @extend_schema_field(serializers.CharField)
+    def get_user_info(self, obj) -> str:
         return f"{obj.user_type.model} {obj.user_id}"
 
 
@@ -40,7 +43,8 @@ class NotificationListSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ['id', 'created_at', 'time_ago']
 
-    def get_time_ago(self, obj):
+    @extend_schema_field(serializers.CharField)
+    def get_time_ago(self, obj) -> str:
         from django.utils.timesince import timesince
         return timesince(obj.created_at)
 
@@ -68,7 +72,8 @@ class FCMTokenSerializer(serializers.ModelSerializer):
             'id', 'created_at', 'updated_at', 'last_used', 'token_preview'
         ]
 
-    def get_token_preview(self, obj):
+    @extend_schema_field(serializers.CharField)
+    def get_token_preview(self, obj) -> str:
         """Retourne un aperçu du token pour la sécurité"""
         if len(obj.token) > 20:
             return f"{obj.token[:10]}...{obj.token[-10:]}"
@@ -87,7 +92,8 @@ class FCMTokenListSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ['id', 'created_at', 'last_used', 'token_preview']
 
-    def get_token_preview(self, obj):
+    @extend_schema_field(serializers.CharField)
+    def get_token_preview(self, obj) -> str:
         if len(obj.token) > 20:
             return f"{obj.token[:10]}...{obj.token[-10:]}"
         return obj.token

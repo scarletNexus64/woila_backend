@@ -33,7 +33,7 @@ class OTPVerification(models.Model):
     ]
     
     phone_number = models.CharField(max_length=15)
-    otp_code = models.CharField(max_length=6)
+    otp_code = models.CharField(max_length=4)  # 4 chiffres pour compatibilité app
     user_type = models.CharField(max_length=10, choices=USER_TYPE_CHOICES)
     created_at = models.DateTimeField(auto_now_add=True)
     expires_at = models.DateTimeField()
@@ -62,16 +62,22 @@ class OTPVerification(models.Model):
 
 
 class ReferralCode(models.Model):
-    code = models.CharField(max_length=20, unique=True)
-    driver_id = models.IntegerField(unique=True)
+    from django.contrib.contenttypes.fields import GenericForeignKey
+    from django.contrib.contenttypes.models import ContentType
+
+    code = models.CharField(max_length=8, unique=True)
+    user_type = models.ForeignKey(ContentType, on_delete=models.CASCADE)
+    user_id = models.PositiveIntegerField()
+    user = GenericForeignKey('user_type', 'user_id')
     created_at = models.DateTimeField(auto_now_add=True)
     is_active = models.BooleanField(default=True)
     used_count = models.IntegerField(default=0)
-    
+
     def __str__(self):
-        return f"Code {self.code} - Driver {self.driver_id}"
-    
+        return f"Code {self.code} - {self.user_type.model} {self.user_id}"
+
     class Meta:
         db_table = 'referral_codes'
         verbose_name = 'Code de parrainage'
         verbose_name_plural = 'Codes de parrainage'
+        unique_together = ('user_type', 'user_id')

@@ -183,11 +183,11 @@ class FCMService:
         """
         try:
             logger.info(f"🔔 Début envoi FCM pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number} - Type: {notification_type}")
-            
+
             # Vérifier si l'utilisateur a une session active
-            from ..models import Token
+            from applications.authentication.models import Token
             user_type_name = 'driver' if isinstance(user, UserDriver) else 'customer'
-            
+
             has_active_session = Token.objects.filter(
                 user_type=user_type_name,
                 user_id=user.id,

@@ -1,4 +1,5 @@
 from rest_framework import serializers
+from drf_spectacular.utils import extend_schema_field
 from .models import UserDriver, UserCustomer, Document
 
 
@@ -17,7 +18,8 @@ class UserDriverSerializer(serializers.ModelSerializer):
         read_only_fields = ['id', 'created_at', 'updated_at']
         extra_kwargs = {'password': {'write_only': True}}
 
-    def get_profile_picture_url(self, obj):
+    @extend_schema_field(serializers.CharField(allow_null=True))
+    def get_profile_picture_url(self, obj) -> str:
         request = self.context.get('request')
         return obj.get_profile_picture_url(request)
 
@@ -38,17 +40,134 @@ class RegisterDriverSerializer(serializers.Serializer):
     """Serializer pour l'inscription des chauffeurs"""
     phone_number = serializers.CharField(max_length=15)
     password = serializers.CharField(min_length=6, write_only=True)
+    confirm_password = serializers.CharField(min_length=6, write_only=True)
     name = serializers.CharField(max_length=100)
     surname = serializers.CharField(max_length=100)
     gender = serializers.ChoiceField(choices=UserDriver.GENDER_CHOICES)
     age = serializers.IntegerField(min_value=18, max_value=100)
     birthday = serializers.DateField()
     profile_picture = serializers.ImageField(required=False)
-    
+    referral_code = serializers.CharField(max_length=20, required=False, allow_blank=True)
+
     def validate_phone_number(self, value):
         if UserDriver.objects.filter(phone_number=value).exists():
-            raise serializers.ValidationError("Ce numéro de téléphone est déjà utilisé.")
+            raise serializers.ValidationError("Ce numéro de téléphone est déjà utilisé par un chauffeur.")
         return value
+
+    def validate(self, data):
+        """Validate passwords match and age requirements"""
+        # Check passwords match
+        if data.get('password') != data.get('confirm_password'):
+            raise serializers.ValidationError({
+                'confirm_password': "Les mots de passe ne correspondent pas."
+            })
+
+        # Check minimum age (18 years)
+        from datetime import date
+        from dateutil.relativedelta import relativedelta
+
+        birthday = data.get('birthday')
+        if birthday:
+            age_diff = relativedelta(date.today(), birthday)
+            if age_diff.years < 18:
+                raise serializers.ValidationError({
+                    'birthday': "L'âge minimum requis est de 18 ans."
+                })
+
+        return data
+
+    def create(self, validated_data):
+        """Create new driver user"""
+        from django.contrib.contenttypes.models import ContentType
+        from applications.authentication.models import ReferralCode
+        from applications.wallet.models import Wallet
+        from core.models import GeneralConfig
+
+        # Remove confirm_password before creating user
+        validated_data.pop('confirm_password', None)
+        referral_code = validated_data.pop('referral_code', None)
+
+        # Create the driver
+        driver = UserDriver.objects.create(**validated_data)
+
+        # Create wallet with default balance
+        driver_content_type = ContentType.objects.get_for_model(driver)
+        Wallet.objects.create(
+            user_type=driver_content_type,
+            user_id=driver.id,
+            balance=0
+        )
+
+        # Create referral code for this driver
+        # Generate unique referral code
+        import random
+        import string
+        code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+        while ReferralCode.objects.filter(code=code).exists():
+            code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+
+        ReferralCode.objects.create(
+            code=code,
+            user_type=driver_content_type,
+            user_id=driver.id
+        )
+
+        # Process referral code if provided
+        if referral_code:
+            try:
+                referrer_code = ReferralCode.objects.get(
+                    code=referral_code,
+                    is_active=True
+                )
+
+                # Get referral bonus from config
+                config = GeneralConfig.get_config()
+                referral_bonus = float(config.referral_bonus)
+
+                # Get referrer user via GenericForeignKey
+                referrer_user = referrer_code.user_type.get_object_for_this_type(
+                    id=referrer_code.user_id
+                )
+
+                # Add bonus to referrer's wallet
+                referrer_wallet = Wallet.objects.get(
+                    user_type=referrer_code.user_type,
+                    user_id=referrer_code.user_id
+                )
+                referrer_wallet.add_credit(
+                    referral_bonus,
+                    f"Bonus de parrainage pour le code {referral_code}"
+                )
+
+                # Increment referral usage count
+                referrer_code.used_count += 1
+                referrer_code.save()
+
+                # Send notification to referrer (async to not block registration)
+                from applications.notifications.services.notification_service import NotificationService
+                import threading
+
+                def send_referral_notification():
+                    NotificationService.send_referral_bonus_notification(
+                        referrer_user=referrer_user,
+                        referred_user=driver,
+                        referral_code=referral_code,
+                        bonus_amount=referral_bonus
+                    )
+
+                thread = threading.Thread(target=send_referral_notification)
+                thread.start()
+
+            except ReferralCode.DoesNotExist:
+                # Invalid referral code, silently ignore
+                pass
+            except Exception as e:
+                # Log error but don't fail registration
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.error(f"Error processing referral code: {str(e)}")
+
+        return driver
 
 
 class RegisterCustomerSerializer(serializers.Serializer):
@@ -78,18 +197,21 @@ class UserDriverDetailSerializer(serializers.ModelSerializer):
             'created_at', 'updated_at', 'is_active'
         ]
         read_only_fields = [
-            'id', 'created_at', 'updated_at', 'vehicles_count', 
+            'id', 'created_at', 'updated_at', 'vehicles_count',
             'documents_count', 'profile_picture_url'
         ]
 
-    def get_profile_picture_url(self, obj):
+    @extend_schema_field(serializers.CharField(allow_null=True))
+    def get_profile_picture_url(self, obj) -> str:
         request = self.context.get('request')
         return obj.get_profile_picture_url(request)
 
-    def get_vehicles_count(self, obj):
+    @extend_schema_field(serializers.IntegerField)
+    def get_vehicles_count(self, obj) -> int:
         return obj.vehicles.count()
 
-    def get_documents_count(self, obj):
+    @extend_schema_field(serializers.IntegerField)
+    def get_documents_count(self, obj) -> int:
         return Document.objects.filter(user_id=obj.id, user_type='driver').count()
 
 
@@ -105,7 +227,8 @@ class UserCustomerDetailSerializer(serializers.ModelSerializer):
         ]
         read_only_fields = ['id', 'created_at', 'updated_at', 'documents_count']
 
-    def get_documents_count(self, obj):
+    @extend_schema_field(serializers.IntegerField)
+    def get_documents_count(self, obj) -> int:
         return Document.objects.filter(user_id=obj.id, user_type='customer').count()
 
 

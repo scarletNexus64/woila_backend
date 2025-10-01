@@ -524,3 +524,136 @@ class AllCustomersView(APIView):
             'count': len(serializer.data),
             'customers': serializer.data
         }, status=status.HTTP_200_OK)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class DocumentUploadView(APIView):
+    """
+    Endpoint pour uploader les documents des utilisateurs (drivers et customers)
+    POST /api/documents/upload/
+    """
+    parser_classes = [MultiPartParser, FormParser]
+
+    @extend_schema(
+        tags=['Documents'],
+        summary='Uploader un document utilisateur',
+        description='Upload un document pour un utilisateur (driver ou customer) avec support multi-fichiers',
+        request={
+            'multipart/form-data': {
+                'type': 'object',
+                'properties': {
+                    'user_id': {'type': 'integer', 'example': 1},
+                    'user_type': {'type': 'string', 'enum': ['driver', 'customer'], 'example': 'driver'},
+                    'document_name': {'type': 'string', 'example': 'Carte d\'identité nationale'},
+                    'file': {'type': 'string', 'format': 'binary', 'description': 'Fichier principal'},
+                    'file_2': {'type': 'string', 'format': 'binary', 'description': 'Fichier additionnel (optionnel)'},
+                },
+                'required': ['user_id', 'user_type', 'document_name', 'file']
+            }
+        },
+        responses={
+            201: {
+                'description': 'Document(s) uploadé(s) avec succès',
+                'examples': {
+                    'application/json': {
+                        'success': True,
+                        'message': '2 document(s) uploadé(s) avec succès',
+                        'documents': [
+                            {
+                                'id': 1,
+                                'document_name': 'Carte d\'identité nationale',
+                                'file_url': 'http://localhost:8000/media/documents/driver/1/id_card.jpg',
+                                'file_size': 125000,
+                                'uploaded_at': '2023-12-05T16:00:00Z'
+                            }
+                        ]
+                    }
+                }
+            },
+            400: {'description': 'Données invalides ou fichier manquant'},
+            404: {'description': 'Utilisateur introuvable'},
+        }
+    )
+    def post(self, request):
+        """
+        Upload un ou plusieurs documents pour un utilisateur
+        """
+        from .models import Document
+        from .serializers import DocumentSerializer
+
+        user_id = request.data.get('user_id')
+        user_type = request.data.get('user_type')
+        document_name = request.data.get('document_name')
+
+        # Validation des champs requis
+        if not user_id or not user_type or not document_name:
+            return Response({
+                'success': False,
+                'message': 'user_id, user_type et document_name sont requis'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        # Vérifier que l'utilisateur existe
+        if user_type == 'driver':
+            if not UserDriver.objects.filter(id=user_id, is_active=True).exists():
+                return Response({
+                    'success': False,
+                    'message': 'Chauffeur introuvable'
+                }, status=status.HTTP_404_NOT_FOUND)
+        elif user_type == 'customer':
+            if not UserCustomer.objects.filter(id=user_id, is_active=True).exists():
+                return Response({
+                    'success': False,
+                    'message': 'Client introuvable'
+                }, status=status.HTTP_404_NOT_FOUND)
+        else:
+            return Response({
+                'success': False,
+                'message': 'user_type doit être "driver" ou "customer"'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        # Collecter tous les fichiers (file, file_2, file_3, etc.)
+        files = []
+        for key in request.FILES:
+            if key.startswith('file'):
+                files.append(request.FILES[key])
+
+        if not files:
+            return Response({
+                'success': False,
+                'message': 'Aucun fichier fourni'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        # Créer les documents
+        created_documents = []
+        try:
+            for file in files:
+                document = Document.objects.create(
+                    user_id=user_id,
+                    user_type=user_type,
+                    document_name=document_name,
+                    file=file
+                )
+                created_documents.append(document)
+
+            # Sérialiser les documents créés
+            serializer = DocumentSerializer(created_documents, many=True, context={'request': request})
+
+            return Response({
+                'success': True,
+                'message': f'{len(created_documents)} document(s) uploadé(s) avec succès',
+                'documents': serializer.data
+            }, status=status.HTTP_201_CREATED)
+
+        except Exception as e:
+            # En cas d'erreur, supprimer les documents déjà créés
+            for doc in created_documents:
+                try:
+                    doc.file.delete()
+                    doc.delete()
+                except:
+                    pass
+
+            return Response({
+                'success': False,
+                'message': f'Erreur lors de l\'upload : {str(e)}'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

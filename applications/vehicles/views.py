@@ -63,13 +63,19 @@ class VehicleCreateView(APIView):
         """
         Créer un nouveau véhicule
         """
+        print("🚀 VehicleCreateView: Starting vehicle creation")
+        print(f"📋 Request data keys: {request.data.keys()}")
+        print(f"📁 Request FILES keys: {request.FILES.keys()}")
+        print(f"📝 Request data (non-file): {dict((k, v) for k, v in request.data.items() if k not in request.FILES)}")
+
         data = request.data.copy()
         for key, file in request.FILES.items():
             data[key] = file
-        
+
         serializer = VehicleCreateUpdateSerializer(data=data, context={'request': request})
-        
+
         if serializer.is_valid():
+            print("✅ Serializer is valid")
             try:
                 vehicle = serializer.save()
                 vehicle_serializer = VehicleSerializer(vehicle, context={'request': request})
@@ -85,7 +91,9 @@ class VehicleCreateView(APIView):
                     'success': False,
                     'message': f'Erreur lors de la création : {str(e)}'
                 }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+
+        print("❌ Serializer validation failed")
+        print(f"📋 Errors: {serializer.errors}")
         return Response({
             'success': False,
             'errors': serializer.errors
