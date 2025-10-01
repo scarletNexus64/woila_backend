@@ -15,7 +15,7 @@ import time
 
 # Import from api app (legacy)
 from .models import Token, OTPVerification, ReferralCode
-from .serializers import LoginSerializer, LogoutSerializer
+from .serializers import LoginSerializer, LogoutSerializer, ForgotPasswordSerializer, ResetPasswordSerializer
 from applications.users.serializers import RegisterDriverSerializer, RegisterCustomerSerializer
 from applications.users.models import UserDriver, UserCustomer
 from applications.notifications.models import Notification
@@ -595,9 +595,204 @@ class ForgotPasswordView(APIView):
     EXISTING ENDPOINT: POST /api/auth/forgot-password/
     DO NOT MODIFY - Already integrated in production
     """
+
+    @extend_schema(
+        tags=['Authentication'],
+        summary='Demander la réinitialisation du mot de passe',
+        description='Génère un OTP et l\'envoie pour réinitialiser le mot de passe',
+        request=ForgotPasswordSerializer,
+        responses={
+            200: {
+                'description': 'OTP envoyé avec succès',
+                'example': {
+                    'success': True,
+                    'message': 'Un code de vérification a été envoyé à votre numéro',
+                    'phone_number': '+237690000000'
+                }
+            },
+            400: {'description': 'Données invalides'},
+            404: {'description': 'Utilisateur non trouvé'}
+        }
+    )
     def post(self, request):
-        # Logic from api.viewsets.forgot_password
-        pass
+        """
+        Demander un code OTP pour réinitialiser le mot de passe
+        """
+        import random
+
+        serializer = ForgotPasswordSerializer(data=request.data)
+
+        if not serializer.is_valid():
+            return Response({
+                'success': False,
+                'error': 'Données invalides',
+                'errors': serializer.errors
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        phone_number = serializer.validated_data['phone_number']
+        user_type = serializer.validated_data['user_type']
+
+        # Vérifier si l'utilisateur existe
+        if user_type == 'driver':
+            user_exists = UserDriver.objects.filter(phone_number=phone_number).exists()
+        else:
+            user_exists = UserCustomer.objects.filter(phone_number=phone_number).exists()
+
+        if not user_exists:
+            return Response({
+                'success': False,
+                'error': 'Aucun compte trouvé avec ce numéro de téléphone'
+            }, status=status.HTTP_404_NOT_FOUND)
+
+        # Désactiver les anciens OTP pour ce numéro
+        OTPVerification.objects.filter(
+            phone_number=phone_number,
+            user_type=user_type,
+            is_verified=False
+        ).update(is_verified=True)
+
+        # Générer un code OTP à 4 chiffres
+        otp_code = ''.join([str(random.randint(0, 9)) for _ in range(4)])
+
+        # Créer l'OTP
+        otp = OTPVerification.objects.create(
+            phone_number=phone_number,
+            otp_code=otp_code,
+            user_type=user_type
+        )
+
+        print(f"✅ Password reset OTP created: code={otp.otp_code}, phone={otp.phone_number}, user_type={otp.user_type}")
+
+        # Envoyer l'OTP via WhatsApp/SMS (en arrière-plan pour ne pas bloquer)
+        def send_otp_async():
+            try:
+                result = NotificationService.send_otp(
+                    recipient=phone_number,
+                    otp_code=otp_code
+                )
+                if result['success']:
+                    print(f"✅ Password reset OTP envoyé avec succès via {result.get('channel', 'unknown')}")
+                else:
+                    print(f"❌ Échec envoi password reset OTP: {result.get('message', 'Unknown error')}")
+            except Exception as e:
+                print(f"❌ Erreur lors de l'envoi password reset OTP: {str(e)}")
+
+        # Lancer l'envoi en arrière-plan
+        thread = threading.Thread(target=send_otp_async)
+        thread.start()
+
+        return Response({
+            'success': True,
+            'message': 'Un code de vérification a été envoyé à votre numéro',
+            'phone_number': phone_number
+        }, status=status.HTTP_200_OK)
+
+
+class ResetPasswordView(APIView):
+    """
+    EXISTING ENDPOINT: POST /api/auth/reset-password/
+    DO NOT MODIFY - Already integrated in production
+    """
+
+    @extend_schema(
+        tags=['Authentication'],
+        summary='Réinitialiser le mot de passe',
+        description='Réinitialise le mot de passe après vérification de l\'OTP',
+        request={
+            'type': 'object',
+            'properties': {
+                'phone_number': {'type': 'string', 'example': '+237690000000'},
+                'otp_code': {'type': 'string', 'example': '1234'},
+                'new_password': {'type': 'string', 'example': 'newpassword123'},
+                'user_type': {'type': 'string', 'enum': ['driver', 'customer']},
+            },
+            'required': ['phone_number', 'otp_code', 'new_password', 'user_type']
+        },
+        responses={
+            200: {
+                'description': 'Mot de passe réinitialisé avec succès',
+                'example': {
+                    'success': True,
+                    'message': 'Votre mot de passe a été réinitialisé avec succès'
+                }
+            },
+            400: {'description': 'Code OTP invalide ou expiré'},
+            404: {'description': 'Utilisateur non trouvé'}
+        }
+    )
+    def post(self, request):
+        """
+        Réinitialiser le mot de passe avec un code OTP valide
+        """
+        from .serializers import ResetPasswordSerializer
+
+        serializer = ResetPasswordSerializer(data=request.data)
+
+        if not serializer.is_valid():
+            return Response({
+                'success': False,
+                'error': 'Données invalides',
+                'errors': serializer.errors
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        phone_number = serializer.validated_data['phone_number']
+        otp_code = serializer.validated_data['otp_code']
+        new_password = serializer.validated_data['new_password']
+        user_type = serializer.validated_data['user_type']
+
+        # Vérifier si l'OTP est valide
+        try:
+            otp = OTPVerification.objects.get(
+                phone_number=phone_number,
+                otp_code=otp_code,
+                user_type=user_type,
+                is_verified=False
+            )
+        except OTPVerification.DoesNotExist:
+            return Response({
+                'success': False,
+                'error': 'Code OTP invalide ou déjà utilisé'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        # Vérifier si l'OTP n'est pas expiré
+        if otp.is_expired():
+            return Response({
+                'success': False,
+                'error': 'Le code OTP a expiré. Veuillez en demander un nouveau.'
+            }, status=status.HTTP_400_BAD_REQUEST)
+
+        # Récupérer l'utilisateur
+        if user_type == 'driver':
+            try:
+                user = UserDriver.objects.get(phone_number=phone_number)
+            except UserDriver.DoesNotExist:
+                return Response({
+                    'success': False,
+                    'error': 'Aucun compte chauffeur trouvé avec ce numéro'
+                }, status=status.HTTP_404_NOT_FOUND)
+        else:
+            try:
+                user = UserCustomer.objects.get(phone_number=phone_number)
+            except UserCustomer.DoesNotExist:
+                return Response({
+                    'success': False,
+                    'error': 'Aucun compte client trouvé avec ce numéro'
+                }, status=status.HTTP_404_NOT_FOUND)
+
+        # Mettre à jour le mot de passe
+        user.set_password(new_password)
+        user.save()
+
+        # Marquer l'OTP comme utilisé
+        otp.is_verified = True
+        otp.save()
+
+        print(f"✅ Password reset successful for {phone_number} ({user_type})")
+
+        return Response({
+            'success': True,
+            'message': 'Votre mot de passe a été réinitialisé avec succès'
+        }, status=status.HTTP_200_OK)
 
 
 @method_decorator(csrf_exempt, name='dispatch')

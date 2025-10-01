@@ -30,9 +30,88 @@ class Wallet(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     
+    def add_credit(self, amount, description="", transaction_type='transfer_in'):
+        """
+        Ajoute un crédit au wallet (ex: bonus de parrainage)
+        Crée une transaction et met à jour le solde
+
+        Args:
+            amount: Montant à créditer
+            description: Description de la transaction
+            transaction_type: Type de transaction (transfer_in, deposit, refund, etc.)
+
+        Returns:
+            WalletTransaction: La transaction créée
+        """
+        from decimal import Decimal
+
+        amount_decimal = Decimal(str(amount))
+
+        # Créer la transaction
+        transaction = WalletTransaction.objects.create(
+            user_type=self.user_type,
+            user_id=self.user_id,
+            transaction_type=transaction_type,
+            amount=amount_decimal,
+            status='completed',
+            balance_before=self.balance,
+            balance_after=self.balance + amount_decimal,
+            description=description or f"Crédit de {amount_decimal} FCFA",
+            completed_at=timezone.now()
+        )
+
+        # Mettre à jour le solde du wallet
+        self.balance += amount_decimal
+        self.save(update_fields=['balance', 'updated_at'])
+
+        return transaction
+
+    def deduct_balance(self, amount, description="", transaction_type='transfer_out'):
+        """
+        Déduit un montant du wallet (ex: paiement de course)
+        Crée une transaction et met à jour le solde
+
+        Args:
+            amount: Montant à déduire
+            description: Description de la transaction
+            transaction_type: Type de transaction (transfer_out, payment, withdrawal, etc.)
+
+        Returns:
+            WalletTransaction: La transaction créée
+
+        Raises:
+            ValueError: Si le solde est insuffisant
+        """
+        from decimal import Decimal
+
+        amount_decimal = Decimal(str(amount))
+
+        # Vérifier le solde
+        if self.balance < amount_decimal:
+            raise ValueError(f"Solde insuffisant. Solde actuel: {self.balance} FCFA, montant demandé: {amount_decimal} FCFA")
+
+        # Créer la transaction
+        transaction = WalletTransaction.objects.create(
+            user_type=self.user_type,
+            user_id=self.user_id,
+            transaction_type=transaction_type,
+            amount=amount_decimal,
+            status='completed',
+            balance_before=self.balance,
+            balance_after=self.balance - amount_decimal,
+            description=description or f"Débit de {amount_decimal} FCFA",
+            completed_at=timezone.now()
+        )
+
+        # Mettre à jour le solde du wallet
+        self.balance -= amount_decimal
+        self.save(update_fields=['balance', 'updated_at'])
+
+        return transaction
+
     def __str__(self):
         return f"Portefeuille de {self.user} - Solde: {self.balance}"
-    
+
     class Meta:
         db_table = 'wallets'
         verbose_name = 'Portefeuille'

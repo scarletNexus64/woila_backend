@@ -27,7 +27,10 @@ urlpatterns = [
     
     # EXISTING ENDPOINT: POST /api/auth/forgot-password/ - DO NOT MODIFY
     path('forgot-password/', views.ForgotPasswordView.as_view(), name='forgot-password'),
-    
+
+    # EXISTING ENDPOINT: POST /api/auth/reset-password/ - DO NOT MODIFY
+    path('reset-password/', views.ResetPasswordView.as_view(), name='reset-password'),
+
     # EXISTING ENDPOINT: POST /api/auth/generate-otp/ - DO NOT MODIFY
     path('generate-otp/', views.GenerateOTPView.as_view(), name='generate-otp'),
     

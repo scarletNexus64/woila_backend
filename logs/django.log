@@ -34399,3 +34399,1349 @@ INFO 2025-10-01 14:27:50,567 basehttp 7804 10932 "GET /api/notifications/?includ
 INFO 2025-10-01 14:27:58,854 basehttp 7804 9380 "GET /api/order/driver/status/ HTTP/1.1" 200 405
 INFO 2025-10-01 14:28:20,629 basehttp 7804 4416 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
 INFO 2025-10-01 14:28:50,529 basehttp 7804 3096 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:29:20,606 basehttp 7804 10776 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:29:29,261 basehttp 7804 1704 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 14:29:50,614 basehttp 7804 15128 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:30:20,631 basehttp 7804 14608 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:30:50,619 basehttp 7804 9816 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:31:20,613 basehttp 7804 17000 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:31:50,611 basehttp 7804 11044 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:32:09,670 basehttp 7804 11736 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 14:32:09,788 log 7804 3548 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 14:32:09,790 basehttp 7804 3548 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 14:32:10,604 basehttp 7804 16760 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:32:10,620 basehttp 7804 15408 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:32:12,617 basehttp 7804 5360 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 14:32:12,649 log 7804 11520 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 14:32:12,650 basehttp 7804 11520 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 14:32:12,865 basehttp 7804 13284 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 14:32:39,982 basehttp 7804 9840 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:32:47,286 basehttp 7804 14596 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 471
+INFO 2025-10-01 14:32:53,253 basehttp 7804 3816 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 490
+INFO 2025-10-01 14:32:53,296 basehttp 7804 2576 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+INFO 2025-10-01 14:32:53,319 basehttp 7804 1072 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 14:32:53,341 log 7804 9328 Not Found: /ws/driver/61/
+WARNING 2025-10-01 14:32:53,347 log 7804 14852 Not Found: /ws/driver/61/
+WARNING 2025-10-01 14:32:53,347 basehttp 7804 9328 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+WARNING 2025-10-01 14:32:53,347 basehttp 7804 14852 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 14:32:54,180 basehttp 7804 15800 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+INFO 2025-10-01 14:32:55,470 basehttp 7804 16632 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 14:32:55,515 log 7804 13700 Not Found: /ws/driver/61/
+WARNING 2025-10-01 14:32:55,516 basehttp 7804 13700 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 14:32:59,637 basehttp 7804 11640 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 14:32:59,684 log 7804 14384 Not Found: /ws/driver/61/
+WARNING 2025-10-01 14:32:59,684 basehttp 7804 14384 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 14:33:02,944 basehttp 7804 12424 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 14:33:05,718 basehttp 7804 5300 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 14:33:05,743 log 7804 7996 Not Found: /ws/driver/61/
+WARNING 2025-10-01 14:33:05,744 basehttp 7804 7996 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 14:33:09,972 basehttp 7804 15728 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:33:13,866 basehttp 7804 11620 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 14:33:13,923 log 7804 16296 Not Found: /ws/driver/61/
+WARNING 2025-10-01 14:33:13,924 basehttp 7804 16296 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 14:33:23,951 basehttp 7804 15996 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 14:33:23,972 log 7804 16280 Not Found: /ws/driver/61/
+WARNING 2025-10-01 14:33:23,972 basehttp 7804 16280 "GET /ws/driver/61/?token=36a990e6-91d3-4bd0-9eab-281e8ea9c19b HTTP/1.1" 404 3886
+INFO 2025-10-01 14:33:40,034 basehttp 7804 872 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:34:09,973 basehttp 7804 6896 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:34:10,271 basehttp 7804 15912 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-01 14:34:10,275 basehttp 7804 14312 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 1345
+INFO 2025-10-01 14:34:17,793 basehttp 7804 2864 "GET /api/vehicles/?driver_id=61 HTTP/1.1" 200 1279
+INFO 2025-10-01 14:34:17,893 basehttp 7804 15960 "GET /media/vehicles/61/temp/photo_exterieur_1_gpap9DO.jpg HTTP/1.1" 200 100416
+INFO 2025-10-01 14:34:19,173 basehttp 7804 12832 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+INFO 2025-10-01 14:34:19,192 basehttp 7804 12832 "GET /api/auth/referral/wallet/?user_type=driver&user_id=61 HTTP/1.1" 200 92
+INFO 2025-10-01 14:34:40,036 basehttp 7804 15808 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:34:53,377 basehttp 7804 16644 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 14:35:09,978 basehttp 7804 200 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:35:40,032 basehttp 7804 14100 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:36:09,972 basehttp 7804 12540 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:36:26,528 basehttp 7804 14968 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-01 14:36:26,531 basehttp 7804 3660 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 1345
+INFO 2025-10-01 14:36:36,379 wallet_service 7804 1804 [WalletService] Initialisation du paiement FreeMoPay pour 100.0 FCFA...
+INFO 2025-10-01 14:36:38,044 freemopay 7804 1804 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 14:36:39,277 freemopay 7804 1804 [FreeMoPay] Paiement initié avec succès - Référence: f89e5e7c-1e13-4e0f-9406-77989e880c85
+INFO 2025-10-01 14:36:39,289 wallet_service 7804 1804 [WalletService] Paiement initié avec succès - Référence: f89e5e7c-1e13-4e0f-9406-77989e880c85
+INFO 2025-10-01 14:36:39,290 basehttp 7804 1804 "POST /api/wallet/deposit/ HTTP/1.1" 200 285
+INFO 2025-10-01 14:36:39,942 basehttp 7804 8524 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+WARNING 2025-10-01 14:36:42,411 log 7804 13244 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:36:42,412 basehttp 7804 13244 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:36:44,710 basehttp 7804 8704 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+WARNING 2025-10-01 14:36:45,412 log 7804 13244 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:36:45,412 basehttp 7804 13244 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:36:48,462 log 7804 13244 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:36:48,463 basehttp 7804 13244 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:36:49,612 basehttp 7804 13244 - Broken pipe from ('192.168.0.114', 49784)
+WARNING 2025-10-01 14:37:09,738 log 7804 8588 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:09,739 basehttp 7804 8588 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:37:09,938 basehttp 7804 9272 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+WARNING 2025-10-01 14:37:10,430 log 7804 8900 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:10,431 basehttp 7804 8900 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:10,718 log 7804 13284 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:10,718 basehttp 7804 13284 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:12,428 log 7804 8900 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:12,429 basehttp 7804 8900 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:12,776 log 7804 12432 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:12,776 basehttp 7804 12432 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:13,545 log 7804 17064 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:13,545 basehttp 7804 17064 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:15,419 log 7804 17064 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:15,420 basehttp 7804 17064 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:15,833 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:15,834 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:18,427 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:18,428 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:21,523 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:21,524 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:24,408 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:24,409 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:37:24,810 basehttp 7804 964 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+WARNING 2025-10-01 14:37:27,480 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:27,480 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:30,453 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:30,454 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:33,481 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:33,481 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:36,483 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:36,484 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:39,474 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:39,474 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:37:39,974 basehttp 7804 14344 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+WARNING 2025-10-01 14:37:42,476 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:42,476 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:45,480 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:45,480 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:48,416 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:48,416 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:37:51,457 log 7804 11600 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:37:51,457 basehttp 7804 11600 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:37:52,717 basehttp 7804 11600 - Broken pipe from ('192.168.0.114', 56948)
+INFO 2025-10-01 14:38:24,138 basehttp 7804 7708 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+WARNING 2025-10-01 14:38:24,402 log 7804 13508 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:24,402 basehttp 7804 13508 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:24,435 log 7804 6900 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:24,436 basehttp 7804 6900 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:24,693 log 7804 3168 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:24,694 basehttp 7804 3168 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:38:25,218 basehttp 7804 2288 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+WARNING 2025-10-01 14:38:25,468 log 7804 7652 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:25,468 basehttp 7804 7652 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:27,401 log 7804 7652 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:27,402 basehttp 7804 7652 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:27,773 log 7804 14684 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:27,774 basehttp 7804 14684 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:30,411 log 7804 14684 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:30,411 basehttp 7804 14684 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:30,839 log 7804 12360 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:30,840 basehttp 7804 12360 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:33,398 log 7804 12360 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:33,399 basehttp 7804 12360 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:36,418 log 7804 12360 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:36,418 basehttp 7804 12360 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:38:38,998 wallet_service 7804 12360 [WalletService] Initialisation du paiement FreeMoPay pour 50.0 FCFA...
+WARNING 2025-10-01 14:38:39,415 log 7804 14320 Method Not Allowed: /api/wallet/transactions/TXN-20251001-C296EF79/check-status/
+WARNING 2025-10-01 14:38:39,415 basehttp 7804 14320 "POST /api/wallet/transactions/TXN-20251001-C296EF79/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:38:39,945 basehttp 7804 7488 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:38:40,276 freemopay 7804 12360 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 14:38:41,713 freemopay 7804 12360 [FreeMoPay] Paiement initié avec succès - Référence: 2654d794-f0c1-4539-819c-b563363352ab
+INFO 2025-10-01 14:38:41,722 wallet_service 7804 12360 [WalletService] Paiement initié avec succès - Référence: 2654d794-f0c1-4539-819c-b563363352ab
+INFO 2025-10-01 14:38:41,723 basehttp 7804 12360 "POST /api/wallet/deposit/ HTTP/1.1" 200 284
+WARNING 2025-10-01 14:38:44,911 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:38:44,912 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:47,872 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:38:47,872 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:50,934 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:38:50,935 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:38:53,366 basehttp 7804 11192 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+WARNING 2025-10-01 14:38:53,885 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:38:53,886 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:56,950 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:38:56,951 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:38:59,889 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:38:59,889 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:02,944 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:02,944 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:05,938 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:05,939 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:08,942 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:08,943 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:39:10,022 basehttp 7804 16420 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+WARNING 2025-10-01 14:39:11,963 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:11,964 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:14,893 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:14,894 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:17,891 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:17,891 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:20,888 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:20,889 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:23,886 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:23,886 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:26,886 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:26,899 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:29,938 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:29,939 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:32,943 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:32,944 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:35,871 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:35,872 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+WARNING 2025-10-01 14:39:38,931 log 7804 7548 Method Not Allowed: /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/
+WARNING 2025-10-01 14:39:38,932 basehttp 7804 7548 "POST /api/wallet/transactions/TXN-20251001-44C1BC99/check-status/ HTTP/1.1" 405 41
+INFO 2025-10-01 14:39:39,960 basehttp 7804 8448 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:39:40,156 basehttp 7804 13816 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 14:39:48,678 basehttp 7804 15836 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 14:39:53,646 basehttp 7804 13816 - Broken pipe from ('192.168.0.114', 45064)
+INFO 2025-10-01 14:45:58,601 basehttp 7804 1376 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:46:00,091 basehttp 7804 9620 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:46:03,685 basehttp 7804 12232 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:46:11,887 basehttp 7804 2712 "POST /api/order/driver/status/offline/ HTTP/1.1" 200 454
+INFO 2025-10-01 14:46:28,609 basehttp 7804 7584 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 14:46:30,603 basehttp 7804 7548 "GET /api/order/driver/status/ HTTP/1.1" 200 383
+WARNING 2025-10-01 15:43:31,370 utils 7804 2172 Could not reverse url from api.userdriver
+WARNING 2025-10-01 15:43:31,371 utils 7804 2172 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 15:43:31,372 utils 7804 2172 Could not reverse url from api.vehicle
+WARNING 2025-10-01 15:43:31,378 utils 7804 2172 Could not reverse url from api.userdriver
+WARNING 2025-10-01 15:43:31,381 utils 7804 2172 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 15:43:31,381 utils 7804 2172 Could not reverse url from api.vehicle
+WARNING 2025-10-01 15:43:31,393 utils 7804 2172 Could not reverse url from api.userdriver
+WARNING 2025-10-01 15:43:31,394 utils 7804 2172 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 15:43:31,396 utils 7804 2172 Could not reverse url from api.vehicle
+WARNING 2025-10-01 15:43:31,398 utils 7804 2172 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 15:43:31,400 utils 7804 2172 Could not reverse url from api.userdriver
+WARNING 2025-10-01 15:43:31,400 utils 7804 2172 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 15:43:31,400 utils 7804 2172 Could not reverse url from api.vehicle
+WARNING 2025-10-01 15:43:31,405 utils 7804 2172 Could not reverse url from api.userdriver
+WARNING 2025-10-01 15:43:31,405 utils 7804 2172 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 15:43:31,406 utils 7804 2172 Could not reverse url from api.vehicle
+INFO 2025-10-01 15:43:31,431 basehttp 7804 2172 "GET /admin/ HTTP/1.1" 200 77772
+INFO 2025-10-01 15:44:13,648 basehttp 7804 12696 "POST /api/auth/login/ HTTP/1.1" 200 261
+INFO 2025-10-01 15:44:13,851 basehttp 7804 1564 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+WARNING 2025-10-01 15:44:13,930 log 7804 9400 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 15:44:13,931 basehttp 7804 9400 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 15:44:14,352 basehttp 7804 9136 "GET /api/order/driver/status/ HTTP/1.1" 200 383
+INFO 2025-10-01 15:44:17,868 basehttp 7804 10796 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 490
+INFO 2025-10-01 15:44:17,928 basehttp 7804 4600 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+INFO 2025-10-01 15:44:17,928 basehttp 7804 12640 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+INFO 2025-10-01 15:44:18,001 basehttp 7804 7380 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+WARNING 2025-10-01 15:44:18,066 log 7804 6916 Not Found: /ws/driver/61/
+WARNING 2025-10-01 15:44:18,070 log 7804 884 Not Found: /ws/driver/61/
+WARNING 2025-10-01 15:44:18,070 basehttp 7804 6916 "GET /ws/driver/61/?token=1cc45c92-859a-4f2a-995f-48fbb0b4879c HTTP/1.1" 404 3886
+WARNING 2025-10-01 15:44:18,071 basehttp 7804 884 "GET /ws/driver/61/?token=1cc45c92-859a-4f2a-995f-48fbb0b4879c HTTP/1.1" 404 3886
+INFO 2025-10-01 15:44:19,151 basehttp 7804 14980 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 15:44:20,185 basehttp 7804 16016 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 15:44:20,215 log 7804 8828 Not Found: /ws/driver/61/
+WARNING 2025-10-01 15:44:20,216 basehttp 7804 8828 "GET /ws/driver/61/?token=1cc45c92-859a-4f2a-995f-48fbb0b4879c HTTP/1.1" 404 3886
+INFO 2025-10-01 15:44:21,470 basehttp 7804 7560 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-01 15:44:21,528 basehttp 7804 3768 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 2100
+INFO 2025-10-01 15:44:23,347 basehttp 7804 9664 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:44:24,352 basehttp 7804 9192 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 15:44:24,385 log 7804 4404 Not Found: /ws/driver/61/
+WARNING 2025-10-01 15:44:24,386 basehttp 7804 4404 "GET /ws/driver/61/?token=1cc45c92-859a-4f2a-995f-48fbb0b4879c HTTP/1.1" 404 3886
+INFO 2025-10-01 15:44:30,435 basehttp 7804 11360 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 15:44:30,472 log 7804 5012 Not Found: /ws/driver/61/
+WARNING 2025-10-01 15:44:30,472 basehttp 7804 5012 "GET /ws/driver/61/?token=1cc45c92-859a-4f2a-995f-48fbb0b4879c HTTP/1.1" 404 3886
+INFO 2025-10-01 15:44:34,043 wallet_service 7804 13656 [WalletService] Initialisation du paiement FreeMoPay pour 100.0 FCFA...
+INFO 2025-10-01 15:44:35,760 freemopay 7804 13656 [FreeMoPay] Token généré avec succès
+INFO 2025-10-01 15:44:36,965 freemopay 7804 13656 [FreeMoPay] Paiement initié avec succès - Référence: 61009623-66c6-4bd6-b358-d25d5bd2ecc4
+INFO 2025-10-01 15:44:36,976 wallet_service 7804 13656 [WalletService] Paiement initié avec succès - Référence: 61009623-66c6-4bd6-b358-d25d5bd2ecc4
+INFO 2025-10-01 15:44:36,976 basehttp 7804 13656 "POST /api/wallet/deposit/ HTTP/1.1" 200 285
+INFO 2025-10-01 15:44:38,517 basehttp 7804 14432 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 15:44:38,550 log 7804 13948 Not Found: /ws/driver/61/
+WARNING 2025-10-01 15:44:38,551 basehttp 7804 13948 "GET /ws/driver/61/?token=1cc45c92-859a-4f2a-995f-48fbb0b4879c HTTP/1.1" 404 3886
+ERROR 2025-10-01 15:44:40,091 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:44:40,135 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:44:40,136 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:44:43,071 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:44:43,073 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:44:43,073 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:44:46,126 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:44:46,127 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:44:46,128 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+INFO 2025-10-01 15:44:48,597 basehttp 7804 16112 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 15:44:48,626 log 7804 13032 Not Found: /ws/driver/61/
+WARNING 2025-10-01 15:44:48,627 basehttp 7804 13032 "GET /ws/driver/61/?token=1cc45c92-859a-4f2a-995f-48fbb0b4879c HTTP/1.1" 404 3886
+ERROR 2025-10-01 15:44:49,068 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:44:49,069 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:44:49,070 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:44:52,127 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:44:52,129 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:44:52,129 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+INFO 2025-10-01 15:44:53,172 basehttp 7804 5656 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+ERROR 2025-10-01 15:44:55,056 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:44:55,057 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:44:55,057 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:44:58,066 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:44:58,067 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:44:58,067 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:45:01,121 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:45:01,124 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:45:01,125 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:45:04,118 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:45:04,119 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:45:04,119 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:45:07,091 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:45:07,093 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:45:07,094 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:45:10,078 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:45:10,079 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:45:10,080 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:45:13,044 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:45:13,046 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:45:13,046 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:45:16,045 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:45:16,046 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:45:16,047 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+ERROR 2025-10-01 15:45:19,070 wallet_service 7804 7364 Erreur lors de la vérification du statut: type object 'FreemoPayDirect' has no attribute 'check_status'
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\services\wallet_service.py", line 479, in check_transaction_status
+    freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: type object 'FreemoPayDirect' has no attribute 'check_status'
+WARNING 2025-10-01 15:45:19,071 log 7804 7364 Not Found: /api/wallet/transactions/TXN-20251001-382762C6/check-status/
+WARNING 2025-10-01 15:45:19,072 basehttp 7804 7364 "GET /api/wallet/transactions/TXN-20251001-382762C6/check-status/ HTTP/1.1" 404 107
+INFO 2025-10-01 15:45:23,227 basehttp 7804 13240 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:45:32,256 basehttp 7804 7108 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 15:45:32,326 log 7804 12388 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 15:45:32,327 basehttp 7804 12388 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 15:45:33,077 basehttp 7804 9188 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:45:33,102 basehttp 7804 5916 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:45:35,090 basehttp 7804 16616 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 15:45:35,127 log 7804 136 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 15:45:35,127 basehttp 7804 136 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 15:45:35,357 basehttp 7804 11424 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 15:45:48,602 basehttp 7804 14868 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 15:46:02,525 basehttp 7804 14948 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:46:32,446 basehttp 7804 9924 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:47:02,498 basehttp 7804 3880 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:47:32,430 basehttp 7804 15772 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:48:02,517 basehttp 7804 2800 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:48:32,449 basehttp 7804 1768 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:49:02,488 basehttp 7804 11580 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:49:32,426 basehttp 7804 7908 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:50:02,490 basehttp 7804 7580 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:50:32,453 basehttp 7804 3996 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:51:02,508 basehttp 7804 15012 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:51:32,519 basehttp 7804 4328 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:52:02,507 basehttp 7804 11460 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:52:32,515 basehttp 7804 7236 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:53:02,448 basehttp 7804 8304 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:53:32,502 basehttp 7804 9672 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:54:02,503 basehttp 7804 1588 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:54:32,504 basehttp 7804 8276 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:55:02,448 basehttp 7804 7860 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:55:32,500 basehttp 7804 13612 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:56:02,434 basehttp 7804 13844 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 15:56:32,500 basehttp 7804 9300 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 566
+INFO 2025-10-01 15:57:02,440 basehttp 7804 17280 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 566
+INFO 2025-10-01 15:57:32,420 basehttp 7804 13116 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 15:58:02,429 basehttp 7804 12216 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 15:58:32,421 basehttp 7804 8544 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 15:59:02,464 basehttp 7804 11228 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 15:59:32,476 basehttp 7804 2860 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:00:02,491 basehttp 7804 7624 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:00:32,478 basehttp 7804 5684 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:01:02,435 basehttp 7804 11340 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:01:32,485 basehttp 7804 16224 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:02:02,492 basehttp 7804 3444 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:02:32,502 basehttp 7804 1700 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:02:39,288 basehttp 7804 7896 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 16:02:39,300 log 7804 3364 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:02:39,300 basehttp 7804 3364 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:02:40,026 basehttp 7804 14536 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:02:40,048 basehttp 7804 4860 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:02:42,094 basehttp 7804 11024 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 16:02:42,131 log 7804 8820 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:02:42,131 basehttp 7804 8820 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:02:42,379 basehttp 7804 14896 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:02:44,851 basehttp 7804 14984 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 16:03:09,396 basehttp 7804 15220 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:03:39,493 basehttp 7804 7860 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:04:09,425 basehttp 7804 14384 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:04:39,390 basehttp 7804 15920 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:05:09,494 basehttp 7804 14000 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:05:39,404 basehttp 7804 15816 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:06:09,502 basehttp 7804 8392 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:06:39,389 basehttp 7804 13180 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:07:09,401 basehttp 7804 13668 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:07:39,385 basehttp 7804 9436 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:08:09,574 basehttp 7804 3124 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:08:39,425 basehttp 7804 5504 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:09:09,416 basehttp 7804 11904 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:09:34,052 basehttp 7804 12256 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:09:39,466 basehttp 7804 17168 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:09:54,137 basehttp 7804 10728 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 16:09:54,151 log 7804 996 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:09:54,151 basehttp 7804 996 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:09:54,841 basehttp 7804 3792 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:09:54,858 basehttp 7804 12768 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:09:56,913 basehttp 7804 10952 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 16:09:56,946 log 7804 16444 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:09:56,946 basehttp 7804 16444 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:09:57,163 basehttp 7804 17028 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:09:59,641 basehttp 7804 13632 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 16:10:24,304 basehttp 7804 5328 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:10:54,242 basehttp 7804 3400 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:11:24,221 basehttp 7804 13396 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:11:42,929 basehttp 7804 12188 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:11:54,240 basehttp 7804 10472 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:12:24,228 basehttp 7804 14080 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:12:37,953 basehttp 7804 10464 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 16:12:37,969 log 7804 10308 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:12:37,970 basehttp 7804 10308 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:12:38,713 basehttp 7804 8496 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:12:38,734 basehttp 7804 13948 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:12:40,781 basehttp 7804 5000 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 16:12:40,816 log 7804 9188 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:12:40,817 basehttp 7804 9188 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:12:41,038 basehttp 7804 3168 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:12:42,980 basehttp 7804 13828 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 16:13:08,105 basehttp 7804 9388 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:13:38,079 basehttp 7804 10080 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:14:08,151 basehttp 7804 8128 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:14:38,087 basehttp 7804 11332 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+WARNING 2025-10-01 16:15:04,641 log 7804 816 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:15:04,641 basehttp 7804 816 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:15:04,650 basehttp 7804 10512 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+INFO 2025-10-01 16:15:05,415 basehttp 7804 7420 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:15:05,433 basehttp 7804 256 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:15:07,478 basehttp 7804 1840 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 16:15:07,509 log 7804 14300 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:15:07,509 basehttp 7804 14300 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:15:07,726 basehttp 7804 10316 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:15:10,326 basehttp 7804 1032 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 16:15:11,907 basehttp 7804 1260 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+INFO 2025-10-01 16:15:11,952 basehttp 7804 1260 "GET /api/auth/referral/wallet/?user_type=driver&user_id=61 HTTP/1.1" 200 92
+INFO 2025-10-01 16:15:34,867 basehttp 7804 10648 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:16:04,871 basehttp 7804 9748 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:16:34,809 basehttp 7804 11180 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:17:04,869 basehttp 7804 4156 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:17:34,811 basehttp 7804 2156 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+ERROR 2025-10-01 16:17:50,543 log 7804 15544 Internal Server Error: /api/auth/logout/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py", line 430, in post
+    token_value = serializer.validated_data['token']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'token'
+ERROR 2025-10-01 16:17:50,564 basehttp 7804 15544 "POST /api/auth/logout/ HTTP/1.1" 500 113793
+INFO 2025-10-01 16:18:03,471 basehttp 7804 11608 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-01 16:18:03,476 whatsapp_service 7804 6156 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 16:18:05,702 whatsapp_service 7804 6156 WhatsApp API response status: 200
+INFO 2025-10-01 16:18:13,288 basehttp 7804 1284 "POST /api/auth/verify-otp/ HTTP/1.1" 200 112
+ERROR 2025-10-01 16:18:37,665 log 7804 16636 Internal Server Error: /api/auth/forgot-password/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2025-10-01 16:18:37,669 basehttp 7804 16636 "POST /api/auth/forgot-password/ HTTP/1.1" 500 91805
+INFO 2025-10-01 16:20:47,985 autoreload 7804 11072 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py changed, reloading.
+INFO 2025-10-01 16:20:55,723 autoreload 11372 7644 Watching for file changes with StatReloader
+INFO 2025-10-01 16:21:03,915 autoreload 11372 7644 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py changed, reloading.
+INFO 2025-10-01 16:21:05,231 autoreload 8672 12128 Watching for file changes with StatReloader
+INFO 2025-10-01 16:21:15,168 basehttp 8672 11528 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+WARNING 2025-10-01 16:21:33,786 log 8672 11664 Not Found: /api/auth/forgot-password/
+WARNING 2025-10-01 16:21:33,787 basehttp 8672 11664 "POST /api/auth/forgot-password/ HTTP/1.1" 404 79
+INFO 2025-10-01 16:21:51,794 basehttp 8672 16020 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 16:22:07,565 basehttp 8672 9276 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-01 16:22:07,570 whatsapp_service 8672 8400 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 16:22:09,577 whatsapp_service 8672 8400 WhatsApp API response status: 200
+INFO 2025-10-01 16:22:21,702 basehttp 8672 7200 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:22:29,964 basehttp 8672 14204 "POST /api/auth/verify-otp/ HTTP/1.1" 200 112
+INFO 2025-10-01 16:22:50,188 basehttp 8672 11368 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 16:24:51,453 autoreload 8672 12128 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py changed, reloading.
+INFO 2025-10-01 16:24:52,774 autoreload 11324 5212 Watching for file changes with StatReloader
+INFO 2025-10-01 16:25:03,770 basehttp 11324 15212 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 16:25:03,776 whatsapp_service 11324 15872 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 16:25:05,514 whatsapp_service 11324 15872 WhatsApp API response status: 200
+INFO 2025-10-01 16:25:53,710 basehttp 11324 17376 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-01 16:25:53,714 whatsapp_service 11324 6804 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 16:25:55,235 whatsapp_service 11324 6804 WhatsApp API response status: 200
+INFO 2025-10-01 16:26:03,825 basehttp 11324 320 "POST /api/auth/verify-otp/ HTTP/1.1" 200 112
+INFO 2025-10-01 16:26:22,636 basehttp 11324 9820 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 16:26:22,640 whatsapp_service 11324 8612 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 16:26:23,978 whatsapp_service 11324 8612 WhatsApp API response status: 200
+INFO 2025-10-01 16:26:47,870 basehttp 11324 16636 "POST /api/auth/login/ HTTP/1.1" 200 261
+INFO 2025-10-01 16:26:48,086 basehttp 11324 12796 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+WARNING 2025-10-01 16:26:48,177 log 11324 9004 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:26:48,178 basehttp 11324 9004 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:26:48,295 basehttp 11324 8212 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:27:02,917 basehttp 11324 12332 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:27:32,941 basehttp 11324 5256 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:28:02,867 basehttp 11324 13668 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:28:32,928 basehttp 11324 6868 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:29:02,873 basehttp 11324 14516 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:29:10,692 basehttp 11324 15836 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:29:33,012 basehttp 11324 15772 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:30:38,717 autoreload 11324 5212 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py changed, reloading.
+INFO 2025-10-01 16:30:40,185 autoreload 7152 14700 Watching for file changes with StatReloader
+INFO 2025-10-01 16:30:48,357 autoreload 7152 14700 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py changed, reloading.
+INFO 2025-10-01 16:30:49,842 autoreload 3108 15800 Watching for file changes with StatReloader
+INFO 2025-10-01 16:30:56,816 autoreload 3108 15800 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\urls.py changed, reloading.
+INFO 2025-10-01 16:30:58,131 autoreload 9200 9332 Watching for file changes with StatReloader
+INFO 2025-10-01 16:31:17,254 basehttp 9200 7416 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 16:31:17,257 whatsapp_service 9200 8124 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 16:31:18,848 whatsapp_service 9200 8124 WhatsApp API response status: 200
+INFO 2025-10-01 16:31:57,070 basehttp 9200 12316 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 16:33:20,639 basehttp 9200 8536 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:33:20,748 basehttp 9200 12452 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:33:32,852 basehttp 9200 7240 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:34:02,887 basehttp 9200 2948 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:34:32,919 basehttp 9200 11072 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:34:45,343 basehttp 9200 8872 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 16:39:52,256 basehttp 9200 4552 "POST /api/order/driver/status/offline/ HTTP/1.1" 200 454
+INFO 2025-10-01 16:39:52,261 basehttp 9200 13844 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:39:52,327 basehttp 9200 10604 "GET /api/order/driver/status/ HTTP/1.1" 200 383
+INFO 2025-10-01 16:40:02,866 basehttp 9200 3616 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:40:32,914 basehttp 9200 5312 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:41:03,941 basehttp 9200 7280 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:41:32,882 basehttp 9200 10132 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:42:02,918 basehttp 9200 13432 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:42:32,922 basehttp 9200 11448 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:43:02,914 basehttp 9200 14328 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:43:32,927 basehttp 9200 11072 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:44:02,919 basehttp 9200 2160 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:44:32,861 basehttp 9200 12920 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:45:02,921 basehttp 9200 13360 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:45:32,868 basehttp 9200 13708 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:46:02,886 basehttp 9200 7784 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:46:32,926 basehttp 9200 11368 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:47:02,910 basehttp 9200 4304 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:47:32,941 basehttp 9200 5528 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:47:37,682 basehttp 9200 13052 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 16:47:37,749 log 9200 14824 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:47:37,752 basehttp 9200 14824 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:47:38,490 basehttp 9200 5328 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:47:38,543 basehttp 9200 12388 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:47:40,512 basehttp 9200 5968 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 16:47:40,557 log 9200 16100 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 16:47:40,557 basehttp 9200 16100 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 16:47:40,773 basehttp 9200 4252 "GET /api/order/driver/status/ HTTP/1.1" 200 383
+INFO 2025-10-01 16:47:45,365 basehttp 9200 15436 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 16:47:49,896 basehttp 9200 8316 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+INFO 2025-10-01 16:47:49,956 basehttp 9200 8316 "GET /api/auth/referral/wallet/?user_type=driver&user_id=61 HTTP/1.1" 200 92
+INFO 2025-10-01 16:48:07,850 basehttp 9200 2720 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:48:37,847 basehttp 9200 10452 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:49:07,863 basehttp 9200 16636 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:49:37,890 basehttp 9200 15444 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:50:07,826 basehttp 9200 4608 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:50:37,915 basehttp 9200 2496 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:51:07,845 basehttp 9200 8064 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:51:37,906 basehttp 9200 7896 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:52:07,842 basehttp 9200 15288 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:52:37,875 basehttp 9200 712 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:53:07,907 basehttp 9200 12884 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:53:37,901 basehttp 9200 2604 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:54:07,852 basehttp 9200 15668 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:54:37,941 basehttp 9200 17060 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:54:48,816 basehttp 9200 12956 "GET /api/order/driver/status/ HTTP/1.1" 200 383
+INFO 2025-10-01 16:55:07,845 basehttp 9200 14900 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:55:37,920 basehttp 9200 8380 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 16:56:07,841 basehttp 9200 4144 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 566
+INFO 2025-10-01 16:56:37,948 basehttp 9200 8904 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 566
+INFO 2025-10-01 16:57:07,928 basehttp 9200 12936 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+INFO 2025-10-01 16:57:37,901 basehttp 9200 14432 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+WARNING 2025-10-01 16:57:42,380 utils 9200 14788 Could not reverse url from api.userdriver
+WARNING 2025-10-01 16:57:42,380 utils 9200 14788 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 16:57:42,380 utils 9200 14788 Could not reverse url from api.vehicle
+WARNING 2025-10-01 16:57:42,428 utils 9200 14788 Could not reverse url from api.userdriver
+WARNING 2025-10-01 16:57:42,429 utils 9200 14788 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 16:57:42,429 utils 9200 14788 Could not reverse url from api.vehicle
+WARNING 2025-10-01 16:57:42,436 utils 9200 14788 Could not reverse url from api.userdriver
+WARNING 2025-10-01 16:57:42,436 utils 9200 14788 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 16:57:42,437 utils 9200 14788 Could not reverse url from api.vehicle
+WARNING 2025-10-01 16:57:42,438 utils 9200 14788 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 16:57:42,440 utils 9200 14788 Could not reverse url from api.userdriver
+WARNING 2025-10-01 16:57:42,442 utils 9200 14788 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 16:57:42,443 utils 9200 14788 Could not reverse url from api.vehicle
+WARNING 2025-10-01 16:57:42,447 utils 9200 14788 Could not reverse url from api.userdriver
+WARNING 2025-10-01 16:57:42,448 utils 9200 14788 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 16:57:42,448 utils 9200 14788 Could not reverse url from api.vehicle
+INFO 2025-10-01 16:57:42,469 basehttp 9200 14788 "GET /admin/ HTTP/1.1" 200 77774
+INFO 2025-10-01 16:58:07,811 basehttp 9200 17176 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:58:37,840 basehttp 9200 10332 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:59:07,893 basehttp 9200 12172 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 16:59:37,823 basehttp 9200 2984 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:00:05,610 basehttp 9200 17388 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 490
+INFO 2025-10-01 17:00:05,725 basehttp 9200 10112 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+INFO 2025-10-01 17:00:05,727 basehttp 9200 8912 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:00:05,824 log 9200 12044 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:00:05,829 log 9200 7256 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:00:05,830 basehttp 9200 12044 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+WARNING 2025-10-01 17:00:05,830 basehttp 9200 7256 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:00:06,653 basehttp 9200 2288 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+INFO 2025-10-01 17:00:07,831 basehttp 9200 16596 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:00:07,886 basehttp 9200 17176 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:00:07,916 log 9200 16436 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:00:07,917 basehttp 9200 16436 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:00:12,129 basehttp 9200 17232 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:00:12,290 log 9200 13160 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:00:12,293 basehttp 9200 13160 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:00:18,433 basehttp 9200 15320 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:00:18,499 log 9200 8900 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:00:18,499 basehttp 9200 8900 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:00:26,837 basehttp 9200 8412 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:00:27,004 log 9200 8908 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:00:27,038 basehttp 9200 8908 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:00:37,148 basehttp 9200 17168 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:00:37,182 log 9200 12752 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:00:37,183 basehttp 9200 12752 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:00:37,837 basehttp 9200 14536 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:01:07,833 basehttp 9200 15248 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:01:28,366 basehttp 9200 4180 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 17:01:37,854 basehttp 9200 17360 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:02:05,740 basehttp 9200 2092 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 17:02:07,893 basehttp 9200 12248 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:02:37,847 basehttp 9200 8552 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:03:07,904 basehttp 9200 4860 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:03:32,835 basehttp 9200 17300 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+INFO 2025-10-01 17:03:37,846 basehttp 9200 13400 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:04:05,731 basehttp 9200 16840 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 17:04:07,875 basehttp 9200 7648 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:04:37,849 basehttp 9200 9996 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:05:07,892 basehttp 9200 7860 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:05:37,834 basehttp 9200 17060 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-01 17:06:05,737 basehttp 9200 8532 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 17:06:07,843 basehttp 9200 14848 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:06:37,837 basehttp 9200 14064 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:07:07,829 basehttp 9200 4108 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:07:36,043 basehttp 9200 14036 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:07:36,122 log 9200 5528 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 17:07:36,122 basehttp 9200 5528 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 17:07:36,789 basehttp 9200 6100 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:07:36,792 basehttp 9200 7072 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:07:38,853 basehttp 9200 1468 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:07:38,889 log 9200 9732 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 17:07:38,889 basehttp 9200 9732 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 17:07:39,073 basehttp 9200 2056 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 17:08:06,211 basehttp 9200 12124 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:08:36,321 basehttp 9200 8664 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:09:06,205 basehttp 9200 340 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:09:36,269 basehttp 9200 12696 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:10:06,205 basehttp 9200 14492 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:10:36,265 basehttp 9200 1252 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:11:06,213 basehttp 9200 13604 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:11:36,183 basehttp 9200 13180 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:12:06,184 basehttp 9200 2500 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:12:36,298 basehttp 9200 16328 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:13:06,202 basehttp 9200 13068 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:13:36,262 basehttp 9200 2504 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:14:06,196 basehttp 9200 8832 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:14:36,019 basehttp 9200 3260 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:14:36,084 log 9200 4768 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 17:14:36,084 basehttp 9200 4768 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 17:14:36,827 basehttp 9200 17300 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:14:36,845 basehttp 9200 7364 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:14:38,837 basehttp 9200 11608 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:14:38,872 log 9200 7520 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 17:14:38,872 basehttp 9200 7520 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 17:14:39,087 basehttp 9200 8392 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 17:15:06,221 basehttp 9200 11908 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:15:36,268 basehttp 9200 12988 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:16:06,198 basehttp 9200 11572 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:16:36,279 basehttp 9200 15348 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:17:06,271 basehttp 9200 9652 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:17:36,266 basehttp 9200 1468 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:18:06,196 basehttp 9200 7072 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:18:36,269 basehttp 9200 4608 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:19:06,251 basehttp 9200 12888 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:19:36,206 basehttp 9200 10232 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:20:06,263 basehttp 9200 1556 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:20:36,208 basehttp 9200 14904 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:21:06,230 basehttp 9200 12040 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:21:25,930 basehttp 9200 5528 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:21:25,935 log 9200 12896 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 17:21:25,935 basehttp 9200 12896 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 17:21:26,683 basehttp 9200 16160 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:21:26,697 basehttp 9200 5328 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:21:28,694 basehttp 9200 5176 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 17:21:28,726 log 9200 16900 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 17:21:28,726 basehttp 9200 16900 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 17:21:28,932 basehttp 9200 7108 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 17:21:32,980 basehttp 9200 14400 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 17:21:34,103 basehttp 9200 2056 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+INFO 2025-10-01 17:21:37,493 basehttp 9200 8212 "PUT /api/users/driver/61/ HTTP/1.1" 200 624
+INFO 2025-10-01 17:21:40,829 basehttp 9200 10216 "GET /api/users/driver/61/ HTTP/1.1" 200 573
+INFO 2025-10-01 17:21:44,416 basehttp 9200 10012 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-01 17:21:44,420 basehttp 9200 14668 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 2478
+INFO 2025-10-01 17:21:48,359 basehttp 9200 5300 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+INFO 2025-10-01 17:21:48,391 basehttp 9200 5300 "GET /api/auth/referral/wallet/?user_type=driver&user_id=61 HTTP/1.1" 200 92
+INFO 2025-10-01 17:21:50,839 basehttp 9200 5640 "GET /api/vehicles/?driver_id=61 HTTP/1.1" 200 1278
+INFO 2025-10-01 17:21:50,955 basehttp 9200 4472 "GET /media/vehicles/61/temp/photo_exterieur_1_gpap9DO.jpg HTTP/1.1" 200 100416
+INFO 2025-10-01 17:21:53,803 basehttp 9200 5640 "PATCH /api/vehicles/28/toggle-online/ HTTP/1.1" 200 199
+INFO 2025-10-01 17:21:53,896 basehttp 9200 12264 "POST /api/order/driver/status/offline/ HTTP/1.1" 200 453
+INFO 2025-10-01 17:21:54,769 basehttp 9200 5640 "PATCH /api/vehicles/28/toggle-online/ HTTP/1.1" 200 196
+ERROR 2025-10-01 17:21:55,029 log 9200 15744 Internal Server Error: /api/order/driver/status/online/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\decorators.py", line 50, in handler
+    return func(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\order\views.py", line 1292, in set_driver_online
+    from applications.users.models import Vehicle
+ImportError: cannot import name 'Vehicle' from 'applications.users.models' (C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\models.py). Did you mean: 'vehicles'?
+ERROR 2025-10-01 17:21:55,039 basehttp 9200 15744 "POST /api/order/driver/status/online/ HTTP/1.1" 500 25272
+INFO 2025-10-01 17:21:56,027 basehttp 9200 4908 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:22:26,035 basehttp 9200 17196 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:22:56,093 basehttp 9200 14384 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:23:26,000 basehttp 9200 16360 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:23:31,265 basehttp 9200 11072 "GET /api/order/driver/status/ HTTP/1.1" 200 382
+INFO 2025-10-01 17:23:49,310 basehttp 9200 7832 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 489
+INFO 2025-10-01 17:23:49,394 basehttp 9200 13080 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+INFO 2025-10-01 17:23:49,394 basehttp 9200 15312 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 17:23:49,429 log 9200 4292 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:23:49,435 log 9200 6320 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:23:49,436 basehttp 9200 4292 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+WARNING 2025-10-01 17:23:49,436 basehttp 9200 6320 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:23:50,229 basehttp 9200 10568 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+INFO 2025-10-01 17:23:51,566 basehttp 9200 13592 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 17:23:51,607 log 9200 11248 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:23:51,608 basehttp 9200 11248 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:23:55,678 basehttp 9200 17388 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 17:23:55,706 log 9200 9656 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:23:55,706 basehttp 9200 9656 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:23:56,018 basehttp 9200 2672 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:24:01,845 basehttp 9200 12616 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 17:24:01,900 log 9200 2576 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:24:01,900 basehttp 9200 2576 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:24:09,972 basehttp 9200 12864 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 17:24:10,016 log 9200 15784 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:24:10,017 basehttp 9200 15784 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:24:20,150 basehttp 9200 12600 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 17:24:20,212 log 9200 5012 Not Found: /ws/driver/61/
+WARNING 2025-10-01 17:24:20,212 basehttp 9200 5012 "GET /ws/driver/61/?token=f1d75dda-6ca4-449f-bf5c-5846282394ab HTTP/1.1" 404 3886
+INFO 2025-10-01 17:24:26,022 basehttp 9200 12348 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:24:35,403 basehttp 9200 10456 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 17:24:35,498 log 9200 15148 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 17:24:35,499 basehttp 9200 15148 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 17:24:36,192 basehttp 9200 4776 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:24:36,207 basehttp 9200 17020 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:24:38,207 basehttp 9200 14708 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 17:24:38,234 log 9200 9052 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 17:24:38,235 basehttp 9200 9052 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 17:24:38,435 basehttp 9200 12516 "GET /api/order/driver/status/ HTTP/1.1" 200 404
+INFO 2025-10-01 17:25:05,565 basehttp 9200 14948 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:25:35,615 basehttp 9200 10644 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:26:05,557 basehttp 9200 8604 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:26:23,019 basehttp 9200 10372 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 17:26:23,067 log 9200 17356 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 17:26:23,069 basehttp 9200 17356 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 17:26:23,760 basehttp 9200 4860 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:26:23,779 basehttp 9200 200 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:26:25,822 basehttp 9200 14400 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 17:26:25,861 log 9200 1384 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 17:26:25,862 basehttp 9200 1384 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 17:26:26,089 basehttp 9200 13604 "GET /api/order/driver/status/ HTTP/1.1" 200 404
+INFO 2025-10-01 17:26:43,912 basehttp 9200 10088 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+INFO 2025-10-01 17:26:53,182 basehttp 9200 12620 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:27:23,184 basehttp 9200 13744 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:27:53,172 basehttp 9200 8636 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:28:23,130 basehttp 9200 4860 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:28:53,184 basehttp 9200 10584 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:29:23,123 basehttp 9200 6320 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:29:53,174 basehttp 9200 12452 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 17:30:21,717 basehttp 9200 10456 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 17:30:23,170 basehttp 9200 10420 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+ERROR 2025-10-01 17:30:26,523 log 9200 10700 Internal Server Error: /api/auth/logout/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py", line 430, in post
+    token_value = serializer.validated_data['token']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'token'
+ERROR 2025-10-01 17:30:26,532 basehttp 9200 10700 "POST /api/auth/logout/ HTTP/1.1" 500 113793
+INFO 2025-10-01 17:30:35,920 basehttp 9200 11724 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-01 17:30:35,925 whatsapp_service 9200 7180 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 17:30:37,654 whatsapp_service 9200 7180 WhatsApp API response status: 200
+INFO 2025-10-01 17:30:47,864 basehttp 9200 15320 "GET /api/order/driver/status/ HTTP/1.1" 200 404
+INFO 2025-10-01 17:31:01,519 basehttp 9200 12580 "POST /api/auth/verify-otp/ HTTP/1.1" 200 112
+INFO 2025-10-01 17:31:20,583 basehttp 9200 12432 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 17:31:20,587 whatsapp_service 9200 16692 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 17:31:21,957 whatsapp_service 9200 16692 WhatsApp API response status: 200
+WARNING 2025-10-01 17:31:43,637 log 9200 2788 Bad Request: /api/auth/login/
+WARNING 2025-10-01 17:31:43,638 basehttp 9200 2788 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-01 17:31:53,758 log 9200 9616 Bad Request: /api/auth/login/
+WARNING 2025-10-01 17:31:53,760 basehttp 9200 9616 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-01 19:05:07,473 log 9200 15040 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:05:07,476 basehttp 9200 15040 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-01 19:05:18,294 log 9200 5620 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:05:18,295 basehttp 9200 5620 "POST /api/auth/login/ HTTP/1.1" 400 85
+INFO 2025-10-01 19:05:29,782 basehttp 9200 6776 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-01 19:05:29,787 whatsapp_service 9200 11448 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:05:31,801 whatsapp_service 9200 11448 WhatsApp API response status: 200
+INFO 2025-10-01 19:05:44,444 basehttp 9200 1216 "POST /api/auth/verify-otp/ HTTP/1.1" 200 112
+INFO 2025-10-01 19:06:07,480 basehttp 9200 16552 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:06:07,484 whatsapp_service 9200 11928 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:06:08,802 whatsapp_service 9200 11928 WhatsApp API response status: 200
+WARNING 2025-10-01 19:06:30,345 log 9200 17056 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:06:30,346 basehttp 9200 17056 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-01 19:07:02,566 log 9200 11932 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:07:02,567 basehttp 9200 11932 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-01 19:07:11,876 log 9200 7996 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:07:11,888 basehttp 9200 7996 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-01 19:10:05,201 log 9200 364 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:10:05,206 basehttp 9200 364 "POST /api/auth/login/ HTTP/1.1" 400 85
+INFO 2025-10-01 19:10:14,567 basehttp 9200 13560 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-01 19:10:14,574 whatsapp_service 9200 8752 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:10:16,651 whatsapp_service 9200 8752 WhatsApp API response status: 200
+INFO 2025-10-01 19:10:46,652 basehttp 9200 9848 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-01 19:10:46,657 whatsapp_service 9200 16788 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:10:48,272 whatsapp_service 9200 16788 WhatsApp API response status: 200
+INFO 2025-10-01 19:10:56,174 basehttp 9200 8960 "POST /api/auth/verify-otp/ HTTP/1.1" 200 112
+INFO 2025-10-01 19:11:16,644 basehttp 9200 1520 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:11:16,647 whatsapp_service 9200 8664 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:11:18,029 whatsapp_service 9200 8664 WhatsApp API response status: 200
+WARNING 2025-10-01 19:12:02,777 log 9200 8836 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:12:02,777 basehttp 9200 8836 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-01 19:12:08,609 log 9200 796 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:12:08,609 basehttp 9200 796 "POST /api/auth/login/ HTTP/1.1" 400 85
+INFO 2025-10-01 19:12:21,596 basehttp 9200 16624 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-01 19:12:21,600 whatsapp_service 9200 5680 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:12:23,011 whatsapp_service 9200 5680 WhatsApp API response status: 200
+INFO 2025-10-01 19:12:31,381 basehttp 9200 4208 "POST /api/auth/verify-otp/ HTTP/1.1" 200 112
+INFO 2025-10-01 19:12:52,945 basehttp 9200 13924 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:12:52,950 whatsapp_service 9200 9952 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:12:54,545 whatsapp_service 9200 9952 WhatsApp API response status: 200
+WARNING 2025-10-01 19:13:16,088 log 9200 10012 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:13:16,090 basehttp 9200 10012 "POST /api/auth/login/ HTTP/1.1" 400 85
+INFO 2025-10-01 19:13:51,680 basehttp 9200 12312 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:13:51,685 whatsapp_service 9200 16328 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:13:53,209 whatsapp_service 9200 16328 WhatsApp API response status: 200
+INFO 2025-10-01 19:19:37,001 autoreload 8368 17060 Watching for file changes with StatReloader
+WARNING 2025-10-01 19:24:34,110 log 8368 4552 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:24:34,114 basehttp 8368 4552 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-01 19:24:41,737 log 8368 17116 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:24:41,737 basehttp 8368 17116 "POST /api/auth/login/ HTTP/1.1" 400 85
+INFO 2025-10-01 19:24:51,258 basehttp 8368 6996 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-01 19:24:51,262 whatsapp_service 8368 5360 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:24:52,829 whatsapp_service 8368 5360 WhatsApp API response status: 200
+INFO 2025-10-01 19:25:03,067 basehttp 8368 5000 "POST /api/auth/verify-otp/ HTTP/1.1" 200 112
+INFO 2025-10-01 19:25:26,107 basehttp 8368 10284 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:25:26,113 whatsapp_service 8368 5860 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:25:27,367 whatsapp_service 8368 5860 WhatsApp API response status: 200
+WARNING 2025-10-01 19:25:53,566 log 8368 13272 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:25:53,567 basehttp 8368 13272 "POST /api/auth/login/ HTTP/1.1" 400 85
+INFO 2025-10-01 19:28:29,918 basehttp 8368 8568 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 19:28:43,501 basehttp 8368 3568 "POST /api/auth/login/ HTTP/1.1" 200 260
+WARNING 2025-10-01 19:30:09,222 log 8368 12916 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:30:09,223 basehttp 8368 12916 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-01 19:33:43,264 log 8368 5600 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:33:43,264 basehttp 8368 5600 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-01 19:33:49,474 log 8368 15468 Bad Request: /api/auth/login/
+WARNING 2025-10-01 19:33:49,475 basehttp 8368 15468 "POST /api/auth/login/ HTTP/1.1" 400 85
+INFO 2025-10-01 19:33:58,948 basehttp 8368 15256 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:33:58,951 whatsapp_service 8368 5476 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:34:00,626 whatsapp_service 8368 5476 WhatsApp API response status: 200
+INFO 2025-10-01 19:34:10,924 basehttp 8368 8712 "POST /api/auth/verify-otp/ HTTP/1.1" 200 112
+WARNING 2025-10-01 19:34:33,444 log 8368 9468 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:34:33,444 basehttp 8368 9468 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:35:07,716 log 8368 9688 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:35:07,717 basehttp 8368 9688 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:35:08,563 log 8368 1220 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:35:08,564 basehttp 8368 1220 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:36:26,509 log 8368 16420 Not Found: /api/auth/forgot-password/
+WARNING 2025-10-01 19:36:26,510 basehttp 8368 16420 "POST /api/auth/forgot-password/ HTTP/1.1" 404 79
+INFO 2025-10-01 19:36:37,336 basehttp 8368 8180 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:36:37,343 whatsapp_service 8368 11976 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:36:38,824 whatsapp_service 8368 11976 WhatsApp API response status: 200
+INFO 2025-10-01 19:37:01,793 basehttp 8368 8504 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 19:37:14,111 basehttp 8368 7712 "POST /api/auth/login/ HTTP/1.1" 200 260
+WARNING 2025-10-01 19:37:39,930 log 8368 13132 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:37:39,930 basehttp 8368 13132 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:37:41,080 log 8368 2556 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:37:41,081 basehttp 8368 2556 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:37:41,294 log 8368 8496 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:37:41,294 basehttp 8368 8496 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:37:41,484 log 8368 3156 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:37:41,485 basehttp 8368 3156 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+INFO 2025-10-01 19:37:47,088 basehttp 8368 16584 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:37:47,092 whatsapp_service 8368 16040 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:37:48,415 whatsapp_service 8368 16040 WhatsApp API response status: 200
+INFO 2025-10-01 19:37:54,809 basehttp 8368 12372 "POST /api/auth/verify-otp/ HTTP/1.1" 200 112
+WARNING 2025-10-01 19:38:13,579 log 8368 12568 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:38:13,580 basehttp 8368 12568 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:38:18,538 log 8368 1168 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:38:18,539 basehttp 8368 1168 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:38:19,182 log 8368 15784 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:38:19,183 basehttp 8368 15784 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:38:19,352 log 8368 8520 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:38:19,353 basehttp 8368 8520 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:38:19,482 log 8368 10540 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:38:19,483 basehttp 8368 10540 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:38:19,635 log 8368 12532 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:38:19,635 basehttp 8368 12532 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:38:19,773 log 8368 10604 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:38:19,774 basehttp 8368 10604 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 19:38:19,918 log 8368 3960 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 19:38:19,920 basehttp 8368 3960 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+INFO 2025-10-01 19:39:00,206 basehttp 8368 15696 "POST /api/auth/login/ HTTP/1.1" 200 260
+INFO 2025-10-01 19:39:00,554 basehttp 8368 14692 "GET /api/users/driver/61/ HTTP/1.1" 200 573
+WARNING 2025-10-01 19:39:00,615 log 8368 14400 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 19:39:00,615 basehttp 8368 14400 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 19:39:01,443 basehttp 8368 6732 "GET /api/order/driver/status/ HTTP/1.1" 200 404
+INFO 2025-10-01 19:39:05,123 basehttp 8368 1384 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+ERROR 2025-10-01 19:39:07,230 log 8368 7996 Internal Server Error: /api/auth/logout/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py", line 430, in post
+    token_value = serializer.validated_data['token']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'token'
+ERROR 2025-10-01 19:39:07,240 basehttp 8368 7996 "POST /api/auth/logout/ HTTP/1.1" 500 113792
+INFO 2025-10-01 19:39:16,272 basehttp 8368 8824 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:39:16,276 whatsapp_service 8368 16356 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:39:17,589 whatsapp_service 8368 16356 WhatsApp API response status: 200
+INFO 2025-10-01 19:39:46,555 basehttp 8368 10936 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 19:40:05,372 basehttp 8368 328 "POST /api/auth/login/ HTTP/1.1" 200 260
+INFO 2025-10-01 19:40:05,536 basehttp 8368 9232 "GET /api/users/driver/61/ HTTP/1.1" 200 573
+WARNING 2025-10-01 19:40:05,569 log 8368 6320 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 19:40:05,569 basehttp 8368 6320 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 19:40:05,660 basehttp 8368 14020 "GET /api/order/driver/status/ HTTP/1.1" 200 404
+INFO 2025-10-01 19:40:29,831 basehttp 8368 5360 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 19:40:59,761 basehttp 8368 8716 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 19:41:29,761 basehttp 8368 4736 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 19:41:59,764 basehttp 8368 16036 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 19:42:29,746 basehttp 8368 9772 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 19:42:59,765 basehttp 8368 16148 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 19:43:29,804 basehttp 8368 12020 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 19:43:59,763 basehttp 8368 8232 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 19:44:20,975 basehttp 8368 6956 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:44:20,979 whatsapp_service 8368 15208 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:44:22,789 whatsapp_service 8368 15208 WhatsApp API response status: 200
+INFO 2025-10-01 19:44:29,744 basehttp 8368 9664 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 19:44:47,062 basehttp 8368 4908 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 19:44:59,725 basehttp 8368 9056 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 19:45:02,448 basehttp 8368 2716 "POST /api/auth/login/ HTTP/1.1" 200 260
+WARNING 2025-10-01 19:45:28,328 log 8368 7564 Unauthorized: /api/notifications/fcm/register/
+WARNING 2025-10-01 19:45:28,334 basehttp 8368 7564 "POST /api/notifications/fcm/register/ HTTP/1.1" 401 42
+INFO 2025-10-01 19:45:28,351 basehttp 8368 3768 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 19:45:29,096 log 8368 17000 Unauthorized: /api/notifications/
+WARNING 2025-10-01 19:45:29,097 basehttp 8368 17000 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 401 42
+WARNING 2025-10-01 19:45:29,114 log 8368 9356 Unauthorized: /api/notifications/
+WARNING 2025-10-01 19:45:29,117 basehttp 8368 9356 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 401 42
+INFO 2025-10-01 19:45:31,121 basehttp 8368 3800 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 19:45:31,154 log 8368 12448 Unauthorized: /api/notifications/fcm/register/
+WARNING 2025-10-01 19:45:31,163 basehttp 8368 12448 "POST /api/notifications/fcm/register/ HTTP/1.1" 401 42
+WARNING 2025-10-01 19:45:31,369 log 8368 10896 Unauthorized: /api/order/driver/status/
+WARNING 2025-10-01 19:45:31,370 basehttp 8368 10896 "GET /api/order/driver/status/ HTTP/1.1" 401 58
+INFO 2025-10-01 19:45:34,951 basehttp 8368 2596 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+ERROR 2025-10-01 19:45:37,273 log 8368 8448 Internal Server Error: /api/auth/logout/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py", line 430, in post
+    token_value = serializer.validated_data['token']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'token'
+ERROR 2025-10-01 19:45:37,278 basehttp 8368 8448 "POST /api/auth/logout/ HTTP/1.1" 500 113792
+INFO 2025-10-01 19:46:43,907 basehttp 8368 6964 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:46:43,911 whatsapp_service 8368 17256 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:46:45,264 whatsapp_service 8368 17256 WhatsApp API response status: 200
+INFO 2025-10-01 19:47:13,914 basehttp 8368 6688 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 19:50:30,811 basehttp 8368 14188 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:50:30,815 whatsapp_service 8368 13884 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:50:32,156 whatsapp_service 8368 13884 WhatsApp API response status: 200
+INFO 2025-10-01 19:51:07,494 basehttp 8368 2100 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 19:55:50,861 basehttp 8368 15636 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 19:55:50,865 whatsapp_service 8368 10484 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 19:55:52,287 whatsapp_service 8368 10484 WhatsApp API response status: 200
+INFO 2025-10-01 19:56:19,220 basehttp 8368 14628 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:02:22,053 basehttp 8368 15956 "POST /api/auth/login/ HTTP/1.1" 200 260
+INFO 2025-10-01 20:02:22,279 basehttp 8368 10708 "GET /api/users/driver/61/ HTTP/1.1" 200 573
+WARNING 2025-10-01 20:02:22,361 log 8368 3160 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 20:02:22,362 basehttp 8368 3160 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 20:02:22,502 basehttp 8368 5172 "GET /api/order/driver/status/ HTTP/1.1" 200 404
+INFO 2025-10-01 20:02:24,162 basehttp 8368 2388 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+ERROR 2025-10-01 20:02:25,817 log 8368 5188 Internal Server Error: /api/auth/logout/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py", line 430, in post
+    token_value = serializer.validated_data['token']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'token'
+ERROR 2025-10-01 20:02:25,822 basehttp 8368 5188 "POST /api/auth/logout/ HTTP/1.1" 500 113792
+INFO 2025-10-01 20:02:34,965 basehttp 8368 2840 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:02:34,970 whatsapp_service 8368 15984 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:02:36,384 whatsapp_service 8368 15984 WhatsApp API response status: 200
+INFO 2025-10-01 20:03:02,977 basehttp 8368 13924 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:05:45,957 basehttp 8368 12412 "GET /api/order/driver/status/ HTTP/1.1" 200 404
+INFO 2025-10-01 20:08:01,242 basehttp 8368 16160 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:08:01,246 whatsapp_service 8368 7752 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:08:02,590 whatsapp_service 8368 7752 WhatsApp API response status: 200
+WARNING 2025-10-01 20:08:29,589 log 8368 13880 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 20:08:29,590 basehttp 8368 13880 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+INFO 2025-10-01 20:09:32,517 basehttp 8368 7392 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:09:32,523 whatsapp_service 8368 3104 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:09:34,069 whatsapp_service 8368 3104 WhatsApp API response status: 200
+INFO 2025-10-01 20:10:02,309 basehttp 8368 14772 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:11:40,547 basehttp 8368 7752 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:11:40,551 whatsapp_service 8368 16588 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:11:41,850 whatsapp_service 8368 16588 WhatsApp API response status: 200
+INFO 2025-10-01 20:12:13,375 basehttp 8368 14888 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:15:19,099 basehttp 8368 3964 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:15:19,103 whatsapp_service 8368 1708 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:15:20,454 whatsapp_service 8368 1708 WhatsApp API response status: 200
+INFO 2025-10-01 20:15:50,977 basehttp 8368 16136 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:20:06,749 basehttp 8368 11560 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:20:06,753 whatsapp_service 8368 12680 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:20:08,216 whatsapp_service 8368 12680 WhatsApp API response status: 200
+INFO 2025-10-01 20:20:43,590 basehttp 8368 13864 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:24:09,065 basehttp 8368 12608 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:24:09,069 whatsapp_service 8368 5608 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:24:11,578 whatsapp_service 8368 5608 WhatsApp API response status: 200
+INFO 2025-10-01 20:24:38,997 basehttp 8368 8204 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:28:39,451 basehttp 8368 15524 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:28:39,454 whatsapp_service 8368 7596 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:28:41,016 whatsapp_service 8368 7596 WhatsApp API response status: 200
+INFO 2025-10-01 20:29:13,296 basehttp 8368 7872 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:29:35,092 basehttp 8368 8352 "POST /api/auth/login/ HTTP/1.1" 200 260
+INFO 2025-10-01 20:29:35,310 basehttp 8368 7788 "GET /api/users/driver/61/ HTTP/1.1" 200 573
+WARNING 2025-10-01 20:29:35,382 log 8368 2800 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 20:29:35,382 basehttp 8368 2800 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 20:29:36,174 basehttp 8368 15236 "GET /api/order/driver/status/ HTTP/1.1" 200 404
+INFO 2025-10-01 20:29:52,356 basehttp 8368 5128 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 20:30:22,285 basehttp 8368 12324 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 20:30:49,418 basehttp 8368 12516 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 20:30:52,264 basehttp 8368 15772 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 20:30:54,239 basehttp 8368 6896 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 470
+ERROR 2025-10-01 20:30:58,573 log 8368 1876 Internal Server Error: /api/auth/logout/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py", line 430, in post
+    token_value = serializer.validated_data['token']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'token'
+ERROR 2025-10-01 20:30:58,577 basehttp 8368 1876 "POST /api/auth/logout/ HTTP/1.1" 500 113792
+INFO 2025-10-01 20:33:51,191 basehttp 8368 6880 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:33:51,196 whatsapp_service 8368 8944 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:33:52,855 whatsapp_service 8368 8944 WhatsApp API response status: 200
+WARNING 2025-10-01 20:36:41,519 log 8368 2844 Bad Request: /api/auth/generate-otp/
+WARNING 2025-10-01 20:36:41,519 basehttp 8368 2844 "POST /api/auth/generate-otp/ HTTP/1.1" 400 73
+WARNING 2025-10-01 20:36:50,937 log 8368 2696 Bad Request: /api/auth/generate-otp/
+WARNING 2025-10-01 20:36:50,938 basehttp 8368 2696 "POST /api/auth/generate-otp/ HTTP/1.1" 400 73
+WARNING 2025-10-01 20:38:34,195 log 8368 12896 Bad Request: /api/auth/generate-otp/
+WARNING 2025-10-01 20:38:34,196 basehttp 8368 12896 "POST /api/auth/generate-otp/ HTTP/1.1" 400 73
+INFO 2025-10-01 20:38:49,514 basehttp 8368 880 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:38:49,518 whatsapp_service 8368 15380 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:38:51,047 whatsapp_service 8368 15380 WhatsApp API response status: 200
+WARNING 2025-10-01 20:39:19,392 log 8368 9936 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 20:39:19,392 basehttp 8368 9936 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-01 20:40:08,483 log 8368 7068 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-01 20:40:08,484 basehttp 8368 7068 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+INFO 2025-10-01 20:40:44,339 basehttp 8368 15156 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:40:44,342 whatsapp_service 8368 14628 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:40:45,780 whatsapp_service 8368 14628 WhatsApp API response status: 200
+INFO 2025-10-01 20:41:12,011 basehttp 8368 6984 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:42:51,823 basehttp 8368 16036 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:42:51,827 whatsapp_service 8368 15740 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:42:53,196 whatsapp_service 8368 15740 WhatsApp API response status: 200
+INFO 2025-10-01 20:43:20,674 basehttp 8368 10220 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:44:48,793 basehttp 8368 8944 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:44:48,797 whatsapp_service 8368 8236 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:44:50,404 whatsapp_service 8368 8236 WhatsApp API response status: 200
+INFO 2025-10-01 20:45:29,023 basehttp 8368 4672 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:47:43,182 basehttp 8368 3020 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:47:43,186 whatsapp_service 8368 8652 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:47:44,514 whatsapp_service 8368 8652 WhatsApp API response status: 200
+INFO 2025-10-01 20:48:10,967 basehttp 8368 12284 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+WARNING 2025-10-01 20:49:43,202 log 8368 7640 Bad Request: /api/auth/generate-otp/
+WARNING 2025-10-01 20:49:43,203 basehttp 8368 7640 "POST /api/auth/generate-otp/ HTTP/1.1" 400 73
+INFO 2025-10-01 20:50:10,574 basehttp 8368 16936 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-01 20:50:10,579 whatsapp_service 8368 11880 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-01 20:50:11,963 whatsapp_service 8368 11880 WhatsApp API response status: 200
+INFO 2025-10-01 20:50:41,394 basehttp 8368 16112 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-01 20:51:52,723 basehttp 8368 14760 "POST /api/auth/login/ HTTP/1.1" 200 260
+INFO 2025-10-01 20:51:52,936 basehttp 8368 928 "GET /api/users/driver/61/ HTTP/1.1" 200 573
+WARNING 2025-10-01 20:51:52,990 log 8368 11776 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 20:51:52,990 basehttp 8368 11776 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 20:51:53,731 basehttp 8368 9056 "GET /api/order/driver/status/ HTTP/1.1" 200 382
+INFO 2025-10-01 20:51:55,872 basehttp 8368 600 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 489
+INFO 2025-10-01 20:51:55,922 basehttp 8368 9572 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+INFO 2025-10-01 20:51:55,951 basehttp 8368 11904 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+INFO 2025-10-01 20:51:56,055 basehttp 8368 15828 "POST /api/order/driver/location/update/ HTTP/1.1" 200 164
+WARNING 2025-10-01 20:51:56,138 log 8368 9660 Not Found: /ws/driver/61/
+WARNING 2025-10-01 20:51:56,142 log 8368 15932 Not Found: /ws/driver/61/
+WARNING 2025-10-01 20:51:56,143 basehttp 8368 9660 "GET /ws/driver/61/?token=5738defd-9951-403b-bfb8-efeec79c70d0 HTTP/1.1" 404 3886
+WARNING 2025-10-01 20:51:56,143 basehttp 8368 15932 "GET /ws/driver/61/?token=5738defd-9951-403b-bfb8-efeec79c70d0 HTTP/1.1" 404 3886
+INFO 2025-10-01 20:51:57,206 basehttp 8368 15876 "GET /media/profile_pictures/driver/61/woila_profile_1759317240620.jpg HTTP/1.1" 200 67335
+INFO 2025-10-01 20:51:58,144 basehttp 8368 16936 "GET /api/users/driver/61/ HTTP/1.1" 200 573
+INFO 2025-10-01 20:51:58,202 basehttp 8368 7120 "POST /api/auth/token/verify/ HTTP/1.1" 200 322
+WARNING 2025-10-01 20:51:58,224 log 8368 4736 Not Found: /ws/driver/61/
+WARNING 2025-10-01 20:51:58,224 basehttp 8368 4736 "GET /ws/driver/61/?token=5738defd-9951-403b-bfb8-efeec79c70d0 HTTP/1.1" 404 3886
+INFO 2025-10-01 20:52:01,009 basehttp 8368 14720 "PUT /api/users/driver/61/ HTTP/1.1" 200 625
+INFO 2025-10-01 20:52:02,272 basehttp 8368 15060 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 20:52:02,304 log 8368 7532 Not Found: /ws/driver/61/
+WARNING 2025-10-01 20:52:02,305 basehttp 8368 7532 "GET /ws/driver/61/?token=5738defd-9951-403b-bfb8-efeec79c70d0 HTTP/1.1" 404 3886
+INFO 2025-10-01 20:52:02,837 basehttp 8368 8884 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 20:52:04,979 basehttp 8368 13844 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+INFO 2025-10-01 20:52:08,369 basehttp 8368 13208 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 20:52:08,408 log 8368 11220 Not Found: /ws/driver/61/
+WARNING 2025-10-01 20:52:08,409 basehttp 8368 11220 "GET /ws/driver/61/?token=5738defd-9951-403b-bfb8-efeec79c70d0 HTTP/1.1" 404 3886
+INFO 2025-10-01 20:52:08,868 basehttp 8368 1120 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-01 20:52:08,872 basehttp 8368 16640 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 2478
+INFO 2025-10-01 20:52:10,675 basehttp 8368 13216 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+INFO 2025-10-01 20:52:10,705 basehttp 8368 13216 "GET /api/auth/referral/wallet/?user_type=driver&user_id=61 HTTP/1.1" 200 92
+INFO 2025-10-01 20:52:12,567 basehttp 8368 13300 "GET /api/vehicles/?driver_id=61 HTTP/1.1" 200 1279
+INFO 2025-10-01 20:52:12,659 basehttp 8368 4144 "GET /media/vehicles/61/temp/photo_exterieur_1_gpap9DO.jpg HTTP/1.1" 200 100416
+INFO 2025-10-01 20:52:16,451 basehttp 8368 4220 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 20:52:16,474 log 8368 2352 Not Found: /ws/driver/61/
+WARNING 2025-10-01 20:52:16,474 basehttp 8368 2352 "GET /ws/driver/61/?token=5738defd-9951-403b-bfb8-efeec79c70d0 HTTP/1.1" 404 3886
+INFO 2025-10-01 20:52:26,594 basehttp 8368 8540 "POST /api/auth/token/verify/ HTTP/1.1" 200 323
+WARNING 2025-10-01 20:52:26,647 log 8368 14712 Not Found: /ws/driver/61/
+WARNING 2025-10-01 20:52:26,648 basehttp 8368 14712 "GET /ws/driver/61/?token=5738defd-9951-403b-bfb8-efeec79c70d0 HTTP/1.1" 404 3886
+INFO 2025-10-01 20:52:32,920 basehttp 8368 15732 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 20:53:02,863 basehttp 8368 16268 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 20:53:25,540 basehttp 8368 11056 "GET /api/order/driver/status/ HTTP/1.1" 200 405
+INFO 2025-10-01 20:53:32,850 basehttp 8368 9728 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 579
+INFO 2025-10-01 20:55:08,611 basehttp 8368 9380 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-01 20:55:08,618 whatsapp_service 8368 15656 Sending WhatsApp OTP to +237699999999
+INFO 2025-10-01 20:55:10,782 whatsapp_service 8368 15656 WhatsApp API response status: 200
+WARNING 2025-10-01 20:55:24,350 log 8368 9484 Unsupported Media Type: /api/auth/register/driver/
+WARNING 2025-10-01 20:55:24,352 basehttp 8368 9484 "POST /api/auth/register/driver/ HTTP/1.1" 415 68
+ERROR 2025-10-01 20:55:38,230 serializers 8368 2308 Error processing referral code: type object 'GeneralConfig' has no attribute 'get_config'
+INFO 2025-10-01 20:55:38,241 basehttp 8368 2308 "POST /api/auth/register/driver/ HTTP/1.1" 201 294
+INFO 2025-10-01 20:56:58,773 autoreload 8368 17060 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-01 20:57:04,236 autoreload 1708 4304 Watching for file changes with StatReloader
+ERROR 2025-10-01 20:57:37,873 serializers 1708 13212 Error processing referral code: 'Wallet' object has no attribute 'add_credit'
+INFO 2025-10-01 20:57:37,883 basehttp 1708 13212 "POST /api/auth/register/driver/ HTTP/1.1" 201 294
+INFO 2025-10-01 20:58:22,211 autoreload 1708 4304 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-01 20:58:23,442 autoreload 16228 15148 Watching for file changes with StatReloader
+ERROR 2025-10-01 20:58:46,452 serializers 16228 2804 Error processing referral code: 'Wallet' object has no attribute 'add_credit'
+INFO 2025-10-01 20:58:46,468 basehttp 16228 2804 "POST /api/auth/register/driver/ HTTP/1.1" 201 294
+INFO 2025-10-01 20:59:16,542 autoreload 16228 15148 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-01 20:59:17,666 autoreload 15348 9028 Watching for file changes with StatReloader
+ERROR 2025-10-01 20:59:40,873 serializers 15348 948 Error processing referral code: 'Wallet' object has no attribute 'add_credit'
+INFO 2025-10-01 20:59:40,886 basehttp 15348 948 "POST /api/auth/register/driver/ HTTP/1.1" 201 294
+INFO 2025-10-01 21:04:41,627 autoreload 15348 9028 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-01 21:04:42,717 autoreload 7348 16780 Watching for file changes with StatReloader
+ERROR 2025-10-01 21:05:07,134 serializers 7348 14236 Error processing referral code: 'Wallet' object has no attribute 'add_credit'
+INFO 2025-10-01 21:05:07,144 basehttp 7348 14236 "POST /api/auth/register/driver/ HTTP/1.1" 201 294
+INFO 2025-10-01 21:05:53,636 autoreload 7348 16780 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-01 21:05:54,837 autoreload 12524 9928 Watching for file changes with StatReloader
+ERROR 2025-10-01 21:06:17,023 serializers 12524 13860 Error processing referral code: 'Wallet' object has no attribute 'add_credit'
+INFO 2025-10-01 21:06:17,034 basehttp 12524 13860 "POST /api/auth/register/driver/ HTTP/1.1" 201 294
+INFO 2025-10-01 21:08:10,179 autoreload 12524 9928 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\models.py changed, reloading.
+INFO 2025-10-01 21:08:11,555 autoreload 9736 16552 Watching for file changes with StatReloader
+INFO 2025-10-01 21:08:47,914 basehttp 9736 5300 "POST /api/auth/register/driver/ HTTP/1.1" 201 294
+INFO 2025-10-01 21:10:21,743 autoreload 9736 16552 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-01 21:10:22,985 autoreload 14248 15732 Watching for file changes with StatReloader
+INFO 2025-10-01 21:10:45,277 autoreload 14248 15732 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-01 21:10:46,345 autoreload 13680 5580 Watching for file changes with StatReloader
+INFO 2025-10-01 21:12:36,447 autoreload 13680 5580 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\models.py changed, reloading.
+INFO 2025-10-01 21:12:37,702 autoreload 10812 16320 Watching for file changes with StatReloader

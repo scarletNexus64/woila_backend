@@ -113,16 +113,22 @@ class RegisterDriverSerializer(serializers.Serializer):
         )
 
         # Process referral code if provided
-        if referral_code:
+        if referral_code and referral_code.strip():
             try:
                 referrer_code = ReferralCode.objects.get(
                     code=referral_code,
                     is_active=True
                 )
 
-                # Get referral bonus from config
-                config = GeneralConfig.get_config()
-                referral_bonus = float(config.referral_bonus)
+                # Get referral bonus from config (default 1000 FCFA)
+                try:
+                    config = GeneralConfig.objects.get(
+                        search_key='referral_bonus',
+                        active=True
+                    )
+                    referral_bonus = config.get_numeric_value() or 1000.0
+                except GeneralConfig.DoesNotExist:
+                    referral_bonus = 1000.0  # Valeur par défaut
 
                 # Get referrer user via GenericForeignKey
                 referrer_user = referrer_code.user_type.get_object_for_this_type(
