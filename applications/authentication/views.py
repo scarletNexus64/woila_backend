@@ -457,14 +457,127 @@ class LogoutView(APIView):
         }, status=status.HTTP_400_BAD_REQUEST)
 
 
+@method_decorator(csrf_exempt, name='dispatch')
 class TokenVerifyView(APIView):
     """
     EXISTING ENDPOINT: POST /api/auth/token/verify/
-    DO NOT MODIFY - Already integrated in production
+    Vérifie la validité d'un token JWT
     """
+
+    @extend_schema(
+        tags=['Authentication'],
+        summary='Vérifier un token',
+        description='Vérifie si un token JWT est toujours valide',
+        request={
+            'application/json': {
+                'type': 'object',
+                'properties': {
+                    'token': {'type': 'string', 'example': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...'}
+                },
+                'required': ['token']
+            }
+        },
+        responses={
+            200: {'description': 'Token valide'},
+            401: {'description': 'Token invalide ou expiré'},
+        }
+    )
     def post(self, request):
-        # Logic from api.viewsets.token
-        pass
+        try:
+            token = request.data.get('token')
+
+            if not token:
+                return Response({
+                    'success': False,
+                    'error': 'Token requis'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            print(f"🔍 Verifying token: {token[:20]}...")
+
+            # Récupérer le token depuis la base de données
+            try:
+                token_obj = Token.objects.get(token=token)
+                print(f"✅ Token found in database - User Type: {token_obj.user_type}, User ID: {token_obj.user_id}")
+
+                # Vérifier si le token n'a pas expiré (optionnel, selon votre configuration)
+                # Django REST Framework gère automatiquement l'expiration
+
+                # Récupérer les informations utilisateur selon le type
+                user_type = token_obj.user_type
+                user_info = None
+
+                # Vérifier si c'est un chauffeur
+                if user_type == 'driver':
+                    try:
+                        driver = UserDriver.objects.get(id=token_obj.user_id, is_active=True)
+                        user_info = {
+                            'user_id': driver.id,
+                            'id': driver.id,
+                            'name': driver.name,
+                            'surname': driver.surname,
+                            'phone_number': driver.phone_number,
+                            'profile_picture_url': request.build_absolute_uri(driver.profile_picture.url) if driver.profile_picture else None,
+                            'gender': driver.gender,
+                            'age': driver.age,
+                            'birthday': driver.birthday.isoformat() if driver.birthday else None,
+                        }
+                        print(f"✅ Driver found: {driver.name} {driver.surname}")
+                    except UserDriver.DoesNotExist:
+                        print(f"❌ Driver with ID {token_obj.user_id} not found")
+                        return Response({
+                            'success': False,
+                            'error': 'Chauffeur non trouvé'
+                        }, status=status.HTTP_404_NOT_FOUND)
+
+                # Vérifier si c'est un client
+                elif user_type == 'customer':
+                    try:
+                        customer = UserCustomer.objects.get(id=token_obj.user_id, is_active=True)
+                        user_info = {
+                            'user_id': customer.id,
+                            'id': customer.id,
+                            'name': customer.name,
+                            'surname': customer.surname,
+                            'phone_number': customer.phone_number,
+                            'profile_picture_url': request.build_absolute_uri(customer.profile_picture.url) if customer.profile_picture else None,
+                        }
+                        print(f"✅ Customer found: {customer.name} {customer.surname}")
+                    except UserCustomer.DoesNotExist:
+                        print(f"❌ Customer with ID {token_obj.user_id} not found")
+                        return Response({
+                            'success': False,
+                            'error': 'Client non trouvé'
+                        }, status=status.HTTP_404_NOT_FOUND)
+
+                else:
+                    print(f"❌ Unknown user type: {user_type}")
+                    return Response({
+                        'success': False,
+                        'error': 'Type d\'utilisateur invalide'
+                    }, status=status.HTTP_400_BAD_REQUEST)
+
+                return Response({
+                    'success': True,
+                    'message': 'Token valide',
+                    'user_type': user_type,
+                    'user_info': user_info
+                }, status=status.HTTP_200_OK)
+
+            except Token.DoesNotExist:
+                print("❌ Token not found in database")
+                return Response({
+                    'success': False,
+                    'error': 'Token invalide'
+                }, status=status.HTTP_401_UNAUTHORIZED)
+
+        except Exception as e:
+            print(f"❌ Error verifying token: {str(e)}")
+            import traceback
+            traceback.print_exc()
+            return Response({
+                'success': False,
+                'error': f'Erreur lors de la vérification: {str(e)}'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
 class TokenRefreshView(APIView):
@@ -716,4 +829,278 @@ class VerifyOTPView(APIView):
             return Response({
                 'success': False,
                 'error': f'Erreur lors de la vérification: {str(e)}'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+# ================================
+# REFERRAL ENDPOINTS
+# ================================
+
+@method_decorator(csrf_exempt, name='dispatch')
+class ReferralValidateCodeView(APIView):
+    """
+    ENDPOINT: POST /api/auth/referral/validate-code/
+    Valider un code de parrainage
+    """
+
+    @extend_schema(
+        tags=['Referral'],
+        summary='Valider un code de parrainage',
+        description='Vérifie si un code de parrainage existe et est actif',
+        request={
+            'application/json': {
+                'type': 'object',
+                'properties': {
+                    'referral_code': {'type': 'string', 'example': 'ABC12345'}
+                },
+                'required': ['referral_code']
+            }
+        },
+        responses={
+            200: {'description': 'Code valide'},
+            404: {'description': 'Code invalide ou inexistant'},
+        }
+    )
+    def post(self, request):
+        try:
+            referral_code = request.data.get('referral_code', '').strip().upper()
+
+            if not referral_code:
+                return Response({
+                    'success': False,
+                    'error': 'Le code de parrainage est requis'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            # Rechercher le code de parrainage
+            try:
+                code = ReferralCode.objects.get(code=referral_code, is_active=True)
+
+                # Récupérer les informations du parrain
+                user_data = {}
+                if code.user_type.model == 'userdriver':
+                    user = UserDriver.objects.get(id=code.user_id)
+                    user_data = {
+                        'name': user.name,
+                        'surname': user.surname,
+                        'user_type': 'driver'
+                    }
+                elif code.user_type.model == 'usercustomer':
+                    user = UserCustomer.objects.get(id=code.user_id)
+                    user_data = {
+                        'name': user.name,
+                        'surname': user.surname,
+                        'user_type': 'customer'
+                    }
+
+                return Response({
+                    'success': True,
+                    'message': 'Code de parrainage valide',
+                    'referral_code': referral_code,
+                    'sponsor': user_data,
+                    'used_count': code.used_count
+                }, status=status.HTTP_200_OK)
+
+            except ReferralCode.DoesNotExist:
+                return Response({
+                    'success': False,
+                    'error': 'Code de parrainage invalide ou expiré'
+                }, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as e:
+            return Response({
+                'success': False,
+                'error': f'Erreur lors de la validation: {str(e)}'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class ReferralUserInfoView(APIView):
+    """
+    ENDPOINT: GET /api/auth/referral/user-info/
+    Récupérer les informations de parrainage d'un utilisateur
+    """
+
+    @extend_schema(
+        tags=['Referral'],
+        summary='Informations de parrainage utilisateur',
+        description='Récupère le code de parrainage et les statistiques d\'un utilisateur',
+        parameters=[
+            {
+                'name': 'user_type',
+                'in': 'query',
+                'required': True,
+                'schema': {'type': 'string', 'enum': ['driver', 'customer']}
+            },
+            {
+                'name': 'user_id',
+                'in': 'query',
+                'required': True,
+                'schema': {'type': 'integer'}
+            }
+        ],
+        responses={
+            200: {'description': 'Informations récupérées avec succès'},
+            404: {'description': 'Utilisateur non trouvé'},
+        }
+    )
+    def get(self, request):
+        try:
+            user_type = request.query_params.get('user_type')
+            user_id = request.query_params.get('user_id')
+
+            if not user_type or not user_id:
+                return Response({
+                    'success': False,
+                    'error': 'user_type et user_id sont requis'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            # Déterminer le ContentType
+            if user_type == 'driver':
+                content_type = ContentType.objects.get_for_model(UserDriver)
+                user = UserDriver.objects.get(id=user_id)
+            elif user_type == 'customer':
+                content_type = ContentType.objects.get_for_model(UserCustomer)
+                user = UserCustomer.objects.get(id=user_id)
+            else:
+                return Response({
+                    'success': False,
+                    'error': 'Type d\'utilisateur invalide'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            # Récupérer ou créer le code de parrainage
+            referral_code, created = ReferralCode.objects.get_or_create(
+                user_type=content_type,
+                user_id=user_id,
+                defaults={'code': self._generate_referral_code()}
+            )
+
+            # Compter les filleuls (personnes qui ont utilisé ce code)
+            # Pour l'instant, on retourne 0 car la logique d'utilisation n'est pas encore implémentée
+            referrals_count = referral_code.used_count
+
+            return Response({
+                'success': True,
+                'referral_code': referral_code.code,
+                'referrals_count': referrals_count,
+                'total_earnings': 0.0,  # À implémenter avec le système de wallet
+                'is_active': referral_code.is_active,
+                'created_at': referral_code.created_at.isoformat()
+            }, status=status.HTTP_200_OK)
+
+        except (UserDriver.DoesNotExist, UserCustomer.DoesNotExist):
+            return Response({
+                'success': False,
+                'error': 'Utilisateur non trouvé'
+            }, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({
+                'success': False,
+                'error': f'Erreur lors de la récupération: {str(e)}'
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+    def _generate_referral_code(self):
+        """Génère un code de parrainage unique"""
+        import random
+        import string
+
+        while True:
+            code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+            if not ReferralCode.objects.filter(code=code).exists():
+                return code
+
+
+@method_decorator(csrf_exempt, name='dispatch')
+class ReferralWalletView(APIView):
+    """
+    ENDPOINT: GET /api/auth/referral/wallet/
+    Récupérer les informations du wallet de parrainage
+    """
+
+    @extend_schema(
+        tags=['Referral'],
+        summary='Wallet de parrainage',
+        description='Récupère les gains de parrainage d\'un utilisateur',
+        parameters=[
+            {
+                'name': 'user_type',
+                'in': 'query',
+                'required': True,
+                'schema': {'type': 'string', 'enum': ['driver', 'customer']}
+            },
+            {
+                'name': 'user_id',
+                'in': 'query',
+                'required': True,
+                'schema': {'type': 'integer'}
+            }
+        ],
+        responses={
+            200: {'description': 'Wallet récupéré avec succès'},
+            404: {'description': 'Utilisateur non trouvé'},
+        }
+    )
+    def get(self, request):
+        try:
+            user_type = request.query_params.get('user_type')
+            user_id = request.query_params.get('user_id')
+
+            if not user_type or not user_id:
+                return Response({
+                    'success': False,
+                    'error': 'user_type et user_id sont requis'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            # Déterminer le ContentType et récupérer l'utilisateur
+            if user_type == 'driver':
+                content_type = ContentType.objects.get_for_model(UserDriver)
+                user = UserDriver.objects.get(id=user_id)
+            elif user_type == 'customer':
+                content_type = ContentType.objects.get_for_model(UserCustomer)
+                user = UserCustomer.objects.get(id=user_id)
+            else:
+                return Response({
+                    'success': False,
+                    'error': 'Type d\'utilisateur invalide'
+                }, status=status.HTTP_400_BAD_REQUEST)
+
+            # Récupérer le wallet
+            try:
+                wallet = Wallet.objects.get(
+                    user_type=content_type,
+                    user_id=user_id
+                )
+
+                return Response({
+                    'success': True,
+                    'balance': float(wallet.balance),
+                    'pending_earnings': 0.0,  # À implémenter
+                    'total_earnings': 0.0,  # À implémenter
+                    'currency': 'FCFA'
+                }, status=status.HTTP_200_OK)
+
+            except Wallet.DoesNotExist:
+                # Créer le wallet s'il n'existe pas
+                wallet = Wallet.objects.create(
+                    user_type=content_type,
+                    user_id=user_id,
+                    balance=0.0
+                )
+
+                return Response({
+                    'success': True,
+                    'balance': 0.0,
+                    'pending_earnings': 0.0,
+                    'total_earnings': 0.0,
+                    'currency': 'FCFA'
+                }, status=status.HTTP_200_OK)
+
+        except (UserDriver.DoesNotExist, UserCustomer.DoesNotExist):
+            return Response({
+                'success': False,
+                'error': 'Utilisateur non trouvé'
+            }, status=status.HTTP_404_NOT_FOUND)
+        except Exception as e:
+            return Response({
+                'success': False,
+                'error': f'Erreur lors de la récupération: {str(e)}'
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

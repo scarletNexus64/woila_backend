@@ -32323,3 +32323,591 @@ INFO 2025-10-01 11:58:03,220 basehttp 1452 17188 "GET /api/notifications/?includ
 INFO 2025-10-01 11:58:06,232 basehttp 1452 4288 "GET /api/users/driver/61/ HTTP/1.1" 200 574
 WARNING 2025-10-01 11:58:15,933 log 1452 2408 Not Found: /api/profiles/driver/61/
 WARNING 2025-10-01 11:58:15,934 basehttp 1452 2408 "PUT /api/profiles/driver/61/ HTTP/1.1" 404 3873
+ERROR 2025-10-01 12:01:40,731 log 1452 4252 Internal Server Error: /api/auth/logout/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py", line 430, in post
+    token_value = serializer.validated_data['token']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'token'
+ERROR 2025-10-01 12:01:40,739 basehttp 1452 4252 "POST /api/auth/logout/ HTTP/1.1" 500 112651
+INFO 2025-10-01 12:01:54,034 basehttp 1452 12344 "POST /api/auth/login/ HTTP/1.1" 200 257
+INFO 2025-10-01 12:01:54,244 basehttp 1452 8804 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+WARNING 2025-10-01 12:01:54,266 log 1452 14748 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:01:54,266 basehttp 1452 14748 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+WARNING 2025-10-01 12:01:54,353 log 1452 11540 Not Found: /api/order/driver/status/
+WARNING 2025-10-01 12:01:54,353 basehttp 1452 11540 "GET /api/order/driver/status/ HTTP/1.1" 404 30
+INFO 2025-10-01 12:01:57,081 basehttp 1452 920 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 444
+INFO 2025-10-01 12:01:57,646 basehttp 1452 9816 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 425
+INFO 2025-10-01 12:01:58,881 basehttp 1452 8224 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 444
+INFO 2025-10-01 12:02:05,104 basehttp 1452 996 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 425
+INFO 2025-10-01 12:02:05,683 basehttp 1452 892 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 444
+INFO 2025-10-01 12:02:06,812 basehttp 1452 5300 "POST /api/order/driver/status/toggle/ HTTP/1.1" 200 425
+INFO 2025-10-01 12:02:25,157 basehttp 1452 14552 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+INFO 2025-10-01 12:04:37,545 basehttp 1452 2836 "GET /api/order/driver/status/ HTTP/1.1" 200 337
+INFO 2025-10-01 12:09:54,484 autoreload 1452 16056 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py changed, reloading.
+INFO 2025-10-01 12:10:01,678 autoreload 11996 9664 Watching for file changes with StatReloader
+INFO 2025-10-01 12:10:18,460 autoreload 11996 9664 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\urls.py changed, reloading.
+INFO 2025-10-01 12:10:19,722 autoreload 6312 10420 Watching for file changes with StatReloader
+WARNING 2025-10-01 12:11:51,385 log 6312 17364 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:11:51,497 basehttp 6312 17364 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+ERROR 2025-10-01 12:11:51,689 log 6312 16564 Internal Server Error: /api/auth/token/verify/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2025-10-01 12:11:51,753 basehttp 6312 16564 "POST /api/auth/token/verify/ HTTP/1.1" 500 90602
+INFO 2025-10-01 12:11:52,379 basehttp 6312 10272 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:11:52,386 basehttp 6312 10352 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:12:15,816 basehttp 6312 14460 "POST /api/auth/login/ HTTP/1.1" 200 257
+INFO 2025-10-01 12:12:16,030 basehttp 6312 10812 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+WARNING 2025-10-01 12:12:16,106 log 6312 1548 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:12:16,107 basehttp 6312 1548 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:12:16,297 basehttp 6312 7120 "GET /api/order/driver/status/ HTTP/1.1" 200 337
+INFO 2025-10-01 12:12:20,457 basehttp 6312 11980 "GET /media/profile_pictures/driver/None/woila_profile_1759312523847.jpg HTTP/1.1" 200 40073
+INFO 2025-10-01 12:12:21,290 basehttp 6312 16696 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+WARNING 2025-10-01 12:12:25,112 log 6312 10904 Not Found: /api/profiles/driver/61/
+WARNING 2025-10-01 12:12:25,112 basehttp 6312 10904 "PUT /api/profiles/driver/61/ HTTP/1.1" 404 3873
+WARNING 2025-10-01 12:12:39,987 log 6312 17280 Not Found: /api/profiles/driver/61/
+WARNING 2025-10-01 12:12:39,987 basehttp 6312 17280 "PUT /api/profiles/driver/61/ HTTP/1.1" 404 3873
+WARNING 2025-10-01 12:12:54,609 log 6312 11312 Not Found: /api/profiles/driver/61/
+WARNING 2025-10-01 12:12:54,610 basehttp 6312 11312 "PUT /api/profiles/driver/61/ HTTP/1.1" 404 3873
+INFO 2025-10-01 12:18:27,392 basehttp 6312 17196 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+WARNING 2025-10-01 12:18:29,933 log 6312 16332 Not Found: /api/profiles/driver/61/
+WARNING 2025-10-01 12:18:29,933 basehttp 6312 16332 "PUT /api/profiles/driver/61/ HTTP/1.1" 404 3873
+ERROR 2025-10-01 12:20:15,047 log 6312 7488 Internal Server Error: /api/auth/token/verify/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2025-10-01 12:20:15,057 basehttp 6312 7488 "POST /api/auth/token/verify/ HTTP/1.1" 500 90602
+WARNING 2025-10-01 12:20:15,066 log 6312 8932 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:20:15,067 basehttp 6312 8932 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:20:37,107 basehttp 6312 12168 "POST /api/auth/login/ HTTP/1.1" 200 257
+INFO 2025-10-01 12:20:37,342 basehttp 6312 12680 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+WARNING 2025-10-01 12:20:37,400 log 6312 17260 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:20:37,400 basehttp 6312 17260 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:20:37,535 basehttp 6312 16904 "GET /api/order/driver/status/ HTTP/1.1" 200 337
+INFO 2025-10-01 12:20:39,677 basehttp 6312 11620 "GET /media/profile_pictures/driver/None/woila_profile_1759312523847.jpg HTTP/1.1" 200 40073
+INFO 2025-10-01 12:20:40,511 basehttp 6312 1932 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+ERROR 2025-10-01 12:20:42,533 log 6312 16936 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:20:42,533 basehttp 6312 16936 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:20:46,909 log 6312 6176 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:20:46,910 basehttp 6312 6176 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:20:58,391 log 6312 6316 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:20:58,391 basehttp 6312 6316 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+INFO 2025-10-01 12:21:01,590 basehttp 6312 884 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+ERROR 2025-10-01 12:21:07,870 log 6312 12300 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:07,871 basehttp 6312 12300 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:08,489 log 6312 13124 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:08,493 basehttp 6312 13124 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:08,961 log 6312 3852 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:08,961 basehttp 6312 3852 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:09,190 log 6312 17356 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:09,190 basehttp 6312 17356 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:09,353 log 6312 14712 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:09,355 basehttp 6312 14712 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:09,498 log 6312 15924 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:09,499 basehttp 6312 15924 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:09,880 log 6312 16720 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:09,881 basehttp 6312 16720 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:10,062 log 6312 712 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:10,063 basehttp 6312 712 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:10,217 log 6312 7016 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:10,222 basehttp 6312 7016 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:10,378 log 6312 12024 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:10,378 basehttp 6312 12024 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:12,401 log 6312 6868 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:12,402 basehttp 6312 6868 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:14,848 log 6312 16300 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:14,849 basehttp 6312 16300 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:17,805 log 6312 11324 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:17,806 basehttp 6312 11324 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:18,068 log 6312 15264 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:18,069 basehttp 6312 15264 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:18,241 log 6312 11192 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:18,241 basehttp 6312 11192 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:18,390 log 6312 9748 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:18,392 basehttp 6312 9748 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:18,526 log 6312 11072 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:18,527 basehttp 6312 11072 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:23,743 log 6312 15456 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:23,743 basehttp 6312 15456 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+ERROR 2025-10-01 12:21:24,453 log 6312 11208 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:21:24,454 basehttp 6312 11208 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+INFO 2025-10-01 12:21:26,960 basehttp 6312 9348 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+INFO 2025-10-01 12:21:57,027 basehttp 6312 14320 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+ERROR 2025-10-01 12:21:59,374 views 6312 12404 Erreur lors de la récupération de l'historique: WalletService.get_transaction_history() missing 1 required positional argument: 'user_type'
+ERROR 2025-10-01 12:21:59,375 views 6312 4788 Erreur lors de la récupération du solde: type object 'WalletService' has no attribute 'get_balance'
+ERROR 2025-10-01 12:21:59,376 log 6312 12404 Internal Server Error: /api/wallet/transactions/
+ERROR 2025-10-01 12:21:59,377 log 6312 4788 Internal Server Error: /api/wallet/balance/
+ERROR 2025-10-01 12:21:59,378 basehttp 6312 12404 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 500 78
+ERROR 2025-10-01 12:21:59,378 basehttp 6312 4788 "GET /api/wallet/balance/ HTTP/1.1" 500 71
+INFO 2025-10-01 12:21:59,420 basehttp 6312 4788 "GET /api/auth/referral/wallet/?user_type=driver&user_id=61 HTTP/1.1" 200 92
+INFO 2025-10-01 12:22:03,150 basehttp 6312 10228 "GET /api/auth/referral/user-info/?user_type=driver&user_id=61 HTTP/1.1" 200 149
+WARNING 2025-10-01 12:22:34,733 utils 6312 10500 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:22:34,734 utils 6312 10500 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:22:34,734 utils 6312 10500 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:22:34,756 utils 6312 10500 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:22:34,756 utils 6312 10500 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:22:34,756 utils 6312 10500 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:22:34,764 utils 6312 10500 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:22:34,765 utils 6312 10500 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:22:34,766 utils 6312 10500 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:22:34,766 utils 6312 10500 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:22:34,768 utils 6312 10500 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:22:34,769 utils 6312 10500 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:22:34,770 utils 6312 10500 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:22:35,015 basehttp 6312 10500 "GET /admin/vehicles/vehicle/ HTTP/1.1" 200 46887
+WARNING 2025-10-01 12:22:41,724 utils 6312 11168 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:22:41,725 utils 6312 11168 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:22:41,725 utils 6312 11168 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:22:41,727 utils 6312 11168 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:22:41,728 utils 6312 11168 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:22:41,728 utils 6312 11168 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:22:41,733 utils 6312 11168 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:22:41,734 utils 6312 11168 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:22:41,735 utils 6312 11168 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:22:41,736 utils 6312 11168 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:22:41,737 utils 6312 11168 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:22:41,738 utils 6312 11168 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:22:41,738 utils 6312 11168 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:22:41,869 basehttp 6312 11168 "GET /admin/authentication/referralcode/ HTTP/1.1" 200 82500
+INFO 2025-10-01 12:22:41,992 basehttp 6312 11168 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 12:23:39,782 autoreload 6312 10420 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\views.py changed, reloading.
+INFO 2025-10-01 12:23:41,694 autoreload 2792 16544 Watching for file changes with StatReloader
+INFO 2025-10-01 12:23:55,480 autoreload 2792 16544 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\views.py changed, reloading.
+INFO 2025-10-01 12:23:56,532 autoreload 16300 16404 Watching for file changes with StatReloader
+INFO 2025-10-01 12:24:04,695 autoreload 16300 16404 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\views.py changed, reloading.
+INFO 2025-10-01 12:24:05,732 autoreload 5608 9632 Watching for file changes with StatReloader
+ERROR 2025-10-01 12:24:34,254 log 5608 8268 Internal Server Error: /api/auth/token/verify/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2025-10-01 12:24:34,260 basehttp 5608 8268 "POST /api/auth/token/verify/ HTTP/1.1" 500 90602
+WARNING 2025-10-01 12:24:34,291 log 5608 9376 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:24:34,291 basehttp 5608 9376 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:24:53,466 basehttp 5608 13792 "POST /api/auth/login/ HTTP/1.1" 200 257
+INFO 2025-10-01 12:24:53,628 basehttp 5608 13332 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+WARNING 2025-10-01 12:24:53,673 log 5608 14740 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:24:53,674 basehttp 5608 14740 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:24:53,813 basehttp 5608 13692 "GET /api/order/driver/status/ HTTP/1.1" 200 337
+INFO 2025-10-01 12:24:55,451 basehttp 5608 2924 "GET /media/profile_pictures/driver/None/woila_profile_1759312523847.jpg HTTP/1.1" 200 40073
+INFO 2025-10-01 12:24:56,139 basehttp 5608 13624 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+ERROR 2025-10-01 12:24:58,471 log 5608 13004 Internal Server Error: /api/users/driver/61/
+ERROR 2025-10-01 12:24:58,471 basehttp 5608 13004 "PUT /api/users/driver/61/ HTTP/1.1" 500 94
+INFO 2025-10-01 12:25:01,205 basehttp 5608 14024 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+INFO 2025-10-01 12:26:17,195 autoreload 5608 9632 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-01 12:26:18,319 autoreload 2088 8548 Watching for file changes with StatReloader
+ERROR 2025-10-01 12:26:49,354 log 2088 10136 Internal Server Error: /api/auth/token/verify/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+WARNING 2025-10-01 12:26:49,366 log 2088 7912 Bad Request: /api/notifications/fcm/register/
+ERROR 2025-10-01 12:26:49,370 basehttp 2088 10136 "POST /api/auth/token/verify/ HTTP/1.1" 500 90602
+WARNING 2025-10-01 12:26:49,370 basehttp 2088 7912 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:27:06,810 basehttp 2088 12548 "POST /api/auth/login/ HTTP/1.1" 200 257
+INFO 2025-10-01 12:27:07,053 basehttp 2088 9352 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+WARNING 2025-10-01 12:27:07,113 log 2088 12584 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:27:07,115 basehttp 2088 12584 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:27:07,253 basehttp 2088 9656 "GET /api/order/driver/status/ HTTP/1.1" 200 337
+INFO 2025-10-01 12:27:09,902 basehttp 2088 14740 "GET /media/profile_pictures/driver/None/woila_profile_1759312523847.jpg HTTP/1.1" 200 40073
+INFO 2025-10-01 12:27:10,720 basehttp 2088 9536 "GET /api/users/driver/61/ HTTP/1.1" 200 574
+INFO 2025-10-01 12:27:13,137 basehttp 2088 10284 "PUT /api/users/driver/61/ HTTP/1.1" 200 624
+INFO 2025-10-01 12:27:16,443 basehttp 2088 4592 "GET /api/users/driver/61/ HTTP/1.1" 200 573
+INFO 2025-10-01 12:27:36,227 basehttp 2088 13840 "PUT /api/users/driver/61/ HTTP/1.1" 200 629
+INFO 2025-10-01 12:27:39,394 basehttp 2088 15124 "GET /api/users/driver/61/ HTTP/1.1" 200 578
+INFO 2025-10-01 12:27:56,856 basehttp 2088 3168 "PUT /api/users/driver/61/ HTTP/1.1" 200 629
+INFO 2025-10-01 12:29:33,035 basehttp 2088 3904 "GET /api/order/driver/status/ HTTP/1.1" 200 341
+ERROR 2025-10-01 12:29:49,022 log 2088 10852 Internal Server Error: /api/auth/token/verify/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2025-10-01 12:29:49,025 basehttp 2088 10852 "POST /api/auth/token/verify/ HTTP/1.1" 500 90602
+INFO 2025-10-01 12:30:07,400 basehttp 2088 13172 "POST /api/auth/login/ HTTP/1.1" 200 261
+INFO 2025-10-01 12:30:07,531 basehttp 2088 16940 "GET /api/users/driver/61/ HTTP/1.1" 200 578
+WARNING 2025-10-01 12:30:07,592 log 2088 10748 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:30:07,593 basehttp 2088 10748 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:30:07,717 basehttp 2088 9248 "GET /api/order/driver/status/ HTTP/1.1" 200 341
+INFO 2025-10-01 12:30:08,818 basehttp 2088 11428 "GET /media/profile_pictures/driver/None/woila_profile_1759312523847.jpg HTTP/1.1" 200 40073
+INFO 2025-10-01 12:30:09,643 basehttp 2088 9184 "GET /api/users/driver/61/ HTTP/1.1" 200 578
+INFO 2025-10-01 12:30:12,360 basehttp 2088 6356 "PUT /api/users/driver/61/ HTTP/1.1" 200 630
+INFO 2025-10-01 12:30:16,803 basehttp 2088 15448 "GET /api/users/driver/61/ HTTP/1.1" 200 579
+INFO 2025-10-01 12:30:21,225 basehttp 2088 14764 "PUT /api/users/driver/61/ HTTP/1.1" 200 629
+INFO 2025-10-01 12:30:30,687 basehttp 2088 3408 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+WARNING 2025-10-01 12:31:54,768 utils 2088 11200 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:31:54,769 utils 2088 11200 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:31:54,769 utils 2088 11200 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:31:54,775 utils 2088 11200 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:31:54,776 utils 2088 11200 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:31:54,777 utils 2088 11200 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:31:54,791 utils 2088 11200 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:31:54,794 utils 2088 11200 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:31:54,797 utils 2088 11200 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:31:54,799 utils 2088 11200 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:31:54,801 utils 2088 11200 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:31:54,802 utils 2088 11200 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:31:54,803 utils 2088 11200 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:31:54,858 basehttp 2088 11200 "GET /admin/core/generalconfig/ HTTP/1.1" 200 57909
+INFO 2025-10-01 12:31:54,895 basehttp 2088 11200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 12:31:59,344 utils 2088 11200 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:31:59,345 utils 2088 11200 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:31:59,345 utils 2088 11200 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:31:59,346 utils 2088 11200 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:31:59,347 utils 2088 11200 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:31:59,347 utils 2088 11200 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:31:59,350 utils 2088 11200 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:31:59,350 utils 2088 11200 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:31:59,351 utils 2088 11200 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:31:59,351 utils 2088 11200 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:31:59,352 utils 2088 11200 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:31:59,352 utils 2088 11200 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:31:59,353 utils 2088 11200 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:31:59,358 utils 2088 11200 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:31:59,360 utils 2088 11200 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:31:59,361 utils 2088 11200 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:31:59,491 basehttp 2088 11200 "GET /admin/core/generalconfig/19/change/ HTTP/1.1" 200 39559
+INFO 2025-10-01 12:31:59,546 basehttp 2088 11200 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 12:32:06,689 basehttp 2088 15892 "POST /admin/core/generalconfig/19/change/ HTTP/1.1" 302 0
+WARNING 2025-10-01 12:32:06,711 utils 2088 15892 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:06,714 utils 2088 15892 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:06,715 utils 2088 15892 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:06,718 utils 2088 15892 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:06,719 utils 2088 15892 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:06,719 utils 2088 15892 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:06,723 utils 2088 15892 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:06,724 utils 2088 15892 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:06,724 utils 2088 15892 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:06,726 utils 2088 15892 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:32:06,731 utils 2088 15892 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:06,731 utils 2088 15892 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:06,732 utils 2088 15892 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:32:06,757 basehttp 2088 15892 "GET /admin/core/generalconfig/ HTTP/1.1" 200 58535
+INFO 2025-10-01 12:32:06,804 basehttp 2088 15892 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 12:32:17,017 utils 2088 15604 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:17,018 utils 2088 15604 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:17,018 utils 2088 15604 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:17,020 utils 2088 15604 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:17,021 utils 2088 15604 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:17,021 utils 2088 15604 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:17,025 utils 2088 15604 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:17,026 utils 2088 15604 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:17,026 utils 2088 15604 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:17,027 utils 2088 15604 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:32:17,030 utils 2088 15604 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:17,032 utils 2088 15604 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:17,033 utils 2088 15604 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:17,036 utils 2088 15604 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:17,037 utils 2088 15604 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:17,037 utils 2088 15604 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:32:17,048 basehttp 2088 15604 "GET /admin/core/generalconfig/2/change/ HTTP/1.1" 200 39553
+INFO 2025-10-01 12:32:17,091 basehttp 2088 15604 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 12:32:22,583 basehttp 2088 10584 "POST /admin/core/generalconfig/2/change/ HTTP/1.1" 302 0
+WARNING 2025-10-01 12:32:22,602 utils 2088 10584 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:22,603 utils 2088 10584 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:22,603 utils 2088 10584 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:22,605 utils 2088 10584 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:22,605 utils 2088 10584 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:22,607 utils 2088 10584 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:22,611 utils 2088 10584 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:22,612 utils 2088 10584 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:22,612 utils 2088 10584 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:22,613 utils 2088 10584 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:32:22,617 utils 2088 10584 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:22,618 utils 2088 10584 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:22,619 utils 2088 10584 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:32:22,641 basehttp 2088 10584 "GET /admin/core/generalconfig/ HTTP/1.1" 200 58531
+INFO 2025-10-01 12:32:22,688 basehttp 2088 10584 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 12:32:49,307 utils 2088 10516 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:49,309 utils 2088 10516 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:49,310 utils 2088 10516 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:49,312 utils 2088 10516 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:49,313 utils 2088 10516 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:49,313 utils 2088 10516 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:49,317 utils 2088 10516 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:49,318 utils 2088 10516 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:49,318 utils 2088 10516 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:49,319 utils 2088 10516 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:32:49,320 utils 2088 10516 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:49,320 utils 2088 10516 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:49,321 utils 2088 10516 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:49,326 utils 2088 10516 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:49,328 utils 2088 10516 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:49,328 utils 2088 10516 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:32:49,335 basehttp 2088 10516 "GET /admin/core/generalconfig/3/change/ HTTP/1.1" 200 39567
+INFO 2025-10-01 12:32:49,377 basehttp 2088 10516 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 12:32:54,316 basehttp 2088 15524 "POST /admin/core/generalconfig/3/change/ HTTP/1.1" 302 0
+WARNING 2025-10-01 12:32:54,335 utils 2088 15524 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:54,336 utils 2088 15524 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:54,337 utils 2088 15524 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:54,338 utils 2088 15524 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:54,339 utils 2088 15524 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:54,340 utils 2088 15524 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:54,347 utils 2088 15524 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:54,348 utils 2088 15524 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:54,348 utils 2088 15524 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:32:54,349 utils 2088 15524 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:32:54,350 utils 2088 15524 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:32:54,350 utils 2088 15524 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:32:54,350 utils 2088 15524 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:32:54,372 basehttp 2088 15524 "GET /admin/core/generalconfig/ HTTP/1.1" 200 58539
+INFO 2025-10-01 12:32:54,414 basehttp 2088 15524 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 12:33:37,467 utils 2088 2688 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:37,467 utils 2088 2688 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:37,468 utils 2088 2688 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:37,471 utils 2088 2688 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:37,471 utils 2088 2688 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:37,472 utils 2088 2688 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:37,476 utils 2088 2688 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:37,476 utils 2088 2688 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:37,477 utils 2088 2688 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:37,478 utils 2088 2688 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:33:37,479 utils 2088 2688 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:37,479 utils 2088 2688 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:37,480 utils 2088 2688 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:33:37,490 basehttp 2088 2688 "GET /admin/core/country/ HTTP/1.1" 200 37340
+INFO 2025-10-01 12:33:37,541 basehttp 2088 2688 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-01 12:33:37,555 basehttp 2088 13080 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+WARNING 2025-10-01 12:33:38,385 utils 2088 13080 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:38,389 utils 2088 13080 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:38,390 utils 2088 13080 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:38,393 utils 2088 13080 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:38,394 utils 2088 13080 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:38,395 utils 2088 13080 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:38,399 utils 2088 13080 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:38,399 utils 2088 13080 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:38,400 utils 2088 13080 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:38,401 utils 2088 13080 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:33:38,402 utils 2088 13080 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:38,402 utils 2088 13080 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:38,402 utils 2088 13080 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:33:38,416 basehttp 2088 13080 "GET /admin/core/city/ HTTP/1.1" 200 39301
+INFO 2025-10-01 12:33:38,472 basehttp 2088 13080 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 12:33:40,869 utils 2088 13080 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:40,869 utils 2088 13080 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:40,869 utils 2088 13080 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:40,872 utils 2088 13080 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:40,873 utils 2088 13080 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:40,874 utils 2088 13080 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:40,878 utils 2088 13080 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:40,879 utils 2088 13080 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:40,879 utils 2088 13080 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:40,880 utils 2088 13080 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:33:40,881 utils 2088 13080 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:40,881 utils 2088 13080 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:40,881 utils 2088 13080 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:33:40,895 basehttp 2088 13080 "GET /admin/core/vipzoneproxy/ HTTP/1.1" 200 38591
+INFO 2025-10-01 12:33:40,941 basehttp 2088 13080 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-01 12:33:44,266 utils 2088 17312 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:44,267 utils 2088 17312 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:44,267 utils 2088 17312 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:44,269 utils 2088 17312 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:44,269 utils 2088 17312 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:44,270 utils 2088 17312 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:44,275 utils 2088 17312 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:44,276 utils 2088 17312 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:44,276 utils 2088 17312 Could not reverse url from api.vehicle
+WARNING 2025-10-01 12:33:44,277 utils 2088 17312 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-01 12:33:44,278 utils 2088 17312 Could not reverse url from api.userdriver
+WARNING 2025-10-01 12:33:44,278 utils 2088 17312 Could not reverse url from api.usercustomer
+WARNING 2025-10-01 12:33:44,279 utils 2088 17312 Could not reverse url from api.vehicle
+INFO 2025-10-01 12:33:44,328 basehttp 2088 17312 "GET /admin/notifications/notificationproxy/ HTTP/1.1" 200 78928
+INFO 2025-10-01 12:33:44,375 basehttp 2088 17312 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+ERROR 2025-10-01 12:34:31,488 log 2088 13436 Internal Server Error: /api/auth/token/verify/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+WARNING 2025-10-01 12:34:31,489 log 2088 13740 Bad Request: /api/notifications/fcm/register/
+ERROR 2025-10-01 12:34:31,492 basehttp 2088 13436 "POST /api/auth/token/verify/ HTTP/1.1" 500 90602
+WARNING 2025-10-01 12:34:31,493 basehttp 2088 13740 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:34:50,703 basehttp 2088 2920 "POST /api/auth/login/ HTTP/1.1" 200 261
+INFO 2025-10-01 12:34:50,952 basehttp 2088 4908 "GET /api/users/driver/61/ HTTP/1.1" 200 578
+WARNING 2025-10-01 12:34:51,062 log 2088 13964 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:34:51,063 basehttp 2088 13964 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:34:51,189 basehttp 2088 12048 "GET /api/order/driver/status/ HTTP/1.1" 200 341
+INFO 2025-10-01 12:34:52,890 basehttp 2088 12148 "GET /media/profile_pictures/driver/None/woila_profile_1759312523847.jpg HTTP/1.1" 200 40073
+INFO 2025-10-01 12:34:55,625 basehttp 2088 11416 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:35:01,579 basehttp 2088 12556 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+ERROR 2025-10-01 12:35:26,748 log 2088 9136 Internal Server Error: /api/auth/token/verify/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+ERROR 2025-10-01 12:35:26,752 basehttp 2088 9136 "POST /api/auth/token/verify/ HTTP/1.1" 500 90602
+WARNING 2025-10-01 12:35:26,763 log 2088 9068 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:35:26,764 basehttp 2088 9068 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:35:50,611 basehttp 2088 9204 "POST /api/auth/login/ HTTP/1.1" 200 261
+INFO 2025-10-01 12:35:50,828 basehttp 2088 4592 "GET /api/users/driver/61/ HTTP/1.1" 200 578
+WARNING 2025-10-01 12:35:50,896 log 2088 2404 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:35:50,899 basehttp 2088 2404 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:35:51,038 basehttp 2088 12880 "GET /api/order/driver/status/ HTTP/1.1" 200 341
+INFO 2025-10-01 12:35:53,871 basehttp 2088 17124 "GET /media/profile_pictures/driver/None/woila_profile_1759312523847.jpg HTTP/1.1" 200 40073
+INFO 2025-10-01 12:35:56,889 basehttp 2088 13448 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:36:26,891 basehttp 2088 8108 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:36:56,936 basehttp 2088 16780 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:37:26,898 basehttp 2088 8448 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:37:56,954 basehttp 2088 1404 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:38:26,950 basehttp 2088 5988 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:38:56,948 basehttp 2088 12324 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:39:26,886 basehttp 2088 1480 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:39:56,952 basehttp 2088 5076 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:40:26,942 basehttp 2088 10864 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:40:45,644 basehttp 2088 1556 "GET /api/vehicles/?driver_id=61 HTTP/1.1" 200 1226
+INFO 2025-10-01 12:40:45,806 basehttp 2088 15020 "GET /media/vehicles/61/temp/photo_exterieur_1.jpg HTTP/1.1" 200 64486
+INFO 2025-10-01 12:40:56,876 basehttp 2088 5844 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:41:26,946 basehttp 2088 15816 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+ERROR 2025-10-01 12:41:33,341 log 2088 9332 Internal Server Error: /api/auth/token/verify/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 517, in dispatch
+    self.response = self.finalize_response(request, response, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 429, in finalize_response
+    assert isinstance(response, HttpResponseBase), (
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Expected a `Response`, `HttpResponse` or `StreamingHttpResponse` to be returned from the view, but received a `<class 'NoneType'>`
+WARNING 2025-10-01 12:41:33,345 log 2088 9152 Bad Request: /api/notifications/fcm/register/
+ERROR 2025-10-01 12:41:33,348 basehttp 2088 9332 "POST /api/auth/token/verify/ HTTP/1.1" 500 90750
+WARNING 2025-10-01 12:41:33,348 basehttp 2088 9152 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:42:58,802 autoreload 2088 8548 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py changed, reloading.
+INFO 2025-10-01 12:43:00,444 autoreload 12868 15968 Watching for file changes with StatReloader
+INFO 2025-10-01 12:49:12,288 basehttp 12868 10136 "POST /api/auth/login/ HTTP/1.1" 200 261
+INFO 2025-10-01 12:49:12,534 basehttp 12868 1696 "GET /api/users/driver/61/ HTTP/1.1" 200 578
+WARNING 2025-10-01 12:49:12,612 log 12868 12156 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:49:12,613 basehttp 12868 12156 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-01 12:49:12,755 basehttp 12868 17348 "GET /api/order/driver/status/ HTTP/1.1" 200 341
+WARNING 2025-10-01 12:49:19,926 log 12868 9720 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-01 12:49:19,927 basehttp 12868 9720 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+ERROR 2025-10-01 12:49:20,196 log 12868 10912 Internal Server Error: /api/auth/token/verify/
+ERROR 2025-10-01 12:49:20,197 basehttp 12868 10912 "POST /api/auth/token/verify/ HTTP/1.1" 500 167
+INFO 2025-10-01 12:49:20,581 basehttp 12868 11540 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:49:20,598 basehttp 12868 2404 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 569
+INFO 2025-10-01 12:51:27,598 autoreload 12868 15968 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py changed, reloading.
+INFO 2025-10-01 12:51:29,266 autoreload 9712 17192 Watching for file changes with StatReloader
+INFO 2025-10-01 12:51:49,001 autoreload 9712 17192 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py changed, reloading.
+INFO 2025-10-01 12:51:50,292 autoreload 12304 860 Watching for file changes with StatReloader
+INFO 2025-10-01 12:53:03,558 autoreload 14656 13980 Watching for file changes with StatReloader

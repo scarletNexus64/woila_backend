@@ -224,33 +224,44 @@ class DriverProfileView(APIView):
         """
         Modifier le profil d'un chauffeur
         """
+        print(f"🔄 PUT /api/users/driver/{driver_id}/ - Updating driver profile")
+        print(f"📝 Request data: {request.data}")
+        print(f"📸 Request files: {request.FILES}")
+
         driver = get_object_or_404(UserDriver, id=driver_id, is_active=True)
-        
+        print(f"✅ Driver found: {driver.name} {driver.surname}")
+
         serializer = UserDriverUpdateSerializer(
             instance=driver,
             data=request.data,
             context={'request': request}
         )
-        
+
         if serializer.is_valid():
             try:
+                print(f"✅ Serializer valid, saving...")
                 updated_driver = serializer.save()
-                
+                print(f"✅ Driver updated successfully")
+
                 # Sérialiser la réponse
                 response_serializer = UserDriverDetailSerializer(updated_driver, context={'request': request})
-                
+
                 return Response({
                     'success': True,
                     'message': 'Profil chauffeur modifié avec succès',
                     'driver': response_serializer.data
                 }, status=status.HTTP_200_OK)
-                
+
             except Exception as e:
+                print(f"❌ Error saving driver: {str(e)}")
+                import traceback
+                traceback.print_exc()
                 return Response({
                     'success': False,
                     'message': f'Erreur lors de la modification : {str(e)}'
                 }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+
+        print(f"❌ Serializer validation failed: {serializer.errors}")
         return Response({
             'success': False,
             'errors': serializer.errors
@@ -329,33 +340,44 @@ class CustomerProfileView(APIView):
         """
         Modifier le profil d'un client
         """
+        print(f"🔄 PUT /api/users/customer/{customer_id}/ - Updating customer profile")
+        print(f"📝 Request data: {request.data}")
+        print(f"📸 Request files: {request.FILES}")
+
         customer = get_object_or_404(UserCustomer, id=customer_id, is_active=True)
-        
+        print(f"✅ Customer found: {customer.name} {customer.surname}")
+
         serializer = UserCustomerUpdateSerializer(
             instance=customer,
             data=request.data,
             context={'request': request}
         )
-        
+
         if serializer.is_valid():
             try:
+                print(f"✅ Serializer valid, saving...")
                 updated_customer = serializer.save()
-                
+                print(f"✅ Customer updated successfully")
+
                 # Sérialiser la réponse
                 response_serializer = UserCustomerDetailSerializer(updated_customer, context={'request': request})
-                
+
                 return Response({
                     'success': True,
                     'message': 'Profil client modifié avec succès',
                     'customer': response_serializer.data
                 }, status=status.HTTP_200_OK)
-                
+
             except Exception as e:
+                print(f"❌ Error saving customer: {str(e)}")
+                import traceback
+                traceback.print_exc()
                 return Response({
                     'success': False,
                     'message': f'Erreur lors de la modification : {str(e)}'
                 }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-        
+
+        print(f"❌ Serializer validation failed: {serializer.errors}")
         return Response({
             'success': False,
             'errors': serializer.errors

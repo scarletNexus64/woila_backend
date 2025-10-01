@@ -266,8 +266,44 @@ class UserDriverUpdateSerializer(serializers.Serializer):
     birthday = serializers.DateField(required=False)
     profile_picture = serializers.ImageField(required=False)
 
+    def update(self, instance, validated_data):
+        """Met à jour le profil du chauffeur"""
+        # Mettre à jour les champs simples
+        instance.name = validated_data.get('name', instance.name)
+        instance.surname = validated_data.get('surname', instance.surname)
+        instance.gender = validated_data.get('gender', instance.gender)
+        instance.age = validated_data.get('age', instance.age)
+        instance.birthday = validated_data.get('birthday', instance.birthday)
+
+        # Gérer la photo de profil
+        if 'profile_picture' in validated_data:
+            # Supprimer l'ancienne photo si elle existe
+            if instance.profile_picture:
+                instance.profile_picture.delete(save=False)
+            instance.profile_picture = validated_data['profile_picture']
+
+        instance.save()
+        return instance
+
 
 class UserCustomerUpdateSerializer(serializers.Serializer):
     """Serializer pour la mise à jour des profils clients"""
-    # Pour l'instant, UserCustomer a peu de champs modifiables
-    pass
+    name = serializers.CharField(max_length=100, required=False)
+    surname = serializers.CharField(max_length=100, required=False)
+    profile_picture = serializers.ImageField(required=False)
+
+    def update(self, instance, validated_data):
+        """Met à jour le profil du client"""
+        # Mettre à jour les champs simples
+        instance.name = validated_data.get('name', instance.name)
+        instance.surname = validated_data.get('surname', instance.surname)
+
+        # Gérer la photo de profil
+        if 'profile_picture' in validated_data:
+            # Supprimer l'ancienne photo si elle existe
+            if instance.profile_picture:
+                instance.profile_picture.delete(save=False)
+            instance.profile_picture = validated_data['profile_picture']
+
+        instance.save()
+        return instance

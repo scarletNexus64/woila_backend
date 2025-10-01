@@ -33,4 +33,14 @@ urlpatterns = [
     
     # EXISTING ENDPOINT: POST /api/auth/verify-otp/ - DO NOT MODIFY
     path('verify-otp/', views.VerifyOTPView.as_view(), name='verify-otp'),
+
+    # Referral endpoints
+    # ENDPOINT: POST /api/auth/referral/validate-code/
+    path('referral/validate-code/', views.ReferralValidateCodeView.as_view(), name='referral-validate-code'),
+
+    # ENDPOINT: GET /api/auth/referral/user-info/
+    path('referral/user-info/', views.ReferralUserInfoView.as_view(), name='referral-user-info'),
+
+    # ENDPOINT: GET /api/auth/referral/wallet/
+    path('referral/wallet/', views.ReferralWalletView.as_view(), name='referral-wallet'),
 ]
