@@ -110,7 +110,8 @@ class FCMService:
                     token=token,
                     platform=platform,
                     device_info=device_info,
-                    is_active=True
+                    is_active=True,
+                    last_used=timezone.now()
                 )
                 created = True
             
@@ -197,7 +198,8 @@ class FCMService:
             logger.info(f"🔐 Session active pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}: {'✅ Oui' if has_active_session else '❌ Non'}")
             
             if not has_active_session:
-                logger.warning(f"❌ Pas de session active pour {user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number} - Notification non envoyée")
+                user_display = f"{user.name} {user.surname}" if hasattr(user, 'name') else f"Client {user.phone_number}"
+                logger.info(f"ℹ️  {user_display}: Pas de session active - FCM non envoyée (notification DB créée)")
                 return False
             
             tokens = cls.get_user_tokens(user)

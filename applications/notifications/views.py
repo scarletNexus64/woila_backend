@@ -1,6 +1,8 @@
 # EXISTING ENDPOINTS - DO NOT MODIFY URLs - Already integrated in production
 # Notification views migrated from api.viewsets.notifications and api.viewsets.fcm
 
+import logging
+import traceback
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -10,6 +12,8 @@ from django.utils.decorators import method_decorator
 from drf_spectacular.utils import extend_schema, OpenApiExample, OpenApiParameter
 from drf_spectacular.types import OpenApiTypes
 from django.contrib.contenttypes.models import ContentType
+
+logger = logging.getLogger(__name__)
 
 # Import from api app (legacy)
 from applications.users.models import UserDriver, UserCustomer
@@ -476,7 +480,9 @@ class FCMTokenRegisterView(APIView):
     EXISTING ENDPOINT: POST /api/fcm/register/
     DO NOT MODIFY - Already integrated in production
     """
-    
+    authentication_classes = []  # Utiliser notre système d'auth custom via get_user_from_token
+    permission_classes = []
+
     @extend_schema(
         tags=['FCM'],
         summary='Enregistrer un token FCM',
@@ -520,8 +526,8 @@ class FCMTokenRegisterView(APIView):
                     'error': 'Données invalides',
                     'details': serializer.errors
                 }, status=status.HTTP_400_BAD_REQUEST)
-            
-            fcm_token_value = serializer.validated_data['fcm_token']
+
+            fcm_token_value = serializer.validated_data.get('token') or serializer.validated_data.get('fcm_token')
             device_info = serializer.validated_data.get('device_info', {})
             
             # Enregistrer le token via le service FCM
@@ -537,11 +543,13 @@ class FCMTokenRegisterView(APIView):
                 'token_id': fcm_token.id,
                 'device_count': FCMService.get_user_device_count(user)
             }, status=status.HTTP_200_OK)
-            
+
         except Exception as e:
+            logger.error(f"❌ Erreur lors de l'enregistrement du token FCM: {str(e)}")
+            logger.error(traceback.format_exc())
             return Response({
                 'success': False,
-                'error': str(e)
+                'error': f'Erreur lors de l\'enregistrement du token: {str(e)}'
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 

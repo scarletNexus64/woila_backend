@@ -144,8 +144,33 @@ Il expire dans 5 minutes."""
                 notification_type=notification_type,
                 metadata=metadata or {}
             )
-            
+
             logger.info(f"Notification créée: {title} pour {cls._get_user_display_name(user)}")
+
+            # Envoyer la notification push FCM si l'utilisateur a une session active
+            try:
+                from applications.authentication.models import Token as AuthToken
+                user_type_str = 'driver' if isinstance(user, UserDriver) else 'customer'
+                has_session = AuthToken.objects.filter(
+                    user_type=user_type_str,
+                    user_id=user.id,
+                    is_active=True
+                ).exists()
+
+                if has_session:
+                    from .fcm_service import FCMService
+                    FCMService.send_notification(
+                        user=user,
+                        title=title,
+                        body=content,
+                        data=metadata or {}
+                    )
+                    logger.info(f"Push FCM envoyée pour {cls._get_user_display_name(user)}")
+                else:
+                    logger.info(f"Pas de session active pour {cls._get_user_display_name(user)}, FCM non envoyée")
+            except Exception as e:
+                logger.warning(f"Erreur lors de l'envoi FCM: {e}")
+
             return notification
             
         except Exception as e:

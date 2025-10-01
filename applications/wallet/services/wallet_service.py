@@ -20,9 +20,9 @@ class WalletService:
     def get_content_type_for_user(user_type: str):
         """Obtenir le ContentType correct pour un type d'utilisateur"""
         if user_type == 'driver':
-            return ContentType.objects.get(app_label='api', model='userdriver')
+            return ContentType.objects.get(app_label='users', model='userdriver')
         elif user_type == 'customer':
-            return ContentType.objects.get(app_label='api', model='usercustomer')
+            return ContentType.objects.get(app_label='users', model='usercustomer')
         else:
             raise ValueError(f"Type d'utilisateur invalide: {user_type}")
     
@@ -476,7 +476,7 @@ class WalletService:
 
             # Vérifier le statut avec FreeMoPay
             if transaction_obj.freemopay_reference:
-                freemopay_status = FreemoPayDirect.check_status(transaction_obj.freemopay_reference)
+                freemopay_status = FreemoPayDirect.get_payment_status(transaction_obj.freemopay_reference)
 
                 status_updated = False
                 wallet_credited = False
