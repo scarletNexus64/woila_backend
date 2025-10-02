@@ -958,8 +958,9 @@ class VerifyOTPView(APIView):
         phone_number = serializer.validated_data['phone_number']
         otp_code = serializer.validated_data['otp_code']
         user_type = serializer.validated_data['user_type']
+        purpose = serializer.validated_data.get('purpose', 'register')
 
-        print(f"🔍 Verifying OTP for phone: {phone_number}, user_type: {user_type}, code: {otp_code}")
+        print(f"🔍 Verifying OTP for phone: {phone_number}, user_type: {user_type}, code: {otp_code}, purpose: {purpose}")
 
         try:
             # DEBUG: Vérifier tous les OTP pour ce numéro
@@ -1009,9 +1010,15 @@ class VerifyOTPView(APIView):
                     'attempts_remaining': remaining
                 }, status=status.HTTP_400_BAD_REQUEST)
 
-            # Code correct - marquer comme vérifié
-            otp.is_verified = True
-            otp.save()
+            # Code correct - marquer comme vérifié SEULEMENT si ce n'est pas pour forgot_password
+            # Pour forgot_password, l'OTP sera marqué comme vérifié lors de la réinitialisation du mot de passe
+            if purpose != 'forgot_password':
+                otp.is_verified = True
+                otp.save()
+                print(f"✅ OTP marked as verified (purpose: {purpose})")
+            else:
+                otp.save()  # Sauvegarder seulement les tentatives
+                print(f"✅ OTP validated but not marked as verified (purpose: {purpose})")
 
             return Response({
                 'success': True,

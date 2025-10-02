@@ -23,7 +23,7 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, Spec
 urlpatterns = [
     # Admin
     path('admin/', admin.site.urls),
-    
+
     # API endpoints - All endpoints
     path('api/auth/', include('applications.authentication.urls')),
     path('api/users/', include('applications.users.urls')),
@@ -31,7 +31,7 @@ urlpatterns = [
     path('api/notifications/', include('applications.notifications.urls')),
     path('api/wallet/', include('applications.wallet.urls')),
     path('api/order/', include('applications.order.urls')),
-    
+
     # API Documentation
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
     path('api/docs/swagger/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),

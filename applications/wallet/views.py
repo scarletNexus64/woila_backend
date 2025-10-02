@@ -508,3 +508,69 @@ class WalletTransactionStatusView(APIView):
                 'success': False,
                 'message': 'Erreur lors de la vérification du statut'
             }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+
+
+class WalletConfigView(APIView):
+    """
+    GET /api/wallet/config/
+    Récupère les configurations wallet (minimums de recharge et retrait)
+    """
+
+    @extend_schema(
+        summary="Récupérer les configurations wallet",
+        description="Retourne les montants minimums de recharge et de retrait",
+        responses={
+            200: {
+                'type': 'object',
+                'properties': {
+                    'success': {'type': 'boolean'},
+                    'min_recharge': {'type': 'number'},
+                    'min_retrait': {'type': 'number'},
+                }
+            }
+        }
+    )
+    def get(self, request):
+        """Récupère les configurations wallet"""
+        try:
+            # Obtenir l'utilisateur depuis le token
+            user, auth_error = get_user_from_token(request)
+            if auth_error:
+                return auth_error
+
+            from core.models import GeneralConfig
+
+            # Récupérer MIN_RECHARGE_AMOUNT
+            try:
+                min_recharge_config = GeneralConfig.objects.get(
+                    search_key='MIN_RECHARGE_AMOUNT',
+                    active=True
+                )
+                min_recharge = min_recharge_config.get_numeric_value() or 50.0
+            except GeneralConfig.DoesNotExist:
+                min_recharge = 50.0
+
+            # Récupérer MIN_RETRAIT_AMOUNT
+            try:
+                min_retrait_config = GeneralConfig.objects.get(
+                    search_key='MIN_RETRAIT_AMOUNT',
+                    active=True
+                )
+                min_retrait = min_retrait_config.get_numeric_value() or 50.0
+            except GeneralConfig.DoesNotExist:
+                min_retrait = 50.0
+
+            return Response({
+                'success': True,
+                'min_recharge': min_recharge,
+                'min_retrait': min_retrait,
+            }, status=status.HTTP_200_OK)
+
+        except Exception as e:
+            logger.error(f"Erreur lors de la récupération des configs wallet: {str(e)}")
+            return Response({
+                'success': False,
+                'message': 'Erreur lors de la récupération des configurations',
+                'min_recharge': 50.0,
+                'min_retrait': 50.0,
+            }, status=status.HTTP_500_INTERNAL_SERVER_ERROR)

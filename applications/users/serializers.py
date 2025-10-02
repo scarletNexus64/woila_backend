@@ -180,11 +180,117 @@ class RegisterCustomerSerializer(serializers.Serializer):
     """Serializer pour l'inscription des clients"""
     phone_number = serializers.CharField(max_length=15)
     password = serializers.CharField(min_length=6, write_only=True)
-    
+    confirm_password = serializers.CharField(min_length=6, write_only=True)
+    referral_code = serializers.CharField(max_length=20, required=False, allow_blank=True)
+
     def validate_phone_number(self, value):
         if UserCustomer.objects.filter(phone_number=value).exists():
             raise serializers.ValidationError("Ce numéro de téléphone est déjà utilisé.")
         return value
+
+    def validate(self, data):
+        """Validate passwords match"""
+        if data.get('password') != data.get('confirm_password'):
+            raise serializers.ValidationError({
+                'confirm_password': "Les mots de passe ne correspondent pas."
+            })
+        return data
+
+    def create(self, validated_data):
+        """Create new customer user"""
+        from django.contrib.contenttypes.models import ContentType
+        from applications.authentication.models import ReferralCode
+        from applications.wallet.models import Wallet
+        from core.models import GeneralConfig
+
+        # Remove confirm_password before creating user
+        validated_data.pop('confirm_password', None)
+        referral_code = validated_data.pop('referral_code', None)
+
+        # Create the customer
+        customer = UserCustomer.objects.create(**validated_data)
+
+        # Create wallet with default balance
+        customer_content_type = ContentType.objects.get_for_model(customer)
+        Wallet.objects.create(
+            user_type=customer_content_type,
+            user_id=customer.id,
+            balance=0
+        )
+
+        # Create referral code for this customer
+        import random
+        import string
+        code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+        while ReferralCode.objects.filter(code=code).exists():
+            code = ''.join(random.choices(string.ascii_uppercase + string.digits, k=8))
+
+        ReferralCode.objects.create(
+            code=code,
+            user_type=customer_content_type,
+            user_id=customer.id
+        )
+
+        # Process referral code if provided
+        if referral_code and referral_code.strip():
+            try:
+                referrer_code = ReferralCode.objects.get(
+                    code=referral_code,
+                    is_active=True
+                )
+
+                # Get referral bonus from config (default 1000 FCFA)
+                try:
+                    config = GeneralConfig.objects.get(
+                        search_key='referral_bonus',
+                        active=True
+                    )
+                    referral_bonus = config.get_numeric_value() or 1000.0
+                except GeneralConfig.DoesNotExist:
+                    referral_bonus = 1000.0
+
+                # Get referrer user via GenericForeignKey
+                referrer_user = referrer_code.user_type.get_object_for_this_type(
+                    id=referrer_code.user_id
+                )
+
+                # Add bonus to referrer's wallet
+                referrer_wallet = Wallet.objects.get(
+                    user_type=referrer_code.user_type,
+                    user_id=referrer_code.user_id
+                )
+                referrer_wallet.add_credit(
+                    referral_bonus,
+                    f"Bonus de parrainage pour le code {referral_code}"
+                )
+
+                # Increment referral usage count
+                referrer_code.used_count += 1
+                referrer_code.save()
+
+                # Send notification to referrer (async)
+                from applications.notifications.services.notification_service import NotificationService
+                import threading
+
+                def send_referral_notification():
+                    NotificationService.send_referral_bonus_notification(
+                        referrer_user=referrer_user,
+                        referred_user=customer,
+                        referral_code=referral_code,
+                        bonus_amount=referral_bonus
+                    )
+
+                thread = threading.Thread(target=send_referral_notification)
+                thread.start()
+
+            except ReferralCode.DoesNotExist:
+                pass
+            except Exception as e:
+                import logging
+                logger = logging.getLogger(__name__)
+                logger.error(f"Error processing referral code: {str(e)}")
+
+        return customer
 
 
 class UserDriverDetailSerializer(serializers.ModelSerializer):

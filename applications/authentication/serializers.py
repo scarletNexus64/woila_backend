@@ -80,6 +80,11 @@ class VerifyOTPSerializer(serializers.Serializer):
     phone_number = serializers.CharField(max_length=15)
     otp_code = serializers.CharField(max_length=4)  # 4 chiffres
     user_type = serializers.ChoiceField(choices=OTPVerification.USER_TYPE_CHOICES)
+    purpose = serializers.ChoiceField(
+        choices=[('register', 'Register'), ('forgot_password', 'Forgot Password')],
+        required=False,
+        default='register'
+    )
 
 
 class ReferralCodeSerializer(serializers.ModelSerializer):
