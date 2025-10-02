@@ -41243,3 +41243,174 @@ INFO 2025-10-02 14:37:43,511 autoreload 16144 15752 Watching for file changes wi
 INFO 2025-10-02 14:38:01,115 basehttp 16144 14168 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
 INFO 2025-10-02 14:38:03,112 autoreload 16144 15752 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
 INFO 2025-10-02 14:38:04,487 autoreload 11060 19312 Watching for file changes with StatReloader
+WARNING 2025-10-02 14:38:18,048 log 11060 17780 Bad Request: /api/auth/register/driver/
+WARNING 2025-10-02 14:38:18,048 basehttp 11060 17780 "POST /api/auth/register/driver/ HTTP/1.1" 400 67
+WARNING 2025-10-02 14:38:26,746 log 11060 18456 Bad Request: /api/auth/register/driver/
+WARNING 2025-10-02 14:38:26,748 basehttp 11060 18456 "POST /api/auth/register/driver/ HTTP/1.1" 400 81
+INFO 2025-10-02 14:38:31,050 basehttp 11060 2272 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:38:38,911 basehttp 11060 17912 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:38:38,916 whatsapp_service 11060 12292 Sending WhatsApp OTP to +237700000003
+INFO 2025-10-02 14:38:41,505 whatsapp_service 11060 12292 WhatsApp API response status: 200
+INFO 2025-10-02 14:38:49,504 basehttp 11060 16912 "POST /api/auth/register/driver/ HTTP/1.1" 201 289
+WARNING 2025-10-02 14:39:04,421 log 11060 10624 Bad Request: /api/auth/register/customer/
+WARNING 2025-10-02 14:39:04,422 basehttp 11060 10624 "POST /api/auth/register/customer/ HTTP/1.1" 400 67
+WARNING 2025-10-02 14:39:05,846 log 11060 2176 Bad Request: /api/auth/register/customer/
+WARNING 2025-10-02 14:39:05,846 basehttp 11060 2176 "POST /api/auth/register/customer/ HTTP/1.1" 400 81
+INFO 2025-10-02 14:39:15,408 basehttp 11060 8592 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:39:19,617 basehttp 11060 8516 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:39:19,625 whatsapp_service 11060 18592 Sending WhatsApp OTP to +237800000003
+INFO 2025-10-02 14:39:21,852 whatsapp_service 11060 18592 WhatsApp API response status: 200
+INFO 2025-10-02 14:39:32,342 basehttp 11060 6928 "POST /api/auth/register/customer/ HTTP/1.1" 201 185
+WARNING 2025-10-02 14:39:43,793 log 11060 14032 Bad Request: /api/auth/register/customer/
+WARNING 2025-10-02 14:39:43,794 basehttp 11060 14032 "POST /api/auth/register/customer/ HTTP/1.1" 400 81
+INFO 2025-10-02 14:39:45,427 basehttp 11060 4268 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:40:15,417 basehttp 11060 16124 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:40:45,439 basehttp 11060 16476 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:41:15,426 basehttp 11060 5552 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:41:45,474 basehttp 11060 18512 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:42:15,420 basehttp 11060 19268 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:42:45,428 basehttp 11060 15208 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:43:15,433 basehttp 11060 18756 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:43:45,434 basehttp 11060 18736 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:44:15,427 basehttp 11060 7532 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:44:45,422 basehttp 11060 16824 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:45:15,504 basehttp 11060 10516 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:45:45,421 basehttp 11060 18384 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:46:15,508 basehttp 11060 17780 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:46:45,485 basehttp 11060 18476 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:47:15,413 basehttp 11060 16296 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:47:45,477 basehttp 11060 6212 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:48:15,396 basehttp 11060 18528 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:48:45,459 basehttp 11060 18824 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:49:15,485 basehttp 11060 16832 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:49:45,495 basehttp 11060 7320 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:50:15,430 basehttp 11060 17980 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:50:45,414 basehttp 11060 15004 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:51:15,503 basehttp 11060 18800 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:51:45,430 basehttp 11060 17616 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:52:15,445 basehttp 11060 16856 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:52:45,479 basehttp 11060 16820 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:53:15,414 basehttp 11060 18372 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:53:45,497 basehttp 11060 19400 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:54:15,407 basehttp 11060 5940 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:54:45,483 basehttp 11060 9256 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:55:15,512 basehttp 11060 2888 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:55:45,421 basehttp 11060 17764 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:56:15,465 basehttp 11060 2708 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:56:45,478 basehttp 11060 13372 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+WARNING 2025-10-02 14:56:49,745 log 11060 19372 Bad Request: /api/auth/generate-otp/
+WARNING 2025-10-02 14:56:49,746 basehttp 11060 19372 "POST /api/auth/generate-otp/ HTTP/1.1" 400 73
+WARNING 2025-10-02 14:57:01,019 log 11060 19396 Bad Request: /api/auth/generate-otp/
+WARNING 2025-10-02 14:57:01,022 basehttp 11060 19396 "POST /api/auth/generate-otp/ HTTP/1.1" 400 73
+INFO 2025-10-02 14:57:09,304 basehttp 11060 15452 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:57:09,312 whatsapp_service 11060 18288 Sending WhatsApp OTP to +237655555555
+INFO 2025-10-02 14:57:11,722 whatsapp_service 11060 18288 WhatsApp API response status: 200
+INFO 2025-10-02 14:57:15,472 basehttp 11060 18640 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:57:20,347 basehttp 11060 16824 "POST /api/auth/register/driver/ HTTP/1.1" 201 295
+WARNING 2025-10-02 14:57:29,392 log 11060 11348 Bad Request: /api/auth/generate-otp/
+WARNING 2025-10-02 14:57:29,393 basehttp 11060 11348 "POST /api/auth/generate-otp/ HTTP/1.1" 400 73
+INFO 2025-10-02 14:57:37,639 basehttp 11060 11708 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:57:37,642 whatsapp_service 11060 17812 Sending WhatsApp OTP to +237633333333
+INFO 2025-10-02 14:57:40,441 whatsapp_service 11060 17812 WhatsApp API response status: 200
+INFO 2025-10-02 14:57:45,416 basehttp 11060 10976 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:57:47,390 basehttp 11060 2756 "POST /api/auth/register/customer/ HTTP/1.1" 201 185
+INFO 2025-10-02 14:58:15,421 basehttp 11060 7488 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:58:45,455 basehttp 11060 7432 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:59:15,416 basehttp 11060 14564 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:59:45,410 basehttp 11060 7204 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:00:15,480 basehttp 11060 18964 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:00:45,486 basehttp 11060 344 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:00:50,646 basehttp 11060 16832 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 15:00:50,654 whatsapp_service 11060 17952 Sending WhatsApp OTP to +237600000001
+INFO 2025-10-02 15:00:53,167 whatsapp_service 11060 17952 WhatsApp API response status: 200
+INFO 2025-10-02 15:01:01,261 basehttp 11060 17440 "POST /api/auth/register/driver/ HTTP/1.1" 201 300
+INFO 2025-10-02 15:01:15,510 basehttp 11060 17412 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:01:17,339 basehttp 11060 9696 "POST /api/auth/login/ HTTP/1.1" 200 268
+INFO 2025-10-02 15:01:19,423 notification_service 11060 5128 Push FCM envoyée pour TestDriver Complete
+INFO 2025-10-02 15:01:33,725 basehttp 11060 7804 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-02 15:01:33,728 whatsapp_service 11060 820 Sending WhatsApp OTP to +237600000001
+INFO 2025-10-02 15:01:36,348 whatsapp_service 11060 820 WhatsApp API response status: 200
+INFO 2025-10-02 15:01:45,270 basehttp 11060 12540 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 15:01:45,273 whatsapp_service 11060 13484 Sending WhatsApp OTP to +237600000001
+INFO 2025-10-02 15:01:45,420 basehttp 11060 15476 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:01:47,677 whatsapp_service 11060 13484 WhatsApp API response status: 200
+INFO 2025-10-02 15:01:54,618 basehttp 11060 17700 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-02 15:02:04,371 basehttp 11060 13400 "POST /api/auth/login/ HTTP/1.1" 200 268
+INFO 2025-10-02 15:02:15,464 basehttp 11060 15052 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:02:22,534 basehttp 11060 12684 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 15:02:22,538 whatsapp_service 11060 13660 Sending WhatsApp OTP to +237600000002
+INFO 2025-10-02 15:02:25,425 whatsapp_service 11060 13660 WhatsApp API response status: 200
+INFO 2025-10-02 15:02:32,445 basehttp 11060 18468 "POST /api/auth/register/customer/ HTTP/1.1" 201 185
+INFO 2025-10-02 15:02:45,418 basehttp 11060 17896 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:02:50,172 basehttp 11060 18952 "POST /api/auth/login/ HTTP/1.1" 200 183
+INFO 2025-10-02 15:02:52,195 fcm_service 11060 16816 Client +237600000002 - Type: system
+WARNING 2025-10-02 15:02:52,205 fcm_service 11060 16816 Client +237600000002
+INFO 2025-10-02 15:02:52,205 notification_service 11060 16816 Push FCM envoyée pour Client +237600000002
+INFO 2025-10-02 15:02:52,206 fcm_service 11060 16816 Client +237600000002 - Type: welcome
+WARNING 2025-10-02 15:02:52,217 fcm_service 11060 16816 Client +237600000002
+INFO 2025-10-02 15:03:05,805 basehttp 11060 17460 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 15:03:05,810 whatsapp_service 11060 17764 Sending WhatsApp OTP to +237600000002
+INFO 2025-10-02 15:03:08,295 whatsapp_service 11060 17764 WhatsApp API response status: 200
+INFO 2025-10-02 15:03:15,169 basehttp 11060 5424 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-02 15:03:15,413 basehttp 11060 3080 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:03:24,061 basehttp 11060 17728 "POST /api/auth/login/ HTTP/1.1" 200 183
+INFO 2025-10-02 15:03:45,460 basehttp 11060 5728 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+ERROR 2025-10-02 15:04:10,553 log 11060 8364 Internal Server Error: /api/auth/token/verify/
+ERROR 2025-10-02 15:04:10,553 basehttp 11060 8364 "POST /api/auth/token/verify/ HTTP/1.1" 500 106
+INFO 2025-10-02 15:04:11,070 basehttp 11060 16784 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:04:11,094 basehttp 11060 17344 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+ERROR 2025-10-02 15:04:13,101 log 11060 19068 Internal Server Error: /api/auth/token/verify/
+ERROR 2025-10-02 15:04:13,102 basehttp 11060 19068 "POST /api/auth/token/verify/ HTTP/1.1" 500 106
+ERROR 2025-10-02 15:04:23,828 log 11060 13876 Internal Server Error: /api/auth/logout/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py", line 430, in post
+    token_value = serializer.validated_data['token']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'token'
+ERROR 2025-10-02 15:04:23,836 basehttp 11060 13876 "POST /api/auth/logout/ HTTP/1.1" 500 113488
+INFO 2025-10-02 15:04:35,316 basehttp 11060 16852 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 15:04:35,319 whatsapp_service 11060 14168 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-02 15:04:37,887 whatsapp_service 11060 14168 WhatsApp API response status: 200
+INFO 2025-10-02 15:04:55,074 basehttp 11060 19224 "POST /api/auth/verify-otp/ HTTP/1.1" 200 114
+INFO 2025-10-02 15:05:10,180 basehttp 11060 4444 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-02 15:05:27,365 basehttp 11060 13476 "POST /api/auth/login/ HTTP/1.1" 200 183
+WARNING 2025-10-02 15:05:27,441 log 11060 12476 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-02 15:05:27,442 basehttp 11060 12476 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-02 15:05:32,462 basehttp 11060 1520 "GET /api/wallet/config/ HTTP/1.1" 200 59
+INFO 2025-10-02 15:05:32,468 basehttp 11060 2652 "GET /api/wallet/balance/ HTTP/1.1" 200 66
+INFO 2025-10-02 15:05:32,469 basehttp 11060 14692 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 127
+INFO 2025-10-02 15:05:46,681 basehttp 11060 12436 "GET /api/wallet/config/ HTTP/1.1" 200 59
+INFO 2025-10-02 15:05:52,094 basehttp 11060 2892 "GET /api/wallet/config/ HTTP/1.1" 200 59
+INFO 2025-10-02 15:05:52,269 wallet_service 11060 2892 [WalletService] Initialisation du paiement FreeMoPay pour 3000.0 FCFA...
+INFO 2025-10-02 15:05:52,763 basehttp 11060 19148 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:05:54,514 freemopay 11060 2892 [FreeMoPay] Token généré avec succès
+INFO 2025-10-02 15:05:56,485 freemopay 11060 2892 [FreeMoPay] Paiement initié avec succès - Référence: fc2ea958-63d3-4d7f-97f3-e577f9e817fb
+INFO 2025-10-02 15:05:56,494 wallet_service 11060 2892 [WalletService] Paiement initié avec succès - Référence: fc2ea958-63d3-4d7f-97f3-e577f9e817fb
+INFO 2025-10-02 15:05:56,495 basehttp 11060 2892 "POST /api/wallet/deposit/ HTTP/1.1" 200 286
+INFO 2025-10-02 15:06:01,049 basehttp 11060 18932 "GET /api/wallet/config/ HTTP/1.1" 200 59
+INFO 2025-10-02 15:06:01,053 basehttp 11060 8456 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 505
+INFO 2025-10-02 15:06:01,055 basehttp 11060 8712 "GET /api/wallet/balance/ HTTP/1.1" 200 66
+INFO 2025-10-02 15:06:21,710 basehttp 11060 18912 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 15:06:53,449 basehttp 11060 5384 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
