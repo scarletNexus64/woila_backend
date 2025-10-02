@@ -48,6 +48,7 @@ class RegisterDriverSerializer(serializers.Serializer):
     birthday = serializers.DateField()
     profile_picture = serializers.ImageField(required=False)
     referral_code = serializers.CharField(max_length=20, required=False, allow_blank=True)
+    otp_code = serializers.CharField(max_length=4, required=True, write_only=True)
 
     def validate_phone_number(self, value):
         if UserDriver.objects.filter(phone_number=value).exists():
@@ -74,6 +75,36 @@ class RegisterDriverSerializer(serializers.Serializer):
                     'birthday': "L'âge minimum requis est de 18 ans."
                 })
 
+        # Validate OTP code
+        from applications.authentication.models import OTPVerification
+        from django.utils import timezone
+
+        phone_number = data.get('phone_number')
+        otp_code = data.get('otp_code')
+
+        try:
+            otp = OTPVerification.objects.get(
+                phone_number=phone_number,
+                otp_code=otp_code,
+                user_type='driver',
+                is_verified=False
+            )
+
+            # Check if OTP has expired
+            if otp.expires_at < timezone.now():
+                raise serializers.ValidationError({
+                    'otp_code': "Le code OTP a expiré. Demandez-en un nouveau."
+                })
+
+            # Mark OTP as verified
+            otp.is_verified = True
+            otp.save()
+
+        except OTPVerification.DoesNotExist:
+            raise serializers.ValidationError({
+                'otp_code': "Code OTP invalide ou déjà utilisé."
+            })
+
         return data
 
     def create(self, validated_data):
@@ -83,8 +114,9 @@ class RegisterDriverSerializer(serializers.Serializer):
         from applications.wallet.models import Wallet
         from core.models import GeneralConfig
 
-        # Remove confirm_password before creating user
+        # Remove confirm_password and otp_code before creating user
         validated_data.pop('confirm_password', None)
+        validated_data.pop('otp_code', None)
         referral_code = validated_data.pop('referral_code', None)
 
         # Create the driver
@@ -182,6 +214,7 @@ class RegisterCustomerSerializer(serializers.Serializer):
     password = serializers.CharField(min_length=6, write_only=True)
     confirm_password = serializers.CharField(min_length=6, write_only=True)
     referral_code = serializers.CharField(max_length=20, required=False, allow_blank=True)
+    otp_code = serializers.CharField(max_length=4, required=True, write_only=True)
 
     def validate_phone_number(self, value):
         if UserCustomer.objects.filter(phone_number=value).exists():
@@ -194,6 +227,37 @@ class RegisterCustomerSerializer(serializers.Serializer):
             raise serializers.ValidationError({
                 'confirm_password': "Les mots de passe ne correspondent pas."
             })
+
+        # Validate OTP code
+        from applications.authentication.models import OTPVerification
+        from django.utils import timezone
+
+        phone_number = data.get('phone_number')
+        otp_code = data.get('otp_code')
+
+        try:
+            otp = OTPVerification.objects.get(
+                phone_number=phone_number,
+                otp_code=otp_code,
+                user_type='customer',
+                is_verified=False
+            )
+
+            # Check if OTP has expired
+            if otp.expires_at < timezone.now():
+                raise serializers.ValidationError({
+                    'otp_code': "Le code OTP a expiré. Demandez-en un nouveau."
+                })
+
+            # Mark OTP as verified
+            otp.is_verified = True
+            otp.save()
+
+        except OTPVerification.DoesNotExist:
+            raise serializers.ValidationError({
+                'otp_code': "Code OTP invalide ou déjà utilisé."
+            })
+
         return data
 
     def create(self, validated_data):
@@ -203,8 +267,9 @@ class RegisterCustomerSerializer(serializers.Serializer):
         from applications.wallet.models import Wallet
         from core.models import GeneralConfig
 
-        # Remove confirm_password before creating user
+        # Remove confirm_password and otp_code before creating user
         validated_data.pop('confirm_password', None)
+        validated_data.pop('otp_code', None)
         referral_code = validated_data.pop('referral_code', None)
 
         # Create the customer

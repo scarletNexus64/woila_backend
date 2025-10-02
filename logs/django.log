@@ -41004,3 +41004,242 @@ WARNING 2025-10-02 14:06:41,959 utils 13908 18928 Could not reverse url from api
 WARNING 2025-10-02 14:06:41,959 utils 13908 18928 Could not reverse url from api.vehicle
 INFO 2025-10-02 14:06:41,985 basehttp 13908 18928 "GET /admin/core/generalconfig/?p=1 HTTP/1.1" 200 58393
 INFO 2025-10-02 14:06:42,042 basehttp 13908 18928 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-02 14:07:31,386 basehttp 13908 19132 "GET /api/wallet/config/ HTTP/1.1" 200 59
+WARNING 2025-10-02 14:14:18,980 utils 13908 19388 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:18,981 utils 13908 19388 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:18,981 utils 13908 19388 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:18,983 utils 13908 19388 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:18,983 utils 13908 19388 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:18,985 utils 13908 19388 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:18,991 utils 13908 19388 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:18,992 utils 13908 19388 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:18,993 utils 13908 19388 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:18,994 utils 13908 19388 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-02 14:14:18,995 utils 13908 19388 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:18,996 utils 13908 19388 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:18,997 utils 13908 19388 Could not reverse url from api.vehicle
+INFO 2025-10-02 14:14:19,023 basehttp 13908 19388 "GET /admin/users/usercustomer/ HTTP/1.1" 200 36965
+INFO 2025-10-02 14:14:19,079 basehttp 13908 19388 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-02 14:14:27,048 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:27,048 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:27,049 utils 13908 8592 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:27,051 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:27,051 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:27,052 utils 13908 8592 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:27,057 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:27,058 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:27,059 utils 13908 8592 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:27,061 utils 13908 8592 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-02 14:14:27,063 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:27,067 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:27,068 utils 13908 8592 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:27,074 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:27,075 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:27,076 utils 13908 8592 Could not reverse url from api.vehicle
+INFO 2025-10-02 14:14:27,089 basehttp 13908 8592 "GET /admin/users/usercustomer/19/change/ HTTP/1.1" 200 38774
+INFO 2025-10-02 14:14:27,138 basehttp 13908 8592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-02 14:14:28,662 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:28,662 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:28,662 utils 13908 8592 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:28,664 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:28,664 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:28,665 utils 13908 8592 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:28,668 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:28,669 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:28,669 utils 13908 8592 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:28,672 utils 13908 8592 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-02 14:14:28,675 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:28,676 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:28,676 utils 13908 8592 Could not reverse url from api.vehicle
+INFO 2025-10-02 14:14:28,683 basehttp 13908 8592 "GET /admin/users/usercustomer/19/delete/ HTTP/1.1" 200 31259
+INFO 2025-10-02 14:14:28,740 basehttp 13908 8592 "GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+INFO 2025-10-02 14:14:29,825 basehttp 13908 8592 "POST /admin/users/usercustomer/19/delete/ HTTP/1.1" 302 0
+WARNING 2025-10-02 14:14:29,844 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:29,845 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:29,846 utils 13908 8592 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:29,848 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:29,849 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:29,850 utils 13908 8592 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:29,855 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:29,858 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:29,859 utils 13908 8592 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:14:29,860 utils 13908 8592 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-02 14:14:29,861 utils 13908 8592 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:14:29,861 utils 13908 8592 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:14:29,861 utils 13908 8592 Could not reverse url from api.vehicle
+INFO 2025-10-02 14:14:29,867 basehttp 13908 8592 "GET /admin/users/usercustomer/ HTTP/1.1" 200 34126
+INFO 2025-10-02 14:14:29,925 basehttp 13908 8592 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-02 14:16:20,983 log 13908 15352 Not Found: /api/notifications/
+WARNING 2025-10-02 14:16:20,983 basehttp 13908 15352 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 404 51
+WARNING 2025-10-02 14:16:23,098 log 13908 9672 Not Found: /api/auth/token/verify/
+WARNING 2025-10-02 14:16:23,099 basehttp 13908 9672 "POST /api/auth/token/verify/ HTTP/1.1" 404 46
+WARNING 2025-10-02 14:16:23,105 log 13908 10516 Not Found: /api/notifications/
+WARNING 2025-10-02 14:16:23,105 basehttp 13908 10516 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 404 51
+WARNING 2025-10-02 14:16:23,109 log 13908 18644 Not Found: /api/notifications/
+WARNING 2025-10-02 14:16:23,110 basehttp 13908 18644 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 404 51
+WARNING 2025-10-02 14:16:42,031 log 13908 12704 Bad Request: /api/auth/login/
+WARNING 2025-10-02 14:16:42,032 basehttp 13908 12704 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-02 14:16:51,139 log 13908 16080 Not Found: /api/auth/generate-otp/
+WARNING 2025-10-02 14:16:51,140 basehttp 13908 16080 "POST /api/auth/generate-otp/ HTTP/1.1" 404 69
+WARNING 2025-10-02 14:16:53,441 log 13908 18600 Not Found: /api/auth/generate-otp/
+WARNING 2025-10-02 14:16:53,441 basehttp 13908 18600 "POST /api/auth/generate-otp/ HTTP/1.1" 404 69
+WARNING 2025-10-02 14:16:57,228 log 13908 18912 Not Found: /api/auth/generate-otp/
+WARNING 2025-10-02 14:16:57,229 basehttp 13908 18912 "POST /api/auth/generate-otp/ HTTP/1.1" 404 69
+INFO 2025-10-02 14:17:43,369 basehttp 13908 9660 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:17:43,373 whatsapp_service 13908 9108 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-02 14:17:45,774 whatsapp_service 13908 9108 WhatsApp API response status: 200
+INFO 2025-10-02 14:17:52,976 basehttp 13908 15564 "POST /api/auth/verify-otp/ HTTP/1.1" 200 114
+INFO 2025-10-02 14:17:54,121 basehttp 13908 908 "POST /api/auth/register/customer/ HTTP/1.1" 201 185
+INFO 2025-10-02 14:17:55,360 basehttp 13908 13200 "POST /api/auth/login/ HTTP/1.1" 200 183
+WARNING 2025-10-02 14:17:55,611 log 13908 7236 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-02 14:17:55,624 basehttp 13908 7236 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-02 14:17:57,429 fcm_service 13908 18396 Client +237655314313 - Type: system
+WARNING 2025-10-02 14:17:57,454 fcm_service 13908 18396 Client +237655314313
+INFO 2025-10-02 14:17:57,455 notification_service 13908 18396 Push FCM envoyée pour Client +237655314313
+INFO 2025-10-02 14:17:57,457 fcm_service 13908 18396 Client +237655314313 - Type: welcome
+WARNING 2025-10-02 14:17:57,470 fcm_service 13908 18396 Client +237655314313
+INFO 2025-10-02 14:18:12,895 basehttp 13908 10900 "GET /api/wallet/balance/ HTTP/1.1" 200 66
+INFO 2025-10-02 14:18:12,897 basehttp 13908 4148 "GET /api/wallet/config/ HTTP/1.1" 200 59
+INFO 2025-10-02 14:18:12,899 basehttp 13908 12528 "GET /api/wallet/transactions/?page=1&page_size=20 HTTP/1.1" 200 127
+INFO 2025-10-02 14:18:16,566 basehttp 13908 15916 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 577
+ERROR 2025-10-02 14:18:21,670 log 13908 19120 Internal Server Error: /api/auth/logout/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\authentication\views.py", line 430, in post
+    token_value = serializer.validated_data['token']
+                  ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+KeyError: 'token'
+ERROR 2025-10-02 14:18:21,680 basehttp 13908 19120 "POST /api/auth/logout/ HTTP/1.1" 500 113488
+INFO 2025-10-02 14:18:21,727 fcm_service 13908 8488 Client +237655314313
+WARNING 2025-10-02 14:18:21,729 log 13908 8488 Not Found: /api/notifications/fcm/unregister/
+WARNING 2025-10-02 14:18:21,729 basehttp 13908 8488 "DELETE /api/notifications/fcm/unregister/ HTTP/1.1" 404 45
+INFO 2025-10-02 14:18:34,794 basehttp 13908 6872 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:18:34,796 whatsapp_service 13908 10356 Sending WhatsApp OTP to +237655314313
+INFO 2025-10-02 14:18:36,960 whatsapp_service 13908 10356 WhatsApp API response status: 200
+INFO 2025-10-02 14:18:43,425 basehttp 13908 3460 "POST /api/auth/verify-otp/ HTTP/1.1" 200 114
+INFO 2025-10-02 14:19:00,348 basehttp 13908 3232 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-02 14:19:14,809 basehttp 13908 14344 "POST /api/auth/login/ HTTP/1.1" 200 183
+WARNING 2025-10-02 14:19:15,011 log 13908 7876 Bad Request: /api/notifications/fcm/register/
+WARNING 2025-10-02 14:19:15,013 basehttp 13908 7876 "POST /api/notifications/fcm/register/ HTTP/1.1" 400 173
+INFO 2025-10-02 14:19:22,636 basehttp 13908 16400 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 576
+INFO 2025-10-02 14:19:52,620 basehttp 13908 17308 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 576
+WARNING 2025-10-02 14:20:21,520 log 13908 18528 Bad Request: /api/auth/login/
+WARNING 2025-10-02 14:20:21,521 basehttp 13908 18528 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-02 14:20:29,688 log 13908 10356 Bad Request: /api/auth/login/
+WARNING 2025-10-02 14:20:29,688 basehttp 13908 10356 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-02 14:20:36,885 log 13908 18840 Not Found: /api/auth/forgot-password/
+WARNING 2025-10-02 14:20:36,887 basehttp 13908 18840 "POST /api/auth/forgot-password/ HTTP/1.1" 404 79
+INFO 2025-10-02 14:20:45,328 basehttp 13908 5912 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:20:45,332 whatsapp_service 13908 8760 Sending WhatsApp OTP to +237699999999
+INFO 2025-10-02 14:20:47,721 whatsapp_service 13908 8760 WhatsApp API response status: 200
+WARNING 2025-10-02 14:20:54,934 log 13908 10112 Bad Request: /api/auth/login/
+WARNING 2025-10-02 14:20:54,934 basehttp 13908 10112 "POST /api/auth/login/ HTTP/1.1" 400 85
+WARNING 2025-10-02 14:21:03,084 log 13908 12956 Not Found: /api/auth/reset-password/
+WARNING 2025-10-02 14:21:03,085 basehttp 13908 12956 "POST /api/auth/reset-password/ HTTP/1.1" 404 74
+INFO 2025-10-02 14:21:12,170 basehttp 13908 7320 "POST /api/auth/register/driver/ HTTP/1.1" 201 292
+INFO 2025-10-02 14:21:21,459 basehttp 13908 14692 "POST /api/auth/login/ HTTP/1.1" 200 260
+INFO 2025-10-02 14:21:23,504 notification_service 13908 8968 Push FCM envoyée pour Test Driver
+INFO 2025-10-02 14:21:32,864 basehttp 13908 9532 "GET /api/wallet/config/ HTTP/1.1" 200 59
+INFO 2025-10-02 14:21:47,850 wallet_service 13908 6212 [WalletService] Initialisation du paiement FreeMoPay pour 2000 FCFA...
+INFO 2025-10-02 14:21:50,359 freemopay 13908 6212 [FreeMoPay] Token généré avec succès
+ERROR 2025-10-02 14:21:52,360 freemopay 13908 6212 [FreeMoPay] Erreur de réponse: 400 - {"code":"PROVIDER_NOTSUPPORTED","message":{"en":"Provider not supported","fr":"Opérateur non pris en charge "}}
+ERROR 2025-10-02 14:21:52,362 wallet_service 13908 6212 [WalletService] Échec de l'initialisation: Erreur HTTP 400
+INFO 2025-10-02 14:21:52,374 basehttp 13908 6212 "POST /api/wallet/deposit/ HTTP/1.1" 200 187
+INFO 2025-10-02 14:22:32,227 wallet_service 13908 16852 [WalletService] Initialisation du paiement FreeMoPay pour 5000 FCFA...
+INFO 2025-10-02 14:22:34,526 freemopay 13908 16852 [FreeMoPay] Token généré avec succès
+ERROR 2025-10-02 14:22:36,612 freemopay 13908 16852 [FreeMoPay] Erreur de réponse: 400 - {"code":"PROVIDER_NOTSUPPORTED","message":{"en":"Provider not supported","fr":"Opérateur non pris en charge "}}
+ERROR 2025-10-02 14:22:36,614 wallet_service 13908 16852 [WalletService] Échec de l'initialisation: Erreur HTTP 400
+INFO 2025-10-02 14:22:36,622 basehttp 13908 16852 "POST /api/wallet/deposit/ HTTP/1.1" 200 187
+INFO 2025-10-02 14:22:46,639 basehttp 13908 16096 "GET /api/wallet/balance/ HTTP/1.1" 200 64
+INFO 2025-10-02 14:22:59,078 basehttp 13908 8268 "POST /api/wallet/withdrawal/ HTTP/1.1" 200 76
+WARNING 2025-10-02 14:29:17,469 utils 13908 6876 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:29:17,470 utils 13908 6876 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:29:17,471 utils 13908 6876 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:29:17,474 utils 13908 6876 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:29:17,475 utils 13908 6876 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:29:17,475 utils 13908 6876 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:29:17,479 utils 13908 6876 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:29:17,480 utils 13908 6876 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:29:17,480 utils 13908 6876 Could not reverse url from api.vehicle
+WARNING 2025-10-02 14:29:17,481 utils 13908 6876 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-02 14:29:17,487 utils 13908 6876 Could not reverse url from api.userdriver
+WARNING 2025-10-02 14:29:17,487 utils 13908 6876 Could not reverse url from api.usercustomer
+WARNING 2025-10-02 14:29:17,488 utils 13908 6876 Could not reverse url from api.vehicle
+INFO 2025-10-02 14:29:17,504 basehttp 13908 6876 "GET /admin/users/usercustomer/ HTTP/1.1" 200 36966
+INFO 2025-10-02 14:29:17,555 basehttp 13908 6876 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-02 14:29:31,859 basehttp 13908 7956 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:29:31,863 whatsapp_service 13908 15764 Sending WhatsApp OTP to +237688888888
+INFO 2025-10-02 14:29:34,400 whatsapp_service 13908 15764 WhatsApp API response status: 200
+INFO 2025-10-02 14:29:47,776 basehttp 13908 18392 "POST /api/auth/register/driver/ HTTP/1.1" 201 295
+INFO 2025-10-02 14:29:59,781 basehttp 13908 15744 "POST /api/auth/forgot-password/ HTTP/1.1" 200 117
+INFO 2025-10-02 14:29:59,784 whatsapp_service 13908 2636 Sending WhatsApp OTP to +237688888888
+INFO 2025-10-02 14:30:02,316 whatsapp_service 13908 2636 WhatsApp API response status: 200
+WARNING 2025-10-02 14:30:09,097 log 13908 18900 Bad Request: /api/auth/reset-password/
+WARNING 2025-10-02 14:30:09,097 basehttp 13908 18900 "POST /api/auth/reset-password/ HTTP/1.1" 400 64
+WARNING 2025-10-02 14:30:17,881 log 13908 4756 Bad Request: /api/auth/generate-otp/
+WARNING 2025-10-02 14:30:17,882 basehttp 13908 4756 "POST /api/auth/generate-otp/ HTTP/1.1" 400 113
+INFO 2025-10-02 14:30:38,080 basehttp 13908 18696 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:30:38,082 whatsapp_service 13908 16124 Sending WhatsApp OTP to +237688888888
+INFO 2025-10-02 14:30:40,298 whatsapp_service 13908 16124 WhatsApp API response status: 200
+INFO 2025-10-02 14:30:53,108 basehttp 13908 15076 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-02 14:31:01,889 basehttp 13908 2856 "POST /api/auth/login/ HTTP/1.1" 200 263
+INFO 2025-10-02 14:31:03,935 notification_service 13908 11468 Push FCM envoyée pour OTP TestDriver
+INFO 2025-10-02 14:31:14,151 basehttp 13908 1296 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:31:14,158 whatsapp_service 13908 19204 Sending WhatsApp OTP to +237666666666
+INFO 2025-10-02 14:31:16,475 whatsapp_service 13908 19204 WhatsApp API response status: 200
+INFO 2025-10-02 14:31:23,919 basehttp 13908 18136 "POST /api/auth/register/customer/ HTTP/1.1" 201 185
+INFO 2025-10-02 14:31:37,229 basehttp 13908 13436 "POST /api/auth/generate-otp/ HTTP/1.1" 200 170
+INFO 2025-10-02 14:31:37,233 whatsapp_service 13908 11592 Sending WhatsApp OTP to +237666666666
+INFO 2025-10-02 14:31:39,554 whatsapp_service 13908 11592 WhatsApp API response status: 200
+INFO 2025-10-02 14:31:47,716 basehttp 13908 700 "POST /api/auth/reset-password/ HTTP/1.1" 200 83
+INFO 2025-10-02 14:31:50,325 basehttp 13908 11860 "POST /api/auth/login/ HTTP/1.1" 200 183
+INFO 2025-10-02 14:31:52,349 fcm_service 13908 19156 Client +237666666666 - Type: system
+WARNING 2025-10-02 14:31:52,361 fcm_service 13908 19156 Client +237666666666
+INFO 2025-10-02 14:31:52,361 notification_service 13908 19156 Push FCM envoyée pour Client +237666666666
+INFO 2025-10-02 14:31:52,361 fcm_service 13908 19156 Client +237666666666 - Type: welcome
+WARNING 2025-10-02 14:31:52,377 fcm_service 13908 19156 Client +237666666666
+INFO 2025-10-02 14:32:08,270 basehttp 13908 17124 "POST /api/auth/register/driver/ HTTP/1.1" 201 287
+INFO 2025-10-02 14:32:10,843 basehttp 13908 1300 "POST /api/auth/register/customer/ HTTP/1.1" 201 185
+INFO 2025-10-02 14:32:23,782 basehttp 13908 17640 "POST /api/auth/register/driver/ HTTP/1.1" 201 289
+INFO 2025-10-02 14:32:26,364 basehttp 13908 18688 "POST /api/auth/register/customer/ HTTP/1.1" 201 185
+INFO 2025-10-02 14:34:22,569 basehttp 13908 12380 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:34:52,579 basehttp 13908 9792 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:35:22,562 basehttp 13908 820 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:35:52,651 basehttp 13908 18752 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:36:11,411 autoreload 13908 11204 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-02 14:36:13,535 autoreload 9328 10656 Watching for file changes with StatReloader
+INFO 2025-10-02 14:36:27,693 autoreload 9328 10656 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-02 14:36:29,171 autoreload 6072 17192 Watching for file changes with StatReloader
+INFO 2025-10-02 14:36:31,082 basehttp 6072 19220 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:37:01,019 basehttp 6072 18200 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:37:02,431 autoreload 6072 17192 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-02 14:37:04,008 autoreload 14724 3960 Watching for file changes with StatReloader
+INFO 2025-10-02 14:37:27,571 autoreload 14724 3960 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-02 14:37:29,301 autoreload 13744 14256 Watching for file changes with StatReloader
+INFO 2025-10-02 14:37:31,042 basehttp 13744 8244 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:37:41,947 autoreload 13744 14256 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-02 14:37:43,511 autoreload 16144 15752 Watching for file changes with StatReloader
+INFO 2025-10-02 14:38:01,115 basehttp 16144 14168 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-02 14:38:03,112 autoreload 16144 15752 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\serializers.py changed, reloading.
+INFO 2025-10-02 14:38:04,487 autoreload 11060 19312 Watching for file changes with StatReloader
