@@ -79,6 +79,8 @@ class UserDriver(models.Model):
 class UserCustomer(models.Model):
     phone_number = models.CharField(max_length=15, unique=True)
     password = models.CharField(max_length=128)
+    name = models.CharField(max_length=100, blank=True, default='')
+    surname = models.CharField(max_length=100, blank=True, default='')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=True)

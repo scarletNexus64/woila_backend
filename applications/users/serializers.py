@@ -26,11 +26,11 @@ class UserDriverSerializer(serializers.ModelSerializer):
 
 class UserCustomerSerializer(serializers.ModelSerializer):
     """Serializer de base pour UserCustomer"""
-    
+
     class Meta:
         model = UserCustomer
         fields = [
-            'id', 'phone_number', 'created_at', 'updated_at', 'is_active'
+            'id', 'phone_number', 'name', 'surname', 'created_at', 'updated_at', 'is_active'
         ]
         read_only_fields = ['id', 'created_at', 'updated_at']
         extra_kwargs = {'password': {'write_only': True}}
@@ -213,6 +213,8 @@ class RegisterCustomerSerializer(serializers.Serializer):
     phone_number = serializers.CharField(max_length=15)
     password = serializers.CharField(min_length=6, write_only=True)
     confirm_password = serializers.CharField(min_length=6, write_only=True)
+    name = serializers.CharField(max_length=100, required=True)
+    surname = serializers.CharField(max_length=100, required=True)
     referral_code = serializers.CharField(max_length=20, required=False, allow_blank=True)
     otp_code = serializers.CharField(max_length=4, required=True, write_only=True)
 

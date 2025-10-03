@@ -70,7 +70,14 @@ class NotificationProxy(models.Model):
 class NotificationConfigProxyAdmin(admin.ModelAdmin):
     list_display = ['get_channel_display', 'get_nexah_status', 'get_whatsapp_status', 'updated_at']
     readonly_fields = ['created_at', 'updated_at']
-    
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} configuration(s) supprimée(s) avec succès.')
+
     fieldsets = (
         ('⚙️ Configuration générale', {
             'fields': ('default_channel',),
@@ -123,8 +130,14 @@ class NotificationProxyAdmin(admin.ModelAdmin):
     readonly_fields = ['created_at', 'read_at', 'deleted_at']
     list_per_page = 25
     ordering = ['-created_at']
-    actions = ['mark_as_read', 'mark_as_unread', 'soft_delete', 'restore']
-    
+    actions = ['mark_as_read', 'mark_as_unread', 'soft_delete', 'restore', 'delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} notification(s) supprimée(s) avec succès.')
+
     fieldsets = (
         ('👤 Destinataire', {
             'fields': ('user_type', 'user_id'),
@@ -240,9 +253,15 @@ class FCMTokenAdmin(admin.ModelAdmin):
             'classes': ['collapse']
         })
     )
-    
-    actions = ['activate_tokens', 'deactivate_tokens']
-    
+
+    actions = ['activate_tokens', 'deactivate_tokens', 'delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} token(s) FCM supprimé(s) avec succès.')
+
     def get_user_display(self, obj):
         try:
             if obj.user_type and obj.user:

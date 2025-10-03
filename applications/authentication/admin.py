@@ -8,7 +8,14 @@ class TokenAdmin(admin.ModelAdmin):
     list_filter = ['user_type', 'is_active', 'created_at']
     search_fields = ['user_id']
     readonly_fields = ['token', 'created_at']
-    
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} token(s) supprimé(s) avec succès.')
+
     fieldsets = (
         ('👤 Utilisateur', {
             'fields': ('user_type', 'user_id'),
@@ -61,6 +68,13 @@ class OTPVerificationAdmin(admin.ModelAdmin):
     search_fields = ['phone_number', 'otp_code']
     readonly_fields = ['created_at', 'expires_at']
     ordering = ['-created_at']
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} code(s) OTP supprimé(s) avec succès.')
 
     fieldsets = (
         ('📱 Informations', {
@@ -134,6 +148,13 @@ class ReferralCodeAdmin(admin.ModelAdmin):
     search_fields = ['code', 'user_id']
     readonly_fields = ['created_at', 'used_count']
     ordering = ['-created_at']
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} code(s) de parrainage supprimé(s) avec succès.')
 
     fieldsets = (
         ('🎁 Code de parrainage', {

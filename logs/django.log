@@ -41414,3 +41414,931 @@ INFO 2025-10-02 15:06:01,053 basehttp 11060 8456 "GET /api/wallet/transactions/?
 INFO 2025-10-02 15:06:01,055 basehttp 11060 8712 "GET /api/wallet/balance/ HTTP/1.1" 200 66
 INFO 2025-10-02 15:06:21,710 basehttp 11060 18912 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
 INFO 2025-10-02 15:06:53,449 basehttp 11060 5384 "GET /api/notifications/?include_read=true&limit=50 HTTP/1.1" 200 578
+INFO 2025-10-03 08:12:58,297 autoreload 15884 13200 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:13:18,734 utils 15884 2480 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:18,734 utils 15884 2480 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:18,734 utils 15884 2480 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:18,784 utils 15884 2480 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:18,785 utils 15884 2480 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:18,785 utils 15884 2480 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:18,790 utils 15884 2480 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:18,790 utils 15884 2480 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:18,791 utils 15884 2480 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:18,792 utils 15884 2480 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:13:18,793 utils 15884 2480 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:18,794 utils 15884 2480 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:18,794 utils 15884 2480 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:18,801 utils 15884 2480 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:18,802 utils 15884 2480 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:18,804 utils 15884 2480 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:13:18,819 basehttp 15884 2480 "GET /admin/ HTTP/1.1" 200 76992
+INFO 2025-10-03 08:13:19,398 basehttp 15884 13552 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+INFO 2025-10-03 08:13:19,405 basehttp 15884 13552 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 62440
+INFO 2025-10-03 08:13:19,410 basehttp 15884 13552 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+INFO 2025-10-03 08:13:19,415 basehttp 15884 13552 "GET /static/jazzmin/js/main.js HTTP/1.1" 200 2391
+INFO 2025-10-03 08:13:19,433 basehttp 15884 2480 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+INFO 2025-10-03 08:13:19,567 basehttp 15884 2660 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+INFO 2025-10-03 08:13:19,669 basehttp 15884 1028 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-03 08:13:19,768 basehttp 15884 11444 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2025-10-03 08:13:19,886 basehttp 15884 11740 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 200 164202
+INFO 2025-10-03 08:13:20,048 basehttp 15884 11740 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+INFO 2025-10-03 08:13:20,049 basehttp 15884 11444 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+WARNING 2025-10-03 08:13:20,283 basehttp 15884 11740 "GET /static/fas%20fa-car HTTP/1.1" 404 1850
+WARNING 2025-10-03 08:13:23,487 utils 15884 11444 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:23,487 utils 15884 11444 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:23,488 utils 15884 11444 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:23,489 utils 15884 11444 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:23,490 utils 15884 11444 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:23,490 utils 15884 11444 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:23,494 utils 15884 11444 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:23,494 utils 15884 11444 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:23,495 utils 15884 11444 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:23,496 utils 15884 11444 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:13:23,496 utils 15884 11444 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:23,497 utils 15884 11444 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:23,500 utils 15884 11444 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:13:23,539 basehttp 15884 11444 "GET /admin/users/usercustomer/ HTTP/1.1" 200 40853
+INFO 2025-10-03 08:13:23,576 basehttp 15884 1028 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-03 08:13:23,577 basehttp 15884 13552 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-03 08:13:23,578 basehttp 15884 2480 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-03 08:13:23,578 basehttp 15884 11444 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 16264
+INFO 2025-10-03 08:13:23,583 basehttp 15884 2660 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:13:23,589 basehttp 15884 1028 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-03 08:13:23,592 basehttp 15884 13552 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 2252
+INFO 2025-10-03 08:13:23,596 basehttp 15884 2480 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-03 08:13:23,606 basehttp 15884 11444 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-03 08:13:23,607 basehttp 15884 2660 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 73170
+INFO 2025-10-03 08:13:23,610 basehttp 15884 6880 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+WARNING 2025-10-03 08:13:29,220 utils 15884 6880 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:29,234 utils 15884 6880 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:29,235 utils 15884 6880 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:29,237 utils 15884 6880 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:29,238 utils 15884 6880 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:29,239 utils 15884 6880 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:29,243 utils 15884 6880 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:29,244 utils 15884 6880 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:29,245 utils 15884 6880 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:29,247 utils 15884 6880 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:13:29,248 utils 15884 6880 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:29,248 utils 15884 6880 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:29,248 utils 15884 6880 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:13:29,253 utils 15884 6880 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:13:29,254 utils 15884 6880 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:13:29,255 utils 15884 6880 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:13:29,276 basehttp 15884 6880 "GET /admin/users/usercustomer/add/ HTTP/1.1" 200 37912
+INFO 2025-10-03 08:13:29,320 basehttp 15884 6880 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:13:29,327 basehttp 15884 2660 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-10-03 08:13:29,327 basehttp 15884 6880 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-10-03 08:13:29,607 basehttp 15884 6880 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 200 6052
+INFO 2025-10-03 08:13:29,607 basehttp 15884 2660 "GET /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js HTTP/1.1" 200 2756
+INFO 2025-10-03 08:13:29,819 basehttp 15884 6880 "GET /static/jazzmin/js/related-modal.js HTTP/1.1" 200 6258
+INFO 2025-10-03 08:15:17,742 autoreload 15884 13200 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\admin.py changed, reloading.
+INFO 2025-10-03 08:15:19,062 autoreload 15752 14008 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:15:52,666 utils 15752 5080 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:15:52,667 utils 15752 5080 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:15:52,667 utils 15752 5080 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:15:52,679 utils 15752 5080 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:15:52,679 utils 15752 5080 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:15:52,680 utils 15752 5080 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:15:52,684 utils 15752 5080 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:15:52,684 utils 15752 5080 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:15:52,685 utils 15752 5080 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:15:52,685 utils 15752 5080 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:15:52,687 utils 15752 5080 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:15:52,687 utils 15752 5080 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:15:52,687 utils 15752 5080 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:15:52,691 utils 15752 5080 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:15:52,691 utils 15752 5080 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:15:52,692 utils 15752 5080 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:15:52,717 basehttp 15752 5080 "GET /admin/users/usercustomer/add/ HTTP/1.1" 200 39651
+INFO 2025-10-03 08:15:52,757 basehttp 15752 5080 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:17:52,987 autoreload 15752 14008 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\admin.py changed, reloading.
+INFO 2025-10-03 08:17:54,455 autoreload 4340 12944 Watching for file changes with StatReloader
+INFO 2025-10-03 08:18:05,214 autoreload 4340 12944 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\admin.py changed, reloading.
+INFO 2025-10-03 08:18:06,486 autoreload 16272 1848 Watching for file changes with StatReloader
+INFO 2025-10-03 08:18:17,516 autoreload 16272 1848 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\users\admin.py changed, reloading.
+INFO 2025-10-03 08:18:18,829 autoreload 13568 18312 Watching for file changes with StatReloader
+INFO 2025-10-03 08:18:46,455 autoreload 13568 18312 C:\Users\EFG\Documents\work_zone\woila\woila_backend\woila_project\settings.py changed, reloading.
+INFO 2025-10-03 08:27:38,232 autoreload 13788 1432 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:27:39,209 utils 13788 4772 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:27:39,210 utils 13788 4772 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:27:39,210 utils 13788 4772 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:27:39,224 utils 13788 4772 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:27:39,225 utils 13788 4772 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:27:39,225 utils 13788 4772 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:27:39,229 utils 13788 4772 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:27:39,230 utils 13788 4772 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:27:39,232 utils 13788 4772 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:27:39,233 utils 13788 4772 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:27:39,234 utils 13788 4772 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:27:39,235 utils 13788 4772 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:27:39,236 utils 13788 4772 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:27:39,240 utils 13788 4772 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:27:39,240 utils 13788 4772 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:27:39,241 utils 13788 4772 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:27:39,276 basehttp 13788 4772 "GET /admin/users/usercustomer/add/ HTTP/1.1" 200 39659
+WARNING 2025-10-03 08:27:39,333 log 13788 18348 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+WARNING 2025-10-03 08:27:39,334 log 13788 4772 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2025-10-03 08:27:39,334 log 13788 1548 Not Found: /static/jazzmin/css/main.css
+WARNING 2025-10-03 08:27:39,334 log 13788 9480 Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+WARNING 2025-10-03 08:27:39,334 log 13788 16544 Not Found: /static/vendor/fontawesome-free/css/all.min.css
+WARNING 2025-10-03 08:27:39,335 basehttp 13788 18348 "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,336 basehttp 13788 4772 "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,340 basehttp 13788 1548 "GET /static/jazzmin/css/main.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,343 basehttp 13788 9480 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,347 basehttp 13788 16544 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,356 log 13788 18348 Not Found: /static/vendor/adminlte/css/adminlte.min.css
+WARNING 2025-10-03 08:27:39,357 log 13788 4772 Not Found: /static/vendor/select2/css/select2.min.css
+WARNING 2025-10-03 08:27:39,361 log 13788 9480 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-03 08:27:39,366 log 13788 16544 Not Found: /static/admin/js/core.js
+WARNING 2025-10-03 08:27:39,375 basehttp 13788 18348 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 404 179
+INFO 2025-10-03 08:27:39,376 basehttp 13788 1548 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:27:39,377 basehttp 13788 4772 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,378 basehttp 13788 9480 "GET /static/admin/js/jquery.init.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,379 basehttp 13788 16544 "GET /static/admin/js/core.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,393 log 13788 18348 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-03 08:27:39,406 log 13788 3392 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-03 08:27:39,408 log 13788 4772 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-03 08:27:39,409 log 13788 1548 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-03 08:27:39,410 basehttp 13788 18348 "GET /static/admin/js/urlify.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,411 basehttp 13788 3392 "GET /static/admin/js/actions.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,414 basehttp 13788 4772 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,424 basehttp 13788 1548 "GET /static/admin/js/prepopulate.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,477 log 13788 3392 Not Found: /static/admin/js/change_form.js
+WARNING 2025-10-03 08:27:39,527 log 13788 4772 Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+WARNING 2025-10-03 08:27:39,544 basehttp 13788 3392 "GET /static/admin/js/change_form.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,546 basehttp 13788 4772 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,548 log 13788 1548 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-03 08:27:39,560 log 13788 18348 Not Found: /static/admin/js/prepopulate_init.js
+WARNING 2025-10-03 08:27:39,561 log 13788 16544 Not Found: /static/vendor/bootstrap/js/bootstrap.min.js
+WARNING 2025-10-03 08:27:39,562 log 13788 9480 Not Found: /static/vendor/adminlte/js/adminlte.min.js
+WARNING 2025-10-03 08:27:39,566 basehttp 13788 1548 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,572 basehttp 13788 18348 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,573 basehttp 13788 16544 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,574 basehttp 13788 9480 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,575 log 13788 4772 Not Found: /static/jazzmin/js/main.js
+WARNING 2025-10-03 08:27:39,576 log 13788 3392 Not Found: /static/vendor/select2/js/select2.min.js
+WARNING 2025-10-03 08:27:39,592 log 13788 16544 Not Found: /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js
+WARNING 2025-10-03 08:27:39,592 log 13788 18348 Not Found: /static/jazzmin/js/related-modal.js
+WARNING 2025-10-03 08:27:39,593 log 13788 9480 Not Found: /static/jazzmin/js/change_form.js
+WARNING 2025-10-03 08:27:39,595 basehttp 13788 4772 "GET /static/jazzmin/js/main.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,603 basehttp 13788 3392 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,611 basehttp 13788 16544 "GET /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,622 basehttp 13788 18348 "GET /static/jazzmin/js/related-modal.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:27:39,639 basehttp 13788 9480 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,544 utils 13788 13644 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:28:57,545 utils 13788 13644 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:28:57,545 utils 13788 13644 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:28:57,547 utils 13788 13644 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:28:57,547 utils 13788 13644 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:28:57,547 utils 13788 13644 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:28:57,551 utils 13788 13644 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:28:57,551 utils 13788 13644 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:28:57,552 utils 13788 13644 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:28:57,553 utils 13788 13644 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:28:57,557 utils 13788 13644 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:28:57,562 utils 13788 13644 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:28:57,562 utils 13788 13644 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:28:57,569 utils 13788 13644 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:28:57,569 utils 13788 13644 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:28:57,570 utils 13788 13644 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:28:57,578 basehttp 13788 13644 "GET /admin/users/usercustomer/add/ HTTP/1.1" 200 39659
+WARNING 2025-10-03 08:28:57,619 log 13788 13644 Not Found: /static/vendor/fontawesome-free/css/all.min.css
+WARNING 2025-10-03 08:28:57,620 log 13788 11168 Not Found: /static/vendor/adminlte/css/adminlte.min.css
+WARNING 2025-10-03 08:28:57,624 basehttp 13788 13644 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,624 basehttp 13788 11168 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,628 log 13788 13644 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2025-10-03 08:28:57,629 log 13788 3084 Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+WARNING 2025-10-03 08:28:57,632 log 13788 11168 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-03 08:28:57,633 log 13788 7612 Not Found: /static/jazzmin/css/main.css
+WARNING 2025-10-03 08:28:57,634 basehttp 13788 13644 "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,634 basehttp 13788 3084 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,642 basehttp 13788 11168 "GET /static/admin/js/jquery.init.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,649 log 13788 14952 Not Found: /static/vendor/select2/css/select2.min.css
+WARNING 2025-10-03 08:28:57,649 basehttp 13788 7612 "GET /static/jazzmin/css/main.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,651 log 13788 13644 Not Found: /static/admin/js/core.js
+INFO 2025-10-03 08:28:57,660 basehttp 13788 18380 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:28:57,668 log 13788 3084 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-03 08:28:57,669 log 13788 11168 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-03 08:28:57,679 basehttp 13788 14952 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,683 log 13788 7612 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-03 08:28:57,697 basehttp 13788 13644 "GET /static/admin/js/core.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,701 log 13788 18380 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-03 08:28:57,710 basehttp 13788 3084 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,713 basehttp 13788 11168 "GET /static/admin/js/actions.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,719 log 13788 14952 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+WARNING 2025-10-03 08:28:57,727 basehttp 13788 7612 "GET /static/admin/js/urlify.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,732 log 13788 13644 Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+WARNING 2025-10-03 08:28:57,733 basehttp 13788 18380 "GET /static/admin/js/prepopulate.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,734 log 13788 3084 Not Found: /static/admin/js/change_form.js
+WARNING 2025-10-03 08:28:57,735 basehttp 13788 14952 "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,735 basehttp 13788 13644 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,736 basehttp 13788 3084 "GET /static/admin/js/change_form.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,844 log 13788 15280 Not Found: /static/admin/js/prepopulate_init.js
+WARNING 2025-10-03 08:28:57,845 log 13788 732 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-03 08:28:57,846 basehttp 13788 15280 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,847 basehttp 13788 732 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,850 log 13788 13444 Not Found: /static/vendor/bootstrap/js/bootstrap.min.js
+WARNING 2025-10-03 08:28:57,852 log 13788 17528 Not Found: /static/vendor/adminlte/js/adminlte.min.js
+WARNING 2025-10-03 08:28:57,853 log 13788 732 Not Found: /static/jazzmin/js/change_form.js
+WARNING 2025-10-03 08:28:57,856 log 13788 15280 Not Found: /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js
+WARNING 2025-10-03 08:28:57,857 basehttp 13788 13444 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,862 basehttp 13788 17528 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,863 basehttp 13788 732 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,867 log 13788 17236 Not Found: /static/jazzmin/js/main.js
+WARNING 2025-10-03 08:28:57,868 basehttp 13788 15280 "GET /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,875 log 13788 13444 Not Found: /static/jazzmin/js/related-modal.js
+WARNING 2025-10-03 08:28:57,877 log 13788 11424 Not Found: /static/vendor/select2/js/select2.min.js
+WARNING 2025-10-03 08:28:57,878 basehttp 13788 17236 "GET /static/jazzmin/js/main.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,879 basehttp 13788 13444 "GET /static/jazzmin/js/related-modal.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:28:57,879 basehttp 13788 11424 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 404 179
+INFO 2025-10-03 08:31:10,989 autoreload 13788 1432 C:\Users\EFG\Documents\work_zone\woila\woila_backend\woila_project\settings.py changed, reloading.
+INFO 2025-10-03 08:31:12,273 autoreload 2648 1484 Watching for file changes with StatReloader
+INFO 2025-10-03 08:31:17,157 autoreload 2648 1484 C:\Users\EFG\Documents\work_zone\woila\woila_backend\woila_project\urls.py changed, reloading.
+INFO 2025-10-03 08:31:18,375 autoreload 6012 16624 Watching for file changes with StatReloader
+INFO 2025-10-03 08:31:37,868 autoreload 6012 16624 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\order\admin.py changed, reloading.
+INFO 2025-10-03 08:31:39,290 autoreload 16644 7312 Watching for file changes with StatReloader
+INFO 2025-10-03 08:31:44,232 autoreload 16644 7312 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\order\admin.py changed, reloading.
+INFO 2025-10-03 08:31:45,683 autoreload 10608 9320 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:31:53,770 utils 10608 3212 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:31:53,771 utils 10608 3212 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:31:53,771 utils 10608 3212 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:31:53,783 utils 10608 3212 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:31:53,784 utils 10608 3212 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:31:53,784 utils 10608 3212 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:31:53,789 utils 10608 3212 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:31:53,790 utils 10608 3212 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:31:53,791 utils 10608 3212 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:31:53,792 utils 10608 3212 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:31:53,795 utils 10608 3212 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:31:53,796 utils 10608 3212 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:31:53,796 utils 10608 3212 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:31:53,801 utils 10608 3212 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:31:53,801 utils 10608 3212 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:31:53,802 utils 10608 3212 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:31:53,830 basehttp 10608 3212 "GET /admin/users/usercustomer/add/ HTTP/1.1" 200 39651
+INFO 2025-10-03 08:31:54,158 basehttp 10608 15020 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:31:54,319 basehttp 10608 17996 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 1382975
+INFO 2025-10-03 08:31:54,338 basehttp 10608 17996 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-03 08:31:54,356 basehttp 10608 17996 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-03 08:31:54,364 basehttp 10608 17996 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-03 08:31:54,372 basehttp 10608 17996 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-03 08:31:54,378 basehttp 10608 17996 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-03 08:31:54,388 basehttp 10608 17996 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-03 08:31:54,395 basehttp 10608 17996 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-03 08:31:54,416 basehttp 10608 17996 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2025-10-03 08:31:54,431 basehttp 10608 17996 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-10-03 08:31:54,437 basehttp 10608 17996 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-10-03 08:31:54,453 basehttp 10608 17996 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 62440
+INFO 2025-10-03 08:31:54,461 basehttp 10608 17996 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 44244
+INFO 2025-10-03 08:31:54,486 basehttp 10608 17996 "GET /static/jazzmin/js/main.js HTTP/1.1" 200 2391
+INFO 2025-10-03 08:31:54,495 basehttp 10608 17996 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 73170
+INFO 2025-10-03 08:31:54,502 basehttp 10608 3212 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 103009
+INFO 2025-10-03 08:31:54,503 basehttp 10608 17996 "GET /static/jazzmin/js/change_form.js HTTP/1.1" 200 6052
+INFO 2025-10-03 08:31:54,511 basehttp 10608 17996 "GET /static/jazzmin/js/related-modal.js HTTP/1.1" 200 6258
+INFO 2025-10-03 08:31:54,515 basehttp 10608 3212 "GET /static/jazzmin/plugins/bootstrap-show-modal/bootstrap-show-modal.min.js HTTP/1.1" 200 2756
+INFO 2025-10-03 08:31:54,670 basehttp 10608 16060 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 200 164202
+INFO 2025-10-03 08:31:54,783 basehttp 10608 11528 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 16969
+INFO 2025-10-03 08:31:54,940 basehttp 10608 8032 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 16264
+INFO 2025-10-03 08:31:55,055 basehttp 10608 15020 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-03 08:31:55,211 basehttp 10608 15020 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 304 0
+INFO 2025-10-03 08:31:55,214 basehttp 10608 8032 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 304 0
+INFO 2025-10-03 08:31:56,224 autoreload 10608 9320 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\order\admin.py changed, reloading.
+INFO 2025-10-03 08:31:57,575 autoreload 8200 14452 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:32:01,005 utils 8200 8908 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:01,006 utils 8200 8908 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:01,006 utils 8200 8908 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:01,016 utils 8200 8908 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:01,017 utils 8200 8908 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:01,017 utils 8200 8908 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:01,021 utils 8200 8908 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:01,023 utils 8200 8908 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:01,023 utils 8200 8908 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:01,025 utils 8200 8908 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:32:01,027 utils 8200 8908 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:01,027 utils 8200 8908 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:01,028 utils 8200 8908 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:01,033 utils 8200 8908 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:01,034 utils 8200 8908 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:01,034 utils 8200 8908 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:32:01,044 basehttp 8200 8908 "GET /admin/users/ HTTP/1.1" 200 41518
+WARNING 2025-10-03 08:32:03,982 utils 8200 8908 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:03,984 utils 8200 8908 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:03,984 utils 8200 8908 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:03,986 utils 8200 8908 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:03,986 utils 8200 8908 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:03,987 utils 8200 8908 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:03,991 utils 8200 8908 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:03,993 utils 8200 8908 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:03,994 utils 8200 8908 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:03,995 utils 8200 8908 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:32:03,999 utils 8200 8908 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:03,999 utils 8200 8908 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:04,000 utils 8200 8908 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:32:04,040 basehttp 8200 8908 "GET /admin/users/usercustomer/ HTTP/1.1" 200 42011
+INFO 2025-10-03 08:32:04,076 basehttp 8200 8908 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:32:04,087 basehttp 8200 8908 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 304 0
+INFO 2025-10-03 08:32:05,682 autoreload 8200 14452 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\order\admin.py changed, reloading.
+INFO 2025-10-03 08:32:06,884 autoreload 18340 12220 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:32:15,256 utils 18340 16220 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:15,257 utils 18340 16220 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:15,257 utils 18340 16220 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:15,264 utils 18340 16220 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:15,265 utils 18340 16220 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:15,267 utils 18340 16220 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:15,274 utils 18340 16220 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:15,275 utils 18340 16220 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:15,278 utils 18340 16220 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:15,279 utils 18340 16220 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:32:15,280 utils 18340 16220 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:15,282 utils 18340 16220 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:15,285 utils 18340 16220 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:32:15,377 basehttp 18340 16220 "GET /admin/wallet/walletproxy/ HTTP/1.1" 200 67953
+INFO 2025-10-03 08:32:15,425 basehttp 18340 16220 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:32:16,152 autoreload 18340 12220 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\order\admin.py changed, reloading.
+INFO 2025-10-03 08:32:17,554 autoreload 17996 11528 Watching for file changes with StatReloader
+INFO 2025-10-03 08:32:24,933 autoreload 17996 11528 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\order\admin.py changed, reloading.
+INFO 2025-10-03 08:32:26,115 autoreload 1420 17608 Watching for file changes with StatReloader
+INFO 2025-10-03 08:32:33,499 autoreload 1420 17608 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\order\admin.py changed, reloading.
+INFO 2025-10-03 08:32:34,773 autoreload 8436 13632 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:32:43,197 utils 8436 16216 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:43,197 utils 8436 16216 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:43,197 utils 8436 16216 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:43,205 utils 8436 16216 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:43,205 utils 8436 16216 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:43,206 utils 8436 16216 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:43,212 utils 8436 16216 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:43,214 utils 8436 16216 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:43,215 utils 8436 16216 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:43,217 utils 8436 16216 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:32:43,218 utils 8436 16216 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:43,218 utils 8436 16216 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:43,219 utils 8436 16216 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:32:43,256 basehttp 8436 16216 "GET /admin/users/usercustomer/ HTTP/1.1" 200 42011
+INFO 2025-10-03 08:32:43,319 basehttp 8436 16216 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:32:47,975 autoreload 8436 13632 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\order\admin.py changed, reloading.
+INFO 2025-10-03 08:32:49,157 autoreload 15060 9320 Watching for file changes with StatReloader
+INFO 2025-10-03 08:32:51,716 basehttp 15060 10620 "POST /admin/users/usercustomer/ HTTP/1.1" 302 0
+WARNING 2025-10-03 08:32:51,814 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:51,814 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:51,815 utils 15060 10620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:51,822 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:51,823 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:51,823 utils 15060 10620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:51,830 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:51,834 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:51,835 utils 15060 10620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:51,836 utils 15060 10620 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:32:51,837 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:51,838 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:51,838 utils 15060 10620 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:32:51,857 basehttp 15060 10620 "GET /admin/users/usercustomer/ HTTP/1.1" 200 34093
+INFO 2025-10-03 08:32:51,907 basehttp 15060 10620 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:32:56,189 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:56,191 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:56,191 utils 15060 10620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:56,192 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:56,193 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:56,193 utils 15060 10620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:56,198 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:56,198 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:56,199 utils 15060 10620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:56,200 utils 15060 10620 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:32:56,201 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:56,202 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:56,203 utils 15060 10620 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:32:56,211 basehttp 15060 10620 "GET /admin/users/usercustomer/ HTTP/1.1" 200 33591
+INFO 2025-10-03 08:32:56,253 basehttp 15060 10620 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:32:59,359 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:59,359 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:59,360 utils 15060 10620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:59,361 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:59,362 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:59,363 utils 15060 10620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:59,369 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:59,370 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:59,370 utils 15060 10620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:32:59,371 utils 15060 10620 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:32:59,373 utils 15060 10620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:32:59,373 utils 15060 10620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:32:59,374 utils 15060 10620 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:32:59,455 basehttp 15060 10620 "GET /admin/users/document/ HTTP/1.1" 200 96695
+INFO 2025-10-03 08:32:59,501 basehttp 15060 10620 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:32:59,775 basehttp 15060 1676 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+WARNING 2025-10-03 08:33:01,557 utils 15060 1676 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:33:01,558 utils 15060 1676 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:33:01,558 utils 15060 1676 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:33:01,560 utils 15060 1676 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:33:01,560 utils 15060 1676 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:33:01,560 utils 15060 1676 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:33:01,565 utils 15060 1676 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:33:01,566 utils 15060 1676 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:33:01,566 utils 15060 1676 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:33:01,567 utils 15060 1676 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:33:01,568 utils 15060 1676 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:33:01,571 utils 15060 1676 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:33:01,573 utils 15060 1676 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:33:01,594 basehttp 15060 1676 "GET /admin/users/userdriver/ HTTP/1.1" 200 45744
+INFO 2025-10-03 08:33:01,642 basehttp 15060 1676 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:33:22,118 autoreload 15060 9320 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\vehicles\admin.py changed, reloading.
+INFO 2025-10-03 08:33:23,379 autoreload 16732 17660 Watching for file changes with StatReloader
+INFO 2025-10-03 08:33:29,748 autoreload 16732 17660 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\vehicles\admin.py changed, reloading.
+INFO 2025-10-03 08:33:31,023 autoreload 8796 14840 Watching for file changes with StatReloader
+INFO 2025-10-03 08:33:38,394 autoreload 8796 14840 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\vehicles\admin.py changed, reloading.
+INFO 2025-10-03 08:33:39,621 autoreload 16036 16580 Watching for file changes with StatReloader
+INFO 2025-10-03 08:33:49,466 autoreload 16036 16580 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\vehicles\admin.py changed, reloading.
+INFO 2025-10-03 08:33:50,694 autoreload 9280 8484 Watching for file changes with StatReloader
+INFO 2025-10-03 08:33:58,237 autoreload 9280 8484 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\vehicles\admin.py changed, reloading.
+INFO 2025-10-03 08:33:59,445 autoreload 13476 4236 Watching for file changes with StatReloader
+INFO 2025-10-03 08:34:24,462 autoreload 13476 4236 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\admin.py changed, reloading.
+INFO 2025-10-03 08:34:25,718 autoreload 9824 6264 Watching for file changes with StatReloader
+INFO 2025-10-03 08:34:32,069 autoreload 9824 6264 C:\Users\EFG\Documents\work_zone\woila\woila_backend\applications\wallet\admin.py changed, reloading.
+INFO 2025-10-03 08:34:33,291 autoreload 5892 5388 Watching for file changes with StatReloader
+INFO 2025-10-03 08:34:51,127 autoreload 5892 5388 C:\Users\EFG\Documents\work_zone\woila\woila_backend\woila_project\settings.py changed, reloading.
+INFO 2025-10-03 08:34:52,381 autoreload 16756 17332 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:35:26,798 utils 16756 3268 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:35:26,799 utils 16756 3268 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:35:26,799 utils 16756 3268 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:35:26,807 utils 16756 3268 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:35:26,807 utils 16756 3268 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:35:26,808 utils 16756 3268 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:35:26,814 utils 16756 3268 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:35:26,814 utils 16756 3268 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:35:26,815 utils 16756 3268 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:35:26,815 utils 16756 3268 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:35:26,816 utils 16756 3268 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:35:26,817 utils 16756 3268 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:35:26,817 utils 16756 3268 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:35:26,854 basehttp 16756 3268 "GET /admin/users/userdriver/ HTTP/1.1" 200 45752
+WARNING 2025-10-03 08:35:26,893 log 16756 11180 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2025-10-03 08:35:26,895 basehttp 16756 11180 "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:35:26,898 log 16756 16440 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+INFO 2025-10-03 08:35:26,899 basehttp 16756 3268 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:35:26,903 basehttp 16756 16440 "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+INFO 2025-10-03 08:36:32,699 autoreload 17360 4832 Watching for file changes with StatReloader
+INFO 2025-10-03 08:37:12,562 autoreload 17700 2932 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:37:16,519 utils 17700 14060 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:37:16,519 utils 17700 14060 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:37:16,519 utils 17700 14060 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:37:16,527 utils 17700 14060 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:37:16,527 utils 17700 14060 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:37:16,527 utils 17700 14060 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:37:16,531 utils 17700 14060 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:37:16,532 utils 17700 14060 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:37:16,532 utils 17700 14060 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:37:16,534 utils 17700 14060 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:37:16,535 utils 17700 14060 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:37:16,535 utils 17700 14060 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:37:16,535 utils 17700 14060 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:37:16,584 basehttp 17700 14060 "GET /admin/users/userdriver/ HTTP/1.1" 200 45752
+WARNING 2025-10-03 08:37:16,625 log 17700 10244 Not Found: /static/vendor/adminlte/css/adminlte.min.css
+WARNING 2025-10-03 08:37:16,632 log 17700 14060 Not Found: /static/vendor/fontawesome-free/css/all.min.css
+WARNING 2025-10-03 08:37:16,634 basehttp 17700 10244 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,635 log 17700 17640 Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+WARNING 2025-10-03 08:37:16,636 basehttp 17700 14060 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,657 log 17700 10244 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2025-10-03 08:37:16,659 basehttp 17700 17640 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,662 log 17700 14060 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-03 08:37:16,670 log 17700 4620 Not Found: /static/jazzmin/css/main.css
+WARNING 2025-10-03 08:37:16,671 basehttp 17700 10244 "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,672 log 17700 17640 Not Found: /static/admin/js/core.js
+WARNING 2025-10-03 08:37:16,690 basehttp 17700 14060 "GET /static/admin/js/jquery.init.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,707 log 17700 13968 Not Found: /static/vendor/select2/css/select2.min.css
+WARNING 2025-10-03 08:37:16,708 basehttp 17700 4620 "GET /static/jazzmin/css/main.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,739 log 17700 10244 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+INFO 2025-10-03 08:37:16,750 basehttp 17700 15944 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:37:16,753 basehttp 17700 17640 "GET /static/admin/js/core.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,756 log 17700 14060 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-03 08:37:16,771 basehttp 17700 13968 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,779 log 17700 4620 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-03 08:37:16,786 log 17700 15944 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-03 08:37:16,786 basehttp 17700 10244 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,788 log 17700 17640 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+WARNING 2025-10-03 08:37:16,791 basehttp 17700 14060 "GET /static/admin/js/actions.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,795 log 17700 13968 Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+WARNING 2025-10-03 08:37:16,803 basehttp 17700 4620 "GET /static/admin/js/urlify.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,807 basehttp 17700 15944 "GET /static/admin/js/prepopulate.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,818 log 17700 10244 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-03 08:37:16,820 basehttp 17700 17640 "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,836 basehttp 17700 13968 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,838 basehttp 17700 10244 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,856 log 17700 10244 Not Found: /static/vendor/bootstrap/js/bootstrap.min.js
+WARNING 2025-10-03 08:37:16,859 log 17700 13968 Not Found: /static/vendor/adminlte/js/adminlte.min.js
+WARNING 2025-10-03 08:37:16,863 log 17700 17640 Not Found: /static/jazzmin/js/main.js
+WARNING 2025-10-03 08:37:16,865 log 17700 15944 Not Found: /static/vendor/select2/js/select2.min.js
+WARNING 2025-10-03 08:37:16,866 log 17700 4620 Not Found: /static/jazzmin/js/change_list.js
+WARNING 2025-10-03 08:37:16,867 basehttp 17700 10244 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,871 basehttp 17700 13968 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,872 basehttp 17700 17640 "GET /static/jazzmin/js/main.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,874 basehttp 17700 15944 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:16,875 basehttp 17700 4620 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:21,927 utils 17700 4620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:37:21,930 utils 17700 4620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:37:21,930 utils 17700 4620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:37:21,932 utils 17700 4620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:37:21,932 utils 17700 4620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:37:21,933 utils 17700 4620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:37:21,937 utils 17700 4620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:37:21,937 utils 17700 4620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:37:21,938 utils 17700 4620 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:37:21,939 utils 17700 4620 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:37:21,940 utils 17700 4620 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:37:21,940 utils 17700 4620 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:37:21,940 utils 17700 4620 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:37:21,958 basehttp 17700 4620 "GET /admin/users/userdriver/ HTTP/1.1" 200 45752
+WARNING 2025-10-03 08:37:22,000 log 17700 4620 Not Found: /static/vendor/fontawesome-free/css/all.min.css
+WARNING 2025-10-03 08:37:22,000 log 17700 15944 Not Found: /static/vendor/adminlte/css/adminlte.min.css
+WARNING 2025-10-03 08:37:22,001 log 17700 17640 Not Found: /static/vendor/bootswatch/darkly/bootstrap.min.css
+WARNING 2025-10-03 08:37:22,002 log 17700 13968 Not Found: /static/jazzmin/css/main.css
+WARNING 2025-10-03 08:37:22,003 log 17700 10244 Not Found: /static/vendor/select2/css/select2.min.css
+WARNING 2025-10-03 08:37:22,007 basehttp 17700 4620 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,008 basehttp 17700 15944 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 404 179
+INFO 2025-10-03 08:37:22,009 basehttp 17700 14060 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:37:22,011 basehttp 17700 17640 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,014 basehttp 17700 13968 "GET /static/jazzmin/css/main.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,020 basehttp 17700 10244 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,022 log 17700 4620 Not Found: /static/admin/js/vendor/jquery/jquery.min.js
+WARNING 2025-10-03 08:37:22,024 log 17700 15944 Not Found: /static/admin/js/jquery.init.js
+WARNING 2025-10-03 08:37:22,025 log 17700 14060 Not Found: /static/admin/js/core.js
+WARNING 2025-10-03 08:37:22,027 log 17700 17640 Not Found: /static/admin/js/admin/RelatedObjectLookups.js
+WARNING 2025-10-03 08:37:22,028 log 17700 13968 Not Found: /static/admin/js/actions.js
+WARNING 2025-10-03 08:37:22,032 log 17700 10244 Not Found: /static/admin/js/urlify.js
+WARNING 2025-10-03 08:37:22,033 basehttp 17700 4620 "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,037 basehttp 17700 15944 "GET /static/admin/js/jquery.init.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,039 basehttp 17700 14060 "GET /static/admin/js/core.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,039 basehttp 17700 17640 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,044 basehttp 17700 13968 "GET /static/admin/js/actions.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,049 basehttp 17700 10244 "GET /static/admin/js/urlify.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,052 log 17700 4620 Not Found: /static/admin/js/prepopulate.js
+WARNING 2025-10-03 08:37:22,055 log 17700 15944 Not Found: /static/admin/js/vendor/xregexp/xregexp.min.js
+WARNING 2025-10-03 08:37:22,056 log 17700 14060 Not Found: /static/admin/js/vendor/jquery/jquery.js
+WARNING 2025-10-03 08:37:22,057 log 17700 17640 Not Found: /static/vendor/adminlte/img/AdminLTELogo.png
+WARNING 2025-10-03 08:37:22,058 basehttp 17700 4620 "GET /static/admin/js/prepopulate.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,058 basehttp 17700 15944 "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,060 basehttp 17700 14060 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,062 basehttp 17700 17640 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,269 log 17700 17640 Not Found: /static/vendor/bootstrap/js/bootstrap.min.js
+WARNING 2025-10-03 08:37:22,270 log 17700 14060 Not Found: /static/vendor/adminlte/js/adminlte.min.js
+WARNING 2025-10-03 08:37:22,271 basehttp 17700 17640 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,271 basehttp 17700 14060 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,273 log 17700 15944 Not Found: /static/jazzmin/js/main.js
+WARNING 2025-10-03 08:37:22,274 log 17700 4620 Not Found: /static/vendor/select2/js/select2.min.js
+WARNING 2025-10-03 08:37:22,275 log 17700 10244 Not Found: /static/jazzmin/js/change_list.js
+WARNING 2025-10-03 08:37:22,276 basehttp 17700 15944 "GET /static/jazzmin/js/main.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,276 basehttp 17700 4620 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 404 179
+WARNING 2025-10-03 08:37:22,277 basehttp 17700 10244 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 404 179
+INFO 2025-10-03 08:39:50,343 autoreload 17700 2932 C:\Users\EFG\Documents\work_zone\woila\woila_backend\woila_project\settings.py changed, reloading.
+INFO 2025-10-03 08:39:51,714 autoreload 356 5268 Watching for file changes with StatReloader
+INFO 2025-10-03 08:40:05,067 autoreload 356 5268 C:\Users\EFG\Documents\work_zone\woila\woila_backend\woila_project\settings.py changed, reloading.
+INFO 2025-10-03 08:40:06,260 autoreload 16144 10932 Watching for file changes with StatReloader
+INFO 2025-10-03 08:42:21,155 autoreload 15720 13448 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:42:24,217 utils 15720 17252 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:42:24,218 utils 15720 17252 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:42:24,218 utils 15720 17252 Could not reverse url from api.vehicle
+ERROR 2025-10-03 08:42:24,221 log 15720 17252 Internal Server Error: /admin/users/userdriver/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\templatetags\static.py", line 116, in render
+    url = self.url(context)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\templatetags\static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\templatetags\static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\contrib\staticfiles\storage.py", line 204, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\contrib\staticfiles\storage.py", line 183, in _url
+    hashed_name = hashed_name_func(*args)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\contrib\staticfiles\storage.py", line 518, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'fas fa-car'
+ERROR 2025-10-03 08:42:24,248 basehttp 15720 17252 "GET /admin/users/userdriver/ HTTP/1.1" 500 145
+WARNING 2025-10-03 08:42:24,586 log 15720 17252 Not Found: /favicon.ico
+WARNING 2025-10-03 08:42:24,586 basehttp 15720 17252 "GET /favicon.ico HTTP/1.1" 404 179
+WARNING 2025-10-03 08:42:26,948 utils 15720 17252 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:42:26,949 utils 15720 17252 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:42:26,949 utils 15720 17252 Could not reverse url from api.vehicle
+ERROR 2025-10-03 08:42:26,950 log 15720 17252 Internal Server Error: /admin/users/userdriver/
+Traceback (most recent call last):
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\templatetags\static.py", line 116, in render
+    url = self.url(context)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\templatetags\static.py", line 113, in url
+    return self.handle_simple(path)
+           ~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\templatetags\static.py", line 129, in handle_simple
+    return staticfiles_storage.url(path)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\contrib\staticfiles\storage.py", line 204, in url
+    return self._url(self.stored_name, name, force)
+           ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\contrib\staticfiles\storage.py", line 183, in _url
+    hashed_name = hashed_name_func(*args)
+  File "C:\Users\EFG\Documents\work_zone\woila\woila_backend\env\Lib\site-packages\django\contrib\staticfiles\storage.py", line 518, in stored_name
+    raise ValueError(
+        "Missing staticfiles manifest entry for '%s'" % clean_name
+    )
+ValueError: Missing staticfiles manifest entry for 'fas fa-car'
+ERROR 2025-10-03 08:42:26,963 basehttp 15720 17252 "GET /admin/users/userdriver/ HTTP/1.1" 500 145
+INFO 2025-10-03 08:43:29,062 autoreload 15720 13448 C:\Users\EFG\Documents\work_zone\woila\woila_backend\woila_project\settings.py changed, reloading.
+INFO 2025-10-03 08:43:30,316 autoreload 13964 14856 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:44:11,625 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:11,625 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:11,625 utils 13964 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:11,631 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:11,634 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:11,635 utils 13964 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:11,644 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:11,644 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:11,645 utils 13964 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:11,646 utils 13964 8344 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:44:11,647 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:11,647 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:11,648 utils 13964 8344 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:44:11,694 basehttp 13964 8344 "GET /admin/users/userdriver/ HTTP/1.1" 200 45752
+INFO 2025-10-03 08:44:11,727 basehttp 13964 8344 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 21964
+INFO 2025-10-03 08:44:11,728 basehttp 13964 10124 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 119068
+INFO 2025-10-03 08:44:11,745 basehttp 13964 8344 "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 200 30336
+INFO 2025-10-03 08:44:11,750 basehttp 13964 7564 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 200 24564
+INFO 2025-10-03 08:44:11,760 basehttp 13964 10124 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 236
+INFO 2025-10-03 08:44:11,762 basehttp 13964 8344 "GET /static/admin/js/core.js HTTP/1.1" 200 1550
+INFO 2025-10-03 08:44:11,766 basehttp 13964 14696 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 4142
+INFO 2025-10-03 08:44:11,767 basehttp 13964 7564 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 2509
+INFO 2025-10-03 08:44:11,781 basehttp 13964 10124 "GET /static/admin/js/actions.js HTTP/1.1" 200 1941
+INFO 2025-10-03 08:44:11,781 basehttp 13964 8344 "GET /static/admin/js/urlify.js HTTP/1.1" 200 2578
+INFO 2025-10-03 08:44:11,793 basehttp 13964 15752 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 2141
+INFO 2025-10-03 08:44:11,796 basehttp 13964 14696 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 536
+INFO 2025-10-03 08:44:11,798 basehttp 13964 7564 "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 200 46360
+INFO 2025-10-03 08:44:11,804 basehttp 13964 13856 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:44:11,815 basehttp 13964 10124 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 83619
+INFO 2025-10-03 08:44:11,821 basehttp 13964 8344 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2025-10-03 08:44:11,954 basehttp 13964 8344 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 15209
+INFO 2025-10-03 08:44:11,981 basehttp 13964 8344 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 10461
+INFO 2025-10-03 08:44:11,981 basehttp 13964 10124 "GET /static/jazzmin/js/main.js HTTP/1.1" 200 981
+INFO 2025-10-03 08:44:12,005 basehttp 13964 10124 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 19966
+INFO 2025-10-03 08:44:12,006 basehttp 13964 8344 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 814
+INFO 2025-10-03 08:44:12,064 basehttp 13964 10124 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+INFO 2025-10-03 08:44:12,066 basehttp 13964 8344 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+WARNING 2025-10-03 08:44:14,859 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:14,860 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:14,860 utils 13964 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:14,862 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:14,862 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:14,863 utils 13964 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:14,866 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:14,867 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:14,867 utils 13964 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:14,868 utils 13964 8344 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:44:14,869 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:14,869 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:14,870 utils 13964 8344 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:44:14,886 basehttp 13964 8344 "GET /admin/core/country/ HTTP/1.1" 200 37348
+INFO 2025-10-03 08:44:14,938 basehttp 13964 8344 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:44:14,954 basehttp 13964 8344 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 266
+WARNING 2025-10-03 08:44:16,211 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:16,212 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:16,212 utils 13964 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:16,214 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:16,214 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:16,214 utils 13964 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:16,217 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:16,218 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:16,218 utils 13964 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:16,219 utils 13964 8344 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:44:16,220 utils 13964 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:16,221 utils 13964 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:16,221 utils 13964 8344 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:44:16,236 basehttp 13964 8344 "GET /admin/core/city/ HTTP/1.1" 200 39309
+INFO 2025-10-03 08:44:16,283 basehttp 13964 8344 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:44:38,690 autoreload 8604 7752 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:44:41,103 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:41,104 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:41,104 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:41,110 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:41,111 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:41,111 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:41,117 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:41,119 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:41,120 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:41,120 utils 8604 8344 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:44:41,121 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:41,122 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:41,122 utils 8604 8344 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:44:41,158 basehttp 8604 8344 "GET /admin/core/city/ HTTP/1.1" 200 39309
+INFO 2025-10-03 08:44:41,201 basehttp 8604 8344 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:44:46,044 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:46,045 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:46,045 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:46,047 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:46,047 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:46,047 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:46,051 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:46,052 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:46,053 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:46,054 utils 8604 8344 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:44:46,055 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:46,056 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:46,056 utils 8604 8344 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:44:46,070 basehttp 8604 8344 "GET /admin/users/usercustomer/ HTTP/1.1" 200 33599
+INFO 2025-10-03 08:44:46,106 basehttp 8604 8344 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:44:48,255 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:48,255 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:48,256 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:48,257 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:48,258 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:48,258 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:48,261 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:48,262 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:48,262 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:48,263 utils 8604 8344 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:44:48,264 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:48,264 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:48,265 utils 8604 8344 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:44:48,313 basehttp 8604 8344 "GET /admin/wallet/wallettransaction/ HTTP/1.1" 200 68169
+INFO 2025-10-03 08:44:48,361 basehttp 8604 8344 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:44:54,918 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:54,918 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:54,920 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:54,922 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:54,922 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:54,923 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:54,927 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:54,927 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:54,928 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:54,929 utils 8604 8344 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:44:54,931 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:54,931 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:54,932 utils 8604 8344 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:44:54,945 basehttp 8604 8344 "GET /admin/order/driverpool/ HTTP/1.1" 200 34499
+INFO 2025-10-03 08:44:54,984 basehttp 8604 8344 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+WARNING 2025-10-03 08:44:58,835 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:58,836 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:58,839 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:58,841 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:58,841 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:58,842 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:58,846 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:58,846 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:58,847 utils 8604 8344 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:44:58,848 utils 8604 8344 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:44:58,849 utils 8604 8344 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:44:58,850 utils 8604 8344 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:44:58,850 utils 8604 8344 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:44:58,867 basehttp 8604 8344 "GET /admin/vehicles/vehiclecolor/ HTTP/1.1" 200 38126
+INFO 2025-10-03 08:44:58,915 basehttp 8604 8344 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:47:27,681 autoreload 8116 2176 Watching for file changes with StatReloader
+WARNING 2025-10-03 08:47:29,960 utils 8116 1568 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:47:29,960 utils 8116 1568 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:47:29,960 utils 8116 1568 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:47:29,972 utils 8116 1568 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:47:29,973 utils 8116 1568 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:47:29,973 utils 8116 1568 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:47:29,977 utils 8116 1568 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:47:29,978 utils 8116 1568 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:47:29,978 utils 8116 1568 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:47:29,979 utils 8116 1568 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:47:29,980 utils 8116 1568 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:47:29,980 utils 8116 1568 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:47:29,981 utils 8116 1568 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:47:30,022 basehttp 8116 1568 "GET /admin/vehicles/vehiclecolor/ HTTP/1.1" 200 38126
+INFO 2025-10-03 08:47:30,064 basehttp 8116 1568 "GET /static/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 21964
+INFO 2025-10-03 08:47:30,066 basehttp 8116 17124 "GET /static/vendor/adminlte/css/adminlte.min.css HTTP/1.1" 200 119068
+INFO 2025-10-03 08:47:30,081 basehttp 8116 1568 "GET /static/admin/js/vendor/jquery/jquery.min.js HTTP/1.1" 200 30336
+INFO 2025-10-03 08:47:30,091 basehttp 8116 13624 "GET /static/vendor/bootswatch/darkly/bootstrap.min.css HTTP/1.1" 200 24564
+INFO 2025-10-03 08:47:30,096 basehttp 8116 17124 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 236
+INFO 2025-10-03 08:47:30,096 basehttp 8116 1568 "GET /static/admin/js/core.js HTTP/1.1" 200 1550
+INFO 2025-10-03 08:47:30,111 basehttp 8116 13624 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 2509
+INFO 2025-10-03 08:47:30,116 basehttp 8116 11788 "GET /static/jazzmin/css/main.css HTTP/1.1" 200 4142
+INFO 2025-10-03 08:47:30,124 basehttp 8116 17124 "GET /static/admin/js/actions.js HTTP/1.1" 200 1941
+INFO 2025-10-03 08:47:30,129 basehttp 8116 1568 "GET /static/admin/js/urlify.js HTTP/1.1" 200 2578
+INFO 2025-10-03 08:47:30,130 basehttp 8116 13624 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 536
+INFO 2025-10-03 08:47:30,145 basehttp 8116 7668 "GET /static/vendor/select2/css/select2.min.css HTTP/1.1" 200 2141
+INFO 2025-10-03 08:47:30,146 basehttp 8116 11788 "GET /static/admin/js/vendor/xregexp/xregexp.min.js HTTP/1.1" 200 46360
+INFO 2025-10-03 08:47:30,169 basehttp 8116 17124 "GET /static/vendor/adminlte/img/AdminLTELogo.png HTTP/1.1" 200 2637
+INFO 2025-10-03 08:47:30,195 basehttp 8116 14248 "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+INFO 2025-10-03 08:47:30,203 basehttp 8116 1568 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 83619
+INFO 2025-10-03 08:47:30,285 basehttp 8116 1568 "GET /static/vendor/bootstrap/js/bootstrap.min.js HTTP/1.1" 200 15209
+INFO 2025-10-03 08:47:30,311 basehttp 8116 1568 "GET /static/vendor/adminlte/js/adminlte.min.js HTTP/1.1" 200 10461
+INFO 2025-10-03 08:47:30,311 basehttp 8116 14248 "GET /static/jazzmin/js/main.js HTTP/1.1" 200 981
+INFO 2025-10-03 08:47:30,329 basehttp 8116 14248 "GET /static/vendor/select2/js/select2.min.js HTTP/1.1" 200 19966
+INFO 2025-10-03 08:47:30,330 basehttp 8116 1568 "GET /static/jazzmin/js/change_list.js HTTP/1.1" 200 814
+INFO 2025-10-03 08:47:30,376 basehttp 8116 14248 "GET /static/vendor/fontawesome-free/webfonts/fa-solid-900.woff2 HTTP/1.1" 200 156400
+INFO 2025-10-03 08:47:30,379 basehttp 8116 1568 "GET /static/vendor/fontawesome-free/webfonts/fa-regular-400.woff2 HTTP/1.1" 200 25392
+WARNING 2025-10-03 08:47:33,658 utils 8116 1568 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:47:33,658 utils 8116 1568 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:47:33,659 utils 8116 1568 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:47:33,660 utils 8116 1568 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:47:33,661 utils 8116 1568 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:47:33,661 utils 8116 1568 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:47:33,665 utils 8116 1568 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:47:33,665 utils 8116 1568 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:47:33,666 utils 8116 1568 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:47:33,667 utils 8116 1568 Couldnt reverse admin:api_generalconfig_changelist
+WARNING 2025-10-03 08:47:33,668 utils 8116 1568 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:47:33,673 utils 8116 1568 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:47:33,673 utils 8116 1568 Could not reverse url from api.vehicle
+WARNING 2025-10-03 08:47:33,678 utils 8116 1568 Could not reverse url from api.userdriver
+WARNING 2025-10-03 08:47:33,678 utils 8116 1568 Could not reverse url from api.usercustomer
+WARNING 2025-10-03 08:47:33,679 utils 8116 1568 Could not reverse url from api.vehicle
+INFO 2025-10-03 08:47:33,696 basehttp 8116 1568 "GET /admin/ HTTP/1.1" 200 76992
+INFO 2025-10-03 08:49:01,545 autoreload 14364 12548 Watching for file changes with StatReloader

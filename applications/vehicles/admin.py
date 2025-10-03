@@ -7,7 +7,13 @@ class VehicleTypeAdmin(admin.ModelAdmin):
     list_display = ['name_display', 'amount_display', 'status_display']
     list_filter = ['is_active']
     search_fields = ['name']  # ✅ Required for autocomplete
-    actions = ['activate', 'deactivate']
+    actions = ['activate', 'deactivate', 'delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} type(s) de véhicule supprimé(s) avec succès.')
 
     def name_display(self, obj):
         return format_html('🚙 {}', obj.name)
@@ -40,7 +46,13 @@ class VehicleBrandAdmin(admin.ModelAdmin):
     list_display = ['name_display', 'status_display']
     list_filter = ['is_active']
     search_fields = ['name']  # ✅ Required for autocomplete
-    actions = ['activate', 'deactivate']
+    actions = ['activate', 'deactivate', 'delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} marque(s) de véhicule supprimée(s) avec succès.')
 
     def name_display(self, obj):
         return format_html('🏭 {}', obj.name)
@@ -69,7 +81,13 @@ class VehicleModelAdmin(admin.ModelAdmin):
     list_filter = ['is_active', 'brand']
     search_fields = ['name', 'brand__name']  # ✅ Required for autocomplete
     autocomplete_fields = ['brand']
-    actions = ['activate', 'deactivate']
+    actions = ['activate', 'deactivate', 'delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} modèle(s) de véhicule supprimé(s) avec succès.')
 
     def name_display(self, obj):
         return format_html('🚗 {}', obj.name)
@@ -102,7 +120,13 @@ class VehicleColorAdmin(admin.ModelAdmin):
     list_display = ['name_display', 'status_display']
     list_filter = ['is_active']
     search_fields = ['name']  # ✅ Required for autocomplete
-    actions = ['activate', 'deactivate']
+    actions = ['activate', 'deactivate', 'delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} couleur(s) de véhicule supprimée(s) avec succès.')
 
     def name_display(self, obj):
         return format_html('🎨 {}', obj.name)
@@ -202,8 +226,14 @@ class VehicleAdmin(admin.ModelAdmin):
         })
     )
     
-    actions = ['mark_as_inactive', 'mark_as_active', 'put_online', 'put_offline']
-    
+    actions = ['mark_as_inactive', 'mark_as_active', 'put_online', 'put_offline', 'delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} véhicule(s) supprimé(s) avec succès.')
+
     def mark_as_inactive(self, request, queryset):
         updated = queryset.update(is_active=False)
         self.message_user(request, f'{updated} véhicule(s) désactivé(s).')

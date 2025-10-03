@@ -14,7 +14,14 @@ class PaymentMethodAdmin(admin.ModelAdmin):
     list_filter = ['is_active', 'type', 'created_at']
     search_fields = ['name', 'type']
     list_editable = ['is_active']
-    
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} méthode(s) de paiement supprimée(s) avec succès.')
+
     fieldsets = (
         ('📝 Informations générales', {
             'fields': ('type', 'name', 'description', 'icon')
@@ -91,8 +98,14 @@ class OrderAdmin(admin.ModelAdmin):
         })
     )
     
-    actions = ['mark_as_completed', 'mark_as_cancelled', 'recalculate_final_price']
-    
+    actions = ['mark_as_completed', 'mark_as_cancelled', 'recalculate_final_price', 'delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} commande(s) supprimée(s) avec succès.')
+
     def order_number(self, obj):
         return format_html('<strong>#{}</strong>', str(obj.id)[:8])
     order_number.short_description = 'N° Commande'
@@ -183,7 +196,14 @@ class RatingAdmin(admin.ModelAdmin):
         'rated_customer__name', 'rated_customer__surname'
     ]
     readonly_fields = ['created_at', 'updated_at']
-    
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} évaluation(s) supprimée(s) avec succès.')
+
     fieldsets = (
         ('📋 Informations générales', {
             'fields': ('order', 'rating_type', 'score', 'is_anonymous')
@@ -233,14 +253,21 @@ class RatingAdmin(admin.ModelAdmin):
 @admin.register(TripTracking)
 class TripTrackingAdmin(admin.ModelAdmin):
     list_display = [
-        'order_link', 'driver', 'coordinates', 'speed_kmh', 
+        'order_link', 'driver', 'coordinates', 'speed_kmh',
         'order_status', 'recorded_at'
     ]
     list_filter = ['order_status', 'recorded_at', 'driver']
     search_fields = ['order__id', 'driver__name', 'driver__surname']
     readonly_fields = ['recorded_at']
     date_hierarchy = 'recorded_at'
-    
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} suivi(s) de trajet supprimé(s) avec succès.')
+
     fieldsets = (
         ('📋 Informations', {
             'fields': ('order', 'driver', 'order_status')
@@ -281,11 +308,18 @@ class DriverPoolAdmin(admin.ModelAdmin):
     ]
     list_filter = ['request_status', 'priority_order', 'requested_at']
     search_fields = [
-        'order__id', 'driver__name', 'driver__surname', 
+        'order__id', 'driver__name', 'driver__surname',
         'driver__phone_number'
     ]
     readonly_fields = ['requested_at', 'responded_at', 'response_time_seconds']
-    
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} requête(s) de chauffeur supprimée(s) avec succès.')
+
     fieldsets = (
         ('📋 Informations', {
             'fields': ('order', 'driver', 'priority_order', 'distance_km')
@@ -376,8 +410,14 @@ class DriverStatusAdmin(admin.ModelAdmin):
         })
     )
     
-    actions = ['set_online', 'set_offline', 'reset_daily_stats']
-    
+    actions = ['set_online', 'set_offline', 'reset_daily_stats', 'delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} statut(s) de chauffeur supprimé(s) avec succès.')
+
     def status_badge(self, obj):
         colors = {
             'OFFLINE': 'gray',
@@ -439,7 +479,14 @@ class OrderTrackingAdmin(admin.ModelAdmin):
     ]
     readonly_fields = ['created_at']
     date_hierarchy = 'created_at'
-    
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} événement(s) de suivi supprimé(s) avec succès.')
+
     fieldsets = (
         ('📋 Événement', {
             'fields': ('order', 'event_type')
@@ -506,7 +553,7 @@ class OrderTrackingAdmin(admin.ModelAdmin):
 @admin.register(CustomerStatus)
 class CustomerStatusAdmin(admin.ModelAdmin):
     list_display = [
-        'customer', 'location_link', 'current_order_link', 
+        'customer', 'location_link', 'current_order_link',
         'last_location_update', 'updated_at'
     ]
     list_filter = ['last_location_update', 'updated_at']
@@ -516,7 +563,14 @@ class CustomerStatusAdmin(admin.ModelAdmin):
     readonly_fields = [
         'created_at', 'updated_at', 'last_location_update'
     ]
-    
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} statut(s) de client supprimé(s) avec succès.')
+
     fieldsets = (
         ('👤 Client', {
             'fields': ('customer',)

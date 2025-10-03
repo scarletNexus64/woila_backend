@@ -24,7 +24,14 @@ class WalletProxyAdmin(admin.ModelAdmin):
     search_fields = ['user_id']
     readonly_fields = ['created_at', 'updated_at']
     list_per_page = 25
-    
+    actions = ['delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} portefeuille(s) supprimé(s) avec succès.')
+
     def get_user_display(self, obj):
         try:
             user_type_name = obj.user_type.model if obj.user_type else 'Inconnu'
@@ -119,8 +126,14 @@ class WalletTransactionAdmin(admin.ModelAdmin):
         })
     )
     
-    actions = ['mark_as_completed', 'mark_as_failed']
-    
+    actions = ['mark_as_completed', 'mark_as_failed', 'delete_all_selected']
+
+    @admin.action(description='🗑️ Supprimer tous les éléments sélectionnés')
+    def delete_all_selected(self, request, queryset):
+        count = queryset.count()
+        queryset.delete()
+        self.message_user(request, f'{count} transaction(s) supprimée(s) avec succès.')
+
     def get_user_display(self, obj):
         try:
             user_type_name = obj.user_type.model if obj.user_type else 'Inconnu'
