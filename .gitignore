@@ -7,3 +7,6 @@ secret/
 *.json
 *firebase-adminsdk*.json
 *-firebase-*.json
+
+# macOS
+.DS_Store
